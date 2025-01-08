@@ -1,12 +1,9 @@
 <template>
-  <div>
-    <!-- <Banner title="Welcome to Hameem Group" subtitle="The largest clothing manufacturer in Bangladesh" />
-    <HomeSection /> -->
-    test 
-  </div>
+  <FullScreenBanner/>
 </template>
 
 <script setup>
+import FullScreenBanner from '~/components/FullScreenBanner.vue';
 </script>
 
 <style scoped>

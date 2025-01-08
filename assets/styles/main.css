@@ -1,0 +1,22 @@
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0 1rem; /* Add padding for smaller screens */
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #4a5568; /* Gray 700 */
+}
+
+.footer-links a:hover {
+  color: #3182ce; /* Blue 600 */
+}
+
+.footer-social-icons a {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.25rem;
+}
