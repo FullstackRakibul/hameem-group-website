@@ -13,9 +13,7 @@
       <NuxtLink
         to="/"
       >
-      <el-button type="primary" plain> <NuxtLink
-        to="/"
-      >
+      <el-button type="primary" plain>
       Go Back Home
     </el-button>
       </NuxtLink>
