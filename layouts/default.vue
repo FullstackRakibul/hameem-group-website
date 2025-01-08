@@ -1,13 +1,12 @@
+
 <template>
-<div class="common-layout">
-    <el-container>
-      <el-header>
-        <Header/>
-      </el-header>
-      <el-main>Main</el-main>
-      <el-footer>Footer</el-footer>
-    </el-container>
+  <div class="container mx-auto px-4 font-sans">
+      <Header />
+    <main class=" pt-12">
+      <slot />
+    </main>
   </div>
+  <Footer />
 </template>
 
 

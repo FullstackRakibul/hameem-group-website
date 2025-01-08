@@ -1,5 +1,5 @@
 <template>
-<el-card style="max-width: 480px">
+<el-card style="max-width: 480px" class="pt-3 mt-5">
     <template #header>
       <div class="card-header">
         <span>Card name</span>
