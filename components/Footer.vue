@@ -1,7 +1,7 @@
 <template>
-  <footer class="bg-gray-100 text-gray-800 pt-8 pb-4">
+  <footer class="bg-gray-100 text-gray-800 pt-8">
     <!-- Top Section -->
-    <div class="container mx-auto px-4 max-w-1400">
+    <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Column 1: Logo and About -->
         <div>
@@ -62,7 +62,7 @@
     <!-- Lower Section -->
     <div class="bg-gray-200 mt-8 py-2">
       <div class="container mx-auto px-4 max-w-1400 text-center text-sm">
-        <span>© Hameem Group, IT Department</span>
+        <span>© Ha-meem Group, IT Department</span>
       </div>
     </div>
   </footer>
