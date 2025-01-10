@@ -1,5 +1,5 @@
 <template>
-  <header class="border-b-2 border-indigo-100 fixed top-0 left-0 right-0 z-99 page-container">
+  <header class="border-b-2 bg-white border-indigo-100 fixed top-0 left-0 right-0 z-99 z-auto page-container">
     <nav class="mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
@@ -11,30 +11,31 @@
         <!-- Desktop Menu -->
          <div class="flex items-center justify-between">
 
-           <div class="hidden md:flex space-x-2">
-             <NuxtLink to="/" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-md font-medium">
+           <div class="hidden md:flex space-x-2 px-3">
+             <NuxtLink to="/" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
                Home
              </NuxtLink>
-             <NuxtLink to="/sister-concerns" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-md font-medium">
+             <NuxtLink to="/sister-concerns" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
                Sister Concerns
              </NuxtLink>
-             <NuxtLink to="/about" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-md font-medium">
+             <NuxtLink to="/about" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
                About Us
              </NuxtLink>
-             <NuxtLink to="/contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-md font-medium">
+             <NuxtLink to="/contact" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
                Contact Us
              </NuxtLink>
            </div>
    
            <!-- Download Brochure Button -->
            <div class="hidden md:block">
-             <a
+             <!-- <a
                href="/brochure.pdf"
                download
                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-sm shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]"
              >
                Download Brochure
-             </a>
+             </a> -->
+             <el-button type="info" round><el-icon><Calendar /></el-icon></el-button>
            </div>
          </div>
 

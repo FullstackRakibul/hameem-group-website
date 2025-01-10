@@ -1,8 +1,8 @@
 
 <template>
-  <div class="container mx-auto px-4 font-sans">
-      <Header />
-    <main class=" pt-12">
+  <Header />
+  <div class="container mx-auto px-4 pt-16 font-sans">
+    <main class="">
       <slot />
     </main>
   </div>

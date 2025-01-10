@@ -22,6 +22,9 @@ export default {
       maxWidth: {
         1400: "1400px",
       },
+      colors: {
+        primary: "#264156",
+      },
     },
   },
   plugins: [],
