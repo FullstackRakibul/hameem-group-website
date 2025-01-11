@@ -62,7 +62,7 @@
     <!-- Lower Section -->
     <div class="bg-gray-200 mt-8 py-2">
       <div class="container mx-auto px-4 max-w-1400 text-center text-sm">
-        <span>© Ha-meem Group, IT Department</span>
+        <span>© Hameem Group, IT Department</span>
       </div>
     </div>
   </footer>
