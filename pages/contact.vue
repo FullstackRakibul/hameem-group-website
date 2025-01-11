@@ -2,7 +2,7 @@
   <div>
     <!-- Banner Section -->
       <div class=" inset-0 bg-black bg-opacity-50"></div>
-      <div class="relative z-10 flex items-center justify-center h-full text-center text-white px-4">
+      <div class="relative z-10 flex items-center justify-center h-full text-center text-primary px-4">
         <div>
           <h1 class="text-4xl font-bold mb-2">Contact Us</h1>
           <p class="text-lg">
@@ -16,7 +16,7 @@
     <div class="container mx-auto px-4 py-12 max-w-5xl">
       <!-- Contact Form -->
       <div class="mb-12">
-        <el-card class="shadow-md">
+        <el-card class="">
           <h2 class="text-2xl font-semibold mb-6">Send Us a Message</h2>
           <el-form
             :model="form"

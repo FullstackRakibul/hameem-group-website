@@ -15,7 +15,7 @@
              <NuxtLink to="/" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
                Home
              </NuxtLink>
-             <NuxtLink to="/sister-concerns" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
+             <NuxtLink to="/sister-concerns/refat-garments-ltd" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
                Sister Concerns
              </NuxtLink>
              <NuxtLink to="/about" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
@@ -28,14 +28,13 @@
    
            <!-- Download Brochure Button -->
            <div class="hidden md:block">
-             <!-- <a
+             <a
                href="/brochure.pdf"
                download
-               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-sm shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]"
+               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]"
              >
-               Download Brochure
-             </a> -->
-             <el-button type="info" round><el-icon><Calendar /></el-icon></el-button>
+               Get Membership
+             </a>
            </div>
          </div>
 
@@ -54,7 +53,7 @@
 
     <!-- Mobile Menu Overlay -->
     <Transition name="fade">
-      <div v-if="isMenuOpen" class="fixed inset-0 z-50">
+      <div v-if="isMenuOpen" class="fixed inset-0 z-50 ">
         <div class="absolute inset-0 bg-black opacity-50" @click="isMenuOpen = false"></div>
         <div class="absolute top-0 right-0 w-3/4 max-w-xs bg-white shadow-lg h-full p-4 overflow-y-auto">
           <div class="flex items-center justify-between mb-8">

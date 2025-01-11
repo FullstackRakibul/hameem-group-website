@@ -1,45 +1,53 @@
 <template>
   <swiper
-    :direction="'vertical'"
-    :slidesPerView="1"
-    :spaceBetween="0"
-    :mousewheel="true"
-    :pagination="{ clickable: true }"
     :modules="modules"
-    class="h-screen w-screen"
+    :slides-per-view="3"
+    :space-between="50"
+    navigation
+    :pagination="{ clickable: true }"
+    :scrollbar="{ draggable: true }"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
   >
-    <swiper-slide>
-      <SlideOne />
-    </swiper-slide>
-    <swiper-slide>
-      <SlideTwo />
-    </swiper-slide>
-    <swiper-slide>
-      <SlideThree />
-    </swiper-slide>
+    <swiper-slide><SlideOne/></swiper-slide>
+    <swiper-slide><SlideTwo/></swiper-slide>
+    <swiper-slide><SlideTwo/></swiper-slide>
+    ...
   </swiper>
 </template>
+<script>
+  // import Swiper core and required modules
+  import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+  import SlideOne from '../slides/SlideOne.vue';
+  import SlideTwo from '../slides/SlideTwo.vue';
 
-<script setup>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+  // Import Swiper Vue.js components
+  import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+  // Import Swiper styles
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+  import 'swiper/css/scrollbar';
 
-// Import required modules
-import { Mousewheel, Pagination } from 'swiper/modules';
-
-// Import your slide components
-import SlideOne from '~/components/slides/SlideOne.vue';
-import SlideTwo from '~/components/slides/SlideTwo.vue';
-import SlideThree from '~/components/slides/SlideThree.vue';
-
-// Provide Swiper modules
-const modules = [Mousewheel, Pagination];
+  // Import Swiper styles
+  export default {
+    components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      const onSwiper = (swiper) => {
+        console.log(swiper);
+      };
+      const onSlideChange = () => {
+        console.log('slide change');
+      };
+      return {
+        onSwiper,
+        onSlideChange,
+        modules: [Navigation, Pagination, Scrollbar, A11y],
+      };
+    },
+  };
 </script>
-
-<style scoped>
-/* Add custom styles if necessary */
-</style>

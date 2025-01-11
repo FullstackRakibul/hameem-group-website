@@ -13,17 +13,16 @@ export default {
         },
       },
       container: {
-        center: true,
         padding: "1rem",
-        maxWidth: {
-          1400: "1400px",
-        },
       },
       maxWidth: {
         1400: "1400px",
       },
       colors: {
         primary: "#264156",
+      },
+      backgroundImage: {
+        "home-page-banner-bg-01": "url('/assets/HomePageBannerBG-01.jpg')",
       },
     },
   },

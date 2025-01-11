@@ -1,7 +1,13 @@
+
+
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  // css: [
+  //   'ant-design-vue/dist/antd.css'
+  // ],
   modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@element-plus/nuxt', 'nuxt-swiper'],
   elementPlus: { /** Options */ },
   //css: ['~/assets/styles/main.css'],
@@ -26,8 +32,10 @@ export default defineNuxtConfig({
 
     pageTransition: {
       name: 'fade',
-      mode: 'out-in', // Ensures the outgoing page finishes before the new page enters
+      mode: 'out-in',
     },
+
   },
+  ssr: true,
 
 })
