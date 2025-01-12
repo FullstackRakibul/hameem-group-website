@@ -4,8 +4,10 @@
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
-          <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-8 w-auto" />
-          <span class="ml-2 text-xl font-bold text-gray-800">Ha-meem Group</span>
+           <NuxtLink to="/" class="flex">
+             <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-8 w-auto" />
+             <span class="ml-2 text-xl font-bold text-gray-800">Ha-meem Group</span>
+           </NuxtLink>
         </div>
 
         <!-- Desktop Menu -->
@@ -78,7 +80,7 @@
               Home
             </NuxtLink>
             <NuxtLink
-              to="/sister-concerns"
+              to="/sister-concerns/refat-garments-ltd"
               @click="isMenuOpen = false"
               class="text-gray-700 hover:text-blue-600 text-lg font-medium"
             >

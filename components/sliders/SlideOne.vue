@@ -20,7 +20,7 @@
 
       <!-- Denim Slide -->
       <el-carousel-item key="denim">
-        <div class="h-full bg-[#D4D4D4] bg-cover bg-no-repeat flex items-center justify-center">
+        <div class="h-full bg-[#D6D6D6] bg-cover bg-no-repeat flex items-center justify-center">
           <el-image
             class="transition-transform duration-300 ease-in-out hover:scale-105"
             style="max-width: 500px; width: 100%;"
@@ -28,7 +28,7 @@
             alt="Denim Banner"
           />
           <div class="ml-6 text-center md:text-left">
-            <h2 class="text-3xl font-bold text-primary">Denim Excellence</h2>
+            <h2 class="text-4xl font-bold text-primary">Denim Excellence</h2>
             <p class="text-lg text-primary">Versatile designs for every occasion.</p>
           </div>
         </div>
@@ -42,6 +42,7 @@
       </el-carousel-item>
     </el-carousel>
   </div>
+  
 </template>
 
 

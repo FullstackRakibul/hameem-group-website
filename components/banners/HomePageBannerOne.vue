@@ -13,7 +13,7 @@
         <el-col :xs="24" :sm="24" :md="10" class="text-center md:text-right">
           <div class="flex justify-center md:justify-end items-center">
             <el-image class="transition-transform duration-300 ease-in-out hover:scale-105"
-              style="max-width: 350px; width: 100%;" src="/assets/home-banner-img-01.png" alt="Home Banner Image" />
+              style="max-width: 500px; width: 100%;" src="/assets/home-banner-img-01.png" alt="Home Banner Image" />
           </div>
         </el-col>
       </el-row>
@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import WellcomeSection from '../sections/WellcomeSection.vue';
+import WellcomeSection from '../sections/WelcomeSection.vue';
 
 
 
