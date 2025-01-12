@@ -7,7 +7,8 @@
         <div>
           <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-12 mb-4" />
           <p class="text-sm leading-relaxed">
-            Hameem Group is one of the largest textile manufacturers in Bangladesh, specializing in apparel, knitting, dyeing, and more.
+            Hameem Group is one of the largest textile manufacturers in Bangladesh, specializing in apparel, knitting,
+            dyeing, and more.
           </p>
         </div>
 
@@ -16,13 +17,13 @@
           <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
           <ul class="space-y-2">
             <li>
-              <NuxtLink to="/units" class="hover:text-blue-600">Our Units</NuxtLink>
+              <NuxtLink to="/" class="hover:text-blue-600">Our Units</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/line-works" class="hover:text-blue-600">Line Works</NuxtLink>
+              <NuxtLink to="/" class="hover:text-blue-600">Line Works</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/machines" class="hover:text-blue-600">Machines</NuxtLink>
+              <NuxtLink to="/" class="hover:text-blue-600">Machines</NuxtLink>
             </li>
           </ul>
         </div>
@@ -31,28 +32,25 @@
         <div>
           <h3 class="text-lg font-semibold mb-4">Connect with Us</h3>
           <div class="flex items-center space-x-4 mb-4">
-            <a href="#">
-              <el-icon>
-                <download />
-              </el-icon>
+            <a href="#" class="hover:text-blue-600 flex justify-between items-center">
+              <Icon name="hugeicons:app-store" style="color: black" />
               <span class="ml-2 text-sm">App Store</span>
             </a>
-            <a href="#">
-              <el-icon>
-                <download />
-              </el-icon>
+            <a href="#" class="hover:text-blue-600 flex justify-between items-center">
+              <Icon name="hugeicons:play-store" style="color: black" />
               <span class="ml-2 text-sm">Google Play</span>
             </a>
           </div>
+          <h3 class="text-lg font-semibold mb-4">Find Us</h3>
           <div class="flex space-x-4">
             <a href="#" class="hover:text-blue-600">
-              <font-awesome-icon :icon="['fab', 'facebook']" class="text-lg" />
+              <Icon name="hugeicons:linkedin-01" style="color: black" />
             </a>
             <a href="#" class="hover:text-blue-600">
-              <font-awesome-icon :icon="['fab', 'twitter']" class="text-lg" />
+              <Icon name="hugeicons:google" style="color: black" />
             </a>
             <a href="#" class="hover:text-blue-600">
-              <font-awesome-icon :icon="['fab', 'instagram']" class="text-lg" />
+              <Icon name="hugeicons:facebook-01" style="color: black" />
             </a>
           </div>
         </div>

@@ -1,6 +1,3 @@
-
-
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -8,7 +5,7 @@ export default defineNuxtConfig({
   // css: [
   //   'ant-design-vue/dist/antd.css'
   // ],
-  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@element-plus/nuxt', 'nuxt-swiper'],
+  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@element-plus/nuxt', 'nuxt-swiper', '@nuxt/icon'],
   elementPlus: { /** Options */ },
   //css: ['~/assets/styles/main.css'],
   runtimeConfig: {

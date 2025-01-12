@@ -1,5 +1,5 @@
 <template>
-  <header class="border-b-2 bg-white border-indigo-100 fixed top-0 left-0 right-0 z-99 z-auto page-container">
+  <header class="border-b-2 bg-white border-indigo-100 fixed top-0 left-0 right-0 z-10 page-container">
     <nav class="mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
