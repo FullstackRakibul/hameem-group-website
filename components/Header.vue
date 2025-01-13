@@ -1,12 +1,18 @@
+<!-- <header class="border-b-2 bg-white border-indigo-100 fixed top-0 left-0 right-0 z-10 page-container"> -->
 <template>
-  <header class="border-b-2 bg-white border-indigo-100 fixed top-0 left-0 right-0 z-10 page-container">
+    <header
+    :class="[
+      'fixed top-0 left-0 right-0 z-10 page-container transition-all duration-300',
+      isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+    ]"
+  >
     <nav class="mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
            <NuxtLink to="/" class="flex">
              <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-8 w-auto" />
-             <span class="ml-2 text-xl font-bold text-gray-800">Ha-meem Group</span>
+             <span class="ml-2 text-xl font-bold text-gray-800">Ha-Meem Group</span>
            </NuxtLink>
         </div>
 
@@ -14,22 +20,34 @@
          <div class="flex items-center justify-between">
 
            <div class="hidden md:flex space-x-2 px-3">
-             <NuxtLink to="/" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
+             <NuxtLink to="/" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                Home
              </NuxtLink>
-             <NuxtLink to="/sister-concerns/refat-garments-ltd" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
-               Sister Concerns
-             </NuxtLink>
-             <NuxtLink to="/about" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
+             <NuxtLink to="/about" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md f">
                About Us
              </NuxtLink>
-             <NuxtLink to="/contact" class="text-gray-700 hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md font-medium">
+             <NuxtLink to="/" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
+               Business Units
+             </NuxtLink>
+             <NuxtLink to="/" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+               Subtainability
+             </NuxtLink>
+             <NuxtLink to="/" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+               Products
+             </NuxtLink>
+             <NuxtLink to="/" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md "">
+               Clients
+             </NuxtLink>
+             <NuxtLink to="/" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md=">
+               Gallary
+             </NuxtLink>
+             <NuxtLink to="/contact" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                Contact Us
              </NuxtLink>
            </div>
    
            <!-- Download Brochure Button -->
-           <div class="hidden md:block">
+           <!-- <div class="hidden md:block">
              <a
                href="/brochure.pdf"
                download
@@ -37,7 +55,9 @@
              >
                Get Membership
              </a>
-           </div>
+           </div> -->
+           <Search/>
+           <LanguageSwitcher/>
          </div>
 
         <!-- Mobile Menu Button -->
@@ -61,7 +81,7 @@
           <div class="flex items-center justify-between mb-8">
             <div class="flex items-center">
               <img src="/public//assets/group-logo.png" alt="Hameem Group Logo" class="h-8 w-auto" />
-              <span class="ml-2 text-xl font-bold text-gray-800">Hameem Group</span>
+              <span class="ml-2 text-xl font-bold text-gray-800">Ha-Meem Group</span>
             </div>
             <button
               @click="isMenuOpen = false"
@@ -80,19 +100,48 @@
               Home
             </NuxtLink>
             <NuxtLink
-              to="/sister-concerns/refat-garments-ltd"
-              @click="isMenuOpen = false"
-              class="text-gray-700 hover:text-blue-600 text-lg font-medium"
-            >
-              Sister Concerns
-            </NuxtLink>
-            <NuxtLink
               to="/about"
               @click="isMenuOpen = false"
               class="text-gray-700 hover:text-blue-600 text-lg font-medium"
             >
               About Us
             </NuxtLink>
+            <NuxtLink
+              to="/"
+              @click="isMenuOpen = false"
+              class="text-gray-700 hover:text-blue-600 text-lg font-medium"
+            >
+              Business Units
+            </NuxtLink>
+            <NuxtLink
+              to="/"
+              @click="isMenuOpen = false"
+              class="text-gray-700 hover:text-blue-600 text-lg font-medium"
+            >
+              Subtainability
+            </NuxtLink>
+            <NuxtLink
+              to="/"
+              @click="isMenuOpen = false"
+              class="text-gray-700 hover:text-blue-600 text-lg font-medium"
+            >
+              Products
+            </NuxtLink>
+            <NuxtLink
+              to="/sister-concerns/refat-garments-ltd"
+              @click="isMenuOpen = false"
+              class="text-gray-700 hover:text-blue-600 text-lg font-medium"
+            >
+              Clients
+            </NuxtLink>
+            <NuxtLink
+              to="/sister-concerns/refat-garments-ltd"
+              @click="isMenuOpen = false"
+              class="text-gray-700 hover:text-blue-600 text-lg font-medium"
+            >
+              Gallary
+            </NuxtLink>
+            
             <NuxtLink
               to="/contact"
               @click="isMenuOpen = false"
@@ -106,7 +155,7 @@
               @click="isMenuOpen = false"
               class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
             >
-              Download Brochure
+              Search
             </a>
           </nav>
         </div>
@@ -118,6 +167,23 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Menu as MenuIcon, Close as CloseIcon } from '@element-plus/icons-vue'
+import Search from './mediator/Search.vue';
+import LanguageSwitcher from './mediator/LanguageSwitcher.vue';
+const isScrolled = ref(false);
+
+
+// Handle scroll event
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50; // Change background after scrolling 50px
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 
 const isMenuOpen = ref(false)
 </script>

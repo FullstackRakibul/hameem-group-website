@@ -1,6 +1,6 @@
 <template>
   <Header class="z-50" />
-  <div class="pt-16 font-sans">
+  <div class="font-sans">
     <main class="">
       <slot />
     </main>
