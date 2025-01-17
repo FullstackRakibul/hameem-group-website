@@ -67,8 +67,6 @@
 </template>
 
 <script setup>
-import { Download } from '@element-plus/icons-vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 

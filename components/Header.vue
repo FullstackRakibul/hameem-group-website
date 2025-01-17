@@ -2,7 +2,7 @@
 <template>
     <header
     :class="[
-      'fixed top-0 left-0 right-0 z-10 page-container transition-all duration-300',
+      'fixed top-0 left-0 right-0 bg-slate-500 z-10 page-container transition-all duration-300',
       isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
     ]"
   >
@@ -47,16 +47,19 @@
            </div>
    
            <!-- Download Brochure Button -->
-           <!-- <div class="hidden md:block">
-             <a
-               href="/brochure.pdf"
-               download
-               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]"
-             >
-               Get Membership
-             </a>
-           </div> -->
-           <Search/>
+            <el-space>
+              <Search/>
+              <div class="hidden md:block">
+                <a
+                  href="https://www.linkedin.com/company/hameemgroup"
+                  target="_blank"
+                  download
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]"
+                >
+                  Career
+                </a>
+              </div>
+            </el-space>
            <LanguageSwitcher/>
          </div>
 
@@ -149,14 +152,19 @@
             >
               Contact Us
             </NuxtLink>
-            <a
-              href="/brochure.pdf"
-              download
-              @click="isMenuOpen = false"
-              class="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700"
-            >
-              Search
-            </a>
+            <el-space>
+                 <Search/>
+                 <div class="hidden md:block">
+                   <a
+                     href="https://www.linkedin.com/company/hameemgroup"
+                     target="_blank"
+                     download
+                     class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]"
+                   >
+                     Career
+                   </a>
+                 </div>
+               </el-space>
           </nav>
         </div>
       </div>
