@@ -13,7 +13,7 @@
           <el-row :gutter="20">
             <el-col :span="24">
               <div class="grid-content" />
-              <h3 class=" text-6xl font-medium">HA MEEM</h3>
+              <h3 class=" text-6xl font-semibold">HA MEEM</h3>
               <p class="tracking-widest">THE ART OF DESIGN</p>
             </el-col>
           </el-row>
