@@ -1,7 +1,7 @@
 <template>
   <Header class="z-50" />
   <div class="font-sans">
-    <main class="">
+    <main class="pt-16">
       <slot />
     </main>
   </div>

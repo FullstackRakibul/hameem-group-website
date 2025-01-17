@@ -4,7 +4,8 @@
     <el-carousel :height="carouselHeight" indicator-position="outside" autoplay :interval="5000" :loop="true">
       <!-- Garments Slide -->
       <el-carousel-item key="garments">
-        <div class="h-full bg-[url('/assets/home-banner-section-img-01.jpg')] bg-cover bg-no-repeat flex items-center justify-center bg-gray-100">
+        <div
+          class="h-full bg-[url('/assets/home-banner-section-img-01.jpg')] bg-cover bg-no-repeat flex items-center justify-center bg-gray-100">
           <!-- <el-image
             class="transition-transform duration-300 ease-in-out hover:scale-105"
             style="max-width: 500px; width: 100%;"
@@ -21,12 +22,8 @@
       <!-- Denim Slide -->
       <el-carousel-item key="denim">
         <div class="h-full bg-[#D6D6D6] bg-cover bg-no-repeat flex items-center justify-center">
-          <el-image
-            class="transition-transform duration-300 ease-in-out hover:scale-105"
-            style="max-width: 500px; width: 100%;"
-            src="/assets/banner_02.jpg"
-            alt="Denim Banner"
-          />
+          <el-image class="transition-transform duration-300 ease-in-out hover:scale-105"
+            style="max-width: 500px; width: 100%;" src="/assets/banner_02.jpg" alt="Denim Banner" />
           <div class="ml-6 text-center md:text-left">
             <h2 class="text-4xl font-bold text-primary">Denim Excellence</h2>
             <p class="text-lg text-primary">Versatile designs for every occasion.</p>
@@ -35,14 +32,22 @@
       </el-carousel-item>
 
       <!-- Sustainability Slide -->
+
       <el-carousel-item key="sustainability">
-        <div class="h-full bg-[url('/assets/HomePageBannerBG-01.jpg')] bg-cover bg-no-repeat flex items-center justify-center bg-gray-100">
-          <HomePageBannerOne/>
+        <div
+          class="relative h-full bg-[url('/assets/home-banner-section-img-06.jpg')] bg-cover bg-no-repeat flex items-center justify-center">
+          <!-- Black Overlay -->
+          <div class="absolute inset-0 bg-black opacity-50"></div>
+          <!-- Main Content -->
+          <div class="relative z-10">
+            <HomePageBannerOne />
+          </div>
         </div>
       </el-carousel-item>
+
     </el-carousel>
   </div>
-  
+
 </template>
 
 

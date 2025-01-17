@@ -1,11 +1,16 @@
 <template>
-  <SlideOne/>
-  <HomePageBannerTwo />
-  <MissionVissionSection/>
-  <IndustriesSection/>
-  <SustainabilitySection/>
-  <AchievementsSection/>
-  <OurBuyersSection/>
+  <section class="-mt-16 ">
+    <SlideOne/>
+    <HomePageBannerTwo />
+    <MissionVissionSection/>
+    <IndustriesSection/>
+    <SustainabilitySection/>
+    <!-- <AchievementsSection/> -->
+     <ProductSection/>
+     <BusinessUnitSection/>
+    <OurBuyersSection/>
+
+  </section>
 
   
 </template>
@@ -18,6 +23,8 @@ import SustainabilitySection from '~/components/sections/SustainabilitySection.v
 import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
 import AchievementsSection from '~/components/sections/AchievementsSection.vue';
 import IndustriesSection from '~/components/sections/IndustriesSection.vue';
+import ProductSection from '~/components/sections/ProductSection.vue';
+import BusinessUnitSection from '~/components/sections/BusinessUnitSection.vue';
 </script>
 
 <style scoped>
