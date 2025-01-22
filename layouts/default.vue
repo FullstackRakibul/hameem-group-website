@@ -4,6 +4,9 @@
     <main class="pt-16">
       <slot />
     </main>
+    <!-- <main class="pt-16">
+      <slot />
+    </main> -->
   </div>
   <Footer />
 </template>
