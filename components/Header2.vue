@@ -1,20 +1,18 @@
 <!-- <header class="border-b-2 bg-white border-indigo-100 fixed top-0 left-0 right-0 z-10 page-container"> -->
 <template>
-<header
-
-:class="[
+    <header
+    :class="[
       'fixed top-0 left-0 right-0 bg-slate-500 z-10 page-container transition-all duration-300',
       isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
     ]"
->
-  <div class="fixed top-0 left-0 right-0 z-10 container mx-auto transition-all duration-300" >
-    <nav class="mx-auto sm:px-6 lg:px-8">
+  >
+    <nav class="mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
            <NuxtLink to="/" class="flex">
              <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-8 w-auto" />
-            
+             <span class="ml-2 text-xl font-bold text-gray-800">Ha-Meem Group</span>
            </NuxtLink>
         </div>
 
@@ -22,28 +20,28 @@
          <div class="flex items-center justify-between">
 
            <div class="hidden md:flex space-x-2 px-3">
-             <NuxtLink to="/" class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
+             <NuxtLink to="/" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                Home
              </NuxtLink>
-             <NuxtLink to="/about" class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md f">
+             <NuxtLink to="/about" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md f">
                About Us
              </NuxtLink>
-             <NuxtLink to="/#business-units" class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
+             <NuxtLink to="/#business-units" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                Business Units
              </NuxtLink>
-             <NuxtLink to="/#sustainability" class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+             <NuxtLink to="/#sustainability" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                Subtainability
              </NuxtLink>
-             <NuxtLink to="/#industries" class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+             <NuxtLink to="/#industries" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                Products
              </NuxtLink>
-             <NuxtLink to="/#clients" class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md "">
+             <NuxtLink to="/#clients" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md "">
                Clients
              </NuxtLink>
-             <NuxtLink to="/#gallary" class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md=">
+             <NuxtLink to="/#gallary" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md=">
                Gallary
              </NuxtLink>
-             <NuxtLink to="/contact" class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
+             <NuxtLink to="/contact" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                Contact Us
              </NuxtLink>
            </div>
@@ -155,6 +153,7 @@
               Contact Us
             </NuxtLink>
             <el-space>
+                 <Search/>
                  <div class="hidden md:block">
                    <a
                      href="https://www.linkedin.com/company/hameemgroup"
@@ -170,7 +169,6 @@
         </div>
       </div>
     </Transition>
-  </div>
   </header>
 </template>
 
