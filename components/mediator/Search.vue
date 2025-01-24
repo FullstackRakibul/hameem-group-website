@@ -3,46 +3,46 @@
     <!-- Search Icon Button -->
     <button
       @click="toggleSearch"
-      class="inline-flex items-center justify-center w-10 h-10 rounded-full shadow-md bg-[#264156] text-white hover:bg-[#5C2D23]"
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full shadow-md bg-white text-black hover:bg-gray-200"
     >
       <el-icon>
         <search />
       </el-icon>
     </button>
 
-    <!-- Popup Search Box -->
+    <!-- Popup Search Box in Bottom-Right -->
     <div
       v-if="isSearchOpen"
-      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+      class="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-4 z-50 w-80"
     >
-      <div class="relative w-full max-w-lg p-12 bg-transparent bg-opacity-90 rounded-lg shadow-lg">
-        <el-input
-          v-model="searchQuery"
-          placeholder="Search here..."
-          clearable
-          size="large"
-          class="w-full"
-          @keyup.enter="handleSearch"
-        >
-          <template #prefix>
-            <el-icon>
-              <search />
-            </el-icon>
-          </template>
-        </el-input>
-        <!-- Close Button -->
-        <button
-          @click="toggleSearch"
-          class="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
-        >
-          <el-icon >
-            <close  />
-          </el-icon >
-        </button>
-      </div>
+      <el-input
+        v-model="searchQuery"
+        placeholder="Search here..."
+        clearable
+        size="large"
+        class="w-full"
+        @keyup.enter="handleSearch"
+      >
+        <template #prefix>
+          <el-icon>
+            <search />
+          </el-icon>
+        </template>
+      </el-input>
+
+      <!-- Close Button -->
+      <button
+        @click="toggleSearch"
+        class="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+      >
+        <el-icon>
+          <close />
+        </el-icon>
+      </button>
     </div>
   </div>
 </template>
+
 <script setup>
 import { ref } from 'vue';
 import { Search, Close } from '@element-plus/icons-vue';
@@ -62,24 +62,17 @@ const handleSearch = () => {
 </script>
 
 <style scoped>
-/* Custom styles for a more professional look */
-.el-icon{
-  font-size: large;
-  color: #fff;
-  font-weight: 700;
-}
-/* Popup background overlay */
-.bg-opacity-50 {
-  backdrop-filter: blur(5px); /* Add blur effect for the overlay */
+/* Custom styles for search bar and button */
+.el-icon {
+  font-size: 1.2rem;
 }
 
-/* Input hover/focus styles */
-.el-input__inner {
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+button:hover {
+  background-color: #f5f5f5;
 }
 
-.el-input__inner:focus {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transform: scale(1.02);
+/* Smooth transitions for the popup */
+.fixed {
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 </style>

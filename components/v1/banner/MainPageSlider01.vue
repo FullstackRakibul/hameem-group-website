@@ -4,12 +4,17 @@
     <!-- Carousel Section -->
     <el-carousel :height="carouselHeight"  autoplay :interval="5000" :loop="true">
       <!-- Garments Slide -->
-      <el-carousel-item key="garments">
+      <!-- <el-carousel-item key="garments">
         <div class=" h-screen mx-24">
           <ImageSliderSection />
         </div>
-      </el-carousel-item>
+      </el-carousel-item> -->
       <!-- Denim Slide -->
+      <el-carousel-item key="denim">
+        <div class="h-screen mx-24">
+          <HeroImageSection /> 
+        </div>
+      </el-carousel-item>
       <el-carousel-item key="denim">
         <div class="h-screen mx-24">
           <HeroImageSection /> 
