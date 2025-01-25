@@ -6,8 +6,7 @@ import MissionVissionSection from '~/components/v1/section/MissionVissionSection
 import SustainabilitySection from '~/components/v1/section/SustainabilitySection.vue';
 
 import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
-import IndustriesSection from '~/components/sections/IndustriesSection.vue';
-import ProductSection from '~/components/sections/ProductSection.vue';
+import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSection.vue';
 import BusinessunitSection from '~/components/v1/section/BusinessUnitSection.vue';
 </script>
 
@@ -18,6 +17,7 @@ import BusinessunitSection from '~/components/v1/section/BusinessUnitSection.vue
   <MissionVissionSection id="mission-vision" />
   <BusinessunitSection id="business-units" />
   <SustainabilitySection id="sustainability" />   
-    <OurBuyersSection id="clients" />
+  <BoardofDirectorsSection />
+  <!-- <OurBuyersSection id="clients" /> -->
 </section>
 </template>
