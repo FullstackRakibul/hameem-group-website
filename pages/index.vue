@@ -1,29 +1,14 @@
-<template>
-  <section class="-mt-16 ">
-    <SlideOne/>
-    <HomePageBannerTwo />
-    <MissionVissionSection id="mission-vision" />
-    <ProductSection id="gallary" />
-    <IndustriesSection id="industries" />
-    <SustainabilitySection id="sustainability" />
-    <BusinessUnitSection id="business-units" />
-    <OurBuyersSection id="clients" />
+<script lang="ts" setup >
+import MainPageSlider01 from '~/components/v1/banner/MainPageSlider01.vue';
+import WelcomeSection from '~/components/v1/section/WelcomeSection.vue';
 
-  </section>
+import MissionVissionSection from '~/components/v1/section/MissionVissionSection.vue';
+import SustainabilitySection from '~/components/v1/section/SustainabilitySection.vue';
 
-  
-</template>
-
-<script setup>
-import HomePageBannerTwo from '~/components/banners/HomePageBannerTwo.vue';
-import SlideOne from '~/components/sliders/SlideOne.vue';
-import MissionVissionSection from '~/components/sections/MissionVissionSection.vue';
-import SustainabilitySection from '~/components/sections/SustainabilitySection.vue';
 import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
-import AchievementsSection from '~/components/sections/AchievementsSection.vue';
 import IndustriesSection from '~/components/sections/IndustriesSection.vue';
 import ProductSection from '~/components/sections/ProductSection.vue';
-import BusinessUnitSection from '~/components/sections/BusinessUnitSection.vue';
+import BusinessunitSection from '~/components/v1/section/BusinessUnitSection.vue';
 </script>
 
 <template>
@@ -33,7 +18,6 @@ import BusinessUnitSection from '~/components/sections/BusinessUnitSection.vue';
   <MissionVissionSection id="mission-vision" />
   <BusinessunitSection id="business-units" />
   <SustainabilitySection id="sustainability" />   
-  <BoardofDirectorsSection />
-  <!-- <OurBuyersSection id="clients" /> -->
+    <OurBuyersSection id="clients" />
 </section>
 </template>

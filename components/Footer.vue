@@ -28,15 +28,3 @@
     </div>
   </footer>
 </template>
-
-<script setup>
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
-
-// Add the icons to the library
-library.add(faFacebook, faTwitter, faInstagram);
-</script>
-
-<style scoped>
-/* Optional footer-specific styling */
-</style>
