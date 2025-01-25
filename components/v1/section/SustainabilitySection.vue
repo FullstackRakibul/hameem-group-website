@@ -1,58 +1,54 @@
 <template>
-  <el-divider></el-divider>
-  <div class=" p-10">
 
 
-    <section class="container mx-auto py-12">
-      <!-- Section Title -->
-      <el-row class="mb-10 justify-center">
-        <el-col :span="24" class="text-center">
-          <h2 class="text-4xl font-bold text-primary">Sustainability</h2>
-          <p class="text-lg text-primary mt-2">
-            Our milestones in excellence and recognition over the years.
+  <section class="container mx-auto py-12">
+    <!-- Section Title -->
+    <el-row class="mb-10 justify-center">
+      <el-col :span="24" class="text-center">
+        <h2 class="text-4xl font-bold text-primary">Sustainability</h2>
+        <p class="text-lg text-primary mt-2">
+          Our milestones in excellence and recognition over the years.
+        </p>
+      </el-col>
+    </el-row>
+
+    <!-- Sustainability Cards -->
+    <el-row :gutter="20">
+      <el-col :span="8" v-for="(item, index) in sustainabilityItems" :key="index">
+        <el-card
+          class="bg-primary p-6 rounded-lg group relative overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <!-- Icon -->
+          <div class="icon-container mb-4 text-center">
+            <span :class="item.icon"
+              class="text-5xl text-primary transition-transform duration-300 group-hover:scale-125"></span>
+          </div>
+
+          <!-- Title -->
+          <p class="text-2xl font-semibold text-primary text-center">
+            {{ item.title }}
           </p>
-        </el-col>
-      </el-row>
 
-      <!-- Sustainability Cards -->
-      <el-row :gutter="20">
-        <el-col :span="8" v-for="(item, index) in sustainabilityItems" :key="index">
-          <el-card
-            class="bg-primary p-6 rounded-lg group relative overflow-hidden hover:shadow-lg transition-shadow duration-300">
-            <!-- Icon -->
-            <div class="icon-container mb-4 text-center">
-              <span :class="item.icon"
-                class="text-5xl text-primary transition-transform duration-300 group-hover:scale-125"></span>
-            </div>
+          <!-- Key Points -->
+          <ul class="mt-4 space-y-2">
+            <li v-for="(point, i) in item.keyPoints" :key="i" class="flex items-center text-primary text-sm space-x-2">
+              <span class="text-xs">&#8226;</span>
+              <span class="transition-all duration-300 group-hover:text-black">
+                {{ point }}
+              </span>
+            </li>
+          </ul>
 
-            <!-- Title -->
-            <p class="text-2xl font-semibold text-primary text-center">
-              {{ item.title }}
-            </p>
-
-            <!-- Key Points -->
-            <ul class="mt-4 space-y-2">
-              <li v-for="(point, i) in item.keyPoints" :key="i"
-                class="flex items-center text-primary text-sm space-x-2">
-                <span class="text-xs">&#8226;</span>
-                <span class="transition-all duration-300 group-hover:text-black">
-                  {{ point }}
-                </span>
-              </li>
-            </ul>
-
-            <!-- Background Animation -->
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
-            </div>
-          </el-card>
-        </el-col>
-      </el-row>
-    </section>
-  </div>
+          <!-- Background Animation -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+  </section>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ElCard, ElRow, ElCol } from "element-plus";
 
 // Sustainability items data

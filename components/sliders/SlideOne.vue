@@ -6,20 +6,22 @@
       <el-carousel-item key="garments">
         <div
           class="h-full bg-[url('/assets/home-banner-section-img-01.jpg')] bg-cover bg-no-repeat flex items-center justify-center bg-gray-100">
-          <!-- <el-image
+          <div
+            class="h-full bg-[url('/assets/home-banner-section-img-01.jpg')] bg-cover bg-no-repeat flex items-center justify-center bg-gray-100">
+            <!-- <el-image
             class="transition-transform duration-300 ease-in-out hover:scale-105"
             style="max-width: 500px; width: 100%;"
             src="/assets/home-banner-section-img-01.jpg"
             alt="Garments Banner"
           /> -->
-          <!-- <div class="ml-6 text-center md:text-left">
+            <!-- <div class="ml-6 text-center md:text-left">
             <h2 class="text-3xl font-bold text-gray-800">Premium Garments</h2>
-            <p class="text-lg text-gray-600">Quality textiles crafted with precision.</p>
-          </div> -->
+            <p class="text-lg text-gray-600">Quality textiles crafted with precision.</p> -->
+          </div>
         </div>
       </el-carousel-item>
 
-        <!-- Sustainability Slide -->
+      <!-- Sustainability Slide -->
 
       <el-carousel-item key="sustainability">
         <div
@@ -45,10 +47,11 @@
         </div>
       </el-carousel-item>
 
-    
+
 
     </el-carousel>
   </div>
+
 
 </template>
 
