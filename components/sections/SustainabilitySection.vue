@@ -59,7 +59,7 @@
     </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ElCard, ElRow, ElCol } from "element-plus";
 
 // Sustainability items data

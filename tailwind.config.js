@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],
+        titillium: ['"Titillium Web"', "sans-serif"],
         fontWeight: {
           regular: 400,
           medium: 500,

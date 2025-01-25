@@ -1,4 +1,4 @@
-<script lang="ts" setup >
+<script lang="ts" setup>
 import MainPageSlider01 from '~/components/v1/banner/MainPageSlider01.vue';
 import WelcomeSection from '~/components/v1/section/WelcomeSection.vue';
 import OurBuyersSection from '~/components/sections/OurBuyersSection.vue';
@@ -10,13 +10,13 @@ import ProductSection from '~/components/sections/ProductSection.vue';
 </script>
 
 <template>
-<section>
-  <MainPageSlider01/>
-  <WelcomeSection/>
-  <MissionVissionSection id="mission-vision" />
+  <section>
+    <MainPageSlider01 />
+    <WelcomeSection />
+    <MissionVissionSection id="mission-vision" />
     <ProductSection id="gallary" />
     <IndustriesSection id="industries" />
     <SustainabilitySection id="sustainability" />
     <OurBuyersSection id="clients" />
-</section>
+  </section>
 </template>
