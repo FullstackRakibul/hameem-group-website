@@ -1,6 +1,6 @@
 <template>
   <!-- <section class="container mx-auto py-48"> -->
-  <section class=" mx-auto py-48">
+  <section class="  mx-auto py-48">
 
     <div class=" bg-cover bg-center flex flex-col justify-between items-center text-white"
       :style="{ backgroundImage: `url('./assets/welcome-section-banner-0001.png')` }">
@@ -11,7 +11,7 @@
             <el-col :span="8">
 
             </el-col>
-            <el-col :span="12">
+            <el-col :span="14" class="p-6">
               <el-space wrap :size="80">
                 <el-row :gutter="20">
                   <el-col :span="24">

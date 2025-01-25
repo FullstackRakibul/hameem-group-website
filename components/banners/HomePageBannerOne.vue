@@ -5,7 +5,7 @@
         <!-- Column 1 -->
         <el-col :xs="24" :sm="24" :md="14" class="text-center md:text-left">
           <div class="p-4">
-            <WellcomeSection />
+            <WelcomeSection />
           </div>
         </el-col>
 
@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import WellcomeSection from '../sections/WelcomeSection.vue';
+import WelcomeSection from '../sections/WelcomeSection.vue';
 
 
 

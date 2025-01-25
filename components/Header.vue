@@ -20,35 +20,35 @@
 
             <div class="hidden md:flex space-x-2 px-3">
               <NuxtLink to="/"
-                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
+                class="text-gray-700 font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                 Home
               </NuxtLink>
               <NuxtLink to="/about"
-                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md f">
+                class="text-gray-700 font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md f">
                 About Us
               </NuxtLink>
               <NuxtLink to="/#business-unit"
-                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
+                class="text-gray-700 font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                 Business Units
               </NuxtLink>
               <NuxtLink to="/#sustainability"
-                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+                class="text-gray-700 font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                 Subtainability
               </NuxtLink>
               <NuxtLink to="/#"
-                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+                class="text-gray-700 font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                 Products
               </NuxtLink>
               <NuxtLink to="/#clients"
-                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+                class="text-gray-700 font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                 Clients
               </NuxtLink>
               <NuxtLink to="/#"
-                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md=">
+                class="text-gray-700 font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md=">
                 Gallary
               </NuxtLink>
               <NuxtLink to="/contact"
-                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
+                class="text-gray-700 font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                 Contact Us
               </NuxtLink>
             </div>
@@ -176,5 +176,9 @@ const isMenuOpen = ref(false)
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.el-tabs__item {
+  justify-content: center !important;
 }
 </style>

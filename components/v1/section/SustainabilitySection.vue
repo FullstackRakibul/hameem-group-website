@@ -1,6 +1,6 @@
 <template>
 
-
+  <el-divider class="pt-3"></el-divider>
   <section class="container mx-auto py-12">
     <!-- Section Title -->
     <el-row class="mb-10 justify-center">
@@ -15,22 +15,21 @@
     <!-- Sustainability Cards -->
     <el-row :gutter="20">
       <el-col :span="8" v-for="(item, index) in sustainabilityItems" :key="index">
-        <el-card
-          class="bg-[#9ac049] p-6 rounded-lg group relative overflow-hidden hover:shadow-lg transition-shadow duration-300">
+        <el-card class=" p-6 rounded-lg group relative overflow-hidden hover:shadow-lg transition-shadow duration-300">
           <!-- Icon -->
           <div class="icon-container mb-4 text-center">
             <span :class="item.icon"
-              class="text-5xl text-primary transition-transform duration-300 group-hover:scale-125"></span>
+              class="text-5xl text-white transition-transform duration-300 group-hover:scale-125"></span>
           </div>
 
           <!-- Title -->
-          <p class="text-2xl font-semibold text-primary text-center">
+          <p class="text-2xl font-semibold text-white text-center">
             {{ item.title }}
           </p>
 
           <!-- Key Points -->
           <ul class="mt-4 space-y-2">
-            <li v-for="(point, i) in item.keyPoints" :key="i" class="flex items-center text-primary text-sm space-x-2">
+            <li v-for="(point, i) in item.keyPoints" :key="i" class="flex items-center text-white text-sm space-x-2">
               <span class="text-xs">&#8226;</span>
               <span class="transition-all duration-300 group-hover:text-black">
                 {{ point }}
@@ -94,5 +93,9 @@ const sustainabilityItems = [
 /* Style for icons to scale on hover */
 .icon-container .group-hover\:scale-125 {
   transform: scale(1.25);
+}
+
+.el-card {
+  background-color: #9ac049;
 }
 </style>
