@@ -1,8 +1,7 @@
 <!-- <header class="border-b-2 bg-white border-indigo-100 fixed top-0 left-0 right-0 z-10 page-container"> -->
 <template>
-<header
-
-:class="[
+    <header
+    :class="[
       'fixed top-0 left-0 right-0 bg-slate-500 z-10 page-container transition-all duration-300',
       isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
     ]"
@@ -51,7 +50,7 @@
            <!-- Download Brochure Button -->
             <el-space>
               <Search/>
-              <!-- <div class="hidden md:block">
+              <div class="hidden md:block">
                 <a
                   href="https://www.linkedin.com/company/hameemgroup"
                   target="_blank"
@@ -60,7 +59,7 @@
                 >
                   Career
                 </a>
-              </div> -->
+              </div>
             </el-space>
            <LanguageSwitcher/>
          </div>
@@ -155,6 +154,7 @@
               Contact Us
             </NuxtLink>
             <el-space>
+                 <Search/>
                  <div class="hidden md:block">
                    <a
                      href="https://www.linkedin.com/company/hameemgroup"
