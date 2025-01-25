@@ -1,79 +1,30 @@
 <template>
-  <footer class="bg-gray-100 text-gray-800 pt-8">
-    <!-- Top Section -->
+  <footer class=" text-black py-10">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Column 1: Logo and About -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Contact Us Column -->
         <div>
-          <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-12 mb-4" />
-          <p class="text-sm leading-relaxed">
-            Hameem Group is one of the largest textile manufacturers in Bangladesh, specializing in apparel, knitting,
-            dyeing, and more.
-          </p>
-        </div>
-
-        <!-- Column 2: Links -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
-            <li>
-              <NuxtLink to="/" class="hover:text-blue-600">Our Units</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/" class="hover:text-blue-600">Line Works</NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/" class="hover:text-blue-600">Machines</NuxtLink>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Column 3: App Download and Social Media -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Connect with Us</h3>
-          <div class="flex items-center space-x-4 mb-4">
-            <a href="#" class="hover:text-blue-600 flex justify-between items-center">
-              <Icon name="hugeicons:app-store" style="color: black" />
-              <span class="ml-2 text-sm">App Store</span>
-            </a>
-            <a href="#" class="hover:text-blue-600 flex justify-between items-center">
-              <Icon name="hugeicons:play-store" style="color: black" />
-              <span class="ml-2 text-sm">Google Play</span>
-            </a>
-          </div>
-          <h3 class="text-lg font-semibold mb-4">Find Us</h3>
-          <div class="flex space-x-4">
-            <a href="#" class="hover:text-blue-600">
-              <Icon name="hugeicons:linkedin-01" style="color: black" />
-            </a>
-            <a href="#" class="hover:text-blue-600">
-              <Icon name="hugeicons:google" style="color: black" />
-            </a>
-            <a href="#" class="hover:text-blue-600">
-              <Icon name="hugeicons:facebook-01" style="color: black" />
-            </a>
+          <div class="flex flex-col justify-center items-start h-full">
+            <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+            <p class="mb-2">
+              <strong>Head Office</strong><br />
+              Ha-Meem Group<br />
+              387 (South), Tejgaon Industrial Area<br />
+              Dhaka-1208, Bangladesh
+            </p>
+            <p class="mb-2">
+              <strong>Phone:</strong> +880-2-8170592, +880-2-8170593<br />
+              <strong>Fax:</strong> +880-2-8170623
+            </p>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Lower Section -->
-    <div class="bg-gray-200 mt-8 py-2">
-      <div class="container mx-auto px-4 max-w-1400 text-center text-sm">
-        <span>© Hameem Group, IT Department</span>
+        <!-- Map Column -->
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Our Location</h2>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d773.4539053047216!2d90.39691218075808!3d23.758789222874693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7f36ebcbcdb%3A0x6363e2a5709dee2d!2sTML%20Building%20(Ha-Meem%20Group)!5e1!3m2!1sen!2sus!4v1737763612030!5m2!1sen!2sus" width="900" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </div>
   </footer>
 </template>
-
-<script setup>
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
-
-// Add the icons to the library
-library.add(faFacebook, faTwitter, faInstagram);
-</script>
-
-<style scoped>
-/* Optional footer-specific styling */
-</style>

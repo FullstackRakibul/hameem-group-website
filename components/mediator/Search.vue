@@ -1,19 +1,19 @@
 <template>
-  <div class="relative">
+  <div class="relative inline-block">
     <!-- Search Icon Button -->
     <button
       @click="toggleSearch"
-      class="inline-flex items-center justify-center w-10 h-10 rounded-full shadow-md bg-white text-black hover:bg-gray-200"
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full shadow-md bg-white text-black "
     >
       <el-icon>
         <search />
       </el-icon>
     </button>
 
-    <!-- Popup Search Box in Bottom-Right -->
+    <!-- Popup Search Box (below the icon) -->
     <div
       v-if="isSearchOpen"
-      class="fixed bottom-4 right-4 bg-white shadow-lg rounded-lg p-4 z-50 w-80"
+      class="absolute top-full mt-2 right-0 bg-white shadow-lg rounded-full z-50 w-80 transition-transform duration-300 ease-in-out hover:scale-105"
     >
       <el-input
         v-model="searchQuery"
@@ -33,7 +33,7 @@
       <!-- Close Button -->
       <button
         @click="toggleSearch"
-        class="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+        class="absolute top-1 right-1 text-gray-500 hover:text-gray-800"
       >
         <el-icon>
           <close />
@@ -47,32 +47,31 @@
 import { ref } from 'vue';
 import { Search, Close } from '@element-plus/icons-vue';
 
-const isSearchOpen = ref(false); // Toggle for search popup
-const searchQuery = ref(''); // User's search input
+// Reactive states for the search popup and query
+const isSearchOpen = ref(false); // Toggle search popup visibility
+const searchQuery = ref(''); // Store the search input
 
+// Open/Close search popup
 const toggleSearch = () => {
-  isSearchOpen.value = !isSearchOpen.value; // Open/close the search popup
+  isSearchOpen.value = !isSearchOpen.value;
 };
 
+// Perform search action
 const handleSearch = () => {
-  console.log('Searching for:', searchQuery.value); // Perform search action
-  toggleSearch(); // Close the popup after search
-  searchQuery.value = ''; // Clear the search input
+  console.log('Searching for:', searchQuery.value);
+  toggleSearch(); // Close popup after search
+  searchQuery.value = ''; // Clear search input
 };
 </script>
 
 <style scoped>
-/* Custom styles for search bar and button */
-.el-icon {
-  font-size: 1.2rem;
+/* Icon Button Hover Effects */
+button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 button:hover {
-  background-color: #f5f5f5;
+  transform: scale(1.1); /* Slight scale-up effect */
 }
 
-/* Smooth transitions for the popup */
-.fixed {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
+
 </style>
