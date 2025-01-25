@@ -35,15 +35,15 @@
                 class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                 Subtainability
               </NuxtLink>
-              <NuxtLink to="/#industries"
+              <NuxtLink to="/"
                 class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                 Products
               </NuxtLink>
-              <NuxtLink to="/#clients"
+              <NuxtLink to="/"
                 class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md "">
                Clients
              </NuxtLink>
-             <NuxtLink to=" /#gallary"
+             <NuxtLink to=" /"
                 class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md=">
                 Gallary
               </NuxtLink>
@@ -56,7 +56,7 @@
             <!-- Download Brochure Button -->
             <el-space>
               <Search />
-              <div class="hidden md:block">
+              <!-- <div class="hidden md:block">
                 <a href="https://www.linkedin.com/company/hameemgroup" target="_blank" download
                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]">
                   Career
