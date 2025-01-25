@@ -6,6 +6,8 @@
       <el-carousel-item key="garments">
         <div
           class="h-full bg-[url('/assets/home-banner-section-img-01.jpg')] bg-cover bg-no-repeat flex items-center justify-center bg-gray-100">
+        <div
+          class="h-full bg-[url('/assets/home-banner-section-img-01.jpg')] bg-cover bg-no-repeat flex items-center justify-center bg-gray-100">
           <!-- <el-image
             class="transition-transform duration-300 ease-in-out hover:scale-105"
             style="max-width: 500px; width: 100%;"
@@ -49,6 +51,7 @@
 
     </el-carousel>
   </div>
+
 
 </template>
 

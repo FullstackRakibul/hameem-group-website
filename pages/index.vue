@@ -1,12 +1,13 @@
 <script lang="ts" setup >
 import MainPageSlider01 from '~/components/v1/banner/MainPageSlider01.vue';
 import WelcomeSection from '~/components/v1/section/WelcomeSection.vue';
-import OurBuyersSection from '~/components/sections/OurBuyersSection.vue';
 
-import MissionVissionSection from '~/components/sections/MissionVissionSection.vue';
+import MissionVissionSection from '~/components/v1/section/MissionVissionSection.vue';
 import SustainabilitySection from '~/components/v1/section/SustainabilitySection.vue';
-import IndustriesSection from '~/components/sections/IndustriesSection.vue';
-import ProductSection from '~/components/sections/ProductSection.vue';
+
+import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
+import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSection.vue';
+import BusinessunitSection from '~/components/v1/section/BusinessUnitSection.vue';
 </script>
 
 <template>
@@ -14,9 +15,9 @@ import ProductSection from '~/components/sections/ProductSection.vue';
   <MainPageSlider01/>
   <WelcomeSection/>
   <MissionVissionSection id="mission-vision" />
-    <ProductSection id="gallary" />
-    <IndustriesSection id="industries" />
-    <SustainabilitySection id="sustainability" />
-    <OurBuyersSection id="clients" />
+  <BusinessunitSection id="business-units" />
+  <SustainabilitySection id="sustainability" />   
+  <BoardofDirectorsSection />
+  <!-- <OurBuyersSection id="clients" /> -->
 </section>
 </template>

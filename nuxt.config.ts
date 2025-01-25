@@ -23,6 +23,10 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap',
         },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Montserrat&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap',
+        },
         { rel: 'icon', type: 'image/x-icon', href: 'https://media.licdn.com/dms/image/sync/v2/D5627AQH0pPnqW3Ljkw/articleshare-shrink_800/articleshare-shrink_800/0/1724182991295?e=2147483647&v=beta&t=Ep1qjnyjfI9ErabUw6jjkdP_Q3ClJNmvRHh2cu031v0' },
       ],
     },

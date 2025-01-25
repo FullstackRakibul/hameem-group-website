@@ -61,7 +61,7 @@
                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]">
                   Career
                 </a>
-              </div>
+              </div> -->
             </el-space>
             <LanguageSwitcher />
           </div>
