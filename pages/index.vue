@@ -1,18 +1,4 @@
-<template>
-  <section class="-mt-16 ">
-    <SlideOne/>
-    <HomePageBannerTwo />
-    <MissionVissionSection id="mission-vision" />
-    <ProductSection id="gallary" />
-    <IndustriesSection id="industries" />
-    <SustainabilitySection id="sustainability" />
-    <BusinessUnitSection id="business-units" />
-    <OurBuyersSection id="clients" />
 
-  </section>
-
-  
-</template>
 
 <script setup>
 import HomePageBannerTwo from '~/components/banners/HomePageBannerTwo.vue';
