@@ -1,5 +1,4 @@
 <template>
-  <Header2/>
   <section class="-mt-16 ">
     <SlideOne/>
     <HomePageBannerTwo />
@@ -12,7 +11,6 @@
 
   </section>
 
-  <Footer2/>
 </template>
 
 <script setup>
