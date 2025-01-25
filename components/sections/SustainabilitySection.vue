@@ -15,6 +15,8 @@
     </el-row>
 
     <!-- Sustainability Cards -->
+
+    <!-- Sustainability Cards -->
     <el-row :gutter="20">
       <el-col :span="8" v-for="(item, index) in sustainabilityItems" :key="index">
         <el-card
@@ -59,7 +61,7 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { ElCard, ElRow, ElCol } from "element-plus";
 
 // Sustainability items data

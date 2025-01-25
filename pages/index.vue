@@ -2,13 +2,12 @@
   <section class="-mt-16 ">
     <SlideOne/>
     <HomePageBannerTwo />
-    <MissionVissionSection/>
-    <IndustriesSection/>
-    <SustainabilitySection/>
-    <!-- <AchievementsSection/> -->
-     <ProductSection/>
-     <BusinessUnitSection/>
-    <OurBuyersSection/>
+    <MissionVissionSection id="mission-vision" />
+    <ProductSection id="gallary" />
+    <IndustriesSection id="industries" />
+    <SustainabilitySection id="sustainability" />
+    <BusinessUnitSection id="business-units" />
+    <OurBuyersSection id="clients" />
 
   </section>
 

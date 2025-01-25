@@ -27,19 +27,19 @@
              <NuxtLink to="/about" class="text-black font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md f">
                About Us
              </NuxtLink>
-             <NuxtLink to="/#business-units" class="text-black font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
+             <NuxtLink to="/#business-units" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                Business Units
              </NuxtLink>
-             <NuxtLink to="/#sustainability" class="text-black font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+             <NuxtLink to="/#sustainability" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                Subtainability
              </NuxtLink>
-             <NuxtLink to="/#industries" class="text-black font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+             <NuxtLink to="/#industries" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                Products
              </NuxtLink>
-             <NuxtLink to="/#clients" class="text-black font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md "">
+             <NuxtLink to="/#clients" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md "">
                Clients
              </NuxtLink>
-             <NuxtLink to="/#gallary" class="text-black font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md=">
+             <NuxtLink to="/#gallary" class="text-primary font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md=">
                Gallary
              </NuxtLink>
              <NuxtLink to="/contact" class="text-black font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
