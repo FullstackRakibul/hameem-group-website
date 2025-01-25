@@ -16,7 +16,7 @@
     <el-row :gutter="20">
       <el-col :span="8" v-for="(item, index) in sustainabilityItems" :key="index">
         <el-card
-          class="bg-primary p-6 rounded-lg group relative overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          class="bg-[#9ac049] p-6 rounded-lg group relative overflow-hidden hover:shadow-lg transition-shadow duration-300">
           <!-- Icon -->
           <div class="icon-container mb-4 text-center">
             <span :class="item.icon"

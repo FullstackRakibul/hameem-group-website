@@ -7,7 +7,7 @@ import SustainabilitySection from '~/components/v1/section/SustainabilitySection
 
 import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
 import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSection.vue';
-import BusinessunitSection from '~/components/v1/section/BusinessUnitSection.vue';
+import BusinessUnitSection from '~/components/v1/section/BusinessUnitSection.vue';
 </script>
 
 <template>
@@ -15,9 +15,10 @@ import BusinessunitSection from '~/components/v1/section/BusinessUnitSection.vue
     <MainPageSlider01 />
     <WelcomeSection />
     <MissionVissionSection id="mission-vision" />
-    <ProductSection id="gallary" />
-    <IndustriesSection id="industries" />
+    <BusinessUnitSection id="business-unit" />
     <SustainabilitySection id="sustainability" />
     <OurBuyersSection id="clients" />
+    <BoardofDirectorsSection />
+
   </section>
 </template>

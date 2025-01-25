@@ -11,21 +11,22 @@
             <el-col :span="8">
 
             </el-col>
-            <el-col :span="16">
+            <el-col :span="12">
               <el-space wrap :size="80">
                 <el-row :gutter="20">
                   <el-col :span="24">
-                    <div class="flex bg-transparent flex-col justify-start p-6 " />
-                    <h3 class="text-6xl pb-2 font-semibold font-helvetica text-[#454242] tracking-tight text-left"
-                      style="transform: scale(0.65, 1.75); transform-origin: left;">
-                      HA MEEM
-                    </h3>
+                    <div class="flex bg-transparent flex-col justify-start p-6 ">
+                      <h3 class="text-6xl pb-2 font-semibold font-helvetica text-[#454242] tracking-tight text-left"
+                        style="transform: scale(0.65, 1.75); transform-origin: left;">
+                        HA MEEM
+                      </h3>
 
 
-                    <p class="tracking-widest text-black font-titillium font-medium">
-                      THE ART OF DESIGN
-                    </p>
-
+                      <p class="tracking-widest text-black font-titillium font-medium"
+                        style="transform: scale(1.2, 1.0); transform-origin: left;">
+                        THE ART OF DESIGN
+                      </p>
+                    </div>
                   </el-col>
                 </el-row>
 
@@ -34,7 +35,8 @@
                     <div class="grid-content ep-bg-purple" />
                     <h4 class="text-2xl font-semibold text-[#454242] font-helvetica"
                       style="transform: scale(0.8, 1.8); transform-origin: left;">Welcome !</h4>
-                    <p class="py-2 text-justify text-sm text-black">We're delighted to have you here. Explore our carefully
+                    <p class="py-2 text-justify text-sm text-black">We're delighted to have you here. Explore our
+                      carefully
                       crafted collection of stylish, high-quality garments designed to make you look and feel your best.
                       Whether you're seeking timeless classics or the latest trends, we've got something special for
                       every occasion.

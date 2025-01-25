@@ -2,7 +2,7 @@
   <div :style="{ backgroundImage: `url('/assets/ha-meem-group-banner-main-bg-01.png')` }"
     class="bg-cover bg-center bg-no-repeat relative">
     <!-- Carousel Section -->
-    <el-carousel :height="carouselHeight"  autoplay :interval="5000" :loop="true">
+    <el-carousel :height="carouselHeight" autoplay :interval="5000" :loop="true">
       <!-- Garments Slide -->
       <!-- <el-carousel-item key="garments">
         <div class=" h-screen mx-24">
@@ -12,14 +12,14 @@
       <!-- Denim Slide -->
       <el-carousel-item key="denim">
         <div class="h-screen mx-24">
-          <HeroImageSectionOne /> 
+          <HeroImageSectionOne />
         </div>
       </el-carousel-item>
-      <!-- <el-carousel-item key="denim">
+      <el-carousel-item key="denim">
         <div class="h-screen mx-24">
-          <HeroImageSectionTwo /> 
+          <HeroImageSectionTwo />
         </div>
-      </el-carousel-item> -->
+      </el-carousel-item>
     </el-carousel>
   </div>
 
@@ -76,10 +76,13 @@ img:hover {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.el-carousel__arrow  {
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  color: #f40000 ; /* White arrow icon */
-  border-radius: 50%; /* Make the arrow buttons circular */
+.el-carousel__arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black background */
+  color: #f40000;
+  /* White arrow icon */
+  border-radius: 50%;
+  /* Make the arrow buttons circular */
   width: 40px;
   height: 40px;
   display: flex;

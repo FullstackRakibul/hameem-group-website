@@ -27,7 +27,7 @@
                 class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md f">
                 About Us
               </NuxtLink>
-              <NuxtLink to="/#business-units"
+              <NuxtLink to="/#business-unit"
                 class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md">
                 Business Units
               </NuxtLink>
@@ -35,15 +35,15 @@
                 class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                 Subtainability
               </NuxtLink>
-              <NuxtLink to="/#industries"
+              <NuxtLink to="/#"
                 class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
                 Products
               </NuxtLink>
               <NuxtLink to="/#clients"
-                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md "">
-               Clients
-             </NuxtLink>
-             <NuxtLink to=" /#gallary"
+                class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md ">
+                Clients
+              </NuxtLink>
+              <NuxtLink to="/#"
                 class="text-white font-semibold hover:text-primary hover:bg-slate-200 hover:rounded-full px-3 py-2 text-md=">
                 Gallary
               </NuxtLink>
@@ -56,12 +56,12 @@
             <!-- Download Brochure Button -->
             <el-space>
               <Search />
-              <div class="hidden md:block">
+              <!-- <div class="hidden md:block">
                 <a href="https://www.linkedin.com/company/hameemgroup" target="_blank" download
                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]">
                   Career
                 </a>
-              </div>
+              </div> -->
             </el-space>
             <LanguageSwitcher />
           </div>
@@ -101,23 +101,23 @@
                 class="text-gray-700 hover:text-blue-600 text-lg font-medium">
                 About Us
               </NuxtLink>
-              <NuxtLink to="/" @click="isMenuOpen = false"
+              <NuxtLink to="/#" @click="isMenuOpen = false"
                 class="text-gray-700 hover:text-blue-600 text-lg font-medium">
                 Business Units
               </NuxtLink>
-              <NuxtLink to="/" @click="isMenuOpen = false"
+              <NuxtLink to="/#" @click="isMenuOpen = false"
                 class="text-gray-700 hover:text-blue-600 text-lg font-medium">
                 Subtainability
               </NuxtLink>
-              <NuxtLink to="/" @click="isMenuOpen = false"
+              <NuxtLink to="/#" @click="isMenuOpen = false"
                 class="text-gray-700 hover:text-blue-600 text-lg font-medium">
                 Products
               </NuxtLink>
-              <NuxtLink to="/sister-concerns/refat-garments-ltd" @click="isMenuOpen = false"
+              <NuxtLink to="/#" @click="isMenuOpen = false"
                 class="text-gray-700 hover:text-blue-600 text-lg font-medium">
                 Clients
               </NuxtLink>
-              <NuxtLink to="/sister-concerns/refat-garments-ltd" @click="isMenuOpen = false"
+              <NuxtLink to="/#" @click="isMenuOpen = false"
                 class="text-gray-700 hover:text-blue-600 text-lg font-medium">
                 Gallary
               </NuxtLink>
