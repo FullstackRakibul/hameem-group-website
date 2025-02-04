@@ -3,3 +3,8 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.container {
+  padding-right: 0;
+  padding-left: 0;
+}

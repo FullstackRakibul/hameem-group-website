@@ -1,11 +1,11 @@
 <template>
-  <footer class="bg-gray-100 text-gray-800 pt-8">
+  <footer class="bg-gray-100 text-gray-800 mt-12 pt-8">
     <!-- Top Section -->
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Column 1: Logo and About -->
         <div>
-          <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-12 mb-4" />
+          <img src="/public/assets/v2/header/hameem-group-logo-primary.png" alt="Hameem Group Logo" class="h-12 mb-4" />
           <p class="text-sm leading-relaxed">
             Hameem Group is one of the largest textile manufacturers in Bangladesh, specializing in apparel, knitting,
             dyeing, and more.
