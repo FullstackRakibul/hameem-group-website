@@ -28,7 +28,7 @@
             <img
               :src="industry.icon"
               alt="Industry Icon"
-              class="w-16 h-16 mx-auto transform transition-all duration-300 group-hover:translate-x-2 group-hover:rotate-6"
+              class=" w-96 h-44 mx-auto transform transition-all duration-300 group-hover:translate-x-2 group-hover:rotate-6"
             />
           </div>
           <!-- Title -->

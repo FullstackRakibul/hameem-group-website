@@ -1,42 +1,29 @@
 <template>
-  <section class="welcome-hero-section">
-    <div class="container">
-      <h1>Welcome to Hameem Group</h1>
-      <p>Your trusted partner in the textile industry.</p>
-      <button>Learn More</button>
-    </div>
-  </section>
+  <div>
+    <section class="welcome-hero-section  bg-cover bg-center bg-[url('/public/assets/v2/index/v2Hero-section-banner-hameemgroup-image-000001.jpg')] bg-gray-200">
+      <div class="container text-center text-white">
+        <h1 class="text-4xl md:text-6xl max-w-4/5 font-bold mb-4">Empowering the Future of Fashion Manufacturing</h1>
+        <p class="text-lg md:text-xl mb-6">From Bangladesh to the World: A Legacy of Excellence in Garments and Textiles</p>
+        <el-button type="primary" class="bg-primary" size="large">Explore Our Industries</el-button>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script lang="ts" setup>
-
 </script>
 
 <style scoped>
+
 .welcome-hero-section {
-  text-align: center;
-  padding: 50px 0;
-  background-color: #f5f5f5;
+  @apply flex items-center justify-center h-screen w-full relative;
+}
+
+.welcome-hero-section .overlay {
+  @apply absolute inset-0 bg-black opacity-80;
 }
 
 .welcome-hero-section .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.welcome-hero-section h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.welcome-hero-section p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-}
-
-.welcome-hero-section button {
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
+  @apply px-4;
 }
 </style>

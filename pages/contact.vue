@@ -17,7 +17,7 @@
       <!-- Contact Form -->
       <div class="mb-12">
         <el-card class="">
-          <h2 class="text-2xl font-semibold mb-6">Send Us a Message</h2>
+          <h2 class="text-2xl font-semibold mb-6">ERP & HRM Apps</h2>
           <el-form
             :model="form"
             :rules="rules"

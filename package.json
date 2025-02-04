@@ -26,6 +26,10 @@
     "nuxt-swiper": "^2.0.0",
     "swiper": "^11.2.1",
     "vue": "latest",
+    "vue-particles": "^1.0.9",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "nuxt-particles": "^0.3.0"
   }
 }

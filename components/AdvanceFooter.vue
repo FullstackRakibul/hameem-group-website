@@ -64,9 +64,15 @@
       </div>
     </div>
   </footer>
+  <!-- <Footer/> -->
+
+  <section>
+
+  </section>
 </template>
 
 <script setup>
+import Footer from '@/components/Footer.vue';
 import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 

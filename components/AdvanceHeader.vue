@@ -1,10 +1,10 @@
-<!-- <header class="border-b-2 bg-white border-indigo-100 fixed top-0 left-0 right-0 z-10 page-container"> -->
+
 <template>
   <header :class="[
-    'fixed top-0 left-0 right-0 bg-slate-500 z-10 page-container transition-all duration-300 container mx-auto',
+    'fixed top-0 left-0 right-0 bg-slate-500 z-10 page-container transition-all duration-300',
     isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
   ]">
-    <nav class="mx-auto">
+    <nav class="container mx-auto ">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
@@ -153,6 +153,8 @@ const handleScroll = () => {
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
 });
+
+
 
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);

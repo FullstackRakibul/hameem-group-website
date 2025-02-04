@@ -1,6 +1,6 @@
 <template>
 
-  <el-divider class="pt-3"></el-divider>
+  <el-divider class=""></el-divider>
   <section class="container mx-auto py-12">
     <!-- Section Title -->
     <el-row class="mb-10 justify-center">
@@ -45,6 +45,7 @@
       </el-col>
     </el-row>
   </section>
+  <el-divider class=""></el-divider>
 </template>
 
 <script lang="ts" setup>

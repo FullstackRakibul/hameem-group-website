@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   // css: [
   //   'ant-design-vue/dist/antd.css'
   // ],
-  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@element-plus/nuxt', 'nuxt-swiper', '@nuxt/icon'],
+  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@element-plus/nuxt', 'nuxt-swiper', '@nuxt/icon', 'nuxt-particles'],
   elementPlus: { /** Options */ },
   //css: ['~/assets/styles/main.css'],
   runtimeConfig: {
@@ -36,6 +36,11 @@ export default defineNuxtConfig({
       mode: 'out-in',
     },
 
+
+  },
+  particles: {
+    mode: 'full', // 'full' | 'slim' | 'basic' | 'custom'
+    lazy: true
   },
   ssr: true,
 
