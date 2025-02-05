@@ -5,11 +5,13 @@ import OurBuyersSection from '~/components/sections/OurBuyersSection.vue';
 import ContactUsMapSectionComponent from '~/components/v2/contact/ContactUsMapSectionComponent.vue';
 import IndustriesSectionComponent from '~/components/v2/about/IndustriesSectionComponent.vue';
 import TestimonialSectionComponent from '~/components/v2/about/TestimonialSectionComponent.vue';
+import MajorProductsSection from '~/components/v2/index/MajorProductsSection.vue';
 </script>
 
 <template>
   <section class=" mt-16">
     <WelcomeHeroSection/>
+    <MajorProductsSection/>
     <IndustriesSectionComponent/>               
     <TestimonialSectionComponent/>
     <SustainabilitySection/>
