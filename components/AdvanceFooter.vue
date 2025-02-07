@@ -30,7 +30,7 @@
 
         <!-- Column 3: App Download and Social Media -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">Connect with Us</h3>
+          <h3 class="text-lg font-semibold mb-4">Download Our App</h3>
           <div class="flex items-center space-x-4 mb-4">
             <a href="#" class="hover:text-blue-600 flex justify-between items-center">
               <Icon name="hugeicons:app-store" style="color: black" />

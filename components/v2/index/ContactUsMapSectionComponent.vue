@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="container mx-auto my-10 p-8 bg-primary text-white rounded-lg border border-white">
+    <div class="container mx-auto my-10 p-8 bg-primary text-white rounded-md border border-white">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-10 items-center">
     <!-- Contact Us Column -->
     <div>

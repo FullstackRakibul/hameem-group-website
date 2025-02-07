@@ -1,6 +1,7 @@
 <script setup>
 import gsap from 'gsap';
 
+
 const beforeEnter = (el) => {
   gsap.set(el, { opacity: 0, y: 50 });
 };
