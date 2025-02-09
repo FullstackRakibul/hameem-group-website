@@ -1,57 +1,48 @@
 <template>
-  <div class="container mx-auto px-4 py-12">
+  <div class=" ">
     <!-- Section Title -->
     <el-row class="mb-10 justify-center">
-      <el-col :span="24" class="text-center">
-        <h2 class="text-4xl font-bold text-gray-800">Industries We Operate In</h2>
-        <p class="text-lg text-gray-600 mt-2">
-          Our comprehensive manufacturing capabilities span multiple industries.
-        </p>
+      <el-col :span="24" class=" bg-primary py-40 ">
+        <div class="container mx-auto ">
+          <h2 class=" text-xl text-gray-300 ">Industries We Operate In <span class="border border-b-2"></span></h2>
+          <p class="text-5xl font-semibold text-white mt-2">
+            Our comprehensive manufacturing capabilities span multiple industries.
+          </p>
+        </div>
       </el-col>
     </el-row>
 
     <!-- Industry Cards -->
-    <el-row :gutter="20" class="gap-y-6">
-      <el-col
-        :xs="24"
-        :sm="12"
-        :md="6"
-        v-for="(industry, index) in industries"
-        :key="index"
-      >
-        <el-card
-          shadow="hover"
-          class="relative p-0 overflow-hidden rounded-xl bg-white group"
-        >
-          <!-- Cover Image with Hover Effect -->
-          <div class="relative h-44 overflow-hidden">
-            <img
-              :src="industry.icon"
-              alt="Industry Icon"
-              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <!-- Gradient Overlay on Hover -->
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-40 transition-opacity"
-            ></div>
-          </div>
+    <div class="container mx-auto -mt-32 z-10">
 
-          <!-- Card Content -->
-          <div class="p-6">
-            <h3
-              class="text-xl font-semibold text-gray-800 mb-2 transition-all duration-300 group-hover:text-blue-600"
-            >
-              {{ industry.title }}
-            </h3>
-            <p
-              class="text-gray-600 text-sm transition-all duration-300 group-hover:text-gray-800"
-            >
-              {{ industry.description }}
-            </p>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
+
+      <el-row :gutter="20" class="gap-y-6">
+        <el-col :xs="24" :sm="12" :md="6" v-for="(industry, index) in industries" :key="index">
+          <el-card shadow="hover" class="relative p-0 overflow-hidden rounded-xl bg-white group">
+            <!-- Cover Image with Hover Effect -->
+            <div class="relative h-44 overflow-hidden">
+              <img :src="industry.icon" alt="Industry Icon"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+              <!-- Gradient Overlay on Hover -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-40 transition-opacity">
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-6">
+              <h3
+                class="text-xl font-semibold text-gray-800 mb-2 transition-all duration-300 group-hover:text-blue-600">
+                {{ industry.title }}
+              </h3>
+              <p class="text-gray-600 text-sm transition-all duration-300 group-hover:text-gray-800">
+                {{ industry.description }}
+              </p>
+            </div>
+          </el-card>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 

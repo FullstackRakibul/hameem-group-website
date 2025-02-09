@@ -6,7 +6,7 @@
           <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
             About <span class="text-red-600">Ha-Meem</span> Group
           </h2>
-          <p class="text-base md:text-lg text-gray-600 mt-4 text-justify">
+          <p class="text-base md:text-md text-gray-600 mt-4 text-justify">
             Ha-Meem Group Started its Journey about 41 years back in 1984, Initially with a garment factory and thereafter gradually expanding to backward linkage from “Cotton to packed Garments,” Today Ha-Meem has a large workforce of 60,000 spreading over various industries and garment factories. Ha-Meem is now one of the leading exporters of the country with annual tournover close to a billion US Dollars. Ha-Meem is one of the largest Garment manufacturers in Bangladesh with 450 Garment lines having capacity of 9 mil pieces of garments per month, On the Textile sector, Ha-Meem Denim, established in early 2007, is now one of the largest denim manufacturers in Bangladesh having partnership with many of the reputed brands. Ha-Meem Spinning equipped with highly automated and state of the art machineries is best known for its quality products of ring. PC/CVC and other special yarns. Ha-Meem Textiles (non-denim woven) is the latest addition in the textile hub of Ha-Meem Group with 2.5 million yds per month capacity.
           </p>
           <!-- <p class="text-base md:text-lg text-gray-600 mt-4 text-justify">
