@@ -3,6 +3,7 @@
     <!-- Section Title -->
     <el-row class="mb-10 justify-center">
       <el-col :span="24" class=" bg-primary py-40 ">
+
         <div class="container mx-auto ">
           <h2 class=" text-xl text-gray-300 ">Industries We Operate In <span class="border border-b-2"></span></h2>
           <p class="text-5xl font-semibold text-white mt-2">
@@ -11,6 +12,14 @@
         </div>
       </el-col>
     </el-row>
+    <!-- <section class="container mx-auto py-40">
+              <SectionHeader
+            title="Industries We Operate In"
+            subtitle="Our comprehensive manufacturing capabilities span multiple industries."
+            primaryColorClass="bg-primary"
+            />
+    </section> -->
+
 
     <!-- Industry Cards -->
     <div class="container mx-auto -mt-32 z-10">
@@ -48,6 +57,9 @@
 
 <script setup>
 import { ElCard, ElRow, ElCol } from "element-plus";
+
+import SectionHeader from "../ui/SectionHeader.vue";
+
 
 const industries = [
   {

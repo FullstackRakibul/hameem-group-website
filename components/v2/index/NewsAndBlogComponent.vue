@@ -1,23 +1,11 @@
 <template>
   <section class="container mx-auto py-12 px-6">
-    <div class="flex justify-between items-center mb-8">
-      <!-- Section Title -->
-      <div>
-        <p class="text-sm font-medium text-gray-500 uppercase">News & Blog</p>
-        <div class="border-t-4 border-red-600 w-16 my-1"></div>
-        <h2 class="text-4xl font-bold text-gray-900">
-          Stay Updated with Ha-Meem Group
-        </h2>
-      </div>
-      <!-- View All Link -->
-      <nuxt-link
-        to="/blogs"
-        class="text-red-600 flex items-center space-x-1 font-semibold hover:underline"
-      >
-        <span>View All</span>
-        <icon name="mdi:arrow-top-right" class="w-5 h-5" />
-      </nuxt-link>
-    </div>
+
+     <SectionHeader
+      title="Stay Updated with Ha-Meem Group"
+      subtitle="News & Blog"
+      viewAllLink="/blogs"
+    />
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Blog Cards -->
@@ -46,6 +34,7 @@
 </template>
 
 <script setup lang="ts">
+import SectionHeader from "@/components/v2/ui/SectionHeader.vue";
 const blogs = [
   {
     id: 1,
