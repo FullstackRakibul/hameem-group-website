@@ -66,6 +66,7 @@ const onLoad = (container: Container) => {
   container.pause()
   setTimeout(() => container.play(),1000)
 }
+
 </script>
 
 <style scoped>
