@@ -20,7 +20,7 @@
           <div class="">
             <p class="text-gray-900 font-semibold text-lg md:text-xl">Leading Industry</p>
           <p class="text-gray-700 font-bold mt-0 text-sm">from
-          <span class="text-red-600 text-6xl md:text-7xl lg:text-8xl font-semibold">1984</span>
+          <span class="text-red-600 text-6xl md:text-7xl lg:text-8xl font-bold">1984</span>
           </p>
           </div>
         </div>

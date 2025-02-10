@@ -8,6 +8,7 @@ import TestimonialSectionComponent from '~/components/v2/index/TestimonialSectio
 import MajorProductsSection from '~/components/v2/index/MajorProductsSection.vue';
 import ShortDescriptionSectionCoponent from '~/components/v2/index/ShortDescriptionSectionCoponent.vue';
 import NewsAndBlogComponent from '~/components/v2/index/NewsAndBlogComponent.vue';
+import GallarySectionComponent from '~/components/v2/index/GallarySectionComponent.vue';
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import NewsAndBlogComponent from '~/components/v2/index/NewsAndBlogComponent.vue
     <WelcomeHeroSection/>
     <ShortDescriptionSectionCoponent/>
     <!-- <MajorProductsSection/> -->
+    <GallarySectionComponent/>
     <IndustriesSectionComponent/>               
     <TestimonialSectionComponent/>
     <SustainabilitySectionComponent/>

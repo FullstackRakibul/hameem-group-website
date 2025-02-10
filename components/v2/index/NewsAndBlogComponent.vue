@@ -24,7 +24,7 @@
           <p class="text-gray-600 line-clamp-2 mt-2">{{ blog.description }}</p>
           <nuxt-link
             :to="`/blogs/${blog.slug}`"
-            class="text-red-600 font-medium hover:underline mt-2 block"
+            class="text-[#40160C] font-medium hover:underline mt-2 block"
           >
             Read More
           </nuxt-link>
