@@ -2,22 +2,23 @@
   <div class="flex justify-between items-center mb-8">
     <!-- Section Title -->
     <div>
-      <p class="text-sm font-medium text-primary uppercase">
+      <p class="text-sm font-medium  uppercase" :class="subtitleClass">
         {{ subtitle }}
       </p>
-      <div class="border-t-4 border-[#40160C] py-2 w-16 my-1'"></div>
-      <h2 class="text-4xl font-bold text-gray-900">
+      <div class="border-t-4 border-[#40160C] py-2 w-20 mt-2"></div>
+      <h2 class="text-4xl font-bold " :class="titleClass">
         {{ title }}
       </h2>
     </div>
 
     <!-- View All Link -->
     <nuxt-link
-      v-if="viewAllLink"
-      :to="viewAllLink"
-      class="text-red-600 flex items-center space-x-1 font-semibold hover:underline"
-    >
-      <span>View All</span>
+      v-if="buttonTextLink"
+      :to="buttonTextLink"
+      class=" flex items-center space-x-1 font-semibold hover:underline"
+      :class="buttonTextLinkColor"
+      >
+      <span>{{buttonText}}</span>
       <icon :name="arrowIcon" class="w-5 h-5" />
     </nuxt-link>
   </div>
@@ -34,9 +35,19 @@ defineProps({
     required: false,
     default: "",
   },
-  viewAllLink: {
+  buttonText: {
     type: String,
     required: false,
+    default: "View All",
+  },
+  buttonTextLink: {
+    type: String,
+    required: false,
+  },
+  buttonTextLinkColor: {
+    type: String,
+    required: false,
+    default: " text-[#40160C]"
   },
   primaryColorClass: {
     type: String,
@@ -46,5 +57,7 @@ defineProps({
     type: String,
     default: "mdi:arrow-top-right",
   },
+  subtitleClass: { type: String, default: "text-primary" },
+  titleClass: { type: String, default: "text-primary" },
 });
 </script>

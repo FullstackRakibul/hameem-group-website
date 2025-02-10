@@ -1,13 +1,14 @@
 <template>
-  <el-divider />
   <section class="container mx-auto py-8 md:py-12">
     <!-- Section Title -->
     <el-row class="mb-6 md:mb-10 justify-center">
-      <el-col :span="24" class="text-center">
-        <h2 class="text-2xl md:text-4xl font-bold text-primary">Sustainability</h2>
-        <p class="text-base md:text-lg text-primary mt-2">
-          Our milestones in excellence and recognition over the years.
-        </p>
+      <el-col :span="24" class="">
+        <SectionHeader
+          title="Sustainability"
+          subtitle="Our milestones in excellence and recognition over the years."
+          buttonText="Know More"
+          buttonTextLink="/sustainability"
+          />
       </el-col>
     </el-row>
 
@@ -51,12 +52,11 @@
       </el-col>
     </el-row>
   </section>
-  <el-divider />
 </template>
 
 <script lang="ts" setup>
 import { ElCard, ElRow, ElCol } from "element-plus";
-
+import SectionHeader from "../ui/SectionHeader.vue";
 // Sustainability items data
 const sustainabilityItems = [
   {

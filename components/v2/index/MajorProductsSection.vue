@@ -13,7 +13,7 @@
       <div
         v-for="(product, index) in products"
         :key="index"
-        class="relative overflow-hidden rounded-lg group"
+        class="relative overflow-hidden rounded-md group"
       >
         <!-- Image Layer -->
         <img

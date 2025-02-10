@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto py-8 md:py-16 md:px-0">
+  <section class="container mx-auto py-8 md:py-16 ">
     <el-row :gutter="16">
       <el-col :xs="24" :md="16">
         <div class="text-content pr-0 md:pr-16">

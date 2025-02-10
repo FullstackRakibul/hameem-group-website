@@ -1,10 +1,11 @@
 <template>
-  <section class="container mx-auto py-12 px-6">
+  <section class="container mx-auto py-12">
 
      <SectionHeader
       title="Stay Updated with Ha-Meem Group"
       subtitle="News & Blog"
-      viewAllLink="/blogs"
+      buttonTextLink="/blogs"
+      
     />
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -12,7 +13,7 @@
       <div
         v-for="blog in blogs"
         :key="blog.id"
-        class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg"
+        class="bg-white rounded-md shadow-md overflow-hidden hover:shadow-lg"
       >
         <img :src="blog.image" :alt="blog.title" class="h-48 w-full object-cover" />
         <div class="p-4">
