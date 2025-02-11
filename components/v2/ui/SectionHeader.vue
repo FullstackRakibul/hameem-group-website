@@ -2,11 +2,11 @@
   <div class="flex justify-between items-center mb-8">
     <!-- Section Title -->
     <div>
-      <p class="text-sm font-sans tracking-tight font-medium  uppercase" :class="subtitleClass">
+      <p class="text-sm font-sans tracking-tight md:tracking-wide font-medium  uppercase" :class="subtitleClass">
         {{ subtitle }}
       </p>
       <div class="border-t-4 border-[#40160C] py-2 w-20 mt-2"></div>
-      <h2 class="text-4xl font-bold " :class="titleClass">
+      <h2 class="md:text-4xl text-xl font-bold tracking-tight " :class="titleClass">
         {{ title }}
       </h2>
     </div>
@@ -18,7 +18,7 @@
       class=" flex items-center space-x-1 font-semibold hover:underline"
       :class="buttonTextLinkColor"
       >
-      <span>{{buttonText}}</span>
+      <span class="md:text-lg text-xs" >{{buttonText}}</span>
       <icon :name="arrowIcon" class="w-5 h-5" />
     </nuxt-link>
   </div>
