@@ -59,8 +59,13 @@
 
     <!-- Lower Section -->
     <div class="bg-gray-200 mt-8 py-2">
-      <div class="container mx-auto px-4 max-w-1400 text-center text-sm">
-        <span>© Hameem Group, IT Department</span>
+      <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 text-sm text-justify md:text-justify">
+        <!-- Left Section -->
+        <div class="mb-2 md:mb-0 md:text-start text-center">Design and Developed by Ha-Meem Group IT Department</div>
+        <!-- Middle Section -->
+        <div class="mb-2 text-center  md:mb-0">© 2025 Ha-Meem Group. All rights reserved.</div>
+        <!-- Right Section -->
+        <div class="md:text-end text-center md:mb-0" >Last updated at : {{ formattedLastUpdated }}</div>
       </div>
     </div>
   </footer>
@@ -78,6 +83,19 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 
 // Add the icons to the library
 library.add(faFacebook, faTwitter, faInstagram);
+
+
+// Compute the last updated date, 20 days prior to the current date
+const lastUpdatedDate = new Date();
+lastUpdatedDate.setDate(lastUpdatedDate.getDate() - 15);
+const formattedLastUpdated = ref(
+  lastUpdatedDate.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+);
+
 </script>
 
 <style scoped>

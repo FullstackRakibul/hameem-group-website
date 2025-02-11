@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Montserrat", "sans-serif"],
+        //sans: ["Montserrat", "sans-serif"],
+        sans: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
         titillium: ['"Titillium Web"', "sans-serif"],
         fontWeight: {
           regular: 400,
@@ -21,6 +22,7 @@ export default {
       },
       colors: {
         primary: "#264156",
+        secondary: "#40160C",
       },
       backgroundImage: {
         "home-page-banner-bg-01": "url('/assets/HomePageBannerBG-01.jpg')",
