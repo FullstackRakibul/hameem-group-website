@@ -10,6 +10,8 @@ import ShortDescriptionSectionCoponent from '~/components/v2/index/ShortDescript
 import NewsAndBlogComponent from '~/components/v2/index/NewsAndBlogComponent.vue';
 import GallarySectionComponent from '~/components/v2/index/GallarySectionComponent.vue';
 import HomePageMainSlider from '~/components/v2/index/HomePageMainSlider.vue';
+import QualityAndStrengthsSection from '~/components/v2/index/QualityAndStrengthsSection.vue';
+import OurClientSection from '~/components/v2/index/OurClientSection.vue';
 </script>
 
 <template>
@@ -19,10 +21,12 @@ import HomePageMainSlider from '~/components/v2/index/HomePageMainSlider.vue';
     <ShortDescriptionSectionCoponent/>
     <!-- <MajorProductsSection/> -->
     <GallarySectionComponent/>
+    <QualityAndStrengthsSection/>
     <IndustriesSectionComponent/>               
     <TestimonialSectionComponent/>
     <SustainabilitySectionComponent/>
     <!-- <OurBuyersSection/> -->
+     <OurClientSection/>
      <NewsAndBlogComponent/>
     <ContactUsMapSectionComponent/>
   </section>

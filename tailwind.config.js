@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        //sans: ["Montserrat", "sans-serif"],
-        sans: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+        sans: ["Montserrat", "sans-serif"],
+        title: ["Figtree", "Helvetica", "Arial", "sans-serif"],
         titillium: ['"Titillium Web"', "sans-serif"],
         fontWeight: {
           regular: 400,

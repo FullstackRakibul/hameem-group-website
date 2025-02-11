@@ -1,5 +1,5 @@
 <template>
-  <section class="container mx-auto py-8 md:py-12">
+  <section class="container mx-auto py-10 md:py-16">
     <!-- Section Title -->
     <el-row class="mb-6 md:mb-10 justify-center">
       <el-col :span="24" class="">

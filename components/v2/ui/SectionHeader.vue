@@ -2,7 +2,7 @@
   <div class="flex justify-between items-center mb-8">
     <!-- Section Title -->
     <div>
-      <p class="text-sm font-sans tracking-tight md:tracking-wide font-medium  uppercase" :class="subtitleClass">
+      <p class="text-sm font-title tracking-tight md:tracking-normal font-medium  uppercase" :class="subtitleClass">
         {{ subtitle }}
       </p>
       <div class="border-t-4 border-[#40160C] py-2 w-20 mt-2"></div>
