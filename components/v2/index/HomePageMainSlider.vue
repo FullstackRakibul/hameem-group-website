@@ -1,14 +1,19 @@
 <template>
   <div class=" bg-contain bg-no-repeat relative overflow-hidden">
     <el-carousel :height="carouselHeight" autoplay :interval="3000" :loop="true">
-      <el-carousel-item key="Slider01">
+      <el-carousel-item key="Slider02">
         <div class="h-screen">
-          <WelcomeHeroSection />
+          <DenimSlider01 />
         </div>
       </el-carousel-item>
       <el-carousel-item key="Slider02">
         <div class="h-screen">
           <FactoryHeroSlider />
+        </div>
+      </el-carousel-item>
+      <el-carousel-item key="Slider01">
+        <div class="h-screen">
+          <WelcomeHeroSection />
         </div>
       </el-carousel-item>
     </el-carousel>
@@ -22,6 +27,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import WelcomeHeroSection from './sliders/WelcomeHeroSection.vue';
 import FactoryHeroSlider from './sliders/FactoryHeroSlider.vue';
+import DenimSlider01 from './sliders/DenimSlider01.vue';
 const carouselHeight = ref('800px');
 
 // Update height based on screen size

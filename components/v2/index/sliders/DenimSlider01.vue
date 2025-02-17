@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="welcome-hero-section bg-cover bg-center bg-[url('https://api.hameemgroup.com:9012/Resources/hameem-group-websile/denim-hameem-group-0002.jpeg')] bg-gray-200">
+    <section class="welcome-hero-section bg-cover bg-center bg-[url('https://api.hameemgroup.com:9012/Resources/hameem-group-websile/denim-hameem-group-0001.jpeg')] bg-gray-200">
       <!-- Overlay Layer -->
       <div class="overlay"></div>
 

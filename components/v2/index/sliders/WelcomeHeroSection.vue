@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="welcome-hero-section bg-cover bg-center bg-[url('/public/assets/v2/index/v2Hero-section-banner-hameemgroup-image-000002.jpg')] bg-gray-200">
+    <section class="welcome-hero-section bg-cover bg-center bg-[url('https://api.hameemgroup.com:9012/Resources/hameem-group-websile/denim-hameem-group-0003.jpeg')] bg-gray-200">
       <!-- Overlay Layer -->
       <div class="overlay"></div>
 
@@ -9,7 +9,7 @@
         <NuxtParticles id="tsparticles" :options="options" :@load="onLoad" />
       </div>
 
-      <div class="container text-center text-white relative z-20">
+      <div class="container text-left text-white relative z-20">
         <h1 class="text-4xl md:text-6xl max-w-4/5 font-bold mb-4">
           Empowering the Future of Fashion Manufacturing
         </h1>
