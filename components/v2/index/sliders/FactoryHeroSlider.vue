@@ -10,13 +10,13 @@
       </div>
 
       <div class="container text-left text-white relative z-20">
-        <h1 class="text-4xl md:text-6xl max-w-4/5 font-bold mb-4">
+        <h1 class="text-4xl font-title md:text-6xl max-w-4/5 font-bold mb-4">
            Leading Garment Manufacturer in Bangladesh
         </h1>
-        <p class="text-lg md:text-xl mb-6">
+        <p class="text-lg md:text-xl font-sans mb-6">
            Innovating with quality and precision for global markets.
         </p>
-        <el-button type="primary" style="background-color: #06253F; color: #fff; border-color: #fff; padding: 5px 10px; font-size:larger;" class="bg-primary" size="large">
+        <el-button type="primary" style="background-color: #06253F; color: #fff; border-color: #fff; padding: 5px 10px; font-size:larger;" class="font-title bg-primary" size="large">
           Learn More About Us Units
         </el-button>
       </div>

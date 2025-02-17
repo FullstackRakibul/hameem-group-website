@@ -2,11 +2,11 @@
   <div class="flex justify-between items-center mb-8">
     <!-- Section Title -->
     <div>
-      <p class="text-sm font-title tracking-tight md:tracking-normal font-medium  uppercase" :class="subtitleClass">
+      <p class="text-sm font-sans tracking-tight md:tracking-normal font-medium  uppercase" :class="subtitleClass">
         {{ subtitle }}
       </p>
       <div class="border-t-4 border-[#40160C] py-2 w-20 mt-2"></div>
-      <h2 class="md:text-4xl text-xl font-bold tracking-tight " :class="titleClass">
+      <h2 class="md:text-4xl text-xl font-bold tracking-tight font-title " :class="titleClass">
         {{ title }}
       </h2>
     </div>
@@ -57,7 +57,7 @@ defineProps({
     type: String,
     default: "mdi:arrow-top-right",
   },
-  subtitleClass: { type: String, default: "text-primary" },
-  titleClass: { type: String, default: "text-primary" },
+  subtitleClass: { type: String, default: "text-primary font-title md:text-lg" },
+  titleClass: { type: String, default: "text-primary font-denim" },
 });
 </script>

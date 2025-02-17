@@ -19,35 +19,35 @@
 
           <div class="hidden md:flex space-x-2 px-3">
             <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-black hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
+              class="text-primary font-title font-semibold hover:text-black hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
               Home
             </NuxtLink>
             <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md f">
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md f">
               About Us
             </NuxtLink>
             <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
               Business Units
             </NuxtLink>
             <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
               Subtainability
             </NuxtLink>
             <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
               Products
             </NuxtLink>
             <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
               Clients
             </NuxtLink>
             <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md=">
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md=">
               Gallary
             </NuxtLink>
             <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
               Contact Us
             </NuxtLink>
           </div>

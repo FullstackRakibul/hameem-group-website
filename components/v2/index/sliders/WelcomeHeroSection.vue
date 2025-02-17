@@ -10,13 +10,13 @@
       </div>
 
       <div class="container text-left text-white relative z-20">
-        <h1 class="text-4xl md:text-6xl max-w-4/5 font-bold mb-4">
+        <h1 class="text-4xl font-title md:text-6xl max-w-4/5 font-bold mb-4">
           Empowering the Future of Fashion Manufacturing
         </h1>
-        <p class="text-lg md:text-xl mb-6">
+        <p class="text-lg md:text-xl font-sans mb-6">
           From Bangladesh to the World: A Legacy of Excellence in Garments and Textiles
         </p>
-        <el-button type="primary" style="background-color: #fff; color: #264156; font-size:larger;" class="bg-primary" size="large">
+        <el-button type="primary" style="background-color: #fff; color: #264156; font-size:larger;" class="bg-primary font-title" size="large">
           Explore Our Industries
         </el-button>
       </div>

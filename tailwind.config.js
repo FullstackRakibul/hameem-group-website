@@ -4,9 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Montserrat", "sans-serif"],
-        title: ["Figtree", "Helvetica", "Arial", "sans-serif"],
-        titillium: ['"Titillium Web"', "sans-serif"],
+        sans: ["Figtree", "serif"],
+        title: ["Cardo", "sans-serif"],
+        // titillium: ['"Titillium Web"', "sans-serif"],
+        // denim: ["Cardo", "serif"],
         fontWeight: {
           regular: 400,
           medium: 500,
