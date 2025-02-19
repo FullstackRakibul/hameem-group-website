@@ -40,7 +40,7 @@ const toggleMenu = () => {
                 aria-current="page">Home</a>
             </li>
             <li>
-              <button @mouseenter="isBusinessUnitMenuOpen = true" @mouseleave="isBusinessUnitMenuOpen = false"
+              <button @mouseenter="isBusinessUnitMenuOpen = true" 
                 class="flex items-center py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0">
                 Business Units
                 <svg class="w-2.5 h-2.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -59,7 +59,7 @@ const toggleMenu = () => {
                 class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md: dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Resources</a>
             </li>
             <li>
-              <button @mouseenter="isContactMenuOpen = true" @mouseleave="isContactMenuOpen = false"
+              <button @mouseenter="isContactMenuOpen = true" 
                 class="flex items-center py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0">
                 <a href="#"
                   class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md: dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
