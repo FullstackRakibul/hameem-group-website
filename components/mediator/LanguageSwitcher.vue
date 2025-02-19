@@ -34,11 +34,17 @@ import { ArrowDown } from "@element-plus/icons-vue";
 // Available languages
 const languages = {
   en: "English",
-  fr: "French",
-  es: "Spanish",
-  de: "German",
-  bn: "Bengali",
-  hi: "Hindi",
+  fr: "French (Français)",
+  es: "Spanish (Español)",
+  de: "German (Deutsche)",
+  bn: "Bengali (বাংলা)",
+  hi: "Hindi (हिंदी)",
+  ar: "Arabic (العربية)",
+  zh: "Chinese (中文)",
+  ja: "Japanese (日本語)",
+  ko: "Korean (한국어)",
+  ru: "Russian (русский)",
+
 };
 
 // Selected language

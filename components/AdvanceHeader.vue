@@ -1,80 +1,39 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import { Menu as MenuIcon, Close as CloseIcon } from '@element-plus/icons-vue'
+import Search from './mediator/Search.vue';
+import AdvanceMegaMenu from './v2/AdvanceMegaMenu.vue';
+import LanguageSwitcher from './mediator/LanguageSwitcher.vue';
+const isScrolled = ref(false);
+
+
+// Handle scroll event
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50; // Change background after scrolling 50px
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+
+const isMenuOpen = ref(false)
+</script>
 
 <template>
   <header :class="[
     'fixed top-0 left-0 right-0 bg-slate-500 z-10 page-container transition-all duration-300',
     isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
   ]">
-    <nav class="container mx-auto ">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <div class="flex-shrink-0 flex items-center">
-          <NuxtLink to="/" class="flex">
-            <img src="/public/assets/v2/header/hameem-group-logo-primary.png" alt="Hameem Group Logo"
-              class="h-8 w-auto" />
-          </NuxtLink>
-        </div>
+<!-- here import the mega menu : start -->
+<AdvanceMegaMenu/>
 
-        <!-- Desktop Menu -->
-        <div class="flex items-center justify-between">
-
-          <div class="hidden md:flex space-x-2 px-3">
-            <NuxtLink to="/v2"
-              class="text-primary font-title font-semibold hover:text-black hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Home
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md f">
-              About Us
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Business Units
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
-              Subtainability
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
-              Products
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Clients
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md=">
-              Gallary
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Contact Us
-            </NuxtLink>
-          </div>
-
-          <!-- Download Brochure Button -->
-          <el-space>
-            <Search />
-            <div class="hidden md:block">
-              <a href="https://www.linkedin.com/company/hameemgroup" target="_blank" download
-                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]">
-                Career
-              </a>
-            </div>
-          </el-space>
-          <LanguageSwitcher />
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button @click="isMenuOpen = true"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
-            aria-label="Open main menu">
-            <MenuIcon class="h-6 w-6" />
-          </button>
-        </div>
-      </div>
-    </nav>
+<!-- here import the mega menu : end -->
 
     <!-- Mobile Menu Overlay -->
     <Transition name="fade">
@@ -134,34 +93,10 @@
         </div>
       </div>
     </Transition>
+    <LanguageSwitcher/>
   </header>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-import { Menu as MenuIcon, Close as CloseIcon } from '@element-plus/icons-vue'
-import Search from './mediator/Search.vue';
-import LanguageSwitcher from './mediator/LanguageSwitcher.vue';
-const isScrolled = ref(false);
-
-
-// Handle scroll event
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50; // Change background after scrolling 50px
-};
-
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
-
-
-
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
-
-const isMenuOpen = ref(false)
-</script>
 
 <style scoped>
 /* Fade Transition for Mobile Menu */

@@ -1,7 +1,7 @@
 <template>
   <section class="container mx-auto py-8 md:py-16 ">
     <el-row :gutter="16">
-      <el-col :xs="24" :md="16">
+      <el-col :xs="24" :md="16"> 
         <div class="text-content pr-0 md:pr-16">
           <!-- <h2 class="text-3xl md:text-6xl font-bold font-denim">
             About <span class="text-secondary">Ha-Meem</span> Group

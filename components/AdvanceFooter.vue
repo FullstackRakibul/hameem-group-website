@@ -87,7 +87,7 @@ library.add(faFacebook, faTwitter, faInstagram);
 
 // Compute the last updated date, 20 days prior to the current date
 const lastUpdatedDate = new Date();
-lastUpdatedDate.setDate(lastUpdatedDate.getDate() - 15);
+lastUpdatedDate.setDate(lastUpdatedDate.getDate() - 3);
 const formattedLastUpdated = ref(
   lastUpdatedDate.toLocaleDateString('en-GB', {
     year: 'numeric',

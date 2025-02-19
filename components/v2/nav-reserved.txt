@@ -1,0 +1,352 @@
+    <nav class="container mx-auto ">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0 flex items-center">
+          <NuxtLink to="/" class="flex">
+            <img src="/public/assets/v2/header/hameem-group-logo-primary.png" alt="Hameem Group Logo"
+              class="h-8 w-auto" />
+          </NuxtLink>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="flex items-center justify-between">
+
+          <div class="hidden md:flex space-x-2 px-3">
+            <NuxtLink to="/v2"
+              class="text-primary font-title font-semibold hover:text-black hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
+              Home
+            </NuxtLink>
+            <NuxtLink to="/v2"
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md f">
+              About Us
+            </NuxtLink>
+            <NuxtLink to="/v2"
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
+              Business Units
+            </NuxtLink>
+            <NuxtLink to="/v2"
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
+              Subtainability
+            </NuxtLink>
+            <NuxtLink to="/v2"
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
+              Products
+            </NuxtLink>
+            <NuxtLink to="/v2"
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
+              Clients
+            </NuxtLink>
+            <NuxtLink to="/v2"
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md=">
+              Gallary
+            </NuxtLink>
+            <NuxtLink to="/v2"
+              class="text-primary font-title font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
+              Contact Us
+            </NuxtLink>
+          </div>
+
+          <!-- Download Brochure Button -->
+          <el-space>
+            <Search />
+            <div class="hidden md:block">
+              <a href="https://www.linkedin.com/company/hameemgroup" target="_blank" download
+                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]">
+                Career
+              </a>
+            </div>
+          </el-space>
+          <LanguageSwitcher />
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button @click="isMenuOpen = true"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+            aria-label="Open main menu">
+            <MenuIcon class="h-6 w-6" />
+          </button>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////////////////////////
+
+
+    <script lang="ts" setup>
+import { ref } from 'vue';
+import Search from '../mediator/Search.vue';
+import { NuxtLink } from '#components';
+
+const isMenuOpen = ref(false);
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+</script>
+
+<template>
+  <header>
+    <nav class="bg-white border-gray-200 dark:border-gray-600">
+      <div class="container mx-auto flex flex-wrap justify-between items-center p-4">
+        <!-- Logo -->
+        <NuxtLink to="/v2" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="/assets/v2/header/hameem-group-logo-primary.png" class="h-8" alt="Hameem Group Logo" />
+        </NuxtLink>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button 
+            @click="toggleMenu"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            :aria-expanded="isMenuOpen ? 'true' : 'false'"
+            aria-controls="mega-menu-full-image"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Menu (and mobile fallback) -->
+        <div 
+          id="mega-menu-full-image" 
+          :class="{'block': isMenuOpen, 'hidden': !isMenuOpen}"
+          class="hidden w-full md:flex md:w-auto md:order-1"
+        >
+          <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
+            <li>
+              <NuxtLink 
+                to="/v2" 
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0"
+              >
+                Home
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink 
+                to="/v2/about" 
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0"
+              >
+                About Us
+              </NuxtLink>
+            </li>
+            <li class="relative">
+              <button 
+                @mouseenter="isMenuOpen = true"
+                @mouseleave="isMenuOpen = false"
+                class="flex items-center py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0"
+              >
+                Business Units
+                <svg class="w-2.5 h-2.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </button>
+              <!-- Mega Dropdown Desktop -->
+              <div 
+                v-show="isMenuOpen"
+                @mouseenter="isMenuOpen = true"
+                @mouseleave="isMenuOpen = false"
+                class="absolute left-0 right-0 mt-2 bg-white border-t border-gray-200 shadow-lg transition-all duration-300 z-20"
+              >
+                <div class="container mx-auto px-4 py-5">
+                  <div class="grid grid-cols-3 gap-8">
+                    <!-- Dropdown Content Columns -->
+                    <div class="space-y-4">
+                      <h3 class="text-primary font-title font-bold mb-2">Category 1</h3>
+                      <NuxtLink to="/units/unit1" class="block text-gray-700 hover:text-primary">Unit 1</NuxtLink>
+                      <NuxtLink to="/units/unit2" class="block text-gray-700 hover:text-primary">Unit 2</NuxtLink>
+                      <NuxtLink to="/units/unit3" class="block text-gray-700 hover:text-primary">Unit 3</NuxtLink>
+                    </div>
+                    <!-- Add more columns as needed -->
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <NuxtLink 
+                to="/v2/sustainability" 
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0"
+              >
+                Sustainability
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink 
+                to="/v2/products" 
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0"
+              >
+                Products
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink 
+                to="/v2/clients" 
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0"
+              >
+                Clients
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink 
+                to="/v2/gallery" 
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0"
+              >
+                Gallery
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink 
+                to="/v2/contact" 
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0"
+              >
+                Contact Us
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Right Section (Search + Career Button) -->
+        <div class="hidden md:flex items-center gap-4">
+          <Search />
+          <NuxtLink 
+            to="/careers" 
+            class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]"
+          >
+            Career
+          </NuxtLink>
+        </div>
+      </div>
+
+      <!-- Mobile Mega Menu (if needed) -->
+      <div v-if="isMenuOpen" class="md:hidden">
+        <div class="px-4 pt-2 pb-3 space-y-1">
+          <div class="border-t border-gray-200 pt-2">
+            <h3 class="px-3 py-2 text-gray-900 font-bold">Business Units</h3>
+            <NuxtLink to="/units/unit1" class="block px-6 py-2 text-gray-700 hover:bg-slate-100">
+              Unit 1
+            </NuxtLink>
+            <!-- Add more units as needed -->
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</template>
+
+<style scoped>
+.router-link-active {
+  @apply bg-slate-300 rounded-full text-black;
+}
+</style>
+
+
+
+
+///////////////////////////////
+
+
+<script lang="ts" setup>
+import { ref } from 'vue';
+import Search from '../mediator/Search.vue';
+import { NuxtLink } from '#components';
+import BusinessUnitMegamenu from './ui/BusinessUnit.megamenu.vue';
+
+
+// mega menu handle
+
+const isBusinessUnitMenuOpen = ref(false);
+const isContactMenuOpen = ref(false);
+
+
+const toggleMenu = () => {
+  isBusinessUnitMenuOpen.value = !isBusinessUnitMenuOpen.value;
+  isContactMenuOpen.value = !isContactMenuOpen.value;
+};
+</script>
+<template>
+  <header>
+    <nav class="bg-white border-gray-200 dark:border-gray-600 ">
+      <div class="flex flex-wrap justify-between items-center mx-auto container p-4">
+        <a href="https://flowbite.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="/assets/v2/header/hameem-group-logo-primary.png" class="h-8" alt="Flowbite Logo" />
+        </a>
+        <button data-collapse-toggle="mega-menu-full-image" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="mega-menu-full-image" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <div id="mega-menu-full-image" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+          <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
+            <li>
+              <a href="#"
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md: dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700"
+                aria-current="page">Home</a>
+            </li>
+            <li>
+              <button @mouseenter="isBusinessUnitMenuOpen = true" @mouseleave="isBusinessUnitMenuOpen = false"
+                class="flex items-center py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0">
+                Business Units
+                <svg class="w-2.5 h-2.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m1 1 4 4 4-4" />
+                </svg>
+              </button>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md: dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Marketplace</a>
+            </li>
+            <li>
+              <a href="#"
+                class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md: dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Resources</a>
+            </li>
+            <li>
+              <button @mouseenter="isContactMenuOpen = true" @mouseleave="isContactMenuOpen = false"
+                class="flex items-center py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:p-0">
+                <a href="#"
+                  class="block py-2 px-3 text-gray-900 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md: dark:hover:bg-gray-700  md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mega Dropdown Desktop -->
+
+      <!-- BusinessUnitMegamenu -->
+      <div v-show="isBusinessUnitMenuOpen"
+        class="absolute left-0 right-0 translate-y-0 transform-cpu  bg-white border-t border-gray-200 shadow-lg transition-all duration-300 z-20">
+        <!-- business-unit mega menu -->
+        <BusinessUnitMegamenu />
+      </div>
+
+      <!-- ContactMegamenu -->
+       <div v-show="isBusinessUnitMenuOpen"
+        class="absolute left-0 right-0 translate-y-0 transform-cpu  bg-white border-t border-gray-200 shadow-lg transition-all duration-300 z-20">
+        <!-- business-unit mega menu -->
+        <BusinessUnitMegamenu />
+      </div>
+    </nav>
+
+  </header>
+</template>
+
+<style scoped></style>
