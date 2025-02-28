@@ -51,7 +51,7 @@ const options = {
       direction: "none" as const,
     },
     number: {
-      value: 100,
+      value: 150,
     },
     opacity: {
       value: 0.4,

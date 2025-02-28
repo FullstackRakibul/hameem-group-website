@@ -2,9 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  // css: [
-  //   'ant-design-vue/dist/antd.css'
-  // ],
+  css: ["animate.css/animate.min.css"],
   modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@element-plus/nuxt', 'nuxt-swiper', '@nuxt/icon', 'nuxt-particles'],
   elementPlus: { /** Options */ },
   //css: ['~/assets/styles/main.css'],

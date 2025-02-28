@@ -1,6 +1,8 @@
 <template>
-  <section class="bg-white ">
-    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+  <section class="bg-white bg-opacity-40 " >
+    <div class="grid max-w-screen-xl px-4 md:my-40 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+    
+    >
       <!-- Left Section -->
       <div class="mr-auto place-self-center lg:col-span-7">
         <h1
@@ -10,28 +12,28 @@
 
         <!-- Statistics Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          <div class="p-4 bg-gray-50 rounded-lg ">
-            <h3 class="text-xl font-bold text-primary-700 dark:text-primary-500">48</h3>
-            <p class="text-primary dark:text-gray-400">Factories</p>
+          <div class="p-4 bg-gray-200 hover:bg-primary hover:text-white rounded-lg ">
+            <h3 class="text-xl font-bold text-primary-700 dark:text-primary-500 hover:text-white">48</h3>
+            <p class="text-primary hover:text-white">Factories</p>
           </div>
-          <div class="p-4 bg-gray-50 rounded-lg ">
-            <h3 class="text-xl font-bold text-primary-700 dark:text-primary-500">1105</h3>
-            <p class="text-primary dark:text-gray-400">Production Lines</p>
+          <div class="p-4 bg-gray-50  hover:bg-primary hover:text-white rounded-lg ">
+            <h3 class="text-xl font-bold text-primary-700 dark:text-primary-500 hover:text-white">1105</h3>
+            <p class="text-primary hover:text-white ">Production Lines</p>
           </div>
-          <div class="p-4 bg-gray-50 rounded-lg ">
-            <h3 class="text-xl font-bold text-primary-700 dark:text-primary-500">15.5M</h3>
-            <p class="text-primary dark:text-gray-400">Monthly Capacity</p>
+          <div class="p-4 bg-gray-50 hover:bg-primary  hover:text-white rounded-lg ">
+            <h3 class="text-xl font-bold text-primary-700 dark:text-primary-500 hover:text-white">15.5M</h3>
+            <p class="text-primary hover:text-white ">Monthly Capacity</p>
           </div>
-          <div class="p-4 bg-gray-50 rounded-lg ">
-            <h3 class="text-xl font-bold text-primary-700 dark:text-primary-500">1.2 M</h3>
-            <p class="text-primary dark:text-gray-400">Workforce</p>
+          <div class="p-4 bg-gray-100 hover:bg-primary  hover:text-white rounded-lg ">
+            <h3 class="text-xl font-bold text-primary-700 dark:text-primary-500 hover:text-white">1.2 M</h3>
+            <p class="text-primary hover:text-white ">Workforce</p>
           </div>
         </div>
 
         <!-- Financial Highlights -->
         <!-- <div class="mb-8">
           <h2 class="mb-4 text-2xl font-bold text-primary">Financial Overview</h2>
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-primary dark:text-gray-400">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-primary ">
             <div class="p-3 bg-gray-50 rounded-lg ">
               <p class="font-semibold">Garments</p>
               <p>US $490m+</p>
@@ -58,7 +60,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <div class="p-4 bg-gray-50 rounded-lg ">
             <h3 class="font-semibold mb-2 text-primary">Production Facilities</h3>
-            <ul class="space-y-2 text-primary dark:text-gray-400">
+            <ul class="space-y-2 text-primary ">
               <li>• 100 Embroidery Machines</li>
               <li>• 9 Sustainable Washing Plants</li>
               <li>• Auto Carton Factory</li>
@@ -68,14 +70,14 @@
 
           <div class="p-4 bg-gray-50 rounded-lg ">
             <h3 class="font-semibold mb-2 text-primary">Support Infrastructure</h3>
-            <ul class="space-y-2 text-primary dark:text-gray-400">
+            <ul class="space-y-2 text-primary ">
               <li>• 130 Covered Trucks</li>
               <li>• In-House Power Generation</li>
               <li>• HK/China Sourcing Offices</li>
               <li>• Label & Packaging Units</li>
             </ul>
           </div>
-        </div> -->
+        </div>
 
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 mt-8">
@@ -89,14 +91,14 @@
             </svg>
           </a>
           <a href="#"
-            class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center  border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 text-primary hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center  border border-gray-300 rounded-lg hover:bg-primary focus:ring-4 focus:ring-gray-100 text-primary hover:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
             Request Quotation
           </a>
         </div>
       </div>
 
       <!-- Right Section -->
-      <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+      <div class="hidden lg:mt-0 lg:col-span-5 lg:flex animate__animated animate__pulse animate__infinite">
         <img src="/public/assets/v2/denim-pant001.png" alt="factory illustration">
       </div>
     </div>
@@ -104,9 +106,24 @@
 </template>
 
 <script setup>
-// Component logic (if needed)
+defineProps({
+  bgImage: {
+    type: String,
+    default: "https://api.hameemgroup.com:9012/Resources/hameem-group-website/denim-stickyBanner-hameem-group--02.jpeg",
+  },
+  mainText: {
+    type: String,
+    default: "FOR MEN",
+  },
+  subText: {
+    type: String,
+    default: "WHO DON'T HAVE TO TRY TOO HARD",
+  },
+});
 </script>
 
 <style scoped>
-/* Custom styles can be added here */
+.animate__animated.animate__ruanimate__pulsebberBand {
+  --animate-duration: 10s;
+}
 </style>
