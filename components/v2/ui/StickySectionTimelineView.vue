@@ -57,7 +57,7 @@ const timelineRef = ref(null);
     <!-- Timeline Wrapper -->
     <div
       ref="timelineRef"
-      class="relative z-10 w-full max-w-5xl py-16 px-6 overflow-hidden"
+      class="relative z-10 w-full max-w-5xl py-10 md:px-16 overflow-hidden"
     >
       <div class="relative mt-12">
         <!-- Timeline Road -->

@@ -78,11 +78,7 @@
 
 <script setup>
 import Footer from '@/components/Footer.vue';
-import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
 
-// Add the icons to the library
-library.add(faFacebook, faTwitter, faInstagram);
 
 
 // Compute the last updated date, 20 days prior to the current date

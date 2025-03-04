@@ -4,6 +4,7 @@ import HameemAtaGlance from '~/components/denim/HameemAtaGlance.vue';
 import DenimStickySection from '~/components/v2/ui/DenimStickySection.vue';
 import RFIDPromoVideoSection from '~/components/denim/RFIDPromoVideoSection.vue';
 import OurClientSection from '~/components/v2/index/OurClientSection.vue';
+import IndustriesSection from '~/components/sections/IndustriesSection.vue';
 </script>
 <template>
   <section>
@@ -15,6 +16,7 @@ import OurClientSection from '~/components/v2/index/OurClientSection.vue';
       mainText="Our Denim Journey"
       subText="WHO DON'T HAVE TO TRY TOO HARD"
     />
+    <IndustriesSection/>
     <OurClientSection/>
   </section>
 </template>

@@ -27,7 +27,7 @@ import StickySectionTimelineView from './StickySectionTimelineView.vue';
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
 
     <!-- Content -->
-    <div class="relative z-10 px-6 container py-16">
+    <div class="relative z-10 px-6 container py-20 ">
       <h1 class="text-4xl md:text-6xl font-extrabold uppercase ">
         {{ mainText }}
       </h1>

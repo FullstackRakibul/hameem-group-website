@@ -3,7 +3,7 @@ import MainPageSlider01 from '~/components/v1/banner/MainPageSlider01.vue';
 import WelcomeSection from '~/components/v1/section/WelcomeSection.vue';
 
 import MissionVissionSection from '~/components/v1/section/MissionVissionSection.vue';
-import SustainabilitySection from '~/components/v1/section/SustainabilitySection.vue';
+import SustainabilityMapSection from '~/components/v2/sectionComponent/SustainabilityMapSection.vue';
 
 import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
 import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSection.vue';
@@ -16,7 +16,7 @@ import BusinessUnitSection from '~/components/v1/section/BusinessUnitSection.vue
     <WelcomeSection />
     <MissionVissionSection id="mission-vision" />
     <BusinessUnitSection id="business-unit" />
-    <SustainabilitySection id="sustainability" />
+    <SustainabilityMapSection id="sustainability" />
     <OurBuyersSection id="clients" />
     <BoardofDirectorsSection />
 

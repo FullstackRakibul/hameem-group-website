@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pb-16">
     <!-- Section Title -->
     <el-row class="mb-10 justify-center">
       <el-col :span="24" class="bg-primary py-40">
