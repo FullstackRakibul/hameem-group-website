@@ -1,9 +1,20 @@
+<script setup lang="ts">
+import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSectionRFID.vue';
+defineProps({
+  videoSrc: {
+    type: String,
+    required: true,
+    default: "/assets/v2/video/RFIDDIGITALVIDEO.mp4"
+  }
+});
+</script>
+
 <template>
   <!-- <section class="container mx-auto py-48"> -->
   <section class="  mx-auto py-48">
 
     <div class=" bg-cover bg-center flex flex-col justify-between items-center text-white"
-      :style="{ backgroundImage: `url('./assets/welcome-section-banner-0001.png')` }">
+      >
       <el-row :gutter="20">
         <el-col :span="12"
           class="flex justify-end items-center bg-[url('/assets/side-banner-01.png')] bg-container bg-no-repeat ">
@@ -57,11 +68,17 @@
         </el-col>
 
         <el-col :span="8">
-          <div class="bg-conatainer bg-top"
-            :style="{ backgroundImage: `url('./assets/welcome-section-banner-0001.png')` }">
-            <!-- <el-image class="" style="max-width: 300px; width: 100%;" src="/assets/denim-jacket-banner-img-01.jpg" alt="Home Banner Image" /> -->
 
-          </div>
+              <video 
+              class="bg-conatainer w-screen bg-top"
+                autoplay
+                muted
+                loop
+                playsinline
+              >
+                <source :src="videoSrc" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
         </el-col>
       </el-row>
     </div>

@@ -96,7 +96,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
       </div>
 
       <div class="group flex flex-col items-center">
-        <Icon name="hugeicons:eco-energy" style="color: black" class="text-green-600 text-4xl transition-transform animate-spin"  />
+        <Icon name="hugeicons:eco-energy" style="color: green" class="text-green-600 text-4xl transition-transform animate-spin"  />
         <!-- <span class="mt-2 text-gray-800 font-medium">Environment Sustainability</span> -->
       </div>
     </div>

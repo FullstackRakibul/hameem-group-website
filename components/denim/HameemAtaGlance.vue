@@ -4,7 +4,7 @@
     :style="{ backgroundImage: `url(${bgImage})` }"
   >
     <!-- Black Overlay -->
-    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="absolute inset-0 bg-black opacity-40"></div>
 
     <div
       class="relative grid max-w-screen-xl px-4 md:my-40 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
@@ -62,8 +62,8 @@
       </div>
 
       <!-- Right Section -->
-      <div class="hidden lg:mt-0 lg:col-span-5 lg:flex animate__animated animate__pulse animate__infinite">
-        <img src="/assets/v2/denim-pant001.png" alt="factory illustration" class="relative z-10" />
+      <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+        <img src="/assets/v2/denim-pant002.png" alt="factory illustration" class="relative z-10" />
       </div>
     </div>
   </section>

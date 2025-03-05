@@ -1,4 +1,12 @@
 <script lang="ts" setup>
+defineProps({
+  bgImage: {
+    type: String,
+    default: "https://api.hameemgroup.com:9012/Resources/hameem-group-website/headebg03.jpeg",
+  },
+});
+
+
 import { ref } from 'vue';
 import Search from '../mediator/Search.vue';
 import { NuxtLink } from '#components';
@@ -17,8 +25,8 @@ const toggleMenu = () => {
 };
 </script>
 <template>
-  <header>
-    <nav class="bg-white border-gray-200 dark:border-gray-600 ">
+  <header :style="{ backgroundImage: `url(${bgImage})` }" >
+    <nav class=" bg-white bg-opacity-70 border-gray-200 dark:border-gray-600 ">
       <div class="flex flex-wrap justify-between items-center mx-auto container p-4">
         <NuxtLink to="/v2" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="/assets/v2/header/hameem-group-logo-primary.png" class="h-8" alt="Ha-Meem Group" />

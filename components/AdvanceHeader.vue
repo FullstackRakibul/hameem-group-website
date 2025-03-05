@@ -29,6 +29,7 @@ const isMenuOpen = ref(false)
   <header :class="[
     'fixed top-0 left-0 right-0 bg-slate-500 z-10 page-container transition-all duration-300',
     isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+    
   ]">
 <!-- here import the mega menu : start -->
 <AdvanceMegaMenu/>

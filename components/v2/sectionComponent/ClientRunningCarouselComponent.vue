@@ -17,14 +17,14 @@
       <!-- First Row (Left to Right) -->
       <div class="flex space-x-8 animate-slide-right">
         <div v-for="(client, index) in repeatedClients" :key="'top-' + index" class="flex items-center">
-          <img :src="client.icon" :alt="client.name || 'Client Logo'" class="h-20 object-contain" />
+          <img :src="client.icon" :alt="client.name || 'Client Logo'" class=" h-32 object-contain" />
         </div>
       </div>
 
       <!-- Second Row (Right to Left) -->
       <div class="flex space-x-8 animate-slide-left mt-6">
         <div v-for="(client, index) in repeatedClients" :key="'bottom-' + index" class="flex items-center">
-          <img :src="client.icon" :alt="client.name || 'Client Logo'" class="h-20 object-contain" />
+          <img :src="client.icon" :alt="client.name || 'Client Logo'" class=" h-44 object-contain" />
         </div>
       </div>
     </div>
@@ -91,12 +91,12 @@ const repeatedClients = [...clients, ...clients, ...clients];
 .animate-slide-right {
   display: flex;
   width: max-content;
-  animation: slideRight 80s linear infinite;
+  animation: slideRight 95s linear infinite;
 }
 
 .animate-slide-left {
   display: flex;
   width: max-content;
-  animation: slideLeft 80s linear infinite;
+  animation: slideLeft 95s linear infinite;
 }
 </style>

@@ -8,6 +8,7 @@ import SustainabilityMapSection from '~/components/v2/sectionComponent/Sustainab
 import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
 import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSection.vue';
 import BusinessUnitSection from '~/components/v1/section/BusinessUnitSection.vue';
+import ClientRunningCarouselComponent from '~/components/v2/sectionComponent/ClientRunningCarouselComponent.vue';
 </script>
 
 <template>
@@ -17,7 +18,8 @@ import BusinessUnitSection from '~/components/v1/section/BusinessUnitSection.vue
     <MissionVissionSection id="mission-vision" />
     <BusinessUnitSection id="business-unit" />
     <SustainabilityMapSection id="sustainability" />
-    <OurBuyersSection id="clients" />
+    <!-- <OurBuyersSection id="clients" /> -->
+    <ClientRunningCarouselComponent/>
     <BoardofDirectorsSection />
 
   </section>

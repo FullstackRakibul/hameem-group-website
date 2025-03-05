@@ -11,7 +11,7 @@
           class="flex flex-col items-center justify-center w-full md:w-2/5"
         >
           <img
-            src="https://st4.depositphotos.com/14903220/22197/v/450/depositphotos_221970610-stock-illustration-abstract-sign-avatar-icon-profile.jpg"
+            src="/assets/boardofdirectors/chairman.png"
             alt="Chairman"
             class="rounded-full w-32 h-32 mb-4"
           />
@@ -34,7 +34,7 @@
         <!-- Deputy Managing Director -->
         <el-card shadow="hover" class="flex flex-col justify-center items-center text-center">
           <img
-            src="https://st4.depositphotos.com/14903220/22197/v/450/depositphotos_221970610-stock-illustration-abstract-sign-avatar-icon-profile.jpg"
+            src="/assets/boardofdirectors/DMD.png"
             alt="Deputy Managing Director"
             class="rounded-full w-32 h-32 mb-4"
           />
@@ -45,7 +45,7 @@
         <!-- Director -->
         <el-card shadow="hover" class="flex flex-col items-center">
           <img
-            src="https://st4.depositphotos.com/14903220/22197/v/450/depositphotos_221970610-stock-illustration-abstract-sign-avatar-icon-profile.jpg"
+            src="/assets/boardofdirectors/SAJID SIR .jpg"
             alt="Director"
             class="rounded-full w-32 h-32 mb-4"
           />
