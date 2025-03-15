@@ -13,22 +13,21 @@ defineProps({
   <!-- <section class="container mx-auto py-48"> -->
   <section class="  mx-auto py-48">
 
-    <div class=" bg-cover bg-center flex flex-col justify-between items-center text-white"
-      >
+    <div class=" bg-cover bg-center flex flex-col justify-between items-center text-white">
       <el-row :gutter="20">
         <el-col :span="12"
           class="flex justify-end items-center bg-[url('/assets/side-banner-01.png')] bg-container bg-no-repeat ">
           <el-row :gutter="20">
-            <el-col :span="8">
+            <el-col :span="10">
 
             </el-col>
             <el-col :span="14" class="p-6">
-              <el-space wrap :size="80">
+              <el-space wrap :size="60">
                 <el-row :gutter="20">
                   <el-col :span="24">
-                    <div class="flex bg-transparent flex-col justify-start p-6 ">
+                    <div class="flex bg-transparent flex-col justify-start py-14">
                       <h3 class="text-6xl pb-2 font-semibold font-helvetica text-[#454242] tracking-tight text-left"
-                        style="transform: scale(0.65, 1.75); transform-origin: left;">
+                        style="transform: scale(0.80, 1.75); transform-origin: left;">
                         HA MEEM
                       </h3>
 
@@ -67,18 +66,11 @@ defineProps({
           </el-row>
         </el-col>
 
-        <el-col :span="8">
-
-              <video 
-              class="bg-conatainer w-screen bg-top"
-                autoplay
-                muted
-                loop
-                playsinline
-              >
-                <source :src="videoSrc" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+        <el-col :span="10">
+          <video class="bg-conatainer w-screen bg-top" autoplay muted loop playsinline>
+            <source :src="videoSrc" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </el-col>
       </el-row>
     </div>
