@@ -4,35 +4,96 @@ const tabPosition = ref<TabsInstance['tabPosition']>('left')
 </script>
 
 <template>
-  <div class=" overflow-hidden ">
-    <el-row :gutter="20">
-      <el-col :span="8">
-        <div class="flex flex-col justify-center items-center h-full">
-          <h3 class="text-5xl text-[#727070] font-titillium text-center">BUSINESS UNITS</h3>
-        </div>
-      </el-col>
-      <el-col :span="16">
-        <el-tabs :tab-position="tabPosition" class="demo-tabs" :stretch="true" style="height: 400px">
-          <el-tab-pane label="KNIT">
-            <el-image class="transition-transform duration-300 group-hover:scale-110"
-              style="max-width: 900px; width: 100%;" src="./assets/placeHolder-01.jpg"
-              alt="Mission Vision Section banner" />
-          </el-tab-pane>
-          <el-tab-pane class="text-2xl" label="WOVEN">WOVEN</el-tab-pane>
-          <el-tab-pane label="PRINING & EMBROIDARY"> PRINING & EMBROIDARY</el-tab-pane>
-          <el-tab-pane label="DYING & FINISHING">DYING & FINISHING</el-tab-pane>
-          <el-tab-pane label="WASHING">WASHING</el-tab-pane>
-          <el-tab-pane label="PAKAGING"> PAKAGING </el-tab-pane>
-          <el-tab-pane label="TRANSPORT">TRANSPORT </el-tab-pane>
-        </el-tabs>
-      </el-col>
-    </el-row>
-  </div>
+<div class="overflow-hidden py-10">
+  <el-row :gutter="20">
+    <!-- Business Units Title -->
+    <el-col :span="8">
+      <div class="flex flex-col justify-center items-center h-full">
+        <h3 class="text-5xl text-[#727070] font-titillium text-center">BUSINESS UNITS</h3>
+      </div>
+    </el-col>
+
+    <!-- Tabs Section -->
+    <el-col :span="16">
+      <el-tabs :tab-position="tabPosition" class="demo-tabs" :stretch="true" style="height: 450px">
+        <!-- KNIT Tab -->
+        <el-tab-pane label="KNIT">
+          <el-image
+            class="transition-transform duration-300 group-hover:scale-110"
+            style="max-width: 900px; width: 100%;"
+            src="./assets/knittingSectionImage.JPG"
+            alt="Knitting Section Image"
+          />
+        </el-tab-pane>
+
+        <!-- WOVEN Tab -->
+        <el-tab-pane label="WOVEN">
+          <el-image
+            class="transition-transform duration-300 group-hover:scale-110"
+            style="max-width: 900px; width: 100%;"
+            src="./assets/wovenSectionImage.JPG"
+            alt="Woven Section Image"
+          />
+        </el-tab-pane>
+
+        <!-- PRINTING & EMBROIDERY Tab -->
+        <el-tab-pane label="PRINTING & EMBROIDERY">
+          <el-image
+            class="transition-transform duration-300 group-hover:scale-110"
+            style="max-width: 900px; width: 100%;"
+            src="./assets/printingEmbroiderySectionImage.JPG"
+            alt="Printing & Embroidery Section Image"
+          />
+        </el-tab-pane>
+
+        <!-- DYEING & FINISHING Tab -->
+        <el-tab-pane label="DYEING & FINISHING">
+          <el-image
+            class="transition-transform duration-300 group-hover:scale-110"
+            style="max-width: 900px; width: 100%;"
+            src="./assets/dyeingFinishingSectionImage.JPG"
+            alt="Dyeing & Finishing Section Image"
+          />
+        </el-tab-pane>
+
+        <!-- WASHING Tab -->
+        <el-tab-pane label="WASHING">
+          <el-image
+            class="transition-transform duration-300 group-hover:scale-110"
+            style="max-width: 900px; width: 100%;"
+            src="./assets/washingSectionImage.JPG"
+            alt="Washing Section Image"
+          />
+        </el-tab-pane>
+
+        <!-- PACKAGING Tab -->
+        <el-tab-pane label="PACKAGING">
+          <el-image
+            class="transition-transform duration-300 group-hover:scale-110"
+            style="max-width: 900px; width: 100%;"
+            src="./assets/packagingSectionImage.JPG"
+            alt="Packaging Section Image"
+          />
+        </el-tab-pane>
+
+        <!-- TRANSPORT Tab -->
+        <el-tab-pane label="TRANSPORT">
+          <el-image
+            class="transition-transform duration-300 group-hover:scale-110"
+            style="max-width: 900px; width: 100%;"
+            src="./assets/transportSectionImage.JPG"
+            alt="Transport Section Image"
+          />
+        </el-tab-pane>
+      </el-tabs>
+    </el-col>
+  </el-row>
+</div>
 
 </template>
 <style scope>
 .demo-tabs>.el-tabs__content {
-  padding: 32px;
+  padding: 15px;
   color: #727070;
   font-size: 32px;
   font-weight: 700;

@@ -1,51 +1,131 @@
+<script setup>
+defineProps({
+  bgImage: {
+    type: String,
+    default: "/assets/missionvissionsectionbg-abstruct.jpg", // Update with actual image path
+  },
+});
+</script>
+
 <template>
+  <section class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-12 " :style="{ backgroundImage: `url(${bgImage})` }">
+    <!-- Abstract Wave Background -->
+    <div class="absolute inset-0 z-0 opacity-10">
+      <svg
+        viewBox="0 0 1440 320"
+        class="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill="#1E90FF"
+          fill-opacity="0.2"
+          d="M0,160L48,149.3C96,139,192,117,288,128C384,139,480,181,576,197.3C672,213,768,203,864,181.3C960,160,1056,128,1152,117.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
 
-
-  
-  <section class="container mx-auto py-12">
-    <el-row :gutter="20" class="items-center">
+    <el-row :gutter="20" class="items-center relative z-10">
       <!-- Image Column -->
-      <el-col :span="12">
-        <div class=" relative overflow-hidden rounded-lg ">
+      <el-col :xs="24" :md="12">
+        <div class="relative overflow-hidden rounded-lg">
           <el-image
-            class="transition-transform duration-300 group-hover:scale-110"
+            class="transition-transform duration-300 hover:scale-110"
             style="max-width: 500px; width: 100%;"
-            src="./assets/WEB-DESIGN-2025-2-section-mission-vision.jpg"
+            src="./assets/missionvission-sectionImage.jpg"
             alt="Mission Vision Section banner"
           />
         </div>
       </el-col>
 
       <!-- Content Column -->
-      <el-col :span="12">
+      <el-col :xs="24" :md="12">
         <!-- Section Title -->
-        <el-row class="mb-6">
-          <el-col :span="24" class="text-left">
-            <h2 class="text-5xl font-helvetica font-semibold text-gray">OUR VISION......</h2>
-            <p class="text-lg text-gray-800 mt-2">
-              To provide excellence and solutions in denim and non-denim textile products to humankind th responsible and as much sustainable ways, for fulfillment of their life-style need, desires and expressions.
-            </p>
+        <div class="text-left   py-6 ">
+          <h2 class="text-5xl font-bold text-black animate__animated animate__fadeInUp">
+            Our Vision & Mission
+          </h2>
+          <p class="text-lg text-gray-600 mt-2 animate__animated animate__fadeInUp animate__delay-1s">
+            Ha-Meem Group's mission is to provide quality products on time, while also aiming to eliminate poverty and promote industrialization, with a vision of becoming a leading wholesale clothing manufacturer in Bangladesh and globally.
+          </p>
+        </div>
+
+        <!-- Key Points Section -->
+        <el-row :gutter="20" class="mt-6">
+          <!-- Mission Points -->
+          <el-col :span="12">
+            <el-card class="key-point animate__animated animate__zoomIn">
+              <Icon name="hugeicons:quality" style="color: black" class="text-green-600 text-4xl transition-transform animate-pulse" />
+              <h3 class="text-xl font-semibold text-gray-800 mt-2">Quality Products</h3>
+              <p class="text-gray-600">We deliver high-quality products on time.</p>
+            </el-card>
+          </el-col>
+          <el-col :span="12">
+            <el-card class="key-point animate__animated animate__zoomIn animate__delay-1s">
+              <Icon name="hugeicons:poverty" style="color: black" class="text-green-600 text-4xl transition-transform animate-pulse" />
+              <h3 class="text-xl font-semibold text-gray-800 mt-2">Eliminate Poverty</h3>
+              <p class="text-gray-600">Remove unemployment and poverty.</p>
+            </el-card>
+          </el-col>
+          <el-col :span="12" class="mt-6">
+            <el-card class="key-point animate__animated animate__zoomIn animate__delay-2s">
+              <Icon name="hugeicons:industry" style="color: black" class="text-green-600 text-4xl transition-transform animate-pulse" />
+              <h3 class="text-xl font-semibold text-gray-800 mt-2">Industrialization</h3>
+              <p class="text-gray-600">We strive to further industrialization.</p>
+            </el-card>
+          </el-col>
+
+          <!-- Vision Points -->
+          <el-col :span="12" class="mt-6">
+            <el-card class="key-point animate__animated animate__zoomIn animate__delay-3s">
+              <Icon name="hugeicons:trophy" style="color: black" class="text-green-600 text-4xl transition-transform animate-pulse" />
+              <h3 class="text-xl font-semibold text-gray-800 mt-2">Leading Manufacturer</h3>
+              <p class="text-gray-600">Leading clothing manufacturer in BD.</p>
+            </el-card>
+          </el-col>
+          <el-col :span="12" class="mt-6">
+            <el-card class="key-point animate__animated animate__zoomIn animate__delay-4s">
+              <Icon name="hugeicons:target" style="color: black" class="text-green-600 text-4xl transition-transform animate-pulse" />
+              <h3 class="text-xl font-semibold text-gray-800 mt-2">Industry Breakthrough</h3>
+              <p class="text-gray-600">To break through in the textile industry.</p>
+            </el-card>
+          </el-col>
+          <el-col :span="12" class="mt-6">
+            <el-card class="key-point animate__animated animate__zoomIn animate__delay-5s">
+              <Icon name="hugeicons:education" style="color: black" class="text-green-600 text-4xl transition-transform animate-pulse" />
+              <h3 class="text-xl font-semibold text-gray-800 mt-2">Employee Welfare</h3>
+              <p class="text-gray-600">Ensure educational and financial security.</p>
+            </el-card>
           </el-col>
         </el-row>
       </el-col>
     </el-row>
   </section>
-
 </template>
 
-<script setup>
-import { ElImage, ElRow, ElCol, ElDivider } from "element-plus";
 
-
-</script>
 
 <style scoped>
-/* Hover effect for the image */
-.group:hover .group-hover\:scale-110 {
+/* Hover effect */
+.hover\:scale-110:hover {
   transform: scale(1.1);
 }
 
-.group:hover .group-hover\:opacity-20 {
-  opacity: 0.2;
+/* Primary color theme */
+.text-primary {
+  color: #1E90FF; /* Adjust primary color */
+}
+
+.bg-primary {
+  background-color: #1E90FF;
+}
+
+/* Key Point Card Styling */
+.key-point {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.key-point:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 </style>
