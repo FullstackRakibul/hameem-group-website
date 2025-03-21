@@ -9,6 +9,7 @@ import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
 import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSection.vue';
 import BusinessUnitSection from '~/components/v1/section/BusinessUnitSection.vue';
 import ClientRunningCarouselComponent from '~/components/v2/sectionComponent/ClientRunningCarouselComponent.vue';
+import ContactUsMapSectionComponent from '~/components/v2/index/ContactUsMapSectionComponent.vue';
 </script>
 
 <template>
@@ -21,6 +22,7 @@ import ClientRunningCarouselComponent from '~/components/v2/sectionComponent/Cli
     <!-- <OurBuyersSection id="clients" /> -->
     <ClientRunningCarouselComponent/>
     <BoardofDirectorsSection />
+    <ContactUsMapSectionComponent />
 
   </section>
 </template>

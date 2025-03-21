@@ -4,11 +4,10 @@
       <!-- Section Title & Description -->
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-6xl font-bold text-gray-800">
-          Ha-Meem Group Clients
+          Trusted by Global Fashion Leaders
         </h2>
         <p class="text-lg text-gray-600 mt-3 max-w-2xl mx-auto">
-          We collaborate with some of the world’s leading fashion brands, ensuring premium quality, sustainable
-          practices, and innovation in apparel manufacturing.
+          Partnering with the world’s most renowned fashion brands, we deliver excellence through premium craftsmanship, sustainable innovation, and a commitment to quality.
         </p>
       </div>
     </div>

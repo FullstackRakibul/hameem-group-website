@@ -3,7 +3,7 @@
     <!-- Search Icon Button -->
     <button
       @click="toggleSearch"
-      class="inline-flex items-center justify-center w-10 h-10 rounded-full shadow-md bg-white text-black "
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full  bg-white text-black "
     >
       <el-icon>
         <search />
@@ -13,7 +13,7 @@
     <!-- Popup Search Box (below the icon) -->
     <div
       v-if="isSearchOpen"
-      class="absolute top-full mt-2 right-0 bg-white shadow-lg rounded-full z-50 w-80 transition-transform duration-300 ease-in-out hover:scale-105"
+      class="absolute top-full mt-2 right-0 bg-white shadow-lg rounded-full z-50 w-80 transition-transform duration-300 ease-in-out "
     >
       <el-input
         v-model="searchQuery"

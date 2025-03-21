@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-4 right-4 z-50">
+  <div class="fixed bottom-9 right-4 z-50">
     <el-dropdown trigger="hover" placement="bottom-end">
       <button
         class="flex items-center px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"

@@ -8,7 +8,7 @@
           <ul class="hidden mb-4 space-y-4 md:mb-0 md:block" aria-labelledby="mega-menu-full-image-button">
             <li>
               <a href="#" class="hover:underline hover:text-primary ">
-                Online Stores
+                Our Business Units
               </a>
             </li>
             <li>

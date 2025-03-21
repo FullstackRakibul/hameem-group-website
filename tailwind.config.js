@@ -16,7 +16,15 @@ export default {
         },
       },
       container: {
-        padding: "1rem",
+        center: true, // Ensures container is always centered
+        padding: "1rem", // Adds padding inside the container
+        screens: {
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1280px",
+          "2xl": "1536px",
+        },
       },
       maxWidth: {
         1400: "1400px",

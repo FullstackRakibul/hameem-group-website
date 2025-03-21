@@ -1,6 +1,6 @@
 <template>
   <div :style="{ backgroundImage: `url('/assets/ha-meem-group-banner-main-bg-01.png')` }"
-    class="bg-cover bg-center bg-no-repeat relative">
+    class="bg-cover h-screen bg-center bg-no-repeat relative">
     <!-- Carousel Section -->
     <el-carousel :height="carouselHeight" autoplay :interval="5000" :loop="true">
       <!-- Garments Slide -->
@@ -39,7 +39,7 @@ const carouselHeight = ref('800px');
 const updateHeight = () => {
   const width = window.innerWidth;
   if (width >= 1024) {
-    carouselHeight.value = '800px';
+    carouselHeight.value = '1024px';
   } else if (width >= 768) {
     carouselHeight.value = '600px';
   } else {

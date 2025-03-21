@@ -1,6 +1,6 @@
 <template>
       <section class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-12 " :style="{ backgroundImage: `url(${bgImage})` }">
-    <div class="container mx-auto px-6">
+    <div class=" px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         
         <!-- Left Section - Icon, Title & Button -->
