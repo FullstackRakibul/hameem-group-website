@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-2 h-screen bg-black bg-cover bg-center flex flex-col justify-center items-center text-white"
+  <div class="mx-2 h-screen bg-black bg-cover bg-opacity-45 bg-center flex flex-col justify-center items-center text-white"
     :style="{ backgroundImage: `url('./assets/ha-meem-group-denim-banner-0001.jpg')` }">
 
     <div class=" py-5 w-4/5 rounded-md ">

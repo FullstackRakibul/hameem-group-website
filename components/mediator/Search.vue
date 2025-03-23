@@ -3,11 +3,13 @@
     <!-- Search Icon Button -->
     <button
       @click="toggleSearch"
-      class="inline-flex items-center justify-center w-10 h-10 rounded-full  bg-white text-black "
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full   text-black "
     >
-      <el-icon>
-        <search />
-      </el-icon>
+    
+      <!-- <el-icon class="text-bold">
+        <search class="text-bold" />
+      </el-icon> -->
+      <Icon name="hugeicons:search-02" class="text-xl text-bold"/>
     </button>
 
     <!-- Popup Search Box (below the icon) -->

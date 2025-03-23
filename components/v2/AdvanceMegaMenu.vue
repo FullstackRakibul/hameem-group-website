@@ -1,229 +1,145 @@
-<script lang="ts" setup>
-defineProps({
-  bgImage: {
-    type: String,
-    default: "https://api.hameemgroup.com:9012/Resources/hameem-group-website/headebg03.jpeg",
-  },
-});
-
-import { ref } from 'vue';
-import { NuxtLink } from '#components';
-import BusinessUnitMegamenu from './ui/BusinessUnit.megamenu.vue';
-import ContactUsMapSectionComponent from './index/ContactUsMapSectionComponent.vue';
-
-
-const isScrolled = ref(false);
-const isMenuOpen = ref(false);
-const isBusinessUnitMenuOpen = ref(false);
-const isContactMenuOpen = ref(false);
-
-
-
-// Handle scroll event
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50; // Change background after scrolling 50px
-};
-
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
-
-
-
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
-
-
-let menuCloseTimeout: ReturnType<typeof setTimeout> | null = null;
-
-// Delay closing the menu
-const startCloseBusinessUnitMenu = () => {
-  menuCloseTimeout = setTimeout(() => {
-    isBusinessUnitMenuOpen.value = false;
-  }, 200); // Adjust delay as needed (200ms)
-};
-
-// Cancel closing when re-entering the menu
-const cancelCloseBusinessUnitMenu = () => {
-  if (menuCloseTimeout) {
-    clearTimeout(menuCloseTimeout);
-  }
-};
-
-
-
-</script>
-
 <template>
-  <header :class="[
-    'fixed top-0 left-0 right-0 bg-slate-500 z-10 page-container transition-all duration-300',
-    isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
-  ]">
-    <nav class="lg:px-16 md:px-14 px-3">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <div class="flex-shrink-0 flex items-center">
-          <NuxtLink to="/" class="flex">
-            <img src="/public/assets/v2/header/hameem-group-logo-primary.png" alt="Hameem Group Logo"
-              class="h-8 w-auto" />
-          </NuxtLink>
+  <!-- Desktop Navigation -->
+  <ul class="hidden md:flex items-center space-x-6">
+    <li v-for="item in menuItems" :key="item.label" class="relative" @mouseenter="item.key && openMenu(item.key)"
+      @mouseleave="item.key && closeMenuWithDelay(item.key)">
+      <NuxtLink :to="item.to || '#'" @click.prevent="item.children ? null : null"
+        class="text-lg font-medium hover:text-blue-600">
+        {{ item.label }}
+      </NuxtLink>
+
+      <!-- Mega Menu Component (for Business Units, etc.) -->
+      <Transition enter-active-class="transition-opacity duration-300" enter-from-class="opacity-0"
+        enter-to-class="opacity-100" leave-active-class="transition-opacity duration-300" leave-from-class="opacity-100"
+        leave-to-class="opacity-0">
+        <div v-if="openDropdown === item.key && item.megaComponent" @mouseenter="cancelClose(item.key)"
+          @mouseleave="closeMenuWithDelay(item.key)" class="container rounded-md absolute top-9 bg-white shadow-lg border-t z-50 w-[900px] max-w-screen-lg">
+          <component :is="item.megaComponent" />
         </div>
+      </Transition>
+    </li>
+  </ul>
 
-        <!-- Desktop Menu -->
-        <div class="flex items-center justify-between">
-
-          <div class="hidden md:flex space-x-2 px-3">
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-black hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Home
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md f">
-              About Us
-            </NuxtLink>
-            <NuxtLink 
-              to="#" 
-              @mouseenter="isBusinessUnitMenuOpen = true" 
-              @mouseleave="startCloseBusinessUnitMenu" 
-              class="text-lg font-medium hover:text-blue-600"
-            >
-              Business Units
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
-              Subtainability
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
-              Products
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Clients
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md=">
-              Gallary
-            </NuxtLink>
-            <NuxtLink to="/contact" @click="isMenuOpen = false"
-              class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-              Contact Us
-            </NuxtLink>
-          </div>
-
-          <!-- Download Brochure Button -->
-          <el-space>
-            <Search />
-            <div class="hidden md:block">
-              <a href="https://www.linkedin.com/company/hameemgroup" target="_blank" download
-                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]">
-                Career
-              </a>
-            </div>
-          </el-space>
-          <LanguageSwitcher />
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button @click="isMenuOpen = true"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
-            aria-label="Open main menu">
-            <MenuIcon class="h-6 w-6" />
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <Transition name="fade">
-      <div v-if="isMenuOpen" class="fixed inset-0 z-50 ">
-        <div class="absolute inset-0 bg-black opacity-50">
-          <div class="absolute top-0 right-0 w-3/4 max-w-xs bg-white shadow-lg h-full p-4 overflow-y-auto">
-            <div class="flex items-center justify-between mb-8">
-              <div class="flex items-center">
-                <img src="/public//assets/group-logo.png" alt="Hameem Group Logo" class="h-8 w-auto" />
-                <span class="ml-2 text-xl font-bold text-gray-800">Ha-Meem Group</span>
-              </div>
-              <button @click="isMenuOpen = false" class="text-gray-700 hover:text-blue-600 focus:outline-none"
-                aria-label="Close menu">
-                <CloseIcon class="h-6 w-6" />
+  <!-- Mobile Navigation (overlay and slide-in menu) -->
+  <div class="md:hidden">
+    <div v-if="props.mobileOpen" class="fixed inset-0 bg-black bg-opacity-50 z-40" @click="emitCloseMobile"></div>
+    <Transition enter-active-class="transition duration-300 transform" enter-from-class="translate-x-full"
+      enter-to-class="translate-x-0" leave-active-class="transition duration-300 transform"
+      leave-from-class="translate-x-0" leave-to-class="translate-x-full">
+      <nav v-if="props.mobileOpen" class="fixed top-0 right-0 h-full w-64 bg-white shadow-xl p-4 z-50">
+        <ul>
+          <li v-for="item in menuItems" :key="'mobile-' + item.label" class="mb-1">
+            <div v-if="item.children">
+              <button @click="toggleSubMenu(item.key)"
+                class="w-full flex justify-between items-center py-2 px-3 text-left text-lg font-medium">
+                <span>{{ item.label }}</span>
               </button>
+              <ul v-if="openDropdown === item.key" class="mt-1 mb-2 ml-4 border-l border-gray-300">
+                <li v-for="child in item.children" :key="'mobile-' + item.label + '-' + child.label">
+                  <NuxtLink :to="child.to" class="block py-1 px-3 text-gray-700 hover:text-blue-600"
+                    @click="emitCloseMobile">
+                    {{ child.label }}
+                  </NuxtLink>
+                </li>
+              </ul>
             </div>
-            <nav class="flex flex-col space-y-4">
-              <NuxtLink to="/" @click="isMenuOpen = false"
-                class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-                Home
+            <div v-else>
+              <NuxtLink :to="item.to" class="block py-2 px-3 text-lg font-medium hover:text-blue-600"
+                @click="emitCloseMobile">
+                {{ item.label }}
               </NuxtLink>
-              <NuxtLink to="/about" @click="isMenuOpen = false"
-                class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-                About Us
-              </NuxtLink>
-              <div 
-                v-show="isBusinessUnitMenuOpen" 
-                @mouseenter="isBusinessUnitMenuOpen = true" 
-                @mouseleave="startCloseBusinessUnitMenu"
-                class="absolute left-0 right-0 bg-white shadow-lg border-t"
-              >
-                <BusinessUnitMegamenu />
-              </div>
-              <NuxtLink to="/" @click="isMenuOpen = false"
-                class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-                Subtainability
-              </NuxtLink>
-              <NuxtLink to="/" @click="isMenuOpen = false"
-                class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-                Products
-              </NuxtLink>
-              <NuxtLink to="/sister-concerns/refat-garments-ltd" @click="isMenuOpen = false"
-                class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-                Clients
-              </NuxtLink>
-              <NuxtLink to="/sister-concerns/refat-garments-ltd" @click="isMenuOpen = false"
-                class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-                Gallary
-              </NuxtLink>
-
-              <NuxtLink to="/contact" @click="isMenuOpen = false"
-                class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-                Contact Us
-              </NuxtLink>
-              <el-space>
-                <Search />
-                <div class="hidden md:block">
-                  <a href="https://www.linkedin.com/company/hameemgroup" target="_blank" download
-                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]">
-                    Career
-                  </a>
-                </div>
-              </el-space>
-            </nav>
-          </div>
-
-          <div 
-            v-show="isBusinessUnitMenuOpen" 
-            @mouseenter="cancelCloseBusinessUnitMenu" 
-            @mouseleave="startCloseBusinessUnitMenu"
-            class="absolute left-0 right-0 bg-white shadow-lg border-t"
-          >
-            <BusinessUnitMegamenu />
-          </div>
-
-
-          <div v-show="isContactMenuOpen" @mouseenter="isContactMenuOpen = true" @mouseleave="isContactMenuOpen = false"
-            class="absolute left-0 right-0 bg-white shadow-lg border-t">
-            <ContactUsMapSectionComponent />
-          </div>
-        </div>
-      </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
     </Transition>
-  </header>
+  </div>
 </template>
 
+<script setup>
+import { ref, defineAsyncComponent } from 'vue';
+// Props for mobile menu visibility
+const props = defineProps({
+  mobileOpen: {
+    type: Boolean,
+    default: false
+  }
+});
+const emit = defineEmits(['closeMobileMenu']);
+
+// Define the menu structure, now including mega menu components
+const BusinessUnitMegamenu = defineAsyncComponent(() => import('./ui/BusinessUnit.megamenu.vue'));
+
+const menuItems = [
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
+  {
+    label: 'Business Units',
+    key: 'business-units',
+    megaComponent: BusinessUnitMegamenu,
+    fullWidth: true,
+  },
+  { label: 'Sustainability', to: '/sustainability' },
+  {
+    label: 'Products',
+    key: 'products',
+    children: [
+      { label: 'Product A', to: '/products/a' },
+      { label: 'Product B', to: '/products/b' }
+    ]
+  },
+  { label: 'Clients', to: '/clients' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Contact Us', to: '/contact' }
+];
+
+// State to track open dropdowns
+const openDropdown = ref(null);
+let closeTimeout = null;
+
+// Open a dropdown menu (for desktop hover)
+function openMenu(key) {
+  if (closeTimeout) {
+    clearTimeout(closeTimeout);
+    closeTimeout = null;
+  }
+  openDropdown.value = key;
+}
+
+// Close a dropdown menu with a slight delay (on desktop hover leave)
+function closeMenuWithDelay(key) {
+  if (closeTimeout) {
+    clearTimeout(closeTimeout);
+  }
+  closeTimeout = setTimeout(() => {
+    if (openDropdown.value === key) {
+      openDropdown.value = null;
+    }
+  }, 200);
+}
+
+// Cancel the pending close if the user re-enters the menu quickly (desktop hover)
+function cancelClose(key) {
+  if (closeTimeout) {
+    clearTimeout(closeTimeout);
+    closeTimeout = null;
+  }
+}
+
+// Toggle a sub-menu open/closed on mobile (accordion behavior)
+function toggleSubMenu(key) {
+  openDropdown.value = (openDropdown.value === key ? null : key);
+}
+
+// Emit an event to close the mobile menu (when clicking a link or backdrop on mobile)
+function emitCloseMobile() {
+  emit('closeMobileMenu');
+}
+</script>
+
 <style scoped>
-.text-lg {
-  display: block;
-  padding: 8px 16px;
+/* Rotate arrow on submenu toggle */
+.material-icons.rotate-90 {
+  transform: rotate(90deg);
 }
 </style>

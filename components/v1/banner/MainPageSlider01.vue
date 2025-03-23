@@ -16,7 +16,7 @@
         </div>
       </el-carousel-item>
       <el-carousel-item key="denim">
-        <div class="h-screen mx-24">
+        <div class="h-screen">
           <HeroImageSectionTwo />
         </div>
       </el-carousel-item>

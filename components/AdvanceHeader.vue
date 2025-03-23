@@ -1,177 +1,53 @@
-
 <template>
   <header :class="[
-    'fixed top-0 left-0 right-0 bg-slate-500 z-10 page-container transition-all duration-300',
+    'fixed top-0 left-0 right-0 bg-slate-500 z-10 transition-all duration-300 flex items-center justify-between w-full lg:px-16 md:px-14 p-3',
     isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
   ]">
-    <nav class=" w-full lg:px-16 md:px-14 px-3">
-      <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
-        <div class="flex-shrink-0 flex items-center">
-          <NuxtLink to="/" class="flex">
-            <img src="/public/assets/group-logo.png" alt="Hameem Group Logo"
-              class="h-12 w-auto" />
-          </NuxtLink>
-        </div>
+    <!-- Left side: Logo -->
+    <NuxtLink to="/">
+      <img src="/public/assets/group-logo.png" alt="Logo" class="h-10" />
+    </NuxtLink>
 
-        <!-- Desktop Menu -->
-        <div class="flex items-center justify-between">
+    <!-- Right side: Language switcher, mobile menu toggle -->
+    <LanguageSwitcher />
+    <button class="md:hidden p-2" @click="isMobileMenuOpen = !isMobileMenuOpen">
+      <!-- Hamburger icon -->
+      <span class="material-icons text-3xl">menu</span>
+    </button>
 
-          <div class="hidden md:flex space-x-2 px-3">
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-black hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Home
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md f">
-              About Us
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Business Units
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
-              Subtainability
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md ">
-              Products
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Clients
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md=">
-              Gallary
-            </NuxtLink>
-            <NuxtLink to="/v2"
-              class="text-primary font-semibold hover:text-primary hover:bg-slate-300 hover:rounded-full px-3 py-2 text-md">
-              Contact Us
-            </NuxtLink>
-          </div>
+    <!-- MegaMenu component: handles all navigation links -->
+    <AdvanceMegaMenu :mobileOpen="isMobileMenuOpen" @closeMobileMenu="isMobileMenuOpen = false" />
 
-          <!-- Download Brochure Button -->
-          <el-space class="bg-white rounded-full ">
-            <Search />
-            <div class="hidden md:block">
-              <a href="https://www.linkedin.com/company/hameemgroup" target="_blank" download
-                class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]">
-                Career
-              </a>
-            </div>
-          </el-space>
-          <LanguageSwitcher />
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button @click="isMenuOpen = true"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
-            aria-label="Open main menu">
-            <MenuIcon class="h-6 w-6" />
-          </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <Transition name="fade">
-      <div v-if="isMenuOpen" class="fixed inset-0 z-50 ">
-        <div class="absolute inset-0 bg-black opacity-50" @click="isMenuOpen = false"></div>
-        <div class="absolute top-0 right-0 w-3/4 max-w-xs bg-white shadow-lg h-full p-4 overflow-y-auto">
-          <div class="flex items-center justify-between mb-8">
-            <div class="flex items-center">
-              <img src="/public//assets/group-logo.png" alt="Hameem Group Logo" class="h-8 w-auto" />
-              <span class="ml-2 text-xl font-bold text-gray-800">Ha-Meem Group</span>
-            </div>
-            <button @click="isMenuOpen = false" class="text-gray-700 hover:text-blue-600 focus:outline-none"
-              aria-label="Close menu">
-              <CloseIcon class="h-6 w-6" />
-            </button>
-          </div>
-          <nav class="flex flex-col space-y-4">
-            <NuxtLink to="/" @click="isMenuOpen = false" class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-              Home
-            </NuxtLink>
-            <NuxtLink to="/about" @click="isMenuOpen = false"
-              class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-              About Us
-            </NuxtLink>
-            <NuxtLink to="/" @click="isMenuOpen = false" class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-              Business Units
-            </NuxtLink>
-            <NuxtLink to="/" @click="isMenuOpen = false" class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-              Subtainability
-            </NuxtLink>
-            <NuxtLink to="/" @click="isMenuOpen = false" class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-              Products
-            </NuxtLink>
-            <NuxtLink to="/sister-concerns/refat-garments-ltd" @click="isMenuOpen = false"
-              class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-              Clients
-            </NuxtLink>
-            <NuxtLink to="/sister-concerns/refat-garments-ltd" @click="isMenuOpen = false"
-              class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-              Gallary
-            </NuxtLink>
-
-            <NuxtLink to="/contact" @click="isMenuOpen = false"
-              class="text-gray-700 hover:text-blue-600 text-lg font-medium">
-              Contact Us
-            </NuxtLink>
-            <el-space>
-              <Search />
-              <div class="hidden md:block">
-                <a href="https://www.linkedin.com/company/hameemgroup" target="_blank" download
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-[#264156] hover:bg-[#5C2D23]">
-                  Career
-                </a>
-              </div>
-            </el-space>
-          </nav>
-        </div>
-      </div>
-    </Transition>
+    <el-space class="bg-white rounded-full px-1 ">
+      <Search />
+      <span class="p-2 flex items-center rounded-full bg-primary text-white">
+        <Icon name="hugeicons:menu-circle" />
+      </span>
+    </el-space>
   </header>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-import { Menu as MenuIcon, Close as CloseIcon } from '@element-plus/icons-vue'
+<script setup>
+import AdvanceMegaMenu from './v2/AdvanceMegaMenu.vue';
 import Search from './mediator/Search.vue';
 import LanguageSwitcher from './mediator/LanguageSwitcher.vue';
-const isScrolled = ref(false);
+import { ref } from 'vue';
+
+const isMobileMenuOpen = ref(false);
+
 
 
 // Handle scroll event
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50; // Change background after scrolling 50px
+  isScrolled.value = window.scrollY > 50;
 };
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
 });
 
-
-
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
 
-const isMenuOpen = ref(false)
 </script>
-
-<style scoped>
-/* Fade Transition for Mobile Menu */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
