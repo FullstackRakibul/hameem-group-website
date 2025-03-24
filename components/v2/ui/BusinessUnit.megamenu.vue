@@ -1,179 +1,49 @@
-<script lang="ts" setup>
-import type { TabsInstance } from 'element-plus'
-import { ref } from 'vue'
-
-const tabPosition = ref<TabsInstance['tabPosition']>('left')
-
-// Image lists for each section
-const images = {
-  knit: [
-    './assets/knitting1.JPG',
-    './assets/knitting2.JPG',
-    './assets/knitting3.JPG'
-  ],
-  woven: [
-    './assets/woven1.JPG',
-    './assets/woven2.JPG',
-    './assets/woven3.JPG'
-  ],
-  printingEmbroidery: [
-    './assets/printing1.JPG',
-    './assets/printing2.JPG',
-    './assets/printing3.JPG'
-  ],
-  dyeingFinishing: [
-    './assets/dyeing1.JPG',
-    './assets/dyeing2.JPG',
-    './assets/dyeing3.JPG'
-  ],
-  washing: [
-    './assets/washing1.JPG',
-    './assets/washing2.JPG',
-    './assets/washing3.JPG'
-  ],
-  packaging: [
-    './assets/packaging1.JPG',
-    './assets/packaging2.JPG',
-    './assets/packaging3.JPG'
-  ],
-  transport: [
-    './assets/transport1.JPG',
-    './assets/transport2.JPG',
-    './assets/transport3.JPG'
-  ]
-}
+<script setup lang="ts">
+const industries = [
+  { label: 'Woven', description: 'Our woven factories are equipped with 300 production lines in six different locations.', icon: 'hugeicons:factory' },
+  { label: 'Denim Mill', description: 'A dream project of Ha‐Meem group located in a serene surrounding of 100 acres.', icon: 'hugeicons:shirt-01' },
+  { label: 'Laundry', description: 'All the washing plants have dry process capability with required equipment.', icon: 'hugeicons:dish-washer' },
+  { label: 'Sweater', description: 'Two Sweater Units consisting of 400 Jacquard Stall (German) machines.', icon: 'hugeicons:t-shirt' },
+  { label: 'Jute Mill', description: 'M.H. Jute Mills Ltd., one of the growing industry of Ha-Meem Group.', icon: 'hugeicons:leaf-03' },
+  { label: 'Design', description: 'Ha‐Meem has a resourceful design team lead by experienced designers.', icon: 'hugeicons:paint-board' },
+  { label: 'Newspaper', description: 'Samakal, a popular & widely circulated national daily newspaper in Bangladesh.', icon: 'hugeicons:news-01' },
+  { label: 'News Channel', description: 'Channel-24, a very popular news channel covering news all over Bangladesh.', icon: 'hugeicons:tv-01' },
+  { label: 'Ancillary', description: 'Embroidery Factory, Printing Factory, Carton Factory, Poly Bag Industry, Label Factory.', icon: 'hugeicons:cpu-settings' }
+];
 </script>
 
+
 <template>
-  <div class="overflow-hidden py-10">
-    <el-row :gutter="20">
-      <!-- Business Units Title -->
-      <el-col :span="8">
-        <div class="flex flex-col justify-center items-center h-full">
-          <h3 class="text-5xl text-[#727070] font-titillium text-center">BUSINESS UNITS</h3>
+  <div id="mega-menu-full-image-dropdown" class="bg-white border-gray-200 shadow-xs border-y">
+    <div class="grid container px-4 py-5 mx-auto text-sm gap-5 text-gray-600 md:grid-cols-3 md:px-2">
+      <div class="md:col-span-2">
+        <p class="text-lg font-bold mb-4">Our Industries</p>
+        <p class="text-gray-600 mb-6">Ha-Meem Group has ventured into many industries in Bangladesh after its inception.
+          It has become one of the fastest-growing Group of Companies in the country.</p>
+        <div class="grid grid-cols-2 gap-6">
+          <div v-for="(industry, index) in industries" :key="index"
+            class="flex items-start space-x-4 hover:bg-primary hover:text-white rounded-md p-2 transition-colors duration-300 group">
+            <Icon :name="industry.icon" class="text-primary w-10 h-10 group-hover:text-white text-2xl" />
+            <div>
+              <p class="font-semibold text-gray-800 group-hover:text-white">{{ industry.label }}</p>
+              <p class="text-sm text-gray-600 group-hover:text-white">{{ industry.description }}</p>
+            </div>
+          </div>
         </div>
-      </el-col>
-
-      <!-- Tabs Section -->
-      <el-col :span="16">
-        <el-tabs :tab-position="tabPosition" class="demo-tabs" :stretch="true" style="height: 450px">
-          
-          <!-- KNIT Tab -->
-          <el-tab-pane label="KNIT">
-            <el-carousel indicator-position="outside">
-              <el-carousel-item v-for="(img, index) in images.knit" :key="index">
-                <el-image :src="img" class="carousel-image" alt="Knitting Section Image" />
-              </el-carousel-item>
-            </el-carousel>
-          </el-tab-pane>
-
-          <!-- WOVEN Tab -->
-          <el-tab-pane label="WOVEN">
-            <el-carousel indicator-position="outside">
-              <el-carousel-item v-for="(img, index) in images.woven" :key="index">
-                <el-image :src="img" class="carousel-image" alt="Woven Section Image" />
-              </el-carousel-item>
-            </el-carousel>
-          </el-tab-pane>
-
-          <!-- PRINTING & EMBROIDERY Tab -->
-          <el-tab-pane label="PRINTING & EMBROIDERY">
-            <el-carousel indicator-position="outside">
-              <el-carousel-item v-for="(img, index) in images.printingEmbroidery" :key="index">
-                <el-image :src="img" class="carousel-image" alt="Printing & Embroidery Image" />
-              </el-carousel-item>
-            </el-carousel>
-          </el-tab-pane>
-
-          <!-- DYEING & FINISHING Tab -->
-          <el-tab-pane label="DYEING & FINISHING">
-            <el-carousel indicator-position="outside">
-              <el-carousel-item v-for="(img, index) in images.dyeingFinishing" :key="index">
-                <el-image :src="img" class="carousel-image" alt="Dyeing & Finishing Image" />
-              </el-carousel-item>
-            </el-carousel>
-          </el-tab-pane>
-
-          <!-- WASHING Tab -->
-          <el-tab-pane label="WASHING">
-            <el-carousel indicator-position="outside">
-              <el-carousel-item v-for="(img, index) in images.washing" :key="index">
-                <el-image :src="img" class="carousel-image" alt="Washing Section Image" />
-              </el-carousel-item>
-            </el-carousel>
-          </el-tab-pane>
-
-          <!-- PACKAGING Tab -->
-          <el-tab-pane label="PACKAGING">
-            <el-carousel indicator-position="outside">
-              <el-carousel-item v-for="(img, index) in images.packaging" :key="index">
-                <el-image :src="img" class="carousel-image" alt="Packaging Section Image" />
-              </el-carousel-item>
-            </el-carousel>
-          </el-tab-pane>
-
-          <!-- TRANSPORT Tab -->
-          <el-tab-pane label="TRANSPORT">
-            <el-carousel indicator-position="outside">
-              <el-carousel-item v-for="(img, index) in images.transport" :key="index">
-                <el-image :src="img" class="carousel-image" alt="Transport Section Image" />
-              </el-carousel-item>
-            </el-carousel>
-          </el-tab-pane>
-
-        </el-tabs>
-      </el-col>
-    </el-row>
+      </div>
+      <a href="#" class="p-8 bg-local bg-gray-200 bg-center bg-no-repeat bg-cover rounded-md bg-blend "
+        style="background-image: url(https://api.hameemgroup.com:9012/Resources/hameem-group-website/megamenubackgroundimage01.jpeg)">
+        <p class="max-w-xl mb-5 text-xl text-primary font-bold leading-tight tracking-tight text-black">Ha-meem Group Business Units</p>
+        <button type="button"
+          class="bg-primary inline-flex items-center px-2.5 py-1.5 text-xs font-medium text-center text-white border border-white rounded-lg hover:bg-white hover:text-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-700">
+          Explore More
+          <svg class="w-3 h-3 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9" />
+          </svg>
+        </button>
+      </a>
+    </div>
   </div>
 </template>
-
-<style scoped>
-.demo-tabs>.el-tabs__content {
-  padding: 15px;
-  color: #727070;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.el-tabs__item {
-  font-size: 1.4rem;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #727070;
-  padding-bottom: 20px;
-}
-
-.el-tabs__item:hover {
-  color: #000;
-}
-
-.el-tabs__active-bar {
-  color: #000 !important;
-}
-
-.el-tabs--right .el-tabs__content,
-.el-tabs--left .el-tabs__content {
-  height: 100%;
-}
-
-.el-tabs__item.is-active,
-.el-tabs__item:hover {
-  color: "#727070" !important;
-}
-
-/* Carousel Image Styling */
-.carousel-image {
-  max-width: 900px;
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  transition: transform 0.3s ease-in-out;
-}
-
-.el-carousel__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-</style>

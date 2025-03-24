@@ -12,6 +12,8 @@ import ClientRunningCarouselComponent from '~/components/v2/sectionComponent/Cli
 import ContactUsMapSectionComponent from '~/components/v2/index/ContactUsMapSectionComponent.vue';
 import QualityAndStrengthsSection from '~/components/v2/index/QualityAndStrengthsSection.vue';
 
+import CapabilitySection from '~/components/v1/section/CapabilitySection.vue';
+
 
 </script>
 
@@ -19,7 +21,7 @@ import QualityAndStrengthsSection from '~/components/v2/index/QualityAndStrength
   <section>
     <MainPageSlider01 />
     <WelcomeSection />
-    <QualityAndStrengthsSection />
+    <CapabilitySection />
     <MissionVissionSection id="mission-vision" />
     <BusinessUnitSection id="business-unit" />
     <SustainabilityMapSection id="sustainability" />
