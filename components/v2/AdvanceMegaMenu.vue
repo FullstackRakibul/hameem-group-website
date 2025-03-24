@@ -15,7 +15,7 @@
     <div v-if="openDropdown === item.key && item.megaComponent" 
       @mouseenter="cancelClose(item.key)"
       @mouseleave="closeMenuWithDelay(item.key)"
-      class="container rounded-md absolute top-12 left-1/2 transform -translate-x-1/3 bg-white shadow-lg border-t z-50 w-[900px] max-w-screen-lg">
+      class="container rounded-md absolute top-12 left-1/2 transform -translate-x-1/3 bg-white shadow-lg border-t z-50 w-[1000px] max-w-screen-lg">
     
       <component :is="item.megaComponent" />
     </div>

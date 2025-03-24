@@ -3,7 +3,7 @@
     <div class="border w-64 text-white p-4 rounded-lg shadow-lg">
       <div class="grid grid-cols-3 gap-4">
         <div v-for="(item, index) in menuItems" :key="index"
-          class="flex flex-col items-center p-2 hover:bg-primary text-primary hover:text-white rounded-lg cursor-pointer border">
+          class="flex flex-col items-center p-2 hover:bg-primary bg-primary/10 border-gray-300 text-primary hover:text-white rounded-lg cursor-pointer border">
           <NuxtLink :to="item.link" target="_blank" class="flex flex-col items-center">
             <Icon :name="item.icon" size="32" />
             <span class="text-sm mt-2">{{ item.label }}</span>
