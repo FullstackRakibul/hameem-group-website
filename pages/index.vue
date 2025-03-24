@@ -10,12 +10,16 @@ import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSec
 import BusinessUnitSection from '~/components/v1/section/BusinessUnitSection.vue';
 import ClientRunningCarouselComponent from '~/components/v2/sectionComponent/ClientRunningCarouselComponent.vue';
 import ContactUsMapSectionComponent from '~/components/v2/index/ContactUsMapSectionComponent.vue';
+import QualityAndStrengthsSection from '~/components/v2/index/QualityAndStrengthsSection.vue';
+
+
 </script>
 
 <template>
   <section>
     <MainPageSlider01 />
     <WelcomeSection />
+    <QualityAndStrengthsSection />
     <MissionVissionSection id="mission-vision" />
     <BusinessUnitSection id="business-unit" />
     <SustainabilityMapSection id="sustainability" />

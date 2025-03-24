@@ -1,34 +1,70 @@
 <template>
-  <div class="mx-2 h-screen bg-black bg-cover bg-opacity-45 bg-center flex flex-col justify-center items-center text-white"
-    :style="{ backgroundImage: `url('./assets/ha-meem-group-denim-banner-0001.jpg')` }">
+  <div class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden"
+    :style="{ backgroundImage: `url('./assets/v1/section/IMG_9487.JPG')` }">
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
 
-    <div class=" py-5 w-4/5 rounded-md ">
-      <h3 class="py-2 font-sans font- font-bold text-xl text-gray-700 ">WHO WE ARE...</h3>
-      <p class=" font-sans font-medium text-gray-700 text-justify ">Ha-Meem Group Started its Journey about 41 years
-        back
-        in 1984, Initially with a garment factory and thereafter
-        gradually expanding to backward linkage from “Cotton to packed Garments,” Today Ha-Meem has a large workforce of
-        60,000 spreading over various industries and garment factories. Ha-Meem is now one of the leading exporters of
-        the country with annual tournover close to a billion US Dollars. Ha-Meem is one of the largest Garment
-        manufacturers in Bangladesh with 450 Garment lines having capacity of 9 mil pieces of garments per month, On the
-        Textile sector, Ha-Meem Denim, established in early 2007, is now one of the largest denim manufacturers in
-        Bangladesh having partnership with many of the reputed brands. Ha-Meem Spinning equipped with highly automated
-        and state of the art machineries is best known for its quality products of ring. PC/CVC and other special yarns.
-        Ha-Meem Textiles (non-denim woven) is the latest addition in the textile hub of Ha-Meem Group with 2.5 million
-        yds per month capacity. </p>
-    </div>
+    <div class="relative z-20 container mx-auto px-4 md:px-8 py-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Main Heading -->
+        <h3 class="text-4xl md:text-5xl font-bold mb-6 tracking-wide animate-fade-in-up">
+          WHO WE ARE
+        </h3>
 
-    <!-- Button at the lower center -->
-    <div class="flex justify-end items-start w-4/5 h-2/5 mb-8">
+        <!-- Content Container -->
+        <div class="bg-white/4 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-xl animate-slide-up">
+          <!-- Description -->
+          <p class="text-lg md:text-xl leading-relaxed text-gray-200 font-medium mb-8 line-clamp-4 hover:line-clamp-none transition-all duration-500 text-justify ">
+            Established in 1984, Ha-Meem Group has evolved from a single garment factory to a vertically integrated textile powerhouse spanning "cotton to packed garments." With 60,000 dedicated professionals across diverse industries, we've grown into a billion-dollar export leader, renowned for innovation and quality. Our 450 production lines deliver 9 million monthly garments, complemented by state-of-the-art spinning mills producing premium yarns, and textile divisions manufacturing 2.5 million yards of premium fabrics monthly.
+          </p>
 
-      <button
-        class="border-2 border-orange-400 bg-transparent text-black px-6 py-2 font-bold flex items-center space-x-2 hover:bg-white hover:text-black transition-all duration-300">
-        <Icon name="mdi:arrow-right-thin" class="text-black text-lg" />
-        <span class=" pl-6 text-lg font-medium ">SHOW MORE</span>
-      </button>
+          <!-- CTA Button -->
+          <div class="flex justify-center">
+            <button class="group relative bg-primary hover:bg-primary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <div class="flex items-center space-x-3">
+                <span>Discover More</span>
+                <Icon name="mdi:arrow-right" class="transform group-hover:translate-x-1 transition-all duration-300 text-xl" />
+              </div>
+              <div class="absolute inset-0 border-2 border-white/30 rounded-full group-hover:border-orange-200 transition-all duration-500 -z-10"></div>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 </script>
+
+<style scoped>
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

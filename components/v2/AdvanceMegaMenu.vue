@@ -4,7 +4,7 @@
     <li v-for="item in menuItems" :key="item.label" class="relative" @mouseenter="item.key && openMenu(item.key)"
       @mouseleave="item.key && closeMenuWithDelay(item.key)">
       <NuxtLink :to="item.to || '#'" @click.prevent="item.children ? null : null"
-        class="text-lg font-medium hover:text-blue-600">
+        class="text-lg font-medium hover:text-white hover:text-bold">
         {{ item.label }}
       </NuxtLink>
 
