@@ -3,12 +3,8 @@
     <!-- Search Icon Button -->
     <button
       @click="toggleSearch"
-      class="inline-flex items-center justify-center w-10 h-10 rounded-full   text-black "
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full text-black "
     >
-    
-      <!-- <el-icon class="text-bold">
-        <search class="text-bold" />
-      </el-icon> -->
       <Icon name="hugeicons:search-02" class="text-xl text-bold"/>
     </button>
 
@@ -26,9 +22,7 @@
         @keyup.enter="handleSearch"
       >
         <template #prefix>
-          <el-icon>
-            <search />
-          </el-icon>
+          <Icon name="hugeicons:search-area" class="text-xl text-bold"/>
         </template>
       </el-input>
 
@@ -37,9 +31,7 @@
         @click="toggleSearch"
         class="absolute top-1 right-1 text-gray-500 hover:text-gray-800"
       >
-        <el-icon>
-          <close />
-        </el-icon>
+        <Icon name="hugeicons:cancel-circle-half-dot" class="text-xl text-bold"/>
       </button>
     </div>
   </div>

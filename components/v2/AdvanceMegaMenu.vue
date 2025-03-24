@@ -9,14 +9,18 @@
       </NuxtLink>
 
       <!-- Mega Menu Component (for Business Units, etc.) -->
-      <Transition enter-active-class="transition-opacity duration-300" enter-from-class="opacity-0"
-        enter-to-class="opacity-100" leave-active-class="transition-opacity duration-300" leave-from-class="opacity-100"
-        leave-to-class="opacity-0">
-        <div v-if="openDropdown === item.key && item.megaComponent" @mouseenter="cancelClose(item.key)"
-          @mouseleave="closeMenuWithDelay(item.key)" class="container rounded-md absolute top-9 bg-white shadow-lg border-t z-50 w-[900px] max-w-screen-lg">
-          <component :is="item.megaComponent" />
-        </div>
-      </Transition>
+  <Transition enter-active-class="transition-opacity duration-300" enter-from-class="opacity-0"
+    enter-to-class="opacity-100" leave-active-class="transition-opacity duration-300" leave-from-class="opacity-100"
+    leave-to-class="opacity-0">
+    <div v-if="openDropdown === item.key && item.megaComponent" 
+      @mouseenter="cancelClose(item.key)"
+      @mouseleave="closeMenuWithDelay(item.key)"
+      class="container rounded-md absolute top-12 left-1/2 transform -translate-x-1/3 bg-white shadow-lg border-t z-50 w-[900px] max-w-screen-lg">
+    
+      <component :is="item.megaComponent" />
+    </div>
+  </Transition>
+
     </li>
   </ul>
 
@@ -54,10 +58,14 @@
       </nav>
     </Transition>
   </div>
+
 </template>
 
 <script setup>
 import { ref, defineAsyncComponent } from 'vue';
+
+
+
 // Props for mobile menu visibility
 const props = defineProps({
   mobileOpen: {
@@ -66,6 +74,7 @@ const props = defineProps({
   }
 });
 const emit = defineEmits(['closeMobileMenu']);
+
 
 // Define the menu structure, now including mega menu components
 const BusinessUnitMegamenu = defineAsyncComponent(() => import('./ui/BusinessUnit.megamenu.vue'));
@@ -90,7 +99,11 @@ const menuItems = [
   },
   { label: 'Clients', to: '/clients' },
   { label: 'Gallery', to: '/gallery' },
-  { label: 'Contact Us', to: '/contact' }
+  { 
+    label: 'Contact Us', 
+    to: '/contact' ,
+    fullWidth: true,
+  }
 ];
 
 // State to track open dropdowns
@@ -143,3 +156,6 @@ function emitCloseMobile() {
   transform: rotate(90deg);
 }
 </style>
+
+<!-- 
+class="container rounded-md absolute top-10 right-20 bg-white shadow-lg border-t z-50 w-[900px] max-w-screen-lg" -->
