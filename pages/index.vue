@@ -10,7 +10,6 @@ import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSec
 import BusinessUnitSection from '~/components/v1/section/BusinessUnitSection.vue';
 import ClientRunningCarouselComponent from '~/components/v2/sectionComponent/ClientRunningCarouselComponent.vue';
 import ContactUsMapSectionComponent from '~/components/v2/index/ContactUsMapSectionComponent.vue';
-import ModuleToggleMenu from '~/components/v2/ui/ModuleToggleMenu.vue';
 </script>
 
 <template>
@@ -24,7 +23,6 @@ import ModuleToggleMenu from '~/components/v2/ui/ModuleToggleMenu.vue';
     <ClientRunningCarouselComponent/>
     <BoardofDirectorsSection />
     <ContactUsMapSectionComponent />
-    <ModuleToggleMenu/>
 
   </section>
 </template>
