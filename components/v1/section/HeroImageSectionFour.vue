@@ -1,5 +1,6 @@
 <template>
-  <div class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden"
+  <div
+    class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden  "
     :style="{ backgroundImage: `url('./assets/v1/section/IMG_7306.JPG')` }">
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black/60 z-10"></div>
@@ -23,11 +24,8 @@
 
         <!-- Double marquee for seamless loop -->
         <div class="absolute inset-0 flex items-center space-x-8 animate-marquee">
-          <div 
-            v-for="(product, index) in duplicatedProducts" 
-            :key="index"
-            class="flex-shrink-0 px-8 py-6 bg-black/30 backdrop-blur-lg rounded-2xl border border-white/10 transform hover:scale-105 transition-all duration-300 cursor-pointer"
-          >
+          <div v-for="(product, index) in duplicatedProducts" :key="index"
+            class="flex-shrink-0 px-8 py-6 bg-black/30 backdrop-blur-lg rounded-2xl border border-white/10 transform hover:scale-105 transition-all duration-300 cursor-pointer">
             <div class="flex items-center gap-4">
               <Icon name="mdi:star-shooting" class="text-primary text-2xl flex-shrink-0" />
               <span class="text-xl font-semibold text-gray-100">{{ product }}</span>
@@ -40,6 +38,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed, ref } from 'vue';
+
 const products = ref([
   'ALL TYPES OF BOTTOMS AND TOPS',
   'HI-FASHION DENIM JEANS',
@@ -60,8 +60,13 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
 
 <style scoped>
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -75,8 +80,15 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
 } */
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-bounce {
