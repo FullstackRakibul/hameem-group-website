@@ -12,14 +12,13 @@
             Major Products
           </span>
         </h2>
-        <Icon name="mdi:arrow-collapse-down" class="text-primary text-4xl animate-bounce" />
+       
       </div>
 
       <!-- Marquee Container -->
       <div class="flex-1 relative overflow-hidden group">
         <!-- Gradient overlays -->
-        <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black via-black/80 to-transparent z-20"></div>
-        <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black via-black/80 to-transparent z-20"></div>
+
 
         <!-- Double marquee for seamless loop -->
         <div class="absolute inset-0 flex items-center space-x-8 animate-marquee">
@@ -29,7 +28,7 @@
             class="flex-shrink-0 px-8 py-6 bg-black/30 backdrop-blur-lg rounded-2xl border border-white/10 transform hover:scale-105 transition-all duration-300 cursor-pointer"
           >
             <div class="flex items-center gap-4">
-              <Icon name="mdi:star-shooting" class="text-primary text-2xl flex-shrink-0" />
+              <Icon name="mdi:star-shooting" class="text-white text-2xl flex-shrink-0" />
               <span class="text-xl font-semibold text-gray-100">{{ product }}</span>
             </div>
           </div>
