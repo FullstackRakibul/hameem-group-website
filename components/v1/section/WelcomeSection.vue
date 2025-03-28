@@ -11,8 +11,7 @@ defineProps({
 
 <template>
   <!-- <section class="container mx-auto py-48"> -->
-  <section class="  mx-auto py-48">
-
+  <section class="  mx-auto py-20">
     <div class=" bg-cover bg-center flex flex-col justify-between items-center text-white">
       <el-row :gutter="20">
         <el-col :span="12"
@@ -66,7 +65,7 @@ defineProps({
           </el-row>
         </el-col>
 
-        <el-col :span="10">
+        <el-col :span="11">
           <video class="bg-conatainer w-screen bg-top" autoplay muted loop playsinline>
             <source :src="videoSrc" type="video/mp4">
             Your browser does not support the video tag.

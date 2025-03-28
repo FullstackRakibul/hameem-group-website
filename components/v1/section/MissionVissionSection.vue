@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-12 " :style="{ backgroundImage: `url(${bgImage})` }">
+  <section class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-24 " :style="{ backgroundImage: `url(${bgImage})` }">
     <!-- Abstract Wave Background -->
     <div class="absolute inset-0 z-0 opacity-10">
       <svg
