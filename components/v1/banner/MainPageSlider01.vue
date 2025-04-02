@@ -3,10 +3,7 @@
     class="bg-cover h-screen bg-center bg-no-repeat relative overflow-hidden">
     <!-- Carousel Section -->
     <el-carousel :height="carouselHeight" autoplay :interval="5000" :loop="true">
-<<<<<<< HEAD
-=======
       <!-- Denim Slide -->
->>>>>>> remoteBranch
       <el-carousel-item key="denim">
         <div class="h-screen mx-24">
           <HeroImageSectionOne />
@@ -17,11 +14,7 @@
           <HeroImageSectionTwo />
         </div>
       </el-carousel-item>
-<<<<<<< HEAD
-      <el-carousel-item key="four">
-=======
       <el-carousel-item key="products">
->>>>>>> remoteBranch
         <div class="h-screen">
           <HeroImageSectionFour />
         </div>
@@ -39,11 +32,8 @@ import ImageSliderSection from '../section/ImageScrollSection.vue';
 import HeroImageSectionOne from '../section/HeroImageSectionOne.vue';
 import HeroImageSectionTwo from '../section/HeroImageSectionTwo.vue';
 import HeroImageSectionFour from '../section/HeroImageSectionFour.vue';
-<<<<<<< HEAD
-=======
 
 
->>>>>>> remoteBranch
 // Responsive carousel height
 const carouselHeight = ref('800px');
 
