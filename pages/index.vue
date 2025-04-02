@@ -26,7 +26,7 @@ import CapabilitySection from '~/components/v1/section/CapabilitySection.vue';
     <BusinessUnitSection id="business-unit" />
     <SustainabilityMapSection id="sustainability" />
     <!-- <OurBuyersSection id="clients" /> -->
-    <ClientRunningCarouselComponent/>
+    <ClientRunningCarouselComponent />
     <BoardofDirectorsSection />
     <ContactUsMapSectionComponent />
 

@@ -65,21 +65,22 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
       <div class="grid gap-8 md:grid-cols-4 sm:grid-cols-2">
         <!-- Cards Loop -->
         <div v-for="(card, index) in strengths" :key="index"
-          class="relative group overflow-hidden bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-primary/15 min-h-320 flex flex-col ">
+          class="relative group overflow-hidden bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-primary/15 min-h-320 flex flex-col">
+
           <!-- Corner Badge -->
           <div
-            class="absolute top-8 -right-10 rounded-b-lg w-32 bg-pink-700 text-white text-sm font-bold py-1 text-center transform rotate-45 shadow-md">
+            class="absolute top-8 -right-32 rounded-b-lg w-32 bg-pink-700 text-white text-sm font-bold py-1 text-center transform rotate-45 shadow-md transition-all duration-500 group-hover:-right-10 delay-100 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]">
             {{ card.badge }}
           </div>
 
           <!-- Card Content -->
           <div class="p-8 text-center flex-grow pb-16 group">
             <!-- Icon Section -->
-            <div class="relative w-20 h-20 mx-auto mb-6 flex items-center justify-center ">
+            <div class="relative w-20 h-20 mx-auto mb-6 flex items-center justify-center">
               <div
-                class="absolute inset-0 border border-primary/30 group-hover:bg-primary rounded-xl group-hover:rounded-full transform rotate-45 scale-95 group-hover:scale-105 transition-transform duration-500 ease-out" />
+                class="absolute inset-0 border border-primary/30 group-hover:bg-primary rounded-xl group-hover:rounded-full transform rotate-45 scale-95 group-hover:scale-105 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]" />
               <Icon :name="card.icon"
-                class="relative group-hover:text-white text-primary text-3xl z-10 transition-transform duration-500 group-hover:scale-110" />
+                class="relative group-hover:text-white text-primary text-3xl z-10 transition-all duration-500 group-hover:scale-110 ease-[cubic-bezier(0.4,0,0.2,1)]" />
             </div>
 
             <!-- Title & Description -->
@@ -89,19 +90,22 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
             </p>
           </div>
 
-          <!-- CTA Section -->
+          <!-- CTA Section with Fixed Wave Animation -->
           <div
             class="absolute group bottom-0 left-0 w-full h-16 overflow-hidden bg-primary/5 transition-all duration-500">
-            <div
-              class="absolute bottom-0 left-0 w-full h-full bg-primary transition-all duration-500 transform origin-bottom translate-y-full group-hover:translate-y-0" />
-            <div class="relative h-full flex items-center justify-center gap-2 px-8">
-              <Icon name="mdi-arrow-right-bold-circle" size="26"
-                class="text-primary group-hover:text-white text-lg transform -translate-x-28 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100" />
-              <span
-                class="text-secondary font-semibold text-md group-hover:text-lg group-hover:tracking-widest tracking-wider group-hover:text-white transition-colors duration-500 delay-100 ">
-                {{ card.linkText }}
-              </span>
-            </div>
+            <NuxtLink :to="card.linkText" class="group-hover:mouser-pointer">
+              <div
+                class="absolute bottom-0 left-0 w-full h-full bg-primary transition-all duration-500 transform origin-bottom translate-y-full group-hover:translate-y-0">
+              </div>
+              <div class="relative h-full flex items-center justify-center gap-2 px-8">
+                <Icon name="mdi-arrow-right-bold-circle" size="26" class="text-primary group-hover:text-white text-lg transform -translate-x-28 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 
+                         transition-all duration-500 delay-100 ease-out" />
+                <span class="text-secondary font-semibold text-md group-hover:text-lg group-hover:tracking-widest tracking-wider group-hover:text-white 
+                         transition-all duration-500 delay-100 ease-out">
+                  {{ card.linkText }}
+                </span>
+              </div>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -121,7 +125,6 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
     </div>
   </section>
 </template>
-
 <style scoped>
 @keyframes marquee {
   0% {
@@ -143,6 +146,13 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
   animation-play-state: paused;
 }
 
+/* Fixed clip-path syntax for wave animation */
+[clip-path] {
+  transition-property: clip-path, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
 @media (max-width: 768px) {
   .animate-marquee {
     animation-duration: 25s;
@@ -152,9 +162,9 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
     min-height: 280px;
   }
 
-  .absolute.top-4.-right-10 {
+  .absolute.top-8.-right-32 {
     top: 2rem;
-    right: -3.5rem;
+    right: -8rem;
     width: 8rem;
     font-size: 0.75rem;
   }
