@@ -1,6 +1,5 @@
 <template>
-  <div
-    class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden  "
+  <div class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden"
     :style="{ backgroundImage: `url('./assets/v1/section/IMG_7306.JPG')` }">
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black/60 z-10"></div>
@@ -13,13 +12,12 @@
             Major Products
           </span>
         </h2>
-       
+
       </div>
 
       <!-- Marquee Container -->
       <div class="flex-1 relative overflow-hidden group">
         <!-- Gradient overlays -->
-
 
         <!-- Double marquee for seamless loop -->
         <div class="absolute inset-0 flex items-center space-x-8 animate-marquee">
@@ -37,8 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-
 const products = ref([
   'ALL TYPES OF BOTTOMS AND TOPS',
   'HI-FASHION DENIM JEANS',
