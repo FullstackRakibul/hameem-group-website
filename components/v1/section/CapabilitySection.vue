@@ -65,7 +65,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
       <div class="grid gap-8 md:grid-cols-4 sm:grid-cols-2">
         <!-- Cards Loop -->
         <div v-for="(card, index) in strengths" :key="index"
-          class="relative group overflow-hidden bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-gray-100 min-h-320 flex flex-col">
+          class="relative group overflow-hidden bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-primary/15 min-h-320 flex flex-col ">
           <!-- Corner Badge -->
           <div
             class="absolute top-8 -right-10 rounded-b-lg w-32 bg-pink-700 text-white text-sm font-bold py-1 text-center transform rotate-45 shadow-md">
@@ -73,13 +73,13 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
           </div>
 
           <!-- Card Content -->
-          <div class="p-8 text-center flex-grow pb-16">
+          <div class="p-8 text-center flex-grow pb-16 group">
             <!-- Icon Section -->
-            <div class="relative w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+            <div class="relative w-20 h-20 mx-auto mb-6 flex items-center justify-center ">
               <div
-                class="absolute inset-0 bg-primary rounded-xl transform rotate-45 scale-95 group-hover:scale-105 transition-transform duration-500" />
+                class="absolute inset-0 border border-primary/30 group-hover:bg-primary rounded-xl group-hover:rounded-full transform rotate-45 scale-95 group-hover:scale-105 transition-transform duration-500 ease-out" />
               <Icon :name="card.icon"
-                class="relative text-white text-3xl z-10 transition-transform duration-500 group-hover:scale-110" />
+                class="relative group-hover:text-white text-primary text-3xl z-10 transition-transform duration-500 group-hover:scale-110" />
             </div>
 
             <!-- Title & Description -->
@@ -90,14 +90,15 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
           </div>
 
           <!-- CTA Section -->
-          <div class="absolute group bottom-0 left-0 w-full h-16 overflow-hidden">
+          <div
+            class="absolute group bottom-0 left-0 w-full h-16 overflow-hidden bg-primary/5 transition-all duration-500">
             <div
               class="absolute bottom-0 left-0 w-full h-full bg-primary transition-all duration-500 transform origin-bottom translate-y-full group-hover:translate-y-0" />
             <div class="relative h-full flex items-center justify-center gap-2 px-8">
-              <Icon name="mdi:arrow-right"
-                class="text-primary group-hover:text-white text-lg transform -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100" />
+              <Icon name="mdi-arrow-right-bold-circle" size="26"
+                class="text-primary group-hover:text-white text-lg transform -translate-x-28 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100" />
               <span
-                class="text-secondary font-semibold text-md tracking-wide group-hover:text-white transition-colors duration-300 ">
+                class="text-secondary font-semibold text-md group-hover:text-lg group-hover:tracking-widest tracking-wider group-hover:text-white transition-colors duration-500 delay-100 ">
                 {{ card.linkText }}
               </span>
             </div>
