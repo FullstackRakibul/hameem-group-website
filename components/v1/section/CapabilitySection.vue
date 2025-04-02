@@ -9,6 +9,7 @@ const strengths = ref([
     description: 'Cutting-edge facilities including automated production lines, specialized washing units, and integrated packaging solutions.',
     icon: 'fluent-mdl2:delivery-truck',
     linkText: 'Explore Facilities',
+    badge: 'Innovation'
   },
   {
     title: 'Expert Workforce',
@@ -62,12 +63,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
       <div class="grid gap-8 md:grid-cols-4 sm:grid-cols-2">
         <!-- Cards Loop -->
         <div v-for="(card, index) in strengths" :key="index"
-          class="relative group overflow-hidden bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-gray-100 min-h-[320px] flex flex-col">
-
-          <!-- Background Effect -->
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          </div>
+          class="relative group overflow-hidden bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-gray-200 min-h-[320px] flex flex-col">
 
           <!-- Card Content -->
           <div class="p-8 text-center flex-grow">
@@ -90,15 +86,16 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
           <!-- CTA Section (Fixed at Bottom) -->
           <div
             class="absolute bottom-0 left-0 w-full bg-transparent transition-all duration-500 group-hover:bg-primary group-hover:text-white py-4">
-            <div
-              class="flex items-center justify-center gap-2 transform transition-all duration-500 group-hover:translate-x-0 group-hover:scale-110">
-              <Icon name="mdi:arrow-right"
-                class="text-primary group-hover:text-white text-lg group-hover:text-2xl transition-all duration-500 transform -translate-x-2 group-hover:translate-x-0" />
-              <span
-                class="text-secondary font-semibold text-md tracking-wide group-hover:text-white group-hover:underline">
-                {{ card.linkText }}
-              </span>
-            </div>
+            <NuxtLink :to="card.linkText">
+              <div
+                class="flex items-center justify-center gap-2 transform transition-all duration-500 group-hover:translate-x-0 group-hover:scale-110">
+                <Icon name="mdi:arrow-right"
+                  class="text-primary group-hover:text-white text-lg group-hover:text-2xl transition-all duration-500 transform -translate-x-2 group-hover:translate-x-0" />
+                <span class="text-secondary font-semibold text-md tracking-wide group-hover:text-white">
+                  {{ card.linkText }}
+                </span>
+              </div>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -107,10 +104,10 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
       <div class="relative overflow-hidden px-24 py-8">
         <div class="flex space-x-8 animate-marquee">
           <div v-for="(product, index) in duplicatedProducts" :key="index"
-            class="flex-shrink-0 px-8 py-6 backdrop-blur-lg rounded-xl border border-primary/3 transform hover:scale-105 hover:bg-primary transition-all duration-300 cursor-pointer">
-            <div class="flex items-center gap-4">
-              <Icon name="mdi:star-shooting" class="text-primary text-2xl flex-shrink-0" />
-              <span class="text-xl font-semibold text-primary hover:text-white">{{ product }}</span>
+            class=" group hover:bg-primary/15 flex-shrink-0 px-8 py-6 backdrop-blur-lg rounded-xl border border-primary/3 transform hover:scale-105  transition-all duration-300 cursor-pointer ">
+            <div class="flex items-center gap-4 ">
+              <Icon name="mdi:star-shooting" class="text-primary group-hover:text-black text-2xl flex-shrink-0" />
+              <span class="text-xl font-semibold text-primary group-hover:text-black">{{ product }}</span>
             </div>
           </div>
         </div>
@@ -132,6 +129,18 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
   100% {
     transform: translateX(-50%);
   }
+}
+
+
+/* Improved corner badge */
+.absolute.top-4.-right-10 {
+  background-color: var(--primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions */
+.group-hover\:translate-y-0 {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .animate-marquee {
