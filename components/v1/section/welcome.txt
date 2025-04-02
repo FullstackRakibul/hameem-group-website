@@ -1,0 +1,76 @@
+<script setup lang="ts">
+import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSectionRFID.vue';
+defineProps({
+  videoSrc: {
+    type: String,
+    required: true,
+    default: "/assets/v2/video/RFIDDIGITALVIDEO.mp4"
+  }
+});
+</script>
+
+<template>
+  <section class="mx-auto py-20 border border-primary ">
+    <div class=" bg-cover bg-center h-screen flex flex-col justify-between items-center text-white">
+      <el-row :gutter="20">
+        <el-col :span="12"
+          class="flex justify-end items-center bg-[url('/assets/side-banner-01.png')] bg-container bg-no-repeat ">
+          <el-row :gutter="20">
+            <el-col :span="10">
+
+            </el-col>
+            <el-col :span="14" class="p-6">
+              <el-space wrap :size="60">
+                <el-row :gutter="20">
+                  <el-col :span="24">
+                    <div class="flex bg-transparent flex-col justify-start py-14">
+                      <h3 class="text-6xl pb-2 font-semibold font-helvetica text-[#454242] tracking-tight text-left"
+                        style="transform: scale(0.80, 1.75); transform-origin: left;">
+                        HA MEEM
+                      </h3>
+
+
+                      <p class="tracking-widest text-black font-titillium font-medium"
+                        style="transform: scale(1.2, 1.0); transform-origin: left;">
+                        THE ART OF DESIGN
+                      </p>
+                    </div>
+                  </el-col>
+                </el-row>
+
+                <el-row :gutter="20">
+                  <el-col :span="24">
+                    <div class="grid-content ep-bg-purple" />
+                    <h4 class="text-2xl font-semibold text-[#454242] font-helvetica"
+                      style="transform: scale(0.8, 1.8); transform-origin: left;">Welcome !</h4>
+                    <p class="py-2 text-justify text-sm text-black">We're delighted to have you here. Explore our
+                      carefully
+                      crafted collection of stylish, high-quality garments designed to make you look and feel your best.
+                      Whether you're seeking timeless classics or the latest trends, we've got something special for
+                      every occasion.
+
+                      Thank you for choosing us-your satisfaction is our priority!
+
+                    </p>
+                    <div class="flex justify-end cursor-pointer  items-center mr-10 py-2 my-4">
+                      <button class="bg-[#454242] text-white p-1 pl-24">
+                        About Us
+                      </button>
+                    </div>
+                  </el-col>
+                </el-row>
+              </el-space>
+            </el-col>
+          </el-row>
+        </el-col>
+
+        <el-col :span="11">
+          <video class="bg-conatainer w-screen bg-top" autoplay muted loop playsinline>
+            <source :src="videoSrc" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </el-col>
+      </el-row>
+    </div>
+  </section>
+</template>

@@ -1,9 +1,4 @@
 <script setup lang="ts">
-<<<<<<< HEAD
-import { ref } from 'vue';
-=======
-
->>>>>>> remoteBranch
 
 
 </script>
