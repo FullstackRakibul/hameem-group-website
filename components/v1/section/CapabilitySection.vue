@@ -114,7 +114,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
       <div class="relative overflow-hidden px-24 py-8">
         <div class="flex space-x-8 animate-marquee ">
           <div v-for="(product, index) in duplicatedProducts" :key="index"
-            class="group flex-shrink-0 px-8 py-6 backdrop-blur-lg rounded-xl border border-primary/3 transform hover:scale-105 hover:bg-primary/15 transition-all duration-300 cursor-pointer">
+            class="group flex-shrink-0 px-8 py-6 backdrop-blur-lg rounded-xl border border-primary/3 transform hover:scale-105 hover:bg-primary/15 transition-all duration-300 cursor-pointer bg-gray-50">
             <div class="flex items-center gap-4">
               <Icon name="mdi:star-shooting" class="text-primary group-hover:text-black text-2xl flex-shrink-0" />
               <span class="text-xl font-semibold text-primary group-hover:text-black">{{ product }}</span>
