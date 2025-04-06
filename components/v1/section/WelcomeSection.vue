@@ -89,9 +89,9 @@ const setupScrollAnimations = () => {
 </script>
 
 <template>
-  <section ref="sectionRef" class="relative h-[200vh] w-full overflow-hidden">
+  <section ref="sectionRef" class="relative h-screen w-full overflow-hidden">
     <!-- Sticky Video Container -->
-    <div ref="videoContainerRef" class="absolute top-0 h-screen w-1/2 right-0 will-change-transform">
+    <div ref="videoContainerRef" class="absolute top-0 h-screen w-1/2 right-0 will-change-transform z-10">
       <video class="w-full h-full object-cover" autoplay muted loop playsinline>
         <source :src="videoSrc" type="video/mp4">
         Your browser does not support the video tag.
@@ -123,7 +123,7 @@ const setupScrollAnimations = () => {
     </div>
 
     <!-- Secondary Content -->
-    <div ref="secondaryContentRef" class="absolute top-0 h-screen w-1/2 right-0 flex items-center pl-10 opacity-0">
+    <div ref="secondaryContentRef" class="absolute top-0 h-screen w-1/2 right-0 flex items-center pl-10 opacity-0 ">
       <div class="pr-20">
         <!-- Add your secondary content here -->
         <slot name="secondary-content">

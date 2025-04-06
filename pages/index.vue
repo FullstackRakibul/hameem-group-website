@@ -24,8 +24,10 @@ import CapabilitySection from '~/components/v1/section/CapabilitySection.vue';
     <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
         <ShortDescriptionSectionCoponent />
-        <QualityAndStrengthsSection />
-        <OurBuyersSection />
+        <ShortDescriptionSectionCoponent />
+        <ShortDescriptionSectionCoponent />
+        <ShortDescriptionSectionCoponent />
+
       </template>
     </WelcomeSection>
     <CapabilitySection />
