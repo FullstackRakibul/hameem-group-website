@@ -3,17 +3,16 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   css: ["animate.css/animate.min.css", "animate.css"],
-  modules: [
-    "@pinia/nuxt",
-    "@nuxtjs/tailwindcss",
-    "@element-plus/nuxt",
-    "nuxt-swiper",
-    "@nuxt/icon",
-    "nuxt-particles",
-  ],
+  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@element-plus/nuxt", "nuxt-swiper", "@nuxt/icon", "nuxt-particles", "v-gsap-nuxt"],
   elementPlus: {
     /** Options */
   },
+  vgsap: {
+    presets: [],
+    breakpoint: 768,
+    scroller: '',
+    composable: true
+},
   runtimeConfig: {
     public: {
       apiBase: process.env.API_BASE || "https://api.hameemgroup.com",
@@ -72,4 +71,5 @@ export default defineNuxtConfig({
     lazy: true,
   },
   ssr: true,
+  
 });

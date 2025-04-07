@@ -13,7 +13,8 @@ import ContactUsMapSectionComponent from '~/components/v2/index/ContactUsMapSect
 import QualityAndStrengthsSection from '~/components/v2/index/QualityAndStrengthsSection.vue';
 import ShortDescriptionSectionCoponent from '~/components/v2/index/ShortDescriptionSectionCoponent.vue';
 import CapabilitySection from '~/components/v1/section/CapabilitySection.vue';
-
+import ShortAboutRunningTextComponent from '~/components/v2/index/ShortAboutRunningTextComponent.vue';
+import AchievementsParallaxSection from '~/components/v1/section/AchievementsParallaxSection.vue';
 
 </script>
 
@@ -21,21 +22,25 @@ import CapabilitySection from '~/components/v1/section/CapabilitySection.vue';
   <section>
     <MainPageSlider01 />
     <!-- <WelcomeSection /> -->
-    <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
+    <ShortAboutRunningTextComponent />
+    <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
-        <ShortDescriptionSectionCoponent />
-        <ShortDescriptionSectionCoponent />
-        <ShortDescriptionSectionCoponent />
-        <ShortDescriptionSectionCoponent />
-
+        <div class="secondary-content space-y-12 h-[300vh]">
+          <ShortDescriptionSectionCoponent />
+          <ShortDescriptionSectionCoponent />
+          <ShortDescriptionSectionCoponent />
+          <ShortDescriptionSectionCoponent />
+        </div>
       </template>
-    </WelcomeSection>
-    <CapabilitySection />
+</WelcomeSection> -->
     <MissionVissionSection id="mission-vision" />
+
+    <CapabilitySection />
     <BusinessUnitSection id="business-unit" />
     <SustainabilityMapSection id="sustainability" />
     <!-- <OurBuyersSection id="clients" /> -->
     <ClientRunningCarouselComponent />
+    <AchievementsParallaxSection />
     <BoardofDirectorsSection />
     <ContactUsMapSectionComponent />
 

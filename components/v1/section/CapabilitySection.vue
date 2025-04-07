@@ -54,7 +54,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
 </script>
 
 <template>
-  <section class="w-full mx-auto px-4 md:px-24 py-4">
+  <section class="w-full  px-4 md:px-24 py-4">
     <!-- Section Header -->
     <SectionHeader title="Our Core Strengths"
       subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" buttonTextLink="/#"
