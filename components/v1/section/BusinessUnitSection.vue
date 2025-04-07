@@ -38,119 +38,84 @@ const tabImages = {
 </script>
 
 <template>
-<div class="overflow-hidden px-10 py-10">
-  <el-row :gutter="20">
-    <!-- Business Units Title -->
-    <el-col :span="8">
-      <div class="flex flex-col justify-center items-center h-full">
-        <h3 class="text-5xl text-[#727070] font-titillium text-center font-bold">BUSINESS UNITS</h3>
-      </div>
-    </el-col>
+  <div class="overflow-hidden px-10 py-10">
+    <el-row :gutter="20">
+      <!-- Business Units Title -->
+      <el-col :span="8">
+        <div class="flex flex-col justify-center items-center h-full">
+          <h3 class="text-5xl text-[#727070] font-titillium text-center font-bold">BUSINESS UNITS</h3>
+        </div>
+      </el-col>
 
-    <!-- Tabs Section -->
-    <el-col :span="16">
-      <el-tabs :tab-position="tabPosition" class="demo-tabs" :stretch="true" style="height: 400px">
-        <!-- KNIT Tab -->
-        <el-tab-pane label="KNIT">
-          <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
-            <el-carousel-item v-for="(image, index) in tabImages.knit" :key="index">
-              <el-image
-                class="w-full h-full"
-                :src="image"
-                fit="cover"
-                :alt="`Knitting Image ${index + 1}`"
-              />
-            </el-carousel-item>
-          </el-carousel>
-        </el-tab-pane>
+      <!-- Tabs Section -->
+      <el-col :span="16">
+        <el-tabs :tab-position="tabPosition" class="demo-tabs" :stretch="true" style="height: 400px">
+          <!-- KNIT Tab -->
+          <el-tab-pane label="KNIT">
+            <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
+              <el-carousel-item v-for="(image, index) in tabImages.knit" :key="index">
+                <el-image class="w-full h-full" :src="image" fit="cover" :alt="`Knitting Image ${index + 1}`" />
+              </el-carousel-item>
+            </el-carousel>
+          </el-tab-pane>
 
-        <!-- WOVEN Tab -->
-        <el-tab-pane label="WOVEN">
-          <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
-            <el-carousel-item v-for="(image, index) in tabImages.woven" :key="index">
-              <el-image
-                class="w-full h-full"
-                :src="image"
-                fit="cover"
-                :alt="`Woven Image ${index + 1}`"
-              />
-            </el-carousel-item>
-          </el-carousel>
-        </el-tab-pane>
+          <!-- WOVEN Tab -->
+          <el-tab-pane label="WOVEN">
+            <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
+              <el-carousel-item v-for="(image, index) in tabImages.woven" :key="index">
+                <el-image class="w-full h-full" :src="image" fit="cover" :alt="`Woven Image ${index + 1}`" />
+              </el-carousel-item>
+            </el-carousel>
+          </el-tab-pane>
 
-        <!-- PRINTING & EMBROIDERY Tab -->
-        <el-tab-pane label="PRINTING & EMBROIDERY">
-          <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
-            <el-carousel-item v-for="(image, index) in tabImages.printing" :key="index">
-              <el-image
-                class="w-full h-full"
-                :src="image"
-                fit="cover"
-                :alt="`Printing Image ${index + 1}`"
-              />
-            </el-carousel-item>
-          </el-carousel>
-        </el-tab-pane>
+          <!-- PRINTING & EMBROIDERY Tab -->
+          <el-tab-pane label="PRINTING & EMBROIDERY">
+            <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
+              <el-carousel-item v-for="(image, index) in tabImages.printing" :key="index">
+                <el-image class="w-full h-full" :src="image" fit="cover" :alt="`Printing Image ${index + 1}`" />
+              </el-carousel-item>
+            </el-carousel>
+          </el-tab-pane>
 
-        <!-- DYEING & FINISHING Tab -->
-        <el-tab-pane label="DYEING & FINISHING">
-          <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
-            <el-carousel-item v-for="(image, index) in tabImages.dyeing" :key="index">
-              <el-image
-                class="w-full h-full"
-                :src="image"
-                fit="cover"
-                :alt="`Dyeing Image ${index + 1}`"
-              />
-            </el-carousel-item>
-          </el-carousel>
-        </el-tab-pane>
+          <!-- DYEING & FINISHING Tab -->
+          <el-tab-pane label="DYEING & FINISHING">
+            <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
+              <el-carousel-item v-for="(image, index) in tabImages.dyeing" :key="index">
+                <el-image class="w-full h-full" :src="image" fit="cover" :alt="`Dyeing Image ${index + 1}`" />
+              </el-carousel-item>
+            </el-carousel>
+          </el-tab-pane>
 
-        <!-- WASHING Tab -->
-        <el-tab-pane label="WASHING">
-          <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
-            <el-carousel-item v-for="(image, index) in tabImages.washing" :key="index">
-              <el-image
-                class="w-full h-full"
-                :src="image"
-                fit="cover"
-                :alt="`Washing Image ${index + 1}`"
-              />
-            </el-carousel-item>
-          </el-carousel>
-        </el-tab-pane>
+          <!-- WASHING Tab -->
+          <el-tab-pane label="WASHING">
+            <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
+              <el-carousel-item v-for="(image, index) in tabImages.washing" :key="index">
+                <el-image class="w-full h-full" :src="image" fit="cover" :alt="`Washing Image ${index + 1}`" />
+              </el-carousel-item>
+            </el-carousel>
+          </el-tab-pane>
 
-        <!-- PACKAGING Tab -->
-        <el-tab-pane label="PACKAGING">
-          <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
-            <el-carousel-item v-for="(image, index) in tabImages.packaging" :key="index">
-              <el-image
-                class="w-full h-full"
-                :src="image"
-                fit="cover"
-                :alt="`Packaging Image ${index + 1}`"
-              />
-            </el-carousel-item>
-          </el-carousel>
-        </el-tab-pane>
+          <!-- PACKAGING Tab -->
+          <el-tab-pane label="PACKAGING">
+            <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
+              <el-carousel-item v-for="(image, index) in tabImages.packaging" :key="index">
+                <el-image class="w-full h-full" :src="image" fit="cover" :alt="`Packaging Image ${index + 1}`" />
+              </el-carousel-item>
+            </el-carousel>
+          </el-tab-pane>
 
-        <!-- TRANSPORT Tab -->
-        <el-tab-pane label="TRANSPORT">
-          <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
-            <el-carousel-item v-for="(image, index) in tabImages.transport" :key="index">
-              <el-image
-                class="w-full h-full"
-                :src="image"
-                fit="cover"
-                :alt="`Transport Image ${index + 1}`"
-              />
-            </el-carousel-item>
-          </el-carousel>
-        </el-tab-pane>
-      </el-tabs>
-    </el-col>
-  </el-row>
-</div>
+          <!-- TRANSPORT Tab -->
+          <el-tab-pane label="TRANSPORT">
+            <el-carousel :interval="5000" height="400px" arrow="always" indicator-position="outside">
+              <el-carousel-item v-for="(image, index) in tabImages.transport" :key="index">
+                <el-image class="w-full h-full" :src="image" fit="cover" :alt="`Transport Image ${index + 1}`" />
+              </el-carousel-item>
+            </el-carousel>
+          </el-tab-pane>
+        </el-tabs>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <style scoped>

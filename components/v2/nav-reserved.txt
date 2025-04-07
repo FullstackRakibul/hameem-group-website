@@ -779,3 +779,38 @@ const isMenuOpen = ref(false)
           ]">
           <component :is="item.megaComponent" />
         </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div ref="contentRef" class="absolute top-0 h-screen w-1/2 left-0 flex items-center pr-10 z-10">
+      <div class="pl-20">
+        <h3 class="text-6xl pb-2 font-semibold font-helvetica text-[#454242] tracking-tight">
+          HA MEEM
+        </h3>
+        <p class="tracking-widest text-black font-titillium font-medium mb-8">
+          THE ART OF DESIGN
+        </p>
+
+        <div class="content-section">
+          <h4 class="text-2xl font-semibold text-[#454242] font-helvetica mb-4">
+            Welcome !
+          </h4>
+          <p class="text-justify text-sm text-black mb-8">
+            We're delighted to have you here. Explore our carefully crafted collection...
+          </p>
+          <button class="bg-[#454242] text-white px-8 py-3 hover:bg-opacity-90 transition-all">
+            About Us
+          </button>
+        </div>
+      </div>
+    </div>
