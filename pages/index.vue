@@ -15,7 +15,8 @@ import ShortDescriptionSectionCoponent from '~/components/v2/index/ShortDescript
 import CapabilitySection from '~/components/v1/section/CapabilitySection.vue';
 import ShortAboutRunningTextComponent from '~/components/v2/index/ShortAboutRunningTextComponent.vue';
 import AchievementsParallaxSection from '~/components/v1/section/AchievementsParallaxSection.vue';
-
+import CompanyIntroductionSection from '~/components/v1/section/CompanyIntroductionSection.vue'
+import ProductSection from '~/components/sections/ProductSection.vue';
 </script>
 
 <template>
@@ -23,16 +24,17 @@ import AchievementsParallaxSection from '~/components/v1/section/AchievementsPar
     <MainPageSlider01 />
     <!-- <WelcomeSection /> -->
     <ShortAboutRunningTextComponent />
-    <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
+    <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
         <div class="secondary-content space-y-12 h-[300vh]">
-          <ShortDescriptionSectionCoponent />
+          <ProductSection />
           <ShortDescriptionSectionCoponent />
           <ShortDescriptionSectionCoponent />
           <ShortDescriptionSectionCoponent />
         </div>
       </template>
-</WelcomeSection> -->
+    </WelcomeSection>
+
     <MissionVissionSection id="mission-vision" />
 
     <CapabilitySection />

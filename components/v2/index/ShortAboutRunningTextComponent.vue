@@ -17,10 +17,10 @@
             state-of-the-art facilities in denim, spinning, and woven textiles — serving global brands with excellence.
           </p>
           <el-row :gutter="16">
-            <div class="flex flex-wrap justify-around px-6 py-10 w-full someContainer mt-6 ">
+            <div class="flex flex-wrap justify-around px-4 py-10 w-full someContainer mt-6 ">
               <div v-gsap.draggable.rotation v-for="(item, index) in stats" :key="index"
-                class="flex flex-col items-center justify-center space-y-2 w-60 h-60 rounded-full hover:border border-primary/15 border hover:border-primary/30 hover:bg-primary/10">
-                <Icon :name="item.icon" class=" text-xl w-16 h-16" />
+                class="flex flex-col items-center justify-center space-y-2 lg:w-60 lg:h-60 rounded-full hover:border border-primary/15 border hover:border-primary/30 hover:bg-primary/10">
+                <Icon :name="item.icon" class=" text-xl lg:w-14 lg:h-14 w-8 h-8" />
                 <div class="flex items-center gap-1">
                   <h3 class="md:text-4xl text-2xl font-bold text-primary tracking-widest">{{ item.count }}</h3>
                 </div>
@@ -36,7 +36,7 @@
 
       <el-col :xs="24" :md="8" class="md:relative">
         <div
-          class="bg-gray-100 md:p-6  flex justify-center items-center rounded-sm shadow-sm md:h-full md:absolute md:inset-0 md:w-[calc(100%+32px)] md:left-[-16px] bg-cover bg-center"
+          class="bg-gray-100 md:p-4  flex justify-center items-center rounded-sm shadow-sm md:h-full md:absolute md:inset-0 md:w-[calc(100%+32px)] md:left-[-16px] bg-cover bg-center"
           :style="{ backgroundImage: `url(${bgImage})` }">
           <section>
             <div v-gsap.whenVisible.from="{ x: -200, start: 'top bottom', end: 'bottom top', scrub: 1 }"

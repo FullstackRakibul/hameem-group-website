@@ -4,6 +4,7 @@
   <!-- <AdvanceMegaMenu/> -->
   <div class="font-sans">
     <main class="">
+      <Preloader v-if="isLoading" />
       <slot />
     </main>
     <!-- <main class="pt-16">
@@ -21,6 +22,24 @@ import Footer from '~/components/Footer.vue';
 import AdvanceHeader from '~/components/AdvanceHeader.vue';
 import AdvanceFooter from '~/components/AdvanceFooter.vue';
 import AdvanceMegaMenu from '~/components/v2/AdvanceMegaMenu.vue';
+import Preloader from '~/components/Preloader.vue'
+
+
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+const isLoading = ref(true);
+
+onMounted(() => {
+  // Simulate loading completion after 3 seconds (or adjust based on your loading process)
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 3000); // Adjust as needed for real loading duration
+});
+
+onBeforeUnmount(() => {
+  isLoading.value = false; // Clean up if the page is unloaded before timeout
+});
+
 </script>
 
 <style scoped>

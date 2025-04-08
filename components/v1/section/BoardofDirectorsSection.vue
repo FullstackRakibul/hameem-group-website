@@ -1,7 +1,7 @@
 <template>
   <section class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-12"
     :style="{ backgroundImage: `url(${bgImage})` }">
-    <div class="px-6 w-full max-w-7xl mx-auto">
+    <div class="px-6 w-full max-w-10xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         <!-- Left Section - Dynamic Content -->
@@ -43,12 +43,11 @@
         <div class="grid gap-6 md:gap-8 md:grid-cols-2 group">
           <div v-for="(member, index) in boardMembers" :key="index" @mouseover="setActiveMember(member)"
             @mouseleave="resetActiveMember"
-            class="relative p-4 md:p-6 flex flex-col items-center cursor-pointer transition-all hover:bg-gray-50/80 group/item">
+            class="relative p-4 md:p-6 flex flex-col items-center cursor-pointer transition-all hover:bg-gray-50/80 group/item border border-promary/30  shadow-sm rounder-xl">
             <!-- Animated Arrow Connector -->
             <div
               class="absolute hidden md:block -left-[4.5rem] top-1/2 w-[4.5rem] h-0.5 bg-red-900 origin-right transition-all duration-300 opacity-0 group-hover/item:opacity-100">
-              <div
-                class="absolute right-0 -top-[3px] w-3 h-3 border-t-2 border-r-2 border-primary transform -rotate-45">
+              <div class="absolute right-0 -top-[3px] w-3 h-3 border-t-2 border-r-2 border-primary transform -rotate-45">
               </div>
             </div>
 
