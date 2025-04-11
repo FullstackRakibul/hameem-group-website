@@ -17,10 +17,12 @@ import ShortAboutRunningTextComponent from '~/components/v2/index/ShortAboutRunn
 import AchievementsParallaxSection from '~/components/v1/section/AchievementsParallaxSection.vue';
 import CompanyIntroductionSection from '~/components/v1/section/CompanyIntroductionSection.vue'
 import ProductSection from '~/components/sections/ProductSection.vue';
+import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
 </script>
 
 <template>
   <section class="-mt-16">
+    <GSAPHeroSlider />
     <MainPageSlider01 />
     <!-- <WelcomeSection /> -->
     <ShortAboutRunningTextComponent />
