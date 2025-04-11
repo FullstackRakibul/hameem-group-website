@@ -3,7 +3,7 @@
   <AdvanceHeader class="z-50" />
   <!-- <AdvanceMegaMenu/> -->
   <div class="font-sans">
-    <main class="">
+    <main class="mt-16">
       <Preloader v-if="isLoading" />
       <slot />
     </main>

@@ -20,11 +20,11 @@ import ProductSection from '~/components/sections/ProductSection.vue';
 </script>
 
 <template>
-  <section>
+  <section class="-mt-16">
     <MainPageSlider01 />
     <!-- <WelcomeSection /> -->
     <ShortAboutRunningTextComponent />
-    <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
+    <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
         <div class="secondary-content space-y-12 h-[300vh]">
           <ProductSection />
@@ -33,7 +33,7 @@ import ProductSection from '~/components/sections/ProductSection.vue';
           <ShortDescriptionSectionCoponent />
         </div>
       </template>
-    </WelcomeSection>
+</WelcomeSection> -->
 
     <MissionVissionSection id="mission-vision" />
 
