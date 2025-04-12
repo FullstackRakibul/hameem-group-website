@@ -7,9 +7,18 @@
           <!-- <h2 class="text-3xl md:text-6xl font-bold font-denim">
             About <span class="text-secondary">Ha-Meem</span> Group
           </h2> -->
-          <div v-gsap.whenVisible.animateText.slow class="text-secondary uppercase font-bold  md:text-6xl mb-5">
-            Ha-Meem
-            Group </div>
+          <div v-gsap.whenVisible.to="{
+            opacity: 1,
+            y: 0,
+            delay: 0.5,
+            duration: 1.2,
+            ease: 'power2.out',
+            stagger: 0.3
+          }" class="text-secondary uppercase font-bold md:text-6xl mb-5">
+            Ha-Meem Group
+          </div>
+
+
           <p class=" md:text-2xl font-sans md:font-semibold text-gray-600 mt-4 text-justify ">
             starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of
             Bangladesh’s largest exporters, with a workforce of 60,000 and an annual turnover nearing one billion USD.
@@ -39,7 +48,7 @@
           class="bg-gray-100 md:p-6  flex justify-center items-center rounded-sm shadow-sm md:h-full md:absolute md:inset-0 md:w-[calc(100%+32px)] md:left-[-16px] bg-cover bg-center"
           :style="{ backgroundImage: `url(${bgImage})` }">
           <section>
-            <div v-gsap.whenVisible.from="{ x: -200, start: 'top bottom', end: 'bottom top', scrub: 1 }"
+            <div v-gsap.whenVisible.from="{ x: -250, start: 'top bottom', end: 'bottom top', scrub: 1 }"
               class="text-gray-900 font-semibold text-lg md:text-4xl font-title">
               Leading Industry
             </div>

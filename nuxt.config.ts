@@ -7,24 +7,7 @@ export default defineNuxtConfig({
   elementPlus: {
     /** Options */
   },
-//   vgsap: {
-//     presets: [
-//       {
-//       name: 'animateText',
-//       from: { opacity: 0, y: 40 },
-//       to: { opacity: 1, y: 0 },
-//       config: { duration: 1.4, ease: 'power4.out' }
-//     },
-//     {
-//       name: 'slow',
-//       config: { duration: 2 }
-//     }
-//     ],
-//     breakpoint: 768,
-//     scroller: '',
-//     composable: true,
-//     plugins: ['ScrollTrigger'] 
-// },
+
 vgsap: {
   debug: true,
   plugins: ['ScrollTrigger'],

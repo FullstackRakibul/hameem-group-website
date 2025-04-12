@@ -23,7 +23,7 @@ import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
 <template>
   <section class="-mt-16">
     <GSAPHeroSlider />
-    <MainPageSlider01 />
+    <!-- <MainPageSlider01 /> -->
     <!-- <WelcomeSection /> -->
     <ShortAboutRunningTextComponent />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
