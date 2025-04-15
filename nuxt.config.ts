@@ -8,11 +8,11 @@ export default defineNuxtConfig({
     /** Options */
   },
 
-vgsap: {
-  debug: true,
-  plugins: ['ScrollTrigger'],
-  composable: true
-},
+// vgsap: {
+//   debug: true,
+//   plugins: ['ScrollTrigger'],
+//   composable: true
+// },
   runtimeConfig: {
     public: {
       apiBase: process.env.API_BASE || "https://api.hameemgroup.com",

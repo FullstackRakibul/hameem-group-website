@@ -4,7 +4,7 @@
   <!-- <AdvanceMegaMenu/> -->
   <div class="font-sans">
     <main class="mt-16">
-      <Preloader v-if="isLoading" />
+      <Preloader2 v-if="isLoading" />
       <slot />
     </main>
     <!-- <main class="pt-16">
@@ -23,6 +23,7 @@ import AdvanceHeader from '~/components/AdvanceHeader.vue';
 import AdvanceFooter from '~/components/AdvanceFooter.vue';
 import AdvanceMegaMenu from '~/components/v2/AdvanceMegaMenu.vue';
 import Preloader from '~/components/Preloader.vue'
+import Preloader2 from '~/components/Preloader2.vue'
 
 
 import { ref, onMounted, onBeforeUnmount } from 'vue';

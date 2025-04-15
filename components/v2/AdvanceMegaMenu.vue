@@ -81,14 +81,14 @@ const BusinessUnitMegamenu = defineAsyncComponent(() => import('./ui/BusinessUni
 
 const menuItems = [
   { label: 'Home', to: '/' },
-  { label: 'About Us', to: '/about' },
+  { label: 'About Us', to: '/#index-about' },
   {
     label: 'Business Units',
     key: 'business-units',
     megaComponent: BusinessUnitMegamenu,
     fullWidth: true,
   },
-  { label: 'Sustainability', to: '/sustainability' },
+  { label: 'Sustainability', to: '/#index-sustainability' },
   {
     label: 'Products',
     key: 'products',
@@ -97,11 +97,11 @@ const menuItems = [
       { label: 'Product B', to: '/products/b' }
     ]
   },
-  { label: 'Clients', to: '/clients' },
-  { label: 'Gallery', to: '/gallery' },
+  { label: 'Clients', to: '/#index-client' },
+  { label: 'Gallery', to: '/#' },
   { 
     label: 'Contact Us', 
-    to: '/contact' ,
+    to: '/#index-contact' ,
     fullWidth: true,
   }
 ];

@@ -25,7 +25,7 @@ import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
     <GSAPHeroSlider />
     <!-- <MainPageSlider01 /> -->
     <!-- <WelcomeSection /> -->
-    <ShortAboutRunningTextComponent />
+    <ShortAboutRunningTextComponent id="index-about" />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
         <div class="secondary-content space-y-12 h-[300vh]">
@@ -41,12 +41,12 @@ import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
 
     <CapabilitySection />
     <BusinessUnitSection id="business-unit" />
-    <SustainabilityMapSection id="sustainability" />
+    <SustainabilityMapSection id="index-sustainability" />
     <!-- <OurBuyersSection id="clients" /> -->
-    <ClientRunningCarouselComponent />
+    <ClientRunningCarouselComponent id="index-client" />
     <AchievementsParallaxSection />
     <BoardofDirectorsSection />
-    <ContactUsMapSectionComponent />
+    <ContactUsMapSectionComponent id="index-contact" />
 
   </section>
 </template>
