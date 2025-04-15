@@ -3,8 +3,8 @@
   <AdvanceHeader class="z-50" />
   <!-- <AdvanceMegaMenu/> -->
   <div class="font-sans">
-    <main class="">
-      <Preloader v-if="isLoading" />
+    <main class="mt-16">
+      <Preloader2 v-if="isLoading" />
       <slot />
     </main>
     <!-- <main class="pt-16">
@@ -24,8 +24,11 @@ import Footer from '~/components/Footer.vue';
 import AdvanceHeader from '~/components/AdvanceHeader.vue';
 import AdvanceFooter from '~/components/AdvanceFooter.vue';
 import AdvanceMegaMenu from '~/components/v2/AdvanceMegaMenu.vue';
+import Preloader from '~/components/Preloader.vue'
+import Preloader2 from '~/components/Preloader2.vue'
 
 
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const isLoading = ref(true);
 
@@ -39,6 +42,7 @@ onMounted(() => {
 onBeforeUnmount(() => {
   isLoading.value = false; // Clean up if the page is unloaded before timeout
 });
+
 </script>
 
 <style scoped>

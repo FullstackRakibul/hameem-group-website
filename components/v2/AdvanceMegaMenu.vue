@@ -2,9 +2,18 @@
   <!-- Desktop Navigation -->
   <ul class="hidden md:flex items-center space-x-6">
     <li v-for="item in menuItems" :key="item.label" class="relative" @mouseenter="item.key && openMenu(item.key)"
-      @mouseleave="item.key && closeMenuWithDelay(item.key)">
-      <NuxtLink :to="item.to || '#'" @click.prevent="item.children ? null : null"
-        class="text-lg font-medium hover:text-white hover:text-bold">
+      @mouseleave="item.key && closeMenuWithDelay(item.key)" >
+      <NuxtLink 
+        :to="item.to || '#'" 
+        @click.prevent="scrollToSection(item.to)"
+        :class="[
+        'text-lg px-2 py-1 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
+        'hover:bg-slate-200 hover:rounded-full hover:px-3 hover:py-2',
+        'hover:font-bold hover:text-primary hover:scale-105',
+        isScrolled ? 'text-black hover:text-primary' : 'text-white',
+        'animate__animated hover:animate__pulse'
+      ]"
+        >
         {{ item.label }}
       </NuxtLink>
 
@@ -63,7 +72,32 @@
 
 <script setup>
 import { ref, defineAsyncComponent } from 'vue';
+const isScrolled = ref(false);
 
+// Handle scroll event
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 100;
+};
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+
+
+const scrollToSection = (sectionId) => {
+  if (!sectionId || sectionId === '#') return;
+  
+  const element = document.querySelector(sectionId);
+  if (element) {
+    window.scrollTo({
+      top: element.offsetTop,
+      behavior: 'smooth'
+    });
+  }
+};
 
 
 // Props for mobile menu visibility
@@ -81,14 +115,14 @@ const BusinessUnitMegamenu = defineAsyncComponent(() => import('./ui/BusinessUni
 
 const menuItems = [
   { label: 'Home', to: '/' },
-  { label: 'About Us', to: '/about' },
+  { label: 'About Us', to: '/#index-about' },
   {
     label: 'Business Units',
     key: 'business-units',
     megaComponent: BusinessUnitMegamenu,
     fullWidth: true,
   },
-  { label: 'Sustainability', to: '/sustainability' },
+  { label: 'Sustainability', to: '/#index-sustainability' },
   {
     label: 'Products',
     key: 'products',
@@ -97,11 +131,11 @@ const menuItems = [
       { label: 'Product B', to: '/products/b' }
     ]
   },
-  { label: 'Clients', to: '/clients' },
-  { label: 'Gallery', to: '/gallery' },
+  { label: 'Clients', to: '/#index-client' },
+  { label: 'Gallery', to: '/#' },
   { 
     label: 'Contact Us', 
-    to: '/contact' ,
+    to: '/#index-contact' ,
     fullWidth: true,
   }
 ];

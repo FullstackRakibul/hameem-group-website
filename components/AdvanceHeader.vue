@@ -1,11 +1,12 @@
 <template>
   <header :class="[
-    'fixed top-0 left-0 right-0 bg-slate-500 z-10 transition-all duration-300 flex items-center justify-between w-full lg:px-16 md:px-14 p-3',
+    'fixed top-0 left-0 right-0 bg-slate-500 z-50 transition-all duration-300 flex items-center justify-between w-full lg:px-16 md:px-14 p-3',
     isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
   ]">
     <!-- Left side: Logo -->
     <NuxtLink to="/">
-      <img src="/public/assets/group-logo.png" alt="Logo" class="h-10" />
+      
+      <img src="/public/assets/group-logo.png"  alt="Logo" class="h-10 wave-logo" />
     </NuxtLink>
 
 
@@ -14,8 +15,7 @@
       <AdvanceMegaMenu :mobileOpen="isMobileMenuOpen" @closeMobileMenu="isMobileMenuOpen = false" />
       <el-space class="bg-white rounded-full px-1 border shadow-sm ">
         <Search />
-        <button @click="toggleModuleMenu"
-          class="p-2 flex items-center rounded-full bg-primary text-white">
+        <button @click="toggleModuleMenu" class="p-2 flex items-center rounded-full bg-primary text-white">
           <Icon name="hugeicons:menu-circle" />
         </button>
       </el-space>
@@ -102,3 +102,26 @@ const toggleMenu = () => {
 
 
 </script>
+<style scoped>
+@keyframes waveFade {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.9;
+  }
+  25% {
+    transform: rotate(3deg) scale(1.02);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(-3deg) scale(1.02);
+    opacity: 1;
+  }
+}
+
+.wave-logo {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: waveFade 2.5s ease-in-out infinite;
+}
+
+</style>
