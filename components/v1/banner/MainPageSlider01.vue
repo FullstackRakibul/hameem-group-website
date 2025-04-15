@@ -1,20 +1,21 @@
 <template>
   <div :style="{ backgroundImage: `url('/assets/ha-meem-group-banner-main-bg-01.png')` }"
-    class="bg-cover h-screen bg-center bg-no-repeat relative overflow-hidden">
+    class="bg-cover bg-center bg-no-repeat relative overflow-hidden">
     <!-- Carousel Section -->
-    <el-carousel :height="carouselHeight" autoplay :interval="5000" :loop="true">
+    <el-carousel :height="carouselHeight" autoplay :interval="5000" :loop="true" class="h-full">
+      <!-- Denim Slide -->
       <el-carousel-item key="denim">
-        <div class="h-screen mx-24">
+        <div class="h-full">
           <HeroImageSectionOne />
         </div>
       </el-carousel-item>
       <el-carousel-item key="denim">
-        <div class="h-screen">
+        <div class="h-full">
           <HeroImageSectionTwo />
         </div>
       </el-carousel-item>
-      <el-carousel-item key="four">
-        <div class="h-screen">
+      <el-carousel-item key="products">
+        <div class="h-full">
           <HeroImageSectionFour />
         </div>
       </el-carousel-item>
@@ -31,20 +32,21 @@ import ImageSliderSection from '../section/ImageScrollSection.vue';
 import HeroImageSectionOne from '../section/HeroImageSectionOne.vue';
 import HeroImageSectionTwo from '../section/HeroImageSectionTwo.vue';
 import HeroImageSectionFour from '../section/HeroImageSectionFour.vue';
-// Responsive carousel height
-const carouselHeight = ref('800px');
 
-// Update height based on screen size
+
+// Responsive carousel height
+const carouselHeight = ref('100dvh');
+
+// Optional: Adjust for mobile browsers with dynamic viewport
 const updateHeight = () => {
-  const width = window.innerWidth;
-  if (width >= 1024) {
-    carouselHeight.value = '900px';
-  } else if (width >= 768) {
-    carouselHeight.value = '600px';
-  } else {
-    carouselHeight.value = '400px';
-  }
+  carouselHeight.value = `${window.innerHeight}px`;
 };
+
+onMounted(() => {
+  updateHeight();
+  // Optional: Re-calculate on resize if needed
+  window.addEventListener('resize', updateHeight);
+});
 
 // Event listeners for window resize
 onMounted(() => {

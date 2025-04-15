@@ -2,23 +2,19 @@
   <div class="flex justify-between items-center mb-8">
     <!-- Section Title -->
     <div>
-      <p class="text-sm font-sans tracking-tight md:tracking-normal font-medium  uppercase" :class="subtitleClass">
+      <p class="text-lg font-sans tracking-widest md:tracking-widest font-semibold  uppercase" :class="subtitleClass">
         {{ subtitle }}
       </p>
       <div class="border-t-4 border-[#40160C] py-2 w-20 mt-2"></div>
-      <h2 class="md:text-4xl text-xl font-bold tracking-tight " :class="titleClass">
+      <h2 class="font-bold tracking-widest  " :class="titleClass">
         {{ title }}
       </h2>
     </div>
 
     <!-- View All Link -->
-    <nuxt-link
-      v-if="buttonTextLink"
-      :to="buttonTextLink"
-      class=" flex items-center space-x-1 font-semibold hover:underline"
-      :class="buttonTextLinkColor"
-      >
-      <span class="md:text-lg text-xs" >{{buttonText}}</span>
+    <nuxt-link v-if="buttonTextLink" :to="buttonTextLink"
+      class=" flex items-center space-x-1 font-semibold hover:underline" :class="buttonTextLinkColor">
+      <span class="md:text-lg text-xs">{{ buttonText }}</span>
       <icon :name="arrowIcon" class="w-5 h-5" />
     </nuxt-link>
   </div>
@@ -57,7 +53,7 @@ defineProps({
     type: String,
     default: "mdi:arrow-top-right",
   },
-  subtitleClass: { type: String, default: "text-primary font-title md:text-lg" },
-  titleClass: { type: String, default: "text-primary font-denim" },
+  subtitleClass: { type: String, default: "font-sans md:text-lg font-semibold " },
+  titleClass: { type: String, default: "text-3xl md:text-4xl font-bold text-gray-900" },
 });
 </script>
