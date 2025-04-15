@@ -27,9 +27,6 @@ import AdvanceMegaMenu from '~/components/v2/AdvanceMegaMenu.vue';
 import Preloader from '~/components/Preloader.vue'
 import Preloader2 from '~/components/Preloader2.vue'
 
-
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-
 const isLoading = ref(true);
 
 onMounted(() => {
