@@ -12,7 +12,7 @@
             Major Products
           </span>
         </h2>
-       
+
       </div>
 
       <!-- Marquee Container -->
