@@ -21,7 +21,7 @@
 
           <p class=" md:text-2xl font-sans md:font-semibold text-gray-600 mt-4 text-justify ">
             starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of
-            Bangladesh’s largest exporters, with a workforce of 60,000 and an annual turnover nearing one billion USD.
+            Bangladesh’s largest exporters, with a workforce of 75,000 and an annual turnover nearing one billion USD.
             Today, Ha-Meem operates 450 production lines with a monthly capacity of 9 million garments, and boasts
             state-of-the-art facilities in denim, spinning, and woven textiles — serving global brands with excellence.
           </p>
