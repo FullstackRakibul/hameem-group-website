@@ -25,7 +25,7 @@ import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
     <GSAPHeroSlider />
     <!-- <MainPageSlider01 /> -->
     <!-- <WelcomeSection /> -->
-    <ShortAboutRunningTextComponent id="index-about" />
+    <ShortAboutRunningTextComponent id="index-about"  />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
         <div class="secondary-content space-y-12 h-[300vh]">

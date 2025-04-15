@@ -48,7 +48,8 @@ defineProps({
         <el-row :gutter="20" class="mt-6">
           <!-- Mission Points -->
           <el-col :span="12">
-            <el-card class="key-point animate__animated animate__zoomIn">
+            <el-card class="key-point animate__animated animate__zoomIn ">
+              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
               <Icon name="hugeicons:quality" style="color: black"
                 class="text-green-600 text-4xl transition-transform animate-pulse" />
               <h3 class="text-xl font-semibold text-gray-800 mt-2">Quality Products</h3>
@@ -57,6 +58,7 @@ defineProps({
           </el-col>
           <el-col :span="12">
             <el-card class="key-point animate__animated animate__zoomIn animate__delay-1s">
+              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
               <Icon name="hugeicons:poverty" style="color: black"
                 class="text-green-600 text-4xl transition-transform animate-pulse" />
               <h3 class="text-xl font-semibold text-gray-800 mt-2">Eliminate Poverty</h3>
@@ -65,6 +67,7 @@ defineProps({
           </el-col>
           <el-col :span="12" class="mt-6">
             <el-card class="key-point animate__animated animate__zoomIn animate__delay-2s">
+              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
               <Icon name="hugeicons:industry" style="color: black"
                 class="text-green-600 text-4xl transition-transform animate-pulse" />
               <h3 class="text-xl font-semibold text-gray-800 mt-2">Industrialization</h3>
@@ -75,6 +78,7 @@ defineProps({
           <!-- Vision Points -->
           <el-col :span="12" class="mt-6">
             <el-card class="key-point animate__animated animate__zoomIn animate__delay-3s">
+              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
               <Icon name="hugeicons:trophy" style="color: black"
                 class="text-green-600 text-4xl transition-transform animate-pulse" />
               <h3 class="text-xl font-semibold text-gray-800 mt-2">Leading Manufacturer</h3>
@@ -83,6 +87,7 @@ defineProps({
           </el-col>
           <el-col :span="12" class="mt-6">
             <el-card class="key-point animate__animated animate__zoomIn animate__delay-4s">
+              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
               <Icon name="hugeicons:target" style="color: black"
                 class="text-green-600 text-4xl transition-transform animate-pulse" />
               <h3 class="text-xl font-semibold text-gray-800 mt-2">Industry Breakthrough</h3>
@@ -91,6 +96,7 @@ defineProps({
           </el-col>
           <el-col :span="12" class="mt-6">
             <el-card class="key-point animate__animated animate__zoomIn animate__delay-5s">
+              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
               <Icon name="hugeicons:education" style="color: black"
                 class="text-green-600 text-4xl transition-transform animate-pulse" />
               <h3 class="text-xl font-semibold text-gray-800 mt-2">Employee Welfare</h3>
