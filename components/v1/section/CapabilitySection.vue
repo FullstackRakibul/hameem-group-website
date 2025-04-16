@@ -128,7 +128,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
   }
 }
 .animate-marquee {
-  animation: marquee 50s linear infinite;
+  animation: marquee 40s linear infinite;
   min-width: 200%;
   will-change: transform;
 }

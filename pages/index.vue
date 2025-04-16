@@ -18,6 +18,7 @@ import AchievementsParallaxSection from '~/components/v1/section/AchievementsPar
 import CompanyIntroductionSection from '~/components/v1/section/CompanyIntroductionSection.vue'
 import ProductSection from '~/components/sections/ProductSection.vue';
 import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
+import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSectionRFID.vue';
 </script>
 
 <template>
@@ -41,6 +42,7 @@ import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
 
     <CapabilitySection />
     <BusinessUnitSection id="business-unit" />
+     <VideoHeroSectionRFID/>
     <SustainabilityMapSection id="index-sustainability" />
     <!-- <OurBuyersSection id="clients" /> -->
     <ClientRunningCarouselComponent id="index-client" />

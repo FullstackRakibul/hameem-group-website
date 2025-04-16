@@ -20,7 +20,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
     <div class="absolute inset-0 bg-white bg-opacity-80"></div>
 
     <!-- Content Container -->
-    <div class="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-12">
+    <div class="relative z-10 max-w-8xl w-full grid md:grid-cols-2 gap-12">
       <!-- Left Side: Text & Goals -->
       <div class="text-left">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
