@@ -28,14 +28,14 @@
           <el-row :gutter="16">
             <div class="flex flex-wrap justify-around px-6 py-10 w-full someContainer mt-6 ">
               <div v-gsap.draggable.rotation v-for="(item, index) in stats" :key="index"
-                class="flex flex-col items-center justify-center space-y-2 w-60 h-60 rounded-full hover:border border-primary border-dashed border hover:border-primary/30 hover:bg-primary/10">
+                class="flex flex-col items-center justify-center space-y-2 w-40 h-40 rounded-full hover:border border-primary border-dashed border hover:border-primary/30 hover:bg-primary/10">
                   <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
 
-                <Icon :name="item.icon" class=" text-xl w-16 h-16" />
+                <Icon :name="item.icon" class=" text-xl w-10 h-10" />
                 <div class="flex items-center gap-1">
                   <!-- <h3 class="md:text-4xl text-2xl font-bold text-primary tracking-widest">{{ item.count }}</h3> -->
                 </div>
-                <p class="text-md text-gray-800 font-bold text-center uppercase">{{ item.label }}</p>
+                <p class="text-sm text-gray-800 font-semibold text-center uppercase p-3">{{ item.label }}</p>
               </div>
             </div>
           </el-row>
