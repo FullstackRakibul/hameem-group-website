@@ -34,10 +34,11 @@
   ease: 'power2.out',
 }">
           <div class="flex items-center gap-4 mb-3" :class="{ 'justify-end flex-row-reverse': index % 2 === 0 }">
-            <Icon name="pepicons-print:trophy-circle" class="w-10 h-10 bg-white rounded-full text-black" />
+              <img :src="achievement.image" :alt="achievement.title"
+              class="rounded-full w-12 h-12 md:w-20 md:h-20 p-1 mb-3 md:mb-4 object-cover border-2 border-gray-200" />
             <span class="text-2xl font-bold">{{ achievement.year }}</span>
           </div>
-          <h3 class="text-2xl font-semibold mb-2">{{ achievement.title }}</h3>
+          <h3 class="text-xl font-semibold mb-2">{{ achievement.title }}</h3>
           <p class="text-gray-300">{{ achievement.issuer }}</p>
         </div>
       </section>
@@ -48,29 +49,34 @@
 <script setup>
 const achievements = [
   {
-    year: "2021-2022",
+    year: "2021 - 2022",
     title: "BANGABANDHU SHEIKH MUJIB EXPORT TROPHY",
     issuer: "",
+    image: "/assets/achivements/2021-2022/BSMET-21-22.JPG",
   },
   {
-    year: "2020-21",
+    year: "2020 - 2021",
     title: "NATIONAL EXPORT TROPHY GOLD",
     issuer: "",
+    image: "/assets/achivements/2020-2021/NETG-20-21.jpg",
   },
   {
-    year: "2019-2020",
+    year: "2019 - 2020",
     title: "NATIONAL EXPORT TROPHY ",
     issuer: "",
+    image: "/assets/achivements/2019-2020/NET-19-20.JPG",
   },
   {
-    year: "2018-2019",
+    year: "2018 - 2019",
     title: "NATIONAL EXPORT TROPHY",
     issuer: "",
+    image: "/assets/achivements/2018-2019/NET-18-19.JPG",
   },
   {
     year: "2017",
     title: "KOHL'S GREATNESS AWARD 2017",
     issuer: "KOHL'S",
+    image: "/assets/achivements/2017/KHOLS-2017.png",
   },
 ];
 </script>
