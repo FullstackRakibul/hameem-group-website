@@ -31,7 +31,7 @@
                 class="flex flex-col items-center justify-center space-y-2 w-40 h-40 rounded-full hover:border border-primary border-dashed border hover:border-primary/30 hover:bg-primary/10">
                   <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
 
-                <Icon :name="item.icon" class=" text-xl w-10 h-10" />
+                <Icon :name="item.icon" class=" text-xl w-10 h-10 " />
                 <div class="flex items-center gap-1">
                   <!-- <h3 class="md:text-4xl text-2xl font-bold text-primary tracking-widest">{{ item.count }}</h3> -->
                 </div>
@@ -73,32 +73,32 @@
 
 const stats = [
   {
-    icon: 'emojione-monotone:factory',
+    icon: 'icon-park-solid:vertical-timeline',
     count: '4+',
     label: 'Vertical Capacity',
   },
   {
-    icon: 'material-symbols:account-tree-outline-rounded',
+    icon: 'carbon:power-virtual-server-disaster-recovery-automation',
     count: '8+',
     label: 'Automation',
   },
   {
-    icon: 'material-symbols:reduce-capacity',
+    icon: 'fluent:desktop-sync-24-regular',
     count: '6+',
     label: 'Digitalization',
   },
   {
-    icon: 'game-icons:sewing-machine',
+    icon: 'lsicon:toggle-warehouse-y-filled',
     count: '75,000+',
     label: 'In-House Facilities',
   },
   {
-    icon: 'game-icons:sewing-machine',
+    icon: 'streamline:travel-airport-earth-airplane-travel-plane-trip-airplane-international-adventure-globe-world',
     count: '1,50 Lakh+',
     label: 'Joint Ventures ',
   },
   {
-    icon: 'game-icons:sewing-machine',
+    icon: 'fluent:design-ideas-20-filled',
     count: '1,50 Lakh+',
     label: 'Enriching Service',
   }
