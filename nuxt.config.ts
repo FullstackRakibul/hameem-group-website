@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+
 export default defineNuxtConfig({
+  
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   css: ["animate.css/animate.min.css", "animate.css"],
@@ -53,6 +56,11 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=Permanent+Marker:ital,wght@0,400;0,700;&display=swap",
         },
+        {
+          rel: "stylesheet",
+          href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+        },
+        
       ],
       style: [
         {

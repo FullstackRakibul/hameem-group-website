@@ -5,7 +5,8 @@
   ]">
     <!-- Left side: Logo -->
     <NuxtLink to="/">
-      <img src="/public/assets/group-logo.png" alt="Logo" class="h-10" />
+      
+      <img src="/public/assets/group-logo.png"  alt="Logo" class="h-10 wave-logo" />
     </NuxtLink>
 
 
@@ -101,3 +102,26 @@ const toggleMenu = () => {
 
 
 </script>
+<style scoped>
+@keyframes waveFade {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.9;
+  }
+  25% {
+    transform: rotate(3deg) scale(1.02);
+    opacity: 1;
+  }
+  75% {
+    transform: rotate(-3deg) scale(1.02);
+    opacity: 1;
+  }
+}
+
+.wave-logo {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: waveFade 2.5s ease-in-out infinite;
+}
+
+</style>

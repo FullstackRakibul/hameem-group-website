@@ -1,5 +1,6 @@
 <template>
   <!-- Slider container -->
+   
   <div ref="sliderContainer" class="relative w-full h-screen overflow-hidden">
     <!-- Five full-screen slides -->
     <section 
@@ -41,7 +42,7 @@ const slides = ref([
   {
     title: "Sustainable Practices",
     description: "Leading with eco-friendly manufacturing and renewable energy initiatives.",
-    image: "/assets/home-banner-section-img-01.jpg"
+    image: "/assets/v1/section/IMG_7271.JPG"
   },
   {
     title: "Global Presence",
@@ -51,12 +52,12 @@ const slides = ref([
   {
     title: "Denim Excellence",
     description: "Crafting world-class denim and apparel with unmatched expertise.",
-    image: "/assets/home-banner-section-img-04.jpg"
+    image: "/assets/v1/section/PAKAGING/denim-bannner-main.jpg"
   },
   {
     title: "Quality & Trust",
     description: "Committed to superior quality control and trusted partnerships worldwide.",
-    image: "/assets/v1/section/IMG_7306.JPG"
+    image: "/assets/v1/section/IMG_7234.JPG"
   }
 ])
 onMounted(() => {
@@ -151,6 +152,7 @@ onBeforeUnmount(() => {
 })
 
 
+
 </script>
 
 
@@ -159,5 +161,7 @@ section {
   z-index: 0;
   transition: visibility 0.01s 1.2s; /* Match animation duration */
 }
-
+body.lock-scroll {
+  overflow: hidden;
+}
 </style>

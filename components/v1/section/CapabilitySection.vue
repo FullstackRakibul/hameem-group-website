@@ -4,50 +4,56 @@ import { ref, computed } from 'vue';
 
 // Strengths Card Data
 const strengths = ref([
+   {
+    title: 'Global Network',
+    description: 'Strategic partnerships with 50+ international brands across North America, Europe, and Asia.',
+    icon: 'mdi:earth',
+    linkText: 'New Garments Factory 2024',
+    badge: 'Worldwide'
+  },
+  {
+    title: 'Global Network',
+    description: 'Strategic partnerships with 50+ international brands across North America, Europe, and Asia.',
+    icon: 'mdi:earth',
+    linkText: 'RO Plant 2024',
+    badge: 'Worldwide'
+  },
   {
     title: 'Advanced Infrastructure',
     description: 'Cutting-edge facilities including automated production lines, specialized washing units, and integrated packaging solutions.',
     icon: 'fluent-mdl2:delivery-truck',
-    linkText: 'Explore Facilities',
+    linkText: 'New Denim Mill 2026',
     badge: 'Innovation'
   },
   {
     title: 'Expert Workforce',
     description: '50,000+ skilled professionals with specialized training in textile manufacturing and quality control.',
     icon: 'mdi:worker',
-    linkText: 'Meet Our Team',
+    linkText: 'New Spinning Mill 2027',
     badge: 'Expertise'
   },
   {
     title: 'Sustainable Operations',
     description: 'LEED-certified facilities, water recycling systems, and eco-friendly materials reducing environmental impact.',
     icon: 'material-symbols:eco',
-    linkText: 'Our Green Initiatives',
+    linkText: 'Sourcing & Ware House',
     badge: 'Eco-Friendly'
-  },
-  {
-    title: 'Global Network',
-    description: 'Strategic partnerships with 50+ international brands across North America, Europe, and Asia.',
-    icon: 'mdi:earth',
-    linkText: 'Our Global Reach',
-    badge: 'Worldwide'
   }
 ]);
 
 // Carousel Data
 const products = ref([
-  'ALL TYPES OF BOTTOMS AND TOPS',
-  'HI-FASHION DENIM JEANS',
-  'CRITICAL CARGOS',
-  'BASIC & HIFASHION WASHES',
-  'LASER FINISH / 3D WHISKER',
-  'OVER DYEING OF GARMENTS',
-  'WRINKLE FREE TECHNOLOGY',
-  'MENS SHIRTS & DRESS PANTS',
-  'OUTWEAR & JACKETS FACILITY',
-  'CUSTOM CRITICAL WASHES',
-  'PREMIUM DENIM FABRICS',
-  'SUSTAINABLE PRODUCTION'
+  'Garments Factory',
+  'Sweater Factory', 
+  'Washing Plant',
+  'Automated Machine',
+  'Embroidery ',
+  'Printing',
+  'Re-Cycle Plant',
+  'Fabric Printing Plant',
+  'Laser Machine',
+  'In-House Accessories',
+  'Solar Plant'
 ]);
 
 const duplicatedProducts = computed(() => [...products.value, ...products.value]);
@@ -56,7 +62,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
 <template>
   <section class="w-full  px-4 md:px-24 py-4">
     <!-- Section Header -->
-    <SectionHeader title="Our Core Strengths"
+    <SectionHeader title="Expansion Plan"
       subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" buttonTextLink="/#"
       buttonText="Discover Our Capabilities" />
 

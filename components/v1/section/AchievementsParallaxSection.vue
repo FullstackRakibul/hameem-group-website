@@ -48,24 +48,29 @@
 <script setup>
 const achievements = [
   {
-    year: "2010",
-    title: "Annual Winner of Strategic Quality Assurance Dept.",
-    issuer: "KOHLS",
+    year: "2021-2022",
+    title: "BANGABANDHU SHEIKH MUJIB EXPORT TROPHY",
+    issuer: "",
   },
   {
-    year: "2009",
-    title: "Technical Performance Award",
-    issuer: "JCPenny",
+    year: "2020-21",
+    title: "NATIONAL EXPORT TROPHY GOLD",
+    issuer: "",
   },
   {
-    year: "2011",
-    title: "Technical Design Certification",
-    issuer: "KOHLS",
+    year: "2019-2020",
+    title: "NATIONAL EXPORT TROPHY ",
+    issuer: "",
   },
   {
-    year: "2009",
-    title: "Annual Winner of Strategic Quality Assurance Dept.",
-    issuer: "KOHLS",
+    year: "2018-2019",
+    title: "NATIONAL EXPORT TROPHY",
+    issuer: "",
+  },
+  {
+    year: "2017",
+    title: "KOHL'S GREATNESS AWARD 2017",
+    issuer: "KOHL'S",
   },
 ];
 </script>
