@@ -20,9 +20,9 @@
 
 
           <p class=" md:text-2xl font-sans md:font-semibold text-gray-600 mt-4 text-justify ">
-            starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of
-            Bangladesh’s largest exporters, with a workforce of 1.12 lakh and an annual turnover nearing one billion USD.
-            Today, Ha-Meem operates 450 production lines with a monthly capacity of 9 million garments, and boasts
+            Starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of
+            Bangladesh’s largest exporters, with a workforce of 75,000  and an annual turnover nearing 925 million USD.
+            Today, Ha-Meem operates 450 production lines with a monthly capacity of 9.5 million garments, and boasts
             state-of-the-art facilities in denim, spinning, and woven textiles — serving global brands with excellence.
           </p>
           <el-row :gutter="16">
@@ -33,7 +33,7 @@
 
                 <Icon :name="item.icon" class=" text-xl w-16 h-16" />
                 <div class="flex items-center gap-1">
-                  <h3 class="md:text-4xl text-2xl font-bold text-primary tracking-widest">{{ item.count }}</h3>
+                  <!-- <h3 class="md:text-4xl text-2xl font-bold text-primary tracking-widest">{{ item.count }}</h3> -->
                 </div>
                 <p class="text-md text-gray-800 font-bold text-center uppercase">{{ item.label }}</p>
               </div>
@@ -74,24 +74,34 @@
 const stats = [
   {
     icon: 'emojione-monotone:factory',
-    count: '48+',
-    label: 'Factories',
+    count: '4+',
+    label: 'Vertical Capacity',
   },
   {
     icon: 'material-symbols:account-tree-outline-rounded',
-    count: '540+',
-    label: 'Production Lines',
+    count: '8+',
+    label: 'Automation',
   },
   {
     icon: 'material-symbols:reduce-capacity',
-    count: '15.5M+',
-    label: 'Capacity',
+    count: '6+',
+    label: 'Digitalization',
   },
   {
     icon: 'game-icons:sewing-machine',
-    count: '1.4M+',
-    label: 'Workforce',
+    count: '75,000+',
+    label: 'In-House Facilities',
   },
+  {
+    icon: 'game-icons:sewing-machine',
+    count: '1,50 Lakh+',
+    label: 'Joint Ventures ',
+  },
+  {
+    icon: 'game-icons:sewing-machine',
+    count: '1,50 Lakh+',
+    label: 'Enriching Service',
+  }
 ]
 
 const props = defineProps({

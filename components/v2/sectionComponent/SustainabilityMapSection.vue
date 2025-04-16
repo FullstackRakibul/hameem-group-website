@@ -66,6 +66,38 @@ import { library } from '@fortawesome/fontawesome-svg-core';
             <span class="text-green-600 text-xl font-bold mr-2">●</span>
             100% traceable and transparent supply-chain
           </li>
+          <li class="flex items-start">
+            <span class="text-green-600 text-xl font-bold mr-2">●</span>
+            Chemical Water & Power Saving
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 text-xl font-bold mr-2">●</span>
+           Environment Friendly Wash Chamicals
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 text-xl font-bold mr-2">●</span>
+           Power Saving Machinaries
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 text-xl font-bold mr-2">●</span>
+           Water Saving And Recycling 
+          </li>
+           <li class="flex items-start">
+            <span class="text-green-600 text-xl font-bold mr-2">●</span>
+           Green Dyes
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 text-xl font-bold mr-2">●</span>
+           Natural Fibers
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 text-xl font-bold mr-2">●</span>
+           Sustainable Laundry Machine
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 text-xl font-bold mr-2">●</span>
+          Laser
+          </li>
         </ul>
       </div>
 
