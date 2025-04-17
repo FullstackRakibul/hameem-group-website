@@ -23,8 +23,8 @@ import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSect
 
 <template>
   <section class="-mt-16">
-    <GSAPHeroSlider />
-    <!-- <MainPageSlider01 /> -->
+    <!-- <GSAPHeroSlider /> -->
+    <MainPageSlider01 />
     <!-- <WelcomeSection /> -->
     <ShortAboutRunningTextComponent id="index-about"  />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
