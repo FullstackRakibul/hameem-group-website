@@ -134,6 +134,26 @@ const openModal = (item: any) => {
 const getModalContent = (label: string) => {
   // This should match your actual content structure
   const contentMap: any = {
+    'Vertical Capacity': {
+      sections: [
+        {
+          title: 'Automation',
+          items: [
+            {
+              title: 'Automation in the garment industry',
+              description: 'using technology to streamline various processes, from design and fabric sourcing to production and distribution',
+              image: 'https://media2.giphy.com/media/vlYZYUxO3Pt92WEeGw/giphy.gif?cid=6c09b952qhihdxpxce3zfmyqm326wf0g7ja0ypsvwuen076a&ep=v1_gifs_search&rid=giphy.gif&ct=g'
+            },
+            {
+              title: 'Key areas of automation in garment manufacturing',
+              description: 'Computer-aided design (CAD) software and 3D modeling allow for faster and more accurate pattern creation, as well as virtual prototyping. ',
+              image: 'https://i.pinimg.com/originals/b1/99/01/b199017a4af34e48a30dea1fa2642163.gif'
+            },
+            // Add other items...
+          ]
+        }
+      ]
+    },
     'Automation': {
       sections: [
         {
