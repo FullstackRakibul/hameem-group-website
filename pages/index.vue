@@ -25,7 +25,6 @@ import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSect
   <section class="-mt-16">
     <!-- <GSAPHeroSlider /> -->
     <MainPageSlider01 />
-    <!-- <WelcomeSection /> -->
     <ShortAboutRunningTextComponent id="index-about"  />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
@@ -44,7 +43,7 @@ import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSect
     <BusinessUnitSection id="business-unit" />
      <VideoHeroSectionRFID/>
     <SustainabilityMapSection id="index-sustainability" />
-    <!-- <OurBuyersSection id="clients" /> -->
+    <OurBuyersSection id="clients" />
     <ClientRunningCarouselComponent id="index-client" />
     <AchievementsParallaxSection />
     <BoardofDirectorsSection />

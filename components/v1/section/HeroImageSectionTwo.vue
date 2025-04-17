@@ -5,14 +5,14 @@
     <div class="absolute inset-0 bg-black/60 z-10"></div>
 
     <div class="relative z-20 container mx-auto px-4 md:px-8 py-8">
-      <div class="max-w-4xl text-center">
+      <div class="max-w-xl text-left">
         <!-- Main Heading -->
-        <h3 class="text-4xl md:text-5xl font-bold mb-6 tracking-wide text-start animate-fade-in-up">
-          Pioneering Fashion, Crafting Excellence
+        <h3 class="text-4xl md:text-5xl px-4 md:px-8  font-bold mb-6 tracking-wide animate-fade-in-up">
+          WHO WE ARE
         </h3>
 
         <!-- Content Container -->
-        <div class="bg-white/4 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-xl animate-slide-up">
+        <div class="bg-white/4 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-xl animate-slide-up">
           <!-- Description -->
           <p class="text-lg md:text-xl leading-relaxed text-gray-200 font-medium mb-8 line-clamp-2 hover:line-clamp-none transition-all duration-500 text-justify ">
            At Ha-Meem Group, fashion is more than just fabric stitched into form — it’s a reflection of global trends, human creativity, and technical mastery woven together under one roof. Since 1984, we've been transforming the garment manufacturing landscape, growing from a single unit to one of Bangladesh's leading vertically integrated apparel powerhouses.
@@ -20,7 +20,7 @@
 
           <!-- CTA Button -->
           <div class="flex justify-start">
-            <button class="group relative hover:bg-primary px-8 py-2 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <button class="group relative hover:bg-primary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               <div class="flex items-center space-x-3">
                 <span>Discover More</span>
                 <Icon name="mdi:arrow-right" class="transform group-hover:translate-x-1 transition-all duration-300 text-xl" />

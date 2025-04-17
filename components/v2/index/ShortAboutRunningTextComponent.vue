@@ -27,9 +27,9 @@
           </p>
           <el-row :gutter="16">
             <div class="flex flex-wrap justify-around px-6 py-10 w-full someContainer mt-6 ">
-              <div v-gsap.draggable.rotation v-for="(item, index) in stats" :key="index"
+              <div  v-for="(item, index) in stats" :key="index" @click="openModal(item)"
                 class="flex flex-col items-center justify-center space-y-2 w-40 h-40 rounded-full hover:border border-primary border-dashed border hover:border-primary/30 hover:bg-primary/10">
-                  <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
+                  <span class="hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
 
                 <Icon :name="item.icon" class=" text-xl w-10 h-10 " />
                 <div class="flex items-center gap-1">
@@ -67,9 +67,20 @@
       </el-col>
     </el-row>
   </section>
+  <AboutServiceList 
+    v-if="showModal"
+    :content="modalContent"
+    @close="showModal = false" />
 </template>
 
 <script lang="ts" setup>
+import AboutServiceList from '~/components/ui/AboutServiceList.vue';
+
+// Add modal state
+const showModal = ref(false);
+const modalContent = ref({});
+
+
 
 const stats = [
   {
@@ -110,6 +121,45 @@ const props = defineProps({
     default: "/assets/v1/raise-chart.gif", // Ensure this is correct
   },
 });
+
+
+
+
+const openModal = (item: any) => {
+  modalContent.value = getModalContent(item.label);
+  showModal.value = true;
+};
+
+// Add content mapping function
+const getModalContent = (label: string) => {
+  // This should match your actual content structure
+  const contentMap: any = {
+    'Automation': {
+      sections: [
+        {
+          title: 'Automation',
+          items: [
+            {
+              title: 'Automation in the garment industry',
+              description: 'using technology to streamline various processes, from design and fabric sourcing to production and distribution',
+              image: 'https://media2.giphy.com/media/vlYZYUxO3Pt92WEeGw/giphy.gif?cid=6c09b952qhihdxpxce3zfmyqm326wf0g7ja0ypsvwuen076a&ep=v1_gifs_search&rid=giphy.gif&ct=g'
+            },
+            {
+              title: 'Key areas of automation in garment manufacturing',
+              description: 'Computer-aided design (CAD) software and 3D modeling allow for faster and more accurate pattern creation, as well as virtual prototyping. ',
+              image: 'https://i.pinimg.com/originals/b1/99/01/b199017a4af34e48a30dea1fa2642163.gif'
+            },
+            // Add other items...
+          ]
+        }
+      ]
+    },
+    // Add content for other labels...
+  };
+  return contentMap[label] || {};
+};
+
+
 </script>
 
 <style scoped>
