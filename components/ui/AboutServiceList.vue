@@ -25,8 +25,8 @@
 
         <div v-for="(section, index) in content.sections" :key="index" class="mb-8">
           <h3 class="text-lg font-semibold mb-4">{{ section.title }}</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div v-for="(item, itemIndex) in section.items" :key="itemIndex" class="flex items-start gap-4 p-4 hover:bg-gray-50 rounded-lg">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ">
+            <div v-for="(item, itemIndex) in section.items" :key="itemIndex" class="flex items-start gap-4 p-4 hover:bg-gray-300 rounded-lg">
               <img :src="item.image" class="w-12 h-12 object-cover rounded-full" alt="">
               <div>
                 <h4 class="font-medium mb-2 line-clamp-1 hover:line-clamp-none transition-all duration-900">{{ item.title }}</h4>

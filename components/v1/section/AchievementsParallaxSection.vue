@@ -58,7 +58,7 @@ const achievements = [
     year: "2020 - 2021",
     title: "NATIONAL EXPORT TROPHY GOLD",
     issuer: "",
-    image: "/assets/achivements/2020-2021/NETG-20-21.jpg",
+    image: "/assets/achivements/2020-2021/NETG-20-21.JPG",
   },
   {
     year: "2019 - 2020",
