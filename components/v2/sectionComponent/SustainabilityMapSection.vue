@@ -119,7 +119,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
     <div class="flex space-x-6 mt-6">
       <div class="group flex flex-col items-center">
         <Icon name="hugeicons:turtle-neck" style="color: black" class="text-green-600 text-4xl transition-transform animate-pulse"  />
-        <!-- <span class="mt-2 text-gray-800 font-medium">Fabric Sustainability</span> -->
+        <span class="mt-2 text-gray-800 font-medium">Fabric Sustainability</span>
       </div>
 
       <div class="group flex flex-col items-center">

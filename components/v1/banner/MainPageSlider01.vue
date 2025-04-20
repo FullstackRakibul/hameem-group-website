@@ -5,12 +5,12 @@
     <el-carousel height="100dvh" autoplay :interval="5000" :loop="true" class="">
       <!-- Denim Slide -->
       <el-carousel-item key="denim">
-        <div class="h-full overflow-x-hidden">
+        <div class="overflow-x-hidden">
           <HeroImageSectionOne />        
         </div>
       </el-carousel-item>
       <el-carousel-item key="denim">
-        <div class="h-full overflow-x-hidden">
+        <div class="overflow-x-hidden">
           <HeroImageSectionTwo />
         </div>
       </el-carousel-item>
@@ -25,7 +25,7 @@
         </div>
       </el-carousel-item>
        <el-carousel-item key="DenimExcellence">
-        <div class="">
+        <div class="overflow-x-hidden">
           <HeroImageSectionSeven />
         </div>
       </el-carousel-item>

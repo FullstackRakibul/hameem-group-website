@@ -4,7 +4,7 @@ import { ref, computed } from 'vue';
 
 const strengths = ref([
   {
-    title: 'Global Network',
+    title: 'Shaping Tomorrow’s Textile Frontier',
     description: 'Strategic partnerships with 50+ international brands across North America, Europe, and Asia.',
     icon: 'mdi:earth',
     linkText: 'New Garments Factory 2024',
@@ -72,7 +72,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
         <div v-for="(card, index) in strengths" :key="index"
           class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-primary/15 min-h-320 w-full sm:w-1/2 lg:w-1/5 flex flex-col">
           
-          <div class="absolute top-14 -right-32 rounded-b-lg w-32 bg-pink-700 text-white text-sm font-bold py-1 text-center transform rotate-45 shadow-md transition-all duration-500 group-hover:-right-10 delay-100 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]">
+          <div class="absolute top-14 right-32 rounded-b-lg w-32 bg-pink-700 text-white text-sm font-bold py-1 text-center transform rotate-45 shadow-md transition-all duration-500 group-hover:-right-10 delay-100 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]">
             {{ card.badge }}
           </div>
 
@@ -82,7 +82,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
               <Icon :name="card.icon"
                 class="relative group-hover:text-white text-primary text-3xl z-10 transition-all duration-500 group-hover:scale-110 ease-[cubic-bezier(0.4,0,0.2,1)]" />
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-3">{{ card.title }}</h3>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">{{ card.title }}</h3>
             <p class="text-gray-600 font-medium leading-relaxed text-justify mb-4">
               {{ card.description }}
             </p>
