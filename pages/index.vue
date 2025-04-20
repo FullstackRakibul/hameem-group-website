@@ -43,7 +43,6 @@ import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSect
     <BusinessUnitSection id="business-unit" />
      <VideoHeroSectionRFID/>
     <SustainabilityMapSection id="index-sustainability" />
-    <OurBuyersSection id="clients" />
     <ClientRunningCarouselComponent id="index-client" />
     <AchievementsParallaxSection />
     <BoardofDirectorsSection />

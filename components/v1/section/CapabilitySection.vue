@@ -4,36 +4,36 @@ import { ref, computed } from 'vue';
 
 const strengths = ref([
   {
-    title: 'Global Network',
-    description: 'Strategic partnerships with 50+ international brands across North America, Europe, and Asia.',
+    title: 'Global Apparel Expansion',
+    description: 'Launching a cutting-edge garments factory to enhance production capacity and meet global demand.',
     icon: 'mdi:earth',
     linkText: 'New Garments Factory 2024',
     badge: 'Worldwide'
   },
   {
-    title: 'Global Network',
-    description: 'Strategic partnerships with 50+ international brands across North America, Europe, and Asia.',
+    title: 'Water Treatment Excellence',
+    description: 'State-of-the-art RO Plant ensuring sustainable water purification and recycling for optimized resource use in manufacturing.',
     icon: 'mdi:earth',
     linkText: 'RO Plant 2024',
     badge: 'Worldwide'
   },
   {
-    title: 'Advanced Infrastructure',
-    description: 'Cutting-edge facilities including automated production lines, specialized washing units, and integrated packaging solutions.',
+    title: 'Denim Innovation Hub',
+    description: 'A next-generation denim mill focused on sustainable fabrics, efficient dyeing, and smart finishing.',
     icon: 'fluent-mdl2:delivery-truck',
     linkText: 'New Denim Mill 2026',
     badge: 'Innovation'
   },
   {
-    title: 'Expert Workforce',
-    description: '50,000+ skilled professionals with specialized training in textile manufacturing and quality control.',
+    title: 'Precision Yarn Production',
+    description: 'Advanced spinning facilities engineered for high-quality yarns with reduced waste and energy use.',
     icon: 'mdi:worker',
     linkText: 'New Spinning Mill 2027',
     badge: 'Expertise'
   },
   {
-    title: 'Sustainable Operations',
-    description: 'LEED-certified facilities, water recycling systems, and eco-friendly materials reducing environmental impact.',
+    title: 'Strategic Supply Chain',
+    description: 'Integrated sourcing and warehousing facilities designed for streamlined logistics and distribution.',
     icon: 'material-symbols:eco',
     linkText: 'Sourcing & Ware House',
     badge: 'Eco-Friendly'
@@ -93,7 +93,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
               <div class="absolute bottom-0 left-0 w-full h-full bg-primary rounded-xl  transition-all duration-500 transform origin-bottom translate-y-full group-hover:translate-y-0"></div>
               <div class="relative h-full flex items-center justify-center gap-2 px-8">
                 <Icon name="mdi-arrow-right-bold-circle" size="26" class="text-primary group-hover:text-white text-lg transform -translate-x-28 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100 ease-out" />
-                <span class="text-secondary font-semibold text-md group-hover:text-md group-hover:tracking-widest tracking-wider  group-hover:text-white transition-all duration-500 delay-100 ease-out">
+                <span class="text-secondary font-semibold text-sm group-hover:text-md group-hover:tracking-widest tracking-wider  group-hover:text-white transition-all duration-500 delay-100 ease-out">
                   {{ card.linkText }}
                 </span>
               </div>
