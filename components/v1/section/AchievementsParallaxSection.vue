@@ -8,7 +8,7 @@
       </h2>
 
     <!-- Content Container -->
-    <div class="relative z-20 container mx-auto px-4 py-16 text-white flex flex-col items-center space-y-12">
+    <div class="relative z-20 mx-auto px-24 py-16 text-white flex flex-col items-center space-y-12">
       <!-- Main Display Section -->
       <div class="flex flex-col md:flex-row items-center justify-between w-full bg-white/10 backdrop-blur-md rounded-lg p-8 shadow-lg space-y-8 md:space-y-0">
         <!-- Left: Text Section -->
@@ -37,7 +37,7 @@
       </div>
 
       <!-- Carousel Section -->
-      <div class="w-full overflow-x-auto flex space-x-6 p-4 bg-white/10 backdrop-blur-md rounded-lg shadow-inner">
+      <div class="w-full justify-center items-center  overflow-x-auto flex space-x-6 p-4  bg-white/10 backdrop-blur-md rounded-lg shadow-inner ">
         <div
           v-for="(award, index) in awards"
           :key="index"
