@@ -17,8 +17,6 @@
           }" class="text-secondary uppercase font-bold md:text-6xl mb-5">
             Ha-Meem Group
           </div>
-
-
           <p class=" md:text-2xl font-sans md:font-semibold text-gray-600 mt-4 text-justify ">
             Starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of
             Bangladesh’s largest exporters, with a workforce of 75,000 and an annual turnover nearing 925 million USD.
