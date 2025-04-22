@@ -23,20 +23,30 @@
             Today, Ha-Meem operates 450 production lines with a monthly capacity of 9.5 million garments, and boasts
             state-of-the-art facilities in denim, spinning, and woven textiles — serving global brands with excellence.
           </p>
-          <el-row :gutter="16">
-            <div class="flex flex-wrap justify-around px-6 py-10 w-full someContainer mt-6 ">
-              <div v-for="(item, index) in stats" :key="index" @click="openModal(item)"
-                class="flex flex-col items-center justify-center space-y-2 w-40 h-40 rounded-full hover:border border-primary border-dashed border hover:border-primary/30 hover:bg-primary/10">
-                <span class="hover:animate-ping rounded-full hover:bg-sky-400 opacity-50" />
 
-                <Icon :name="item.icon" class=" text-xl w-10 h-10 " />
-                <div class="flex items-center gap-1">
-                  <!-- <h3 class="md:text-4xl text-2xl font-bold text-primary tracking-widest">{{ item.count }}</h3> -->
+          <el-row :gutter="16">
+            <div class="flex flex-wrap justify-around px-6 py-10 w-full someContainer mt-6">
+              <div v-for="(item, index) in stats" :key="index" @click="openModal(item)"
+                class="flex flex-col items-center space-y-4 cursor-pointer mb-8 transition-all duration-300">
+                <!-- Circle Container -->
+                <div
+                  class="w-40 h-40 rounded-full border-2 border-transparent hover:border-primary hover:border-dashed hover:bg-primary/10 flex items-center justify-center p-1 transition-all duration-300">
+                  <!-- Image Container with scaling -->
+                  <div
+                    class="w-full h-full flex items-center justify-center transition-transform duration-300 hover:scale-90">
+                    <img :src="item.image" :alt="item.label || 'Client Logo'"
+                      class="object-contain max-h-full max-w-full" />
+                  </div>
                 </div>
-                <p class="text-sm text-gray-800 font-semibold text-center uppercase p-3">{{ item.label }}</p>
+
+                <!-- Label -->
+                <p class="text-sm text-gray-800 font-semibold text-center uppercase w-full mt-2">
+                  {{ item.label }}
+                </p>
               </div>
             </div>
           </el-row>
+
 
 
           <p class="text-base md:text-lg text-gray-600 mt-4 text-justify">
@@ -84,32 +94,32 @@ const modalContent = ref({});
 
 const stats = [
   {
-    icon: 'icon-park-solid:vertical-timeline',
+    image: '/assets/v1/section/about/garmentys.png',
     count: '4+',
     label: 'Vertical Capacity',
   },
   {
-    icon: 'carbon:power-virtual-server-disaster-recovery-automation',
+    image: '/assets/v1/section/about/AUTOMATION.png',
     count: '8+',
     label: 'Automation',
   },
   {
-    icon: 'fluent:desktop-sync-24-regular',
+    image: '/assets/v1/section/about/Digitalization-.png',
     count: '6+',
     label: 'Digitalization',
   },
   {
-    icon: 'lsicon:toggle-warehouse-y-filled',
+    image: '/assets/v1/section/about/in-house.png',
     count: '75,000+',
     label: 'In-House Facilities',
   },
   {
-    icon: 'streamline:travel-airport-earth-airplane-travel-plane-trip-airplane-international-adventure-globe-world',
+    image: '/assets/v1/section/about/join.png',
     count: '1,50 Lakh+',
     label: 'Joint Ventures',
   },
   {
-    icon: 'fluent:design-ideas-20-filled',
+    image: '/assets/v1/section/about/RO.png',
     count: '1,50 Lakh+',
     label: 'Enriching Service',
   }
