@@ -1,104 +1,122 @@
 <template>
-  <section class="relative min-h-screen bg-fixed bg-cover bg-center"
-    :style="{ backgroundImage: `url('/assets/v1/section/achievement-bg.jpg')` }">
-    <!-- Dark Overlay -->
+  <section class="min-h-screen bg-fixed bg-cover bg-center relative" :style="{ backgroundImage: `url('/assets/v1/section/achievement-bg.jpg')` }">
+    <!-- Overlay -->
     <div class="absolute inset-0 bg-black/70 z-10"></div>
-
-    <!-- Content -->
-    <div class="relative z-20 container mx-auto px-4 py-24 text-white">
-      <!-- Title -->
-      <h2 class="text-6xl font-bold mb-20 text-center" v-gsap.whenVisible.fromTo="[
-        { opacity: 0, y: -60 },
-        { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' },
-      ]">
+<!-- Title -->
+      <h2 class="text-6xl relative  z-20 font-bold py-16 text-white text-center">
         Our Achievements
       </h2>
 
-      <!-- Timeline Container -->
-      <section class="space-y-16" v-gsap.timeline.whenVisible="{
-        start: 'top center',
-        end: '+=100%',
-        scrub: true,
-      }">
-        <div v-for="(achievement, index) in achievements" :key="index"
-          class="relative p-6 border-l-4 border-white/80 bg-white/10 backdrop-blur-sm rounded-lg shadow-lg max-w-xl"
-          :class="{ 'ml-auto text-right': index % 2 === 0 }" v-gsap.add.from="{
-            x: index % 2 === 0 ? 200 : -200,
-            opacity: 0,
-            scale: 0.95,
-          }" v-gsap.add.to="{
-  x: 0,
-  opacity: 1,
-  scale: 1,
-  duration: 1.2,
-  ease: 'power2.out',
-}">
-          <div class="flex items-center gap-4 mb-3" :class="{ 'justify-end flex-row-reverse': index % 2 === 0 }">
-              <img :src="achievement.image" :alt="achievement.title"
-              class="rounded-full w-12 h-12 md:w-20 md:h-20 p-1 mb-3 md:mb-4 object-cover border-2 border-gray-200" />
-            <span class="text-2xl font-bold">{{ achievement.year }}</span>
-          </div>
-          <h3 class="text-xl font-semibold mb-2">{{ achievement.title }}</h3>
-          <p class="text-gray-300">{{ achievement.issuer }}</p>
+    <!-- Content Container -->
+    <div class="relative z-20 container mx-auto px-4 py-16 text-white flex flex-col items-center space-y-12">
+      <!-- Main Display Section -->
+      <div class="flex flex-col md:flex-row items-center justify-between w-full bg-white/10 backdrop-blur-md rounded-lg p-8 shadow-lg space-y-8 md:space-y-0">
+        <!-- Left: Text Section -->
+        <div class="md:w-1/2 text-center md:text-left space-y-4">
+          <h2 class="text-3xl md:text-5xl font-bold">{{ selectedAward?.title || 'Select an Award' }}</h2>
+          <p class="text-gray-300">
+            {{ selectedAward?.description || 'Click on an award below to see the details.' }}
+          </p>
+          <p class="text-gray-400 font-semibold" v-if="selectedAward?.issuer">
+            Issued By: {{ selectedAward.issuer }}
+          </p>
         </div>
-      </section>
+
+        <!-- Right: Image Section -->
+        <div class="md:w-1/2 flex justify-center">
+          <img
+            v-if="selectedAward?.image"
+            :src="selectedAward.image"
+            :alt="selectedAward.title || 'Award Image'"
+            class="w-60 md:w-80 rounded-lg border border-gray-300 shadow-md"
+          />
+          <div v-else class="w-60 md:w-80 h-60 flex items-center justify-center text-gray-400 border border-gray-300 rounded-lg">
+            No Image Selected
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Section -->
+      <div class="w-full overflow-x-auto flex space-x-6 p-4 bg-white/10 backdrop-blur-md rounded-lg shadow-inner">
+        <div
+          v-for="(award, index) in awards"
+          :key="index"
+          @click="selectAward(award)"
+          class="min-w-[200px] flex flex-col items-center justify-center bg-white/20 border border-transparent hover:border-primary hover:bg-primary/10 p-4 rounded-lg cursor-pointer transition-all duration-300"
+        >
+          <img
+            :src="award.image"
+            :alt="award.title"
+            class="w-24 h-24 object-cover rounded-full mb-3 border border-gray-200"
+          />
+          <h3 class="text-lg font-semibold text-center">{{ award.year }}</h3>
+          <p class="text-sm text-center text-gray-300">{{ award.title }}</p>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
-<script setup>
-const achievements = [
+<script lang="ts" setup>
+import { ref, onMounted } from 'vue';
+
+interface Award {
+  year: string;
+  title: string;
+  description?: string;
+  issuer?: string;
+  image?: string;
+}
+
+const awards = ref<Award[]>([
   {
     year: "2021 - 2022",
     title: "BANGABANDHU SHEIKH MUJIB EXPORT TROPHY",
-    issuer: "",
+    description: "The winning exporters received Gold, Silver, and Bronze awards. Some 28 firms were conferred Gold Awards, 27 Silver and 21 Bronze awards.",
+    issuer: "State Minister for Commerce",
     image: "/assets/achivements/2021-2022/BSMET-21-22.JPG",
   },
   {
     year: "2020 - 2021",
     title: "NATIONAL EXPORT TROPHY GOLD",
-    issuer: "",
+    description: "Honored for outstanding contribution to the national export economy.",
     image: "/assets/achivements/2020-2021/NETG-20-21.JPG",
   },
   {
     year: "2019 - 2020",
-    title: "NATIONAL EXPORT TROPHY ",
-    issuer: "",
+    title: "NATIONAL EXPORT TROPHY",
+    description: "Recognized for highest export earnings in the apparel sector.",
     image: "/assets/achivements/2019-2020/NET-19-20.JPG",
   },
   {
     year: "2018 - 2019",
     title: "NATIONAL EXPORT TROPHY",
-    issuer: "",
+    description: "A testament to persistent growth and global trust.",
     image: "/assets/achivements/2018-2019/NET-18-19.JPG",
   },
   {
     year: "2017",
     title: "KOHL'S GREATNESS AWARD 2017",
+    description: "Recognized for exceptional product excellence and global collaboration.",
     issuer: "KOHL'S",
     image: "/assets/achivements/2017/KHOLS-2017.png",
-  },
-];
+  }
+]);
+
+const selectedAward = ref<Award | null>(null);
+
+function selectAward(award: Award): void {
+  selectedAward.value = award;
+}
+
+onMounted(() => {
+  // Safely set the first award on load
+  selectedAward.value = awards.value.length > 0 ? awards.value[0] : null;
+});
 </script>
 
 <style scoped>
 .container {
   max-width: 1200px;
-}
-
-/* Hide ScrollTrigger markers if visible */
-:deep(.gsap-marker-start),
-:deep(.gsap-marker-end) {
-  display: none !important;
-}
-
-@media (max-width: 768px) {
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  .text-2xl {
-    font-size: 1.25rem;
-  }
 }
 </style>
