@@ -13,7 +13,7 @@ const strengths = ref([
   {
     title: 'Water Treatment Excellence',
     description: 'State-of-the-art RO Plant ensuring sustainable water purification and recycling for optimized resource use in manufacturing.',
-    icon: 'mdi:earth',
+    icon: 'mdi:water-outline',
     linkText: 'RO Plant 2024',
     badge: 'Worldwide'
   },
@@ -40,25 +40,62 @@ const strengths = ref([
   }
 ]);
 
+// Updated products with images
 const products = ref([
-  'Garments Factory',
-  'Sweater Factory', 
-  'Washing Plant',
-  'Automated Machine',
-  'Embroidery ',
-  'Printing',
-  'Re-Cycle Plant',
-  'Fabric Printing Plant',
-  'Laser Machine',
-  'In-House Accessories',
-  'Solar Plant'
+  {
+    name: 'Garments Factory',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  },
+  {
+    name: 'Sweater Factory',
+    image: 'assets/v1/section/capabilities/sweater-factory.gif'
+  },
+  {
+    name: 'Washing Plant',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  },
+  {
+    name: 'Automated Machine',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  },
+  {
+    name: 'Embroidery',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  },
+  {
+    name: 'Printing',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  },
+  {
+    name: 'Re-Cycle Plant',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  },
+  {
+    name: 'Fabric Printing Plant',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  },
+  {
+    name: 'Laser Machine',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  },
+  {
+    name: 'In-House Accessories',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  },
+  {
+    name: 'Solar Plant',
+    image: 'assets/v1/section/capabilities/garments-factory.gif'
+  }
 ]);
+
+// Fallback image for products that might have missing images
+const fallbackImage = 'assets/v1/section/capabilities/garments-factory.gif';
 
 const duplicatedProducts = computed(() => [...products.value, ...products.value]);
 </script>
 
 <template>
-  <section class="w-full px-4 md:px-24 py-4">
+  <section class="w-full px-4 md:px-24 py-2">
     <SectionHeader 
       title="Expansion Plan"
       subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" 
@@ -67,13 +104,16 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
     />
 
     <!-- Strengths Section -->
-    <div class="my-6">
-      <div class="flex justify-center gap-2">
+    <div class="my-2">
+      <div class="flex  justify-center gap-3 ">
         <div v-for="(card, index) in strengths" :key="index"
-          class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-primary/15 min-h-320 w-full sm:w-1/2 lg:w-1/5 flex flex-col">
+          class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-primary/15 min-h-320 w-full sm:w-1/2 lg:w-1/5 flex flex-col overflow-hidden">
           
-          <div class="absolute top-14 -right-32 rounded-b-lg w-32 bg-pink-700 text-white text-sm font-bold py-1 text-center transform rotate-45 shadow-md transition-all duration-500 group-hover:-right-10 delay-100 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]">
-            {{ card.badge }}
+          <!-- Badge - Positioned inside the card with transform -->
+          <div class="absolute top-4 right-0 w-32 overflow-hidden">
+            <div class="bg-primary text-white text-xs font-bold py-1 text-center transform translate-x-full rotate-45 origin-left group-hover:translate-x-0 transition-transform duration-500 shadow-md">
+              {{ card.badge }}
+            </div>
           </div>
 
           <div class="p-6 text-center flex-grow pb-16 group">
@@ -82,18 +122,18 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
               <Icon :name="card.icon"
                 class="relative group-hover:text-white text-primary text-3xl z-10 transition-all duration-500 group-hover:scale-110 ease-[cubic-bezier(0.4,0,0.2,1)]" />
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-3">{{ card.title }}</h3>
-            <p class="text-gray-600 font-medium leading-relaxed text-justify mb-4">
+            <h3 class="text-xl font-bold text-gray-800 mb-3">{{ card.title }}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
               {{ card.description }}
             </p>
           </div>
 
-          <div class="absolute group bottom-0 left-0 w-full h-16 overflow-hidden bg-primary/5 transition-all duration-500">
+          <div class="absolute bottom-0 left-0 w-full h-14 overflow-hidden bg-primary/5 transition-all duration-500">
             <NuxtLink :to="card.linkText" class="group-hover:mouser-pointer">
-              <div class="absolute bottom-0 left-0 w-full h-full bg-primary rounded-xl  transition-all duration-500 transform origin-bottom translate-y-full group-hover:translate-y-0"></div>
-              <div class="relative h-full flex items-center justify-center gap-2 px-8">
-                <Icon name="mdi-arrow-right-bold-circle" size="26" class="text-primary group-hover:text-white text-lg transform -translate-x-28 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100 ease-out" />
-                <span class="text-secondary font-semibold text-sm group-hover:text-md group-hover:tracking-widest tracking-wider  group-hover:text-white transition-all duration-500 delay-100 ease-out">
+              <div class="absolute bottom-0 left-0 w-full h-full bg-primary rounded-b-xl transition-all duration-500 transform origin-bottom translate-y-full group-hover:translate-y-0"></div>
+              <div class="relative h-full flex items-center justify-center gap-2 px-4">
+                <Icon name="mdi:arrow-right-bold-circle" size="20" class="text-primary group-hover:text-white transform -translate-x-20 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100 ease-out" />
+                <span class="text-secondary font-medium text-sm group-hover:text-white transition-all duration-500 delay-100 ease-out whitespace-nowrap">
                   {{ card.linkText }}
                 </span>
               </div>
@@ -102,14 +142,27 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
         </div>
       </div>
 
-      <!-- Running Carousel -->
-      <div class="relative overflow-hidden px-24 py-8">
-        <div class="flex space-x-8 animate-marquee">
+      <!-- Products Carousel with Images -->
+      <div class="relative overflow-hidden mt-16 mb-8">
+        <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Our Production Capabilities</h3>
+        <div class="flex space-x-6 animate-marquee px-4">
           <div v-for="(product, index) in duplicatedProducts" :key="index"
-            class="group flex-shrink-0 px-8 py-6 backdrop-blur-lg rounded-xl border border-primary/3 transform hover:scale-105 hover:bg-primary/15 transition-all duration-300 cursor-pointer bg-gray-50">
-            <div class="flex items-center gap-4">
-              <Icon name="mdi:star-shooting" class="text-primary group-hover:text-black text-2xl flex-shrink-0" />
-              <span class="text-xl font-semibold text-primary group-hover:text-black">{{ product }}</span>
+            class="group flex-shrink-0 rounded-xl border border-primary/10 transform hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer bg-white overflow-hidden">
+            <div class="flex flex-row items-center">
+              <!-- Image container with fixed dimensions -->
+              <div class=" h-20 overflow-hidden">
+                <img 
+                  :src="product.image" 
+                  :alt="product.name"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <!-- Product name -->
+              <div class="w-full bg-white p-4 text-center">
+                <span class="text-lg font-medium text-gray-800 group-hover:text-primary transition-colors duration-300">
+                  {{ product.name }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -127,22 +180,27 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
     transform: translateX(-50%);
   }
 }
+
 .animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 30s linear infinite;
   min-width: 200%;
   will-change: transform;
 }
-.group:hover .animate-marquee {
+
+.animate-marquee:hover {
   animation-play-state: paused;
 }
-[clip-path] {
-  transition-property: clip-path, transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
-}
+
+/* Responsive adjustments */
 @media (max-width: 1024px) {
   .min-h-320 {
-    min-height: 280px;
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 30s;
   }
 }
 </style>
