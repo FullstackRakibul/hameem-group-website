@@ -52,39 +52,39 @@ const products = ref([
   },
   {
     name: 'Washing Plant',
-    image: 'assets/v1/section/capabilities/garments-factory.gif'
+    image: 'assets/v1/section/capabilities/WashingPlant.webp'
   },
   {
     name: 'Automated Machine',
-    image: 'assets/v1/section/capabilities/garments-factory.gif'
+    image: 'assets/v1/section/capabilities/AutomatedMachine.gif'
   },
   {
     name: 'Embroidery',
-    image: 'assets/v1/section/capabilities/garments-factory.gif'
+    image: 'assets/v1/section/capabilities/Embroidery.gif'
   },
   {
     name: 'Printing',
-    image: 'assets/v1/section/capabilities/garments-factory.gif'
+    image: 'assets/v1/section/capabilities/Printing.gif'
   },
   {
     name: 'Re-Cycle Plant',
-    image: 'assets/v1/section/capabilities/garments-factory.gif'
+    image: 'assets/v1/section/capabilities/Re-CyclePlant.gif'
   },
   {
     name: 'Fabric Printing Plant',
-    image: 'assets/v1/section/capabilities/garments-factory.gif'
+    image: 'assets/v1/section/capabilities/FabricPrintingPlant.gif'
   },
   {
     name: 'Laser Machine',
-    image: 'assets/v1/section/capabilities/garments-factory.gif'
+    image: 'assets/v1/section/capabilities/LaserMachine.gif'
   },
   {
     name: 'In-House Accessories',
-    image: 'assets/v1/section/capabilities/garments-factory.gif'
+    image: 'assets/v1/section/capabilities/In-HouseAccessories.gif'
   },
   {
     name: 'Solar Plant',
-    image: 'assets/v1/section/capabilities/garments-factory.gif'
+    image: 'assets/v1/section/capabilities/SolarPlant.gif'
   }
 ]);
 
