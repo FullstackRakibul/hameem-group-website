@@ -8,7 +8,7 @@
       <div class="max-w-4xl text-center">
         <!-- Main Heading -->
         <h3 class="text-4xl md:text-5xl font-bold mb-6 tracking-wide text-start animate-fade-in-up">
-         From Fabric to Fashion — Ha-Meem Group’s Garment Excellence
+         Welcome to Ha-Meem Textiles
         </h3>
 
         <!-- Content Container -->
