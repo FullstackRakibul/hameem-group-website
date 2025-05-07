@@ -2,9 +2,65 @@
 defineProps({
   bgImage: {
     type: String,
-    default: "/assets/missionvissionsectionbg-abstruct.jpg", // Update with actual image path
+    default: "/assets/missionvissionsectionbg-abstruct.jpg",
   },
 });
+
+// Mission and Vision data as JSON constant
+const missionVisionData = {
+  title: "Our Vision & Mission",
+  description: "Ha-Meem Group's mission is to provide quality products on time, while also aiming to eliminate poverty and promote industrialization, with a vision of becoming a leading wholesale clothing manufacturer in Bangladesh and globally.",
+  points: [
+    {
+      id: 1,
+      title: "Quality Products",
+      description: "We deliver high-quality products on time, ensuring customer satisfaction and building long-term relationships with our clients worldwide.",
+      icon: "arcticons:okta-verify",
+      category: "mission",
+      animatedImage: "assets/v1/section/mission-vision/Quality-Products.gif" 
+    },
+    {
+      id: 2,
+      title: "Eliminate Poverty",
+      description: "We're committed to creating employment opportunities and economic growth that helps eliminate poverty in our communities.",
+      icon: "mdi:hand-heart-outline",
+      category: "mission",
+      animatedImage: "assets/v1/section/mission-vision/poverty-animation.gif"
+    },
+    {
+      id: 3,
+      title: "Industrialization",
+      description: "We strive to further industrialization through innovation, technology adoption, and sustainable manufacturing practices.",
+      icon: "mdi:factory",
+      category: "mission",
+      animatedImage: "assets/v1/section/mission-vision/industry-animation.gif"
+    },
+    {
+      id: 4,
+      title: "Leading Manufacturer",
+      description: "Our vision is to be recognized as the leading clothing manufacturer in Bangladesh and a respected global player in the industry.",
+      icon: "mdi:crown-outline",
+      category: "vision",
+      animatedImage: "assets/v1/section/mission-vision/Manufacturer-animation.gif"
+    },
+    {
+      id: 5,
+      title: "Industry Breakthrough",
+      description: "We aim to achieve breakthrough innovations in the textile industry through research, development, and creative solutions.",
+      icon: "mdi:lightbulb-on-outline",
+      category: "vision",
+      animatedImage: "assets/v1/section/mission-vision/target-animation.gif"
+    },
+    {
+      id: 6,
+      title: "Employee Welfare",
+      description: "We're dedicated to ensuring the educational advancement, financial security, and overall wellbeing of our employees.",
+      icon: "mdi:account-group-outline",
+      category: "vision",
+      animatedImage: "assets/v1/section/mission-vision/education-animation.gif"
+    }
+  ]
+};
 </script>
 
 <template>
@@ -20,7 +76,7 @@ defineProps({
       </svg>
     </div>
 
-    <el-row :gutter="20" class="items-center relative z-10  ">
+    <el-row :gutter="20" class="items-center relative z-10">
       <!-- Image Column -->
       <el-col :xs="24" :md="12">
         <div class="relative overflow-hidden rounded-lg">
@@ -33,107 +89,298 @@ defineProps({
       <!-- Content Column -->
       <el-col :xs="24" :md="12">
         <!-- Section Title -->
-        <div class="text-left   py-6 ">
+        <div class="text-left py-6">
           <h2 class="text-5xl font-bold text-black animate__animated animate__fadeInUp">
-            Our Vision & Mission
+            {{ missionVisionData.title }}
           </h2>
           <p class="text-lg text-gray-600 mt-2 animate__animated animate__fadeInUp animate__delay-1s">
-            Ha-Meem Group's mission is to provide quality products on time, while also aiming to eliminate poverty and
-            promote industrialization, with a vision of becoming a leading wholesale clothing manufacturer in Bangladesh
-            and globally.
+            {{ missionVisionData.description }}
           </p>
         </div>
 
         <!-- Key Points Section -->
-        <el-row :gutter="20" class="mt-6">
-          <!-- Mission Points -->
-          <el-col :span="12">
-            <el-card class="key-point animate__animated animate__zoomIn ">
-              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
-              <Icon name="hugeicons:quality" style="color: black"
-                class="text-green-600 text-4xl transition-transform animate-pulse" />
-              <h3 class="text-xl font-semibold text-gray-800 mt-2">Quality Products</h3>
-              <p class="text-gray-600">We deliver high-quality products on time.</p>
-            </el-card>
-          </el-col>
-          <el-col :span="12">
-            <el-card class="key-point animate__animated animate__zoomIn animate__delay-1s">
-              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
-              <Icon name="hugeicons:poverty" style="color: black"
-                class="text-green-600 text-4xl transition-transform animate-pulse" />
-              <h3 class="text-xl font-semibold text-gray-800 mt-2">Eliminate Poverty</h3>
-              <p class="text-gray-600">Remove unemployment and poverty.</p>
-            </el-card>
-          </el-col>
-          <el-col :span="12" class="mt-6">
-            <el-card class="key-point animate__animated animate__zoomIn animate__delay-2s">
-              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
-              <Icon name="hugeicons:industry" style="color: black"
-                class="text-green-600 text-4xl transition-transform animate-pulse" />
-              <h3 class="text-xl font-semibold text-gray-800 mt-2">Industrialization</h3>
-              <p class="text-gray-600">We strive to further industrialization.</p>
-            </el-card>
-          </el-col>
-
-          <!-- Vision Points -->
-          <el-col :span="12" class="mt-6">
-            <el-card class="key-point animate__animated animate__zoomIn animate__delay-3s">
-              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
-              <Icon name="hugeicons:trophy" style="color: black"
-                class="text-green-600 text-4xl transition-transform animate-pulse" />
-              <h3 class="text-xl font-semibold text-gray-800 mt-2">Leading Manufacturer</h3>
-              <p class="text-gray-600">Leading clothing manufacturer in BD.</p>
-            </el-card>
-          </el-col>
-          <el-col :span="12" class="mt-6">
-            <el-card class="key-point animate__animated animate__zoomIn animate__delay-4s">
-              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
-              <Icon name="hugeicons:target" style="color: black"
-                class="text-green-600 text-4xl transition-transform animate-pulse" />
-              <h3 class="text-xl font-semibold text-gray-800 mt-2">Industry Breakthrough</h3>
-              <p class="text-gray-600">To break through in the textile industry.</p>
-            </el-card>
-          </el-col>
-          <el-col :span="12" class="mt-6">
-            <el-card class="key-point animate__animated animate__zoomIn animate__delay-5s">
-              <span class="absolute inline-flex h-full w-full hover:animate-ping rounded-full hover:bg-sky-400 opacity-50"/>
-              <Icon name="hugeicons:education" style="color: black"
-                class="text-green-600 text-4xl transition-transform animate-pulse" />
-              <h3 class="text-xl font-semibold text-gray-800 mt-2">Employee Welfare</h3>
-              <p class="text-gray-600">Ensure educational and financial security.</p>
-            </el-card>
-          </el-col>
-        </el-row>
+        <div class="mission-grid mt-6">
+          <div v-for="(point, index) in missionVisionData.points" :key="point.id" 
+            class="mission-card-wrapper">
+            <div class="mission-card">
+              <!-- Initial minimal state -->
+              <div class="card-minimal">
+                <Icon :name="point.icon" class="card-icon" />
+                <h3 class="card-title-minimal">{{ point.title }}</h3>
+                <span class="card-badge">{{ point.category === 'mission' ? 'Mission' : 'Vision' }}</span>
+              </div>
+              
+              <!-- Expanded hover state -->
+              <div class="card-expanded">
+                <div class="animated-image-container">
+                  <img :src="point.animatedImage" :alt="point.title || 'Ha-Meem Group'" class="h-24" />
+                </div>
+                <div class="expanded-content">
+                  <h3 class="card-title-expanded">{{ point.title }}</h3>
+                  <p class="card-description">{{ point.description }}</p>
+                </div>
+              </div>
+              
+              <!-- Border animation elements -->
+              <div class="border-line top"></div>
+              <div class="border-line right"></div>
+              <div class="border-line bottom"></div>
+              <div class="border-line left"></div>
+            </div>
+          </div>
+        </div>
       </el-col>
     </el-row>
   </section>
 </template>
 
-
-
 <style scoped>
-/* Hover effect */
+/* Hover effect for image */
 .hover\:scale-110:hover {
   transform: scale(1.1);
 }
 
-/* Primary color theme */
-.text-primary {
-  color: #1E90FF;
-  /* Adjust primary color */
+/* Mission Grid Layout */
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  position: relative;
 }
 
-.bg-primary {
-  background-color: #1E90FF;
+/* Card Wrapper - Provides space for expansion */
+.mission-card-wrapper {
+  position: relative;
+  min-height: 150px;
 }
 
-/* Key Point Card Styling */
-.key-point {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Mission Vision Card Styling */
+.mission-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
+  border: 1px solid rgba(16, 56, 97, 0.2);
 }
 
-.key-point:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+.mission-card:hover {
+  height: 280px;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(30, 144, 255, 0.2);
+  z-index: 20;
+}
+
+/* Minimal card state */
+.card-minimal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  padding: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.mission-card:hover .card-minimal {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card-icon {
+  font-size: 36px;
+  color: #374A5D;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card-title-minimal {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #374A5D;
+  background-color: rgba(30, 144, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+/* Expanded card state */
+.card-expanded {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mission-card:hover .card-expanded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animated-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.expanded-content {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(30, 144, 255, 0.3) transparent;
+}
+
+.expanded-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.expanded-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.expanded-content::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 144, 255, 0.3);
+  border-radius: 6px;
+}
+
+.card-title-expanded {
+  font-size: 18px;
+  font-weight: 600;
+  color: #71504B;
+  margin-bottom: 10px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease 0.1s;
+}
+
+.mission-card:hover .card-title-expanded {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card-description {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #666;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s ease 0.2s;
+}
+
+.mission-card:hover .card-description {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Border animation */
+.border-line {
+  position: absolute;
+  background: linear-gradient(90deg, #374A5D, #583028, #374A5D, #583028);
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mission-card:hover .border-line {
+  opacity: 1;
+  animation: gradient-animation 2s linear infinite;
+}
+
+.top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.right {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+}
+
+.bottom {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.left {
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .mission-card-wrapper {
+    min-height: 130px;
+  }
+  
+  .mission-card {
+    height: 130px;
+  }
+  
+  .mission-card:hover {
+    height: 250px;
+  }
+  
+  .card-minimal {
+    height: 130px;
+  }
 }
 </style>

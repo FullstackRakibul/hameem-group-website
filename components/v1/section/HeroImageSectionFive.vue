@@ -8,7 +8,7 @@
       <div class="max-w-4xl text-center">
         <!-- Main Heading -->
         <h3 class="text-4xl md:text-5xl font-bold mb-6 tracking-wide text-start animate-fade-in-up">
-          Crafting the Future of Fashion
+          Welcome to Ha-Meem Group
         </h3>
 
         <!-- Content Container -->
