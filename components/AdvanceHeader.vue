@@ -6,7 +6,7 @@
     <!-- Left side: Logo -->
     <NuxtLink to="/">
       
-      <img src="/public/assets/group-logo.png"  alt="Logo" class="h-10 wave-logo" />
+      <img src="/public/assets/group-logo.png"  alt="Logo" class="h-10 formal-logo" />
     </NuxtLink>
 
 
@@ -122,6 +122,23 @@ const toggleMenu = () => {
   display: inline-block;
   transform-origin: 70% 70%;
   animation: waveFade 2.5s ease-in-out infinite;
+}
+
+@keyframes formalFlip {
+  0%, 100% {
+    transform: perspective(100px) rotateY(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: perspective(100px) rotateY(360deg);
+    opacity: 0.8;
+  }
+}
+.formal-logo {
+  display: inline-block;
+  transform-origin: center;
+  animation: formalFlip 10s ease-in-out infinite;
+  transform-style: preserve-3d;
 }
 
 </style>
