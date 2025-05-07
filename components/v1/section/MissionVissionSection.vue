@@ -49,7 +49,7 @@ const missionVisionData = {
       description: "We aim to achieve breakthrough innovations in the textile industry through research, development, and creative solutions.",
       icon: "mdi:lightbulb-on-outline",
       category: "vision",
-      animatedImage: "assets/v1/section/mission-vision/target-animation.gif" // Replace with actual animated image path
+      animatedImage: "assets/v1/section/mission-vision/target-animation.gif"
     },
     {
       id: 6,
@@ -57,7 +57,7 @@ const missionVisionData = {
       description: "We're dedicated to ensuring the educational advancement, financial security, and overall wellbeing of our employees.",
       icon: "mdi:account-group-outline",
       category: "vision",
-      animatedImage: "assets/v1/section/mission-vision/education-animation.gif" // Replace with actual animated image path
+      animatedImage: "assets/v1/section/mission-vision/education-animation.gif"
     }
   ]
 };
@@ -99,9 +99,9 @@ const missionVisionData = {
         </div>
 
         <!-- Key Points Section -->
-        <el-row :gutter="20" class="mt-6">
-          <el-col :span="12" v-for="(point, index) in missionVisionData.points" :key="point.id" 
-            :class="{'mt-6': index >= 2}">
+        <div class="mission-grid mt-6">
+          <div v-for="(point, index) in missionVisionData.points" :key="point.id" 
+            class="mission-card-wrapper">
             <div class="mission-card">
               <!-- Initial minimal state -->
               <div class="card-minimal">
@@ -113,7 +113,7 @@ const missionVisionData = {
               <!-- Expanded hover state -->
               <div class="card-expanded">
                 <div class="animated-image-container">
-                  <img :src="point.animatedImage" :alt="point.title || 'Ha-Meem Group'" class=" h-24" />
+                  <img :src="point.animatedImage" :alt="point.title || 'Ha-Meem Group'" class="h-24" />
                 </div>
                 <div class="expanded-content">
                   <h3 class="card-title-expanded">{{ point.title }}</h3>
@@ -127,8 +127,8 @@ const missionVisionData = {
               <div class="border-line bottom"></div>
               <div class="border-line left"></div>
             </div>
-          </el-col>
-        </el-row>
+          </div>
+        </div>
       </el-col>
     </el-row>
   </section>
@@ -140,23 +140,41 @@ const missionVisionData = {
   transform: scale(1.1);
 }
 
+/* Mission Grid Layout */
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  position: relative;
+}
+
+/* Card Wrapper - Provides space for expansion */
+.mission-card-wrapper {
+  position: relative;
+  min-height: 150px;
+}
+
 /* Mission Vision Card Styling */
 .mission-card {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 150px;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   cursor: pointer;
+  border: 1px solid rgba(16, 56, 97, 0.2);
 }
 
 .mission-card:hover {
-  height: 250px;
-  transform: translateY(-10px) scale(1.02);
+  height: 280px;
+  transform: translateY(-10px) scale(1.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(30, 144, 255, 0.2);
-  z-index: 10;
+  z-index: 20;
 }
 
 /* Minimal card state */
@@ -177,7 +195,7 @@ const missionVisionData = {
 
 .card-icon {
   font-size: 36px;
-  color: #1E90FF;
+  color: #374A5D;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
@@ -195,10 +213,10 @@ const missionVisionData = {
   right: 10px;
   font-size: 11px;
   font-weight: 500;
-  color: #1E90FF;
+  color: #374A5D;
   background-color: rgba(30, 144, 255, 0.1);
   padding: 2px 8px;
-  border-radius: 12px;
+  border-radius: 5px;
 }
 
 /* Expanded card state */
@@ -227,14 +245,24 @@ const missionVisionData = {
   margin-bottom: 15px;
 }
 
-.animated-icon {
-  font-size: 48px;
-  color: #1E90FF;
-  animation: pulse 2s infinite;
-}
-
 .expanded-content {
   flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(30, 144, 255, 0.3) transparent;
+}
+
+.expanded-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.expanded-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.expanded-content::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 144, 255, 0.3);
+  border-radius: 6px;
 }
 
 .card-title-expanded {
@@ -269,7 +297,7 @@ const missionVisionData = {
 /* Border animation */
 .border-line {
   position: absolute;
-  background: linear-gradient(90deg, #1E90FF, #00BFFF, #87CEFA, #1E90FF);
+  background: linear-gradient(90deg, #374A5D, #583028, #374A5D, #583028);
   background-size: 300% 300%;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -334,13 +362,21 @@ const missionVisionData = {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .mission-card-wrapper {
+    min-height: 130px;
+  }
+  
   .mission-card {
     height: 130px;
-    margin-bottom: 15px;
   }
   
   .mission-card:hover {
-    height: 220px;
+    height: 250px;
   }
   
   .card-minimal {
