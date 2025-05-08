@@ -4,10 +4,7 @@ import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 
 const tabPosition = ref<TabsInstance['tabPosition']>('left')
-const activeTab = ref('knit')
-
-
-
+const activeTab = ref<keyof typeof tabImages>('knit')
 
 // Business unit descriptions and details
 const businessUnits = {
@@ -89,7 +86,7 @@ const tabImages = {
 }
 
 // Handle tab change with animation
-const handleTabChange = (tab: string) => {
+const handleTabChange = (tab: keyof typeof tabImages) => {
   // Animate out current content
   gsap.to('.tab-content-container', {
     opacity: 0,
@@ -159,7 +156,7 @@ onMounted(() => {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <!-- Tabs Navigation -->
         <div class="lg:col-span-3">
-          <div class="custom-tabs bg-white rounded-lg shadow-sm overflow-hidden">
+          <div class="custom-tabs bg-primary/10 h-full rounded-lg  shadow-md  overflow-hidden">
             <div 
               v-for="(unit, key) in businessUnits" 
               :key="key"
@@ -170,7 +167,7 @@ onMounted(() => {
                 :class="[
                   'tab-button w-full text-left px-6 py-5 transition-all duration-300 border-l-4',
                   activeTab === key 
-                    ? 'active-tab bg-primary/5 border-primary text-primary font-medium' 
+                    ? 'active-tab bg-white border-primary text-primary font-medium' 
                     : 'border-transparent hover:bg-gray-50 text-gray-700'
                 ]"
               >
@@ -188,14 +185,15 @@ onMounted(() => {
         <!-- Content Area -->
         <div class="lg:col-span-9">
           <div class="tab-content-container bg-white rounded-xl shadow-sm overflow-hidden">
-            <div v-for="(images, key) in tabImages" :key="key" v-show="activeTab === key">
+            <!-- This is the key change - we're now using a single div with dynamic content based on activeTab -->
+            <div>
               <!-- Unit Info -->
               <div class="p-6 border-b border-gray-100">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ businessUnits[key].title }}</h3>
-                <p class="text-gray-600 mb-4">{{ businessUnits[key].description }}</p>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ businessUnits[activeTab].title }}</h3>
+                <p class="text-gray-600 mb-4">{{ businessUnits[activeTab].description }}</p>
                 <div class="inline-flex items-center px-3 py-1 bg-primary/10 rounded-full">
                   <span class="text-xs uppercase tracking-wider text-gray-500 mr-2">Capacity:</span>
-                  <span class="text-sm font-medium text-primary">{{ businessUnits[key].capacity }}</span>
+                  <span class="text-sm font-medium text-primary">{{ businessUnits[activeTab].capacity }}</span>
                 </div>
               </div>
               
@@ -209,7 +207,7 @@ onMounted(() => {
                   class="custom-carousel"
                 >
                   <el-carousel-item 
-                    v-for="(image, index) in images" 
+                    v-for="(image, index) in tabImages[activeTab]" 
                     :key="index"
                     class="carousel-item"
                   >
@@ -222,7 +220,7 @@ onMounted(() => {
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                         :src="image" 
                         fit="cover" 
-                        :alt="`${key} Image ${index + 1}`"
+                        :alt="`${activeTab} Image ${index + 1}`"
                       >
                         <template #placeholder>
                           <div class="flex justify-center items-center h-full w-full bg-gray-100">
@@ -239,7 +237,7 @@ onMounted(() => {
                       
                       <!-- Image counter -->
                       <div class="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20">
-                        {{ index + 1 }} / {{ images.length }}
+                        {{ index + 1 }} / {{ tabImages[activeTab].length }}
                       </div>
                     </div>
                   </el-carousel-item>
