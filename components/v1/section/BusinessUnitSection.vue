@@ -167,7 +167,7 @@ onMounted(() => {
                 :class="[
                   'tab-button w-full text-left px-6 py-5 transition-all duration-300 border-l-4',
                   activeTab === key 
-                    ? 'active-tab bg-white border-primary text-primary font-medium' 
+                    ? 'active-tab bg-primary/60 border-primary text-white font-medium' 
                     : 'border-transparent hover:bg-gray-50 text-gray-700'
                 ]"
               >
