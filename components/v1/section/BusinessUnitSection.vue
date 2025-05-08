@@ -4,7 +4,7 @@ import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
 
 const tabPosition = ref<TabsInstance['tabPosition']>('left')
-const activeTab = ref<keyof typeof tabImages>('knit')
+const activeTab = ref<keyof typeof tabImages>('printing')
 
 // Business unit descriptions and details
 const businessUnits = {
@@ -17,37 +17,37 @@ const businessUnits = {
   woven: {
     title: 'Woven Excellence',
     description: 'Advanced woven production lines creating premium fabrics for global fashion brands.',
-    icon: 'mdi:fabric',
+    icon: 'logos:fabric',
     capacity: '80,000 pieces/day'
   },
   printing: {
     title: 'Printing & Embroidery',
     description: 'Cutting-edge printing and embroidery technologies delivering intricate designs and patterns.',
-    icon: 'mdi:printer',
+    icon: 'fluent-color:design-ideas-20',
     capacity: '50,000 pieces/day'
   },
   dyeing: {
     title: 'Dyeing & Finishing',
     description: 'Eco-friendly dyeing processes ensuring vibrant, consistent colors and superior finishing.',
-    icon: 'mdi:palette',
+    icon: 'noto:artist-palette',
     capacity: '60,000 yards/day'
   },
   washing: {
     title: 'Washing Solutions',
     description: 'Innovative washing techniques that enhance fabric quality and aesthetic appeal.',
-    icon: 'mdi:washing-machine',
+    icon: 'icon-park:washing-machine-one',
     capacity: '70,000 pieces/day'
   },
   packaging: {
     title: 'Packaging Excellence',
     description: 'Sustainable packaging solutions that protect products while minimizing environmental impact.',
-    icon: 'mdi:package-variant-closed',
+    icon: 'noto:package',
     capacity: '100,000 units/day'
   },
   transport: {
     title: 'Logistics & Transport',
     description: 'Efficient logistics network ensuring timely delivery to global destinations.',
-    icon: 'mdi:truck-delivery',
+    icon: 'fxemoji:deliverytruck',
     capacity: '200+ shipments/month'
   }
 }
@@ -143,7 +143,7 @@ onMounted(() => {
     <div class="px-24 mx-auto">
       <!-- Section Header -->
       <div class="mb-12 text-center">
-        <h2 class="section-title text-5xl text-[#727070] font-titillium font-bold mb-4">
+        <h2 class="section-title text-3xl md:text-6xl font-bold text-gray-800 mb-4">
           BUSINESS UNITS
         </h2>
         <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
@@ -156,7 +156,7 @@ onMounted(() => {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <!-- Tabs Navigation -->
         <div class="lg:col-span-3">
-          <div class="custom-tabs bg-primary/10 h-full rounded-lg  shadow-md  overflow-hidden">
+          <div class="custom-tabs bg-primary h-full rounded-lg  shadow-md  overflow-hidden">
             <div 
               v-for="(unit, key) in businessUnits" 
               :key="key"
@@ -165,10 +165,10 @@ onMounted(() => {
               <button 
                 @click="handleTabChange(key)"
                 :class="[
-                  'tab-button w-full text-left px-6 py-5 transition-all duration-300 border-l-4',
+                  'tab-button w-full text-left px-6 py-5 transition-all duration-300 m-1 rounded-s-full tracking-widest',
                   activeTab === key 
-                    ? 'active-tab bg-primary/60 border-primary text-white font-medium' 
-                    : 'border-transparent hover:bg-gray-50 text-gray-700'
+                    ? 'active-tab bg-white border-pink-900 text-primary font-semibold' 
+                    : 'border-transparent hover:bg-gray-50 text-white hover:text-gray-800'
                 ]"
               >
                 <div class="flex items-center">

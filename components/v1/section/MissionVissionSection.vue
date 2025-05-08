@@ -161,7 +161,7 @@ const missionVisionData = {
   left: 0;
   right: 0;
   height: 150px;
-  background-color: white;
+  background-color: rgb(238, 238, 238);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -172,6 +172,7 @@ const missionVisionData = {
 
 .mission-card:hover {
   height: 280px;
+  background-color: #fff ;
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(30, 144, 255, 0.2);
   z-index: 20;
@@ -213,8 +214,8 @@ const missionVisionData = {
   right: 10px;
   font-size: 11px;
   font-weight: 500;
-  color: #374A5D;
-  background-color: rgba(9, 15, 20, 0.1);
+  color: #fff;
+  background-color: #404052;
   padding: 2px 8px;
   border-radius: 5px;
 }
@@ -297,10 +298,10 @@ const missionVisionData = {
 /* Border animation */
 .border-line {
   position: absolute;
-  background: linear-gradient(90deg, #374A5D, #583028, #374A5D, #583028);
+  background: linear-gradient(90deg, #fc0000, #001aff, #00ff0d, #fffb00);
   background-size: 300% 300%;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
 .mission-card:hover .border-line {

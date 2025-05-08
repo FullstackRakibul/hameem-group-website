@@ -104,7 +104,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
     />
 
     <!-- Strengths Section -->
-    <div class="my-2">
+    <div class="m-2">
       <div class="flex  justify-center gap-3 ">
         <div v-for="(card, index) in strengths" :key="index"
           class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-primary/15 min-h-320 w-full sm:w-1/2 lg:w-1/5 flex flex-col overflow-hidden">
@@ -128,7 +128,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
             </p>
           </div>
 
-          <div class="absolute bottom-0 left-0 w-full h-14 overflow-hidden bg-primary/5 transition-all duration-500">
+          <div class="absolute bottom-0 left-0 w-full h-14 overflow-hidden bg-primary/15 transition-all duration-500">
             <NuxtLink :to="card.linkText" class="group-hover:mouser-pointer">
               <div class="absolute bottom-0 left-0 w-full h-full bg-primary rounded-b-xl transition-all duration-500 transform origin-bottom translate-y-full group-hover:translate-y-0"></div>
               <div class="relative h-full flex items-center justify-center gap-2 px-4">
@@ -143,22 +143,22 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
       </div>
 
       <!-- Products Carousel with Images -->
-      <div class="relative overflow-hidden mt-16 mb-8">
+      <div class="relative overflow-hidden mt-16 mb-8 pb-4">
         <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Our Production Capabilities</h3>
-        <div class="flex space-x-6 animate-marquee px-4">
+        <div class="flex space-x-6 animate-marquee  px-4">
           <div v-for="(product, index) in duplicatedProducts" :key="index"
-            class="group flex-shrink-0 rounded-xl border border-primary/10 transform hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer bg-white overflow-hidden">
-            <div class="flex flex-row items-center">
+            class="group flex-shrink-0 rounded-xl border  border-primary/70 transform hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer bg-white overflow-hidden">
+            <div class="flex flex-row items-center bg-primary/10">
               <!-- Image container with fixed dimensions -->
-              <div class=" h-20 overflow-hidden">
+              <div class=" h-16 overflow-hidden ">
                 <img 
                   :src="product.image" 
                   :alt="product.name"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 "
                 />
               </div>
               <!-- Product name -->
-              <div class="w-full bg-white p-4 text-center">
+              <div class="w-full p-4 text-center">
                 <span class="text-lg font-medium text-gray-800 group-hover:text-primary transition-colors duration-300">
                   {{ product.name }}
                 </span>
@@ -182,7 +182,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 20s linear infinite;
   min-width: 200%;
   will-change: transform;
 }
