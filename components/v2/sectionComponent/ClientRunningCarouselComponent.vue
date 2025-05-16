@@ -1,5 +1,5 @@
 <template>
-  <section class=" py-28 overflow-hidden bg-gray-100">
+  <section id="index-client" class=" py-28 overflow-hidden bg-gray-100">
     <div class="container mx-auto">
       <!-- Section Title & Description -->
       <div class="text-center mb-16">

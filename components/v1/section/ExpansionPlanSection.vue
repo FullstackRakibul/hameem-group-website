@@ -95,7 +95,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
 </script>
 
 <template>
-  <section class="w-full px-4 md:px-24 py-2">
+  <section id ="expansionPlan" class="w-full px-4 md:px-24 py-2">
     <SectionHeader 
       title="Expansion Plan"
       subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" 

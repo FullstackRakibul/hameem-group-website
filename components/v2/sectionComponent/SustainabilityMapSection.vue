@@ -14,7 +14,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 </script>
 
 <template>
-  <section class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-12"
+  <section id="index-sustainability" class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-12"
     :style="{ backgroundImage: `url(${bgImage})` }">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-white bg-opacity-80"></div>
