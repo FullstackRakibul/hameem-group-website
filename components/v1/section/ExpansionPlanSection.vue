@@ -8,35 +8,45 @@ const strengths = ref([
     description: 'Launching a cutting-edge garments factory to enhance production capacity and meet global demand.',
     icon: 'mdi:earth',
     linkText: 'New Garments Factory 2024',
-    badge: 'Worldwide'
+    linkTo:'/#',
+    badge: 'Worldwide',
+    image: '/assets/v1/section/ExpansionPlan/NEWGARMENTS1.jpeg'
   },
   {
     title: 'Water Treatment Excellence',
     description: 'State-of-the-art RO Plant ensuring sustainable water purification and recycling for optimized resource use in manufacturing.',
     icon: 'mdi:water-outline',
     linkText: 'RO Plant 2024',
-    badge: 'Worldwide'
+    linkTo:'/#',
+    badge: 'Worldwide',
+    image: '/assets/v1/section/ExpansionPlan/ROPLANT.jpg'
   },
   {
     title: 'Denim Innovation Hub',
     description: 'A next-generation denim mill focused on sustainable fabrics, efficient dyeing, and smart finishing.',
     icon: 'fluent-mdl2:delivery-truck',
     linkText: 'New Denim Mill 2026',
-    badge: 'Innovation'
+    linkTo:'/#',
+    badge: 'Innovation',
+    image: '/assets/v1/section/ExpansionPlan/NEWDENIMMILL.webp'
   },
   {
     title: 'Precision Yarn Production',
     description: 'Advanced spinning facilities engineered for high-quality yarns with reduced waste and energy use.',
     icon: 'mdi:worker',
     linkText: 'New Spinning Mill 2027',
-    badge: 'Expertise'
+    linkTo:'/#',
+    badge: 'Expertise',
+    image: '/assets/v1/section/ExpansionPlan/SpinningMill.jpg'
   },
   {
     title: 'Strategic Supply Chain',
     description: 'Integrated sourcing and warehousing facilities designed for streamlined logistics and distribution.',
     icon: 'material-symbols:eco',
     linkText: 'Sourcing & Ware House',
-    badge: 'Eco-Friendly'
+    linkTo:'/#',
+    badge: 'Eco-Friendly',
+    image: '/assets/v1/section/ExpansionPlan/WareHouse.webp'
   }
 ]);
 
@@ -95,7 +105,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
 </script>
 
 <template>
-  <section id ="expansionPlan" class="w-full px-4 md:px-24 py-2">
+  <section id="expansionPlan" class="w-full px-4 md:px-24 py-12">
     <SectionHeader 
       title="Expansion Plan"
       subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" 
@@ -104,39 +114,46 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
     />
 
     <!-- Strengths Section -->
-    <div class="m-2">
-      <div class="flex  justify-center gap-3 ">
+    <div class="mt-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
         <div v-for="(card, index) in strengths" :key="index"
-          class="group relative bg-white rounded-xl shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-500 border border-primary/15 min-h-320 w-full sm:w-1/2 lg:w-1/5 flex flex-col overflow-hidden">
+          class="group relative bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 ease-in-out border border-gray-100 overflow-hidden flex flex-col h-[360px] border-primary/30">
           
-          <!-- Badge - Positioned inside the card with transform -->
-          <div class="absolute top-4 right-0 w-32 overflow-hidden">
-            <div class="bg-primary text-white text-xs font-bold py-1 text-center transform translate-x-full rotate-45 origin-left group-hover:translate-x-0 transition-transform duration-500 shadow-md">
-              {{ card.badge }}
-            </div>
+          <!-- Card Image -->
+          <div class="h-48 overflow-hidden">
+            <img 
+              :src="card.image" 
+              :alt="card.title"
+              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+            />
           </div>
-
-          <div class="p-6 text-center flex-grow pb-16 group">
-            <div class="relative w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <div class="absolute inset-0 border border-primary/30 group-hover:bg-primary rounded-xl group-hover:rounded-full transform rotate-45 scale-95 group-hover:scale-105 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]" />
-              <Icon :name="card.icon"
-                class="relative group-hover:text-white text-primary text-3xl z-10 transition-all duration-500 group-hover:scale-110 ease-[cubic-bezier(0.4,0,0.2,1)]" />
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">{{ card.title }}</h3>
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+          
+          <!-- Card Content -->
+          <div class="p-5 flex flex-col flex-grow">
+            <!-- Badge -->
+            <span class="inline-block px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded mb-3 self-start">
+              {{ card.badge }}
+            </span>
+            
+            <!-- Title -->
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ card.title }}</h3>
+            
+            <!-- Description -->
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
               {{ card.description }}
             </p>
-          </div>
-
-          <div class="absolute bottom-0 left-0 w-full h-14 overflow-hidden bg-primary/15 transition-all duration-500">
-            <NuxtLink :to="card.linkText" class="group-hover:mouser-pointer">
-              <div class="absolute bottom-0 left-0 w-full h-full bg-primary rounded-b-xl transition-all duration-500 transform origin-bottom translate-y-full group-hover:translate-y-0"></div>
-              <div class="relative h-full flex items-center justify-center gap-2 px-4">
-                <Icon name="mdi:arrow-right-bold-circle" size="20" class="text-primary group-hover:text-white transform -translate-x-20 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500 delay-100 ease-out" />
-                <span class="text-secondary font-medium text-sm group-hover:text-white transition-all duration-500 delay-100 ease-out whitespace-nowrap">
-                  {{ card.linkText }}
-                </span>
-              </div>
+            
+            <!-- Button -->
+            <NuxtLink 
+              :to="card.linkTo" 
+              class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 bg-white border border-primary text-primary rounded-md hover:bg-primary hover:text-white transition-all duration-300 text-sm font-medium group"
+            >
+              <span>{{ card.linkText }}</span>
+              <Icon 
+                name="mdi:arrow-right" 
+                size="18" 
+                class="transform transition-transform duration-300 group-hover:translate-x-1" 
+              />
             </NuxtLink>
           </div>
         </div>
@@ -182,7 +199,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
 }
 
 .animate-marquee {
-  animation: marquee 20s linear infinite;
+  animation: marquee 30s linear infinite;
   min-width: 200%;
   will-change: transform;
 }
@@ -192,15 +209,22 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
-  .min-h-320 {
-    min-height: 340px;
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 40s;
   }
 }
 
-@media (max-width: 768px) {
-  .animate-marquee {
-    animation-duration: 30s;
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Line clamp for description */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style>
