@@ -11,7 +11,7 @@ import ClientRunningCarouselComponent from '~/components/v2/sectionComponent/Cli
 import ContactUsMapSectionComponent from '~/components/v2/index/ContactUsMapSectionComponent.vue';
 import QualityAndStrengthsSection from '~/components/v2/index/QualityAndStrengthsSection.vue';
 import ShortDescriptionSectionCoponent from '~/components/v2/index/ShortDescriptionSectionCoponent.vue';
-import CapabilitySection from '~/components/v1/section/ExpansionPlanSection.vue';
+import ExpansionPlanSection from '~/components/v1/section/ExpansionPlanSection.vue';
 import ShortAboutRunningTextComponent from '~/components/v2/index/ShortAboutRunningTextComponent.vue';
 import AchievementsParallaxSection from '~/components/v1/section/AchievementsParallaxSection.vue';
 import CompanyIntroductionSection from '~/components/v1/section/CompanyIntroductionSection.vue'
@@ -39,7 +39,7 @@ import SustainabilityMapSection from '~/components/v2/sectionComponent/Sustainab
 
     <MissionVissionSection  />
 
-    <CapabilitySection />
+    <ExpansionPlanSection />
     <BusinessUnitSection />
      <VideoHeroSectionRFID/>
     <SustainabilityMapSection  />

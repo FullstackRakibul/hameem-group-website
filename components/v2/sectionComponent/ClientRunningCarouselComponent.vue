@@ -90,12 +90,12 @@ const repeatedClients = [...clients, ...clients, ...clients];
 .animate-slide-right {
   display: flex;
   width: max-content;
-  animation: slideRight 95s linear infinite;
+  animation: slideRight 100s linear infinite;
 }
 
 .animate-slide-left {
   display: flex;
   width: max-content;
-  animation: slideLeft 95s linear infinite;
+  animation: slideLeft 120s linear infinite;
 }
 </style>
