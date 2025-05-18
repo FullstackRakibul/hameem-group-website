@@ -17,16 +17,16 @@
 
     <!-- Content -->
     <div class="relative z-20 container mx-auto">
-      <div class="max-w-3xl bg-slate-100 bg-opacity-10 rounded-lg p-4">
+      <div class="max-w-4xl bg-slate-100 bg-opacity-10 rounded-lg p-4">
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate__animated animate__fadeInLeft">
-          Crafting Excellence
+          Digital Transformation
         </h1>
         
         <div class="space-y-4">
           <p class="text-xl md:text-2xl text-white opacity-90 animate__animated animate__fadeInLeft animate__delay-1s">
             Since 1980
           </p>
-          <p class="text-3xl md:text-4xl text-primary-300 font-semibold animate__animated animate__fadeInLeft animate__delay-2s">
+          <p class="text-3xl md:text-4xl text-white text-primary-300 font-semibold animate__animated animate__fadeInLeft animate__delay-2s">
             Premium Denim Manufacturing
           </p>
         </div>
