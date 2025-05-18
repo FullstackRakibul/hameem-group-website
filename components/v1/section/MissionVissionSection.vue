@@ -80,7 +80,7 @@ const missionVisionData = {
       <!-- Image Column -->
       <el-col :xs="24" :md="12">
         <div class="relative overflow-hidden rounded-lg">
-          <el-image class="transition-transform duration-300 hover:scale-110 p-10"
+          <el-image class="transition-transform duration-300  p-10"
             style="max-width: 600px; width: 100%;" src="./assets/missionvission-sectionImage.png"
             alt="Mission Vision Section banner" />
         </div>
