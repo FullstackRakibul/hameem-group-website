@@ -37,7 +37,7 @@
       </div>
 
       <!-- Carousel Section -->
-      <div class="w-full justify-center items-center  overflow-x-auto flex space-x-6 p-4  bg-white/10 backdrop-blur-md rounded-lg shadow-inner ">
+      <div class="w-full justify-center items-center  overflow-x-auto flex space-x-24 p-4  bg-white/10 backdrop-blur-md rounded-lg shadow-inner ">
         <div
           v-for="(award, index) in awards"
           :key="index"
