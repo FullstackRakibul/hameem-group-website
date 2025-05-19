@@ -31,10 +31,10 @@
             <button class="bg-primary text-white px-4 py-2">Subscribe</button>
           </div>
           <div class="flex space-x-4">
-            <a href="#" class="text-2xl text-white  hover:text-blue-600"><Icon name="hugeicons:twitter" /></a>
-            <a href="#" class=" text-2xl text-white  hover:text-blue-600"><Icon name="hugeicons:instagram" /></a>
-            <a href="#" class=" text-2xl text-white  hover:text-blue-600"><Icon name="hugeicons:facebook01" /></a>
+            <a href="#" class=" text-2xl text-white  hover:text-blue-600"><Icon name="hugeicons:facebook-01"/></a>
             <a href="#" class="text-2xl text-white  hover:text-blue-600"><Icon name="hugeicons:youtube" /></a>
+            <a href="#" class=" text-2xl text-white  hover:text-blue-600"><Icon name="hugeicons:instagram" /></a>
+            <a href="#" class="text-2xl text-white  hover:text-blue-600"><Icon name="hugeicons:twitter" /></a>
           </div>
         </div>
       </div>

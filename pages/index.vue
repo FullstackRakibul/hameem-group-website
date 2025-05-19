@@ -19,6 +19,7 @@ import ProductSection from '~/components/sections/ProductSection.vue';
 import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
 import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSectionRFID.vue';
 import SustainabilityMapSection from '~/components/v2/sectionComponent/SustainabilityMapSection.vue';
+import OurAchievementsSlide from '~/components/v1/section/OurAchievementsSlide.vue';
 </script>
 
 <template>
@@ -41,10 +42,11 @@ import SustainabilityMapSection from '~/components/v2/sectionComponent/Sustainab
 
     <ExpansionPlanSection />
     <BusinessUnitSection />
-     <VideoHeroSectionRFID/>
+     <VideoHeroSectionRFID videoSrc="/assets/v2/video/RFIDDIGITALVIDEO.mp4"/>
     <SustainabilityMapSection  />
     <ClientRunningCarouselComponent  />
-    <AchievementsParallaxSection />
+    <!-- <AchievementsParallaxSection /> -->
+     <OurAchievementsSlide/>
     <BoardofDirectorsSection />
     <ContactUsMapSectionComponent  />
 
