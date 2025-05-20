@@ -30,7 +30,7 @@
                 class="flex flex-col items-center space-y-4 cursor-pointer mb-8 transition-all duration-300">
                 <!-- Circle Container -->
                 <div
-                  class="w-40 h-40 rounded-full border-2 border-transparent hover:border-primary hover:border-dashed hover:bg-primary/10 flex items-center justify-center p-1 transition-all duration-300">
+                  class=" w-96 64 h-96 rounded-full border-2 border-transparent hover:border-primary hover:border-dashed bg-primary/10 flex items-center justify-center p-1 transition-all duration-300">
                   <!-- Image Container with scaling -->
                   <div
                     class="w-full h-full flex items-center justify-center transition-transform duration-300 hover:scale-90">
@@ -40,7 +40,7 @@
                 </div>
 
                 <!-- Label -->
-                <p class="text-sm text-gray-800 font-semibold text-center uppercase w-full mt-2">
+                <p class="text-2xl  text-gray-800 font-semibold text-center uppercase w-full mt-2">
                   {{ item.label }}
                 </p>
               </div>

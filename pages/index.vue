@@ -22,7 +22,7 @@ import SustainabilityMapSection from '~/components/v2/sectionComponent/Sustainab
 import OurAchievementsSlide from '~/components/v1/section/OurAchievementsSlide.vue';
 </script>
 
-<template>
+<template> 
   <section class="-mt-16">
     <!-- <GSAPHeroSlider /> -->
     <MainPageSlider01 />
