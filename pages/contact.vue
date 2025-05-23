@@ -1,4 +1,19 @@
 <template>
+  <section
+  class="-mt-16 relative h-[500px] bg-cover bg-center bg-no-repeat flex items-center justify-center text-center"
+  style="background-image: url('/assets/v1/contact/contact-us-page-cover.jpg');"
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+  <!-- Content -->
+  <div class="container flex flex-col justify-start items-start relative z-10 text-white px-4">
+    <h1 class="md:text-6xl font-extrabold mb-2">Contact Us</h1>
+    <p class="md:text-xl max-w-2xl">
+      Get in touch with us for inquiries, support, or feedback.— we’re listening.
+    </p>
+  </div>
+</section>
   <div>
     <!-- Banner Section -->
     <div class=" inset-0 mt-20 bg-black bg-opacity-50"></div>

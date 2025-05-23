@@ -112,8 +112,7 @@ const menuItems = [
   { label: 'Gallery', to: '/gallery' },
   { 
     label: 'Contact Us', 
-    to: '/#index-contact',
-    fullWidth: true,
+    to: '/contact'
   }
 ];
 

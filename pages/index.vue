@@ -45,8 +45,8 @@ import OurAchievementsSlide from '~/components/v1/section/OurAchievementsSlide.v
      <VideoHeroSectionRFID videoSrc="/assets/v2/video/RFIDDIGITALVIDEO.mp4"/>
     <SustainabilityMapSection  />
     <ClientRunningCarouselComponent  />
-    <!-- <AchievementsParallaxSection /> -->
-     <OurAchievementsSlide/>
+    <AchievementsParallaxSection />
+     <!-- <OurAchievementsSlide/>s -->
     <BoardofDirectorsSection />
     <ContactUsMapSectionComponent  />
 
