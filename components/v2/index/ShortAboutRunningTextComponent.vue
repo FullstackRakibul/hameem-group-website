@@ -14,7 +14,7 @@
             duration: 1.2,
             ease: 'power2.out',
             stagger: 0.3
-          }" class="text-secondary uppercase font-bold md:text-6xl mb-5">
+          }" class="text-primary uppercase font-bold md:text-8xl  mb-5">
             Ha-Meem Group
           </div>
           <p class=" md:text-2xl font-sans md:font-semibold text-gray-600 mt-4 text-justify ">
