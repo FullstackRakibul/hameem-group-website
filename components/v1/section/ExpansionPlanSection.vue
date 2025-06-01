@@ -160,23 +160,23 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
       </div>
 
       <!-- Products Carousel with Images -->
-      <div class="relative overflow-hidden mt-16 mb-8 pb-4">
-        <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Our Production Capabilities</h3>
-        <div class="flex space-x-6 animate-marquee  px-4">
+      <div class="relative overflow-hidden mt-20 mb-10 md:pb-6">
+        <h3 class="text-6xl font-bold text-center mb-8 text-gray-800">Our Production Capabilities</h3>
+        <div class="flex space-x-8 animate-marquee px-4">
           <div v-for="(product, index) in duplicatedProducts" :key="index"
-            class="group flex-shrink-0 rounded-xl border  border-primary/70 transform hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer bg-white overflow-hidden">
-            <div class="flex flex-row items-center bg-primary/10">
+            class="group flex-shrink-0   transform hover:scale-125 transition-all duration-300 cursor-pointer overflow-hidden">
+            <div class="flex flex-row items-center md:mt-10">
               <!-- Image container with fixed dimensions -->
-              <div class=" h-16 overflow-hidden ">
+              <div class=" h-32 w-48  overflow-hidden border  border-primary/70 rounded-full">
                 <img 
                   :src="product.image" 
                   :alt="product.name"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 "
+                  class=" w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 "
                 />
               </div>
               <!-- Product name -->
               <div class="w-full p-4 text-center">
-                <span class="text-lg font-medium text-gray-800 group-hover:text-primary transition-colors duration-300">
+                <span class="text-2xl font-medium text-gray-800 group-hover:text-primary transition-colors duration-300">
                   {{ product.name }}
                 </span>
               </div>

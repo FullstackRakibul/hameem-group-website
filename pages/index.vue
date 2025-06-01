@@ -18,16 +18,14 @@ import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
 import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSectionRFID.vue';
 import SustainabilityMapSection from '~/components/v2/sectionComponent/SustainabilityMapSection.vue';
 import OurAchievementsSlide from '~/components/v1/section/OurAchievementsSlide.vue';
-import SlideOne from '~/components/sliders/SlideOne.vue';
-
-
 </script>
 
 <template> 
   <section class="-mt-16">
     <!-- <GSAPHeroSlider /> -->
-     <SlideOne/>
-    <MainPageSlider01 />
+
+       <MainPageSlider01 />
+
     <ShortAboutRunningTextComponent   />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
@@ -48,7 +46,7 @@ import SlideOne from '~/components/sliders/SlideOne.vue';
     <SustainabilityMapSection  />
     <ClientRunningCarouselComponent  />
     <AchievementsParallaxSection />
-     <!-- <OurAchievementsSlide/>s -->
+     <!-- <OurAchievementsSlide/> -->
     <BoardofDirectorsSection />
     <ContactUsMapSectionComponent  />
 

@@ -15,7 +15,7 @@ const missionVisionData = {
       id: 1,
       title: "Quality Products",
       description: "We deliver high-quality products on time, ensuring customer satisfaction and building long-term relationships with our clients worldwide.",
-      icon: "arcticons:okta-verify",
+      icon: "assets/v1/section/mission-vision/hameem-group-mission-vission-img-01.png",
       category: "mission",
       animatedImage: "assets/v1/section/mission-vision/Quality-Products.gif" 
     },
@@ -23,7 +23,7 @@ const missionVisionData = {
       id: 2,
       title: "Eliminate Poverty",
       description: "We're committed to creating employment opportunities and economic growth that helps eliminate poverty in our communities.",
-      icon: "mdi:hand-heart-outline",
+      icon: "assets/v1/section/mission-vision/hameem-group-mission-vission-img-02.png",
       category: "mission",
       animatedImage: "assets/v1/section/mission-vision/poverty-animation.gif"
     },
@@ -31,7 +31,7 @@ const missionVisionData = {
       id: 3,
       title: "Industrialization",
       description: "We strive to further industrialization through innovation, technology adoption, and sustainable manufacturing practices.",
-      icon: "mdi:factory",
+      icon: "assets/v1/section/mission-vision/hameem-group-mission-vission-img-03.png",
       category: "mission",
       animatedImage: "assets/v1/section/mission-vision/industry-animation.gif"
     },
@@ -39,7 +39,7 @@ const missionVisionData = {
       id: 4,
       title: "Leading Manufacturer",
       description: "Our vision is to be recognized as the leading clothing manufacturer in Bangladesh and a respected global player in the industry.",
-      icon: "mdi:crown-outline",
+      icon: "assets/v1/section/mission-vision/hameem-group-mission-vission-img-04.png",
       category: "vision",
       animatedImage: "assets/v1/section/mission-vision/Manufacturer-animation.gif"
     },
@@ -47,7 +47,7 @@ const missionVisionData = {
       id: 5,
       title: "Industry Breakthrough",
       description: "We aim to achieve breakthrough innovations in the textile industry through research, development, and creative solutions.",
-      icon: "mdi:lightbulb-on-outline",
+      icon: "assets/v1/section/mission-vision/hameem-group-mission-vission-img-05.png",
       category: "vision",
       animatedImage: "assets/v1/section/mission-vision/target-animation.gif"
     },
@@ -55,7 +55,7 @@ const missionVisionData = {
       id: 6,
       title: "Employee Welfare",
       description: "We're dedicated to ensuring the educational advancement, financial security, and overall wellbeing of our employees.",
-      icon: "mdi:account-group-outline",
+      icon: "assets/v1/section/mission-vision/hameem-group-mission-vission-img-06.png",
       category: "vision",
       animatedImage: "assets/v1/section/mission-vision/education-animation.gif"
     }
@@ -105,7 +105,8 @@ const missionVisionData = {
             <div class="mission-card">
               <!-- Initial minimal state -->
               <div class="card-minimal">
-                <Icon :name="point.icon" class="card-icon" />
+                <!-- <Icon :name="point.icon" class="card-icon" /> -->
+                <img :src="point.icon" :alt="point.title || 'Ha-Meem Group'" class=" h-44 " />
                 <h3 class="card-title-minimal">{{ point.title }}</h3>
                 <span class="card-badge">{{ point.category === 'mission' ? 'Mission' : 'Vision' }}</span>
               </div>
@@ -151,7 +152,7 @@ const missionVisionData = {
 /* Card Wrapper - Provides space for expansion */
 .mission-card-wrapper {
   position: relative;
-  min-height: 150px;
+  min-height: 220px;
 }
 
 /* Mission Vision Card Styling */
@@ -160,7 +161,7 @@ const missionVisionData = {
   top: 0;
   left: 0;
   right: 0;
-  height: 150px;
+  height: 220px; 
   background-color: rgb(238, 238, 238);
   border-radius: 10px;
   overflow: hidden;
@@ -184,7 +185,7 @@ const missionVisionData = {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 150px;
+  height: 200px;
   padding: 20px;
   transition: opacity 0.3s ease;
 }
@@ -202,8 +203,8 @@ const missionVisionData = {
 }
 
 .card-title-minimal {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   color: #333;
   text-align: center;
 }
@@ -212,7 +213,7 @@ const missionVisionData = {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
   color: #fff;
   background-color: #404052;
