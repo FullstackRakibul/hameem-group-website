@@ -24,7 +24,9 @@ import SustainabilityMapSection from '~/components/v2/sectionComponent/Sustainab
 <template>
   <section class="-mt-16">
     <!-- <GSAPHeroSlider /> -->
-    <MainPageSlider01 />
+
+       <MainPageSlider01 />
+
     <ShortAboutRunningTextComponent   />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>

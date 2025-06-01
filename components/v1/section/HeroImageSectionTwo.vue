@@ -2,7 +2,7 @@
   <div class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden"
     :style="{ backgroundImage: `url('./assets/v1/section/IMG_9487.JPG')` }">
     <!-- Dark overlay -->
-    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <div class="absolute bg-black/60 z-10"></div>
 
     <div class="relative z-20 container mx-auto px-4 md:px-8 py-8">
       <div class="max-w-xl text-left">

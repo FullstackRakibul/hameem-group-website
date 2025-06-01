@@ -1,8 +1,8 @@
 <template>
   <div :style="{ backgroundImage: `url('/assets/ha-meem-group-banner-main-bg-01.png')` }"
-    class="bg-cover bg-center bg-no-repeat relative ">
+    class="bg-cover bg-center bg-no-repeat relative">
     <!-- Carousel Section -->
-    <el-carousel height="100dvh" autoplay :interval="5000" :loop="true" class="">
+    <el-carousel height="100vh" autoplay :interval="5000" :loop="true" class="">
       <!-- Denim Slide -->
       <el-carousel-item key="denim">
         <div class="overflow-x-hidden">
