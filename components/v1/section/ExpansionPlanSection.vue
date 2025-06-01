@@ -164,19 +164,17 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
         <h3 class="text-6xl font-bold text-center mb-8 text-gray-800">Our Production Capabilities</h3>
         <div class="flex space-x-8 animate-marquee px-4">
           <div v-for="(product, index) in duplicatedProducts" :key="index"
-            class="group flex-shrink-0   transform hover:scale-125 transition-all duration-300 cursor-pointer overflow-hidden">
-            <div class="flex flex-row items-center md:mt-10">
-              <!-- Image container with fixed dimensions -->
-              <div class=" h-32 w-48  overflow-hidden border  border-primary/70 rounded-full">
-                <img 
-                  :src="product.image" 
+            class="group flex-shrink-0 transition-all duration-300  cursor-pointer">
+            <div class="flex flex-row items-center md:mt-10 bg-slate-600/5 p-2  rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+              <div class="h-28 w-28 md:h-32 md:w-32 overflow-hidden border  border-primary/70 rounded-full transition-all duration-300 group-hover:shadow-lg">
+                <img
+                  :src="product.image || fallbackImage"
                   :alt="product.name"
-                  class=" w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 "
+                  class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
                 />
               </div>
-              <!-- Product name -->
-              <div class="w-full p-4 text-center">
-                <span class="text-2xl font-medium text-gray-800 group-hover:text-primary transition-colors duration-300">
+              <div class="ml-4 text-left">
+                <span class="text-2xl md:text-2xl px-10 font-bold text-gray-700 group-hover:text-primary transition-colors duration-300">
                   {{ product.name }}
                 </span>
               </div>

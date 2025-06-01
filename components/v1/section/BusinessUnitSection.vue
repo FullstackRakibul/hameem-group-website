@@ -156,11 +156,11 @@ onMounted(() => {
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <!-- Tabs Navigation -->
         <div class="lg:col-span-3">
-          <div class="custom-tabs bg-primary h-full rounded-lg  shadow-md  overflow-hidden">
+          <div class="custom-tabs bg-primary h-full  rounded-lg  shadow-md  overflow-hidden">
             <div 
               v-for="(unit, key) in businessUnits" 
               :key="key"
-              class="tab-item"
+              class="tab-item mt-5 mb-1"
             >
               <button 
                 @click="handleTabChange(key)"
@@ -175,7 +175,7 @@ onMounted(() => {
                   <div class="tab-icon-container mr-3">
                     <Icon :name="unit.icon || 'mdi:factory'" class="text-xl" />
                   </div>
-                  <span class="block text-sm uppercase tracking-wider">{{ key }}</span>
+                  <span class="block text-xl uppercase tracking-wider">{{ key }}</span>
                 </div>
               </button>
             </div>
@@ -189,11 +189,11 @@ onMounted(() => {
             <div>
               <!-- Unit Info -->
               <div class="p-6 border-b border-gray-100">
-                <h3 class="text-2xl font-bold text-gray-800 mb-2">{{ businessUnits[activeTab].title }}</h3>
-                <p class="text-gray-600 mb-4">{{ businessUnits[activeTab].description }}</p>
+                <h3 class="text-4xl font-bold text-gray-800 mb-2">{{ businessUnits[activeTab].title }}</h3>
+                <p class="text-gray-600 text-2xl  mb-4">{{ businessUnits[activeTab].description }}</p>
                 <div class="inline-flex items-center px-3 py-1 bg-primary/10 rounded-full">
-                  <span class="text-xs uppercase tracking-wider text-gray-500 mr-2">Capacity:</span>
-                  <span class="text-sm font-medium text-primary">{{ businessUnits[activeTab].capacity }}</span>
+                  <span class="text-xl uppercase tracking-wider text-gray-500 mr-2">Capacity:</span>
+                  <span class="font-medium text-xl text-primary">{{ businessUnits[activeTab].capacity }}</span>
                 </div>
               </div>
               
@@ -375,6 +375,7 @@ onMounted(() => {
   .tab-item {
     flex: 0 0 auto;
     margin-right: 0.5rem;
+    
   }
   
   .tab-button {
