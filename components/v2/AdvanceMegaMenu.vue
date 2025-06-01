@@ -109,7 +109,7 @@ const menuItems = [
     // ]
   },
   { label: 'Clients', to: '/#index-client' },
-  { label: 'Gallery', to: '/gallery' },
+  { label: 'Gallery', to: '/#gallery' },
   { 
     label: 'Contact Us', 
     to: '/contact'
