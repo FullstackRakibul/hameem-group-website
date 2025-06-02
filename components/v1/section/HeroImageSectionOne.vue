@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mx-28 h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden" 
+  <div class="relative mx-28 h-screen mt-2 bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden" 
     :style="{ backgroundImage: `url('./assets/home-banner-section-img-01.jpg')` }">
      <div class="absolute bg-black bg-opacity-20 z-0"></div>
     <!-- Button at the lower center -->
