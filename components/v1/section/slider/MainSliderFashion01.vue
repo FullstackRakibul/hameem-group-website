@@ -5,13 +5,13 @@
       <!-- Dark Overlay -->
 
       <!-- Content Container -->
-      <div class="flex justify-end items-end w-4/5 h-2/5 mb-8">
+      <!-- <div class="flex justify-end items-end w-4/5 h-2/5 ">
         <button
           class="border-2 border-orange-400 bg-transparent text-black px-6 py-3 font-bold flex items-center space-x-2 hover:bg-white hover:text-black transition-all duration-300">
           <Icon name="mdi:arrow-right-thin" class="text-black text-lg" />
           <span class=" pl-6 text-lg font-medium ">SHOW MORE</span>
         </button>
-      </div>
+      </div> -->
   </div>
 </template>
 

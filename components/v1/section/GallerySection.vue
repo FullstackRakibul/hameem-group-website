@@ -10,9 +10,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-
-import UIGallaryGrid from 'components/ui/UIGallaryGrid.vue'
-
 // Define your awards and achievements
 const awardsItems = ref([
   {
