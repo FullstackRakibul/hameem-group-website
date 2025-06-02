@@ -1,12 +1,11 @@
 <template>
-  <div :style="{ backgroundImage: `url('/assets/ha-meem-group-banner-main-bg-01.png')` }"
-    class="bg-cover bg-bottom bg-no-repeat relative">
+  <div >
     <!-- Carousel Section -->
-    <el-carousel height="100vh" autoplay :interval="5000" :loop="true" class="">
+    <el-carousel height="100vh"  autoplay :interval="5000" :loop="true" class="">
       <!-- Denim Slide -->
       <el-carousel-item key="denim">
         <div class="overflow-x-hidden">
-          <HeroImageSectionOne />        
+          <MainSliderFashion01 />        
         </div>
       </el-carousel-item>
       <el-carousel-item key="denim">
@@ -43,6 +42,7 @@ import HeroImageSectionOne from '../section/HeroImageSectionOne.vue';
 import HeroImageSectionTwo from '../section/HeroImageSectionTwo.vue';
 import HeroImageSectionFive from '../section/HeroImageSectionFive.vue';
 import HeroImageSectionSix from '../section/HeroImageSectionSix.vue';
+import MainSliderFashion01 from '../section/slider/MainSliderFashion01.vue';
 import HeroImageSectionSeven from '../section/HeroImageSectionSeven.vue';
 
 // Responsive carousel height

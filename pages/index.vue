@@ -18,13 +18,14 @@ import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
 import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSectionRFID.vue';
 import SustainabilityMapSection from '~/components/v2/sectionComponent/SustainabilityMapSection.vue';
 import OurAchievementsSlide from '~/components/v1/section/OurAchievementsSlide.vue';
+import MainSliderFashion01 from '~/components/v1/section/slider/MainSliderFashion01.vue';
 import GallerySection from '~/components/v1/section/GallerySection.vue';
+
 </script>
 
 <template> 
   <section class="-mt-16">
     <!-- <GSAPHeroSlider /> -->
-
        <MainPageSlider01 />
 
     <ShortAboutRunningTextComponent   />

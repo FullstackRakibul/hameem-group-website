@@ -1,3 +1,5 @@
+
+
 <template>
   <div class=" relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white"
     :style="{ backgroundImage: `url('./assets/v1/section/PAKAGING/denim-bannner-main.jpg')` }">

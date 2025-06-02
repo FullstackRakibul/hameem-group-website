@@ -1,6 +1,6 @@
 <template>
-  <div class="relative mx-28 h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden " 
-    :style="{ backgroundImage: `url('./assets/home-banner-section-img-01.jpg')` }">
+  <div class="relative h-screen bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-white overflow-hidden " 
+    :style="{ backgroundImage: `url('./assets/v1/section/Slider/main-banner-shape-00001.jpg')` }">
      <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
     <!-- Button at the lower center -->
     <div class="flex justify-end items-end w-4/5 h-2/5 mb-8">
@@ -14,3 +14,8 @@
 </template>
 <script lang="ts" setup>
 </script>
+
+
+
+
+<!-- :style="{ backgroundImage: `url('./assets/home-banner-section-img-01.jpg')` }" -->
