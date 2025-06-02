@@ -30,7 +30,7 @@
                 class="flex flex-col items-center space-y-4 cursor-pointer mb-8 transition-all duration-300">
                 <!-- Circle Container -->
                 <div
-                  class=" w-96 64 h-96 rounded-full border-2 border-transparent hover:border-primary hover:border-dashed bg-primary/10 flex items-center justify-center p-1 transition-all duration-300">
+                  class=" w-72 64 h-72 rounded-full border-2 border-transparent hover:border-primary hover:border-dashed bg-primary/10 flex items-center justify-center p-1 transition-all duration-300">
                   <!-- Image Container with scaling -->
                   <div
                     class="w-full h-full flex items-center justify-center transition-transform duration-300 hover:scale-90">

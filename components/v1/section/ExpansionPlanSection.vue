@@ -166,7 +166,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
           <div v-for="(product, index) in duplicatedProducts" :key="index"
             class="group flex-shrink-0 transition-all duration-300  cursor-pointer">
             <div class="flex flex-row items-center md:mt-10 bg-slate-600/5 p-2  rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-              <div class="h-28 w-28 md:h-32 md:w-32 overflow-hidden border  border-primary/70 rounded-full transition-all duration-300 group-hover:shadow-lg">
+              <div class=" h-20 w-20 md:h-20 md:w-20 overflow-hidden border  border-primary/70 rounded-full transition-all duration-300 group-hover:shadow-lg">
                 <img
                   :src="product.image || fallbackImage"
                   :alt="product.name"
