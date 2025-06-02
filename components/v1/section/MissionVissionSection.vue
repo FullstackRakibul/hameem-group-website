@@ -161,7 +161,7 @@ const missionVisionData = {
   top: 0;
   left: 0;
   right: 0;
-  height: 220px;
+  height: 220px; 
   background-color: rgb(238, 238, 238);
   border-radius: 10px;
   overflow: hidden;
@@ -213,7 +213,7 @@ const missionVisionData = {
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
   color: #fff;
   background-color: #404052;

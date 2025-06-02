@@ -160,23 +160,21 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
       </div>
 
       <!-- Products Carousel with Images -->
-      <div class="relative overflow-hidden mt-16 mb-8 pb-4">
-        <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Our Production Capabilities</h3>
-        <div class="flex space-x-6 animate-marquee  px-4">
+      <div class="relative overflow-hidden mt-20 mb-10 md:pb-6">
+        <h3 class="text-6xl font-bold text-center mb-8 text-gray-800">Our Production Capabilities</h3>
+        <div class="flex space-x-8 animate-marquee px-4">
           <div v-for="(product, index) in duplicatedProducts" :key="index"
-            class="group flex-shrink-0 rounded-xl border  border-primary/70 transform hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer bg-white overflow-hidden">
-            <div class="flex flex-row items-center bg-primary/10">
-              <!-- Image container with fixed dimensions -->
-              <div class=" h-16 overflow-hidden ">
-                <img 
-                  :src="product.image" 
+            class="group flex-shrink-0 transition-all duration-300  cursor-pointer">
+            <div class="flex flex-row items-center md:mt-10 bg-slate-600/5 p-2  rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+              <div class=" h-20 w-20 md:h-20 md:w-20 overflow-hidden border  border-primary/70 rounded-full transition-all duration-300 group-hover:shadow-lg">
+                <img
+                  :src="product.image || fallbackImage"
                   :alt="product.name"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 "
+                  class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
                 />
               </div>
-              <!-- Product name -->
-              <div class="w-full p-4 text-center">
-                <span class="text-lg font-medium text-gray-800 group-hover:text-primary transition-colors duration-300">
+              <div class="ml-4 text-left">
+                <span class="text-2xl md:text-2xl px-10 font-bold text-gray-700 group-hover:text-primary transition-colors duration-300">
                   {{ product.name }}
                 </span>
               </div>

@@ -1,24 +1,19 @@
 <template>
   <div class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden"
     :style="{ backgroundImage: `url('./assets/v1/section/IMG_9487.JPG')` }">
-    <!-- Dark overlay -->
-    <div class="absolute bg-black/60 z-10"></div>
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
 
     <div class="relative z-20 container mx-auto px-4 md:px-8 py-8">
       <div class="max-w-xl text-left">
-        <!-- Main Heading -->
-        <h3 class="text-4xl md:text-5xl px-4 md:px-8  font-bold mb-6 tracking-wide animate-fade-in-up">
+        <h3 class="text-4xl md:text-5xl px-4 md:px-8 font-bold mb-6 tracking-wide animate-fade-in-up">
           WHO WE ARE
         </h3>
 
-        <!-- Content Container -->
         <div class="bg-white/4 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-xl animate-slide-up">
-          <!-- Description -->
           <p class="text-lg md:text-xl leading-relaxed text-gray-200 font-medium mb-8 line-clamp-2 hover:line-clamp-none transition-all duration-500 text-justify ">
            At Ha-Meem Group, fashion is more than just fabric stitched into form — it’s a reflection of global trends, human creativity, and technical mastery woven together under one roof. Since 1984, we've been transforming the garment manufacturing landscape, growing from a single unit to one of Bangladesh's leading vertically integrated apparel powerhouses.
           </p>
 
-          <!-- CTA Button -->
           <div class="flex justify-start">
             <button class="group relative hover:bg-primary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               <div class="flex items-center space-x-3">
@@ -35,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+// No script changes needed for this fix
 </script>
 
 <style scoped>

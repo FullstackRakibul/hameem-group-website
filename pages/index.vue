@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import MainPageSlider01 from '~/components/v1/banner/MainPageSlider01.vue';
 import WelcomeSection from '~/components/v1/section/WelcomeSection.vue';
-
 import MissionVissionSection from '~/components/v1/section/MissionVissionSection.vue';
-
 import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
 import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSection.vue';
 import BusinessUnitSection from '~/components/v1/section/BusinessUnitSection.vue';
@@ -20,6 +18,7 @@ import GSAPHeroSlider from '~/components/v1/banner/GSAPHeroSlider.vue';
 import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSectionRFID.vue';
 import SustainabilityMapSection from '~/components/v2/sectionComponent/SustainabilityMapSection.vue';
 import OurAchievementsSlide from '~/components/v1/section/OurAchievementsSlide.vue';
+import GallerySection from '~/components/v1/section/GallerySection.vue';
 </script>
 
 <template> 
@@ -48,8 +47,9 @@ import OurAchievementsSlide from '~/components/v1/section/OurAchievementsSlide.v
     <SustainabilityMapSection  />
     <ClientRunningCarouselComponent  />
     <AchievementsParallaxSection />
-     <!-- <OurAchievementsSlide/>s -->
+     <!-- <OurAchievementsSlide/> -->
     <BoardofDirectorsSection />
+    <GallerySection />
     <ContactUsMapSectionComponent  />
 
   </section>

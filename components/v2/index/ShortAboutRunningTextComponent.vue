@@ -1,24 +1,5 @@
 <template>
   <section class="md:px-24 mx-auto py-8 md:py-16 mt-5 " id="about-us">
-    <el-row :gutter="16" class="justify-center items-center flex flex-col text-center">
-      <p>Welcome to</p>
-      <div v-gsap.whenVisible.to="{
-          opacity: 1,
-          y: 0,
-          delay: 0.5,
-          duration: 1.2,
-          ease: 'power2.out',
-          stagger: 0.3
-        }" class="text-secondary uppercase font-bold md:text-6xl mb-5 flex flex-row justify-center">
-          Ha-Meem Group
-        </div>
-        <p class=" md:text-2xl font-sans md:font-semibold text-gray-600 mt-4 text-justify ">
-          Starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of
-          Bangladesh’s largest exporters, with a workforce of 75,000 and an annual turnover nearing 925 million USD.
-          Today, Ha-Meem operates 450 production lines with a monthly capacity of 9.5 million garments, and boasts
-          state-of-the-art facilities in denim, spinning, and woven textiles — serving global brands with excellence.
-        </p>
-    </el-row>
     <el-row :gutter="16">
       <el-col :xs="24" :md="16">
         <div class="text-content pr-0 md:pr-16 ">
@@ -26,7 +7,22 @@
           <!-- <h2 class="text-3xl md:text-6xl font-bold font-denim">
             About <span class="text-secondary">Ha-Meem</span> Group
           </h2> -->
-          
+          <div v-gsap.whenVisible.to="{
+            opacity: 1,
+            y: 0,
+            delay: 0.5,
+            duration: 1.2,
+            ease: 'power2.out',
+            stagger: 0.3
+          }" class="text-primary uppercase font-bold md:text-8xl  mb-5">
+            Ha-Meem Group
+          </div>
+          <p class=" md:text-2xl font-sans md:font-semibold text-gray-600 mt-4 text-justify ">
+            Starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of
+            Bangladesh’s largest exporters, with a workforce of 75,000 and an annual turnover nearing 925 million USD.
+            Today, Ha-Meem operates 450 production lines with a monthly capacity of 9.5 million garments, and boasts
+            state-of-the-art facilities in denim, spinning, and woven textiles — serving global brands with excellence.
+          </p>
 
           <el-row :gutter="16">
             <div class="flex flex-wrap justify-around px-6 py-10 w-full someContainer mt-6">
@@ -34,7 +30,7 @@
                 class="flex flex-col items-center space-y-4 cursor-pointer mb-8 transition-all duration-300">
                 <!-- Circle Container -->
                 <div
-                  class=" w-96 64 h-96 rounded-full border-2 border-transparent hover:border-primary hover:border-dashed bg-primary/10 flex items-center justify-center p-1 transition-all duration-300">
+                  class=" w-72 64 h-72 rounded-full border-2 border-transparent hover:border-primary hover:border-dashed bg-primary/10 flex items-center justify-center p-1 transition-all duration-300">
                   <!-- Image Container with scaling -->
                   <div
                     class="w-full h-full flex items-center justify-center transition-transform duration-300 hover:scale-90">
