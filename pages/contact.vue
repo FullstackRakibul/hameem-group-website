@@ -24,7 +24,7 @@
         <!-- Contact Information -->
         <div class="space-y-8">
           <div class="mb-12">
-            <h2 class="text-3xl font-light text-gray-900 mb-4">Get In Touch</h2>
+            <h2 class="text-3xl font-bold text-primary mb-4">Get In Touch</h2>
             <p class="text-gray-600 text-lg leading-relaxed">
               We'd love to hear from you. Send us a message and we'll respond as soon as possible.
             </p>
@@ -107,7 +107,7 @@
         <!-- Contact Form -->
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8">
           <div class="mb-8">
-            <h2 class="text-2xl font-light text-gray-900 mb-2">Send us a Message</h2>
+            <h2 class="text-2xl font-semibold text-primary mb-2">Send us a Message</h2>
             <p class="text-gray-600">Fill out the form below and we'll get back to you within 24 hours.</p>
           </div>
 
@@ -208,7 +208,7 @@
       <!-- Map Section -->
       <div class="mt-16">
         <div class="mb-8 text-center">
-          <h2 class="text-3xl font-light text-gray-900 mb-4">Find Us Here</h2>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Find Us Here</h2>
           <p class="text-gray-600 text-lg">Visit our office for face-to-face consultations</p>
         </div>
         
@@ -220,7 +220,7 @@
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe> -->
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1825.836073151204!2d90.397174!3d23.759068!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7f36ebcbcdb%3A0x6363e2a5709dee2d!2sTML%20Building%20(Ha-Meem%20Group)!5e0!3m2!1sen!2sus!4v1738689429885!5m2!1sen!2sus" width="100%" height="350" style="border:0; border-radius: 6px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1825.836073151204!2d90.397174!3d23.759068!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7f36ebcbcdb%3A0x6363e2a5709dee2d!2sTML%20Building%20(Ha-Meem%20Group)!5e0!3m2!1sen!2sus!4v1738689429885!5m2!1sen!2sus" width="100%" height="500" style="border:0; border-radius: 6px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
         </div>
       </div>
 

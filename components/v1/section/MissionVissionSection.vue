@@ -76,6 +76,7 @@ const missionVisionData = {
       </svg>
     </div>
 
+
     <el-row :gutter="20" class="items-center relative z-10">
       <!-- Image Column -->
       <el-col :xs="24" :md="12">

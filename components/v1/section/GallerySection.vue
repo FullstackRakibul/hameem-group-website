@@ -13,16 +13,16 @@
 
       <!-- Filter Tabs -->
       <div class="flex justify-center mb-8">
-        <div class="flex space-x-1 bg-white rounded-lg p-1 shadow-sm">
+        <div class="flex space-x-1 bg-primary rounded-full p-1 shadow-sm">
           <button
             v-for="category in categories"
             :key="category"
             @click="activeCategory = category"
             :class="[
-              'px-6 py-2 rounded-md text-sm font-medium transition-all duration-300',
+              'md:px-12 py-2 rounded-full text-md font-medium transition-all duration-300',
               activeCategory === category
-                ? 'bg-gray-900 text-white'
-                : 'text-gray-600 hover:text-gray-900'
+                ? 'bg-white text-secondary font-semibold'
+                : 'text-white hover:bg-white hover:text-secondary'
             ]"
           >
             {{ category }}
