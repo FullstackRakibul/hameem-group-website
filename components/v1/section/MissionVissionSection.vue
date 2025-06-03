@@ -217,7 +217,7 @@ const missionVisionData = {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
-  background-color: #404052;
+  background-color: #274156;
   padding: 2px 8px;
   border-radius: 5px;
 }
