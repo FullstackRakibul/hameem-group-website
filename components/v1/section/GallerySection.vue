@@ -3,9 +3,10 @@
     <div class="container mx-auto px-4">
       <!-- Section Header -->
       <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h2 class="text-primary uppercase font-light md:text-6xl mb-4">
           Our Gallery
         </h2>
+        <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
           Explore our collection of moments, achievements, and behind-the-scenes glimpses
         </p>

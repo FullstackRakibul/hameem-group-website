@@ -49,6 +49,24 @@ const businessUnits = {
     description: 'Efficient logistics network ensuring timely delivery to global destinations.',
     icon: 'fxemoji:deliverytruck',
     capacity: '200+ shipments/month'
+  },
+  ancillary: {
+    title: 'Ancillary Support Industries',
+    description: 'Comprehensive ancillary services including dedicated Embroidery, Printing, Carton, Poly Bag, and Label factories to support our core manufacturing operations and provide end-to-end solutions.',
+    icon: 'material-symbols:widgets-outline', // Icon representing various components/services
+    capacity: 'Integrated support for all production needs'
+  },
+  newspaper: {
+    title: 'Samakal Newspaper',
+    description: 'Samakal is a popular and widely circulated national daily newspaper in Bangladesh, committed to delivering credible news and insightful journalism.',
+    icon: 'mdi:newspaper-variant-multiple-outline', // Newspaper icon
+    capacity: 'Leading national daily circulation'
+  },
+  newsChannel: {
+    title: 'Channel 24 News',
+    description: 'Channel 24 is a leading and very popular news television channel, providing comprehensive and timely news coverage across Bangladesh and beyond.',
+    icon: 'mdi:television-play', // Television/news channel icon
+    capacity: 'Extensive nationwide viewership'
   }
 }
 
@@ -143,10 +161,10 @@ onMounted(() => {
     <div class="px-24 mx-auto">
       <!-- Section Header -->
       <div class="mb-12 text-center">
-        <h2 class="section-title text-3xl md:text-6xl font-bold text-gray-800 mb-4">
+        <h2 class="text-primary uppercase font-light md:text-6xl section-title text-3xl mb-4">
           BUSINESS UNITS
         </h2>
-        <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+        <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
         <p class="text-gray-600 max-w-2xl mx-auto">
           Our vertically integrated business units work in harmony to deliver exceptional quality and efficiency across the entire production chain.
         </p>
@@ -163,7 +181,8 @@ onMounted(() => {
               class="tab-item mt-5 mb-1"
             >
               <button 
-                @click="handleTabChange(key)"
+                @click="handleTabChange(key as keyof typeof tabImages)"
+                :aria-label="`Switch to ${unit.title} tab`"
                 :class="[
                   'tab-button w-full text-left px-6 py-5 transition-all duration-300 m-1 rounded-s-full tracking-widest',
                   activeTab === key 
@@ -201,7 +220,7 @@ onMounted(() => {
               <div class="carousel-container relative">
                 <el-carousel 
                   :interval="5000" 
-                  height="450px" 
+                  height="750px" 
                   arrow="hover" 
                   indicator-position="outside"
                   class="custom-carousel"

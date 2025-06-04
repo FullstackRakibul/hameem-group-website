@@ -1,3 +1,204 @@
+<template>
+  <section id="expansionPlan" class="w-full px-4 md:px-24 py-12">
+    <SectionHeader 
+      title="Expansion Plan"
+      subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" 
+      buttonTextLink="/#"
+      buttonText="Discover Our Capabilities" 
+    />
+
+    <!-- Modern Strengths Section -->
+    <div class="mt-16">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div v-for="(card, index) in strengths" :key="index"
+          class="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 ease-out border border-gray-100/50 overflow-hidden flex flex-col h-[420px] hover:border-primary/30 hover:-translate-y-2">
+          
+          <!-- Card Image with Overlay -->
+          <div class="relative h-52 overflow-hidden">
+            <img 
+              :src="card.image" 
+              :alt="card.title"
+              class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
+            />
+            <!-- Primary color overlay -->
+            <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            
+            <!-- Floating Badge -->
+            <div class="absolute top-4 left-4">
+              <span class="inline-flex items-center px-3 py-1.5 text-xs font-semibold bg-white/90 backdrop-blur-sm text-primary rounded-full border border-white/50 shadow-lg">
+                <div class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></div>
+                {{ card.badge }}
+              </span>
+            </div>
+          </div>
+          
+          <!-- Card Content -->
+          <div class="p-6 flex flex-col flex-grow bg-gradient-to-b from-white to-gray-50/50">
+            <!-- Title -->
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300 leading-tight">
+              {{ card.title }}
+            </h3>
+            
+            <!-- Description -->
+            <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow leading-relaxed">
+              {{ card.description }}
+            </p>
+            
+            <!-- Modern CTA Button -->
+            <div class="mt-auto">
+              <NuxtLink 
+                :to="card.linkTo" 
+                class="group/btn relative w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-gray-900 hover:bg-primary text-white rounded-xl font-medium transition-all duration-300 overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <!-- Button background animation -->
+                <div class="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-out"></div>
+                
+                <!-- Button content -->
+                <span class="relative z-10 text-sm">{{ card.linkText }}</span>
+                <div class="relative z-10 w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors duration-300">
+                  <Icon 
+                    name="mdi:arrow-right" 
+                    size="14" 
+                    class="transform transition-transform duration-300 group-hover/btn:translate-x-0.5" 
+                  />
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
+
+          <!-- Hover glow effect -->
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        </div>
+      </div>
+
+      <!-- Modern Products Carousel Section -->
+      <div class="relative mt-20 mb-10">
+        <!-- Section Background -->
+        <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 overflow-hidden">
+          <!-- Section Header -->
+          <div class="text-center mb-12">
+            <h3 class="text-primary uppercase font-light md:text-6xl mb-4">
+              Production Capabilities
+            </h3>
+            <div class="w-1/3 h-1 bg-primary mx-auto my-4"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover our state-of-the-art manufacturing facilities and cutting-edge technology
+            </p>
+          </div>
+
+          <!-- Interactive Carousel Container -->
+          <div class="relative overflow-hidden">
+            <!-- Gradient Overlays -->
+            <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-100 to-transparent z-10 pointer-events-none"></div>
+            
+            <!-- Scrolling Products -->
+            <div class="flex space-x-6 animate-marquee-modern">
+              <div v-for="(product, index) in duplicatedProducts" :key="index"
+                class="group flex-shrink-0 transition-all duration-500 hover:scale-105 cursor-pointer">
+                
+                <!-- Product Card -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-white/50 backdrop-blur-sm min-w-[280px]">
+                  <!-- Image Container -->
+                  <div class="relative mb-4 overflow-hidden rounded-xl bg-gray-50">
+                    <div class="aspect-square w-32 max-w-[200px] mx-auto">
+                      <div class="relative w-full h-full">
+                        <!-- Primary color overlay at 30% opacity -->
+                        <div class="absolute inset-0 bg-primary opacity-30 z-10 mix-blend-multiply"></div>
+                        
+                        <!-- Image -->
+                        <img
+                          :src="product.image || fallbackImage"
+                          :alt="product.name"
+                          class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
+                        />
+                      </div>
+                    </div>
+                    
+                    <!-- Hover Overlay with Pulse Effect -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                      <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transform scale-50 group-hover:scale-100 transition-all duration-500">
+                          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Product Info -->
+                  <div class="text-center">
+                    <h4 class="text-lg font-medium text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                      {{ product.name }}
+                    </h4>
+                    <div class="flex items-center justify-center space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                      <span class="text-sm text-gray-500">View details</span>
+                      <svg class="w-4 h-4 text-primary transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Controls -->
+          <div class="flex justify-center mt-10 space-x-4">
+            <button 
+              @mouseenter="pauseAnimation"
+              class="px-6 py-2 bg-white text-primary rounded-full shadow-sm hover:shadow-md transition-all duration-300 border border-primary/20 hover:border-primary/50 group"
+            >
+              <div class="flex items-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6"></path>
+                </svg>
+                <span class="font-medium group-hover:text-primary/80 transition-colors">Pause</span>
+              </div>
+            </button>
+            <button 
+              @mouseenter="resumeAnimation"
+              class="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-full shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div class="flex items-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="font-medium">Play</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Stats Section -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-primary/50">
+            <div class="text-center">
+              <div class="md:text-3xl font-bold text-gray-900 mb-1">512+</div>
+              <div class="md:text-md text-primary">Production Lines</div>
+            </div>
+            <div class="text-center">
+              <div class="md:text-3xl font-bold text-gray-900 mb-1">24/7</div>
+              <div class="md:text-md text-primary">Operations</div>
+            </div>
+            <div class="text-center">
+              <div class="md:text-3xl font-bold text-gray-900 mb-1">100%</div>
+              <div class="md:text-md text-primary">Quality Assured</div>
+            </div>
+            <div class="text-center">
+              <div class="md:text-3xl font-bold text-gray-900 mb-1">50+</div>
+              <div class="md:text-md text-primary">Countries Served</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
 <script setup lang="ts">
 import SectionHeader from '~/components/v2/ui/SectionHeader.vue';
 import { ref, computed } from 'vue';
@@ -102,92 +303,25 @@ const products = ref([
 const fallbackImage = 'assets/v1/section/capabilities/garments-factory.gif';
 
 const duplicatedProducts = computed(() => [...products.value, ...products.value]);
+
+// Animation controls
+const pauseAnimation = () => {
+  const carousel = document.querySelector('.animate-marquee-modern') as HTMLElement | null;
+  if (carousel) {
+    carousel.style.animationPlayState = 'paused';
+  }
+};
+
+const resumeAnimation = () => {
+  const carousel = document.querySelector('.animate-marquee-modern') as HTMLElement | null;
+  if (carousel) {
+    carousel.style.animationPlayState = 'running';
+  }
+};
 </script>
 
-<template>
-  <section id="expansionPlan" class="w-full px-4 md:px-24 py-12">
-    <SectionHeader 
-      title="Expansion Plan"
-      subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" 
-      buttonTextLink="/#"
-      buttonText="Discover Our Capabilities" 
-    />
-
-    <!-- Strengths Section -->
-    <div class="mt-10">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-        <div v-for="(card, index) in strengths" :key="index"
-          class="group relative bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 ease-in-out border border-gray-100 overflow-hidden flex flex-col h-[360px] border-primary/30">
-          
-          <!-- Card Image -->
-          <div class="h-48 overflow-hidden">
-            <img 
-              :src="card.image" 
-              :alt="card.title"
-              class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-            />
-          </div>
-          
-          <!-- Card Content -->
-          <div class="p-5 flex flex-col flex-grow">
-            <!-- Badge -->
-            <span class="inline-block px-2 py-1 text-xs font-medium bg-primary/10 text-primary rounded mb-3 self-start">
-              {{ card.badge }}
-            </span>
-            
-            <!-- Title -->
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">{{ card.title }}</h3>
-            
-            <!-- Description -->
-            <p class="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
-              {{ card.description }}
-            </p>
-            
-            <!-- Button -->
-            <NuxtLink 
-              :to="card.linkTo" 
-              class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 hover:bg-white border border-primary hover:text-primary rounded-md bg-primary text-white transition-all duration-300 text-sm font-medium group"
-            >
-              <span>{{ card.linkText }}</span>
-              <Icon 
-                name="mdi:arrow-right" 
-                size="18" 
-                class="transform transition-transform duration-300 group-hover:translate-x-1" 
-              />
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-
-      <!-- Products Carousel with Images -->
-      <div class="relative overflow-hidden mt-20 mb-10 md:pb-6">
-        <h3 class="text-6xl font-bold text-center mb-8 text-gray-800">Our Production Capabilities</h3>
-        <div class="flex space-x-8 animate-marquee px-4">
-          <div v-for="(product, index) in duplicatedProducts" :key="index"
-            class="group flex-shrink-0 transition-all duration-300  cursor-pointer">
-            <div class="flex flex-row items-center md:mt-10 bg-slate-600/5 p-2  rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-              <div class=" h-20 w-20 md:h-20 md:w-20 overflow-hidden border  border-primary/70 rounded-full transition-all duration-300 group-hover:shadow-lg">
-                <img
-                  :src="product.image || fallbackImage"
-                  :alt="product.name"
-                  class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                />
-              </div>
-              <div class="ml-4 text-left">
-                <span class="text-2xl md:text-2xl px-10 font-bold text-gray-700 group-hover:text-primary transition-colors duration-300">
-                  {{ product.name }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</template>
-
 <style scoped>
-@keyframes marquee {
+@keyframes marquee-modern {
   0% {
     transform: translateX(0);
   }
@@ -196,20 +330,25 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
   }
 }
 
-.animate-marquee {
-  animation: marquee 30s linear infinite;
+.animate-marquee-modern {
+  animation: marquee-modern 20s linear infinite;
   min-width: 200%;
   will-change: transform;
 }
 
-.animate-marquee:hover {
+.animate-marquee-modern:hover {
   animation-play-state: paused;
+}
+
+/* Glass morphism effect */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .animate-marquee {
-    animation-duration: 40s;
+  .animate-marquee-modern {
+    animation-duration: 50s;
   }
 }
 
@@ -221,8 +360,27 @@ html {
 /* Line clamp for description */
 .line-clamp-3 {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 </style>

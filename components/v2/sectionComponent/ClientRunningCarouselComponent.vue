@@ -3,9 +3,10 @@
     <div class="container mx-auto">
       <!-- Section Title & Description -->
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-6xl font-bold text-gray-800">
+        <h2 class="text-primary uppercase font-light md:text-6xl ">
           Our Clients
         </h2>
+        <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
         <p class="text-lg text-gray-600 mt-3 max-w-2xl mx-auto">
           Partnering with the world’s most renowned fashion brands, we deliver excellence through premium craftsmanship, sustainable innovation, and a commitment to quality.
         </p>

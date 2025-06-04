@@ -1,4 +1,238 @@
+<template>
+  <section class="relative w-full min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+      <!-- Geometric Background -->
+      <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-1/4 h-1/4 bg-gradient-to-tr from-secondary/5 to-transparent rounded-full blur-3xl"></div>
+      
+      <!-- Grid Pattern -->
+      <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 50px 50px;"></div>
+    </div>
+
+    <div class="relative z-10 max-w-8xl mx-auto px-6 md:px-6 py-16">
+      <!-- Header Section -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center space-x-3 mb-6">
+          <div class="w-12 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+          <span class="text-sm font-semibold text-primary uppercase tracking-wider">Company Profile</span>
+          <div class="w-12 h-1 bg-gradient-to-r from-secondary to-primary rounded-full"></div>
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+          Our Vision & <span class="text-primary font-medium">Mission</span>
+        </h1>
+        
+        <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          {{ missionVisionData.description }}
+        </p>
+      </div>
+
+      <!-- Main Content Grid -->
+      <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <!-- Left: Company Image & Stats -->
+        <div class="space-y-8">
+          <!-- Hero Image -->
+          <div class="relative group">
+            <div class="absolute  bg-gradient-to-r  from-primary/20 to-secondary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative bg-white rounded-3xl p-8  ">
+              <img 
+                src="~/assets/missionvission-sectionImage.png"
+                alt="Ha-Meem Group Mission Vision"
+                class="w-full h-auto rounded-2xl transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+          </div>
+
+          <!-- Company Stats -->
+          <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div class="text-3xl font-bold text-primary mb-2">25+</div>
+              <div class="text-sm text-gray-600 font-medium">Years of Excellence</div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div class="text-3xl font-bold text-secondary mb-2">90K+</div>
+              <div class="text-sm text-gray-600 font-medium">Employees Worldwide</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Mission & Vision Cards -->
+        <div class="space-y-8">
+          <!-- Mission Section -->
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-900">Our Mission</h2>
+            </div>
+            
+            <div class="grid gap-4">
+              <div 
+                v-for="point in missionPoints" 
+                :key="point.id"
+                class="group relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/30 transition-all duration-500 cursor-pointer overflow-hidden"
+              >
+                <!-- Background Animation -->
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <!-- Content -->
+                <div class="relative flex items-start space-x-4">
+                  <!-- Icon -->
+                  <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                    <img 
+                      :src="point.icon" 
+                      :alt="point.title"
+                      class="w-6 h-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                    />
+                  </div>
+                  
+                  <!-- Text Content -->
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                      {{ point.title }}
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                      {{ point.description }}
+                    </p>
+                  </div>
+                  
+                  <!-- Hover Arrow -->
+                  <div class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vision Section -->
+          <div>
+            <div class="flex items-center space-x-3 mb-6">
+              <div class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold text-gray-900">Our Vision</h2>
+            </div>
+            
+            <div class="grid gap-4">
+              <div 
+                v-for="point in visionPoints" 
+                :key="point.id"
+                class="group relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-secondary/30 transition-all duration-500 cursor-pointer overflow-hidden"
+              >
+                <!-- Background Animation -->
+                <div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <!-- Content -->
+                <div class="relative flex items-start space-x-4">
+                  <!-- Icon -->
+                  <div class="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all duration-300">
+                    <img 
+                      :src="point.icon" 
+                      :alt="point.title"
+                      class="w-6 h-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                    />
+                  </div>
+                  
+                  <!-- Text Content -->
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-secondary transition-colors duration-300">
+                      {{ point.title }}
+                    </h3>
+                    <p class="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                      {{ point.description }}
+                    </p>
+                  </div>
+                  
+                  <!-- Hover Arrow -->
+                  <div class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                    <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Values Showcase -->
+      <div class="bg-white rounded-xl p-8 md:p-4 ">
+        <div class="text-center mb-12">
+          <h2 class="text-primary uppercase font-light md:text-6xl mb-4">Core Values in Action</h2>
+          <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Hover over each value to see how we implement it in our daily operations
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div 
+            v-for="(point, index) in missionVisionData.points" 
+            :key="point.id"
+            class="group relative text-center"
+          >
+            <!-- Animated Icon Container -->
+            <div class="relative mx-auto w-44 h-44 mb-6">
+              <!-- Static Icon -->
+              <div class="absolute inset-0 bg-gray-100 rounded-2xl flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
+                <img 
+                  :src="point.icon" 
+                  :alt="point.title"
+                  class="w-32 h-32 object-contain"
+                />
+              </div>
+              
+              <!-- Animated Icon (appears on hover) -->
+              <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
+                <img 
+                  :src="point.animatedImage" 
+                  :alt="point.title"
+                  class="w-32 h-32 object-contain brightness-0 invert"
+                />
+              </div>
+              
+              <!-- Pulse Effect -->
+              <div class="absolute inset-0 bg-primary/20 rounded-2xl opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="space-y-3">
+              <div class="inline-flex items-center space-x-2 px-3 py-1 bg-gray-100 group-hover:bg-primary group-hover:text-white rounded-full text-xs font-medium transition-all duration-300">
+                <span>{{ point.category === 'mission' ? 'Mission' : 'Vision' }}</span>
+              </div>
+              
+              <h3 class="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors duration-300">
+                {{ point.title }}
+              </h3>
+              
+              <p class="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                {{ point.description }}
+              </p>
+            </div>
+
+            <!-- Connecting Line (for larger screens) -->
+            <div v-if="index < missionVisionData.points.length - 1" class="hidden md:block absolute top-12 -right-4 w-8 h-0.5 bg-gray-200 group-hover:bg-primary transition-colors duration-300"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
 <script setup>
+import { computed } from 'vue';
+
 defineProps({
   bgImage: {
     type: String,
@@ -6,7 +240,7 @@ defineProps({
   },
 });
 
-// Mission and Vision data as JSON constant
+// Mission and Vision data
 const missionVisionData = {
   title: "Our Vision & Mission",
   description: "Ha-Meem Group's mission is to provide quality products on time, while also aiming to eliminate poverty and promote industrialization, with a vision of becoming a leading wholesale clothing manufacturer in Bangladesh and globally.",
@@ -61,329 +295,80 @@ const missionVisionData = {
     }
   ]
 };
+
+// Computed properties to separate mission and vision points
+const missionPoints = computed(() => 
+  missionVisionData.points.filter(point => point.category === 'mission')
+);
+
+const visionPoints = computed(() => 
+  missionVisionData.points.filter(point => point.category === 'vision')
+);
 </script>
 
-<template>
-  <section
-    class="relative w-full h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-24 someContainer"
-    :style="{ backgroundImage: `url(${bgImage})` }">
-    <!-- Abstract Wave Background -->
-    <div class="absolute inset-0 z-0 opacity-10">
-      <svg viewBox="0 0 1440 320" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#1E90FF" fill-opacity="0.2"
-          d="M0,160L48,149.3C96,139,192,117,288,128C384,139,480,181,576,197.3C672,213,768,203,864,181.3C960,160,1056,128,1152,117.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-        </path>
-      </svg>
-    </div>
-
-
-    <el-row :gutter="20" class="items-center relative z-10">
-      <!-- Image Column -->
-      <el-col :xs="24" :md="12">
-        <div class="relative overflow-hidden rounded-lg">
-          <el-image class="transition-transform duration-300  p-10"
-            style="max-width: 600px; width: 100%;" src="./assets/missionvission-sectionImage.png"
-            alt="Mission Vision Section banner" />
-        </div>
-      </el-col>
-
-      <!-- Content Column -->
-      <el-col :xs="24" :md="12">
-        <!-- Section Title -->
-        <div class="text-left py-6">
-          <h2 class="text-5xl font-bold text-black animate__animated animate__fadeInUp">
-            {{ missionVisionData.title }}
-          </h2>
-          <p class="text-lg text-gray-600 mt-2 animate__animated animate__fadeInUp animate__delay-1s">
-            {{ missionVisionData.description }}
-          </p>
-        </div>
-
-        <!-- Key Points Section -->
-        <div class="mission-grid mt-6">
-          <div v-for="(point, index) in missionVisionData.points" :key="point.id" 
-            class="mission-card-wrapper">
-            <div class="mission-card">
-              <!-- Initial minimal state -->
-              <div class="card-minimal">
-                <!-- <Icon :name="point.icon" class="card-icon" /> -->
-                <img :src="point.icon" :alt="point.title || 'Ha-Meem Group'" class=" h-44 " />
-                <h3 class="card-title-minimal">{{ point.title }}</h3>
-                <span class="card-badge">{{ point.category === 'mission' ? 'Mission' : 'Vision' }}</span>
-              </div>
-              
-              <!-- Expanded hover state -->
-              <div class="card-expanded">
-                <div class="animated-image-container">
-                  <img :src="point.animatedImage" :alt="point.title || 'Ha-Meem Group'" class="h-24" />
-                </div>
-                <div class="expanded-content">
-                  <h3 class="card-title-expanded">{{ point.title }}</h3>
-                  <p class="card-description">{{ point.description }}</p>
-                </div>
-              </div>
-              
-              <!-- Border animation elements -->
-              <div class="border-line top"></div>
-              <div class="border-line right"></div>
-              <div class="border-line bottom"></div>
-              <div class="border-line left"></div>
-            </div>
-          </div>
-        </div>
-      </el-col>
-    </el-row>
-  </section>
-</template>
-
 <style scoped>
-/* Hover effect for image */
-.hover\:scale-110:hover {
-  transform: scale(1.1);
-}
-
-/* Mission Grid Layout */
-.mission-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  position: relative;
-}
-
-/* Card Wrapper - Provides space for expansion */
-.mission-card-wrapper {
-  position: relative;
-  min-height: 220px;
-}
-
-/* Mission Vision Card Styling */
-.mission-card {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 220px; 
-  background-color: rgb(238, 238, 238);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  cursor: pointer;
-  border: 1px solid rgba(16, 56, 97, 0.2);
-}
-
-.mission-card:hover {
-  height: 280px;
-  background-color: #fff ;
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(30, 144, 255, 0.2);
-  z-index: 20;
-}
-
-/* Minimal card state */
-.card-minimal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-  padding: 20px;
-  transition: opacity 0.3s ease;
-}
-
-.mission-card:hover .card-minimal {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.card-icon {
-  font-size: 36px;
-  color: #374A5D;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
-
-.card-title-minimal {
-  font-size: 18px;
-  font-weight: 700;
-  color: #333;
-  text-align: center;
-}
-
-.card-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #fff;
-  background-color: #274156;
-  padding: 2px 8px;
-  border-radius: 5px;
-}
-
-/* Expanded card state */
-.card-expanded {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.mission-card:hover .card-expanded {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.animated-image-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.expanded-content {
-  flex: 1;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(30, 144, 255, 0.3) transparent;
-}
-
-.expanded-content::-webkit-scrollbar {
-  width: 4px;
-}
-
-.expanded-content::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.expanded-content::-webkit-scrollbar-thumb {
-  background-color: rgba(30, 144, 255, 0.3);
-  border-radius: 6px;
-}
-
-.card-title-expanded {
-  font-size: 18px;
-  font-weight: 600;
-  color: #71504B;
-  margin-bottom: 10px;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 0.4s ease 0.1s;
-}
-
-.mission-card:hover .card-title-expanded {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.card-description {
-  font-size: 13px;
-  line-height: 1.5;
-  color: #666;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 0.4s ease 0.2s;
-}
-
-.mission-card:hover .card-description {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Border animation */
-.border-line {
-  position: absolute;
-  background: linear-gradient(90deg, #fc0000, #001aff, #00ff0d, #fffb00);
-  background-size: 300% 300%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.mission-card:hover .border-line {
-  opacity: 1;
-  animation: gradient-animation 2s linear infinite;
-}
-
-.top {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-}
-
-.right {
-  top: 0;
-  right: 0;
-  width: 2px;
-  height: 100%;
-}
-
-.bottom {
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 2px;
-}
-
-.left {
-  bottom: 0;
-  left: 0;
-  width: 2px;
-  height: 100%;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  50% {
-    background-position: 100% 50%;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  100% {
-    background-position: 0% 50%;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes pulse {
-  0% {
+  0%, 100% {
     transform: scale(1);
+    opacity: 1;
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    opacity: 0.8;
   }
-  100% {
-    transform: scale(1);
-  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .mission-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  
-  .mission-card-wrapper {
-    min-height: 130px;
-  }
-  
-  .mission-card {
-    height: 130px;
-  }
-  
-  .mission-card:hover {
-    height: 250px;
-  }
-  
-  .card-minimal {
-    height: 130px;
+  .grid {
+    gap: 1rem;
   }
 }
 </style>

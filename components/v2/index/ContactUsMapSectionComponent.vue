@@ -4,8 +4,8 @@
   <div class="grid grid-cols-1 bg-primary text-white rounded-md border border-white p-20 md:grid-cols-2 gap-8 items-center">
     <!-- Contact Us Column -->
     <div>
-      <h2 class="text-3xl font-semibold mb-4">Contact Us</h2>
-      <div class="border-b-4 border-white w-16 mb-6"></div>
+      <h2 class="text-white uppercase font-light md:text-6xl  mb-4">Contact Us</h2>
+      <div class=" w-2/3 h-1 bg-white mx-auto my-4"></div>
         <div class="space-y-6">
           <div class="flex items-start space-x-4">
             <div class="mt-1 text-primary">

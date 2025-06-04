@@ -23,10 +23,11 @@ import { library } from '@fortawesome/fontawesome-svg-core';
     <div class="relative z-10 max-w-8xl w-full grid md:grid-cols-2 gap-12">
       <!-- Left Side: Text & Goals -->
       <div class="text-left">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+        <h2 class="text-primary uppercase font-light md:text-5xl ">
           SUSTAINABILITY GOALS:
         </h2>
-        <h3 class="text-2xl md:text-3xl text-green-600 font-bold">
+        <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+        <h3 class="text-2xl md:text-3xl text-green-600 font-light uppercase tracking-wide">
           ROADMAP 2030
         </h3>
         <ul class="mt-6 space-y-3 text-lg text-gray-800">

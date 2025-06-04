@@ -6,7 +6,7 @@
         {{ subtitle }}
       </p>
       <div class="border-t-4 border-[#40160C] py-2 w-20 mt-2"></div>
-      <h2 class="font-bold tracking-widest  " :class="titleClass">
+      <h2 class="text-primary uppercase font-light md:text-6xl tracking-widest  " :class="titleClass">
         {{ title }}
       </h2>
     </div>

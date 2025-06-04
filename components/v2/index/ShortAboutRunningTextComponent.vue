@@ -1,7 +1,7 @@
 <template>
   <section class="md:px-24 mx-auto py-8 md:py-16 mt-5" id="about-us">
     <el-row class="text-center mb-8 justify-center flex flex-col items-center">
-      <p class="text-lg font-semibold">Welcome to</p>
+      <p class="text-lg font-semibold tracking-widest lowercase py-5">Welcome to</p>
       <div v-gsap:whenVisible.to="{
             opacity: 1,
             y: 0,
@@ -9,10 +9,11 @@
             duration: 1.2,
             ease: 'power2.out',
             stagger: 0.3
-          }" class="text-primary uppercase font-bold md:text-6xl mb-5">
+          }" class="text-primary uppercase font-light md:text-6xl mb-5">
         Ha-Meem Group
       </div>
-      <p class="md:text-2xl font-sans md:font-semibold text-gray-600 mt-4 text-center">
+      <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+      <p class="md:text-2xl font-sans md:font-normal text-gray-600 mt-4 text-center">
         Starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of
         Bangladesh's largest exporters, with a workforce of 75,000 and an annual turnover nearing 925 million USD.
         Today, Ha-Meem operates 450 production lines with a monthly capacity of 9.5 million garments, and boasts
