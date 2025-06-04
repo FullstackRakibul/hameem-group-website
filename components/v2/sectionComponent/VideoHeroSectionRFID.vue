@@ -23,11 +23,11 @@
         </h1>
         
         <div class="space-y-4">
-          <p class="text-xl md:text-2xl text-white opacity-90 animate__animated animate__fadeInLeft animate__delay-1s">
+          <!-- <p class="text-xl md:text-2xl text-white opacity-90 animate__animated animate__fadeInLeft animate__delay-1s">
             Since 1980
-          </p>
-          <p class="text-3xl md:text-4xl text-white text-primary-300 font-semibold animate__animated animate__fadeInLeft animate__delay-2s">
-            Premium Denim Manufacturing
+          </p> -->
+          <p class="text-3xl md:text-xl text-white text-primary-300  animate__animated animate__fadeInLeft animate__delay-2s">
+            We are redefining Garment manufacturing with cutting-edge technology and Innovation, as part of our value addition initiative. we’ve implemented Eliot.  A state-of-the art IT solution designed to enhance efficiency quality, transparency and traceability across our manufacturing processes.  Join us on a journey to explore how our Advanced systems are transforming our operations, empowering your supply chain and delivering unparalleled value to your business. The system captures every sewing operation details in real time. Imagine a factory that speaks to you!
           </p>
         </div>
 

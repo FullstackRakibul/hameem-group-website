@@ -146,7 +146,7 @@ const duplicatedProducts = computed(() => [...products.value, ...products.value]
             <!-- Button -->
             <NuxtLink 
               :to="card.linkTo" 
-              class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 bg-white border border-primary text-primary rounded-md hover:bg-primary hover:text-white transition-all duration-300 text-sm font-medium group"
+              class="mt-auto inline-flex items-center justify-center gap-2 px-4 py-2 hover:bg-white border border-primary hover:text-primary rounded-md bg-primary text-white transition-all duration-300 text-sm font-medium group"
             >
               <span>{{ card.linkText }}</span>
               <Icon 
