@@ -1,6 +1,6 @@
 <template>
   <div class=" relative h-screen bg-top bg-no-repeat  flex flex-col justify-center items-center text-white"
-    :style="{ backgroundImage: `url('./assets/v1/section/Slider/main-banner-shape-00004.jpg')` }">
+    :style="{ backgroundImage: `url('./assets/v1/section/Slider/main-banner-shape-00005.jpg')` }">
     <div class="absolute inset-0 bg-black bg-opacity-20 z-0"></div>
       <!-- Dark Overlay -->
 
