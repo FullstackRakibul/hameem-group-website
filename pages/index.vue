@@ -50,7 +50,7 @@ import GallerySection from '~/components/v1/section/GallerySection.vue';
     <AchievementsParallaxSection />
      <!-- <OurAchievementsSlide/> -->
     <BoardofDirectorsSection />
-    <GallerySection />
+    <!-- <GallerySection /> -->
     <ContactUsMapSectionComponent  />
 
   </section>
