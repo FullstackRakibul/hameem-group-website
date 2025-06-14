@@ -109,8 +109,8 @@ const menuItems = [
     // ]
   },
   { label: 'Clients', to: '/#index-client' },
-  { label: 'Gallery', to: '/#indexGallery' },
-  
+  // { label: 'Gallery', to: '/#indexGallery' },
+  { label: 'Gallery', to: '/our-gallery' },
   { 
     label: 'Contact Us', 
     to: '/contact'

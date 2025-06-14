@@ -19,6 +19,10 @@
         Today, Ha-Meem operates 450 production lines with a monthly capacity of 9.5 million garments, and boasts
         state-of-the-art facilities in denim, spinning, and woven textiles — serving global brands with excellence.
       </p>
+      <!-- <p class="md:text-2xl font-sans md:font-normal text-gray-600 mt-4 text-center">
+  With humble beginnings in the early days of Bangladesh’s garment industry, this enterprise has grown into one of the nation’s largest exporters. Over decades of unwavering commitment, it now stands with a workforce of 75,000 and an annual turnover approaching 925 million USD. Operating 450 production lines with a monthly capacity of 9.5 million garments, it houses cutting-edge facilities in denim, spinning, and woven textiles — delivering excellence to global brands.
+</p> -->
+
     </el-row>
 
     <el-row :gutter="16">
@@ -33,13 +37,13 @@
                 @mouseenter="showTooltip(item, index)"
                 @mouseleave="hideTooltip"
                 
-                class="flex flex-col items-center group cursor-pointer transition-all duration-300 relative"
+                class="flex flex-col items-center  group cursor-pointer transition-all duration-300 relative"
               >
                 <!-- Circle Container -->
-                <div class="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-50 hover:bg-primary/5 flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                <div class="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-primary/20 hover:bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden ">
                   <div class="absolute inset-0 border-2 border-dashed border-transparent group-hover:border-primary rounded-full transition-all duration-300"></div>
                   
-                  <div class="w-3/4 h-3/4 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                  <div class="w-3/4 h-3/4 flex items-center justify-center transition-transform duration-500 ">
                     <img 
                       :src="item.image" 
                       :alt="item.label || 'Feature Icon'"

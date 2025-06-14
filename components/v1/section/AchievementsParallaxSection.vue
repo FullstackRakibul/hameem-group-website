@@ -17,11 +17,11 @@
       </div>
 
       <!-- Main Display Section -->
-      <div class="max-w-10xl mx-auto px-4 md:px-8 mb-16" ref="mainDisplayRef">
+      <div class="max-w-8xl mx-auto mb-16" ref="mainDisplayRef">
         <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
           <div class="flex flex-col lg:flex-row">
             <!-- Left: Text Section -->
-            <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+            <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center ">
               <div class="space-y-6">
                 <div class="inline-block px-4 py-2 bg-white/10 rounded-full text-sm text-gray-300 font-medium">
                   {{ selectedAward?.year || '2024' }}
@@ -43,7 +43,7 @@
             </div>
 
             <!-- Right: Image Section -->
-            <div class="lg:w-1/2 p-8 md:p-12 flex items-center justify-center">
+            <div class="max-w-10xl mx-auto px-4 md:px-8 mb-16 flex items-center justify-center">
               <div class="relative group">
                 <div class="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div class="relative">
@@ -69,7 +69,7 @@
       </div>
 
       <!-- Modern Carousel Section -->
-      <div class="max-w-10xl mx-auto px-4 md:px-8" ref="carouselRef">
+      <div class="max-w-8xl mx-auto px-4 md:px-8" ref="carouselRef">
         <div class="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/10 p-6 md:p-8">
           <div class="flex items-center justify-between mb-6">
             <h4 class="text-xl font-semibold text-white">All Achievements</h4>
@@ -100,7 +100,7 @@
                 :key="index"
                 @click="selectAward(award)"
                 :class="[
-                  'min-w-[250px] flex-shrink-0 group cursor-pointer transition-all duration-500',
+                  'min-w-[200px] max-w-[350px] py-4 flex-shrink-0 group cursor-pointer transition-all duration-500',
                   selectedAward?.year === award.year 
                     ? 'transform scale-105' 
                     : 'hover:scale-102'
@@ -137,10 +137,10 @@
                         {{ award.year }}
                       </span>
                     </div>
-                    <h3 class="text-lg font-semibold text-white leading-tight line-clamp-2">
+                    <h3 class="text-lg font-semibold text-white leading-tight line-clamp-1">
                       {{ award.title }}
                     </h3>
-                    <p class="text-sm text-gray-300 line-clamp-2">
+                    <p class="text-sm text-gray-300 line-clamp-2 ">
                       {{ award.description }}
                     </p>
                   </div>
@@ -276,13 +276,7 @@ onMounted(() => {
   transform: translateY(30px);
 }
 
-/* Line clamp utilities */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
