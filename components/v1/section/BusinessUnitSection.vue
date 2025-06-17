@@ -51,12 +51,19 @@ const businessUnits = {
     icon: 'fxemoji:deliverytruck',
     capacity: '200+ shipments/month'
   },
-  ancillary: {
-    title: 'Ancillary Support Industries',
-    description: 'Comprehensive ancillary services including dedicated Embroidery, Printing, Carton, Poly Bag, and Label factories to support our core manufacturing operations and provide end-to-end solutions.',
-    icon: 'material-symbols:widgets-outline', // Icon representing various components/services
-    capacity: 'Integrated support for all production needs'
-  },
+  // ancillary: {
+  //   title: 'Ancillary Support Industries',
+  //   description: 'Comprehensive ancillary services including dedicated Embroidery, Printing, Carton, Poly Bag, and Label factories to support our core manufacturing operations and provide end-to-end solutions.',
+  //   icon: 'material-symbols:widgets-outline', // Icon representing various components/services
+  //   capacity: 'Integrated support for all production needs'
+  // },
+  teaGarden: {
+  title: 'Tea Garden Division',
+  description: 'A lush and productive tea estate cultivating premium quality tea, contributing to both local consumption and global export. It reflects our commitment to sustainability, heritage, and excellence in agribusiness.',
+  icon: 'mdi:tea', // Icon representing tea or plantation
+  capacity: 'Spanning acres of curated plantations with expert harvesting'
+}
+,
   newspaper: {
     title: 'Samakal Newspaper',
     description: 'Samakal is a popular and widely circulated national daily newspaper in Bangladesh, committed to delivering credible news and insightful journalism.',
@@ -101,6 +108,17 @@ const tabImages = {
   ],
   transport: [
     './assets/v1/section/TRANSPORT/hsbc-bangladesh-introduced-sustainability-linked-loan-for-ha-meem-group-banner-image.jpg',
+  ],
+  teaGarden: [
+    './assets/businessUnitImage/tea1.jpg',
+    './assets/businessUnitImage/tea2.jpg',
+  ],
+  newspaper: [
+    './assets/businessUnitImage/news.png',
+    './assets/businessUnitImage/samakal2.jpg',
+  ],
+  newsChannel:[
+    './assets/businessUnitImage/c24.png',
   ]
 }
 
@@ -212,9 +230,9 @@ onMounted(() => {
               <div class="p-6 border-b border-gray-100">
                 <h3 class="text-4xl font-bold text-gray-800 mb-2">{{ businessUnits[activeTab].title }}</h3>
                 <p class="text-gray-600 text-2xl  mb-4">{{ businessUnits[activeTab].description }}</p>
-                <div class="inline-flex items-center px-3 py-1 bg-primary/10 rounded-full">
-                  <span class="text-xl uppercase tracking-wider text-gray-500 mr-2">Capacity:</span>
-                  <span class="font-medium text-xl text-primary">{{ businessUnits[activeTab].capacity }}</span>
+                <div class="inline-flex items-center px-3 py-1 bg-primary/70 rounded-full">
+                  <span class="text-xl uppercase tracking-wider text-white mr-2 ">Capacity:</span>
+                  <span class="font-medium text-xl text-white">{{ businessUnits[activeTab].capacity }}</span>
                 </div>
               </div>
               
