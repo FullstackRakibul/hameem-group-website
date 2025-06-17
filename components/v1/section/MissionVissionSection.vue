@@ -9,7 +9,7 @@
       <!-- Grid Pattern -->
       <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 50px 50px;"></div>
     </div>
-
+    <p class="md:text-3xl font-normal tracking-widest text-secondary py-5 text-center font-writtingOne">Company Profiles  </p>
     <div class="relative z-10 container mx-auto px-4 md:px-2 py-16">
       <!-- Header Section -->
       <div class="text-center mb-16">
@@ -61,7 +61,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
               </div>
-              <h2 class="text-3xl font-bold text-gray-900">Our Mission</h2>
+              <h2 class="text-3xl  text-gray-900 font-writting font-semibold ">Our Mission</h2>
             </div>
             
             <!-- Modern Minimalist Cards -->
@@ -122,7 +122,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                 </svg>
               </div>
-              <h2 class="text-3xl font-bold text-gray-900">Our Vision</h2>
+              <h2 class="lg:text-4xl md:text-3xl text-gray-900 font-writting font-semibold">Our Vision</h2>
             </div>
             
             <!-- Modern Minimalist Cards -->
@@ -222,7 +222,7 @@
 
             <!-- Content -->
             <div class="space-y-3">
-              <div class="inline-flex items-center space-x-2 px-3 py-1 bg-primary text-white group-hover:bg-primary group-hover:text-white rounded-full text-xs font-medium transition-all duration-300">
+              <div class="inline-flex items-center space-x-2 px-3 py-1 bg-primary text-white group-hover:bg-primary group-hover:text-white rounded-full text-md font-medium transition-all duration-300">
                 <span>{{ point.category === 'mission' ? 'Mission' : 'Vision' }}</span>
               </div>
               

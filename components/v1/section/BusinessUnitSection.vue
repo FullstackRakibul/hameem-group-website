@@ -162,9 +162,10 @@ onMounted(() => {
     <div class="px-24 mx-auto">
       <!-- Section Header -->
       <div class="md:mb-24 text-center">
-        <h2 class="text-primary uppercase font-light md:text-6xl section-title text-3xl mb-2">
-          BUSINESS UNITS
-        </h2>
+        <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+  Business <span class="text-primary font-medium">Units</span>
+</h2>
+
         <UISectionUnderline/>
         <p class="text-gray-600 max-w-2xl mx-auto">
           Our vertically integrated business units work in harmony to deliver exceptional quality and efficiency across the entire production chain.

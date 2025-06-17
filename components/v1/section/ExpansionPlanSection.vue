@@ -1,13 +1,19 @@
 <template>
   <section id="expansionPlan" class="w-full px-4 md:px-24 py-12">
-    <SectionHeader 
+    <!-- <SectionHeader 
       title="Expansion Plan"
       subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" 
       buttonTextLink="/#"
       buttonText="Discover Our Capabilities" 
       
-    />
+    /> -->
+    <div class="text-center mb-8 justify-center flex flex-col items-center">
+      <h2 class="text-4xl md:text-6xl font-light text-gray-900 tracking-tight">
+    Expansion <span class="text-primary font-medium">Plan</span>
+  </h2>
+    </div>
 
+<UISectionUnderline/>
     <!-- Modern Strengths Section -->
     <div class="mt-16">
       <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -80,9 +86,10 @@
         <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 overflow-hidden">
           <!-- Section Header -->
           <div class="text-center mb-12 ">
-            <h3 class="text-primary uppercase font-light md:text-6xl mb-4">
-              Production Capabilities
-            </h3>
+            <h3 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+  Production <span class="text-primary font-medium">Capabilities</span>
+</h3>
+
            <UISectionUnderline/>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our state-of-the-art manufacturing facilities and cutting-edge technology

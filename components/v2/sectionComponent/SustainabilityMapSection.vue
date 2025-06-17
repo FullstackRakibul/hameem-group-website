@@ -1,4 +1,4 @@
-<script setup >
+<script setup>
 defineProps({
   bgImage: {
     type: String,
@@ -13,7 +13,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 </script>
 
 <template>
-  <section id="index-sustainability" class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-12"
+  <section id="index-sustainability"
+    class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center px-6 md:px-12"
     :style="{ backgroundImage: `url(${bgImage})` }">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-white bg-opacity-80"></div>
@@ -22,10 +23,10 @@ import { library } from '@fortawesome/fontawesome-svg-core';
     <div class="relative z-10 max-w-8xl w-full grid md:grid-cols-2 gap-12">
       <!-- Left Side: Text & Goals -->
       <div class="text-left">
-        <h2 class="text-primary uppercase font-light md:text-5xl ">
-          SUSTAINABILITY GOALS:
+        <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+          Sustainability <span class="text-primary font-medium">Goals</span>
         </h2>
-        <UISectionUnderline/>
+        <UISectionUnderline />
         <h3 class="text-2xl md:text-3xl text-green-600 font-light uppercase tracking-wide">
           ROADMAP 2030
         </h3>
@@ -72,71 +73,82 @@ import { library } from '@fortawesome/fontawesome-svg-core';
           </li>
           <li class="flex items-start">
             <span class="text-green-600 text-xl font-bold mr-2">●</span>
-           Environment Friendly Wash Chamicals
+            Environment Friendly Wash Chamicals
           </li>
           <li class="flex items-start">
             <span class="text-green-600 text-xl font-bold mr-2">●</span>
-           Power Saving Machinaries
+            Power Saving Machinaries
           </li>
           <li class="flex items-start">
             <span class="text-green-600 text-xl font-bold mr-2">●</span>
-           Water Saving And Recycling 
-          </li>
-           <li class="flex items-start">
-            <span class="text-green-600 text-xl font-bold mr-2">●</span>
-           Green Dyes
+            Water Saving And Recycling
           </li>
           <li class="flex items-start">
             <span class="text-green-600 text-xl font-bold mr-2">●</span>
-           Natural Fibers
+            Green Dyes
           </li>
           <li class="flex items-start">
             <span class="text-green-600 text-xl font-bold mr-2">●</span>
-           Sustainable Laundry Machine
+            Natural Fibers
           </li>
           <li class="flex items-start">
             <span class="text-green-600 text-xl font-bold mr-2">●</span>
-          Laser
+            Sustainable Laundry Machine
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-600 text-xl font-bold mr-2">●</span>
+            Laser
           </li>
         </ul>
       </div>
 
       <!-- Right Side: Description & Roadmap -->
-      <div class="space-y-6">
-    <p class="text-gray-700 text-lg">
-      Cute Dress is a 100% export-oriented knit garments manufacturing company. 
-      We have developed a sustainability framework with our core values. 
-      Cute Dress’s milestones are ambitious in terms of ‘happiness of our employees’ and ‘pollution-free nature’.
-    </p>
-    <p class="text-gray-700 text-lg">
-      Our practices are fully committed to keeping environmental & societal 
-      costs at a minimum. We focus on strength, efficiency, productivity, and innovation 
-      while upholding product quality. Our plan is to manufacture for premium brands only, 
-      collaborating with sustainable suppliers.
-    </p>
+      <div class="flex flex-col items-center justify-center">
 
-    <!-- Sustainability Icons Section -->
-    <div class="flex space-x-6 mt-6">
-      <div class="group flex flex-col items-center">
-        <Icon name="hugeicons:turtle-neck" style="color: black" class="text-green-600 text-4xl transition-transform animate-pulse"  />
-        <span class="mt-2 text-gray-800 font-medium">Fabric Sustainability</span>
-      </div>
+        <div class="space-y-6 ">
+          <p class="text-gray-700 text-lg">
+          Cute Dress is a 100% export-oriented knit garments manufacturing company.
+          We have developed a sustainability framework with our core values.
+          Cute Dress’s milestones are ambitious in terms of ‘happiness of our employees’ and ‘pollution-free nature’.
+        </p>
+        <p class="text-gray-700 text-lg">
+          Cute Dress is a 100% export-oriented knit garments manufacturing company.
+          We have developed a sustainability framework with our core values.
+          Cute Dress’s milestones are ambitious in terms of ‘happiness of our employees’ and ‘pollution-free nature’.
+        </p>
+        <p class="text-gray-700 text-lg">
+          Our practices are fully committed to keeping environmental & societal
+          costs at a minimum. We focus on strength, efficiency, productivity, and innovation
+          while upholding product quality. Our plan is to manufacture for premium brands only,
+          collaborating with sustainable suppliers.
+        </p>
 
-      <div class="group flex flex-col items-center">
-        <Icon name="hugeicons:chart-line-data-01" style="color: black" class="text-green-600 text-4xl transition-transform animate-pulse" />
-        <!-- <span class="mt-2 text-gray-800 font-medium">Wash Sustainability</span> -->
-      </div>
+        <!-- Sustainability Icons Section -->
+        <div class="flex space-x-6 mt-6">
+          <div class="group flex flex-col items-center">
+            <Icon name="hugeicons:turtle-neck" style="color: black"
+              class="text-green-600 text-4xl transition-transform animate-pulse" />
+            <span class="mt-2 text-gray-800 font-medium">Fabric Sustainability</span>
+          </div>
 
-      <div class="group flex flex-col items-center">
-        <Icon name="hugeicons:eco-energy" style="color: green" class="text-green-600 text-4xl transition-transform "  />
-        <!-- <span class="mt-2 text-gray-800 font-medium">Environment Sustainability</span> -->
+          <div class="group flex flex-col items-center">
+            <Icon name="hugeicons:chart-line-data-01" style="color: black"
+              class="text-green-600 text-4xl transition-transform animate-pulse" />
+            <!-- <span class="mt-2 text-gray-800 font-medium">Wash Sustainability</span> -->
+          </div>
+
+          <div class="group flex flex-col items-center">
+            <Icon name="hugeicons:eco-energy" style="color: green"
+              class="text-green-600 text-4xl transition-transform " />
+            <!-- <span class="mt-2 text-gray-800 font-medium">Environment Sustainability</span> -->
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <img src="/assets/v1/sustain.png"
+            class="rounded-full w-16 h-16 md:w-96 md:h-96 p-1 mb-3 md:mb-4 text-center object-cover " />
+        </div>
+        </div>
       </div>
-    </div>
-    <div class="flex justify-center items-center">
-      <img src="/assets/v1/sustain.png"
-              class="rounded-full w-16 h-16 md:w-96 md:h-96 p-1 mb-3 md:mb-4 text-center object-cover " />
-    </div>
-  </div>
 
     </div>
   </section>

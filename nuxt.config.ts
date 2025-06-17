@@ -51,6 +51,10 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap",
+        },
+        {
+          rel: "stylesheet",
           href: "https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap",
         },
         {

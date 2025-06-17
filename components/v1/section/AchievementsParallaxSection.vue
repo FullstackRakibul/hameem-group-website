@@ -7,9 +7,11 @@
     <div class="container relative z-20 min-h-screen flex flex-col justify-center py-24">
       <!-- Title Section -->
       <div class="text-center mb-16" ref="titleRef">
-        <h2 class="text-4xl md:text-6xl font-light text-white mb-6 tracking-wide">
-          Our Achievements
-        </h2>
+        <h2 class="text-4xl md:text-6xl font-light text-white mb-6 tracking-tight">
+  Our <span class="text-white font-medium">Achievements</span>
+</h2>
+
+
         <div class="w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-4"></div>
         <p class="text-xl text-gray-300 max-w-2xl mx-auto px-4">
           Celebrating excellence and recognition in the global textile industry
