@@ -157,7 +157,7 @@
             <!-- Date section - animates from right -->
             <div class="flex flex-col items-center space-y-2">
               <div v-gsap:whenVisible.from="{ x: 150, opacity: 0, duration: 1.2, delay: 0.3, ease: 'power2.out' }"
-                class="text-secondary text-lg md:text-2xl font-medium  p-3 py-6 rounded-full bg-white shadow-md backdrop-blur-sm ">
+                class="text-white text-lg md:text-2xl font-medium  p-3 py-6 rounded-full shadow-inner cursor-wait shadow-white/40 bg-primary  backdrop-blur-sm ">
                 since
               </div>
               <div v-gsap:whenVisible.from="{ x: 200, opacity: 0, duration: 1.2, delay: 0.6, ease: 'power2.out' }"
