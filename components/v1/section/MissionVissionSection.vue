@@ -179,7 +179,11 @@
       <!-- Interactive Values Showcase -->
       <div class="bg-white rounded-xl p-8 md:p-4 ">
         <div class="text-center mb-12">
-          <h2 class="text-primary uppercase font-light md:text-6xl mb-4">Core Values in Action</h2>
+          <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+  Core Values <span class="text-primary font-medium">In Action</span>
+</h2>
+
+
           <SectionUnderline/>
           <p class="text-gray-600 max-w-2xl mx-auto">
             Hover over each value to see how we implement it in our daily operations
