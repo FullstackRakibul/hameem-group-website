@@ -1,5 +1,5 @@
 <template>
-  <section class="relative w-full min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+  <section class="container mx-auto relative w-full min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
     <!-- Background Elements -->
     <div class="absolute inset-0">
       <!-- Geometric Background -->

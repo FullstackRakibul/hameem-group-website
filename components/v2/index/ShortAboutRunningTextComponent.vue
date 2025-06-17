@@ -1,7 +1,7 @@
 <template>
   <section class="md:px-24 mx-auto py-8 md:py-16 mt-5" id="about-us">
     <el-row class="text-center mb-8 justify-center flex flex-col items-center">
-      <p class="text-lg font-semibold tracking-widest lowercase py-5">Welcome to</p>
+      <p class="text-xl font-semibold tracking-widest uppercase py-5 font-title">Welcome to</p>
       <div v-gsap:whenVisible.to="{
             opacity: 1,
             y: 0,
@@ -9,10 +9,10 @@
             duration: 1.2,
             ease: 'power2.out',
             stagger: 0.3
-          }" class="text-primary uppercase font-light md:text-6xl mb-5">
+          }" class="text-primary uppercase font-semibold md:text-6xl mb-5 ">
         Ha-Meem Group
       </div>
-      <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+      <div class=" w-1/5 h-1 bg-primary mx-auto my-4"></div>
       <p class="md:text-2xl font-sans md:font-normal text-gray-600 mt-4 text-center">
         Starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of
         Bangladesh's largest exporters, with a workforce of 75,000 and an annual turnover nearing 925 million USD.
@@ -24,7 +24,6 @@
 </p> -->
 
     </el-row>
-
     <el-row :gutter="16">
       <el-col :xs="24" :md="16">
         <div class="text-content pr-0 md:pr-16">
@@ -114,8 +113,44 @@
           </p>
         </div>
       </el-col>
-
       <el-col :xs="24" :md="8" class="md:relative">
+      <div
+        class="bg-transparent md:p-6 flex justify-center items-center rounded-sm md:h-full md:absolute md:inset-0 md:w-[calc(100%+32px)] md:left-[-16px] bg-cover bg-center"
+        :style="{
+          backgroundImage: `url(${bgImage})`, 
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }"
+      >
+        <div class="flex flex-col items-center justify-center text-center space-y-4">
+          <!-- Leading Industry - animates from left -->
+          <div 
+            v-gsap:whenVisible.from="{ x: -150, opacity: 0, duration: 1.2, ease: 'power2.out' }"
+            class="text-gray-900 font-semibold text-2xl md:text-4xl lg:text-5xl font-title leading-tight"
+          >
+            Leading Industry
+          </div>
+          
+          <!-- Date section - animates from right -->
+          <div class="flex flex-col items-center space-y-2">
+            <div 
+              v-gsap:whenVisible.from="{ x: 150, opacity: 0, duration: 1.2, delay: 0.3, ease: 'power2.out' }"
+              class="text-secondary text-lg md:text-2xl font-medium font-title"
+            >
+              from
+            </div>
+            <div 
+              v-gsap:whenVisible.from="{ x: 200, opacity: 0, duration: 1.2, delay: 0.6, ease: 'power2.out' }"
+              class="text-secondary text-6xl md:text-7xl lg:text-8xl font-extrabold font-title leading-none"
+            >
+              1984
+            </div>
+          </div>
+        </div>
+      </div>
+    </el-col>
+      <!-- <el-col :xs="24" :md="8" class="md:relative">
         <div
           class="bg-gray-100 md:p-6 flex justify-center items-center rounded-sm shadow-sm md:h-full md:absolute md:inset-0 md:w-[calc(100%+32px)] md:left-[-16px] bg-cover bg-center"
           :style="{
@@ -131,12 +166,12 @@
               Leading Industry
             </div>
             <div class="text-secondary text-9xl md:text-10xl lg:text-10xl font-extrabold font-title"
-              v-gsap:whenVisible.from="{ x: 150, start: 'top bottom', end: 'bottom top', scrub: 2 }">
+              v-gsap:whenVisible.from="{ x: 250, start: 'top bottom', end: 'bottom top', scrub: 2 }">
               <p class="text-3xl">from</p> 1984
             </div>
           </section>
         </div>
-      </el-col>
+      </el-col> -->
     </el-row>
   </section>
   
