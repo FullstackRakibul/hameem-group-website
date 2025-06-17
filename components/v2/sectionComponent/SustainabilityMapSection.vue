@@ -124,7 +124,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
         </p>
 
         <!-- Sustainability Icons Section -->
-        <div class="flex space-x-6 mt-6">
+        <div class="flex  space-x-6 mt-6">
           <div class="group flex flex-col items-center">
             <Icon name="hugeicons:turtle-neck" style="color: black"
               class="text-green-600 text-4xl transition-transform animate-pulse" />
@@ -145,7 +145,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
         </div>
         <div class="flex justify-center items-center">
           <img src="/assets/v1/sustain.png"
-            class="rounded-full w-16 h-16 md:w-96 md:h-96 p-1 mb-3 md:mb-4 text-center object-cover " />
+            class="rounded-full w-16 h-16 md:w-96 md:h-96 p-1 text-center object-cover " />
         </div>
         </div>
       </div>
