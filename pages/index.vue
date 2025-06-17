@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import MainPageSlider01 from '~/components/v1/banner/MainPageSlider01.vue';
 import WelcomeSection from '~/components/v1/section/WelcomeSection.vue';
-import MissionVissionSection from '~/components/v1/section/MissionVissionSection.vue';
 import OurBuyersSection from '~/components/sections/OurBuyersSection.vue'
 import BoardofDirectorsSection from '~/components/v1/section/BoardofDirectorsSection.vue';
 import BusinessUnitSection from '~/components/v1/section/BusinessUnitSection.vue';
@@ -20,15 +19,14 @@ import SustainabilityMapSection from '~/components/v2/sectionComponent/Sustainab
 import OurAchievementsSlide from '~/components/v1/section/OurAchievementsSlide.vue';
 import MainSliderFashion01 from '~/components/v1/section/slider/MainSliderFashion01.vue';
 import GallerySection from '~/components/v1/section/GallerySection.vue';
-
+import MissionVissionSection from '~/components/v1/section/MissionVissionSection.vue';
 </script>
 
-<template> 
+<template>
   <section class="-mt-16">
     <!-- <GSAPHeroSlider /> -->
-       <MainPageSlider01 />
-
-    <ShortAboutRunningTextComponent   />
+    <MainPageSlider01 />
+    <ShortAboutRunningTextComponent />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
         <div class="secondary-content space-y-12 h-[300vh]">
@@ -40,18 +38,17 @@ import GallerySection from '~/components/v1/section/GallerySection.vue';
       </template>
 </WelcomeSection> -->
 
-    <MissionVissionSection  />
-
+    <MissionVissionSection />
     <ExpansionPlanSection />
     <BusinessUnitSection />
-     <VideoHeroSectionRFID videoSrc="/assets/v2/video/RFIDDIGITALVIDEO.mp4"/>
-    <SustainabilityMapSection  />
-    <ClientRunningCarouselComponent  />
+    <VideoHeroSectionRFID videoSrc="/assets/v2/video/RFIDDIGITALVIDEO.mp4" />
+    <SustainabilityMapSection />
+    <ClientRunningCarouselComponent />
     <AchievementsParallaxSection />
-     <!-- <OurAchievementsSlide/> -->
+    <!-- <OurAchievementsSlide/> -->
     <BoardofDirectorsSection />
-    <GallerySection />
-    <ContactUsMapSectionComponent  />
+    <!-- <GallerySection /> -->
+    <ContactUsMapSectionComponent />
 
   </section>
 </template>

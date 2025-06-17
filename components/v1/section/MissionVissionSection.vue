@@ -180,7 +180,7 @@
           <div 
             v-for="(point, index) in missionVisionData.points" 
             :key="point.id"
-            class="group relative text-center"
+            class="group relative text-center "
           >
             <!-- Animated Icon Container -->
             <div class="relative mx-auto w-44 h-44 mb-6">
@@ -194,7 +194,7 @@
               </div>
               
               <!-- Animated Icon (appears on hover) -->
-              <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center  opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
                 <img 
                   :src="point.animatedImage" 
                   :alt="point.title"
