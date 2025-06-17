@@ -1,4 +1,4 @@
-<script setup>
+<script setup >
 defineProps({
   bgImage: {
     type: String,
@@ -6,8 +6,7 @@ defineProps({
   },
 });
 
-
-
+import UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 
@@ -26,7 +25,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
         <h2 class="text-primary uppercase font-light md:text-5xl ">
           SUSTAINABILITY GOALS:
         </h2>
-        <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+        <UISectionUnderline/>
         <h3 class="text-2xl md:text-3xl text-green-600 font-light uppercase tracking-wide">
           ROADMAP 2030
         </h3>

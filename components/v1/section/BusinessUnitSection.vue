@@ -2,6 +2,7 @@
 import type { TabsInstance } from 'element-plus'
 import { ref, onMounted } from 'vue'
 import gsap from 'gsap'
+import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue'
 
 const tabPosition = ref<TabsInstance['tabPosition']>('left')
 const activeTab = ref<keyof typeof tabImages>('printing')
@@ -164,7 +165,7 @@ onMounted(() => {
         <h2 class="text-primary uppercase font-light md:text-6xl section-title text-3xl mb-4">
           BUSINESS UNITS
         </h2>
-        <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+        <UISectionUnderline/>
         <p class="text-gray-600 max-w-2xl mx-auto">
           Our vertically integrated business units work in harmony to deliver exceptional quality and efficiency across the entire production chain.
         </p>

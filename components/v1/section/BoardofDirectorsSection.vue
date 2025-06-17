@@ -15,7 +15,7 @@
             <h2 class="text-primary uppercase font-light md:text-6xl section-title text-3xl mb-4">
               Board of Directors
             </h2>
-            <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+            <UISectionUnderline />
             
             <p class="text-lg text-gray-800 leading-relaxed max-w-xl">
               Guiding our organization with strategic vision and exceptional leadership, combining decades of 
@@ -154,7 +154,7 @@
 
 <script setup>
 import { ref } from 'vue';
-
+import UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
 const activeMember = ref({
   name: "Mr. ______",
   designation: "Chairman & CEO",

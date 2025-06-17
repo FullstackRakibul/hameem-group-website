@@ -13,16 +13,10 @@
     <div class="relative z-10 container mx-auto px-4 md:px-2 py-16">
       <!-- Header Section -->
       <div class="text-center mb-16">
-        <div class="inline-flex items-center space-x-3 mb-6">
-          <div class="w-12 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
-          <span class="text-sm font-semibold text-primary uppercase tracking-wider">Company Profile</span>
-          <div class="w-12 h-1 bg-gradient-to-r from-secondary to-primary rounded-full"></div>
-        </div>
-        
         <h1 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
           Our Vision & <span class="text-primary font-medium">Mission</span>
         </h1>
-        
+        <SectionUnderline/>
         <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
           {{ missionVisionData.description }}
         </p>
@@ -186,7 +180,7 @@
       <div class="bg-white rounded-xl p-8 md:p-4 ">
         <div class="text-center mb-12">
           <h2 class="text-primary uppercase font-light md:text-6xl mb-4">Core Values in Action</h2>
-          <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+          <SectionUnderline/>
           <p class="text-gray-600 max-w-2xl mx-auto">
             Hover over each value to see how we implement it in our daily operations
           </p>
@@ -248,6 +242,7 @@
 
 <script setup>
 import { computed } from 'vue';
+import SectionUnderline from '~/components/ui/UISectionUnderline.vue';
 
 defineProps({
   bgImage: {

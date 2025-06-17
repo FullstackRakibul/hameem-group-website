@@ -6,7 +6,7 @@
         <h2 class="text-primary uppercase font-light md:text-6xl ">
           Our Clients
         </h2>
-        <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+        <UISectionUnderline />
         <p class="text-lg text-gray-600 mt-3 max-w-2xl mx-auto">
           Partnering with the world’s most renowned fashion brands, we deliver excellence through premium craftsmanship, sustainable innovation, and a commitment to quality.
         </p>
@@ -33,7 +33,7 @@
 
 <script setup>
 import SectionHeader from "../ui/SectionHeader.vue";
-
+import UISectionUnderline from '~/components/ui/UISectionUnderline.vue'
 const clients = [
   { id: 1, icon: "/assets/v2/clients/abercrombie.jpg" },
   { id: 2, icon: "/assets/v2/clients/aeropostale.jpg" },

@@ -35,61 +35,8 @@
     }" class="text-primary uppercase font-semibold md:text-6xl mb-5 relative">
       <span class="font-normal">Ha-Meem </span>
       <span class="font-bold">Group</span>
+      <UISectionUnderline/>
       
-      <!-- Decorative Underline -->
-      <div class="absolute  w-full flex justify-center">
-        <svg 
-          width="400" 
-          height="70" 
-          viewBox="0 0 300 60" 
-          class="decorative-underline"
-          v-gsap:whenVisible.from="{ 
-            opacity: 0, 
-            scale: 0.5, 
-            delay: 1.5, 
-            duration: 1.5, 
-            ease: 'elastic.out(1, 0.5)' 
-          }"
-        >
-          <!-- Main flowing line -->
-          <path 
-            d="M20 30 Q75 15 150 30 T280 30" 
-            stroke="currentColor" 
-            stroke-width="2" 
-            fill="none" 
-            class="text-primary"
-          />
-          
-          <!-- Decorative swirls -->
-          <path 
-            d="M15 30 Q10 25 15 20 Q20 25 15 30" 
-            stroke="currentColor" 
-            stroke-width="1.5" 
-            fill="none" 
-            class="text-primary/70"
-          />
-          
-          <path 
-            d="M285 30 Q290 25 285 20 Q280 25 285 30" 
-            stroke="currentColor" 
-            stroke-width="1.5" 
-            fill="none" 
-            class="text-primary/70"
-          />
-          
-          <!-- Small leaves/flourishes -->
-          <ellipse cx="60" cy="25" rx="3" ry="6" fill="currentColor" class="text-primary/60" transform="rotate(45 60 25)"/>
-          <ellipse cx="240" cy="35" rx="3" ry="6" fill="currentColor" class="text-primary/60" transform="rotate(-45 240 35)"/>
-          
-          <!-- Center ornament -->
-          <circle cx="150" cy="30" r="3" fill="currentColor" class="text-primary"/>
-          <path 
-            d="M150 25 L155 30 L150 35 L145 30 Z" 
-            fill="currentColor" 
-            class="text-primary/40"
-          />
-        </svg>
-      </div>
     </div>
 
     <!-- Alternative: CSS-only decorative line -->
@@ -252,8 +199,7 @@
 <script lang="ts" setup>
 import AboutServiceList from '~/components/ui/AboutServiceList.vue';
 import { ref } from 'vue';
-
-import SectionUnderline from '~/components/ui/SectionUnderline.vue';
+import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
 
 // Modal state
 const showModal = ref(false);

@@ -83,7 +83,7 @@
             <h3 class="text-primary uppercase font-light md:text-6xl mb-4">
               Production Capabilities
             </h3>
-            <div class="w-1/3 h-1 bg-primary mx-auto my-4"></div>
+           <UISectionUnderline/>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our state-of-the-art manufacturing facilities and cutting-edge technology
             </p>
@@ -202,6 +202,7 @@
 <script setup lang="ts">
 import SectionHeader from '~/components/v2/ui/SectionHeader.vue';
 import { ref, computed } from 'vue';
+import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
 
 const strengths = ref([
   {
