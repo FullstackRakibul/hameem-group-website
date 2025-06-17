@@ -213,7 +213,7 @@
               </div>
               
               <!-- Pulse Effect -->
-              <div class="absolute inset-0 bg-primary/20 rounded-2xl opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
+              <div class="absolute inset-0 bg-primary/20 rounded-2xl opacity-0 group-hover:opacity-100 group-hover:animate-ping flex justify-center items-center ">{{point.title}}</div>
             </div>
 
             <!-- Content -->
