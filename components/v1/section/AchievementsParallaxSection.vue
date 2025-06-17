@@ -1,10 +1,10 @@
 <template>
-  <section class="min-h-screen bg-fixed bg-cover bg-center relative" :style="{ backgroundImage: `url('/assets/v1/section/achievement-bg.jpg')` }">
+  <section class=" min-h-screen bg-fixed bg-cover bg-center relative" :style="{ backgroundImage: `url('/assets/v1/section/achievement-bg.jpg')` }">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black/70 z-10"></div>
 
     <!-- Content Container -->
-    <div class="relative z-20 min-h-screen flex flex-col justify-center py-24">
+    <div class="container relative z-20 min-h-screen flex flex-col justify-center py-24">
       <!-- Title Section -->
       <div class="text-center mb-16" ref="titleRef">
         <h2 class="text-4xl md:text-6xl font-light text-white mb-6 tracking-wide">
@@ -17,7 +17,7 @@
       </div>
 
       <!-- Main Display Section -->
-      <div class="max-w-8xl mx-auto mb-16" ref="mainDisplayRef">
+      <div class=" mx-auto mb-16" ref="mainDisplayRef">
         <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
           <div class="flex flex-col lg:flex-row">
             <!-- Left: Text Section -->
@@ -43,7 +43,7 @@
             </div>
 
             <!-- Right: Image Section -->
-            <div class="max-w-10xl mx-auto px-4 md:px-8 mb-16 flex items-center justify-center">
+            <div class="max-w-10xl mx-auto px-4 md:px-8 my-16 flex items-center justify-center">
               <div class="relative group">
                 <div class="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div class="relative">

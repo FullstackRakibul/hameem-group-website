@@ -1,5 +1,5 @@
 <template>
-  <section class="md:px-24 mx-auto py-8 md:py-16 mt-5" id="about-us">
+  <section class="container mx-auto py-8 md:py-16 mt-5" id="about-us">
     <el-row class="text-center mb-8 justify-center flex flex-col items-center">
       <p class="text-lg font-semibold tracking-widest lowercase py-5">Welcome to</p>
       <div v-gsap:whenVisible.to="{
@@ -29,8 +29,8 @@
       <el-col :xs="24" :md="16">
         <div class="text-content pr-0 md:pr-16">
           <!-- Circle Icons Section with Hover Tooltips -->
-          <div class="py-10 px-4 md:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-6xl mx-auto">
+          <div class="py-10 px-2 md:px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-8xl mx-auto">
               <div 
                 v-for="(item, index) in stats" 
                 :key="index" 

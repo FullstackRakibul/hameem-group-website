@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center mb-8">
+  <div class="container flex justify-between items-center mb-8">
     <!-- Section Title -->
     <div>
       <p class="text-lg font-sans tracking-widest md:tracking-widest font-semibold  uppercase" :class="subtitleClass">

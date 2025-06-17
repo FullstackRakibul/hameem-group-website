@@ -75,7 +75,7 @@
               <div 
                 v-for="point in missionPoints" 
                 :key="point.id"
-                class="group relative bg-white rounded-3xl p-4 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-primary/20 transition-all duration-700 cursor-pointer overflow-hidden min-h-[280px] flex flex-col"
+                class="group relative bg-white rounded-3xl p-4 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-primary/20 transition-all duration-700 cursor-pointer overflow-hidden min-h-[200px] flex flex-col"
               >
                 <!-- Subtle Background Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -136,7 +136,7 @@
               <div 
                 v-for="point in visionPoints" 
                 :key="point.id"
-                class="group relative bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-secondary/20 transition-all duration-700 cursor-pointer overflow-hidden min-h-[280px] flex flex-col"
+                class="group relative bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-secondary/20 transition-all duration-700 cursor-pointer overflow-hidden min-h-[200px] flex flex-col"
               >
                 <!-- Subtle Background Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-secondary/3 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -201,7 +201,7 @@
             <!-- Animated Icon Container -->
             <div class="relative mx-auto w-44 h-44 mb-6">
               <!-- Static Icon -->
-              <div class="absolute inset-0 bg-gray-100 rounded-2xl flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
+              <div class="absolute inset-0 bg-primary/20 rounded-2xl flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
                 <img 
                   :src="point.icon" 
                   :alt="point.title"
@@ -224,7 +224,7 @@
 
             <!-- Content -->
             <div class="space-y-3">
-              <div class="inline-flex items-center space-x-2 px-3 py-1 bg-gray-100 group-hover:bg-primary group-hover:text-white rounded-full text-xs font-medium transition-all duration-300">
+              <div class="inline-flex items-center space-x-2 px-3 py-1 bg-primary text-white group-hover:bg-primary group-hover:text-white rounded-full text-xs font-medium transition-all duration-300">
                 <span>{{ point.category === 'mission' ? 'Mission' : 'Vision' }}</span>
               </div>
               

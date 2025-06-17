@@ -5,13 +5,14 @@
       subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" 
       buttonTextLink="/#"
       buttonText="Discover Our Capabilities" 
+      
     />
 
     <!-- Modern Strengths Section -->
     <div class="mt-16">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         <div v-for="(card, index) in strengths" :key="index"
-          class="group relative bg-white rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-500 ease-out border border-gray-100/50 overflow-hidden flex flex-col h-[420px] hover:border-primary/30 hover:-translate-y-2">
+          class="group relative bg-white rounded-xl shadow-sm hover:shadow-2xl transition-all duration-500 ease-out border border-gray-100/50 overflow-hidden flex flex-col h-[420px] hover:border-primary/30 hover:-translate-y-2">
           
           <!-- Card Image with Overlay -->
           <div class="relative h-52 overflow-hidden">
@@ -35,7 +36,7 @@
           </div>
           
           <!-- Card Content -->
-          <div class="p-6 flex flex-col flex-grow bg-gradient-to-b from-white to-gray-50/50">
+          <div class="p-6 flex flex-col flex-grow bg-gradient-to-b from-white to-gray-50/50 ">
             <!-- Title -->
             <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300 leading-tight">
               {{ card.title }}
@@ -74,11 +75,11 @@
       </div>
 
       <!-- Modern Products Carousel Section -->
-      <div class="relative mt-20 mb-10">
+      <div class=" relative mt-20 mb-10">
         <!-- Section Background -->
         <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 overflow-hidden">
           <!-- Section Header -->
-          <div class="text-center mb-12">
+          <div class="text-center mb-12 ">
             <h3 class="text-primary uppercase font-light md:text-6xl mb-4">
               Production Capabilities
             </h3>
