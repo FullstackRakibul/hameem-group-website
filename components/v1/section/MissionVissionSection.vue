@@ -75,7 +75,7 @@
               <div 
                 v-for="point in missionPoints" 
                 :key="point.id"
-                class="group relative bg-white rounded-3xl p-4 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-primary/20 transition-all duration-700 cursor-pointer overflow-hidden min-h-[200px] flex flex-col"
+                class="group relative bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all duration-700 cursor-pointer overflow-hidden min-h-[200px] flex flex-col"
               >
                 <!-- Subtle Background Gradient -->
                 <div class="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
