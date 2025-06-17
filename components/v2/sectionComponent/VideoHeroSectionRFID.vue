@@ -1,5 +1,5 @@
 <template>
-  <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+  <section class=" relative h-screen w-full flex items-center justify-center overflow-hidden">
     <!-- Video Background -->
     <video 
       autoplay
@@ -16,7 +16,7 @@
     <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
 
     <!-- Content -->
-    <div class="relative z-20 container mx-auto">
+    <div class="container relative z-20 mx-auto">
       <div class="max-w-4xl bg-slate-100 bg-opacity-10 rounded-lg p-4">
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate__animated animate__fadeInLeft">
           Digital Transformation
