@@ -115,7 +115,7 @@
       </el-col>
       <el-col :xs="24" :md="8" class="md:relative">
       <div
-        class="bg-transparent md:p-6 flex justify-center items-center rounded-sm md:h-full md:absolute md:inset-0 md:w-[calc(100%+32px)] md:left-[-16px] bg-cover bg-center"
+        class="bg-transparent md:p-2 flex justify-center items-center rounded-sm md:h-full md:absolute md:inset-0 md:w-[calc(100%+32px)] md:left-[-16px] bg-cover bg-center"
         :style="{
           backgroundImage: `url(${bgImage})`, 
           backgroundSize: 'cover',
@@ -138,7 +138,7 @@
               v-gsap:whenVisible.from="{ x: 150, opacity: 0, duration: 1.2, delay: 0.3, ease: 'power2.out' }"
               class="text-secondary text-lg md:text-2xl font-medium font-title"
             >
-              from
+              since
             </div>
             <div 
               v-gsap:whenVisible.from="{ x: 200, opacity: 0, duration: 1.2, delay: 0.6, ease: 'power2.out' }"
