@@ -46,9 +46,9 @@
 
           <!-- Company Stats -->
           <div class="grid grid-cols-2 gap-6">
-            <div class="bg-white rounded-2xl p-6 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300">
+            <div class="bg-primary/10 rounded-2xl p-6 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300">
               <div class="text-3xl font-bold text-primary mb-2">25+</div>
-              <div class="text-sm text-gray-600 font-medium">Years of Excellence</div>
+              <div class="text-md text-gray-600 font-medium">Years of Excellence</div>
             </div>
             <div class="bg-primary rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
               <div class="text-3xl font-bold text-white mb-2">90K+</div>

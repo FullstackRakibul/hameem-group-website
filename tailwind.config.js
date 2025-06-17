@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         sans: ["Figtree", "serif"],
         title: ["Cardo", "sans-serif"],
+        writting: ["WindSong", "cursive"],
         description: ["Permanent Marker", "cursive"],
         // titillium: ['"Titillium Web"', "sans-serif"],
         // denim: ["Cardo", "serif"],

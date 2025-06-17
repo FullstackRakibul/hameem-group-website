@@ -1,7 +1,7 @@
 <template>
-  <section class="container mx-auto py-8 md:py-16 mt-5" id="about-us">
+  <section class="container mx-auto py-8 md:py-16" id="about-us">
     <el-row class="text-center mb-8 justify-center flex flex-col items-center">
-      <p class="text-xl font-semibold tracking-widest uppercase py-5 font-title">Welcome to</p>
+      <p class="md:text-5xl font-medium tracking-widest text-secondary  py-5 font-writting">Welcome to</p>
       <div v-gsap:whenVisible.to="{
             opacity: 1,
             y: 0,
@@ -10,7 +10,8 @@
             ease: 'power2.out',
             stagger: 0.3
           }" class="text-primary uppercase font-semibold md:text-6xl mb-5 ">
-        Ha-Meem Group
+        Ha-Meem
+        <span>Group</span>
       </div>
       <div class=" w-1/5 h-1 bg-primary mx-auto my-4"></div>
       <p class="md:text-2xl font-sans md:font-normal text-gray-600 mt-4 text-center">
