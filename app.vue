@@ -32,7 +32,17 @@ const leave = (el: Element, done: () => void) => {
     <!-- <transition @before-enter="beforeEnter" @enter="enter">
       <NuxtPage />
     </transition> -->
-    <NuxtPage :transition="{ onBeforeEnter: beforeEnter, onEnter: enter, onLeave: leave }" />
+    <!-- <NuxtPage :transition="{ onBeforeEnter: beforeEnter, onEnter: enter, onLeave: leave }" /> -->
+    <NuxtPage :transition="{
+        name: 'page',
+        mode: 'out-in',
+        onBeforeEnter: (el) => {
+          // Ensure single root element
+          if (el.children.length > 1) {
+            console.warn('Multiple root nodes detected')
+          }
+        }
+      }" />
   </NuxtLayout>
 </template>
 

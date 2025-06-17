@@ -160,7 +160,7 @@ onMounted(() => {
   <section class="business-unit-section py-16 px-4 md:px-10 bg-gradient-to-b from-gray-50 to-white">
     <div class="px-24 mx-auto">
       <!-- Section Header -->
-      <div class="mb-12 text-center">
+      <div class="md:mb-24 text-center">
         <h2 class="text-primary uppercase font-light md:text-6xl section-title text-3xl mb-4">
           BUSINESS UNITS
         </h2>

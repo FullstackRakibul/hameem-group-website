@@ -10,7 +10,7 @@
       <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 50px 50px;"></div>
     </div>
 
-    <div class="relative z-10 max-w-8xl mx-auto px-6 md:px-6 py-16">
+    <div class="relative z-10 container mx-auto px-4 md:px-2 py-16">
       <!-- Header Section -->
       <div class="text-center mb-16">
         <div class="inline-flex items-center space-x-3 mb-6">
@@ -46,120 +46,136 @@
 
           <!-- Company Stats -->
           <div class="grid grid-cols-2 gap-6">
-            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300">
               <div class="text-3xl font-bold text-primary mb-2">25+</div>
               <div class="text-sm text-gray-600 font-medium">Years of Excellence</div>
             </div>
-            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-              <div class="text-3xl font-bold text-secondary mb-2">90K+</div>
-              <div class="text-sm text-gray-600 font-medium">Employees Worldwide</div>
+            <div class="bg-primary rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <div class="text-3xl font-bold text-white mb-2">90K+</div>
+              <div class="text-sm text-white font-medium">Employees Worldwide</div>
             </div>
           </div>
         </div>
 
         <!-- Right: Mission & Vision Cards -->
-        <div class="space-y-8">
+        <div class="space-y-12">
           <!-- Mission Section -->
           <div>
-            <div class="flex items-center space-x-3 mb-6">
-              <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="flex items-center space-x-3 mb-8">
+              <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
               </div>
-              <h2 class="text-2xl font-bold text-gray-900">Our Mission</h2>
+              <h2 class="text-3xl font-bold text-gray-900">Our Mission</h2>
             </div>
             
-            <div class="grid gap-4">
+            <!-- Modern Minimalist Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div 
                 v-for="point in missionPoints" 
                 :key="point.id"
-                class="group relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/30 transition-all duration-500 cursor-pointer overflow-hidden"
+                class="group relative bg-white rounded-3xl p-4 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-primary/20 transition-all duration-700 cursor-pointer overflow-hidden min-h-[280px] flex flex-col"
               >
-                <!-- Background Animation -->
-                <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <!-- Subtle Background Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
-                <!-- Content -->
-                <div class="relative flex items-start space-x-4">
-                  <!-- Icon -->
-                  <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                <!-- Top Icon Section -->
+                <div class="relative mb-6">
+                  <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-500 mx-auto">
                     <img 
                       :src="point.icon" 
                       :alt="point.title"
-                      class="w-6 h-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                      class="w-10 h-10 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-500"
                     />
                   </div>
-                  
-                  <!-- Text Content -->
-                  <div class="flex-1 min-w-0">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                </div>
+                
+                <!-- Content Section -->
+                <div class="relative text-center flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors duration-500">
                       {{ point.title }}
                     </h3>
-                    <p class="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    <p class="text-gray-600 text-sm text-start line-clamp-2 leading-relaxed group-hover:text-gray-700 transition-colors duration-500">
                       {{ point.description }}
                     </p>
                   </div>
                   
-                  <!-- Hover Arrow -->
-                  <div class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                    <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
+                  <!-- Bottom Action Indicator -->
+                  <div class="mt-6 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                    <div class="inline-flex items-center space-x-2 text-primary text-sm font-medium">
+                      <span>Learn More</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
                   </div>
                 </div>
+
+                <!-- Corner Accent -->
+                <div class="absolute top-4 right-4 w-3 h-3 bg-primary/20 rounded-full group-hover:bg-primary group-hover:scale-150 transition-all duration-500"></div>
               </div>
             </div>
           </div>
 
           <!-- Vision Section -->
           <div>
-            <div class="flex items-center space-x-3 mb-6">
-              <div class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="flex items-center space-x-3 mb-8">
+              <div class="w-10 h-10 bg-secondary rounded-xl flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                 </svg>
               </div>
-              <h2 class="text-2xl font-bold text-gray-900">Our Vision</h2>
+              <h2 class="text-3xl font-bold text-gray-900">Our Vision</h2>
             </div>
             
-            <div class="grid gap-4">
+            <!-- Modern Minimalist Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div 
                 v-for="point in visionPoints" 
                 :key="point.id"
-                class="group relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-secondary/30 transition-all duration-500 cursor-pointer overflow-hidden"
+                class="group relative bg-white rounded-xl p-4 shadow-sm border border-gray-100 hover:shadow-2xl hover:border-secondary/20 transition-all duration-700 cursor-pointer overflow-hidden min-h-[280px] flex flex-col"
               >
-                <!-- Background Animation -->
-                <div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <!-- Subtle Background Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-br from-secondary/3 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
-                <!-- Content -->
-                <div class="relative flex items-start space-x-4">
-                  <!-- Icon -->
-                  <div class="flex-shrink-0 w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all duration-300">
+                <!-- Top Icon Section -->
+                <div class="relative mb-6">
+                  <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center group-hover:bg-secondary group-hover:scale-110 transition-all duration-500 mx-auto">
                     <img 
                       :src="point.icon" 
                       :alt="point.title"
-                      class="w-6 h-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                      class="w-10 h-10 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-500"
                     />
                   </div>
-                  
-                  <!-- Text Content -->
-                  <div class="flex-1 min-w-0">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-secondary transition-colors duration-300">
+                </div>
+                
+                <!-- Content Section -->
+                <div class="relative text-center flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary transition-colors duration-500">
                       {{ point.title }}
                     </h3>
-                    <p class="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    <p class="text-gray-600 text-sm text-start line-clamp-2 leading-relaxed group-hover:text-gray-700 transition-colors duration-500">
                       {{ point.description }}
                     </p>
                   </div>
                   
-                  <!-- Hover Arrow -->
-                  <div class="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                    <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
+                  <!-- Bottom Action Indicator -->
+                  <div class="mt-6 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                    <div class="inline-flex items-center space-x-2 text-secondary text-sm font-medium">
+                      <span>Learn More</span>
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
                   </div>
                 </div>
+
+                <!-- Corner Accent -->
+                <div class="absolute top-4 right-4 w-3 h-3 bg-secondary/20 rounded-full group-hover:bg-secondary group-hover:scale-150 transition-all duration-500"></div>
               </div>
             </div>
           </div>

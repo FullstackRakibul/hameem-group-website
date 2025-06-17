@@ -1,37 +1,38 @@
 <template>
-  <section class="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center"
+  <section class="container w-full min-h-screen relative flex items-center justify-center bg-cover bg-center"
     :style="{ backgroundImage: `url(${bgImage})` }">
     
     <!-- Overlay for better content visibility -->
     <div class="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
     
-    <div class="relative z-10 w-full max-w-10xl mx-auto px-6 md:px-12 py-16">
+    <div class="relative z-10 w-full max-h-screen mx-auto px-6 md:px-12 py-16">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
         <!-- Left Section - Dynamic Content -->
         <div class="space-y-8">
           <!-- Header -->
           <div class="text-center lg:text-left">
-            <h2 class="text-3xl md:text-5xl font-light text-gray-900 mb-6 tracking-wide">
+            <h2 class="text-primary uppercase font-light md:text-6xl section-title text-3xl mb-4">
               Board of Directors
             </h2>
-            <div class="w-20 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto lg:mx-0 mb-6"></div>
-            <p class="text-lg text-gray-600 leading-relaxed max-w-xl">
+            <div class=" w-1/3 h-1 bg-primary mx-auto my-4"></div>
+            
+            <p class="text-lg text-gray-800 leading-relaxed max-w-xl">
               Guiding our organization with strategic vision and exceptional leadership, combining decades of 
               industry experience with innovative thinking.
             </p>
           </div>
 
           <!-- Active Member Display -->
-          <div class="bg-white rounded-md p-8 shadow-sm border border-gray-100 transition-all duration-500">
+          <div class="transition-all duration-500 ">
             <div class="flex flex-col md:flex-row items-center gap-8">
               <!-- Profile Image -->
-              <div class="relative group/avatar">
+              <div class="relative group/avatar w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
                 <div class="absolute -inset-1 bg-gradient-to-r from-primary to-primary/60 rounded-full opacity-75 group-hover/avatar:opacity-100 transition-opacity duration-300"></div>
                 <img 
                   :src="activeMember.image" 
                   :alt="activeMember.name"
-                  class="relative rounded-full w-32 h-32 md:w-40 md:h-40 object-cover border-4 border-white shadow-xl transition-transform duration-300 group-hover/avatar:scale-105"
+                  class="relative rounded-full w-64 h-64 md:w-80 md:h-80 flex-shrink-0 object-cover border-4 border-white shadow-xl transition-transform duration-300 group-hover/avatar:scale-105"
                 />
                 <!-- Status indicator -->
                 <div class="absolute bottom-2 right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg"></div>
@@ -194,10 +195,10 @@ const setActiveMember = (member) => {
 
 const resetActiveMember = () => {
   activeMember.value = {
-    name: "Select a Member",
-    designation: "Board of Directors",
+    name: "Mr. ______",
+    designation: "Chairman & CEO",
     image: "https://cdn-icons-png.flaticon.com/512/700/700674.png",
-    quote: "Our commitment to excellence and innovation drives every decision we make, ensuring sustainable growth for our stakeholders and communities we serve."
+    quote: "Our commitment to excellence and innovation drives every decision we make, ensuring sustainable growth for our stakeholders and communities we serve."  
   };
 };
 

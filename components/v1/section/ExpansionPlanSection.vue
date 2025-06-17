@@ -97,17 +97,16 @@
             <!-- Scrolling Products -->
             <div class="flex space-x-6 animate-marquee-modern">
               <div v-for="(product, index) in duplicatedProducts" :key="index"
-                class="group flex-shrink-0 transition-all duration-500 hover:scale-105 cursor-pointer">
+                class="group flex-shrink-0 transition-all duration-500  cursor-pointer p-4">
                 
                 <!-- Product Card -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-500 border border-white/50 backdrop-blur-sm min-w-[280px]">
+                <div class="rounded-full md:py-1 md:pl-1 md:pr-6 shadow-md border-primary/20 hover:shadow-sm bg-primary/10 transition-all duration-500 border  backdrop-blur-sm min-w-[280px] flex flex-row justify-start items-center gap-10 ">
                   <!-- Image Container -->
-                  <div class="relative mb-4 overflow-hidden rounded-xl bg-gray-50">
-                    <div class="aspect-square w-32 max-w-[200px] mx-auto">
+                  <div class="relative overflow-hidden rounded-full bg-gray-50">
+                    <div class="aspect-square w-32 max-w-[70px] mx-auto">
                       <div class="relative w-full h-full">
                         <!-- Primary color overlay at 30% opacity -->
                         <div class="absolute inset-0 bg-primary opacity-30 z-10 mix-blend-multiply"></div>
-                        
                         <!-- Image -->
                         <img
                           :src="product.image || fallbackImage"
@@ -132,15 +131,15 @@
                   
                   <!-- Product Info -->
                   <div class="text-center">
-                    <h4 class="text-lg font-medium text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
+                    <h4 class="text-2xl font-medium text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
                       {{ product.name }}
                     </h4>
-                    <div class="flex items-center justify-center space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <!-- <div class="flex items-center justify-center space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                       <span class="text-sm text-gray-500">View details</span>
                       <svg class="w-4 h-4 text-primary transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                       </svg>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>

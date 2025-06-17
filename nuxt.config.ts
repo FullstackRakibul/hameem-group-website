@@ -74,16 +74,22 @@ export default defineNuxtConfig({
         },
       ],
     },
-
     pageTransition: {
-      name: "fade",
-      mode: "out-in",
+      name: 'page',
+      mode: 'out-in'
     },
+    layoutTransition: {
+      name: 'layout',
+      mode: 'out-in'
+    }
   },
   particles: {
     mode: "full", // 'full' | 'slim' | 'basic' | 'custom'
     lazy: true,
   },
   ssr: true,
+  experimental: {
+    payloadExtraction: false
+  }
   
 });
