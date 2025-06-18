@@ -10,7 +10,7 @@
           'text-lg px-2 py-1 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]',
           'hover:bg-slate-200 hover:rounded-full hover:px-3 hover:py-2',
           'hover:font-bold hover:text-primary hover:scale-105',
-          isScrolled ? 'text-black hover:text-primary' : 'text-white',
+          isScrolled ? 'text-white hover:text-primary' : 'text-white',
           'animate__animated hover:animate__pulse'
         ]"
       >

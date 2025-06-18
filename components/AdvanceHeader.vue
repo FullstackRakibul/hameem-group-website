@@ -4,7 +4,7 @@
     <header 
       :class="[
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex items-center justify-between w-full lg:px-16 md:px-14 p-3',
-        isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        isScrolled ? 'bg-primary text-white  shadow-lg' : 'bg-transparent '
       ]"
     >
       <!-- Left side: Logo -->
