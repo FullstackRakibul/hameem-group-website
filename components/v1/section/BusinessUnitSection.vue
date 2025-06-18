@@ -114,7 +114,7 @@ const handleTabChange = (tab: keyof typeof tabImages) => {
     onComplete: () => {
       // Change tab after fade out
       activeTab.value = tab
-      
+
       // Animate in new content
       gsap.to('.tab-content-container', {
         opacity: 1,
@@ -135,7 +135,7 @@ onMounted(() => {
     duration: 0.8,
     ease: 'power2.out'
   })
-  
+
   // Animate tabs
   gsap.from('.tab-item', {
     opacity: 0,
@@ -145,7 +145,7 @@ onMounted(() => {
     delay: 0.3,
     ease: 'power2.out'
   })
-  
+
   // Animate content
   gsap.from('.tab-content-container', {
     opacity: 0,
@@ -162,35 +162,29 @@ onMounted(() => {
     <div class="px-24 mx-auto">
       <!-- Section Header -->
       <div class="md:mb-24 text-center">
-        <h2 class="text-primary uppercase font-light md:text-6xl section-title text-3xl mb-2">
-          BUSINESS UNITS
+        <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+          Business <span class="text-primary font-medium">Units</span>
         </h2>
-        <UISectionUnderline/>
+        <UISectionUnderline />
         <p class="text-gray-600 max-w-2xl mx-auto">
-          Our vertically integrated business units work in harmony to deliver exceptional quality and efficiency across the entire production chain.
+          Our vertically integrated business units work in harmony to deliver exceptional quality and efficiency across
+          the entire production chain.
         </p>
       </div>
-      
+
       <!-- Main Content -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <!-- Tabs Navigation -->
         <div class="lg:col-span-3">
           <div class="custom-tabs bg-primary h-full  rounded-lg  shadow-md  overflow-hidden">
-            <div 
-              v-for="(unit, key) in businessUnits" 
-              :key="key"
-              class="tab-item mt-5 mb-1"
-            >
-              <button 
-                @click="handleTabChange(key as keyof typeof tabImages)"
-                :aria-label="`Switch to ${unit.title} tab`"
-                :class="[
+            <div v-for="(unit, key) in businessUnits" :key="key" class="tab-item mt-5 mb-1">
+              <button @click="handleTabChange(key as keyof typeof tabImages)"
+                :aria-label="`Switch to ${unit.title} tab`" :class="[
                   'tab-button w-full text-left px-6 py-5 transition-all duration-300 m-1 rounded-s-full tracking-widest',
-                  activeTab === key 
-                    ? 'active-tab bg-white border-pink-900 text-primary font-semibold' 
+                  activeTab === key
+                    ? 'active-tab bg-white border-pink-900 text-primary font-semibold'
                     : 'border-transparent hover:bg-gray-50 text-white hover:text-gray-800'
-                ]"
-              >
+                ]">
                 <div class="flex items-center">
                   <div class="tab-icon-container mr-3">
                     <Icon :name="unit.icon || 'mdi:factory'" class="text-xl" />
@@ -201,7 +195,7 @@ onMounted(() => {
             </div>
           </div>
         </div>
-        
+
         <!-- Content Area -->
         <div class="lg:col-span-9">
           <div class="tab-content-container bg-white rounded-xl shadow-sm overflow-hidden">
@@ -216,32 +210,22 @@ onMounted(() => {
                   <span class="font-medium text-xl text-primary">{{ businessUnits[activeTab].capacity }}</span>
                 </div>
               </div>
-              
+
               <!-- Enhanced Carousel -->
               <div class="carousel-container relative">
-                <el-carousel 
-                  :interval="5000" 
-                  height="750px" 
-                  arrow="hover" 
-                  indicator-position="outside"
-                  class="custom-carousel"
-                >
-                  <el-carousel-item 
-                    v-for="(image, index) in tabImages[activeTab]" 
-                    :key="index"
-                    class="carousel-item"
-                  >
+                <el-carousel :interval="5000" height="750px" arrow="hover" indicator-position="outside"
+                  class="custom-carousel">
+                  <el-carousel-item v-for="(image, index) in tabImages[activeTab]" :key="index" class="carousel-item">
                     <div class="relative h-full w-full overflow-hidden group">
                       <!-- Image overlay gradient -->
-                      <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500 z-10"></div>
-                      
+                      <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500 z-10">
+                      </div>
+
                       <!-- Image -->
-                      <el-image 
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                        :src="image" 
-                        fit="cover" 
-                        :alt="`${activeTab} Image ${index + 1}`"
-                      >
+                      <el-image
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        :src="image" fit="cover" :alt="`${activeTab} Image ${index + 1}`">
                         <template #placeholder>
                           <div class="flex justify-center items-center h-full w-full bg-gray-100">
                             <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
@@ -254,7 +238,7 @@ onMounted(() => {
                           </div>
                         </template>
                       </el-image>
-                      
+
                       <!-- Image counter -->
                       <div class="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20">
                         {{ index + 1 }} / {{ tabImages[activeTab].length }}
@@ -385,26 +369,28 @@ onMounted(() => {
     padding: 0.5rem;
     margin-bottom: 1rem;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
   }
-  
+
   .custom-tabs::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
+    display: none;
+    /* Chrome, Safari, Edge */
   }
-  
+
   .tab-item {
     flex: 0 0 auto;
     margin-right: 0.5rem;
-    
+
   }
-  
+
   .tab-button {
     white-space: nowrap;
     border-left: none !important;
     border-bottom: 4px solid transparent;
     border-radius: 0.375rem;
   }
-  
+
   .tab-button.active-tab {
     border-bottom: 4px solid var(--el-color-primary);
   }

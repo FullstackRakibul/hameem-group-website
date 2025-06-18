@@ -80,9 +80,10 @@
         <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 overflow-hidden">
           <!-- Section Header -->
           <div class="text-center mb-12 ">
-            <h3 class="text-primary uppercase font-light md:text-6xl mb-4">
-              Production Capabilities
-            </h3>
+            <h3 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+  Production <span class="text-primary font-medium">Capabilities</span>
+</h3>
+
            <UISectionUnderline/>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our state-of-the-art manufacturing facilities and cutting-edge technology
