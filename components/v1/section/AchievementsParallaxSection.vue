@@ -126,7 +126,7 @@
                     <img
                       :src="award.image"
                       :alt="award.title"
-                      class="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
+                      class="w-full max-h-80 object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   </div>
