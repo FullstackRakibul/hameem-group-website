@@ -165,7 +165,7 @@ const activeMember = ref({
 
 const boardMembers = ref([
   {
-    name: "Abdul Kader Azad",
+    name: "A.K. Azad",
     designation: "Managing Director",
     image: "/assets/boardofdirectors/chairman.png",
     quote: "Leading with vision and strategy to drive organizational success and create lasting value for all stakeholders."
@@ -177,7 +177,7 @@ const boardMembers = ref([
     quote: "Building sustainable partnerships and fostering innovation for long-term growth and market leadership."
   },
   {
-    name: "Sajid Khan",
+    name: "Sajid Azad",
     designation: "Director",
     image: "/assets/boardofdirectors/SAJID SIR .jpg",
     quote: "Innovating processes and implementing cutting-edge solutions to achieve operational excellence."
