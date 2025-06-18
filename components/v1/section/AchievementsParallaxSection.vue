@@ -17,7 +17,6 @@
           Celebrating excellence and recognition in the global textile industry
         </p>
       </div>
-
       <!-- Main Display Section -->
       <div class=" mx-auto mb-16" ref="mainDisplayRef">
         <div class="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden shadow-2xl">

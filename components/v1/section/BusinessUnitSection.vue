@@ -176,10 +176,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="business-unit-section py-16 px-4 md:px-6 bg-gradient-to-b from-gray-50 to-white">
+  <section class="business-unit-section pb-16 px-4 md:px-6 bg-gradient-to-b from-gray-50 to-white">
     <div class="px-24 mx-auto">
       <!-- Section Header -->
-      <div class="md:mb-24 text-center">
+      <div class="md:mb-10 text-center">
         <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
   Business <span class="text-primary font-medium">Units</span>
 </h2>

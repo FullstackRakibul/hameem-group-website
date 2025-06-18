@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Contact Information -->
         <div>
-          <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-24 mb-4" />
+          <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-16 mb-4" />
           <p class="text-xl leading-relaxed">
             Hameem Group is one of the largest textile manufacturers in Bangladesh, specializing in apparel, knitting,
             dyeing, and more.

@@ -16,10 +16,9 @@
 <UISectionUnderline/>
     <!-- Modern Strengths Section -->
     <div class="mt-16">
-      <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
         <div v-for="(card, index) in strengths" :key="index"
           class="group relative bg-white rounded-xl shadow-sm hover:shadow-2xl transition-all duration-500 ease-out border border-gray-100/50 overflow-hidden flex flex-col h-[420px] hover:border-primary/30 hover:-translate-y-2">
-          
           <!-- Card Image with Overlay -->
           <div class="relative h-52 overflow-hidden">
             <img 
