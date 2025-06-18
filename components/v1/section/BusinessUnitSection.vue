@@ -58,22 +58,22 @@ const businessUnits = {
   //   capacity: 'Integrated support for all production needs'
   // },
   teaGarden: {
-  title: 'Tea Garden Division',
-  description: 'A lush and productive tea estate cultivating premium quality tea, contributing to both local consumption and global export. It reflects our commitment to sustainability, heritage, and excellence in agribusiness.',
-  icon: 'mdi:tea', // Icon representing tea or plantation
-  capacity: 'Spanning acres of curated plantations with expert harvesting'
-}
-,
+    title: 'Tea Garden Division',
+    description: 'A lush and productive tea estate cultivating premium quality tea, contributing to both local consumption and global export. It reflects our commitment to sustainability, heritage, and excellence in agribusiness.',
+    icon: 'fluent-emoji-flat:leaf-fluttering-in-wind', // Icon representing tea or plantation
+    capacity: 'Spanning acres of curated plantations with expert harvesting'
+  }
+  ,
   newspaper: {
     title: 'Samakal Newspaper',
     description: 'Samakal is a popular and widely circulated national daily newspaper in Bangladesh, committed to delivering credible news and insightful journalism.',
-    icon: 'mdi:newspaper-variant-multiple-outline', // Newspaper icon
+    icon: 'streamline-emojis:newspaper', // Newspaper icon
     capacity: 'Leading national daily circulation'
   },
   newsChannel: {
     title: 'Channel 24 News',
     description: 'Channel 24 is a leading and very popular news television channel, providing comprehensive and timely news coverage across Bangladesh and beyond.',
-    icon: 'mdi:television-play', // Television/news channel icon
+    icon: 'emojione-v1:video-camera', // Television/news channel icon
     capacity: 'Extensive nationwide viewership'
   }
 }
@@ -117,7 +117,7 @@ const tabImages = {
     './assets/businessUnitImage/news.png',
     './assets/businessUnitImage/samakal2.jpg',
   ],
-  newsChannel:[
+  newsChannel: [
     './assets/businessUnitImage/c24.png',
   ]
 }
@@ -181,10 +181,10 @@ onMounted(() => {
       <!-- Section Header -->
       <div class="md:mb-10 text-center">
         <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
-  Business <span class="text-primary font-medium">Units</span>
-</h2>
+          Business <span class="text-primary font-medium">Units</span>
+        </h2>
 
-        <UISectionUnderline/>
+        <UISectionUnderline />
         <p class="text-gray-600 max-w-2xl mx-auto">
           Our vertically integrated business units work in harmony to deliver exceptional quality and efficiency across
           the entire production chain.
@@ -208,7 +208,8 @@ onMounted(() => {
                   <div class="tab-icon-container mr-3">
                     <Icon :name="unit.icon || 'mdi:factory'" class="text-xl" />
                   </div>
-                  <span class="block text-xl uppercase tracking-wider">{{ key }}</span>
+                  <!-- <span class="block text-xl uppercase tracking-wider">{{ key }}</span> -->
+                  <span class="block text-xl uppercase tracking-wider">{{ unit.title }}</span>
                 </div>
               </button>
             </div>
