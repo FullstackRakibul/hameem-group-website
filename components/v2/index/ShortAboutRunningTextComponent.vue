@@ -150,18 +150,18 @@
           <div class="flex flex-col items-center justify-center text-center space-y-4">
             <!-- Leading Industry - animates from left -->
             <div v-gsap:whenVisible.from="{ x: -150, opacity: 0, duration: 1.2, ease: 'power2.out' }"
-              class="text-gray-900 font-semibold text-2xl md:text-4xl lg:text-5xl font-title leading-tight">
+              class="text-gray-900 font-normal text-7xl  font-writtingOne leading-tight">
               Leading Industry
             </div>
 
             <!-- Date section - animates from right -->
             <div class="flex flex-col items-center space-y-2">
               <div v-gsap:whenVisible.from="{ x: 150, opacity: 0, duration: 1.2, delay: 0.3, ease: 'power2.out' }"
-                class="text-secondary text-lg md:text-2xl font-medium font-title">
+                class="text-white text-lg md:text-2xl font-medium  p-3 py-6 rounded-full shadow-inner cursor-wait shadow-white/40 bg-primary  backdrop-blur-sm ">
                 since
               </div>
               <div v-gsap:whenVisible.from="{ x: 200, opacity: 0, duration: 1.2, delay: 0.6, ease: 'power2.out' }"
-                class="text-secondary text-6xl md:text-7xl lg:text-8xl font-extrabold font-title leading-none">
+                class="text-secondary text-6xl md:text-8xl lg:text-9xl font-extrabold font-writtingOne  leading-none">
                 1984
               </div>
             </div>

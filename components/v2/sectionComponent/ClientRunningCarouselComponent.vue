@@ -3,9 +3,10 @@
     <div class="container mx-auto">
       <!-- Section Title & Description -->
       <div class="text-center mb-16">
-        <h2 class="text-primary uppercase font-light md:text-6xl ">
-          Our Clients
-        </h2>
+        <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+  Our <span class="text-primary font-medium">Clients</span>
+</h2>
+
         <UISectionUnderline />
         <p class="text-lg text-gray-600 mt-3 max-w-2xl mx-auto">
           Partnering with the world’s most renowned fashion brands, we deliver excellence through premium craftsmanship, sustainable innovation, and a commitment to quality.

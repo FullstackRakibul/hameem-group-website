@@ -7,6 +7,7 @@ export default {
         sans: ["Figtree", "serif"],
         title: ["Cardo", "sans-serif"],
         writting: ["WindSong", "cursive"],
+        writtingOne: ["Great Vibes", "cursive"],
         description: ["Permanent Marker", "cursive"],
         // titillium: ['"Titillium Web"', "sans-serif"],
         // denim: ["Cardo", "serif"],

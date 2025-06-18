@@ -12,9 +12,10 @@
         <div class="space-y-8">
           <!-- Header -->
           <div class="text-center lg:text-left">
-            <h2 class="text-primary uppercase font-light md:text-6xl section-title text-3xl mb-4">
-              Board of Directors
-            </h2>
+            <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+  Board of <span class="text-primary font-medium">Directors</span>
+</h2>
+
             <UISectionUnderline />
             
             <p class="text-lg text-gray-800 leading-relaxed max-w-xl">

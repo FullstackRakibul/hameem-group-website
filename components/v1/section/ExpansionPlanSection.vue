@@ -1,13 +1,19 @@
 <template>
   <section id="expansionPlan" class="w-full px-4 md:px-24 py-12">
-    <SectionHeader 
+    <!-- <SectionHeader 
       title="Expansion Plan"
       subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" 
       buttonTextLink="/#"
       buttonText="Discover Our Capabilities" 
       
-    />
+    /> -->
+    <div class="text-center mb-8 justify-center flex flex-col items-center">
+      <h2 class="text-4xl md:text-6xl font-light text-gray-900 tracking-tight">
+    Expansion <span class="text-primary font-medium">Plan</span>
+  </h2>
+    </div>
 
+<UISectionUnderline/>
     <!-- Modern Strengths Section -->
     <div class="mt-16">
       <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
