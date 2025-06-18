@@ -69,7 +69,7 @@
 
         <!-- Right Section - Board Members Grid -->
         <div class="space-y-6">
-          <h3 class="text-xl font-semibold text-gray-900 text-center lg:text-left mb-8">
+          <h3 class="text-4xl font-semibold font-writtingOne text-gray-900 text-center lg:text-left mb-8">
             Leadership Team
           </h3>
 
