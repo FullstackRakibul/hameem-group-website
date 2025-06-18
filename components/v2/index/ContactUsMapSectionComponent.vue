@@ -1,6 +1,6 @@
 <template>
   <section id="index-contact">
-    <div class="container  lg:px-16 md:px-14 px-4 mx-auto my-10 ">
+    <div class="container  lg:px-6 md:px-6 px-4 mx-auto my-10 ">
   <div class="grid grid-cols-1 rounded-xl bg-primary text-white border border-white p-20 md:grid-cols-2 gap-8 items-center">
     <!-- Contact Us Column -->
     <div>
