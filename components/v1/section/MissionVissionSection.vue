@@ -9,11 +9,11 @@
       <!-- Grid Pattern -->
       <div class="absolute inset-0 opacity-[0.02]" style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 50px 50px;"></div>
     </div>
-    <p class="md:text-3xl font-normal tracking-widest text-secondary py-5 text-center font-writtingOne">Company Profiles  </p>
-    <div class="relative z-10 container mx-auto px-4 md:px-2 py-16">
+    <p class=" py-2 md:text-3xl font-normal tracking-widest text-secondary text-center font-writtingOne">Company Profiles  </p>
+    <div class="relative z-10 container mx-auto px-4 md:px-2 ">
       <!-- Header Section -->
       <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
+        <h1 class="text-4xl md:text-6xl font-light text-gray-900 mb-6  tracking-tight">
           Our Vision & <span class="text-primary font-medium">Mission</span>
         </h1>
         <SectionUnderline/>
@@ -61,9 +61,8 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
               </div>
-              <h2 class="text-3xl  text-gray-900 font-writting font-semibold ">Our Mission</h2>
+              <h2 class="lg:text-3xl md:text-2xl text-xl text-primary font-semibold">Our Mission</h2>
             </div>
-            
             <!-- Modern Minimalist Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div 
@@ -122,7 +121,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                 </svg>
               </div>
-              <h2 class="lg:text-4xl md:text-3xl text-gray-900 font-writting font-semibold">Our Vision</h2>
+              <h2 class="lg:text-3xl md:text-2xl text-xl text-secondary font-semibold">Our Vision</h2>
             </div>
             
             <!-- Modern Minimalist Cards -->

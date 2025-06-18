@@ -20,7 +20,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
     <!-- Content Container -->
     <div class="relative z-10 max-w-8xl w-full">
       <!-- Centered Header -->
-      <div class="text-center mb-16">
+      <div class="text-center md:my-16">
         <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
           Sustainability <span class="text-primary font-medium">Goals</span>
         </h2>
@@ -30,78 +30,78 @@ import { library } from '@fortawesome/fontawesome-svg-core';
       </div>
 
       <!-- Main Content Grid -->
-      <div class="grid md:grid-cols-2 gap-16 items-start">
+      <div class="grid md:grid-cols-2 py-4 gap-16 items-start">
         <!-- Left Side: Goals List -->
         <div class="text-left">
           <h3 class="text-2xl md:text-3xl text-green-600 font-light uppercase tracking-wide mb-8">
             ROADMAP 2030
           </h3>
           <ul class="space-y-4 text-lg text-gray-800">
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Reduce ground water use by 70% and Zero liquid discharge facility</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Net zero GHG emissions</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>More than 50% renewable energy</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Less than 2% wastage of materials</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Ensure employees' living wages</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Ensure gender equality</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Smart Factory 4.0</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>100% sustainable apparel</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>100% traceable and transparent supply-chain</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Chemical Water & Power Saving</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Environment Friendly Wash Chemicals</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Power Saving Machineries</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Water Saving And Recycling</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Green Dyes</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Natural Fibers</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Sustainable Laundry Machine</span>
             </li>
-            <li class="flex items-start hover:bg-green-50 p-2 rounded-lg transition-colors duration-200">
+            <li class="flex items-start hover:bg-green-50 rounded-lg transition-colors duration-200">
               <span class="text-green-600 text-xl font-bold mr-3 mt-1">●</span>
               <span>Laser Technology</span>
             </li>
@@ -126,8 +126,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
           </div>
 
           <!-- Sustainability Icons Section -->
-          <div class="bg-white bg-opacity-60 rounded-2xl p-8 shadow-lg backdrop-blur-sm">
-            <h4 class="text-xl font-semibold text-gray-800 text-center mb-6">Our Sustainability Pillars</h4>
+          <div class="bg-white/10 bg-opacity-20 rounded-xl p-4 ">
+            <h4 class="text-xl font-semibold text-gray-800 text-left mb-6">Our Sustainability Pillars</h4>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div class="group flex flex-col items-center text-center p-4 rounded-xl hover:bg-green-50 transition-all duration-300">
                 <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors duration-300">
@@ -169,7 +169,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
           </div>
 
           <!-- Progress Indicators -->
-          <div class="bg-white bg-opacity-60 rounded-2xl p-6 shadow-lg backdrop-blur-sm">
+          <!-- <div class="bg-white bg-opacity-60 rounded-2xl p-6 shadow-lg backdrop-blur-sm">
             <h4 class="text-lg font-semibold text-gray-800 mb-4">2030 Progress Targets</h4>
             <div class="space-y-4">
               <div class="flex items-center justify-between">
@@ -202,7 +202,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
