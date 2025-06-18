@@ -6,7 +6,7 @@
     <div class="relative z-20 container mx-auto px-4 md:px-8 py-8">
       <div class="max-w-xl text-left">
         <h3 class="text-4xl md:text-5xl px-4 md:px-8 font-bold mb-6 tracking-wide animate-fade-in-up">
-          WHO WE ARE
+          A Legacy of Growth Across Textiles 
         </h3>
 
         <div class="bg-white/4 backdrop-blur-sm rounded-xl p-4 md:p-8 shadow-xl animate-slide-up">

@@ -8,14 +8,14 @@
           <MainSliderFashion01 />        
         </div>
       </el-carousel-item>
-      <el-carousel-item key="denim">
-        <div class="overflow-x-hidden">
-          <HeroImageSectionTwo />
-        </div>
-      </el-carousel-item>
       <el-carousel-item key="products">
         <div class="overflow-x-hidden">
           <HeroImageSectionFive />
+        </div>
+      </el-carousel-item>
+      <el-carousel-item key="denim">
+        <div class="overflow-x-hidden">
+          <HeroImageSectionTwo />
         </div>
       </el-carousel-item>
        <el-carousel-item key="GlobalPresence">

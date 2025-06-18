@@ -1,6 +1,6 @@
 <template>
   <div class="relative h-screen bg-cover bg-center flex flex-col justify-center items-center text-white overflow-hidden"
-    :style="{ backgroundImage: `url('./assets/v1/section/Slider/main-banner-shape-00002.jpg')` }">
+    :style="{ backgroundImage: `url('./assets/v1/section/Slider/wash-5.jpg')` }">
     <!-- Dark overlay -->
     <div class="absolute  inset-0 bg-black/40 z-10"></div>
 
@@ -8,7 +8,7 @@
       <div class="max-w-4xl text-center">
         <!-- Main Heading -->
         <h3 class="text-4xl md:text-5xl font-bold mb-6 tracking-wide text-start animate-fade-in-up">
-         Welcome to Ha-Meem Textiles
+         Welcome to Our Wash Section
         </h3>
 
         <!-- Content Container -->
