@@ -8,7 +8,7 @@
       <div class="max-w-4xl text-center">
         <!-- Main Heading -->
         <h3 class="text-4xl md:text-5xl font-bold mb-6 tracking-wide text-start animate-fade-in-up">
-         Welcome to Our Wash Section
+         Welcome to Our Washing Plant
         </h3>
 
         <!-- Content Container -->
