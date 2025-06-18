@@ -60,82 +60,95 @@
         </div>
 
         <!-- Right: Mission & Vision Carousel -->
-        <div class="space-y-2 flex justify-center">
-          <div class="w-full max-w-[800px]">
-            <div class="relative aspect-video bg-white rounded-2xl  overflow-hidden">
-              <!-- Main Slider Container -->
-              <div class="relative w-full h-full">
-                <!-- Slides -->
-                <div 
-                  v-for="(image, index) in carouselImages" 
-                  :key="index"
-                  :class="[
-                    'absolute inset-0 transition-all duration-700 ease-in-out',
-                    currentSlide === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-                  ]"
-                >
-                  <img 
-                    :src="image.src"
-                    :alt="image.alt" 
-                    class="w-full h-full object-top transition-transform duration-500"
-                  />
-                  <!-- Overlay Content -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                    <div class="absolute bottom-0 left-0 right-0 p-6">
-                      <div class="transform translate-y-0 transition-transform duration-500">
-                        <h3 class="text-black font-bold text-xl mb-2">{{ image.title }}</h3>
-                        <p class="text-black/50 text-sm leading-relaxed">{{ image.description }}</p>
-                      </div>
-                    </div>
+        <div class="w-full">
+          <div class="relative max-w-[800px] mx-auto">
+            <!-- Main Slider Container -->
+            <div class="relative aspect-video bg-white rounded-xl  overflow-hidden group">
+              <!-- Slides -->
+              <div 
+                v-for="(image, index) in carouselImages" 
+                :key="index"
+                :class="[
+                  'absolute inset-0 transition-all duration-700 ease-in-out',
+                  currentSlide === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                ]"
+              >
+                <img 
+                  :src="image.src"
+                  :alt="image.alt" 
+                  class="w-full h-full object-fill"
+                />
+                
+                <!-- Hover Overlay -->
+                <!-- <div class="absolute inset-0 bg-black/0 hover:bg-black/60 transition-all duration-500 flex items-end">
+                  <div class="w-full p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    
                   </div>
-                </div>
-
-                <!-- Navigation Arrows -->
-                <button 
-                  @click="previousSlide"
-                  class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 group z-10"
-                >
-                  <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                  </svg>
-                </button>
-
-                <button 
-                  @click="nextSlide"
-                  class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 group z-10"
-                >
-                  <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
+                </div> -->
               </div>
 
+              <!-- Navigation Arrows -->
+              <button 
+                @click="previousSlide"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group/btn z-20 opacity-0 group-hover:opacity-100"
+              >
+                <svg class="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
 
+              <button 
+                @click="nextSlide"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group/btn z-20 opacity-0 group-hover:opacity-100"
+              >
+                <svg class="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+
+              <!-- Progress Bar -->
+              
 
               <!-- Slide Counter -->
-              <div class="absolute top-4 right-4 bg-black/30 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+              <div class="absolute top-4 right-4 bg-black/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium z-10">
                 {{ currentSlide + 1 }} / {{ carouselImages.length }}
               </div>
             </div>
 
-            <!-- Thumbnail Navigation -->
-            <div class="flex justify-center mt-4 space-x-2 py-3 overflow-x-auto pb-2">
+            <!-- Indicators -->
+            <div class="flex justify-center mt-6 space-x-3">
               <button
                 v-for="(image, index) in carouselImages"
                 :key="index"
                 @click="goToSlide(index)"
                 :class="[
-                  'flex-shrink-0 w-16 h-10 rounded-lg overflow-hidden border-2 transition-all duration-300',
+                  'w-3 h-3 rounded-full transition-all duration-300',
+                  currentSlide === index 
+                    ? 'bg-primary scale-125 shadow-lg' 
+                    : 'bg-gray-300 hover:bg-gray-400 hover:scale-110'
+                ]"
+              ></button>
+            </div>
+
+            <!-- Thumbnail Navigation -->
+            <div class="flex justify-center mt-4 space-x-2 overflow-x-auto pb-2">
+              <button
+                v-for="(image, index) in carouselImages"
+                :key="index"
+                @click="goToSlide(index)"
+                :class="[
+                  'flex-shrink-0 w-20 h-12 rounded-lg overflow-hidden border-2 transition-all duration-300 relative group/thumb',
                   currentSlide === index 
                     ? 'border-primary shadow-lg scale-110' 
-                    : 'border-gray-200 hover:border-gray-300 opacity-70  hover:opacity-100'
+                    : 'border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'
                 ]"
               >
                 <img 
                   :src="image.src" 
                   :alt="image.alt"
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300"
                 />
+                <div v-if="currentSlide === index" class="absolute inset-0 bg-primary/20"></div>
               </button>
             </div>
           </div>
@@ -486,7 +499,52 @@ const visionPoints = computed(() =>
 
 @media (max-width: 1024px) {
   .mission-vision-carousel {
-    max-width: 700px;
+    max-width: 600px;
+  }
+}
+
+/* Modern Slider Enhancements */
+.group:hover .group-hover\:translate-y-0 {
+  transform: translateY(0);
+}
+
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
+}
+
+/* Smooth hover transitions for text overlay */
+.group:hover .absolute.inset-0.bg-black\/0 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Enhanced thumbnail scrollbar */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 3px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--primary-color, #3b82f6), var(--secondary-color, #8b5cf6));
+  border-radius: 2px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(90deg, var(--primary-color, #2563eb), var(--secondary-color, #7c3aed));
+}
+
+/* Professional shadow effects */
+.shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Backdrop blur fallback */
+@supports not (backdrop-filter: blur(12px)) {
+  .backdrop-blur-sm {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 </style>
