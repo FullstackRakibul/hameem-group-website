@@ -61,22 +61,22 @@
 
         <!-- Right: Mission & Vision Carousel -->
         <div class="w-full">
-          <div class="relative max-w-[800px] mx-auto">
+          <div class="relative   mx-auto">
             <!-- Main Slider Container -->
-            <div class="relative aspect-video bg-white rounded-xl  overflow-hidden group">
+            <div class="relative aspect-video  bg-white rounded-xl  overflow-hidden group">
               <!-- Slides -->
               <div 
                 v-for="(image, index) in carouselImages" 
                 :key="index"
                 :class="[
-                  'absolute inset-0 transition-all duration-700 ease-in-out',
+                  'absolute inset-0 transition-all duration-700 ease-in-out ',
                   currentSlide === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
                 ]"
               >
                 <img 
                   :src="image.src"
                   :alt="image.alt" 
-                  class="w-full h-full object-fill"
+                  class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
                 />
                 
                 <!-- Hover Overlay -->

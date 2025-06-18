@@ -1,6 +1,6 @@
 <template>
-  <section class="container w-full min-h-screen relative flex items-center justify-center bg-cover bg-center"
-    :style="{ backgroundImage: `url(${bgImage})` }">
+  <section class="container w-full min-h-screen relative flex items-center justify-center  bg-container"
+    :style="{ backgroundImage: `url('./assets/boardofdirectors-bg-banner.jpg')` }">
 
     <!-- Overlay for better content visibility -->
     <div class="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
