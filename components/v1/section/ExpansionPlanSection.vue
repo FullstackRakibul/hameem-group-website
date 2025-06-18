@@ -183,7 +183,7 @@
           <!-- Stats Section -->
           <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-primary/50">
             <div class="text-center">
-              <div class="md:text-3xl font-bold text-gray-900 mb-1">512+</div>
+              <div class="md:text-3xl font-bold text-gray-900 mb-1">450+</div>
               <div class="md:text-md text-primary">Production Lines</div>
             </div>
             <div class="text-center">

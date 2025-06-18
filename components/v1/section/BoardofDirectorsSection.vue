@@ -1,6 +1,6 @@
 <template>
   <section class="container w-full min-h-screen relative flex items-center justify-center  bg-container"
-    :style="{ backgroundImage: `url('./assets/boardofdirectors-bg-banner.jpg')` }">
+    :style="{ backgroundImage: `url(${bgImageBoD})` }">
 
     <!-- Overlay for better content visibility -->
     <div class="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
@@ -204,9 +204,9 @@ const resetActiveMember = () => {
 };
 
 const props = defineProps({
-  bgImage: {
+  bgImageBoD: {
     type: String,
-    default: "/assets/boardofdirectors-bg-banner.jpg",
+    default: "/assets/boardofdirectors/bod-bg.jpg",
   },
 });
 </script>
