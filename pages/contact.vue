@@ -96,8 +96,8 @@
                 </div>
                 <div>
                   <h3 class="text-lg font-medium text-gray-900 mb-1">Business Hours</h3>
-                  <p class="text-gray-600">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                  <p class="text-gray-600">Saturday: 9:00 AM - 2:00 PM</p>
+                  <p class="text-gray-600">Saturday - Thursday: 8:00 AM - 5:00 PM</p>
+                  <p class="text-red-600">Friday : <span class="text-gray-600">9:00 AM - 12:00 PM</span></p>
                 </div>
               </div>
             </div>
