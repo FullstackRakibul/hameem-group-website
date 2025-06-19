@@ -11,6 +11,7 @@ import AchievementsParallaxSection from '~/components/v1/section/AchievementsPar
 import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSectionRFID.vue';
 import SustainabilityMapSection from '~/components/v2/sectionComponent/SustainabilityMapSection.vue';
 import HameemGroupAboutSection from '~/components/v1/section/HameemGroupAboutSection.vue';
+import UpcommingProjectSection from '~/components/v1/section/UpcommingProjectSection.vue';
 </script>
 
 <template>
@@ -35,6 +36,7 @@ import HameemGroupAboutSection from '~/components/v1/section/HameemGroupAboutSec
 
     <MissionVissionSection />
     <ExpansionPlanSection />
+    <UpcommingProjectSection />
     <BusinessUnitSection />
     <VideoHeroSectionRFID videoSrc="/assets/v2/video/RFIDDIGITALVIDEO.mp4" />
     <SustainabilityMapSection />
