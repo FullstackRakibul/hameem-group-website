@@ -1,95 +1,144 @@
 <template>
   <section id="expansionPlan" class="w-full px-4 md:px-24 py-12">
-    <!-- <SectionHeader 
-      title="Expansion Plan"
-      subtitle="Driving Excellence Through Innovation, Quality, and Sustainable Practices" 
-      buttonTextLink="/#"
-      buttonText="Discover Our Capabilities" 
-      
-    /> -->
+    <!-- Header Section -->
     <div class="text-center mb-8 justify-center flex flex-col items-center">
       <h2 class="text-4xl md:text-6xl font-light text-gray-900 tracking-tight">
-    Expansion <span class="text-primary font-medium">Plan</span>
-  </h2>
+        Expansion <span class="text-primary font-medium">Plan</span>
+      </h2>
     </div>
 
-<UISectionUnderline/>
-    <!-- Modern Strengths Section -->
-    <div class="mt-16">
-      <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-        <div v-for="(card, index) in strengths" :key="index"
-          class="group relative bg-white rounded-xl shadow-sm hover:shadow-2xl transition-all duration-500 ease-out border border-gray-100/50 overflow-hidden flex flex-col h-[420px] hover:border-primary/30 hover:-translate-y-2">
-          <!-- Card Image with Overlay -->
-          <div class="relative h-52 overflow-hidden">
-            <img 
-              :src="card.image" 
-              :alt="card.title"
-              class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
-            />
-            <!-- Primary color overlay -->
-            <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <!-- Gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-            
-            <!-- Floating Badge -->
-            <div class="absolute top-4 left-4">
-              <span class="inline-flex items-center px-3 py-1.5 text-xs font-semibold bg-white/90 backdrop-blur-sm text-primary rounded-full border border-white/50 shadow-lg">
-                <div class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></div>
-                {{ card.badge }}
-              </span>
-            </div>
-          </div>
-          
-          <!-- Card Content -->
-          <div class="p-6 flex flex-col flex-grow bg-gradient-to-b from-white to-gray-50/50 ">
-            <!-- Title -->
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300 leading-tight">
-              {{ card.title }}
-            </h3>
-            
-            <!-- Description -->
-            <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow leading-relaxed">
-              {{ card.description }}
-            </p>
-            
-            <!-- Modern CTA Button -->
-            <div class="mt-auto">
-              <NuxtLink 
-                :to="card.linkTo" 
-                class="group/btn relative w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-gray-900 hover:bg-primary text-white rounded-xl font-medium transition-all duration-300 overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
-              >
-                <!-- Button background animation -->
-                <div class="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-out"></div>
-                
-                <!-- Button content -->
-                <span class="relative z-10 text-sm">{{ card.linkText }}</span>
-                <div class="relative z-10 w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors duration-300">
-                  <Icon 
-                    name="mdi:arrow-right" 
-                    size="14" 
-                    class="transform transition-transform duration-300 group-hover/btn:translate-x-0.5" 
-                  />
-                </div>
-              </NuxtLink>
-            </div>
-          </div>
+    <UISectionUnderline/>
 
-          <!-- Hover glow effect -->
-          <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+    <!-- Modern Strengths Section - Now Slidable -->
+    <div class="mt-16">
+      <div class="relative overflow-hidden">
+        <!-- Navigation Arrows -->
+        <button
+          @click="slideLeft"
+          class="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:bg-primary"
+          :class="{ 'opacity-50 cursor-not-allowed': currentSlide === 0 }"
+          :disabled="currentSlide === 0"
+        >
+          <svg class="w-6 h-6 text-gray-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+
+        <button
+          @click="slideRight"
+          class="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group hover:bg-primary"
+          :class="{ 'opacity-50 cursor-not-allowed': currentSlide >= maxSlides }"
+          :disabled="currentSlide >= maxSlides"
+        >
+          <svg class="w-6 h-6 text-gray-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <!-- Slider Container -->
+        <div class="overflow-hidden mx-8">
+          <div 
+            class="flex transition-transform duration-500 ease-in-out gap-3"
+            :style="{ transform: `translateX(-${currentSlide * slideWidth}%)` }"
+          >
+            <div 
+              v-for="(card, index) in strengths" 
+              :key="index"
+              class="group relative bg-white rounded-xl shadow-sm hover:shadow-2xl transition-all duration-500 ease-out border border-gray-100/50 overflow-hidden flex flex-col h-[420px] w-1/5 hover:border-primary/30 hover:-translate-y-2 flex-shrink-0"
+              :class="getCardWidthClass"
+            >
+              <!-- Card Image with Overlay -->
+              <div class="relative h-52 overflow-hidden">
+                <img 
+                  :src="card.image" 
+                  :alt="card.title"
+                  class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-110"
+                />
+                <!-- Primary color overlay -->
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <!-- Gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                
+                <!-- Floating Badge -->
+                <div class="absolute top-4 left-4">
+                  <span class="inline-flex items-center px-3 py-1.5 text-xs font-semibold bg-white/90 backdrop-blur-sm text-primary rounded-full border border-white/50 shadow-lg">
+                    <div class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></div>
+                    {{ card.badge }}
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Card Content -->
+              <div class="p-6 flex flex-col flex-grow bg-gradient-to-b from-white to-gray-50/50">
+                <!-- Title -->
+                <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300 leading-tight">
+                  {{ card.title }}
+                </h3>
+                
+                <!-- Description -->
+                <p class="text-gray-600 text-sm mb-6 line-clamp-3 flex-grow leading-relaxed">
+                  {{ card.description }}
+                </p>
+                
+                <!-- Modern CTA Button -->
+                <div class="mt-auto">
+                  <NuxtLink 
+                    :to="card.linkTo" 
+                    class="group/btn relative w-full inline-flex items-center justify-center gap-3 px-6 py-3.5 bg-gray-900 hover:bg-primary text-white rounded-xl font-medium transition-all duration-300 overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    <!-- Button background animation -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-primary/80 translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-out"></div>
+                    
+                    <!-- Button content -->
+                    <span class="relative z-10 text-sm">{{ card.linkText }}</span>
+                    <div class="relative z-10 w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover/btn:bg-white/30 transition-colors duration-300">
+                      <Icon 
+                        name="mdi:arrow-right" 
+                        size="14" 
+                        class="transform transition-transform duration-300 group-hover/btn:translate-x-0.5" 
+                      />
+                    </div>
+                  </NuxtLink>
+                </div>
+              </div>
+
+              <!-- Hover glow effect -->
+              <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="flex justify-center mt-8 space-x-2">
+          <button
+            v-for="(slide, index) in totalSlides"
+            :key="index"
+            @click="goToSlide(index)"
+            class="w-3 h-3 rounded-full transition-all duration-300"
+            :class="currentSlide === index ? 'bg-primary scale-125' : 'bg-gray-300 hover:bg-gray-400'"
+          ></button>
+        </div>
+
+        <!-- Slide Counter -->
+        <div class="text-center mt-4">
+          <span class="text-sm text-gray-600">
+            {{ currentSlide + 1 }} / {{ totalSlides }}
+            <span class="text-gray-400">•</span>
+            Showing {{ Math.min(cardsPerView, strengths.length - currentSlide * cardsPerView) }} of {{ strengths.length }} projects
+          </span>
         </div>
       </div>
 
       <!-- Modern Products Carousel Section -->
-      <div class=" relative mt-20 mb-10">
+      <div class="relative mt-20 mb-10">
         <!-- Section Background -->
         <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12 overflow-hidden">
           <!-- Section Header -->
-          <div class="text-center mb-12 ">
+          <div class="text-center mb-12">
             <h3 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
-  Production <span class="text-primary font-medium">Capabilities</span>
-</h3>
-
-           <UISectionUnderline/>
+              Production <span class="text-primary font-medium">Capabilities</span>
+            </h3>
+            <UISectionUnderline/>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover our state-of-the-art manufacturing facilities and cutting-edge technology
             </p>
@@ -104,10 +153,10 @@
             <!-- Scrolling Products -->
             <div class="flex space-x-6 animate-marquee-modern">
               <div v-for="(product, index) in duplicatedProducts" :key="index"
-                class="group flex-shrink-0 transition-all duration-500  cursor-pointer p-4">
+                class="group flex-shrink-0 transition-all duration-500 cursor-pointer p-4">
                 
                 <!-- Product Card -->
-                <div class="rounded-full md:py-1 md:pl-1 md:pr-6 shadow-md border-primary/20 hover:shadow-sm bg-primary/10 transition-all duration-500 border  backdrop-blur-sm min-w-[280px] flex flex-row justify-start items-center gap-10 ">
+                <div class="rounded-full md:py-1 md:pl-1 md:pr-6 shadow-md border-primary/20 hover:shadow-sm bg-primary/10 transition-all duration-500 border backdrop-blur-sm min-w-[280px] flex flex-row justify-start items-center gap-10">
                   <!-- Image Container -->
                   <div class="relative overflow-hidden rounded-full bg-gray-50">
                     <div class="aspect-square w-32 max-w-[70px] mx-auto">
@@ -141,12 +190,6 @@
                     <h4 class="text-2xl font-medium text-gray-900 mb-2 group-hover:text-primary transition-colors duration-300">
                       {{ product.name }}
                     </h4>
-                    <!-- <div class="flex items-center justify-center space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                      <span class="text-sm text-gray-500">View details</span>
-                      <svg class="w-4 h-4 text-primary transform transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div> -->
                   </div>
                 </div>
               </div>
@@ -206,10 +249,13 @@
 </template>
 
 <script setup lang="ts">
-import SectionHeader from '~/components/v2/ui/SectionHeader.vue';
-import { ref, computed } from 'vue';
-import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
+import UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
 
+// Slider state
+const currentSlide = ref(0);
+
+// Strengths data
 const strengths = ref([
   {
     title: 'Global Apparel Expansion',
@@ -255,10 +301,28 @@ const strengths = ref([
     linkTo:'/#',
     badge: 'Eco-Friendly',
     image: '/assets/v1/section/ExpansionPlan/WareHouse.webp'
+  },
+  {
+    title: "Yarn Dye Fabric Plant",
+    description: "Upcoming high-capacity yarn dyeing facility, operational by September 2025. Estimated capacity: 10 tons/day.",
+    icon: "material-symbols:water-drop",
+    linkText: "Yarn Dyeing Unit",
+    linkTo: "/#yarn-dye",
+    badge: "Planned 2025",
+    image: "https://knottednest.com/wp-content/uploads/2020/05/IMG_6567.jpg"
+  },
+  {
+    title: "Woven Fabric Mill Printing Unit",
+    description: "Advanced woven fabric printing facility launching by May 2026, expanding in-house textile capabilities.",
+    icon: "material-symbols:print",
+    linkText: "Fabric Printing",
+    linkTo: "/#woven-printing",
+    badge: "Planned 2026",
+    image: "https://static.fibre2fashion.com//articleresources/images/64/6310/SAdobeStock_892797999_Small.jpg"
   }
 ]);
 
-// Updated products with images
+// Products data for carousel
 const products = ref([
   {
     name: 'Garments Factory',
@@ -306,12 +370,79 @@ const products = ref([
   }
 ]);
 
-// Fallback image for products that might have missing images
+// Fallback image for products
 const fallbackImage = 'assets/v1/section/capabilities/garments-factory.gif';
 
+// Duplicated products for seamless scrolling
 const duplicatedProducts = computed(() => [...products.value, ...products.value]);
 
-// Animation controls
+// Responsive cards per view
+const cardsPerView = computed(() => {
+  if (process.client) {
+    if (window.innerWidth >= 1024) return 5; // lg screens - show 4 cards (changed from 5)
+    if (window.innerWidth >= 768) return 3;  // md screens - show 3 cards
+    if (window.innerWidth >= 640) return 2;  // sm screens - show 2 cards
+    return 1; // mobile - show 1 card
+  }
+  return 4; // default for SSR (changed from 5)
+});
+
+// Computed properties for slider
+const totalSlides = computed(() => {
+  return Math.ceil(strengths.value.length / cardsPerView.value);
+});
+
+const maxSlides = computed(() => {
+  return totalSlides.value ;
+});
+
+const slideWidth = computed(() => {
+  return 100 / cardsPerView.value;
+});
+
+const getCardWidthClass = computed(() => {
+  const cardWidth = 100 / cardsPerView.value;
+  return { width: `${cardWidth}%` };
+});
+
+// Slider methods
+const slideLeft = () => {
+  if (currentSlide.value > 0) {
+    currentSlide.value--;
+  }
+};
+
+const slideRight = () => {
+  if (currentSlide.value < maxSlides.value) {
+    currentSlide.value++;
+  }
+};
+
+const goToSlide = (index: number) => {
+  currentSlide.value = index;
+};
+
+// Auto-slide functionality
+const autoSlide = ref<NodeJS.Timeout | null>(null);
+
+const startAutoSlide = () => {
+  autoSlide.value = setInterval(() => {
+    if (currentSlide.value >= maxSlides.value) {
+      currentSlide.value = 0;
+    } else {
+      slideRight();
+    }
+  }, 5000);
+};
+
+const stopAutoSlide = () => {
+  if (autoSlide.value) {
+    clearInterval(autoSlide.value);
+    autoSlide.value = null;
+  }
+};
+
+// Animation controls for products carousel
 const pauseAnimation = () => {
   const carousel = document.querySelector('.animate-marquee-modern') as HTMLElement | null;
   if (carousel) {
@@ -325,9 +456,31 @@ const resumeAnimation = () => {
     carousel.style.animationPlayState = 'running';
   }
 };
+
+// Lifecycle hooks
+onMounted(() => {
+  startAutoSlide();
+
+  // Handle window resize
+  const handleResize = () => {
+    currentSlide.value = 0; // Reset to first slide on resize
+  };
+
+  window.addEventListener('resize', handleResize);
+
+  // Cleanup resize listener
+  onUnmounted(() => {
+    window.removeEventListener('resize', handleResize);
+  });
+});
+
+onUnmounted(() => {
+  stopAutoSlide();
+});
 </script>
 
 <style scoped>
+/* Marquee animation for products carousel */
 @keyframes marquee-modern {
   0% {
     transform: translateX(0);
@@ -367,7 +520,7 @@ html {
 /* Line clamp for description */
 .line-clamp-3 {
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -389,5 +542,29 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced hover effects */
+.group:hover .group-hover\:scale-105 {
+  transform: scale(1.05);
+}
+
+.group:hover .group-hover\:bg-primary\/20 {
+  background-color: rgba(var(--primary-rgb), 0.2);
+}
+
+/* Professional shadow effects */
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 </style>

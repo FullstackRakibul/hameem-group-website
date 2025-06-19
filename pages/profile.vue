@@ -1,13 +1,12 @@
 <template>
-  <div class="bg-white min-h-screen">
+  <div class="bg-white min-h-screen mt-80">
     <!-- Header Section -->
     <div class="bg-white py-8 px-6">
       <div class="max-w-7xl mx-auto">
         <!-- Company Logo and Title -->
         <div class="flex items-center justify-center mb-8">
           <div class="bg-gradient-to-r from-amber-800 to-amber-600 text-white px-6 py-3 rounded-lg mr-4">
-            <div class="text-lg font-bold">HA-MEEM</div>
-            <div class="text-sm font-medium">GROUP</div>
+            <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group" height="80" class="h-20 w-auto">
           </div>
           <div class="flex-1">
             <h1 class="text-3xl md:text-4xl font-bold text-blue-600 tracking-wide">
@@ -25,13 +24,6 @@
         
         <!-- Left Side - Statistics Grid -->
         <div class="relative">
-          <!-- Navigation Arrow Left -->
-          <button class="absolute -left-12 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-          </button>
-
           <div class="grid grid-cols-4 gap-4">
             <!-- Row 1 -->
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 text-center hover:shadow-lg transition-shadow">
@@ -189,13 +181,6 @@
 
         <!-- Right Side - Facility Image -->
         <div class="relative">
-          <!-- Navigation Arrow Right -->
-          <button class="absolute -right-12 top-1/2 transform -translate-y-1/2 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-
           <div class="bg-white rounded-xl overflow-hidden shadow-lg">
             <img 
               src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
