@@ -16,13 +16,13 @@
     <div class="">
       <!-- Three Column Layout -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white p-8 rounded-lg shadow-sm">
-        
+
         <!-- First Column - Current Solar Achievements -->
         <div class="space-y-4">
           <h3 class="text-xl md:text-2xl font-semibold bg-primary text-white p-3 text-center">
             Current Solar Achievements
           </h3>
-          
+
           <div class="space-y-3">
             <p class="text-base text-gray-700 flex items-start">
               <span class="text-green-600 mr-2 font-bold">✓</span>
@@ -39,11 +39,9 @@
           </div>
 
           <div class="mt-6">
-            <img 
-              src="https://textilefocus.com/wp-content/uploads/2025/02/image-28.png" 
+            <img src="https://textilefocus.com/wp-content/uploads/2025/02/image-28.png"
               alt="Solar Panel Installation Aerial View"
-              class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" 
-            />
+              class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
           </div>
         </div>
 
@@ -75,7 +73,8 @@
             <h4 class="text-base font-semibold text-gray-800">2. Environmental Impact</h4>
             <p class="text-sm text-gray-700 flex items-start">
               <span class="text-green-600 mr-2 font-bold">✓</span>
-              17,200 tons of CO<sub>2</sub> to be reduced annually once the full 27 MWp plant is operational
+              17,200 tons of CO2 to be reduced annually
+              once the full 27 MWp plant is operational
             </p>
             <p class="text-sm text-gray-700 flex items-start">
               <span class="text-green-600 mr-2 font-bold">✓</span>
@@ -108,11 +107,9 @@
         <!-- Third Column - Additional Benefits & Image -->
         <div class="space-y-4">
           <div class="mb-6">
-            <img 
-              src="https://mfsolar.com/wp-content/uploads/2024/08/sept-BLog-scaled.jpeg" 
+            <img src="https://mfsolar.com/wp-content/uploads/2024/08/sept-BLog-scaled.jpeg"
               alt="Solar Panels Installation"
-              class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" 
-            />
+              class="w-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
           </div>
 
           <div class="space-y-3">
@@ -122,15 +119,18 @@
             </p>
             <p class="text-sm text-gray-700 flex items-start">
               <span class="text-green-600 mr-2 font-bold">✓</span>
-              <span><strong>Energy-Efficient Operations:</strong> Stable and sustainable energy supply ensures consistent production.</span>
+              <span><strong>Energy-Efficient Operations:</strong> Stable and sustainable energy supply ensures
+                consistent production.</span>
             </p>
             <p class="text-sm text-gray-700 flex items-start">
               <span class="text-green-600 mr-2 font-bold">✓</span>
-              <span><strong>Future-Ready Manufacturing:</strong> Commitment to innovation and long-term sustainability.</span>
+              <span><strong>Future-Ready Manufacturing:</strong> Commitment to innovation and long-term
+                sustainability.</span>
             </p>
             <p class="text-sm text-gray-700 flex items-start">
               <span class="text-green-600 mr-2 font-bold">✓</span>
-              <span><strong>Shared Values:</strong> Partner with a company that prioritizes the planet alongside profit.</span>
+              <span><strong>Shared Values:</strong> Partner with a company that prioritizes the planet alongside
+                profit.</span>
             </p>
           </div>
         </div>
@@ -148,19 +148,23 @@
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t-2 border-primary/50">
-          <div class="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 hover:bg-white/90 transition-all duration-300">
+          <div
+            class="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 hover:bg-white/90 transition-all duration-300">
             <div class="text-2xl md:text-3xl font-bold text-green-600 mb-2">17,200</div>
             <div class="text-sm text-gray-700">Tons CO₂ Saved Annually (Target)</div>
           </div>
-          <div class="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 hover:bg-white/90 transition-all duration-300">
+          <div
+            class="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 hover:bg-white/90 transition-all duration-300">
             <div class="text-2xl md:text-3xl font-bold text-blue-600 mb-2">27</div>
             <div class="text-sm text-gray-700">MWp Full Capacity</div>
           </div>
-          <div class="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 hover:bg-white/90 transition-all duration-300">
+          <div
+            class="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 hover:bg-white/90 transition-all duration-300">
             <div class="text-2xl md:text-3xl font-bold text-yellow-600 mb-2">12.2</div>
             <div class="text-sm text-gray-700">MWp Currently Operational</div>
           </div>
-          <div class="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 hover:bg-white/90 transition-all duration-300">
+          <div
+            class="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-white/50 hover:bg-white/90 transition-all duration-300">
             <div class="text-2xl md:text-3xl font-bold text-purple-600 mb-2">1.5%</div>
             <div class="text-sm text-gray-700">Current Energy Demand Met</div>
           </div>
@@ -237,15 +241,15 @@ html {
 }
 
 /* Enhanced list styling */
-.space-y-2 > * + * {
+.space-y-2>*+* {
   margin-top: 0.5rem;
 }
 
-.space-y-3 > * + * {
+.space-y-3>*+* {
   margin-top: 0.75rem;
 }
 
-.space-y-4 > * + * {
+.space-y-4>*+* {
   margin-top: 1rem;
 }
 
