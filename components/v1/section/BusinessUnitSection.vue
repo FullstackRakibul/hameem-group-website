@@ -176,7 +176,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="business-unit-section pb-16 px-4 md:px-6 bg-gradient-to-b from-gray-50 to-white">
+  <section id="business-unit" class="business-unit-section pb-16 px-4 md:px-6 bg-gradient-to-b from-gray-50 to-white">
     <div class="px-24 mx-auto">
       <!-- Section Header -->
       <div class="md:mb-10 text-center">
