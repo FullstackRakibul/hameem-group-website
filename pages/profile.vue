@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white min-h-screen mt-80">
+  <div class="bg-white min-h-screen">
     <!-- Header Section -->
     <div class="bg-white py-8 px-6">
       <div class="max-w-screen-2xl mx-auto">
@@ -28,7 +28,7 @@
             <!-- Row 1 -->
             <div class="bg-white border-2 border-gray-300 rounded-xl p-2 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Est.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Est.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               <div class="flex-1">
                 <div class="text-2xl font-bold text-blue-600">1984</div>
@@ -39,7 +39,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Factory.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Factory.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -51,7 +51,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Workforce.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Workforce.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -63,7 +63,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Yearly-Revew.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Yearly-Revew.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -76,7 +76,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Readymade-Garments.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Readymade-Garments.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -88,7 +88,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Sweater.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Sweater.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -100,7 +100,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Jacket.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Jacket.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -112,7 +112,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Textile-Mill.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Textile-Mill.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -129,7 +129,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Spinning.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Spinning.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -140,7 +140,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/wash.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/wash.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -152,7 +152,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Chemical-Consumption.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Chemical-Consumption.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -164,7 +164,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Recycle-cotton.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Recycle-cotton.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -177,7 +177,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Water.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Water.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -189,7 +189,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Solar.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Solar.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -201,7 +201,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="../public/assets/profile/icons/Accessories.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Accessories.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               </div>
               <div class="flex-1">
@@ -216,7 +216,7 @@
         <div class="relative">
           <div class="bg-white rounded-xl overflow-hidden shadow-lg">
             <img 
-              src="../public/assets/profile/sliders/profile-slider-(1).jpg" 
+              src="/assets/profile/sliders/profile-slider-(1).jpg" 
               alt="Ha-Meem Group Manufacturing Facility" 
               class="w-full h-96 object-cover"
             />
@@ -242,11 +242,22 @@
             <div class="bg-white rounded-xl p-8 shadow-lg">
               <h2 class="text-3xl font-bold text-blue-600 text-center mb-8">OUR CUSTOMER</h2>
               <div class="flex items-center justify-center space-x-8 flex-wrap gap-4">
-                <img src="../public/assets/v2/clients/American Eagle.jpg" alt="American Eagle" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
-                <img src="../public/assets/v2/clients/NEXT.jpg" alt="Next" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
-                <img src="../public/assets/v2/clients/TOMMY HILFIGER.jpg" alt="Timberland" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
-                <img src="https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png" alt="H&M" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
-                <img src="https://logos-world.net/wp-content/uploads/2020/09/Gap-Logo.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/american eagle.png" alt="American Eagle" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/Abecrombie & fitchg.png" alt="Next" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/aeropeostale.png" alt="Timberland" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/banana.png" alt="H&M" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/Carters.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+
+                <img src="/assets/profile/buyersLogo/CK.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/Dickies.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/GAP.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/GAP.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/hm-logo.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/JCPenney.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+
+                <img src="/assets/profile/buyersLogo/Khols.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/Lee.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src="/assets/profile/buyersLogo/Levice.png" alt="GAP" class="h-12 object-contain grayscale hover:grayscale-0 transition-all" />
               </div>
             </div>
 
@@ -271,19 +282,29 @@
               <h2 class="text-3xl font-bold text-blue-600 text-center mb-8">ACCREDITATIONS & CERTIFICATIONS</h2>
               <div class="grid grid-cols-5 gap-4">
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="../public/assets/profile/certificates/accessories-certificate/FSC-RPPIL-2023.jpg" alt="ISO Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="/assets/profile/certificates/accessories-certificate/FSC-RPPIL-2023.jpg" alt="ISO Certification" class="w-full h-24 object-cover rounded" />
                 </div>
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="../public/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105650.png" alt="Quality Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105650.png" alt="Quality Certification" class="w-full h-24 object-cover rounded" />
                 </div>
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="../public/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105726.png" alt="Environmental Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105726.png" alt="Environmental Certification" class="w-full h-24 object-cover rounded" />
                 </div>
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="../public/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105813.png" alt="Safety Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105813.png" alt="Safety Certification" class="w-full h-24 object-cover rounded" />
                 </div>
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="../public/assets/profile/certificates/accessories-certificate/SPIL-GRS-Certificate-2023-2024.jpg" alt="Compliance Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="/assets/profile/certificates/accessories-certificate/SPIL-GRS-Certificate-2023-2024.jpg" alt="Compliance Certification" class="w-full h-24 object-cover rounded" />
+                </div>
+
+                <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
+                  <img src="/assets/profile/certificates/lab-certificated-photo/A&F-Certificate-2024.jpg" alt="Compliance Certification" class="w-full h-24 object-cover rounded" />
+                </div>
+                <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
+                  <img src="/assets/profile/certificates/lab-certificated-photo/Americal Eagle-Certification-2024.jpg" alt="Compliance Certification" class="w-full h-24 object-cover rounded" />
+                </div>
+                <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
+                  <img src="/assets/profile/certificates/lab-certificated-photo/BAB-Certificate-2023.jpg" alt="Compliance Certification" class="w-full h-24 object-cover rounded" />
                 </div>
               </div>
             </div>
@@ -301,7 +322,10 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+definePageMeta({
+  layout: false,
+});
 import { ref } from 'vue';
 
 // Component logic can be added here for interactivity
