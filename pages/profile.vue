@@ -6,7 +6,8 @@
         <!-- Company Logo and Title -->
         <div class="flex items-center justify-center mb-8">
           <div class="bg-gradient-to-r from-amber-800 to-amber-600 text-white px-6 py-3 rounded-lg mr-4">
-            <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group" height="80" class="h-20 w-auto">
+            <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group" height="80"
+              class="h-20 w-auto">
           </div>
           <div class="flex-1">
             <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1857a3] tracking-wide">
@@ -21,13 +22,13 @@
     <!-- Main Content Section -->
     <div class="max-w-screen-2xl mx-auto px-4 py-2">
       <div class="grid lg:grid-cols-5 gap-6 items-start">
-        
+
         <!-- Left Side - Statistics Grid (3/5 width) -->
         <div class="lg:col-span-3">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
             <!-- Statistics Cards -->
-            <div v-for="(stat, index) in statisticsData" :key="index" 
-                 class="bg-white border-2 border-gray-300 rounded-xl p-3 flex items-center hover:shadow-lg transition-shadow">
+            <div v-for="(stat, index) in statisticsData" :key="index"
+              class="bg-white border-2 border-gray-300 rounded-xl p-3 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-10 h-10 md:w-12 md:h-12 mr-2 md:mr-3 flex items-center justify-center flex-shrink-0">
                 <img :src="stat.icon" :alt="stat.label" class="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 object-contain">
               </div>
@@ -45,33 +46,30 @@
             <!-- Main Slider -->
             <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden">
               <div class="flex transition-transform duration-500 ease-in-out h-full"
-                   :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
-                <div v-for="(slide, index) in mainSliderImages" :key="index" 
-                     class="w-full h-full flex-shrink-0">
+                :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
+                <div v-for="(slide, index) in mainSliderImages" :key="index" class="w-full h-full flex-shrink-0">
                   <img :src="slide.src" :alt="slide.alt" class="w-full h-full object-cover">
                 </div>
               </div>
-              
+
               <!-- Slider Navigation -->
-              <button @click="previousSlide" 
-                      class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all">
+              <button @click="previousSlide"
+                class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
               </button>
-              <button @click="nextSlide" 
-                      class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all">
+              <button @click="nextSlide"
+                class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
               </button>
-              
+
               <!-- Slide Indicators -->
               <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                <button v-for="(slide, index) in mainSliderImages" :key="index"
-                        @click="currentSlide = index"
-                        :class="['w-3 h-3 rounded-full transition-all', 
-                                currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50']">
+                <button v-for="(slide, index) in mainSliderImages" :key="index" @click="currentSlide = index" :class="['w-3 h-3 rounded-full transition-all',
+                  currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50']">
                 </button>
               </div>
             </div>
@@ -84,39 +82,39 @@
     <div class="bg-gray-50 py-12">
       <div class="max-w-screen-2xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-12">
-          
+
           <!-- Our Customers Carousel -->
           <div class="relative">
-            <div class="rounded-xl p-2 md:p-2">
+            <div class="rounded-xl p-2 md:p-4">
               <h2 class="text-2xl md:text-3xl font-bold text-[#1857a3] text-center mb-8">OUR CUSTOMER</h2>
-              
+
               <!-- Customer Carousel -->
               <div class="relative overflow-hidden">
                 <div class="flex transition-transform duration-500 ease-in-out"
-                     :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
-                  <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex" 
-                       class="w-full flex-shrink-0">
+                  :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
+                  <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
+                    class="w-full flex-shrink-0">
                     <div class="flex items-center justify-center space-x-4 md:space-x-8 flex-wrap gap-2">
-                      <img v-for="customer in customerGroup" :key="customer.name"
-                           :src="customer.src" :alt="customer.name" 
-                           class="h-8 md:h-12 object-contain grayscale hover:grayscale-0 transition-all cursor-pointer" />
+                      <img v-for="customer in customerGroup" :key="customer.name" :src="customer.src"
+                        :alt="customer.name"
+                        class="h-8 md:h-12 object-contain hover:grayscale-0 transition-all cursor-pointer" />
                     </div>
                   </div>
                 </div>
-                
+
                 <!-- Customer Navigation -->
-                <button @click="previousCustomer" 
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-1 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-              <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button @click="nextCustomer" 
-                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-1 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-              <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
+                <button @click="previousCustomer"
+                  class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-2 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
+                  <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </button>
+                <button @click="nextCustomer"
+                  class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-2 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
+                  <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -124,38 +122,37 @@
           <!-- Certifications Carousel -->
           <div class="relative">
             <div class="rounded-xl p-2 md:p-4">
-              <h2 class="text-2xl md:text-3xl font-bold text-[#1857a3] text-center mb-8">ACCREDITATIONS & CERTIFICATIONS</h2>
-              
+              <h2 class="text-2xl md:text-3xl font-bold text-[#1857a3] text-center mb-8">ACCREDITATIONS & CERTIFICATIONS
+              </h2>
+
               <!-- Certificate Carousel -->
               <div class="relative overflow-hidden">
                 <div class="flex transition-transform duration-500 ease-in-out"
-                     :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
-                  <div v-for="(certGroup, groupIndex) in certificateGroups" :key="groupIndex" 
-                       class="w-full flex-shrink-0">
+                  :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
+                  <div v-for="(certGroup, groupIndex) in certificateGroups" :key="groupIndex"
+                    class="w-full flex-shrink-0">
                     <div class="grid grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-                      <div v-for="cert in certGroup" :key="cert.name"
-                           @click="openCertificateModal(cert)"
-                           class="bg-gray-100 rounded-lg p-2 md:p-2 hover:shadow-md transition-shadow cursor-pointer">
-                        <img :src="cert.src" :alt="cert.name" 
-                             class="w-full h-12 md:h-20 object-cover rounded" />
+                      <div v-for="cert in certGroup" :key="cert.name" @click="openCertificateModal(cert)"
+                        class="bg-gray-100 rounded-lg p-2 md:p-2 hover:shadow-md transition-shadow cursor-pointer">
+                        <img :src="cert.src" :alt="cert.name" class="w-full h-12 md:h-20 object-cover rounded" />
                       </div>
                     </div>
                   </div>
                 </div>
-                
+
                 <!-- Certificate Navigation - Outside the card -->
-            <button @click="previousCertificate" 
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-1 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-              <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button @click="nextCertificate" 
-                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-1 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-              <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
+                <button @click="previousCertificate"
+                  class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-1 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
+                  <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                </button>
+                <button @click="nextCertificate"
+                  class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-1 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
+                  <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -164,14 +161,13 @@
     </div>
 
     <!-- Certificate Modal -->
-    <div v-if="selectedCertificate" 
-         @click="closeCertificateModal"
-         class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+    <div v-if="selectedCertificate" @click="closeCertificateModal"
+      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
       <div class="relative max-w-4xl max-h-full">
-        <img :src="selectedCertificate.src" :alt="selectedCertificate.name" 
-             class="max-w-full max-h-full object-contain rounded-lg">
-        <button @click="closeCertificateModal" 
-                class="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors">
+        <img :src="selectedCertificate.src" :alt="selectedCertificate.name"
+          class="max-w-full max-h-full object-contain rounded-lg">
+        <button @click="closeCertificateModal"
+          class="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
@@ -296,7 +292,7 @@ const previousCertificate = () => {
 };
 
 // Certificate modal functions
-const openCertificateModal = (certificate:any) => {
+const openCertificateModal = (certificate: any) => {
   selectedCertificate.value = certificate;
   document.body.style.overflow = 'hidden';
 };
@@ -333,7 +329,7 @@ onUnmounted(() => {
 });
 
 // Handle escape key for modal
-const handleKeydown = (event:any) => {
+const handleKeydown = (event: any) => {
   if (event.key === 'Escape' && selectedCertificate.value) {
     closeCertificateModal();
   }
