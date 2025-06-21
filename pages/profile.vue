@@ -27,10 +27,8 @@
           <div class="grid grid-cols-4 gap-4">
             <!-- Row 1 -->
             <div class="bg-white border-2 border-gray-300 rounded-xl p-2 flex items-center hover:shadow-lg transition-shadow">
-              <div class="w-12 h-12 mr-3 flex items-center justify-center bg-black rounded-full flex-shrink-0">
-                <div class="text-white font-bold text-xs">
-                  <div>EST</div>
-                </div>
+              <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Est.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
               </div>
               <div class="flex-1">
                 <div class="text-2xl font-bold text-blue-600">1984</div>
@@ -40,9 +38,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Factory.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-2xl font-bold text-blue-600">26</div>
@@ -52,12 +50,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Workforce.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-2xl font-bold text-blue-600">75K+</div>
@@ -67,10 +62,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <line x1="12" y1="1" x2="12" y2="23"></line>
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Yearly-Revew.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-2xl font-bold text-blue-600">$1B</div>
@@ -81,11 +75,9 @@
             <!-- Row 2 -->
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <path d="M16 10a4 4 0 0 1-8 0"></path>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Readymade-Garments.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-lg font-bold text-blue-600">114 M PCS</div>
@@ -95,11 +87,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                  <line x1="16" y1="8" x2="2" y2="22"></line>
-                  <line x1="17.5" y1="15" x2="9" y2="15"></line>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Sweater.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-lg font-bold text-blue-600">6 M PCS</div>
@@ -109,9 +99,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Jacket.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-lg font-bold text-blue-600">0.5 M PCS</div>
@@ -121,10 +111,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <rect x="7" y="7" width="10" height="10"></rect>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Textile-Mill.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-sm font-bold text-blue-600">
@@ -139,10 +128,9 @@
             <!-- Row 3 -->
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="12" cy="12" r="3"></circle>
-                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Spinning.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-lg font-bold text-blue-600">SPINNING MILL</div>
@@ -151,11 +139,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="8" cy="21" r="2"></circle>
-                  <circle cx="20" cy="21" r="2"></circle>
-                  <path d="M5.67 6H23l-1.68 8.39a2 2 0 0 1-2 1.61H8.75a2 2 0 0 1-2-1.74L5.23 2.74A2 2 0 0 0 3.25 1H1"></path>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/wash.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-lg font-bold text-blue-600">142 M PCS</div>
@@ -165,9 +151,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Chemical-Consumption.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-lg font-bold text-blue-600">9 M KG</div>
@@ -177,10 +163,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M8 12l2 2 4-4"></path>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Recycle-cotton.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-lg font-bold text-blue-600">1560 TON</div>
@@ -191,11 +176,9 @@
             <!-- Row 4 -->
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <path d="M12 2L2 7l10 5 10-5z"></path>
-                  <path d="M2 17l10 5 10-5"></path>
-                  <path d="M2 12l10 5 10-5"></path>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Water.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-2xl font-bold text-blue-600">63%</div>
@@ -205,11 +188,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Solar.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-lg font-bold text-blue-600">15 MW</div>
@@ -219,10 +200,9 @@
 
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12,6 12,12 16,14"></polyline>
-                </svg>
+                <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="../public/assets/profile/icons/Accessories.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              </div>
               </div>
               <div class="flex-1">
                 <div class="text-lg font-bold text-blue-600">$37.68 M</div>
@@ -236,7 +216,7 @@
         <div class="relative">
           <div class="bg-white rounded-xl overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+              src="../public/assets/profile/sliders/profile-slider-(1).jpg" 
               alt="Ha-Meem Group Manufacturing Facility" 
               class="w-full h-96 object-cover"
             />
@@ -291,19 +271,19 @@
               <h2 class="text-3xl font-bold text-blue-600 text-center mb-8">ACCREDITATIONS & CERTIFICATIONS</h2>
               <div class="grid grid-cols-5 gap-4">
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="ISO Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="../public/assets/profile/certificates/accessories-certificate/FSC-RPPIL-2023.jpg" alt="ISO Certification" class="w-full h-24 object-cover rounded" />
                 </div>
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Quality Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="../public/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105650.png" alt="Quality Certification" class="w-full h-24 object-cover rounded" />
                 </div>
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Environmental Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="../public/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105726.png" alt="Environmental Certification" class="w-full h-24 object-cover rounded" />
                 </div>
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Safety Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="../public/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105813.png" alt="Safety Certification" class="w-full h-24 object-cover rounded" />
                 </div>
                 <div class="bg-gray-100 rounded-lg p-4 hover:shadow-md transition-shadow">
-                  <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Compliance Certification" class="w-full h-24 object-cover rounded" />
+                  <img src="../public/assets/profile/certificates/accessories-certificate/SPIL-GRS-Certificate-2023-2024.jpg" alt="Compliance Certification" class="w-full h-24 object-cover rounded" />
                 </div>
               </div>
             </div>
