@@ -38,6 +38,11 @@
               </div>
             </div>
           </div>
+          <div class="py-3" >
+            <P>
+              <strong class="text-red-900" >*</strong> These data have been provided on an annual basis.
+            </P>
+          </div>
         </div>
 
         <!-- Right Side - Main Slider (2/5 width) -->
