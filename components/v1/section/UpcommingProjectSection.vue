@@ -15,7 +15,7 @@
     <!-- Solar Energy Content Sections -->
     <div class="">
       <!-- Three Column Layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white p-8 rounded-lg shadow-sm">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white p-8 rounded-lg ">
 
         <!-- First Column - Current Solar Achievements -->
         <div class="space-y-4">
