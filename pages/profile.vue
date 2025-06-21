@@ -28,10 +28,7 @@
             <!-- Row 1 -->
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 text-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mx-auto mb-2 flex items-center justify-center">
-                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12,6 12,12 16,14"></polyline>
-                </svg>
+                <img src="../public/assets/profile/icons/Est.png" alt="Established Icon" class="w-8 h-8">
               </div>
               <div class="text-2xl font-bold text-blue-600">1984</div>
               <div class="text-xs font-medium text-gray-600">ESTABLISHED</div>
