@@ -19,16 +19,16 @@
     </div>
 
     <!-- Main Content Section -->
-    <div class="max-w-screen-2xl mx-auto px-6 py-8">
-      <div class="grid lg:grid-cols-2 gap-8 items-start">
+    <div class="max-w-screen-2xl mx-auto px-4 py-2">
+      <div class="grid lg:grid-cols-2 gap-4 items-start">
         
         <!-- Left Side - Statistics Grid -->
         <div class="relative">
-          <div class="grid grid-cols-4 gap-4">
+          <div class="grid grid-cols-4 gap-2">
             <!-- Row 1 -->
             <div class="bg-white border-2 border-gray-300 rounded-xl p-2 flex items-center hover:shadow-lg transition-shadow">
-              <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Est.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+              <div class="w-12 h-12 mr-2 flex items-center justify-center rounded-full flex-shrink-0">
+                <img src="/assets/profile/icons/Est.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               <div class="flex-1">
                 <div class="text-2xl font-bold text-blue-600">1984</div>
@@ -39,7 +39,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Factory.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Factory.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -51,7 +51,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Workforce.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Workforce.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -63,7 +63,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Yearly-Revew.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Yearly-Revew.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -76,7 +76,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Readymade-Garments.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Readymade-Garments.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -88,7 +88,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Sweater.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Sweater.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -100,7 +100,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Jacket.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Jacket.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -112,7 +112,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Textile-Mill.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Textile-Mill.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -129,7 +129,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Spinning.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Spinning.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -140,7 +140,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/wash.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/wash.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -152,7 +152,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Chemical-Consumption.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Chemical-Consumption.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -164,7 +164,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Recycle-cotton.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Recycle-cotton.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -177,7 +177,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Water.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Water.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -189,7 +189,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Solar.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Solar.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
@@ -201,7 +201,7 @@
             <div class="bg-white border-2 border-gray-300 rounded-xl p-4 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-12 h-12 mr-3 flex items-center justify-center flex-shrink-0">
                 <div class="w-12 h-12 mr-3 flex items-center justify-center rounded-full flex-shrink-0">
-                <img src="/assets/profile/icons/Accessories.png" alt="Ha-Meem Group Logo" class="h-8 w-8">
+                <img src="/assets/profile/icons/Accessories.png" alt="Ha-Meem Group Logo" class="h-12 w-12">
               </div>
               </div>
               <div class="flex-1">
