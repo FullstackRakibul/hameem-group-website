@@ -202,7 +202,36 @@ const allImages = ref<GalleryImage[]>([
     alt: 'Sustainability Event',
     title: 'Green Initiative Launch',
     category: 'Events'
+  },
+
+
+
+
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-01.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Top'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-02.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-03.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-04.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Non-Denim'
   }
+  
 ]);
 
 const filteredImages = computed(() => {
