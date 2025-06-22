@@ -45,20 +45,25 @@
           </div>
 
           <!-- Company Stats -->
-          <div class="grid grid-cols-2 gap-6">
+          <!-- <div class="grid grid-cols-2 gap-6">
             <div
               class="bg-secondary rounded-2xl p-6 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300">
-              <div class="text-3xl font-bold text-white mb-2">25+</div>
-              <div class="text-md text-white font-medium">Years of Excellence</div>
+              <div class="text-3xl font-bold text-white mb-2">TOP</div>
+              <div class="text-md text-white font-medium">70%</div>
+            </div>
+            <div
+              class="bg-secondary rounded-2xl p-6 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300">
+              <div class="text-3xl font-bold text-white mb-2">BOTTOM</div>
+              <div class="text-md text-white font-medium">25%</div>
             </div>
             <div
               class="bg-primary rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-              <div class="text-3xl font-bold text-white mb-2">75K+</div>
-              <div class="text-sm text-white font-medium">Employees Worldwide</div>
+              <div class="text-3xl font-bold text-white mb-2">KIDS</div>
+              <div class="text-sm text-white font-medium">5%</div>
             </div>
-          </div>
+          </div> -->
         </div>
-
+        
         <!-- Right: Mission & Vision Carousel -->
         <div class="w-full">
           <div class="relative   mx-auto">
@@ -153,6 +158,23 @@
             </div>
           </div>
         </div>
+        <div class="grid grid-cols-3 -mt-4 gap-6">
+            <div
+              class="bg-secondary rounded-xl p-2 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center gap-5">
+              <div class="text-2xl font-bold text-white ">TOP</div>
+              <div class="text-xl text-white font-medium">70%</div>
+            </div>
+            <div
+              class="bg-primary rounded-xl p-2 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center gap-5">
+              <div class="text-2xl font-bold text-white">BOTTOM</div>
+              <div class="text-xl text-white font-medium">25%</div>
+            </div>
+            <div
+              class="bg-secondary rounded-xl p-2 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center gap-5">
+              <div class="text-2xl font-bold text-white">KIDS</div>
+              <div class="text-xl text-white font-medium">5%</div>
+            </div>
+          </div>
       </div>
 
       <!-- Interactive Values Showcase -->
@@ -238,13 +260,25 @@ const carouselImages = [
     description: "State-of-the-art production facilities"
   },
   {
-    src: "/assets/v1/section/mission-vision/mv-slider-02.jpg",
+    src: "/assets/v1/section/mission-vision/HG-mission-vission-slider-02.jpg",
     alt: "Mission Vision Image 2",
     title: "Global Excellence",
     description: "Serving customers worldwide"
   },
   {
-    src: "/assets/v1/section/mission-vision/mv-slider-03.jpg",
+    src: "/assets/v1/section/mission-vision/HG-mission-vission-slider-03.jpg",
+    alt: "Mission Vision Image 3",
+    title: "Innovation Hub",
+    description: "Leading technology and innovation"
+  },
+  {
+    src: "/assets/v1/section/mission-vision/HG-mission-vission-slider-04.jpg",
+    alt: "Mission Vision Image 3",
+    title: "Innovation Hub",
+    description: "Leading technology and innovation"
+  },
+  {
+    src: "/assets/v1/section/mission-vision/HG-mission-vission-slider-06.jpg",
     alt: "Mission Vision Image 3",
     title: "Innovation Hub",
     description: "Leading technology and innovation"
@@ -286,7 +320,7 @@ const goToSlide = (index) => {
 const startAutoPlay = () => {
   slideInterval = setInterval(() => {
     nextSlide();
-  }, 5000);
+  }, 2000);
 };
 
 const resetAutoPlay = () => {

@@ -126,7 +126,8 @@ const lightboxOpen = ref(false);
 const currentImageIndex = ref(0);
 const visibleCount = ref(12);
 
-const categories = ['All', 'Factory', 'Products', 'Team', 'Events'];
+// const categories = ['All', 'Factory', 'Products', 'Team', 'Events'];
+const categories = ['Denim', 'Non-Denim', 'Kids','Top', 'Events'];
 
 // Sample gallery images - replace with your actual images
 const allImages = ref<GalleryImage[]>([
@@ -134,19 +135,19 @@ const allImages = ref<GalleryImage[]>([
     src: 'https://media.licdn.com/dms/image/v2/C511BAQFTryKe996KHg/company-background_10000/company-background_10000/0/1584260827049/ha_meem_group24_cover?e=2147483647&v=beta&t=FmggH4fpYSN3100dclDN1BswczVaGfncxruJEfwkkuM',
     alt: 'Factory Floor',
     title: 'Modern Production Line',
-    category: 'Factory'
+    category: 'Events'
   },
   {
     src: 'https://media.licdn.com/dms/image/sync/v2/D5627AQFOL3iPd96xsg/articleshare-shrink_800/articleshare-shrink_800/0/1726509656107?e=2147483647&v=beta&t=XRSzd_pYaDD505q0Tn_lC0rAmn24EW86FL9JJmO6YAU',
     alt: 'Denim Products',
     title: 'Premium Denim Collection',
-    category: 'Products'
+    category: 'Events'
   },
   {
     src: 'https://media.licdn.com/dms/image/v2/D5622AQFoIp5Pnsze7g/feedshare-shrink_800/B56ZYizQSOGoAg-/0/1744340589192?e=2147483647&v=beta&t=TE_w-rEqrcLlzgGjwOxKcoYPLc_QWe81m2Ku3hsZj4k',
     alt: 'Team Meeting',
     title: 'Strategic Planning Session',
-    category: 'Team'
+    category: 'Events'
   },
   {
     src: 'https://textilefocus.com/wp-content/uploads/hameem-group-tax.jpg',
@@ -158,19 +159,19 @@ const allImages = ref<GalleryImage[]>([
     src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS51jB572_4L7O1UWg0W7-TzKZxNhIa3Gk9Ig_JUYL5ru_R-KRY2RR1GNedgOJ7DCpQ80&usqp=CAU',
     alt: 'Quality Control',
     title: 'Quality Assurance Process',
-    category: 'Factory'
+    category: 'Events'
   },
   {
     src: 'https://static.theceomagazine.net/wp-content/uploads/2023/03/01222848/DelwarHossain_HA-MEEMGROUP_Support2.jpeg',
     alt: 'Fashion Show',
     title: 'Latest Collection Showcase',
-    category: 'Products'
+    category: 'Events'
   },
   {
     src: 'https://static.theceomagazine.net/wp-content/uploads/2023/03/01222855/DelwarHossain_HA-MEEMGROUP_Support4.jpeg',
     alt: 'Team Building',
     title: 'Annual Team Retreat',
-    category: 'Team'
+    category: 'Events'
   },
   {
     src: 'https://static.theceomagazine.net/wp-content/uploads/2023/03/01222845/DelwarHossain_HA-MEEMGROUP_Support1-1024x569-1.jpeg',
@@ -182,19 +183,19 @@ const allImages = ref<GalleryImage[]>([
     src: 'https://www.tbsnews.net/sites/default/files/styles/big_3/public/images/2020/10/22/press_photo-prime_bank_ha-meem_group_sign_payroll_agreement_0.jpg',
     alt: 'Machinery',
     title: 'Advanced Manufacturing Equipment',
-    category: 'Factory'
+    category: 'Events'
   },
   {
     src: 'https://textiletoday.com.bd/storage/uploads/2016/12/DBL-Award-Receiving.jpg',
     alt: 'Fabric Samples',
     title: 'Premium Fabric Selection',
-    category: 'Products'
+    category: 'Events'
   },
   {
     src: 'https://media.licdn.com/dms/image/v2/D5622AQG62L2WlW7msA/feedshare-shrink_800/B56ZauxoB5GgAs-/0/1746688983004?e=2147483647&v=beta&t=r5IaSXKcJZR8SRJyonx7B4_xH9xgYtquSe-7q9NhZXw',
     alt: 'Leadership Team',
     title: 'Executive Leadership',
-    category: 'Team'
+    category: 'Events'
   },
   {
     src: 'https://textilefocus.com/wp-content/uploads/2025/02/image-28.png',

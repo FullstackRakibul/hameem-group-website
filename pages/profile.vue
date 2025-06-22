@@ -4,13 +4,13 @@
     <div class="bg-white py-8 px-6">
       <div class="max-w-screen-2xl mx-auto">
         <!-- Company Logo and Title -->
-        <div class="flex items-center justify-center mb-8">
+        <div class="flex items-center justify-center md:mb-8">
           <div class="bg-gradient-to-r from-amber-800 to-amber-600 text-white px-6 py-3 rounded-lg mr-4">
             <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group" height="80"
               class="h-20 w-auto">
           </div>
           <div class="flex-1">
-            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1857a3] tracking-wide">
+            <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-[#1857a3] tracking-wide">
               LEADING WHOLESALE CLOTHING MANUFACTURER IN THE WORLD
             </h1>
             <div class="w-full h-1 bg-[#1857a3] mt-2 rounded"></div>
@@ -38,10 +38,10 @@
               </div>
             </div>
           </div>
-          <div class="py-3" >
-            <P>
-              <strong class="text-red-900" >*</strong> These data have been provided on an annual basis.
-            </P>
+          <div class="py-3">
+            <p>
+              <strong class="text-red-900">*</strong> These data have been provided on an annual basis.
+            </p>
           </div>
         </div>
 
@@ -70,7 +70,6 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
               </button>
-
               <!-- Slide Indicators -->
               <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                 <button v-for="(slide, index) in mainSliderImages" :key="index" @click="currentSlide = index" :class="['w-3 h-3 rounded-full transition-all',
@@ -84,86 +83,78 @@
     </div>
 
     <!-- Bottom Section -->
-    <div class="bg-gray-50 py-12">
-      <div class="max-w-screen-2xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-12">
+    <!-- Bottom Section -->
+    <div class="bg-gray-50 py-8 md:py-12">
+      <div class="max-w-screen-2xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8">
 
           <!-- Our Customers Carousel -->
           <div class="relative">
-            <div class="rounded-xl p-2 md:p-4">
-              <h2 class="text-2xl md:text-3xl font-bold text-[#1857a3] text-center mb-8">OUR CUSTOMER</h2>
-
-              <!-- Customer Carousel -->
-              <div class="relative overflow-hidden">
-                <div class="flex transition-transform duration-500 ease-in-out"
-                  :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
-                  <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
-                    class="w-full flex-shrink-0">
-                    <div class="flex items-center justify-center space-x-4 md:space-x-8 flex-wrap gap-2">
-                      <img v-for="customer in customerGroup" :key="customer.name" :src="customer.src"
-                        :alt="customer.name"
-                        class="h-8 md:h-12 object-contain hover:grayscale-0 transition-all cursor-pointer" />
-                    </div>
-                  </div>
+            <h2 class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6">OUR CUSTOMER</h2>
+            <div class="relative overflow-hidden">
+              <div class="flex transition-transform duration-500 ease-in-out whitespace-nowrap"
+                :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
+                <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
+                  class="w-full flex-shrink-0 flex justify-center gap-4 md:gap-6">
+                  <img loading="lazy" v-for="customer in customerGroup" :key="customer.name" :src="customer.src" :alt="customer.name"
+                    class="h-8 sm:h-10 md:h-12 object-contain cursor-pointer border-r border-gray-300 pr-4 sm:pr-6 md:pr-8" />
                 </div>
-
-                <!-- Customer Navigation -->
-                <button @click="previousCustomer"
-                  class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-2 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-                  <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                  </svg>
-                </button>
-                <button @click="nextCustomer"
-                  class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-2 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-                  <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
               </div>
             </div>
+
+            <!-- Navigation -->
+            <button @click="previousCustomer"
+              class="absolute left-1 top-1/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button @click="nextCustomer"
+              class="absolute right-1 top-1/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
 
           <!-- Certifications Carousel -->
           <div class="relative">
-            <div class="rounded-xl p-2 md:p-4">
-              <h2 class="text-2xl md:text-3xl font-bold text-[#1857a3] text-center mb-8">ACCREDITATIONS & CERTIFICATIONS
-              </h2>
-
-              <!-- Certificate Carousel -->
-              <div class="relative overflow-hidden">
-                <div class="flex transition-transform duration-500 ease-in-out"
-                  :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
-                  <div v-for="(certGroup, groupIndex) in certificateGroups" :key="groupIndex"
-                    class="w-full flex-shrink-0">
-                    <div class="grid grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-                      <div v-for="cert in certGroup" :key="cert.name" @click="openCertificateModal(cert)"
-                        class="bg-gray-100 rounded-lg p-2 md:p-2 hover:shadow-md transition-shadow cursor-pointer">
-                        <img :src="cert.src" :alt="cert.name" class="w-full h-12 md:h-20 object-cover rounded" />
-                      </div>
-                    </div>
+            <h2 class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6">ACCREDITATIONS &
+              CERTIFICATIONS</h2>
+            <div class="relative overflow-hidden">
+              <div class="flex transition-transform duration-500 ease-in-out whitespace-nowrap"
+                :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
+                <div v-for="(certGroup, groupIndex) in certificateGroups" :key="groupIndex"
+                  class="w-full flex-shrink-0 flex justify-center gap-4 sm:gap-6 md:gap-10">
+                  <div v-for="cert in certGroup" :key="cert.name" @click="openCertificateModal(cert)"
+                    class="cursor-pointer">
+                    <img loading="lazy" :src="cert.src" :alt="cert.name"
+                      class="h-16 sm:h-20 md:h-24 w-auto object-contain hover:scale-105 transition-transform duration-300 border-r border-gray-300 pr-4 sm:pr-6 md:pr-8" />
                   </div>
                 </div>
-
-                <!-- Certificate Navigation - Outside the card -->
-                <button @click="previousCertificate"
-                  class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-1 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-                  <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                  </svg>
-                </button>
-                <button @click="nextCertificate"
-                  class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#1857a3] text-white p-2 md:p-1 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-10">
-                  <svg class="w-4 h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
               </div>
             </div>
+
+            <!-- Navigation -->
+            <button @click="previousCertificate"
+              class="absolute left-1 top-1/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button @click="nextCertificate"
+              class="absolute right-1 top-1/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10">
+              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
+
         </div>
       </div>
     </div>
+
+
 
     <!-- Certificate Modal -->
     <div v-if="selectedCertificate" @click="closeCertificateModal"
@@ -183,11 +174,12 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { definePageMeta } from '#imports';
+
 definePageMeta({
   layout: false,
 });
-
-import { ref, computed, onMounted, onUnmounted } from 'vue';
 
 // Main slider data
 const currentSlide = ref(0);
@@ -206,8 +198,8 @@ const statisticsData = ref([
   { icon: '/assets/profile/icons/Readymade-Garments.png', value: '114 M PCS', label: 'Readymade Garments' },
   { icon: '/assets/profile/icons/Sweater.png', value: '6 M PCS', label: 'Sweater' },
   { icon: '/assets/profile/icons/Jacket.png', value: '0.5 M PCS', label: 'Jacket' },
-  { icon: '/assets/profile/icons/Textile-Mill.png', value: 'DENIM<br>30 M <small>YARD</small><br>60 M <small>YARD</small>', label: 'Non Denim' },
-  { icon: '/assets/profile/icons/Spinning.png', value: 'DENIM<br>60 M <small>YARD</small><br>30 M <small>YARD</small>', label: 'Non Denim' },
+  { icon: '/assets/profile/icons/Textile-Mill.png', value: '<p class="text-sm text-black">DENIM</p>30 M <small>YARD</small> <br>60 M <small>YARD</small> ', label: 'Non Denim' },
+  { icon: '/assets/profile/icons/Spinning.png', value: '<p class="text-sm text-black">DENIM</p>60 M <small>YARD</small><br>30 M <small>YARD</small> ', label: 'Non Denim' },
   { icon: '/assets/profile/icons/wash.png', value: '142 M PCS', label: 'Wash' },
   { icon: '/assets/profile/icons/Chemical-Consumption.png', value: '9 M KG', label: 'Chemical Consumption' },
   { icon: '/assets/profile/icons/Recycle-cotton.png', value: '1560 TON', label: 'Recycle Cotton' },
@@ -217,20 +209,20 @@ const statisticsData = ref([
 ]);
 
 // Customer carousel data
-const currentCustomerSlide = ref(0);
+const currentCustomerSlide = ref(1);
 const customersData = ref([
   { name: 'American Eagle', src: '/assets/profile/buyersLogo/american eagle.png' },
   { name: 'Abercrombie & Fitch', src: '/assets/profile/buyersLogo/Abecrombie & fitchg.png' },
   { name: 'Aeropostale', src: '/assets/profile/buyersLogo/aeropeostale.png' },
   { name: 'Banana Republic', src: '/assets/profile/buyersLogo/banana.png' },
   { name: 'Carters', src: '/assets/profile/buyersLogo/Carters.png' },
-  { name: 'Calvin Klein', src: '/assets/profile/buyersLogo/CK.png' },
   { name: 'Dickies', src: '/assets/profile/buyersLogo/Dickies.png' },
   { name: 'GAP', src: '/assets/profile/buyersLogo/GAP.png' },
+  { name: 'Calvin Klein', src: '/assets/profile/buyersLogo/CK.png' },
   { name: 'H&M', src: '/assets/profile/buyersLogo/hm-logo.png' },
-  { name: 'JCPenney', src: '/assets/profile/buyersLogo/JCPenney.png' },
   { name: 'Kohls', src: '/assets/profile/buyersLogo/Khols.png' },
   { name: 'Lee', src: '/assets/profile/buyersLogo/Lee.png' },
+  { name: 'JCPenney', src: '/assets/profile/buyersLogo/JCPenney.png' },
   { name: 'Levis', src: '/assets/profile/buyersLogo/Levice.png' },
 ]);
 
@@ -251,6 +243,7 @@ const certificatesData = ref([
   { name: 'American Eagle Certificate', src: '/assets/profile/certificates/lab-certificated-photo/Americal Eagle-Certification-2024.jpg' },
   { name: 'BAB Certificate', src: '/assets/profile/certificates/lab-certificated-photo/BAB-Certificate-2023.jpg' },
 ]);
+
 
 // Computed properties for grouping
 const customerGroups = computed(() => {
@@ -297,7 +290,7 @@ const previousCertificate = () => {
 };
 
 // Certificate modal functions
-const openCertificateModal = (certificate: any) => {
+const openCertificateModal = (certificate: Certificate) => {
   selectedCertificate.value = certificate;
   document.body.style.overflow = 'hidden';
 };
@@ -334,7 +327,7 @@ onUnmounted(() => {
 });
 
 // Handle escape key for modal
-const handleKeydown = (event: any) => {
+const handleKeydown = (event: KeyboardEvent) => {
   if (event.key === 'Escape' && selectedCertificate.value) {
     closeCertificateModal();
   }
