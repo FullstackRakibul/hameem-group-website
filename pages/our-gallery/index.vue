@@ -127,7 +127,7 @@ const currentImageIndex = ref(0);
 const visibleCount = ref(12);
 
 // const categories = ['All', 'Factory', 'Products', 'Team', 'Events'];
-const categories = ['Denim', 'Non-Denim', 'Kids','Top', 'Events'];
+const categories = ['Denim', 'Non-Denim', 'Kids','Tops', 'Events'];
 
 // Sample gallery images - replace with your actual images
 const allImages = ref<GalleryImage[]>([
@@ -211,7 +211,7 @@ const allImages = ref<GalleryImage[]>([
     src: '/assets/v1/section/mission-vision/hg-web-mv-slider-01.jpg',
     alt: 'Sustainability Event',
     title: 'Green Initiative Launch',
-    category: 'Top'
+    category: 'Tops'
   },
   {
     src: '/assets/v1/section/mission-vision/hg-web-mv-slider-02.jpg',
