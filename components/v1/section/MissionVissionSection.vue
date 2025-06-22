@@ -187,9 +187,9 @@
           </h2>
 
           <SectionUnderline />
-          <p class="text-gray-600 max-w-2xl mx-auto">
+          <!-- <p class="text-gray-600 max-w-2xl mx-auto">
             Hover over each value to see how we implement it in our daily operations
-          </p>
+          </p> -->
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
