@@ -45,7 +45,7 @@
             </div>
 
             <!-- Right: Image Section -->
-            <div class="max-h-2xl mx-auto px-2 md:px-4 my-8 flex items-center justify-center">
+            <div class="max-h-xl mx-auto px-2 md:px-4 my-8 flex items-center justify-center">
               <div class="relative group">
                 <div
                   class="absolute -inset-4 bg-gradient-to-r from-white/20 to-white/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -240,7 +240,7 @@ const observeElements = () => {
 };
 
 onMounted(() => {
-  selectedAward.value = awards.value.length > 0 ? awards.value[0] : null;
+  selectedAward.value = awards.value.length > 1 ? awards.value[1] : null;
   observeElements();
 });
 </script>
