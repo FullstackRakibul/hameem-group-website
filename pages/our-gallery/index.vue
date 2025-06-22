@@ -230,6 +230,30 @@ const allImages = ref<GalleryImage[]>([
     alt: 'Sustainability Event',
     title: 'Green Initiative Launch',
     category: 'Non-Denim'
+  },
+  {
+    src: '/assets/v1/gallery/Denim-slider-55.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
+  },
+  {
+    src: 'https://cdn.mos.cms.futurecdn.net/23wzBFcc6Yej4aar3KPSXe.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
+  },
+  {
+    src: 'https://zola.in/cdn/shop/articles/Jan_ex_Blog_19_3_-min.jpg?v=1705729662',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
+  },
+  {
+    src: 'https://steam-one.com/cdn/shop/articles/Visuels_blog_28_2356f440-155c-4b5f-92eb-8909cf66b0ee.jpg?v=1745405083&width=1100',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
   }
   
 ]);
