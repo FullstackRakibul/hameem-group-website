@@ -1,19 +1,22 @@
 <template>
   <div class="bg-white min-h-screen">
     <!-- Header Section -->
-    <div class="bg-white py-8 px-6">
+    <div class="bg-white py-6 sm:py-8 px-4 sm:px-6 shadow-sm">
       <div class="max-w-screen-2xl mx-auto">
-        <!-- Company Logo and Title -->
-        <div class="flex items-center justify-center md:mb-8">
-          <div class="bg-gradient-to-r from-amber-800 to-amber-600 text-white px-6 py-3 rounded-lg mr-4">
-            <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group" height="80"
-              class="h-20 w-auto">
+        <!-- Company Logo and Title Container -->
+        <div class="flex flex-col md:flex-row items-center justify-center md:gap-8 mb-6 md:mb-2">
+          <!-- Logo Container -->
+          <div class="p-2 sm:p-3 rounded-lg border border-gray-200 bg-white shadow-sm mb-4 md:mb-0">
+            <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group"
+              class="h-16 sm:h-20 w-auto">
           </div>
-          <div class="flex-1 ">
-            <h1 class="text-xl text-center md:text-3xl lg:text-4xl font-bold text-[#1857a3] tracking-wide">
+          <!-- Title Container -->
+          <div class="w-full md:w-auto text-center">
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#1857a3] leading-tight">
               LEADING WHOLESALE CLOTHING MANUFACTURER IN BANGLADESH
             </h1>
-            <div class="w-full h-1 bg-[#1857a3] mt-2 rounded"></div>
+            <!-- Minimalist bottom border for the title -->
+            <div class="w-full  mx-auto h-0.5 bg-[#1857a3] mt-2 rounded-full"></div>
           </div>
         </div>
       </div>
@@ -33,8 +36,8 @@
                 <img :src="stat.icon" :alt="stat.label" class="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 object-contain">
               </div>
               <div class="flex-1 min-w-0">
-                <div class="text-lg md:text-xl lg:text-xl font-bold text-[#1857a3] truncate" v-html="stat.value"></div>
-                <div class="text-xs font-semibold text-gray-600 uppercase leading-tight">{{ stat.label }}</div>
+                <div class="text-lg text-center md:text-xl lg:text-xl font-bold text-[#1857a3] truncate" v-html="stat.value"></div>
+                <div class="text-xs text-center font-semibold text-gray-600 uppercase leading-tight">{{ stat.label }}</div>
               </div>
             </div>
           </div>
@@ -203,13 +206,10 @@ const statisticsData = ref([
   { icon: '/assets/profile/icons/wash.png', value: '142M/YR', label: 'Wash' },
   { icon: '/assets/profile/icons/Female-employes.png', value: '80%', label: 'Female Employees' },
   { icon: '/assets/profile/icons/Recycle-Fiber.png', value: '1560MT/YR', label: 'Recycle Fiber' },
-  // { icon: '/assets/profile/icons/Chemical-Consumption.png', value: '9 M KG', label: 'Chemical Consumption' },
-  // { icon: '/assets/profile/icons/Recycle-cotton.png', value: '1560 TON', label: 'Recycle Cotton' },
   { icon: '/assets/profile/icons/Water.png', value: '63%', label: 'Water Recycle' },
   { icon: '/assets/profile/icons/Solar.png', value: '15 MW', label: 'Solar Capacity' },
   { icon: '/assets/profile/icons/Accessories.png', value: '', label: '100% In House Accessories' },
   { icon: '/assets/profile/icons/Lasear.png', value: '81', label: 'Laser Machine' },
-
   { icon: '/assets/profile/icons/co-Genaration.png', value: '75%', label: 'CO Genaration' },
   { icon: '/assets/profile/icons/ozone.png', value: '14', label: 'OZONE Machine' },
   { icon: '/assets/profile/icons/Chemical-Consumption.png', value: '', label: 'In House Laboratory' },

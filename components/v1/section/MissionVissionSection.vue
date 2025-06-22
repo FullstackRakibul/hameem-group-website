@@ -38,33 +38,31 @@
             <div
               class="absolute bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             </div>
-            <div class="relative bg-white rounded-3xl p-8">
+            <div class="relative  bg-white rounded-3xl p-2 max-w-fit mx-auto transition-transform duration-500 group-hover:scale-105">
               <img src="~/assets/missionvission-sectionImage.png" alt="Ha-Meem Group Mission Vision"
                 class="w-full h-auto rounded-2xl transition-transform duration-500 group-hover:scale-105" />
             </div>
           </div>
 
           <!-- Company Stats - Updated with new minimalist design -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
-            <!-- Card 1: TOP -->
+          <div class="
+            flex flex-col sm:flex-row items-stretch justify-between w-full
+            bg-gray-100 rounded-xl p-3 shadow-inner border border-gray-200
+            space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 lg:space-x-8
+          ">
+            <!-- Segment 1: TOP -->
             <div class="
-              relative group
-              bg-white rounded-xl
-              p-4 shadow-sm hover:shadow-md
-              border border-gray-200
-              transition-all duration-200 ease-in-out
-              overflow-hidden
-              flex flex-col items-center justify-center
+              relative group flex-1
+              flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4 md:gap-5
+              py-2 px-4 sm:py-0
             ">
-              <div class="z-10 text-center">
-                <div class="text-2xl sm:text-3xl font-bold text-gray-800 tracking-tight mb-1">
-                  TOP
-                </div>
-                <div class="text-3xl sm:text-4xl font-semibold text-indigo-600">
-                  70%
-                </div>
+              <div class="text-lg sm:text-xl font-bold text-gray-800 uppercase">
+                TOP
               </div>
+              <div class="text-xl sm:text-2xl font-medium text-indigo-600">
+                70%
+              </div>
+              <div class="absolute right-0 top-8 -translate-y-1/2 w-0.5 h-full bg-primary hidden sm:block"></div>
               <div class="
                 absolute bottom-0 left-0 w-full h-0.5
                 bg-gradient-to-r from-indigo-500 to-purple-600
@@ -73,24 +71,19 @@
               "></div>
             </div>
 
-            <!-- Card 2: BOTTOM -->
+            <!-- Segment 2: BOTTOM -->
             <div class="
-              relative group
-              bg-white rounded-xl
-              p-4 shadow-sm hover:shadow-md
-              border border-gray-200
-              transition-all duration-200 ease-in-out
-              overflow-hidden
-              flex flex-col items-center justify-center
+              relative group flex-1
+              flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4 md:gap-5
+              py-2 px-4 sm:py-0
             ">
-              <div class="z-10 text-center">
-                <div class="text-2xl sm:text-3xl font-bold text-gray-800 tracking-tight mb-1">
-                  BOTTOM
-                </div>
-                <div class="text-3xl sm:text-4xl font-semibold text-sky-600">
-                  25%
-                </div>
+              <div class="text-lg sm:text-xl font-bold text-gray-800 uppercase">
+                BOTTOM
               </div>
+              <div class="text-xl sm:text-2xl font-medium text-sky-600">
+                25%
+              </div>
+              <div class="absolute right-0 top-8 -translate-y-1/2 w-0.5 h-full bg-primary hidden sm:block"></div>
               <div class="
                 absolute bottom-0 left-0 w-full h-0.5
                 bg-gradient-to-r from-sky-500 to-cyan-600
@@ -99,23 +92,17 @@
               "></div>
             </div>
 
-            <!-- Card 3: KIDS -->
+            <!-- Segment 3: KIDS -->
             <div class="
-              relative group
-              bg-white rounded-xl
-              p-4 shadow-sm hover:shadow-md
-              border border-gray-200
-              transition-all duration-200 ease-in-out
-              overflow-hidden
-              flex flex-col items-center justify-center
+              relative group flex-1
+              flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4 md:gap-5
+              py-2 px-4 sm:py-0
             ">
-              <div class="z-10 text-center">
-                <div class="text-2xl sm:text-3xl font-bold text-gray-800 tracking-tight mb-1">
-                  KIDS
-                </div>
-                <div class="text-3xl sm:text-4xl font-semibold text-rose-600">
-                  5%
-                </div>
+              <div class="text-lg sm:text-xl font-bold text-gray-800 uppercase">
+                KIDS
+              </div>
+              <div class="text-xl sm:text-2xl font-medium text-rose-600">
+                5%
               </div>
               <div class="
                 absolute bottom-0 left-0 w-full h-0.5
@@ -124,7 +111,6 @@
                 transition-transform duration-200 ease-out
               "></div>
             </div>
-
           </div>
         </div>
 
@@ -282,25 +268,25 @@ const carouselImages = [
     description: "Serving customers worldwide"
   },
   {
-    src: "/assets/v1/section/mission-vision/HG-mission-vission-slider-03.jpg",
+    src: "/assets/v1/section/mission-vision/hg-web-mv-slider-01.jpg",
     alt: "Mission Vision Image 3",
     title: "Innovation Hub",
     description: "Leading technology and innovation"
   },
   {
-    src: "/assets/v1/section/mission-vision/HG-mission-vission-slider-04.jpg",
+    src: "/assets/v1/section/mission-vision/hg-web-mv-slider-02.jpg",
     alt: "Mission Vision Image 3",
     title: "Innovation Hub",
     description: "Leading technology and innovation"
   },
   {
-    src: "/assets/v1/section/mission-vision/HG-mission-vission-slider-06.jpg",
+    src: "/assets/v1/section/mission-vision/hg-web-mv-slider-03.jpg",
     alt: "Mission Vision Image 3",
     title: "Innovation Hub",
     description: "Leading technology and innovation"
   },
   {
-    src: "/assets/v1/section/mission-vision/mv-slider-04.jpg",
+    src: "/assets/v1/section/mission-vision/hg-web-mv-slider-04.jpg",
     alt: "Mission Vision Image 4",
     title: "Sustainable Future",
     description: "Environmental responsibility"
