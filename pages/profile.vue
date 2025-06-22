@@ -9,9 +9,9 @@
             <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group" height="80"
               class="h-20 w-auto">
           </div>
-          <div class="flex-1">
-            <h1 class="text-xl md:text-3xl lg:text-4xl font-bold text-[#1857a3] tracking-wide">
-              LEADING WHOLESALE CLOTHING MANUFACTURER IN THE WORLD
+          <div class="flex-1 ">
+            <h1 class="text-xl text-center md:text-3xl lg:text-4xl font-bold text-[#1857a3] tracking-wide">
+              LEADING WHOLESALE CLOTHING MANUFACTURER IN BANGLADESH
             </h1>
             <div class="w-full h-1 bg-[#1857a3] mt-2 rounded"></div>
           </div>
@@ -182,7 +182,7 @@ definePageMeta({
 });
 
 // Main slider data
-const currentSlide = ref(0);
+const currentSlide = ref(-1);
 const mainSliderImages = ref([
   { src: '/assets/profile/sliders/profile-slider-(1).jpg', alt: 'Ha-Meem Group Manufacturing Facility 1' },
   { src: '/assets/profile/sliders/profile-slider-(2).jpg', alt: 'Ha-Meem Group Manufacturing Facility 2' },
@@ -195,17 +195,24 @@ const statisticsData = ref([
   { icon: '/assets/profile/icons/Factory.png', value: '26', label: 'Factories' },
   { icon: '/assets/profile/icons/Workforce.png', value: '75K+', label: 'Employees' },
   { icon: '/assets/profile/icons/Yearly-Revew.png', value: '$1B', label: 'Yearly Revenue' },
-  { icon: '/assets/profile/icons/Readymade-Garments.png', value: '114 M PCS', label: 'Readymade Garments' },
-  { icon: '/assets/profile/icons/Sweater.png', value: '6 M PCS', label: 'Sweater' },
-  { icon: '/assets/profile/icons/Jacket.png', value: '0.5 M PCS', label: 'Jacket' },
-  { icon: '/assets/profile/icons/Textile-Mill.png', value: '<p class="text-sm text-black">DENIM</p>30 M <small>YARD</small> <br>60 M <small>YARD</small> ', label: 'Non Denim' },
-  { icon: '/assets/profile/icons/Spinning.png', value: '<p class="text-sm text-black">DENIM</p>60 M <small>YARD</small><br>30 M <small>YARD</small> ', label: 'Non Denim' },
-  { icon: '/assets/profile/icons/wash.png', value: '142 M PCS', label: 'Wash' },
-  { icon: '/assets/profile/icons/Chemical-Consumption.png', value: '9 M KG', label: 'Chemical Consumption' },
-  { icon: '/assets/profile/icons/Recycle-cotton.png', value: '1560 TON', label: 'Recycle Cotton' },
+  { icon: '/assets/profile/icons/Readymade-Garments.png', value: '120M/YR', label: 'Readymade Garments' },
+  { icon: '/assets/profile/icons/Sweater.png', value: '6M/YR', label: 'Sweater' },
+  { icon: '/assets/profile/icons/Jacket.png', value: '0.5M/YR', label: 'Jacket' },
+  { icon: '/assets/profile/icons/Textile-Mill.png', value: '<p class="text-sm text-black">DENIM</p><small>2.5M YRD/YR</small> <br><p class="text-sm text-black">Non-DENIM</p><small>5.5M YRD/YR</small> ', label: '' },
+  { icon: '/assets/profile/icons/Spinning.png', value: '100MT/DAY', label: 'Non Denim' },
+  { icon: '/assets/profile/icons/wash.png', value: '142M/YR', label: 'Wash' },
+  { icon: '/assets/profile/icons/Female-employes.png', value: '80%', label: 'Female Employees' },
+  { icon: '/assets/profile/icons/Recycle-Fiber.png', value: '1560MT/YR', label: 'Recycle Fiber' },
+  // { icon: '/assets/profile/icons/Chemical-Consumption.png', value: '9 M KG', label: 'Chemical Consumption' },
+  // { icon: '/assets/profile/icons/Recycle-cotton.png', value: '1560 TON', label: 'Recycle Cotton' },
   { icon: '/assets/profile/icons/Water.png', value: '63%', label: 'Water Recycle' },
   { icon: '/assets/profile/icons/Solar.png', value: '15 MW', label: 'Solar Capacity' },
-  { icon: '/assets/profile/icons/Accessories.png', value: '$37.68 M', label: 'Ha-Meem Accessories' },
+  { icon: '/assets/profile/icons/Accessories.png', value: '', label: '100% In House Accessories' },
+  { icon: '/assets/profile/icons/Lasear.png', value: '81', label: 'Laser Machine' },
+
+  { icon: '/assets/profile/icons/co-Genaration.png', value: '75%', label: 'CO Genaration' },
+  { icon: '/assets/profile/icons/ozone.png', value: '14', label: 'OZONE Machine' },
+  { icon: '/assets/profile/icons/Chemical-Consumption.png', value: '', label: 'In House Laboratory' },
 ]);
 
 // Customer carousel data
@@ -242,6 +249,8 @@ const certificatesData = ref([
   { name: 'A&F Certificate', src: '/assets/profile/certificates/lab-certificated-photo/A&F-Certificate-2024.jpg' },
   { name: 'American Eagle Certificate', src: '/assets/profile/certificates/lab-certificated-photo/Americal Eagle-Certification-2024.jpg' },
   { name: 'BAB Certificate', src: '/assets/profile/certificates/lab-certificated-photo/BAB-Certificate-2023.jpg' },
+  { name: 'GAP-Certificate-2024', src: '/assets/profile/certificates/lab-certificated-photo/GAP-Certificate-2024.jpg' },
+  { name: 'JC-Penny-Certificate-2024', src: '/assets/profile/certificates/lab-certificated-photo/JC-Penny-Certificate-2024.jpg' },
 ]);
 
 

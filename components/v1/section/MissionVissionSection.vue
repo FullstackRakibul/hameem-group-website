@@ -15,12 +15,12 @@
       <div class="absolute inset-0 opacity-[0.02]"
         style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 50px 50px;"></div>
     </div>
-    <p class=" py-2 md:text-3xl font-normal tracking-widest text-secondary text-center font-writtingOne">Company
+    <p class="py-2 md:text-3xl font-normal tracking-widest text-secondary text-center font-writtingOne">Company
       Profiles </p>
     <div class="relative z-10 container mx-auto px-4 md:px-2 ">
       <!-- Header Section -->
       <div class="text-center mb-16">
-        <h1 class="text-4xl md:text-6xl font-light text-gray-900 mb-6  tracking-tight">
+        <h1 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
           Our Vision & <span class="text-primary font-medium">Mission</span>
         </h1>
         <SectionUnderline />
@@ -36,145 +36,161 @@
           <!-- Hero Image -->
           <div class="relative group">
             <div
-              class="absolute  bg-gradient-to-r  from-primary/20 to-secondary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              class="absolute bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
             </div>
-            <div class="relative bg-white rounded-3xl p-8  ">
+            <div class="relative bg-white rounded-3xl p-8">
               <img src="~/assets/missionvission-sectionImage.png" alt="Ha-Meem Group Mission Vision"
                 class="w-full h-auto rounded-2xl transition-transform duration-500 group-hover:scale-105" />
             </div>
           </div>
 
-          <!-- Company Stats -->
-          <!-- <div class="grid grid-cols-2 gap-6">
-            <div
-              class="bg-secondary rounded-2xl p-6 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300">
-              <div class="text-3xl font-bold text-white mb-2">TOP</div>
-              <div class="text-md text-white font-medium">70%</div>
+          <!-- Company Stats - Updated with new minimalist design -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+            <!-- Card 1: TOP -->
+            <div class="
+              relative group
+              bg-white rounded-xl
+              p-4 shadow-sm hover:shadow-md
+              border border-gray-200
+              transition-all duration-200 ease-in-out
+              overflow-hidden
+              flex flex-col items-center justify-center
+            ">
+              <div class="z-10 text-center">
+                <div class="text-2xl sm:text-3xl font-bold text-gray-800 tracking-tight mb-1">
+                  TOP
+                </div>
+                <div class="text-3xl sm:text-4xl font-semibold text-indigo-600">
+                  70%
+                </div>
+              </div>
+              <div class="
+                absolute bottom-0 left-0 w-full h-0.5
+                bg-gradient-to-r from-indigo-500 to-purple-600
+                transform translate-y-full group-hover:translate-y-0
+                transition-transform duration-200 ease-out
+              "></div>
             </div>
-            <div
-              class="bg-secondary rounded-2xl p-6 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300">
-              <div class="text-3xl font-bold text-white mb-2">BOTTOM</div>
-              <div class="text-md text-white font-medium">25%</div>
+
+            <!-- Card 2: BOTTOM -->
+            <div class="
+              relative group
+              bg-white rounded-xl
+              p-4 shadow-sm hover:shadow-md
+              border border-gray-200
+              transition-all duration-200 ease-in-out
+              overflow-hidden
+              flex flex-col items-center justify-center
+            ">
+              <div class="z-10 text-center">
+                <div class="text-2xl sm:text-3xl font-bold text-gray-800 tracking-tight mb-1">
+                  BOTTOM
+                </div>
+                <div class="text-3xl sm:text-4xl font-semibold text-sky-600">
+                  25%
+                </div>
+              </div>
+              <div class="
+                absolute bottom-0 left-0 w-full h-0.5
+                bg-gradient-to-r from-sky-500 to-cyan-600
+                transform translate-y-full group-hover:translate-y-0
+                transition-transform duration-200 ease-out
+              "></div>
             </div>
-            <div
-              class="bg-primary rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300">
-              <div class="text-3xl font-bold text-white mb-2">KIDS</div>
-              <div class="text-sm text-white font-medium">5%</div>
+
+            <!-- Card 3: KIDS -->
+            <div class="
+              relative group
+              bg-white rounded-xl
+              p-4 shadow-sm hover:shadow-md
+              border border-gray-200
+              transition-all duration-200 ease-in-out
+              overflow-hidden
+              flex flex-col items-center justify-center
+            ">
+              <div class="z-10 text-center">
+                <div class="text-2xl sm:text-3xl font-bold text-gray-800 tracking-tight mb-1">
+                  KIDS
+                </div>
+                <div class="text-3xl sm:text-4xl font-semibold text-rose-600">
+                  5%
+                </div>
+              </div>
+              <div class="
+                absolute bottom-0 left-0 w-full h-0.5
+                bg-gradient-to-r from-rose-500 to-red-600
+                transform translate-y-full group-hover:translate-y-0
+                transition-transform duration-200 ease-out
+              "></div>
             </div>
-          </div> -->
+
+          </div>
         </div>
-        
+
         <!-- Right: Mission & Vision Carousel -->
         <div class="w-full">
-          <div class="relative   mx-auto">
+          <div class="relative mx-auto">
             <!-- Main Slider Container -->
-            <div class="relative aspect-video  bg-white rounded-xl  overflow-hidden group">
+            <div class="relative aspect-video bg-white rounded-xl overflow-hidden group">
               <!-- Slides -->
-              <div 
-                v-for="(image, index) in carouselImages" 
-                :key="index"
-                :class="[
-                  'absolute inset-0 transition-all duration-700 ease-in-out ',
-                  currentSlide === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
-                ]"
-              >
-                <img 
-                  :src="image.src"
-                  :alt="image.alt" 
-                  class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
-                />
-                
-                <!-- Hover Overlay -->
-                <!-- <div class="absolute inset-0 bg-black/0 hover:bg-black/60 transition-all duration-500 flex items-end">
-                  <div class="w-full p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    
-                  </div>
-                </div> -->
+              <div v-for="(image, index) in carouselImages" :key="index" :class="[
+                'absolute inset-0 transition-all duration-700 ease-in-out ',
+                currentSlide === index ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+              ]">
+                <img :src="image.src" :alt="image.alt"
+                  class="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105" />
               </div>
 
               <!-- Navigation Arrows -->
-              <button 
-                @click="previousSlide"
-                class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group/btn z-20 opacity-0 group-hover:opacity-100"
-              >
-                <svg class="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button @click="previousSlide"
+                class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group/btn z-20 opacity-0 group-hover:opacity-100">
+                <svg class="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
               </button>
 
-              <button 
-                @click="nextSlide"
-                class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group/btn z-20 opacity-0 group-hover:opacity-100"
-              >
-                <svg class="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button @click="nextSlide"
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group/btn z-20 opacity-0 group-hover:opacity-100">
+                <svg class="w-6 h-6 text-white group-hover/btn:scale-110 transition-transform" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
               </button>
 
-              <!-- Progress Bar -->
-              
-
               <!-- Slide Counter -->
-              <div class="absolute top-4 right-4 bg-black/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium z-10">
+              <div
+                class="absolute top-4 right-4 bg-black/40 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium z-10">
                 {{ currentSlide + 1 }} / {{ carouselImages.length }}
               </div>
             </div>
 
             <!-- Indicators -->
             <div class="flex justify-center mt-6 space-x-3">
-              <button
-                v-for="(image, index) in carouselImages"
-                :key="index"
-                @click="goToSlide(index)"
-                :class="[
-                  'w-3 h-3 rounded-full transition-all duration-300',
-                  currentSlide === index 
-                    ? 'bg-primary scale-125 shadow-lg' 
-                    : 'bg-gray-300 hover:bg-gray-400 hover:scale-110'
-                ]"
-              ></button>
+              <button v-for="(image, index) in carouselImages" :key="index" @click="goToSlide(index)" :class="[
+                'w-3 h-3 rounded-full transition-all duration-300',
+                currentSlide === index
+                  ? 'bg-primary scale-125 shadow-lg'
+                  : 'bg-gray-300 hover:bg-gray-400 hover:scale-110'
+              ]"></button>
             </div>
 
             <!-- Thumbnail Navigation -->
             <div class="flex justify-center mt-4 space-x-2 overflow-x-auto pb-2">
-              <button
-                v-for="(image, index) in carouselImages"
-                :key="index"
-                @click="goToSlide(index)"
-                :class="[
-                  'flex-shrink-0 w-20 h-12 rounded-lg overflow-hidden border-2 transition-all duration-300 relative group/thumb',
-                  currentSlide === index 
-                    ? 'border-primary shadow-lg scale-110' 
-                    : 'border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'
-                ]"
-              >
-                <img 
-                  :src="image.src" 
-                  :alt="image.alt"
-                  class="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300"
-                />
+              <button v-for="(image, index) in carouselImages" :key="index" @click="goToSlide(index)" :class="[
+                'flex-shrink-0 w-20 h-12 rounded-lg overflow-hidden border-2 transition-all duration-300 relative group/thumb',
+                currentSlide === index
+                  ? 'border-primary shadow-lg scale-110'
+                  : 'border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100'
+              ]">
+                <img :src="image.src" :alt="image.alt"
+                  class="w-full h-full object-cover group-hover/thumb:scale-110 transition-transform duration-300" />
                 <div v-if="currentSlide === index" class="absolute inset-0 bg-primary/20"></div>
               </button>
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-3 -mt-4 gap-6">
-            <div
-              class="bg-secondary rounded-xl p-2 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center gap-5">
-              <div class="text-2xl font-bold text-white ">TOP</div>
-              <div class="text-xl text-white font-medium">70%</div>
-            </div>
-            <div
-              class="bg-primary rounded-xl p-2 shadow-sm border border-primary/20 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center gap-5">
-              <div class="text-2xl font-bold text-white">BOTTOM</div>
-              <div class="text-xl text-white font-medium">25%</div>
-            </div>
-            <div
-              class="bg-secondary rounded-xl p-2 shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex items-center justify-center gap-5">
-              <div class="text-2xl font-bold text-white">KIDS</div>
-              <div class="text-xl text-white font-medium">5%</div>
-            </div>
-          </div>
       </div>
 
       <!-- Interactive Values Showcase -->
@@ -202,7 +218,7 @@
 
               <!-- Animated Icon (appears on hover) -->
               <div
-                class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center  opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
+                class="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
                 <img :src="point.animatedImage" :alt="point.title"
                   class="w-32 h-32 object-contain brightness-0 invert" />
               </div>
@@ -517,15 +533,15 @@ const visionPoints = computed(() =>
   .mission-vision-carousel {
     max-width: 100%;
   }
-  
+
   .aspect-video {
     aspect-ratio: 16 / 9;
   }
-  
+
   :deep(.el-carousel__container) {
     height: auto;
   }
-  
+
   .grid {
     gap: 1rem;
   }
