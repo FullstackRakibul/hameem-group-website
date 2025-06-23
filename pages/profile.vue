@@ -94,13 +94,13 @@
 
           <!-- Our Customers Carousel -->
           <div class="relative">
-            <h2 class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6">OUR CUSTOMER</h2>
+            <h2 class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4  md:mb-6">OUR CUSTOMER</h2>
             <div class="relative overflow-hidden px-10">
               <!-- Added horizontal padding to give space for arrows -->
-              <div class="flex transition-transform duration-500 ease-in-out whitespace-nowrap items-center"
+              <div class="flex transition-transform duration-500 ease-in-out items-center"
                 :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
                 <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
-                  class="w-full flex-shrink-0 flex justify-center items-center gap-4 md:gap-6">
+                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-4 md:gap-6">
                   <img loading="lazy" v-for="customer in customerGroup" :key="customer.name" :src="customer.src"
                     :alt="customer.name" class="h-12 sm:h-16 w-auto object-contain flex-shrink-0 rounded-md" />
                 </div>
@@ -128,14 +128,14 @@
               CERTIFICATIONS</h2>
             <div class="relative overflow-hidden px-10">
               <!-- Added horizontal padding to give space for arrows -->
-              <div class="flex transition-transform duration-500 ease-in-out whitespace-nowrap items-center"
+              <div class="flex transition-transform duration-500 ease-in-out items-center"
                 :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
-                <div v-for="(certGroup, groupIndex) in certificateGroups" :key="groupIndex"
-                  class="w-full flex-shrink-0 flex justify-center items-center gap-4 sm:gap-6 md:gap-10">
-                  <div v-for="cert in certGroup" :key="cert.name" @click="openCertificateModal(cert)"
+                <div v-for="(certificateGroup, groupIndex) in certificateGroups" :key="groupIndex"
+                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-4 md:gap-6">
+                  <div v-for="cert in certificateGroup" :key="cert.name" @click="openCertificateModal(cert)"
                     class="cursor-pointer flex-shrink-0">
                     <img loading="lazy" :src="cert.src" :alt="cert.name"
-                      class="h-16 sm:h-20 w-auto object-contain hover:scale-105 transition-transform duration-300 rounded-md" />
+                      class="h-12 sm:h-16 w-auto object-contain flex-shrink-0 rounded-md" />
                   </div>
                 </div>
               </div>
