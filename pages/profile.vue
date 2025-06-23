@@ -12,7 +12,7 @@
           </div>
           <!-- Title Container -->
           <div class="w-full md:w-auto text-center">
-            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#1857a3] leading-tight">
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary leading-tight">
               LEADING WHOLESALE CLOTHING MANUFACTURER IN BANGLADESH
             </h1>
             <!-- Minimalist bottom border for the title -->
@@ -31,7 +31,7 @@
           <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
             <!-- Statistics Cards -->
             <div v-for="(stat, index) in statisticsData" :key="index"
-              class="bg-white border-2 border-gray-300 rounded-xl p-3 flex items-center hover:shadow-lg transition-shadow">
+              class="bg-white border-2 border-primary/20 rounded-md p-3 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-10 h-10 md:w-12 md:h-12 mr-2 md:mr-3 flex items-center justify-center flex-shrink-0">
                 <img :src="stat.icon" :alt="stat.label" class="h-8 w-8 md:h-10 md:w-10 lg:h-14 lg:w-14 object-contain">
               </div>
@@ -55,10 +55,10 @@
           <div class="relative bg-white rounded-xl overflow-hidden shadow-lg">
             <!-- Main Slider -->
             <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden">
-              <div class="flex transition-transform duration-500 ease-in-out h-full rounded-lg"
+              <div class="flex transition-transform duration-500 ease-in-out h-full rounded-md"
                 :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                 <div v-for="(slide, index) in mainSliderImages" :key="index" class="w-full h-full flex-shrink-0">
-                  <img :src="slide.src" :alt="slide.alt" class="w-full h-full object-cover rounded-lg">
+                  <img loading="lazy" :src="slide.src" :alt="slide.alt" class="w-full h-full object-cover rounded-md">
                 </div>
               </div>
 
@@ -165,7 +165,7 @@
       class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 backdrop-blur">
       <div class="relative max-w-4xl max-h-full" @click.stop>
         <!-- Prevent modal closing when clicking on the image -->
-        <img :src="selectedCertificate.src" :alt="selectedCertificate.name"
+        <img loading="lazy" :src="selectedCertificate.src" :alt="selectedCertificate.name"
           class="max-w-full max-h-full object-contain rounded-lg shadow-xl">
         <button @click="closeCertificateModal"
           class="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors shadow-md">

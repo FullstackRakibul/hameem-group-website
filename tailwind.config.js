@@ -33,7 +33,8 @@ export default {
         1400: "1400px",
       },
       colors: {
-        primary: "#264156",
+        primary: "#203f56",
+        // primary: "#264156",
         secondary: "#40160C",
       },
       backgroundImage: {
