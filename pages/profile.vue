@@ -1,14 +1,14 @@
 <template>
-  <div class="bg-white min-h-screen">
+  <div class="bg-white min-h-screen font-inter">
     <!-- Header Section -->
-    <div class="bg-white py-6 sm:py-8 px-4 sm:px-6 shadow-sm">
+    <div class="bg-white py-6 sm:py-8 px-4 sm:px-6 shadow-sm rounded-b-lg">
       <div class="max-w-screen-2xl mx-auto">
         <!-- Company Logo and Title Container -->
         <div class="flex flex-col md:flex-row items-center justify-center md:gap-8 mb-6 md:mb-2">
           <!-- Logo Container -->
           <div class="p-2 sm:p-3 rounded-lg border border-gray-200 bg-white shadow-sm mb-4 md:mb-0">
             <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group"
-              class="h-16 sm:h-20 w-auto">
+              class="h-16 sm:h-20 w-auto rounded">
           </div>
           <!-- Title Container -->
           <div class="w-full md:w-auto text-center">
@@ -16,7 +16,7 @@
               LEADING WHOLESALE CLOTHING MANUFACTURER IN BANGLADESH
             </h1>
             <!-- Minimalist bottom border for the title -->
-            <div class="w-full  mx-auto h-0.5 bg-[#1857a3] mt-2 rounded-full"></div>
+            <div class="w-full mx-auto h-0.5 bg-[#1857a3] mt-2 rounded-full"></div>
           </div>
         </div>
       </div>
@@ -33,11 +33,13 @@
             <div v-for="(stat, index) in statisticsData" :key="index"
               class="bg-white border-2 border-gray-300 rounded-xl p-3 flex items-center hover:shadow-lg transition-shadow">
               <div class="w-10 h-10 md:w-12 md:h-12 mr-2 md:mr-3 flex items-center justify-center flex-shrink-0">
-                <img :src="stat.icon" :alt="stat.label" class="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 object-contain">
+                <img :src="stat.icon" :alt="stat.label" class="h-8 w-8 md:h-10 md:w-10 lg:h-14 lg:w-14 object-contain">
               </div>
               <div class="flex-1 min-w-0">
-                <div class="text-lg text-center md:text-xl lg:text-xl font-bold text-[#1857a3] truncate" v-html="stat.value"></div>
-                <div class="text-xs text-center font-semibold text-gray-600 uppercase leading-tight">{{ stat.label }}</div>
+                <div class="text-lg text-center md:text-xl lg:text-xl font-bold text-[#1857a3] truncate"
+                  v-html="stat.value"></div>
+                <div class="text-xs text-center font-semibold text-gray-600 uppercase leading-tight">{{ stat.label }}
+                </div>
               </div>
             </div>
           </div>
@@ -53,10 +55,10 @@
           <div class="relative bg-white rounded-xl overflow-hidden shadow-lg">
             <!-- Main Slider -->
             <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden">
-              <div class="flex transition-transform duration-500 ease-in-out h-full"
+              <div class="flex transition-transform duration-500 ease-in-out h-full rounded-lg"
                 :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
                 <div v-for="(slide, index) in mainSliderImages" :key="index" class="w-full h-full flex-shrink-0">
-                  <img :src="slide.src" :alt="slide.alt" class="w-full h-full object-cover">
+                  <img :src="slide.src" :alt="slide.alt" class="w-full h-full object-cover rounded-lg">
                 </div>
               </div>
 
@@ -75,8 +77,8 @@
               </button>
               <!-- Slide Indicators -->
               <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                <button v-for="(slide, index) in mainSliderImages" :key="index" @click="currentSlide = index" :class="['w-3 h-3 rounded-full transition-all',
-                  currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50']">
+                <button v-for="(slide, index) in mainSliderImages" :key="index" @click="currentSlide = index"
+                  :class="['w-3 h-3 rounded-full transition-all', currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50']">
                 </button>
               </div>
             </div>
@@ -86,34 +88,34 @@
     </div>
 
     <!-- Bottom Section -->
-    <!-- Bottom Section -->
-    <div class="bg-gray-50 py-8 md:py-12">
+    <div class="bg-gray-50 py-8 md:py-12 rounded-t-lg">
       <div class="max-w-screen-2xl mx-auto px-4">
         <div class="grid md:grid-cols-2 gap-8">
 
           <!-- Our Customers Carousel -->
           <div class="relative">
             <h2 class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6">OUR CUSTOMER</h2>
-            <div class="relative overflow-hidden">
-              <div class="flex transition-transform duration-500 ease-in-out whitespace-nowrap"
+            <div class="relative overflow-hidden px-10">
+              <!-- Added horizontal padding to give space for arrows -->
+              <div class="flex transition-transform duration-500 ease-in-out whitespace-nowrap items-center"
                 :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
                 <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
-                  class="w-full flex-shrink-0 flex justify-center gap-4 md:gap-6">
-                  <img loading="lazy" v-for="customer in customerGroup" :key="customer.name" :src="customer.src" :alt="customer.name"
-                    class="h-8 sm:h-10 md:h-12 object-contain cursor-pointer border-r border-gray-300 pr-4 sm:pr-6 md:pr-8" />
+                  class="w-full flex-shrink-0 flex justify-center items-center gap-4 md:gap-6">
+                  <img loading="lazy" v-for="customer in customerGroup" :key="customer.name" :src="customer.src"
+                    :alt="customer.name" class="h-12 sm:h-16 w-auto object-contain flex-shrink-0 rounded-md" />
                 </div>
               </div>
             </div>
 
             <!-- Navigation -->
             <button @click="previousCustomer"
-              class="absolute left-1 top-1/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10">
+              class="absolute left-1 top-2/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10 shadow-md">
               <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button @click="nextCustomer"
-              class="absolute right-1 top-1/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10">
+              class="absolute right-1 top-2/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10 shadow-md">
               <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
@@ -124,15 +126,16 @@
           <div class="relative">
             <h2 class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6">ACCREDITATIONS &
               CERTIFICATIONS</h2>
-            <div class="relative overflow-hidden">
-              <div class="flex transition-transform duration-500 ease-in-out whitespace-nowrap"
+            <div class="relative overflow-hidden px-10">
+              <!-- Added horizontal padding to give space for arrows -->
+              <div class="flex transition-transform duration-500 ease-in-out whitespace-nowrap items-center"
                 :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
                 <div v-for="(certGroup, groupIndex) in certificateGroups" :key="groupIndex"
-                  class="w-full flex-shrink-0 flex justify-center gap-4 sm:gap-6 md:gap-10">
+                  class="w-full flex-shrink-0 flex justify-center items-center gap-4 sm:gap-6 md:gap-10">
                   <div v-for="cert in certGroup" :key="cert.name" @click="openCertificateModal(cert)"
-                    class="cursor-pointer">
+                    class="cursor-pointer flex-shrink-0">
                     <img loading="lazy" :src="cert.src" :alt="cert.name"
-                      class="h-16 sm:h-20 md:h-24 w-auto object-contain hover:scale-105 transition-transform duration-300 border-r border-gray-300 pr-4 sm:pr-6 md:pr-8" />
+                      class="h-16 sm:h-20 w-auto object-contain hover:scale-105 transition-transform duration-300 rounded-md" />
                   </div>
                 </div>
               </div>
@@ -140,13 +143,13 @@
 
             <!-- Navigation -->
             <button @click="previousCertificate"
-              class="absolute left-1 top-1/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10">
+              class="absolute left-1 top-2/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10 shadow-md">
               <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button @click="nextCertificate"
-              class="absolute right-1 top-1/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10">
+              class="absolute right-1 top-2/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10 shadow-md">
               <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
@@ -157,16 +160,15 @@
       </div>
     </div>
 
-
-
     <!-- Certificate Modal -->
     <div v-if="selectedCertificate" @click="closeCertificateModal"
-      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-      <div class="relative max-w-4xl max-h-full">
+      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 backdrop-blur">
+      <div class="relative max-w-4xl max-h-full" @click.stop>
+        <!-- Prevent modal closing when clicking on the image -->
         <img :src="selectedCertificate.src" :alt="selectedCertificate.name"
-          class="max-w-full max-h-full object-contain rounded-lg">
+          class="max-w-full max-h-full object-contain rounded-lg shadow-xl">
         <button @click="closeCertificateModal"
-          class="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors">
+          class="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors shadow-md">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
@@ -241,16 +243,16 @@ interface Certificate {
 }
 const selectedCertificate = ref<Certificate | null>(null);
 const certificatesData = ref([
-  { name: 'FSC Certificate', src: '/assets/profile/certificates/accessories-certificate/FSC-RPPIL-2023.jpg' },
-  { name: 'Quality Certificate 1', src: '/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105650.png' },
-  { name: 'Quality Certificate 2', src: '/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105726.png' },
-  { name: 'Quality Certificate 3', src: '/assets/profile/certificates/accessories-certificate/Screenshot 2025-06-21 105813.png' },
-  { name: 'GRS Certificate', src: '/assets/profile/certificates/accessories-certificate/SPIL-GRS-Certificate-2023-2024.jpg' },
-  { name: 'A&F Certificate', src: '/assets/profile/certificates/lab-certificated-photo/A&F-Certificate-2024.jpg' },
-  { name: 'American Eagle Certificate', src: '/assets/profile/certificates/lab-certificated-photo/Americal Eagle-Certification-2024.jpg' },
-  { name: 'BAB Certificate', src: '/assets/profile/certificates/lab-certificated-photo/BAB-Certificate-2023.jpg' },
-  { name: 'GAP-Certificate-2024', src: '/assets/profile/certificates/lab-certificated-photo/GAP-Certificate-2024.jpg' },
-  { name: 'JC-Penny-Certificate-2024', src: '/assets/profile/certificates/lab-certificated-photo/JC-Penny-Certificate-2024.jpg' },
+  { name: 'FSC Certificate', src: '/assets/profile/certificates/1. RSC.jpg' },
+  { name: 'Quality Certificate 1', src: '/assets/profile/certificates/2. BSCI.jpg' },
+  { name: 'Quality Certificate 2', src: '/assets/profile/certificates/3. WRAP.png' },
+  { name: 'Quality Certificate 3', src: '/assets/profile/certificates/4. NIRAPON.jpg' },
+  { name: 'GRS Certificate', src: '/assets/profile/certificates/5. Sedex.jpg' },
+  { name: 'A&F Certificate', src: '/assets/profile/certificates/6. 1SO-14001.png' },
+  { name: 'American Eagle Certificate', src: '/assets/profile/certificates/7. Oekotex-100.png' },
+  { name: 'BAB Certificate', src: '/assets/profile/certificates/8. Oekotex-step.png' },
+  { name: 'GAP-Certificate-2024', src: '/assets/profile/certificates/9. Better-work.jpg' },
+  { name: 'JC-Penny-Certificate-2024', src: '/assets/profile/certificates/10. SCAN.png' },
 ]);
 
 
