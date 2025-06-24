@@ -5,7 +5,7 @@ import gsap from 'gsap'
 import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue'
 
 const tabPosition = ref<TabsInstance['tabPosition']>('left')
-const activeTab = ref<keyof typeof tabImages>('printing')
+const activeTab = ref<keyof typeof tabImages>('knit')
 
 // Business unit descriptions and details
 const businessUnits = {
