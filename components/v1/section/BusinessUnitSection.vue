@@ -63,6 +63,7 @@
                   indicator-position="outside"
                   class="custom-carousel"
                   :autoplay="false"
+                  @change="onCarouselChange"
                 >
                   <el-carousel-item v-for="(image, index) in tabImages[activeTab]" :key="index" class="carousel-item">
                     <div class="relative h-full w-full overflow-hidden group">
@@ -73,8 +74,14 @@
 
                       <!-- Image -->
                       <el-image
+                      loading="lazy"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        :src="image" fit="cover" :alt="`${activeTab} Image ${index + 1}`">
+                        :src="image" 
+                        fit="cover" 
+                        :alt="`${activeTab} Image ${index + 1}`"
+                        @load="onImageLoad"
+                        @error="onImageError"
+                      >
                         <template #placeholder>
                           <div class="flex justify-center items-center h-full w-full bg-gray-100">
                             <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
@@ -133,21 +140,23 @@
 
 <script lang="ts" setup>
 import type { TabsInstance } from 'element-plus'
-import { ref, onMounted, onUnmounted, nextTick, computed } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick, computed, watch } from 'vue'
 import gsap from 'gsap'
 import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue'
 
 // Reactive state
-const activeTab = ref<keyof typeof tabImages>('knit')
+const activeTab = ref<keyof typeof tabImages>('woven')
 const carouselRef = ref()
 const contentContainer = ref()
 const currentSlideIndex = ref(0)
 const carouselKey = ref(0)
 const isRunning = ref(true)
-const slideProgress = ref(1)
+const slideProgress = ref(0)
+const isCarouselReady = ref(false)
+const imagesLoaded = ref(0)
 
 // Timing configuration
-const SLIDE_DURATION = 4000 // 4 seconds per slide
+const SLIDE_DURATION = 3000 // 3 seconds per slide
 const TAB_TRANSITION_DURATION = 1000 // 1 second for tab transition
 const SLIDE_TRANSITION_DURATION = 500 // 0.5 seconds for slide transition
 
@@ -269,6 +278,12 @@ const tabKeys = computed(() => Object.keys(businessUnits) as (keyof typeof tabIm
 const currentTabIndex = computed(() => tabKeys.value.indexOf(activeTab.value))
 const currentTabImages = computed(() => tabImages[activeTab.value])
 
+// Watch for tab changes to reset image loading counter
+watch(activeTab, () => {
+  imagesLoaded.value = 0
+  isCarouselReady.value = false
+})
+
 // Clear all timers
 const clearAllTimers = () => {
   if (slideTimer) {
@@ -283,6 +298,53 @@ const clearAllTimers = () => {
     clearTimeout(tabTransitionTimer)
     tabTransitionTimer = null
   }
+}
+
+// Image loading handlers
+const onImageLoad = () => {
+  imagesLoaded.value++
+  // If first image is loaded and carousel is ready, start the cycle
+  if (imagesLoaded.value === 1 && !isCarouselReady.value) {
+    checkCarouselReady()
+  }
+}
+
+const onImageError = () => {
+  console.warn('Image failed to load')
+  // Still count as "loaded" to prevent hanging
+  imagesLoaded.value++
+  if (imagesLoaded.value === 1 && !isCarouselReady.value) {
+    checkCarouselReady()
+  }
+}
+
+// Check if carousel is ready to start
+const checkCarouselReady = async () => {
+  await nextTick()
+  
+  if (carouselRef.value && imagesLoaded.value > 0) {
+    // Wait a bit more for DOM to settle
+    setTimeout(() => {
+      isCarouselReady.value = true
+      // Ensure we're on the first slide
+      if (carouselRef.value) {
+        carouselRef.value.setActiveItem(0)
+        currentSlideIndex.value = 0
+      }
+      
+      // Start the auto-advance cycle
+      if (isRunning.value) {
+        setTimeout(() => {
+          startSlideTimer()
+        }, 500) // Small delay to ensure everything is visible
+      }
+    }, 200)
+  }
+}
+
+// Handle carousel change events
+const onCarouselChange = (currentIndex: number) => {
+  currentSlideIndex.value = currentIndex
 }
 
 // Start progress bar animation
@@ -304,7 +366,7 @@ const startProgressBar = () => {
 
 // Advance to next slide
 const advanceSlide = async () => {
-  if (!isRunning.value || !carouselRef.value) return
+  if (!isRunning.value || !carouselRef.value || !isCarouselReady.value) return
 
   const totalSlides = currentTabImages.value.length
   const nextSlideIndex = currentSlideIndex.value + 1
@@ -315,8 +377,6 @@ const advanceSlide = async () => {
   } else {
     // Move to next slide
     currentSlideIndex.value = nextSlideIndex
-    
-    await nextTick()
     
     if (carouselRef.value) {
       carouselRef.value.setActiveItem(currentSlideIndex.value)
@@ -329,7 +389,7 @@ const advanceSlide = async () => {
 
 // Start slide timer with progress bar
 const startSlideTimer = () => {
-  if (!isRunning.value) return
+  if (!isRunning.value || !isCarouselReady.value) return
   
   clearAllTimers()
   startProgressBar()
@@ -365,13 +425,10 @@ const advanceToNextTab = async () => {
       activeTab.value = nextTab
       currentSlideIndex.value = 0
       carouselKey.value += 1 // Force carousel re-render
+      isCarouselReady.value = false
+      imagesLoaded.value = 0
 
-      nextTick().then(() => {
-        // Reset carousel to first slide
-        if (carouselRef.value) {
-          carouselRef.value.setActiveItem(0)
-        }
-
+      nextTick(() => {
         // Animate in new content
         gsap.to(contentContainer.value, {
           opacity: 1,
@@ -380,12 +437,8 @@ const advanceToNextTab = async () => {
           duration: 0.6,
           ease: 'power2.out',
           onComplete: () => {
-            // Start the carousel cycle for new tab
-            if (isRunning.value) {
-              tabTransitionTimer = setTimeout(() => {
-                startSlideTimer()
-              }, 500) // Small delay to ensure everything is loaded
-            }
+            // The carousel will start automatically when images load
+            // via the onImageLoad handler and checkCarouselReady
           }
         })
       })
@@ -412,12 +465,10 @@ const handleManualTabChange = async (tab: keyof typeof tabImages) => {
       activeTab.value = tab
       currentSlideIndex.value = 0
       carouselKey.value += 1
+      isCarouselReady.value = false
+      imagesLoaded.value = 0
       
       nextTick().then(() => {
-        if (carouselRef.value) {
-          carouselRef.value.setActiveItem(0)
-        }
-        
         gsap.to(contentContainer.value, {
           opacity: 1,
           scale: 1,
@@ -427,9 +478,7 @@ const handleManualTabChange = async (tab: keyof typeof tabImages) => {
             // Resume auto-advance after 5 seconds
             setTimeout(() => {
               isRunning.value = wasRunning
-              if (isRunning.value) {
-                startSlideTimer()
-              }
+              // Carousel will start when images load
             }, 5000)
           }
         })
@@ -442,26 +491,11 @@ const handleManualTabChange = async (tab: keyof typeof tabImages) => {
 const toggleAutoAdvance = () => {
   isRunning.value = !isRunning.value
   
-  if (isRunning.value) {
+  if (isRunning.value && isCarouselReady.value) {
     startSlideTimer()
   } else {
     clearAllTimers()
     slideProgress.value = 0
-  }
-}
-
-// Initialize infinite cycle
-const startInfiniteCycle = async () => {
-  await nextTick()
-  
-  if (carouselRef.value) {
-    carouselRef.value.setActiveItem(0)
-  }
-  
-  if (isRunning.value) {
-    setTimeout(() => {
-      startSlideTimer()
-    }, 1000) // Initial delay
   }
 }
 
@@ -493,8 +527,8 @@ onMounted(() => {
     delay: 0.6,
     ease: 'power2.out',
     onComplete: () => {
-      // Start infinite cycle after initial animations
-      startInfiniteCycle()
+      // Carousel will start automatically when first image loads
+      // via the onImageLoad handler
     }
   })
 })
