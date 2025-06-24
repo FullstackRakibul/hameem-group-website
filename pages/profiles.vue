@@ -399,12 +399,14 @@ export default {
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .line-clamp-none {
   -webkit-line-clamp: unset;
+  line-clamp: unset;
   display: block;
 }
 
