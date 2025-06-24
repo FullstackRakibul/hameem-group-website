@@ -278,7 +278,79 @@ const allImages = ref<GalleryImage[]>([
     alt: 'Non-Denim',
     title: 'Green Initiative Launch',
     category: 'Kids'
-  }
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (1).jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (2).jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (3).jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (4).jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (1).png',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-01.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-02.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-03.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-04.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-05.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-06.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-07.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
   
 ]);
 
