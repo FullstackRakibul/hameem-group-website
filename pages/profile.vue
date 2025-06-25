@@ -262,9 +262,24 @@ const toggleLanguage = () => {
 // Main slider data
 const currentSlide = ref(0);
 const mainSliderImages = ref([
-  { src: '/assets/profile/sliders/profile-slider-(1).jpg', alt: 'Ha-Meem Group Manufacturing Facility 1' },
-  { src: '/assets/profile/sliders/profile-slider-(2).jpg', alt: 'Ha-Meem Group Manufacturing Facility 2' },
-  { src: '/assets/profile/sliders/profile-slider-(3).jpg', alt: 'Ha-Meem Group Manufacturing Facility 3' },
+  { src: 'https://hameemgroup.net/assets-profile/1.jpg', alt: 'Ha-Meem Group Manufacturing Facility 1' },
+  { src: 'https://hameemgroup.net/assets-profile/2.JPG', alt: 'Ha-Meem Group Manufacturing Facility 2' },
+  { src: 'https://hameemgroup.net/assets-profile/3.JPG', alt: 'Ha-Meem Group Manufacturing Facility 3' },
+  { src: 'https://hameemgroup.net/assets-profile/4.JPG', alt: 'Ha-Meem Group Manufacturing Facility 4' },
+  { src: 'https://hameemgroup.net/assets-profile/5.jpg', alt: 'Ha-Meem Group Manufacturing Facility 5' },
+  { src: 'https://hameemgroup.net/assets-profile/6.jpg', alt: 'Ha-Meem Group Manufacturing Facility 6' },
+  { src: 'https://hameemgroup.net/assets-profile/7.jpg', alt: 'Ha-Meem Group Manufacturing Facility 7' },
+  { src: 'https://hameemgroup.net/assets-profile/8.jpg', alt: 'Ha-Meem Group Manufacturing Facility 8' },
+  { src: 'https://hameemgroup.net/assets-profile/9.jpg', alt: 'Ha-Meem Group Manufacturing Facility 9' },
+  { src: 'https://hameemgroup.net/assets-profile/10.jpg', alt: 'Ha-Meem Group Manufacturing Facility 10' },
+  { src: 'https://hameemgroup.net/assets-profile/11.jpg', alt: 'Ha-Meem Group Manufacturing Facility 11' },
+  { src: 'https://hameemgroup.net/assets-profile/12.jpg', alt: 'Ha-Meem Group Manufacturing Facility 12' },
+  { src: 'https://hameemgroup.net/assets-profile/13.jpg', alt: 'Ha-Meem Group Manufacturing Facility 13' },
+  { src: 'https://hameemgroup.net/assets-profile/14.jpg', alt: 'Ha-Meem Group Manufacturing Facility 14' },
+  { src: 'https://hameemgroup.net/assets-profile/15.JPG', alt: 'Ha-Meem Group Manufacturing Facility 15' },
+  { src: 'https://hameemgroup.net/assets-profile/16.JPG', alt: 'Ha-Meem Group Manufacturing Facility 16' },
+  { src: 'https://hameemgroup.net/assets-profile/17.jpg', alt: 'Ha-Meem Group Manufacturing Facility 17' },
+  { src: 'https://hameemgroup.net/assets-profile/18.jpg', alt: 'Ha-Meem Group Manufacturing Facility 18' },
 ]);
 
 // Statistics data
