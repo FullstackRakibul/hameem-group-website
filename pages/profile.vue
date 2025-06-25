@@ -22,7 +22,7 @@
         <!-- Company Logo and Title Container -->
         <div class="flex flex-col md:flex-row items-center justify-center md:gap-8 mb-6 md:mb-2">
           <!-- Logo Container -->
-          <div class="p-2 sm:p-3 rounded-lg border border-gray-200 bg-white shadow-sm mb-4 md:mb-0">
+          <div class="p-2 sm:p-3 rounded-lg border border-gray-200 bg-white shadow-sm md:mb-0">
             <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group"
               class="h-16 sm:h-20 w-auto rounded">
           </div>
@@ -47,7 +47,7 @@
           <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
             <!-- Statistics Cards -->
             <div v-for="(stat, index) in translatedStatisticsData" :key="index"
-              class="bg-white border-2 border-primary/20 rounded-md p-3 flex items-center hover:shadow-lg transition-shadow">
+            class="bg-white border-2 border-primary/20 rounded-md p-2 flex items-center hover:shadow-xl transition-shadow md:p-3">
               <div class="w-10 h-10 md:w-12 md:h-12 mr-2 md:mr-3 flex items-center justify-center flex-shrink-0">
                 <img :src="stat.icon" :alt="stat.label" class="h-8 w-8 md:h-10 md:w-10 lg:h-14 lg:w-14 object-contain">
               </div>
