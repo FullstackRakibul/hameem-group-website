@@ -22,13 +22,13 @@
         <!-- Company Logo and Title Container -->
         <div class="flex flex-col md:flex-row items-center justify-center md:gap-8 mb-6 md:mb-2">
           <!-- Logo Container -->
-          <div class="p-2 sm:p-3 rounded-lg border border-gray-200 bg-white shadow-sm md:mb-0">
+          <div class="p-2 sm:p-3 rounded-lg border border-gray-200 bg-white shadow-sm mb-3 md:mb-1">
             <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group"
               class="h-16 sm:h-20 w-auto rounded">
           </div>
           <!-- Title Container -->
           <div class="w-full md:w-auto text-center">
-            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary leading-tight transition-all duration-500">
+            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl  font-bold text-primary leading-tight transition-all duration-500">
               {{ getTranslation('companyTitle') }}
             </h1>
             <!-- Minimalist bottom border for the title -->
@@ -39,7 +39,7 @@
     </div>
 
     <!-- Main Content Section -->
-    <div class="max-w-screen-2xl mx-auto px-4 py-2">
+    <div class="max-w-screen-2xl mx-auto px-4 py-6">
       <div class="grid lg:grid-cols-5 gap-6 items-start">
 
         <!-- Left Side - Statistics Grid (3/5 width) -->
