@@ -2,14 +2,15 @@
   <div class="bg-white min-h-screen font-inter">
     <!-- Floating Translation Button -->
     <div class="fixed top-4 right-4 z-50">
-      <button
-        @click="toggleLanguage"
+      <button @click="toggleLanguage"
         class="bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group"
-        :title="isChineseMode ? '切换到英文' : 'Switch to Chinese'"
-      >
+        :title="isChineseMode ? '切换到英文' : 'Switch to Chinese'">
         <div class="flex items-center space-x-2">
-          <svg class="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+          <svg class="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+            </path>
           </svg>
           <span class="text-sm font-medium">{{ isChineseMode ? '中' : 'EN' }}</span>
         </div>
@@ -28,7 +29,8 @@
           </div>
           <!-- Title Container -->
           <div class="w-full md:w-auto text-center">
-            <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl  font-bold text-primary leading-tight transition-all duration-500">
+            <h1
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl  font-bold text-primary leading-tight transition-all duration-500">
               {{ getTranslation('companyTitle') }}
             </h1>
             <!-- Minimalist bottom border for the title -->
@@ -44,17 +46,19 @@
 
         <!-- Left Side - Statistics Grid (3/5 width) -->
         <div class="lg:col-span-3">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-2">
             <!-- Statistics Cards -->
             <div v-for="(stat, index) in translatedStatisticsData" :key="index"
-            class="bg-white border-2 border-primary/20 rounded-md p-2 flex items-center hover:shadow-xl transition-shadow md:p-3">
-              <div class="w-10 h-10 md:w-12 md:h-12 mr-2 md:mr-3 flex items-center justify-center flex-shrink-0">
+              class="bg-white border-2 border-primary/20 rounded-md p-2 flex items-center hover:shadow-xl transition-shadow md:p-3 hover:scale-105">
+              <div class="w-10 h-10 md:w-12 md:h-12 mr-2 md:mr-2 flex items-center justify-center flex-shrink-0">
                 <img :src="stat.icon" :alt="stat.label" class="h-8 w-8 md:h-10 md:w-10 lg:h-14 lg:w-14 object-contain">
               </div>
               <div class="flex-1 min-w-0">
-                <div class="text-lg text-center md:text-xl lg:text-xl font-bold text-[#1857a3] truncate transition-all duration-500"
+                <div
+                  class="text-lg text-center md:text-xl lg:text-xl font-bold text-[#1857a3] truncate transition-all duration-500"
                   v-html="stat.value"></div>
-                <div class="text-xs text-center font-semibold text-gray-600 uppercase leading-tight transition-all duration-500">
+                <div
+                  class="text-xs text-center font-semibold text-gray-600 uppercase leading-tight transition-all duration-500">
                   {{ stat.label }}
                 </div>
               </div>
@@ -69,7 +73,7 @@
 
         <!-- Right Side - Main Slider (2/5 width) -->
         <div class="lg:col-span-2">
-          <div class="relative bg-white rounded-xl overflow-hidden shadow-lg">
+          <div class="relative bg-white rounded-xl overflow-hidden ">
             <!-- Main Slider -->
             <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden">
               <div class="flex transition-transform duration-500 ease-in-out h-full rounded-md"
@@ -93,9 +97,9 @@
                 </svg>
               </button>
               <!-- Slide Indicators -->
-              <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              <div class="absolute bottom-4 left-4/5 transform -translate-x-1/2 flex space-x-2">
                 <button v-for="(slide, index) in mainSliderImages" :key="index" @click="currentSlide = index"
-                  :class="['w-3 h-3 rounded-full transition-all', currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50']">
+                  :class="['w-3 h-3 rounded-full transition-all text-center', currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50']">
                 </button>
               </div>
             </div>
@@ -111,7 +115,8 @@
 
           <!-- Our Customers Carousel -->
           <div class="relative">
-            <h2 class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
+            <h2
+              class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation('ourCustomer') }}
             </h2>
             <div class="relative overflow-hidden px-10">
@@ -143,7 +148,8 @@
 
           <!-- Certifications Carousel -->
           <div class="relative">
-            <h2 class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
+            <h2
+              class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation('accreditation') }}
             </h2>
             <div class="relative overflow-hidden px-10">
@@ -291,7 +297,7 @@ const statisticsData = ref([
   { icon: '/assets/profile/icons/Readymade-Garments.png', value: '120M/YR', label: 'readymadeGarments', labelKey: 'readymadeGarments' },
   { icon: '/assets/profile/icons/Sweater.png', value: '6M/YR', label: 'sweater', labelKey: 'sweater' },
   { icon: '/assets/profile/icons/Jacket.png', value: '0.5M/YR', label: 'jacket', labelKey: 'jacket' },
-  { icon: '/assets/profile/icons/Textile-Mill.png', value: '<p class="text-sm text-black">DENIM</p><small>2.5M YRD/YR</small> <br><p class="text-sm text-black">Non-DENIM</p><small>5.5M YRD/YR</small>', label: '', labelKey: 'textileMill' },
+  { icon: '/assets/profile/icons/Textile-Mill.png', value: '<p class="text-sm text-black">DENIM</p><small class="text-xs">2.5M YRD/YR</small > <br><p class="text-sm text-black">Non-DENIM</p><small class="text-xs">5.5M YRD/YR</small>', label: '', labelKey: 'textileMill' },
   { icon: '/assets/profile/icons/Spinning.png', value: '100MT/DAY', label: 'spinning', labelKey: 'spinning' },
   { icon: '/assets/profile/icons/wash.png', value: '142M/YR', label: 'wash', labelKey: 'wash' },
   // { icon: '/assets/profile/icons/Female-employes.png', value: '80%', label: 'femaleEmployees', labelKey: 'femaleEmployees' },
@@ -310,10 +316,10 @@ const translatedStatisticsData = computed(() => {
   return statisticsData.value.map(stat => {
     const translationKey = stat.labelKey as keyof typeof statisticsTranslations;
     const translation = statisticsTranslations[translationKey];
-    
+
     let translatedValue = stat.value;
     let translatedLabel = stat.label;
-    
+
     if (isChineseMode.value && translation) {
       // Handle special cases for Chinese translations
       switch (translationKey) {
@@ -328,7 +334,7 @@ const translatedStatisticsData = computed(() => {
     } else if (translation) {
       translatedLabel = translation.en;
     }
-    
+
     return {
       ...stat,
       value: translatedValue,
@@ -529,8 +535,15 @@ onUnmounted(() => {
 
 /* Floating button animation */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .fixed button {
