@@ -1,719 +1,586 @@
 <template>
-  <section id="business-unit" class="business-unit-section pb-16 px-4 md:px-6 bg-gradient-to-b from-gray-50 to-white">
-    <div class="px-24 mx-auto">
-      <!-- Section Header -->
-      <div class="md:mb-10 text-center">
-        <h2 class="text-4xl md:text-6xl font-light text-gray-900 mb-6 tracking-tight">
-          Business <span class="text-primary font-medium">Units</span>
-        </h2>
+  <div class="gallery-page">
 
-        <UISectionUnderline />
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          Our vertically integrated business units work in harmony to deliver exceptional quality and efficiency across
-          the entire production chain.
+  
+  <section
+    class="-mt-16 relative h-[600px] bg-cover bg-bottom bg-no-repeat flex items-center justify-center text-center"
+    style="background-image: url('/assets/v1/gallery/gallary-bg-01.jpg');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+    <!-- Content -->
+    <div class="container flex flex-col justify-start items-start relative z-10 text-white px-4">
+      <!-- Section Header -->
+      <div class="text-start mb-12">
+        <h2 class="text-white uppercase font-light md:text-6xl mb-4">
+          Our Gallery
+        </h2>
+        <div class=" w-1/3 h-1 bg-white mx-auto my-4"></div>
+        <p class="text-lg text-white max-w-2xl mx-auto">
+          Explore our collection of moments, achievements, and behind-the-scenes glimpses
         </p>
       </div>
+    </div>
+  </section>
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <!-- Filter Tabs -->
+      <div class="flex justify-center mb-8">
+        <div class="flex space-x-1 bg-primary rounded-full p-1 shadow-sm">
+          <button v-for="category in categories" :key="category" @click="activeCategory = category" :class="[
+            'md:px-12 py-2 rounded-full text-md font-medium transition-all duration-300',
+            activeCategory === category
+              ? 'bg-white text-secondary font-semibold'
+              : 'text-white hover:bg-white hover:text-secondary'
+          ]">
+            {{ category }}
+          </button>
+        </div>
+      </div>
 
-      <!-- Main Content -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <!-- Tabs Navigation -->
-        <div class="lg:col-span-3">
-          <div class="custom-tabs bg-primary h-full rounded-lg shadow-md overflow-hidden">
-            <div v-for="(unit, key) in businessUnits" :key="key" class="tab-item mt-5 mb-1">
-              <button @click="handleManualTabChange(key as keyof typeof tabImages)"
-                :aria-label="`Switch to ${unit.title} tab`" :class="[
-                  'tab-button w-full text-left px-6 py-5 transition-all duration-500 m-1 rounded-s-full tracking-widest',
-                  activeTab === key
-                    ? 'active-tab bg-white border-pink-900 text-primary font-semibold transform scale-105'
-                    : 'border-transparent hover:bg-gray-50 text-white hover:text-gray-800 hover:transform hover:scale-102'
-                ]">
-                <div class="flex items-center">
-                  <div class="tab-icon-container mr-3">
-                    <Icon :name="unit.icon || 'mdi:factory'" class="text-xl transition-transform duration-300" />
-                  </div>
-                  <span class="block text-xl uppercase tracking-wider">{{ unit.title }}</span>
-                </div>
-              </button>
+      <!-- Masonry Gallery Grid -->
+      <div class="masonry-grid">
+        <div v-for="(image, index) in filteredImages" :key="index" class="masonry-item group cursor-pointer"
+          @click="openLightbox(index)">
+          <div
+            class="relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-lg transition-all duration-300">
+            <img :src="image.src" :alt="image.alt"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy" />
+
+            <!-- Overlay -->
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <Icon name="mdi:magnify-plus" class="text-white text-3xl" />
+              </div>
+            </div>
+
+            <!-- Image Info -->
+            <div
+              class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-white font-medium text-sm">{{ image.title }}</h3>
+              <p class="text-white/80 text-xs">{{ image.category }}</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Content Area -->
-        <div class="lg:col-span-9">
-          <div class="tab-content-container bg-white rounded-xl shadow-sm overflow-hidden" ref="contentContainer">
-            <div>
-              <!-- Unit Info -->
-              <div class="p-6 border-b border-gray-100">
-                <h3 class="text-4xl font-bold text-gray-800 mb-2 transition-all duration-500">{{ businessUnits[activeTab].title }}</h3>
-                <p class="text-gray-600 text-2xl mb-4 transition-all duration-500">{{ businessUnits[activeTab].description }}</p>
-                <div class="inline-flex items-center px-3 py-1 bg-primary/70 rounded-full transition-all duration-500">
-                  <span class="text-xl uppercase tracking-wider text-white mr-2">Capacity:</span>
-                  <span class="font-medium text-xl text-white">{{ businessUnits[activeTab].capacity }}</span>
-                </div>
-              </div>
+      <!-- Load More Button -->
+      <div class="text-center mt-12" v-if="hasMoreImages">
+        <button @click="loadMoreImages"
+          class="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors duration-300">
+          Load More Images
+        </button>
+      </div>
+    </div>
 
-              <!-- Enhanced Carousel with Infinite Auto-Advance -->
-              <div class="carousel-container relative">
-                <!-- Loading overlay for initial load -->
-                <div v-if="isInitialLoad" class="absolute inset-0 bg-gray-100 flex items-center justify-center z-30">
-                  <div class="text-center">
-                    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mx-auto mb-4"></div>
-                    <p class="text-gray-600">Loading carousel...</p>
-                  </div>
-                </div>
+    <!-- Lightbox Modal -->
+    <div v-if="lightboxOpen" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+      @click="closeLightbox">
+      <div class="relative max-w-4xl max-h-full">
+        <!-- Close Button -->
+        <button @click="closeLightbox" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+          <Icon name="mdi:close" class="text-3xl" />
+        </button>
 
-                <el-carousel 
-                  ref="carouselRef"
-                  :key="`${activeTab}-${carouselKey}`"
-                  :interval="0"
-                  height="500px" 
-                  arrow="hover" 
-                  indicator-position="outside"
-                  class="custom-carousel"
-                  :autoplay="false"
-                  @change="handleCarouselReady"
-                >
-                  <el-carousel-item v-for="(image, index) in tabImages[activeTab]" :key="index" class="carousel-item">
-                    <div class="relative h-full w-full overflow-hidden group">
-                      <!-- Image overlay gradient -->
-                      <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-70 group-hover:opacity-40 transition-opacity duration-500 z-10">
-                      </div>
+        <!-- Navigation Arrows -->
+        <button v-if="currentImageIndex > 0" @click.stop="previousImage"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10">
+          <Icon name="mdi:chevron-left" class="text-4xl" />
+        </button>
 
-                      <!-- Image -->
-                      <el-image
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        :src="image" fit="cover" :alt="`${activeTab} Image ${index + 1}`">
-                        <template #placeholder>
-                          <div class="flex justify-center items-center h-full w-full bg-gray-100">
-                            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-                          </div>
-                        </template>
-                        <template #error>
-                          <div class="flex flex-col justify-center items-center h-full w-full bg-gray-100">
-                            <Icon name="mdi:image-off" class="text-4xl text-gray-400" />
-                            <p class="text-gray-500 mt-2">Image not available</p>
-                          </div>
-                        </template>
-                      </el-image>
+        <button v-if="currentImageIndex < filteredImages.length - 1" @click.stop="nextImage"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-gray-300 z-10">
+          <Icon name="mdi:chevron-right" class="text-4xl" />
+        </button>
 
-                      <!-- Image counter -->
-                      <div class="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20 transition-all duration-300">
-                        {{ currentSlideIndex + 1 }} / {{ tabImages[activeTab].length }}
-                      </div>
-                    </div>
-                  </el-carousel-item>
-                </el-carousel>
+        <!-- Image -->
+        <img :src="filteredImages[currentImageIndex]?.src" :alt="filteredImages[currentImageIndex]?.alt"
+          class="max-w-full max-h-full object-contain" @click.stop />
 
-                <!-- Auto-advance controls and indicators -->
-                <div class="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20">
-                  <div class="flex items-center space-x-2">
-                    <div :class="['w-2 h-2 rounded-full transition-all duration-300', 
-                                 isRunning ? 'bg-green-400 animate-pulse' : 'bg-red-400']"></div>
-                    <span>{{ isRunning ? 'Auto-cycling' : 'Paused' }}</span>
-                    <button @click="toggleAutoAdvance" class="ml-2 text-xs hover:text-yellow-300 transition-colors">
-                      {{ isRunning ? '⏸️' : '▶️' }}
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Progress bar for current slide -->
-                <div class="absolute bottom-0 left-0 w-full h-1 bg-black/20 z-20">
-                  <div 
-                    class="h-full bg-primary transition-all duration-300 ease-linear"
-                    :style="{ width: `${slideProgress}%` }"
-                  ></div>
-                </div>
-
-                <!-- Tab progress indicator -->
-                <div class="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20">
-                  <div class="flex items-center space-x-2">
-                    <span>Tab {{ currentTabIndex + 1 }} / {{ tabKeys.length }}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Image Info -->
+        <div class="absolute bottom-4 left-4 right-4 text-center text-white">
+          <h3 class="text-xl font-medium mb-1">{{ filteredImages[currentImageIndex]?.title }}</h3>
+          <p class="text-gray-300">{{ filteredImages[currentImageIndex]?.category }}</p>
         </div>
       </div>
     </div>
   </section>
+</div>
 </template>
 
 <script lang="ts" setup>
-import type { TabsInstance } from 'element-plus'
-import { ref, onMounted, onUnmounted, nextTick, computed } from 'vue'
-import gsap from 'gsap'
-import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue'
+import { ref, computed, onMounted } from 'vue';
 
-// Reactive state
-const activeTab = ref<keyof typeof tabImages>('knit')
-const carouselRef = ref()
-const contentContainer = ref()
-const currentSlideIndex = ref(0)
-const carouselKey = ref(0)
-const isRunning = ref(true)
-const slideProgress = ref(0)
-const isCarouselReady = ref(false)
-const isInitialLoad = ref(true)
+interface GalleryImage {
+  src: string;
+  alt: string;
+  title: string;
+  category: string;
+  height?: number;
+}
 
-// Timing configuration
-const SLIDE_DURATION = 4000 // 4 seconds per slide
-const TAB_TRANSITION_DURATION = 1000 // 1 second for tab transition
-const SLIDE_TRANSITION_DURATION = 500 // 0.5 seconds for slide transition
+const activeCategory = ref('All');
+const lightboxOpen = ref(false);
+const currentImageIndex = ref(0);
+const visibleCount = ref(12);
 
-// Auto-advance control
-let slideTimer: NodeJS.Timeout | null = null
-let progressTimer: NodeJS.Timeout | null = null
-let tabTransitionTimer: NodeJS.Timeout | null = null
+// const categories = ['All', 'Factory', 'Products', 'Team', 'Events'];
+const categories = ['Denim', 'Non-Denim', 'Kids','Tops', 'Events','Factories'];
 
-// Business unit descriptions and details
-const businessUnits = {
-  knit: {
-    title: 'Knit Manufacturing',
-    description: 'State-of-the-art knitting facilities producing high-quality fabrics with precision and efficiency.',
-    icon: 'unjs:knitwork',
-    capacity: '120,000 pieces/day'
+// Sample gallery images - replace with your actual images
+const allImages = ref<GalleryImage[]>([
+  {
+    src: 'https://media.licdn.com/dms/image/v2/C511BAQFTryKe996KHg/company-background_10000/company-background_10000/0/1584260827049/ha_meem_group24_cover?e=2147483647&v=beta&t=FmggH4fpYSN3100dclDN1BswczVaGfncxruJEfwkkuM',
+    alt: 'Factory Floor',
+    title: 'Modern Production Line',
+    category: 'Events'
   },
-  woven: {
-    title: 'Woven Excellence',
-    description: 'Advanced woven production lines creating premium fabrics for global fashion brands.',
-    icon: 'logos:fabric',
-    capacity: '80,000 pieces/day'
+  {
+    src: 'https://media.licdn.com/dms/image/sync/v2/D5627AQFOL3iPd96xsg/articleshare-shrink_800/articleshare-shrink_800/0/1726509656107?e=2147483647&v=beta&t=XRSzd_pYaDD505q0Tn_lC0rAmn24EW86FL9JJmO6YAU',
+    alt: 'Denim Products',
+    title: 'Premium Denim Collection',
+    category: 'Events'
   },
-  printing: {
-    title: 'Printing & Embroidery',
-    description: 'Cutting-edge printing and embroidery technologies delivering intricate designs and patterns.',
-    icon: 'fluent-color:design-ideas-20',
-    capacity: '50,000 pieces/day'
+  {
+    src: 'https://media.licdn.com/dms/image/v2/D5622AQFoIp5Pnsze7g/feedshare-shrink_800/B56ZYizQSOGoAg-/0/1744340589192?e=2147483647&v=beta&t=TE_w-rEqrcLlzgGjwOxKcoYPLc_QWe81m2Ku3hsZj4k',
+    alt: 'Team Meeting',
+    title: 'Strategic Planning Session',
+    category: 'Events'
   },
-  dyeing: {
-    title: 'Dyeing & Finishing',
-    description: 'Eco-friendly dyeing processes ensuring vibrant, consistent colors and superior finishing.',
-    icon: 'noto:artist-palette',
-    capacity: '60,000 yards/day'
+  {
+    src: 'https://textilefocus.com/wp-content/uploads/hameem-group-tax.jpg',
+    alt: 'Award Ceremony',
+    title: 'Excellence Recognition',
+    category: 'Events'
   },
-  washing: {
-    title: 'Washing Solutions',
-    description: 'Innovative washing techniques that enhance fabric quality and aesthetic appeal.',
-    icon: 'icon-park:washing-machine-one',
-    capacity: '70,000 pieces/day'
+  {
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS51jB572_4L7O1UWg0W7-TzKZxNhIa3Gk9Ig_JUYL5ru_R-KRY2RR1GNedgOJ7DCpQ80&usqp=CAU',
+    alt: 'Quality Control',
+    title: 'Quality Assurance Process',
+    category: 'Events'
   },
-  packaging: {
-    title: 'Packaging Excellence',
-    description: 'Sustainable packaging solutions that protect products while minimizing environmental impact.',
-    icon: 'noto:package',
-    capacity: '100,000 units/day'
+  {
+    src: 'https://static.theceomagazine.net/wp-content/uploads/2023/03/01222848/DelwarHossain_HA-MEEMGROUP_Support2.jpeg',
+    alt: 'Fashion Show',
+    title: 'Latest Collection Showcase',
+    category: 'Events'
   },
-  transport: {
-    title: 'Logistics & Transport',
-    description: 'Efficient logistics network ensuring timely delivery to global destinations.',
-    icon: 'fxemoji:deliverytruck',
-    capacity: '200+ shipments/month'
+  {
+    src: 'https://static.theceomagazine.net/wp-content/uploads/2023/03/01222855/DelwarHossain_HA-MEEMGROUP_Support4.jpeg',
+    alt: 'Team Building',
+    title: 'Annual Team Retreat',
+    category: 'Events'
   },
-  teaGarden: {
-    title: 'Tea Garden Division',
-    description: 'A lush and productive tea estate cultivating premium quality tea, contributing to both local consumption and global export.',
-    icon: 'fluent-emoji-flat:leaf-fluttering-in-wind',
-    capacity: 'Spanning acres of curated plantations with expert harvesting'
+  {
+    src: 'https://static.theceomagazine.net/wp-content/uploads/2023/03/01222845/DelwarHossain_HA-MEEMGROUP_Support1-1024x569-1.jpeg',
+    alt: 'Export Ceremony',
+    title: 'International Trade Event',
+    category: 'Events'
   },
-  newspaper: {
-    title: 'Samakal Newspaper',
-    description: 'Samakal is a popular and widely circulated national daily newspaper in Bangladesh, committed to delivering credible news and insightful journalism.',
-    icon: 'streamline-emojis:newspaper',
-    capacity: 'Leading national daily circulation'
+  {
+    src: 'https://www.tbsnews.net/sites/default/files/styles/big_3/public/images/2020/10/22/press_photo-prime_bank_ha-meem_group_sign_payroll_agreement_0.jpg',
+    alt: 'Machinery',
+    title: 'Advanced Manufacturing Equipment',
+    category: 'Events'
   },
-  newsChannel: {
-    title: 'Channel 24 News',
-    description: 'Channel 24 is a leading and very popular news television channel, providing comprehensive and timely news coverage across Bangladesh and beyond.',
-    icon: 'emojione-v1:video-camera',
-    capacity: 'Extensive nationwide viewership'
+  {
+    src: 'https://textiletoday.com.bd/storage/uploads/2016/12/DBL-Award-Receiving.jpg',
+    alt: 'Fabric Samples',
+    title: 'Premium Fabric Selection',
+    category: 'Events'
+  },
+  {
+    src: 'https://media.licdn.com/dms/image/v2/D5622AQG62L2WlW7msA/feedshare-shrink_800/B56ZauxoB5GgAs-/0/1746688983004?e=2147483647&v=beta&t=r5IaSXKcJZR8SRJyonx7B4_xH9xgYtquSe-7q9NhZXw',
+    alt: 'Leadership Team',
+    title: 'Executive Leadership',
+    category: 'Events'
+  },
+  {
+    src: 'https://textilefocus.com/wp-content/uploads/2025/02/image-28.png',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Events'
+  },
+
+
+
+
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-01.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-02.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-03.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-04.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Non-Denim'
+  },
+  {
+    src: '/assets/v1/gallery/Denim-slider-55.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
+  },
+  {
+    src: 'https://cdn.mos.cms.futurecdn.net/23wzBFcc6Yej4aar3KPSXe.jpg',
+    alt: 'Sustainability Event',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
+  },
+  {
+    src: 'https://zola.in/cdn/shop/articles/Jan_ex_Blog_19_3_-min.jpg?v=1705729662',
+    alt: 'Denim',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
+  },
+  {
+    src: 'https://steam-one.com/cdn/shop/articles/Visuels_blog_28_2356f440-155c-4b5f-92eb-8909cf66b0ee.jpg?v=1745405083&width=1100',
+    alt: 'Denim',
+    title: 'Green Initiative Launch',
+    category: 'Denim'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-05.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Non-Denim'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-06.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-07.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/section/mission-vision/hg-web-mv-slider-08.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (1).jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (2).jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (3).jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (4).jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/GALLERY-KIDS-HG-00 (1).png',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Kids'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-01.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-02.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-03.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-04.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-05.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-06.jpg',
+    alt: 'Non-Denim',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+  {
+    src: '/assets/v1/gallery/top-hg-gallery-07.jpg',
+    alt: '',
+    title: 'Green Initiative Launch',
+    category: 'Tops'
+  },
+
+  // factories
+  
+  {
+    src: 'https://hameemgroup.net/assets-profile/1.jpg',
+    alt: '',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/2.JPG',
+    alt: '',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/3.JPG',
+    alt: '',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/4.JPG',
+    alt: '',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/5.jpg',
+    alt: '',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/6.jpg',
+    alt: '',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/7.jpg',
+    alt: '',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/8.jpg',
+    alt: 'Ha-Meem Group Manufacturing Facility 8',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/9.jpg',
+    alt: 'Ha-Meem Group Manufacturing Facility 9',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/10.jpg',
+    alt: 'Ha-Meem Group Manufacturing Facility 10',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/11.jpg',
+    alt: 'Ha-Meem Group Manufacturing Facility 11',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/12.jpg',
+    alt: 'Ha-Meem Group Manufacturing Facility 12',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/13.jpg',
+    alt: 'Ha-Meem Group Manufacturing Facility 13',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/14.jpg',
+    alt: 'Ha-Meem Group Manufacturing Facility 14',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/15.JPG',
+    alt: 'Ha-Meem Group Manufacturing Facility 15',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/16.JPG',
+    alt: 'Ha-Meem Group Manufacturing Facility 16',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/17.jpg',
+    alt: 'Ha-Meem Group Manufacturing Facility 17',
+    title: '',
+    category: 'Factories'
+  },
+  {
+    src: 'https://hameemgroup.net/assets-profile/18.jpg',
+    alt: 'Ha-Meem Group Manufacturing Facility 18',
+    title: '',
+    category: 'Factories'
+  }
+
+  
+]);
+
+const filteredImages = computed(() => {
+  const filtered = activeCategory.value === 'All'
+    ? allImages.value
+    : allImages.value.filter(img => img.category === activeCategory.value);
+
+  return filtered.slice(0, visibleCount.value);
+});
+
+const hasMoreImages = computed(() => {
+  const totalFiltered = activeCategory.value === 'All'
+    ? allImages.value.length
+    : allImages.value.filter(img => img.category === activeCategory.value).length;
+
+  return visibleCount.value < totalFiltered;
+});
+
+function openLightbox(index: number) {
+  currentImageIndex.value = index;
+  lightboxOpen.value = true;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightboxOpen.value = false;
+  document.body.style.overflow = 'auto';
+}
+
+function nextImage() {
+  if (currentImageIndex.value < filteredImages.value.length - 1) {
+    currentImageIndex.value++;
   }
 }
 
-// Sample image data for each tab
-const tabImages = {
-  knit: [
-    './assets/v1/section/knit/IMG_9619.JPG',
-    './assets/v1/section/knit/IMG_9632.JPG',
-    './assets/v1/section/knit/IMG_9636.JPG',
-    './assets/v1/section/knit/IMG_9639.JPG',
-    './assets/v1/section/knit/IMG_9644.JPG',
-  ],
-  woven: [
-    './assets/v1/section/woven/IMG_9649.JPG',
-    './assets/v1/section/woven/IMG_9666.JPG',
-  ],
-  printing: [
-    './assets/v1/section/PRINTING & EMBROIDARY/Accessories Unit 01.png',
-    './assets/v1/section/PRINTING & EMBROIDARY/Accessories Unit 04.png',
-    './assets/v1/section/PRINTING & EMBROIDARY/Embroidery Unit 01.png',
-    './assets/v1/section/PRINTING & EMBROIDARY/Embroidery Unit 02.png',
-  ],
-  dyeing: [
-    './assets/v1/section/DYING & FINISHING/IMG_7307.JPG',
-  ],
-  washing: [
-    './assets/v1/section/WASHING/wash.JPG',
-  ],
-  packaging: [
-    './assets/v1/section/PAKAGING/01 (1).jpg',
-  ],
-  transport: [
-    './assets/v1/section/TRANSPORT/hsbc-bangladesh-introduced-sustainability-linked-loan-for-ha-meem-group-banner-image.jpg',
-  ],
-  teaGarden: [
-    './assets/businessUnitImage/tea1.jpg',
-    './assets/businessUnitImage/tea2.jpg',
-  ],
-  newspaper: [
-    './assets/businessUnitImage/news.png',
-    './assets/businessUnitImage/samakal2.jpg',
-  ],
-  newsChannel: [
-    './assets/businessUnitImage/c24.png',
-  ]
-}
-
-// Computed properties
-const tabKeys = computed(() => Object.keys(businessUnits) as (keyof typeof tabImages)[])
-const currentTabIndex = computed(() => tabKeys.value.indexOf(activeTab.value))
-const currentTabImages = computed(() => tabImages[activeTab.value])
-
-// Clear all timers
-const clearAllTimers = () => {
-  if (slideTimer) {
-    clearTimeout(slideTimer)
-    slideTimer = null
-  }
-  if (progressTimer) {
-    clearInterval(progressTimer)
-    progressTimer = null
-  }
-  if (tabTransitionTimer) {
-    clearTimeout(tabTransitionTimer)
-    tabTransitionTimer = null
+function previousImage() {
+  if (currentImageIndex.value > 0) {
+    currentImageIndex.value--;
   }
 }
 
-// Start progress bar animation
-const startProgressBar = () => {
-  slideProgress.value = 0
-  const progressStep = 100 / (SLIDE_DURATION / 50) // Update every 50ms
-  
-  progressTimer = setInterval(() => {
-    slideProgress.value += progressStep
-    if (slideProgress.value >= 100) {
-      slideProgress.value = 100
-      if (progressTimer) {
-        clearInterval(progressTimer)
-        progressTimer = null
-      }
-    }
-  }, 50)
+function loadMoreImages() {
+  visibleCount.value += 6;
 }
 
-// Advance to next slide
-const advanceSlide = async () => {
-  if (!isRunning.value || !carouselRef.value) return
-
-  const totalSlides = currentTabImages.value.length
-  const nextSlideIndex = currentSlideIndex.value + 1
-
-  if (nextSlideIndex >= totalSlides) {
-    // Reached end of carousel, advance to next tab
-    await advanceToNextTab()
-  } else {
-    // Move to next slide
-    currentSlideIndex.value = nextSlideIndex
-    
-    await nextTick()
-    
-    if (carouselRef.value) {
-      carouselRef.value.setActiveItem(currentSlideIndex.value)
-    }
-    
-    // Start next slide timer
-    startSlideTimer()
-  }
-}
-
-// Start slide timer with progress bar
-const startSlideTimer = () => {
-  if (!isRunning.value) return
-  
-  clearAllTimers()
-  startProgressBar()
-  
-  slideTimer = setTimeout(() => {
-    advanceSlide()
-  }, SLIDE_DURATION)
-}
-
-// Get next tab in sequence
-const getNextTab = (): keyof typeof tabImages => {
-  const currentIndex = tabKeys.value.indexOf(activeTab.value)
-  const nextIndex = (currentIndex + 1) % tabKeys.value.length
-  return tabKeys.value[nextIndex]
-}
-
-// Advance to next tab with smooth transition
-const advanceToNextTab = async () => {
-  if (!isRunning.value) return
-  
-  clearAllTimers()
-  
-  // Animate out current content
-  gsap.to(contentContainer.value, {
-    opacity: 0,
-    scale: 0.95,
-    y: 20,
-    duration: 0.4,
-    ease: 'power2.inOut',
-    onComplete: () => {
-      // Change to next tab
-      const nextTab = getNextTab()
-      activeTab.value = nextTab
-      currentSlideIndex.value = 0
-      carouselKey.value += 1 // Force carousel re-render
-
-      nextTick().then(() => {
-        // Wait a bit longer for carousel to be ready
-        setTimeout(() => {
-          if (carouselRef.value) {
-            carouselRef.value.setActiveItem(0)
-          }
-
-          // Animate in new content
-          gsap.to(contentContainer.value, {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            duration: 0.6,
-            ease: 'power2.out',
-            onComplete: () => {
-              // Start the carousel cycle for new tab
-              if (isRunning.value) {
-                tabTransitionTimer = setTimeout(() => {
-                  startSlideTimer()
-                }, 800) // Longer delay to ensure everything is loaded
-              }
-            }
-          })
-        }, 300) // Wait for carousel to be ready
-      })
-    }
-  })
-}
-
-// Handle manual tab change
-const handleManualTabChange = async (tab: keyof typeof tabImages) => {
-  if (tab === activeTab.value) return
-  
-  // Temporarily pause auto-advance
-  const wasRunning = isRunning.value
-  isRunning.value = false
-  clearAllTimers()
-  
-  // Animate transition
-  gsap.to(contentContainer.value, {
-    opacity: 0,
-    scale: 0.95,
-    duration: 0.3,
-    ease: 'power2.inOut',
-    onComplete: () => {
-      activeTab.value = tab
-      currentSlideIndex.value = 0
-      carouselKey.value += 1
-
-      nextTick().then(() => {
-        if (carouselRef.value) {
-          carouselRef.value.setActiveItem(0)
-        }
-
-        gsap.to(contentContainer.value, {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          ease: 'power2.out',
-          onComplete: () => {
-            // Resume auto-advance after 5 seconds
-            setTimeout(() => {
-              isRunning.value = wasRunning
-              if (isRunning.value) {
-                startSlideTimer()
-              }
-            }, 3000)
-          }
-        })
-      })
-    }
-  })
-}
-
-// Toggle auto-advance
-const toggleAutoAdvance = () => {
-  isRunning.value = !isRunning.value
-  
-  if (isRunning.value) {
-    startSlideTimer()
-  } else {
-    clearAllTimers()
-    slideProgress.value = 0
-  }
-}
-
-// Handle carousel ready state
-const handleCarouselReady = () => {
-  if (isInitialLoad.value) {
-    isCarouselReady.value = true
-    isInitialLoad.value = false
-  }
-}
-
-// Initialize infinite cycle with proper loading checks
-const startInfiniteCycle = async () => {
-  // Wait for component to be fully mounted
-  await nextTick()
-  
-  // Additional wait to ensure carousel is rendered
-  await new Promise(resolve => setTimeout(resolve, 200))
-  
-  if (carouselRef.value) {
-    // Ensure carousel is ready
-    carouselRef.value.setActiveItem(0)
-    isCarouselReady.value = true
-    isInitialLoad.value = false
-    
-    if (isRunning.value) {
-      // Start with a longer initial delay
-      setTimeout(() => {
-        startSlideTimer()
-      }, 1500) // Longer initial delay for first load
-    }
-  }
-}
-
-// Animation for initial load
+// Keyboard navigation for lightbox
 onMounted(() => {
-  // Animate title
-  gsap.from('.section-title', {
-    opacity: 0,
-    y: -30,
-    duration: 0.8,
-    ease: 'power2.out'
-  })
+  const handleKeydown = (e: KeyboardEvent) => {
+    if (!lightboxOpen.value) return;
 
-  // Animate tabs
-  gsap.from('.tab-item', {
-    opacity: 0,
-    x: -30,
-    stagger: 0.1,
-    duration: 0.5,
-    delay: 0.3,
-    ease: 'power2.out'
-  })
-
-  // Animate content
-  gsap.from('.tab-content-container', {
-    opacity: 0,
-    y: 30,
-    duration: 0.8,
-    delay: 0.6,
-    ease: 'power2.out',
-    onComplete: () => {
-      // Start infinite cycle after initial animations
-      startInfiniteCycle()
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowLeft') {
+      previousImage();
+    } else if (e.key === 'ArrowRight') {
+      nextImage();
     }
-  })
-})
+  };
 
-// Cleanup on unmount
-onUnmounted(() => {
-  clearAllTimers()
-})
+  document.addEventListener('keydown', handleKeydown);
+
+  return () => {
+    document.removeEventListener('keydown', handleKeydown);
+  };
+});
 </script>
 
 <style scoped>
-/* Enhanced tab styling with smoother transitions */
-.custom-tabs {
-  position: relative;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
+/* Masonry Grid Layout */
+.masonry-grid {
+  column-count: 2;
+  column-gap: 1rem;
 
-.tab-button {
-  position: relative;
-  overflow: hidden;
-  transform-origin: center;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.tab-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 0;
-}
-
-.tab-button:hover::before {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.tab-button.active-tab::before {
-  opacity: 1;
-  transform: translateX(0);
-  background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
-}
-
-.tab-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.active-tab .tab-icon-container {
-  transform: scale(1.2) rotate(5deg);
-}
-
-.tab-button:hover .tab-icon-container {
-  transform: scale(1.1);
-}
-
-/* Enhanced carousel styling */
-.carousel-container {
-  overflow: hidden;
-  position: relative;
-  border-radius: 0.5rem;
-}
-
-.tab-content-container {
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Smooth carousel transitions */
-:deep(.custom-carousel .el-carousel__item) {
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-:deep(.custom-carousel .el-carousel__arrow) {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #333;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  transform: translateY(-50%) scale(0.9);
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-}
-
-:deep(.custom-carousel:hover .el-carousel__arrow) {
-  opacity: 1;
-}
-
-:deep(.custom-carousel .el-carousel__arrow:hover) {
-  background-color: white;
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.15);
-}
-
-:deep(.custom-carousel .el-carousel__arrow--left) {
-  left: 20px;
-}
-
-:deep(.custom-carousel .el-carousel__arrow--right) {
-  right: 20px;
-}
-
-:deep(.custom-carousel .el-carousel__indicators) {
-  bottom: 20px;
-}
-
-:deep(.custom-carousel .el-carousel__indicator) {
-  padding: 0 4px;
-}
-
-:deep(.custom-carousel .el-carousel__button) {
-  width: 30px;
-  height: 3px;
-  border-radius: 1.5px;
-  background-color: rgba(255, 255, 255, 0.7);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-:deep(.custom-carousel .el-carousel__indicator.is-active .el-carousel__button) {
-  background-color: white;
-  width: 40px;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
-}
-
-/* Enhanced animations */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
+  @media (min-width: 768px) {
+    column-count: 3;
+    column-gap: 1.5rem;
   }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.1);
+
+  @media (min-width: 1024px) {
+    column-count: 3;
+    column-gap: 2rem;
   }
 }
 
-.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+
+  @media (min-width: 768px) {
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    margin-bottom: 2rem;
+  }
 }
 
-/* Hover scale utilities */
-.hover\:scale-102:hover {
-  transform: scale(1.02);
+/* Smooth transitions */
+.masonry-item img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.scale-105 {
-  transform: scale(1.05);
+/* Custom scrollbar for lightbox */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1023px) {
-  .custom-tabs {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
-  .custom-tabs::-webkit-scrollbar {
-    display: none;
-  }
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
 
-  .tab-item {
-    flex: 0 0 auto;
-    margin-right: 0.5rem;
-  }
-
-  .tab-button {
-    white-space: nowrap;
-    border-left: none !important;
-    border-bottom: 4px solid transparent;
-    border-radius: 0.375rem;
-  }
-
-  .tab-button.active-tab {
-    border-bottom: 4px solid var(--el-color-primary);
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>
