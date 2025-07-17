@@ -110,6 +110,7 @@
       </div>
     </div>
 
+
     <!-- Bottom Section -->
     <div class="bg-gray-50 py-8 md:py-12 rounded-t-lg">
       <div class="max-w-screen-2xl mx-auto px-4">
@@ -123,20 +124,13 @@
             </h2>
             <div class="relative overflow-hidden px-10">
               <!-- Added horizontal padding to give space for arrows -->
-              <!-- <div class="flex transition-transform duration-500 ease-in-out items-center"
+              <div class="flex transition-transform duration-500 ease-in-out items-center"
                 :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
                 <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
                   class="min-w-full flex-shrink-0 flex justify-center items-center gap-4 md:gap-6">
                   <img loading="lazy" v-for="customer in customerGroup" :key="customer.name" :src="customer.src"
                     :alt="customer.name" class="h-12 sm:h-16 w-auto object-contain flex-shrink-0 rounded-md" />
                 </div>
-              </div> -->
-
-              <div class="relative overflow-hidden px-10 h-20">
-                <transition-group name="fade" tag="div" class="flex items-center justify-center gap-4 md:gap-6">
-                  <img v-for="customer in customerGroups[currentCustomerSlide]" :key="customer.name" :src="customer.src"
-                    :alt="customer.name" class="h-12 sm:h-16 w-auto object-contain flex-shrink-0 rounded-md" />
-                </transition-group>
               </div>
             </div>
 
@@ -195,6 +189,7 @@
       </div>
     </div>
 
+
     <!-- Certificate Modal -->
     <div v-if="selectedCertificate" @click="closeCertificateModal"
       class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 backdrop-blur">
@@ -226,17 +221,23 @@ let customerAutoPlayInterval: ReturnType<typeof setInterval> | null = null;
 let certificateAutoPlayInterval: ReturnType<typeof setInterval> | null = null;
 
 
-// carousel auto-play functionality
 const startCustomerAutoPlay = () => {
   customerAutoPlayInterval = setInterval(() => {
     nextCustomer();
   }, 5000);
 };
+
 const startCertificateAutoPlay = () => {
   certificateAutoPlayInterval = setInterval(() => {
     nextCertificate();
-  }, 1000); // every 5 seconds
+  }, 6000);
 };
+
+onMounted(() => {
+  startAutoPlay();
+  startCustomerAutoPlay();
+  startCertificateAutoPlay();
+});
 
 const stopAllAutoPlay = () => {
   stopAutoPlay(); // main slider
@@ -244,11 +245,7 @@ const stopAllAutoPlay = () => {
   clearInterval(certificateAutoPlayInterval!);
 };
 
-onMounted(() => {
-  startAutoPlay(); // main image slider
-  startCustomerAutoPlay();
-  startCertificateAutoPlay();
-});
+
 
 onUnmounted(() => {
   stopAllAutoPlay();
@@ -686,5 +683,18 @@ onUnmounted(() => {
 
 .fixed button:hover {
   animation-play-state: paused;
+}
+
+
+
+.carousel-fade-enter-active,
+.carousel-fade-leave-active {
+  transition: all 0.8s ease;
+}
+
+.carousel-fade-enter-from,
+.carousel-fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
 }
 </style>
