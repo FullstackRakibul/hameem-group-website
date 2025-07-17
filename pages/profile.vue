@@ -1,46 +1,31 @@
 <template>
   <div class="bg-white min-h-screen font-inter">
     <!-- Floating Translation Button -->
-    <div class="fixed top-4 right-4 z-50">
+    <div class="fixed top-4 right-4 z-50 flex flex-row items-end space-x-1">
+      <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer"
+        class="bg-white text-primary p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center border border-primary/20"
+        title="View 360° Virtual Tour">
+        <img src="/assets/profile/360-Degree-Virtual-Tour-1.png" class="h-6 w-6" alt="360 VR Tour" />
+      </a>
+
       <button @click="toggleLanguage"
-        class="bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group"
+        class="bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center"
         :title="language === 'en' ? 'Switch to Chinese' : language === 'zh' ? '日本語に切り替え' : 'Switch to English'">
-        <div class="flex items-center space-x-2">
-          <svg class="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor"
-            viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
-            </path>
-          </svg>
-          <span class="text-sm font-medium">
-            {{ language === 'en' ? 'EN' : language === 'zh' ? '中' : '日' }}
-          </span>
-        </div>
-
-
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+          </path>
+        </svg>
       </button>
-      <!-- 360 VR Floating Button -->
-      <div class="fixed top-20 right-10 z-50 ">
-        <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer"
-          class="rounded-full shadow-lg transition-all duration-300 hover:scale-110 group"
-          title="View 360° Virtual Tour">
-          <div class="flex items-center space-x-1">
-            <img src="../public/assets/profile/360-Degree-Virtual-Tour-1.png"
-              class="h-10 w-10 transition-transform duration-300" />
-          </div>
-        </a>
-      </div>
-
-
     </div>
 
     <!-- Header Section -->
-    <div class="bg-white py-6 sm:py-8 px-4 sm:px-6 shadow-sm rounded-b-lg">
+    <div class="bg-white py-6 sm:py-6 px-4 sm:px-6 shadow-sm rounded-b-lg">
       <div class="max-w-screen-2xl mx-auto">
         <!-- Company Logo and Title Container -->
-        <div class="flex flex-col md:flex-row items-center justify-center md:gap-8 mb-6 md:mb-2">
+        <div class="flex flex-col md:flex-row items-center justify-center md:gap-8 md:mb-2">
           <!-- Logo Container -->
-          <div class="p-2 sm:p-3 rounded-lg border border-gray-200 bg-white shadow-sm mb-3 md:mb-1">
+          <div class=" rounded-lg border border-gray-200 bg-white shadow-sm mb-3 md:mb-1">
             <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group"
               class="h-16 sm:h-20 w-auto rounded">
           </div>
@@ -58,7 +43,7 @@
     </div>
 
     <!-- Main Content Section -->
-    <div class="max-w-screen-2xl mx-auto px-4 py-6">
+    <div class="max-w-screen-2xl mx-auto px-4 py-4">
       <div class="grid lg:grid-cols-5 gap-6 items-start">
 
         <!-- Left Side - Statistics Grid (3/5 width) -->
@@ -138,13 +123,20 @@
             </h2>
             <div class="relative overflow-hidden px-10">
               <!-- Added horizontal padding to give space for arrows -->
-              <div class="flex transition-transform duration-500 ease-in-out items-center"
+              <!-- <div class="flex transition-transform duration-500 ease-in-out items-center"
                 :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
                 <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
                   class="min-w-full flex-shrink-0 flex justify-center items-center gap-4 md:gap-6">
                   <img loading="lazy" v-for="customer in customerGroup" :key="customer.name" :src="customer.src"
                     :alt="customer.name" class="h-12 sm:h-16 w-auto object-contain flex-shrink-0 rounded-md" />
                 </div>
+              </div> -->
+
+              <div class="relative overflow-hidden px-10 h-20">
+                <transition-group name="fade" tag="div" class="flex items-center justify-center gap-4 md:gap-6">
+                  <img v-for="customer in customerGroups[currentCustomerSlide]" :key="customer.name" :src="customer.src"
+                    :alt="customer.name" class="h-12 sm:h-16 w-auto object-contain flex-shrink-0 rounded-md" />
+                </transition-group>
               </div>
             </div>
 
@@ -235,13 +227,11 @@ let certificateAutoPlayInterval: ReturnType<typeof setInterval> | null = null;
 
 
 // carousel auto-play functionality
-
 const startCustomerAutoPlay = () => {
   customerAutoPlayInterval = setInterval(() => {
     nextCustomer();
-  }, 1000); // every 4 seconds
+  }, 5000);
 };
-
 const startCertificateAutoPlay = () => {
   certificateAutoPlayInterval = setInterval(() => {
     nextCertificate();
@@ -633,6 +623,15 @@ onUnmounted(() => {
   filter: grayscale(0%);
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 /* Smooth transitions for sliders */
 .transition-transform {
   transition: transform 0.5s ease-in-out;
