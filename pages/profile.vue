@@ -4,7 +4,7 @@
     <div class="fixed top-4 right-4 z-50">
       <button @click="toggleLanguage"
         class="bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group"
-        :title="isChineseMode ? '切换到英文' : 'Switch to Chinese'">
+        :title="language === 'en' ? 'Switch to Chinese' : language === 'zh' ? '日本語に切り替え' : 'Switch to English'">
         <div class="flex items-center space-x-2">
           <svg class="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor"
             viewBox="0 0 24 24">
@@ -12,9 +12,26 @@
               d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
             </path>
           </svg>
-          <span class="text-sm font-medium">{{ isChineseMode ? '中' : 'EN' }}</span>
+          <span class="text-sm font-medium">
+            {{ language === 'en' ? 'EN' : language === 'zh' ? '中' : '日' }}
+          </span>
         </div>
+
+
       </button>
+      <!-- 360 VR Floating Button -->
+      <div class="fixed top-20 right-10 z-50 ">
+        <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer"
+          class="rounded-full shadow-lg transition-all duration-300 hover:scale-110 group"
+          title="View 360° Virtual Tour">
+          <div class="flex items-center space-x-1">
+            <img src="../public/assets/profile/360-Degree-Virtual-Tour-1.png"
+              class="h-10 w-10 transition-transform duration-300" />
+          </div>
+        </a>
+      </div>
+
+
     </div>
 
     <!-- Header Section -->
@@ -207,62 +224,178 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { definePageMeta } from '#imports';
+const language = ref<'en' | 'zh' | 'jp'>('en');
 
 definePageMeta({
   layout: false,
 });
 
+let customerAutoPlayInterval: ReturnType<typeof setInterval> | null = null;
+let certificateAutoPlayInterval: ReturnType<typeof setInterval> | null = null;
+
+
+// carousel auto-play functionality
+
+const startCustomerAutoPlay = () => {
+  customerAutoPlayInterval = setInterval(() => {
+    nextCustomer();
+  }, 1000); // every 4 seconds
+};
+
+const startCertificateAutoPlay = () => {
+  certificateAutoPlayInterval = setInterval(() => {
+    nextCertificate();
+  }, 1000); // every 5 seconds
+};
+
+const stopAllAutoPlay = () => {
+  stopAutoPlay(); // main slider
+  clearInterval(customerAutoPlayInterval!);
+  clearInterval(certificateAutoPlayInterval!);
+};
+
+onMounted(() => {
+  startAutoPlay(); // main image slider
+  startCustomerAutoPlay();
+  startCertificateAutoPlay();
+});
+
+onUnmounted(() => {
+  stopAllAutoPlay();
+  document.body.style.overflow = 'auto';
+});
+
+
+
 // Translation system
 const isChineseMode = ref(false);
+const isJapaneeseMode = ref(false);
 
 const translations = {
   companyTitle: {
     en: 'LEADING WHOLESALE CLOTHING MANUFACTURER IN BANGLADESH',
-    zh: '孟加拉国领先的服装批发制造商'
+    zh: '孟加拉国领先的服装批发制造商',
+    jp: 'バングラデシュの大手衣料品卸売メーカー'
   },
   dataNote: {
     en: 'These data have been provided on an annual basis.',
-    zh: '这些数据是按年度提供的。'
+    zh: '这些数据是按年度提供的。',
+    jp: 'これらのデータは年間ベースで提供されています。'
   },
   ourCustomer: {
     en: 'OUR CUSTOMER',
-    zh: '主要客户'
+    zh: '主要客户',
+    jp: '主な取引先'
   },
   accreditation: {
     en: 'ACCREDITATIONS & CERTIFICATIONS',
-    zh: '认可和认证'
+    zh: '认可和认证',
+    jp: '認定と認証'
   }
 };
 
 const statisticsTranslations = {
-  establishment: { en: 'Establishment', zh: '成立于1984年' },
-  factories: { en: 'Factories', zh: '26 工厂' },
-  employees: { en: 'Employees', zh: '七万五人工' },
-  yearlyRevenue: { en: 'Yearly Revenue', zh: '10亿美元营业额' },
-  readymadeGarments: { en: 'Readymade Garments', zh: '1.2亿/年 服装' },
-  sweater: { en: 'Sweater', zh: '600万/年 毛衣' },
-  jacket: { en: 'Jacket', zh: '50万夹克' },
-  textileMill: { en: '', zh: '牛仔布与纺织厂' },
-  spinning: { en: 'Spinning', zh: '纺纱100 公吨' },
-  wash: { en: 'Wash Capacity', zh: '洗涤厂 1.42亿/年' },
-  // femaleEmployees: { en: 'Female Employees', zh: '80% 女员工' },
-  recycleFiber: { en: 'Fiber Recycling', zh: '回收纤维 1560公吨/年' },
-  waterRecycle: { en: 'Water Recycling', zh: '回收63%水' },
-  solarCapacity: { en: 'Solar Capacity', zh: '太阳能电池板 – 15兆瓦' },
-  accessories: { en: '100% In House Accessories', zh: '100%内部配件' },
-  laserMachine: { en: 'Laser Machines', zh: '激光机 102 台' },
-  coGeneration: { en: 'Power Co-Generation', zh: '75% 热电联产' },
-  ozoneMachine: { en: 'Ozone Machines', zh: '26 臭氧机' },
-  laboratory: { en: 'In House Laboratory', zh: '内部实验室' }
+  establishment: {
+    en: 'Establishment',
+    zh: '成立于1984年',
+    jp: '1984年設立'
+  },
+  factories: {
+    en: 'Factories',
+    zh: '26 工厂',
+    jp: '26工場'
+  },
+  employees: {
+    en: 'Employees',
+    zh: '七万五人工',
+    jp: '従業員数 75,000 人以上'
+  },
+  yearlyRevenue: {
+    en: 'Yearly Revenue',
+    zh: '10亿美元营业额',
+    jp: '年間収益10億ドル'
+  },
+  readymadeGarments: {
+    en: 'Readymade Garments',
+    zh: '1.2亿/年 服装',
+    jp: '年間1億2,000万枚の既製服を生産'
+  },
+  sweater: {
+    en: 'Sweater',
+    zh: '600万/年 毛衣',
+    jp: '年間600万枚のセーターを生産'
+  },
+  jacket: {
+    en: 'Jacket',
+    zh: '50万夹克',
+    jp: '年間500万枚のジャケットを製造'
+  },
+  textileMill: {
+    en: '',
+    zh: '牛仔布与纺织厂',
+    jp: '繊維・デニム工場'
+  },
+  spinning: {
+    en: 'Spinning',
+    zh: '纺纱100 公吨',
+    jp: '日産100トンの紡績工場'
+  },
+  wash: {
+    en: 'Wash Capacity',
+    zh: '洗涤厂 1.42亿/年',
+    jp: '年間1億4,200万枚の洗い加工可能'
+  },
+  recycleFiber: {
+    en: 'Fiber Recycling',
+    zh: '回收纤维 1560公吨/年',
+    jp: '年間1,560万トンのリサイクル繊維を使用'
+  },
+  waterRecycle: {
+    en: 'Water Recycling',
+    zh: '回收63%水',
+    jp: '63%の水をリサイクル'
+  },
+  solarCapacity: {
+    en: 'Solar Capacity',
+    zh: '太阳能电池板 – 15兆瓦',
+    jp: '太陽光発電容量は15MW'
+  },
+  accessories: {
+    en: '100% In House Accessories',
+    zh: '100%内部配件',
+    jp: '付属材料は100%自社手配です'
+  },
+  laserMachine: {
+    en: 'Laser Machines',
+    zh: '激光机 102 台',
+    jp: '102台のレーザー加工機を所有'
+  },
+  coGeneration: {
+    en: 'Power Co-Generation',
+    zh: '75% 热电联产',
+    jp: 'コージェネレーション（熱電供給）の総合効率は 75%'
+  },
+  ozoneMachine: {
+    en: 'Ozone Machines',
+    zh: '26 臭氧机',
+    jp: '26台のオゾンマシンを所有'
+  },
+  laboratory: {
+    en: 'In House Laboratory',
+    zh: '内部实验室',
+    jp: 'インハウスラボを設置'
+  }
 };
 
 const getTranslation = (key: string) => {
   const translation = translations[key as keyof typeof translations];
-  return translation ? (isChineseMode.value ? translation.zh : translation.en) : key;
+  return translation ? translation[language.value] || translation['en'] : key;
 };
 
 const toggleLanguage = () => {
-  isChineseMode.value = !isChineseMode.value;
+  if (language.value === 'en') language.value = 'zh';
+  else if (language.value === 'zh') language.value = 'jp';
+  else language.value = 'en';
 };
 
 // Main slider data
@@ -320,19 +453,20 @@ const translatedStatisticsData = computed(() => {
     let translatedValue = stat.value;
     let translatedLabel = stat.label;
 
-    if (isChineseMode.value && translation) {
-      // Handle special cases for Chinese translations
-      switch (translationKey) {
-        case 'textileMill':
+    if (translation) {
+      if (language.value === 'zh') {
+        if (translationKey === 'textileMill') {
           translatedValue = '<p class="text-sm text-black">牛仔</p><small>250万码/年</small> <br><p class="text-sm text-black">不牛仔</p><small>550万码/年</small>';
-          break;
-        default:
-          // For most cases, keep the original value but translate the label
-          break;
+        }
+        translatedLabel = translation.zh;
+      } else if (language.value === 'jp') {
+        if (translationKey === 'textileMill') {
+          translatedValue = '<p class="text-sm text-black">デニム</p><small>250万ヤード/年</small> <br><p class="text-sm text-black">非デニム</p><small>550万ヤード/年</small>';
+        }
+        translatedLabel = translation.jp;
+      } else {
+        translatedLabel = translation.en;
       }
-      translatedLabel = translation.zh;
-    } else if (translation) {
-      translatedLabel = translation.en;
     }
 
     return {
@@ -342,6 +476,7 @@ const translatedStatisticsData = computed(() => {
     };
   });
 });
+
 
 // Customer carousel data
 const currentCustomerSlide = ref(0);
