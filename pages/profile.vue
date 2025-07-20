@@ -489,16 +489,23 @@ interface Certificate {
 }
 const selectedCertificate = ref<Certificate | null>(null);
 const certificatesData = ref([
-  { name: 'FSC Certificate', src: '/assets/profile/certificates/1. RSC.jpg' },
-  { name: 'Quality Certificate 1', src: '/assets/profile/certificates/2. BSCI.jpg' },
-  { name: 'Quality Certificate 2', src: '/assets/profile/certificates/3. WRAP.png' },
-  { name: 'Quality Certificate 3', src: '/assets/profile/certificates/4. NIRAPON.jpg' },
-  { name: 'GRS Certificate', src: '/assets/profile/certificates/5. Sedex.jpg' },
-  { name: 'A&F Certificate', src: '/assets/profile/certificates/6. 1SO-14001.png' },
-  { name: 'American Eagle Certificate', src: '/assets/profile/certificates/7. Oekotex-100.png' },
-  { name: 'BAB Certificate', src: '/assets/profile/certificates/8. Oekotex-step.png' },
-  { name: 'GAP-Certificate-2024', src: '/assets/profile/certificates/9. Better-work.jpg' },
-  { name: 'JC-Penny-Certificate-2024', src: '/assets/profile/certificates/10. SCAN.png' },
+  { name: 'FSC Certificate', src: '/assets/profile/certificates/1.png' },
+  { name: 'Quality Certificate 1', src: '/assets/profile/certificates/2.png' },
+  { name: 'Quality Certificate 2', src: '/assets/profile/certificates/3.png' },
+  { name: 'Quality Certificate 3', src: '/assets/profile/certificates/4.png' },
+  { name: 'GRS Certificate', src: '/assets/profile/certificates/5.png' },
+  { name: 'A&F Certificate', src: '/assets/profile/certificates/6.jpg' },
+  { name: 'American Eagle Certificate', src: '/assets/profile/certificates/7.png' },
+  { name: 'BAB Certificate', src: '/assets/profile/certificates/8.png' },
+  { name: 'GAP-Certificate-2024', src: '/assets/profile/certificates/9.png' },
+  { name: 'JC-Penny-Certificate-2024', src: '/assets/profile/certificates/10.png' },
+  { name: 'RSC', src: '/assets/profile/certificates/10.png' },
+  { name: 'Regen', src: '/assets/profile/certificates/11.png' },
+  { name: '#', src: '/assets/profile/certificates/12.jpg' },
+  { name: '#', src: '/assets/profile/certificates/13.jpg' },
+  { name: 'ics', src: '/assets/profile/certificates/14.jpg' },
+  { name: 'RSC', src: '/assets/profile/certificates/15.jpg' },
+  { name: 'MGP', src: '/assets/profile/certificates/16.jpg' },
 ]);
 
 // Computed properties for grouping
