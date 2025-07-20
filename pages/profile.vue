@@ -109,8 +109,6 @@
         </div>
       </div>
     </div>
-
-
     <!-- Bottom Section -->
     <div class="bg-gray-50 py-8 md:py-12 rounded-t-lg">
       <div class="max-w-screen-2xl mx-auto px-4">
