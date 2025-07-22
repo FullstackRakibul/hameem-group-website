@@ -79,7 +79,6 @@
                   <img loading="lazy" :src="slide.src" :alt="slide.alt" class="w-full h-full object-cover rounded-md">
                 </div>
               </div>
-
               <!-- Slider Navigation -->
               <button @click="previousSlide"
                 class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all">
@@ -101,6 +100,7 @@
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
@@ -422,6 +422,7 @@ const statisticsData = ref([
   { icon: '/assets/profile/icons/co-Genaration.png', value: '75%', label: 'coGeneration', labelKey: 'coGeneration' },
   { icon: '/assets/profile/icons/ozone.png', value: '26', label: 'ozoneMachine', labelKey: 'ozoneMachine' },
   { icon: '/assets/profile/icons/Chemical-Consumption.png', value: '', label: 'laboratory', labelKey: 'laboratory' },
+  { icon: '/assets/profile/icons/360tour.png', value: '', label: '360° tour', labelKey: '360tour' },
 ]);
 
 // Computed property for translated statistics

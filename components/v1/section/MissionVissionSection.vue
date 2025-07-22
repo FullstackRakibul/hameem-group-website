@@ -60,7 +60,7 @@
                 TOP
               </div>
               <div class="text-xl sm:text-2xl font-medium text-indigo-600">
-                70%
+                20%
               </div>
               <div class="absolute right-0 top-8 -translate-y-1/2 w-0.5 h-full bg-primary hidden sm:block"></div>
               <div class="
@@ -81,9 +81,8 @@
                 BOTTOM
               </div>
               <div class="text-xl sm:text-2xl font-medium text-sky-600">
-                25%
+                80%
               </div>
-              <div class="absolute right-0 top-8 -translate-y-1/2 w-0.5 h-full bg-primary hidden sm:block"></div>
               <div class="
                 absolute bottom-0 left-0 w-full h-0.5
                 bg-gradient-to-r from-sky-500 to-cyan-600
@@ -93,7 +92,7 @@
             </div>
 
             <!-- Segment 3: KIDS -->
-            <div class="
+            <!-- <div class="
               relative group flex-1
               flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4 md:gap-5
               py-2 px-4 sm:py-0
@@ -110,7 +109,7 @@
                 transform translate-y-full group-hover:translate-y-0
                 transition-transform duration-200 ease-out
               "></div>
-            </div>
+            </div> -->
           </div>
         </div>
 
