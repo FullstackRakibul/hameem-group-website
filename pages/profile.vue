@@ -121,7 +121,7 @@
               {{ getTranslation('accreditation') }}
             </h2>
             <div class="relative overflow-hidden px-10">
-              <div class="flex transition-transform duration-500 ease-in-out items-center"
+              <div class="flex transition-transform animate-marquee duration-500 ease-in-out items-center"
                 :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
                 <div v-for="(certificateGroup, groupIndex) in certificateGroups" :key="groupIndex"
                   class="min-w-full flex-shrink-0 flex justify-center items-center gap-4 md:gap-6">
