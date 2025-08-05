@@ -66,9 +66,9 @@
               </div>
             </div>
             <div
-              class="card-border-gradient rounded-md p-0.5 transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl">
+              class="card-border-gradient rounded-md p-0.5  transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl">
               <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer">
-                <div class="relative w-full h-full bg-white rounded-[6px]">
+                <div class="relative w-full h-full -inset-0.5 bg-white rounded-[6px]">
                   <img src="/assets/profile/360-Degree-Virtual-Tour-2.png" alt="Ha-Meem Group Logo"
                     class="w-full h-full object-cover">
                 </div>
@@ -728,11 +728,11 @@ onUnmounted(() => {
   /* Required for the pseudo-element */
   background: linear-gradient(90deg,
       #1857a3,
-      #4a90e2,
-      #1857a3,
-      #4a90e2);
+      #0cb91d,
+      #0d3b72,
+      #ff5404);
   background-size: 400% 400%;
-  animation: gradient-border-animation 4s ease infinite;
+  animation: gradient-border-animation 2s ease infinite;
 }
 
 /* The keyframes for the background animation */
