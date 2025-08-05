@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white min-h-screen font-inter">
     <!-- Floating Translation Button -->
-    <div class="fixed top-4 right-4 z-50 flex flex-row items-end space-x-1">
+    <div class="fixed top-4 right-4 z-50 flex flex-row items-end space-x-1 ">
       <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer"
         class="bg-white text-primary p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center border border-primary/20"
         title="View 360° Virtual Tour">
@@ -9,9 +9,9 @@
       </a>
 
       <button @click="toggleLanguage"
-        class="bg-primary hover:bg-primary/90 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center"
+        class="floating-glow-button bg-primary hover:bg-primary/90 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center"
         :title="language === 'en' ? 'Switch to Chinese' : language === 'zh' ? '日本語に切り替え' : 'Switch to English'">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
           </path>
@@ -114,79 +114,50 @@
       </div>
     </div>
     <!-- Bottom Section -->
-    <div class="bg-gray-50 py-8 md:py-12 rounded-t-lg">
-      <div class="max-w-screen-2xl mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-8">
+    <div class="bg-gray-50 py-6 sm:py-8 md:py-12 rounded-t-lg overflow-hidden">
+      <div class="container mx-auto sm:px-4">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-10 md:divide-x md:divide-gray-300">
 
           <!-- Our Customers Carousel -->
-          <div class="relative">
+          <div class="relative px-4 sm:px-8 md:px-12 lg:px-16">
             <h2
-              class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
-              {{ getTranslation('accreditation') }}
+              class="text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
+              {{ getTranslation('ourCustomer') }}
             </h2>
-            <div class="relative overflow-hidden px-10">
+            <div class="relative overflow-hidden">
               <div class="flex transition-transform animate-marquee duration-500 ease-in-out items-center"
-                :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
-                <div v-for="(certificateGroup, groupIndex) in certificateGroups" :key="groupIndex"
-                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-4 md:gap-6">
-                  <div v-for="cert in certificateGroup" :key="cert.name" @click="openCertificateModal(cert)"
+                :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
+                <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
+                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-3 sm:gap-4 md:gap-4">
+                  <div v-for="cus in customerGroup" :key="cus.name" @click="openCertificateModal(cus)"
                     class="cursor-pointer flex-shrink-0 hover:scale-105 transition-transform">
-                    <img loading="lazy" :src="cert.src" :alt="cert.name"
-                      class="h-16 w-24 object-contain bg-white rounded-md border border-gray-200 p-2" />
+                    <img loading="lazy" :src="cus.src" :alt="cus.name"
+                      class="h-12 sm:h-16 w-auto object-contain bg-white rounded-md border border-gray-200 p-2" />
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- Navigation -->
-            <button @click="previousCustomer"
-              class="absolute left-1 top-2/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10 shadow-md">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button @click="nextCustomer"
-              class="absolute right-1 top-2/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10 shadow-md">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
           </div>
 
           <!-- Certifications Carousel -->
-          <div class="relative">
+          <div class="relative px-4 sm:px-8 md:px-12 lg:px-16">
             <h2
-              class="text-lg md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
+              class="text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation('accreditation') }}
             </h2>
-            <div class="relative overflow-hidden px-10">
-              <!-- Added horizontal padding to give space for arrows -->
-              <div class="flex  animate-marquee duration-500 ease-in-out items-center"
+            <div class="relative overflow-hidden">
+              <div class="flex transition-transform animate-marquee duration-500 ease-in-out items-center"
                 :style="{ transform: `translateX(-${currentCertificateSlide * 20}%)` }">
                 <div v-for="(certificateGroup, groupIndex) in certificateGroups" :key="groupIndex"
-                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-4 md:gap-6">
+                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-3 sm:gap-4 md:gap-6">
                   <div v-for="cert in certificateGroup" :key="cert.name" @click="openCertificateModal(cert)"
-                    class="cursor-pointer flex-shrink-0">
+                    class="cursor-pointer flex-shrink-0 hover:scale-105 transition-transform">
                     <img loading="lazy" :src="cert.src" :alt="cert.name"
-                      class="h-12 sm:h-16 w-auto object-contain flex-shrink-0 rounded-md" />
+                      class="h-10 sm:h-12 md:h-16 w-auto object-contain bg-white rounded-md border border-gray-200 p-2" />
                   </div>
                 </div>
               </div>
             </div>
-
-            <!-- Navigation -->
-            <button @click="previousCertificate"
-              class="absolute left-1 top-2/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10 shadow-md">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button @click="nextCertificate"
-              class="absolute right-1 top-2/2 -translate-y-1/2 bg-[#1857a3] text-white p-1 sm:p-2 rounded-full z-10 shadow-md">
-              <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
           </div>
 
         </div>
@@ -616,6 +587,40 @@ onUnmounted(() => {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+/* Floating button glow effect */
+.floating-glow-button {
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+.floating-glow-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #1857a3, #0cb91d, #0d3b72, #ff5404, #1857a3);
+  background-size: 400% 400%;
+  border-radius: 50%;
+  z-index: -1;
+  animation: gradient-glow 2s ease infinite;
+  opacity: 0.7;
+}
+
+.floating-glow-button:hover {
+  animation-play-state: paused;
+}
+
+.floating-glow-button:hover::before {
+  opacity: 1;
+}
+
+/* Disable float animation on mobile */
+@media (max-width: 640px) {
+  .floating-glow-button {
+    animation: none;
+  }
+}
 
 @keyframes marquee {
   0% {
@@ -628,7 +633,7 @@ onUnmounted(() => {
 }
 
 .animate-marquee {
-  animation: marquee 7s linear infinite;
+  animation: marquee 6s linear infinite;
 }
 
 .transition-all {
