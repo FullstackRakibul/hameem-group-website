@@ -21,7 +21,7 @@
       <button @click="toggleLanguage"
         class=" hover:bg-primary/90 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
         :title="language === 'en' ? 'Switch to Chinese' : language === 'zh' ? '日本語に切り替え' : 'Switch to English'">
-        <img :src="getLanguageIcon()" class="h-16 w-16 sm:h-12 sm:w-12" :alt="`${language.toUpperCase()} Language`" />
+        <img :src="getLanguageIcon()" class="h-12 w-12 sm:h-12 sm:w-12" :alt="`${language.toUpperCase()} Language`" />
       </button>
     </div>
 
