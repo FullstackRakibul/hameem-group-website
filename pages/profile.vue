@@ -120,7 +120,7 @@
       </div>
     </div>
     <!-- Bottom Section -->
-    <div class="bg-gray-50 py-6 sm:py-8 md:py-12 rounded-t-lg overflow-hidden">
+    <div class="bg-gray-50 py-6 sm:py-8 md:py-8 rounded-t-lg overflow-hidden">
       <div class="container mx-auto sm:px-4">
         <div class="grid md:grid-cols-2 gap-8 md:gap-10 md:divide-x md:divide-gray-300">
 
