@@ -8,14 +8,20 @@
         <img src="/assets/profile/360-Degree-Virtual-Tour-1.png" class="h-6 w-6" alt="360 VR Tour" />
       </a>
 
-      <button @click="toggleLanguage"
-        class="floating-glow-button bg-primary hover:bg-primary/90 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center"
+      <!-- <button @click="toggleLanguage"
+        class="  hover:bg-primary/90 text-white  sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center"
         :title="language === 'en' ? 'Switch to Chinese' : language === 'zh' ? '日本語に切り替え' : 'Switch to English'">
         <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
           </path>
         </svg>
+        <img src="/assets/profile/translate/en-logo.png" class="h-6 w-6" alt="360 VR Tour" />
+      </button> -->
+      <button @click="toggleLanguage"
+        class=" hover:bg-primary/90 text-white sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
+        :title="language === 'en' ? 'Switch to Chinese' : language === 'zh' ? '日本語に切り替え' : 'Switch to English'">
+        <img :src="getLanguageIcon()" class="h-8 w-8 sm:h-6 sm:w-6" :alt="`${language.toUpperCase()} Language`" />
       </button>
     </div>
 
@@ -352,6 +358,16 @@ const statisticsTranslations = {
 const getTranslation = (key: string) => {
   const translation = translations[key as keyof typeof translations];
   return translation ? translation[language.value] || translation['en'] : key;
+};
+
+// Language icon mapping
+const getLanguageIcon = () => {
+  const icons = {
+    en: '/assets/profile/translate/en-logo.png',
+    zh: '/assets/profile/translate/CH-logo.png', // Add Chinese flag/icon
+    jp: '/assets/profile/translate/JP-logo.png'  // Add Japanese flag/icon
+  };
+  return icons[language.value];
 };
 
 const toggleLanguage = () => {
