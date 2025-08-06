@@ -19,9 +19,9 @@
         <img src="/assets/profile/translate/en-logo.png" class="h-6 w-6" alt="360 VR Tour" />
       </button> -->
       <button @click="toggleLanguage"
-        class=" hover:bg-primary/90 text-white sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
+        class=" hover:bg-primary/90 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
         :title="language === 'en' ? 'Switch to Chinese' : language === 'zh' ? '日本語に切り替え' : 'Switch to English'">
-        <img :src="getLanguageIcon()" class="h-8 w-8 sm:h-6 sm:w-6" :alt="`${language.toUpperCase()} Language`" />
+        <img :src="getLanguageIcon()" class="h-16 w-16 sm:h-12 sm:w-12" :alt="`${language.toUpperCase()} Language`" />
       </button>
     </div>
 
@@ -384,7 +384,7 @@ const mainSliderImages = ref([
   { src: 'https://hameemgroup.net/assets-profile/3.JPG', alt: 'Ha-Meem Group Manufacturing Facility 3' },
   { src: 'https://hameemgroup.net/assets-profile/4.JPG', alt: 'Ha-Meem Group Manufacturing Facility 4' },
   { src: 'https://hameemgroup.net/assets-profile/5.jpg', alt: 'Ha-Meem Group Manufacturing Facility 5' },
-  { src: 'https://hameemgroup.net/assets-profile/6.jpg', alt: 'Ha-Meem Group Manufacturing Facility 6' },
+  { src: 'https://hameemgroup.net/assets-profile/6.JPG', alt: 'Ha-Meem Group Manufacturing Facility 6' },
   { src: 'https://hameemgroup.net/assets-profile/7.jpg', alt: 'Ha-Meem Group Manufacturing Facility 7' },
   { src: 'https://hameemgroup.net/assets-profile/8.jpg', alt: 'Ha-Meem Group Manufacturing Facility 8' },
   { src: 'https://hameemgroup.net/assets-profile/9.jpg', alt: 'Ha-Meem Group Manufacturing Facility 9' },
