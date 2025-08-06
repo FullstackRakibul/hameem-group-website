@@ -68,9 +68,9 @@
             <div
               class="card-border-gradient rounded-md p-0.5  transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl">
               <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer">
-                <div class="relative w-full h-full -inset-0.5 bg-white rounded-[6px]">
-                  <img src="/assets/profile/360-Degree-Virtual-Tour-2.png" alt="Ha-Meem Group Logo"
-                    class="w-full h-full object-cover">
+                <div class="relative w-full h-full rounded-lg bg-white">
+                  <img src="/assets/profile/360-Degree-Virtual-Tour-2.jpg" alt="Ha-Meem Group Logo"
+                    class="w-full h-full rounded-md object-cover">
                 </div>
               </a>
             </div>
