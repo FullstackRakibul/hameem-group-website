@@ -329,13 +329,13 @@ const statisticsTranslations = {
   },
   laserMachine: {
     en: 'Laser Machines',
-    zh: '激光机 102 台',
-    jp: '102台のレーザー加工機を所有'
+    zh: '激光机 120 台',
+    jp: '120 台のレーザー加工機を所有'
   },
   coGeneration: {
     en: 'Power Co-Generation',
-    zh: '75% 热电联产',
-    jp: 'コージェネレーション（熱電供給）の総合効率は 75%'
+    zh: '80% 热电联产',
+    jp: 'コージェネレーション（熱電供給）の総合効率は 80%'
   },
   ozoneMachine: {
     en: 'Ozone Machines',
@@ -343,7 +343,7 @@ const statisticsTranslations = {
     jp: '26台のオゾンマシンを所有'
   },
   laboratory: {
-    en: 'In House Laboratory',
+    en: 'In House Accredited Laboratory',
     zh: '内部实验室',
     jp: 'インハウスラボを設置'
   }
@@ -392,7 +392,8 @@ const statisticsData = ref([
   { icon: '/assets/profile/icons/Readymade-Garments.png', value: '120M/YR', label: 'readymadeGarments', labelKey: 'readymadeGarments' },
   { icon: '/assets/profile/icons/Sweater.png', value: '6M/YR', label: 'sweater', labelKey: 'sweater' },
   { icon: '/assets/profile/icons/Jacket.png', value: '0.5M/YR', label: 'jacket', labelKey: 'jacket' },
-  { icon: '/assets/profile/icons/Textile-Mill.png', value: '<p class="text-sm text-black">DENIM</p><small class="text-xs">2.5M YRD/YR</small > <br><p class="text-sm text-black">Non-DENIM</p><small class="text-xs">5.5M YRD/YR</small>', label: '', labelKey: 'textileMill' },
+  {
+    icon: '/assets/profile/icons/Textile-Mill.png', value: '<p class="text-sm text-black">DENIM</p><small class="text-xs"> 5.5 M YDS/Month</small > <br><p class="text-sm text-black">Non-DENIM</p><small class="text-xs">2.5M YDS/Month</small>', label: '', labelKey: 'textileMill' },
   { icon: '/assets/profile/icons/Spinning.png', value: '100MT/DAY', label: 'spinning', labelKey: 'spinning' },
   { icon: '/assets/profile/icons/wash.png', value: '142M/YR', label: 'wash', labelKey: 'wash' },
   // { icon: '/assets/profile/icons/Female-employes.png', value: '80%', label: 'femaleEmployees', labelKey: 'femaleEmployees' },
@@ -400,8 +401,8 @@ const statisticsData = ref([
   { icon: '/assets/profile/icons/Water.png', value: '63%', label: 'waterRecycle', labelKey: 'waterRecycle' },
   { icon: '/assets/profile/icons/Solar.png', value: '15 MW', label: 'solarCapacity', labelKey: 'solarCapacity' },
   { icon: '/assets/profile/icons/Accessories.png', value: '', label: 'accessories', labelKey: 'accessories' },
-  { icon: '/assets/profile/icons/Lasear.png', value: '102', label: 'laserMachine', labelKey: 'laserMachine' },
-  { icon: '/assets/profile/icons/co-Genaration.png', value: '75%', label: 'coGeneration', labelKey: 'coGeneration' },
+  { icon: '/assets/profile/icons/Lasear.png', value: '120', label: 'laserMachine', labelKey: 'laserMachine' },
+  { icon: '/assets/profile/icons/co-Genaration.png', value: '80%', label: 'coGeneration', labelKey: 'coGeneration' },
   { icon: '/assets/profile/icons/ozone.png', value: '26', label: 'ozoneMachine', labelKey: 'ozoneMachine' },
   { icon: '/assets/profile/icons/Chemical-Consumption.png', value: '', label: 'laboratory', labelKey: 'laboratory' }
 ]);
