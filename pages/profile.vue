@@ -3,7 +3,7 @@
     <!-- Floating Translation Button -->
     <div class="fixed top-4 right-4 z-50 flex flex-row items-end space-x-1 ">
       <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer"
-        class="bg-white text-primary p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center border border-primary/20"
+        class="bg-white text-primary p-3 shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center  border border-primary rounded-full"
         title="View 360° Virtual Tour">
         <img src="/assets/profile/360-Degree-Virtual-Tour-1.png" class="h-6 w-6" alt="360 VR Tour" />
       </a>
@@ -19,9 +19,9 @@
         <img src="/assets/profile/translate/en-logo.png" class="h-6 w-6" alt="360 VR Tour" />
       </button> -->
       <button @click="toggleLanguage"
-        class=" hover:bg-primary/90 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
+        class=" hover:bg-primary/90 text-white border border-primary rounded-full  shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
         :title="language === 'en' ? 'Switch to Chinese' : language === 'zh' ? '日本語に切り替え' : 'Switch to English'">
-        <img :src="getLanguageIcon()" class="h-12 w-12 sm:h-12 sm:w-12" :alt="`${language.toUpperCase()} Language`" />
+        <img :src="getLanguageIcon()" class="h-12 w-12 sm:h-12 sm:w-12 " :alt="`${language.toUpperCase()} Language`" />
       </button>
     </div>
 
@@ -80,6 +80,15 @@
                 </div>
               </a>
             </div>
+            <!-- Virtual Tour Card -->
+            <div
+              class="flex flex-row items-center justify-center p-4   transition bg-white">
+              <img src="/assets/profile/icons/hand-indicator.png" alt="Hand Icon" class="w-10 h-10 mb-2" />
+
+              <p class="text-center text-primary text-xs font-bold">
+                TAKE A VIRTUAL TOUR OF HA-MEEM GROUP
+              </p>
+            </div>
           </div>
         </div>
 
@@ -120,12 +129,12 @@
       </div>
     </div>
     <!-- Bottom Section -->
-    <div class="bg-gray-50 py-6 sm:py-8 md:py-8 rounded-t-lg overflow-hidden">
-      <div class="container mx-auto sm:px-4">
+    <div class=" bg-gray-50 py-6 sm:py-8 md:py-8 rounded-t-lg mx-auto overflow-hidden ">
+      <div class=" sm:px-4 ">
         <div class="grid md:grid-cols-2 gap-8 md:gap-10 md:divide-x md:divide-gray-300">
 
           <!-- Our Customers Carousel -->
-          <div class="relative px-4 sm:px-8 md:px-12 lg:px-16">
+          <div class="relative px-4 sm:px-8 md:px-12 lg:px-16 container">
             <h2
               class="text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation('ourCustomer') }}
@@ -504,7 +513,7 @@ const certificatesData = ref([
 // Computed properties for grouping
 const customerGroups = computed(() => {
   const groups = [];
-  const itemsPerGroup = 5;
+  const itemsPerGroup = 20;
   for (let i = 0; i < customersData.value.length; i += itemsPerGroup) {
     groups.push(customersData.value.slice(i, i + itemsPerGroup));
   }
@@ -513,7 +522,7 @@ const customerGroups = computed(() => {
 
 const certificateGroups = computed(() => {
   const groups = [];
-  const itemsPerGroup = 5;
+  const itemsPerGroup = 20;
   for (let i = 0; i < certificatesData.value.length; i += itemsPerGroup) {
     groups.push(certificatesData.value.slice(i, i + itemsPerGroup));
   }
@@ -650,7 +659,7 @@ onUnmounted(() => {
 }
 
 .animate-marquee {
-  animation: marquee 6s linear infinite;
+  animation: marquee 10s linear infinite;
 }
 
 .transition-all {
