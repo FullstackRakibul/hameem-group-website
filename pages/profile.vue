@@ -117,14 +117,6 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
               </button>
-
-              <!-- Slide Indicators -->
-              <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                <button v-for="(slide, index) in mainSliderImages" :key="index" @click="currentSlide = index" :class="[
-                  'w-3 h-3 rounded-full transition-all',
-                  currentSlide === index ? 'bg-white' : 'bg-white bg-opacity-50'
-                ]"></button>
-              </div>
             </div>
           </div>
         </div>
