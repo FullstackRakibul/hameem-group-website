@@ -181,7 +181,7 @@
       <div class="relative max-w-4xl max-h-full  p-6" @click.stop>
         <!-- Prevent modal closing when clicking on the image -->
         <img loading="lazy" :src="selectedCertificate.src" :alt="selectedCertificate.name"
-          class="max-w-full max-h-full bg-white  object-contain rounded-lg shadow-xl">
+          class="max-w-full max-h-full bg-white p-6  object-contain rounded-lg shadow-xl">
         <button @click="closeCertificateModal"
           class="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors shadow-md">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
