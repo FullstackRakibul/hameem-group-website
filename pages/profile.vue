@@ -19,7 +19,7 @@
         <img src="/assets/profile/translate/en-logo.png" class="h-6 w-6" alt="360 VR Tour" />
       </button> -->
       <button @click="toggleLanguage"
-        class=" hover:bg-primary/90 text-white border border-primary rounded-full  shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
+        class=" hover:bg-primary/90 text-white bg-white border border-primary rounded-full  shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
         :title="language === 'en' ? 'Switch to Chinese' : language === 'zh' ? '日本語に切り替え' : 'Switch to English'">
         <img :src="getLanguageIcon()" class="h-12 w-12 sm:h-12 sm:w-12 " :alt="`${language.toUpperCase()} Language`" />
       </button>
@@ -124,18 +124,18 @@
       </div>
     </div>
     <!-- Bottom Section -->
-    <div class=" bg-gray-50 py-6 sm:py-8 md:py-8 rounded-t-lg mx-auto overflow-hidden ">
-      <div class=" sm:px-4 ">
+    <div class="bg-gray-50 py-6 sm:py-8 md:py-8 rounded-t-lg mx-auto overflow-x-hidden">
+      <div class="max-w-screen-2xl mx-auto sm:px-4">
         <div class="grid md:grid-cols-2 gap-8 md:gap-10 md:divide-x md:divide-gray-300">
 
           <!-- Our Customers Carousel -->
-          <div class="relative px-4 sm:px-8 md:px-12 lg:px-16 container">
+          <div class="relative px-4 sm:px-8 md:px-12 lg:px-16">
             <h2
-              class="text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
+              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation('ourCustomer') }}
             </h2>
             <div class="relative overflow-hidden">
-              <div class="flex transition-transform animate-marquee duration-500 ease-in-out items-center"
+              <div class="flex transition-transform animate-marquee duration-500 ease-in-out items-center w-full"
                 :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
                 <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
                   class="min-w-full flex-shrink-0 flex justify-center items-center gap-3 sm:gap-4 md:gap-4">
@@ -152,11 +152,11 @@
           <!-- Certifications Carousel -->
           <div class="relative px-4 sm:px-8 md:px-12 lg:px-16">
             <h2
-              class="text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
+              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation('accreditation') }}
             </h2>
             <div class="relative overflow-hidden">
-              <div class="flex transition-transform animate-marquee duration-500 ease-in-out items-center"
+              <div class="flex transition-transform animate-marquee duration-500 ease-in-out items-center w-full"
                 :style="{ transform: `translateX(-${currentCertificateSlide * 20}%)` }">
                 <div v-for="(certificateGroup, groupIndex) in certificateGroups" :key="groupIndex"
                   class="min-w-full flex-shrink-0 flex justify-center items-center gap-3 sm:gap-4 md:gap-6">
@@ -178,10 +178,10 @@
     <!-- Certificate Modal -->
     <div v-if="selectedCertificate" @click="closeCertificateModal"
       class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 backdrop-blur">
-      <div class="relative max-w-4xl max-h-full" @click.stop>
+      <div class="relative max-w-4xl max-h-full  p-6" @click.stop>
         <!-- Prevent modal closing when clicking on the image -->
         <img loading="lazy" :src="selectedCertificate.src" :alt="selectedCertificate.name"
-          class="max-w-full max-h-full object-contain rounded-lg shadow-xl">
+          class="max-w-full max-h-full bg-white  object-contain rounded-lg shadow-xl">
         <button @click="closeCertificateModal"
           class="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors shadow-md">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
