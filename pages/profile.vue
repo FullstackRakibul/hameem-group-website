@@ -2,21 +2,12 @@
   <div class="bg-white min-h-screen font-inter">
     <!-- Floating Translation Button -->
     <div class="fixed top-4 right-4 z-50 flex flex-row items-end space-x-1">
-      <a
-        href="https://360vr.hameemgroup.com"
-        target="_blank"
-        rel="noopener noreferrer"
+      <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer"
         class="bg-white text-primary p-3 shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center border border-primary rounded-full"
-        title="View 360° Virtual Tour"
-      >
-        <img
-          src="/assets/profile/360-Degree-Virtual-Tour-1.png"
-          class="h-6 w-6"
-          alt="360 VR Tour"
-        />
+        title="View 360° Virtual Tour">
+        <img src="/assets/profile/360-Degree-Virtual-Tour-1.png" class="h-6 w-6" alt="360 VR Tour" />
       </a>
-      <button
-        @click="toggleLanguage"
+      <button @click="toggleLanguage"
         class="text-white bg-white border border-primary rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
         :title="
           language === 'en'
@@ -24,13 +15,8 @@
             : language === 'zh'
             ? '日本語に切り替え'
             : 'Switch to English'
-        "
-      >
-        <img
-          :src="getLanguageIcon()"
-          class="h-12 w-12 sm:h-12 sm:w-12"
-          :alt="`${language.toUpperCase()} Language`"
-        />
+        ">
+        <img :src="getLanguageIcon()" class="h-12 w-12 sm:h-12 sm:w-12" :alt="`${language.toUpperCase()} Language`" />
       </button>
     </div>
 
@@ -38,22 +24,16 @@
     <div class="bg-white py-6 sm:py-6 px-4 sm:px-6 shadow-sm rounded-b-lg">
       <div class="max-w-screen-2xl mx-auto">
         <!-- Company Logo and Title Container -->
-        <div
-          class="flex flex-col md:flex-row items-center justify-center md:gap-8 md:mb-2"
-        >
+        <div class="flex flex-col md:flex-row items-center justify-center md:gap-8 md:mb-2">
           <!-- Logo Container -->
           <div class="rounded-lg border border-gray-200 bg-white shadow-sm mb-3 md:mb-1">
-            <img
-              src="https://textilepages.com/public/profile/1593836298-img1-logo.png"
-              alt="Ha-Meem Group"
-              class="h-16 sm:h-20 w-auto rounded"
-            />
+            <img src="https://textilepages.com/public/profile/1593836298-img1-logo.png" alt="Ha-Meem Group"
+              class="h-16 sm:h-20 w-auto rounded" />
           </div>
           <!-- Title Container -->
           <div class="w-full md:w-auto text-center">
             <h1
-              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary leading-tight transition-all duration-500"
-            >
+              class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary leading-tight transition-all duration-500">
               {{ getTranslation("companyTitle") }}
             </h1>
             <!-- Minimalist bottom border for the title -->
@@ -70,58 +50,34 @@
         <div class="lg:col-span-3">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 lg:gap-2">
             <!-- Statistics Cards -->
-            <div
-              v-for="(stat, index) in translatedStatisticsData"
-              :key="index"
-              class="bg-white border-2 border-primary/20 rounded-md p-2 flex items-center hover:shadow-xl transition-shadow md:p-3 hover:scale-105"
-            >
-              <div
-                class="w-10 h-10 md:w-12 md:h-12 mr-2 md:mr-2 flex items-center justify-center flex-shrink-0"
-              >
-                <img
-                  :src="stat.icon"
-                  :alt="stat.label"
-                  class="h-8 w-8 md:h-10 md:w-10 lg:h-14 lg:w-14 object-contain"
-                />
+            <div v-for="(stat, index) in translatedStatisticsData" :key="index"
+              class="bg-white border-2 border-primary/20 rounded-md p-2 flex items-center hover:shadow-xl transition-shadow md:p-3 hover:scale-105">
+              <div class="w-10 h-10 md:w-12 md:h-12 mr-2 md:mr-2 flex items-center justify-center flex-shrink-0">
+                <img :src="stat.icon" :alt="stat.label"
+                  class="h-8 w-8 md:h-10 md:w-10 lg:h-14 lg:w-14 object-contain" />
               </div>
               <div class="flex-1 min-w-0">
                 <div
                   class="text-lg text-center md:text-xl lg:text-xl font-bold text-[#1857a3] truncate transition-all duration-500"
-                  v-html="stat.value"
-                ></div>
+                  v-html="stat.value"></div>
                 <div
-                  class="text-xs text-center font-semibold text-gray-600 uppercase leading-tight transition-all duration-500"
-                >
+                  class="text-xs text-center font-semibold text-gray-600 uppercase leading-tight transition-all duration-500">
                   {{ stat.label }}
                 </div>
               </div>
             </div>
             <div
-              class="card-border-gradient rounded-md p-0.5 transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
-            >
-              <a
-                href="https://360vr.hameemgroup.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              class="card-border-gradient rounded-md p-0.5 transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-2xl">
+              <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer">
                 <div class="relative w-full h-full rounded-lg bg-white">
-                  <img
-                    src="/assets/profile/360-Degree-Virtual-Tour-2.jpg"
-                    alt="Ha-Meem Group Logo"
-                    class="w-full h-full rounded-md object-cover"
-                  />
+                  <img src="/assets/profile/360-Degree-Virtual-Tour-2.jpg" alt="Ha-Meem Group Logo"
+                    class="w-full h-full rounded-md object-cover" />
                 </div>
               </a>
             </div>
             <!-- Virtual Tour Card -->
-            <div
-              class="flex flex-row items-center justify-center p-4 transition bg-white"
-            >
-              <img
-                src="/assets/profile/icons/hand-indicator.png"
-                alt="Hand Icon"
-                class="w-10 h-10 mb-2"
-              />
+            <div class="flex flex-row items-center justify-center p-4 transition bg-white">
+              <img src="/assets/profile/icons/hand-indicator.png" alt="Hand Icon" class="w-10 h-10 mb-2" />
 
               <p class="text-center text-primary text-xs font-bold">
                 TAKE A VIRTUAL TOUR OF HA-MEEM GROUP
@@ -134,24 +90,11 @@
         <div class="lg:col-span-2">
           <div class="relative bg-white rounded-xl overflow-hidden">
             <!-- Element Plus Carousel -->
-            <el-carousel
-              :interval="2500"
-              arrow="always"
-              indicator-position="none"
-              height="500px"
-              class="rounded-md"
-            >
-              <el-carousel-item
-                v-for="(slide, index) in mainSliderImages"
-                :key="index"
-                class="flex items-center justify-center bg-gray-100"
-              >
-                <img
-                  loading="lazy"
-                  :src="slide.src"
-                  :alt="slide.alt"
-                  class="w-full h-full object-container rounded-xl"
-                />
+            <el-carousel :interval="2500" arrow="always" indicator-position="none" height="380px" class="rounded-md">
+              <el-carousel-item v-for="(slide, index) in mainSliderImages" :key="index"
+                class="flex items-center justify-center bg-gray-100">
+                <img loading="lazy" :src="slide.src" :alt="slide.alt"
+                  class="w-full h-full object-fill rounded-xl" />
               </el-carousel-item>
             </el-carousel>
           </div>
@@ -162,35 +105,22 @@
     <div class="bg-gray-50 py-6 sm:py-8 md:py-8 rounded-t-lg mx-auto overflow-x-hidden">
       <div class="max-w-screen-2xl mx-auto sm:px-4">
         <div class="grid md:grid-cols-2 gap-8 md:gap-10 md:divide-x md:divide-gray-300">
+
           <!-- Our Customers Carousel -->
           <div class="relative px-4 sm:px-8 md:px-12 lg:px-16">
             <h2
-              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500"
-            >
+              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation("ourCustomer") }}
             </h2>
             <div class="relative overflow-hidden">
-              <div
-                class="flex animate-marquee duration-500 ease-in-out items-center w-full"
-                :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }"
-              >
-                <div
-                  v-for="(customerGroup, groupIndex) in customerGroups"
-                  :key="groupIndex"
-                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-3 sm:gap-4 md:gap-4"
-                >
-                  <div
-                    v-for="cus in customerGroup"
-                    :key="cus.name"
-                    @click="openCertificateModal(cus)"
-                    class="cursor-pointer flex-shrink-0 hover:scale-105 transition-transform"
-                  >
-                    <img
-                      loading="lazy"
-                      :src="cus.src"
-                      :alt="cus.name"
-                      class="h-12 sm:h-16 w-auto object-contain bg-white rounded-md border border-gray-200 p-2"
-                    />
+              <div class="flex animate-marquee duration-500 ease-in-out items-center w-full"
+                :style="{ transform: `translateX(-${currentCustomerSlide * 100}%)` }">
+                <div v-for="(customerGroup, groupIndex) in customerGroups" :key="groupIndex"
+                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-3 sm:gap-4 md:gap-4">
+                  <div v-for="cus in customerGroup" :key="cus.name" @click="openCertificateModal(cus)"
+                    class="cursor-pointer flex-shrink-0 hover:scale-105 transition-transform">
+                    <img loading="lazy" :src="cus.src" :alt="cus.name"
+                      class="h-12 sm:h-16 w-auto object-contain bg-white rounded-md border border-gray-200 p-2" />
                   </div>
                 </div>
               </div>
@@ -200,66 +130,41 @@
           <!-- Certifications Carousel -->
           <div class="relative px-4 sm:px-8 md:px-12 lg:px-16">
             <h2
-              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500"
-            >
+              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation("accreditation") }}
             </h2>
             <div class="relative overflow-hidden">
-              <div
-                class="flex transition-transform animate-marquee duration-500 ease-in-out items-center w-full"
-                :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }"
-              >
-                <div
-                  v-for="(certificateGroup, groupIndex) in certificateGroups"
-                  :key="groupIndex"
-                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-3 sm:gap-4 md:gap-6"
-                >
-                  <div
-                    v-for="cert in certificateGroup"
-                    :key="cert.name"
-                    @click="openCertificateModal(cert)"
-                    class="cursor-pointer flex-shrink-0 hover:scale-105 transition-transform"
-                  >
-                    <img
-                      loading="lazy"
-                      :src="cert.src"
-                      :alt="cert.name"
-                      class="h-10 sm:h-12 md:h-16 w-auto object-contain bg-white rounded-md border border-gray-200 p-2"
-                    />
+              <div class="flex transition-transform animate-marquee duration-500 ease-in-out items-center w-full"
+                :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
+                <div v-for="(certificateGroup, groupIndex) in certificateGroups" :key="groupIndex"
+                  class="min-w-full flex-shrink-0 flex justify-center items-center gap-3 sm:gap-4 md:gap-6">
+                  <div v-for="cert in certificateGroup" :key="cert.name" @click="openCertificateModal(cert)"
+                    class="cursor-pointer flex-shrink-0 hover:scale-105 transition-transform">
+                    <img loading="lazy" :src="cert.src" :alt="cert.name"
+                      class="h-10 sm:h-12 md:h-16 w-auto object-contain bg-white rounded-md border border-gray-200 p-2" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
 
+    
+
     <!-- Certificate Modal -->
-    <div
-      v-if="selectedCertificate"
-      @click="closeCertificateModal"
-      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 backdrop-blur"
-    >
+    <div v-if="selectedCertificate" @click="closeCertificateModal"
+      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 backdrop-blur">
       <div class="relative max-w-4xl max-h-full p-6" @click.stop>
         <!-- Prevent modal closing when clicking on the image -->
-        <img
-          loading="lazy"
-          :src="selectedCertificate.src"
-          :alt="selectedCertificate.name"
-          class="max-w-full max-h-full bg-white p-6 object-contain rounded-lg shadow-xl"
-        />
-        <button
-          @click="closeCertificateModal"
-          class="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors shadow-md"
-        >
+        <img loading="lazy" :src="selectedCertificate.src" :alt="selectedCertificate.name"
+          class="max-w-full max-h-full bg-white p-6 object-contain rounded-lg shadow-xl" />
+        <button @click="closeCertificateModal"
+          class="absolute top-4 right-4 bg-white text-black p-2 rounded-full hover:bg-gray-200 transition-colors shadow-md">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
@@ -734,7 +639,7 @@ const certificatesData = ref([
 // Computed properties for grouping
 const customerGroups = computed(() => {
   const groups = [];
-  const itemsPerGroup = 20;
+  const itemsPerGroup = 30;
   for (let i = 0; i < customersData.value.length; i += itemsPerGroup) {
     groups.push(customersData.value.slice(i, i + itemsPerGroup));
   }
