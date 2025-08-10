@@ -93,8 +93,7 @@
             <el-carousel :interval="2500" arrow="always" indicator-position="none" height="380px" class="rounded-md">
               <el-carousel-item v-for="(slide, index) in mainSliderImages" :key="index"
                 class="flex items-center justify-center bg-gray-100">
-                <img loading="lazy" :src="slide.src" :alt="slide.alt"
-                  class="w-full h-full aspect-auto rounded-xl" />
+                <img loading="lazy" :src="slide.src" :alt="slide.alt" class="w-full h-full aspect-auto rounded-xl" />
               </el-carousel-item>
             </el-carousel>
           </div>
@@ -109,7 +108,7 @@
           <!-- Our Customers Carousel -->
           <div class="relative px-4 sm:px-8 md:px-12 lg:px-16">
             <h2
-              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
+              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center xs:text-start mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation("ourCustomer") }}
             </h2>
             <div class="relative overflow-hidden">
@@ -130,12 +129,12 @@
           <!-- Certifications Carousel -->
           <div class="relative px-4 sm:px-8 md:px-12 lg:px-16">
             <h2
-              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center mb-4 md:mb-6 transition-all duration-500">
+              class="section-title text-lg sm:text-xl md:text-2xl font-bold text-[#1857a3] text-center xs:text-start mb-4 md:mb-6 transition-all duration-500">
               {{ getTranslation("accreditation") }}
             </h2>
             <div class="relative overflow-hidden">
               <div class="flex transition-transform animate-marquee duration-500 ease-in-out items-center w-full"
-                :style="{ transform: `translateX(-${currentCertificateSlide * 100}%)` }">
+                :style="{ transform: `translateX(-${currentCertificateSlide * 20}%)` }">
                 <div v-for="(certificateGroup, groupIndex) in certificateGroups" :key="groupIndex"
                   class="min-w-full flex-shrink-0 flex justify-center items-center gap-3 sm:gap-4 md:gap-6">
                   <div v-for="cert in certificateGroup" :key="cert.name" @click="openCertificateModal(cert)"
@@ -152,7 +151,7 @@
       </div>
     </div>
 
-    
+
 
     <!-- Certificate Modal -->
     <div v-if="selectedCertificate" @click="closeCertificateModal"

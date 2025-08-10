@@ -14,17 +14,6 @@ export default defineNuxtConfig({
   elementPlus: {
     /** Options */
   },
-
-// vgsap: {
-//   debug: true,
-//   plugins: ['ScrollTrigger'],
-//   composable: true
-// },
-  // runtimeConfig: {
-  //   public: {
-  //     apiBase: process.env.API_BASE || "https://api.hameemgroup.com",
-  //   },
-  // },
   build: {
     transpile: ["element-plus"],
   },
@@ -74,6 +63,7 @@ export default defineNuxtConfig({
         },
         
       ],
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1 ',
       style: [
         {
           // al h1 will be font denim
