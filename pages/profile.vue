@@ -94,7 +94,7 @@
               <el-carousel-item v-for="(slide, index) in mainSliderImages" :key="index"
                 class="flex items-center justify-center bg-gray-100">
                 <img loading="lazy" :src="slide.src" :alt="slide.alt"
-                  class="w-full h-full object-fill rounded-xl" />
+                  class="w-full h-full aspect-auto rounded-xl" />
               </el-carousel-item>
             </el-carousel>
           </div>
