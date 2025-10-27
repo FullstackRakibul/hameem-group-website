@@ -17,7 +17,7 @@
             <div
               class="w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-gray-400 shadow-lg bg-gray-100">
               <img v-if="!isLoading" src="https://api.hameemgroup.com:9012/Resources/group-website/profile_022.png"
-                alt="Profile Photo" class="object-cover w-full h-full" />
+                alt="Profile Photo" class="object-cover w-full h-full" @click="openImagePopup" />
               <div v-else class="animate-pulse bg-gray-300 w-full h-full"></div>
             </div>
           </div>
@@ -63,6 +63,22 @@
       </div>
     </div>
   </div>
+
+
+  <!-- Popup Modal -->
+  <transition name="fade">
+    <div v-if="isPopupOpen" class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4"
+      @click.self="closeImagePopup">
+      <img src="https://api.hameemgroup.com:9012/Resources/group-website/profile_022.png" alt="Popup Banner"
+        class="max-h-[85vh] max-w-full rounded-lg shadow-lg object-contain" />
+      <!-- Close Button -->
+      <button @click="closeImagePopup"
+        class="absolute top-4 right-4 bg-white text-gray-800 rounded-full p-3 shadow-md hover:bg-gray-100 transition"
+        aria-label="Close">
+        ✕
+      </button>
+    </div>
+  </transition>
 </template>
 
 <script setup lang="ts">
@@ -72,6 +88,17 @@ import { definePageMeta } from "#imports";
 definePageMeta({
   layout: false,
 });
+
+const isPopupOpen = ref(false)
+
+const openImagePopup = () => {
+  isPopupOpen.value = true
+}
+
+const closeImagePopup = () => {
+  isPopupOpen.value = false
+}
+
 
 const isLoading = ref(true);
 onMounted(() => {
@@ -122,5 +149,15 @@ const contactItems = [
 
 .animate-pulse {
   animation: pulse 1.5s ease-in-out infinite;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
