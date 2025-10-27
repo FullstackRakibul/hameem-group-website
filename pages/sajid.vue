@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen bg-gray-50 flex flex-col items-center">
     <!-- Banner Section -->
-    <div class="relative w-full h-52 sm:h-48 md:h-56 overflow-hidden">
-      <img v-if="!isLoading" src="https://api.hameemgroup.com:9012/Resources/group-website/bg_002.jpeg"
+    <div class="relative w-full h-64 sm:h-48 md:h-56 overflow-hidden">
+      <img v-if="!isLoading" src="https://api.hameemgroup.com:9012/Resources/group-website/bg_image_0002.jpeg"
         alt="Banner Background" class="w-full h-full object-cover" />
       <div v-else class="animate-pulse bg-gray-300 w-full h-full"></div>
     </div>
@@ -87,6 +87,7 @@ const profile = {
   email: "sajid@hameemgroup.com",
   phone: "+880 1730-716935",
   website: "https://hameemgroup.net",
+  // website: 'https://www.hameemgroup.net/profile.html',
 };
 
 const contactItems = [
