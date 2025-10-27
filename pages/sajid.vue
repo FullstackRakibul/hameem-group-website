@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen bg-gray-50 flex flex-col items-center">
     <!-- Banner Section -->
-    <div class="relative w-full h-40 sm:h-48 md:h-56 overflow-hidden">
-      <img v-if="!isLoading" src="https://api.hameemgroup.com:9012/Resources/group-website/profileBG.jpeg"
+    <div class="relative w-full h-52 sm:h-48 md:h-56 overflow-hidden">
+      <img v-if="!isLoading" src="https://api.hameemgroup.com:9012/Resources/group-website/bg01.jpeg"
         alt="Banner Background" class="w-full h-full object-cover" />
       <div v-else class="animate-pulse bg-gray-300 w-full h-full"></div>
     </div>
@@ -15,7 +15,7 @@
           <!-- Profile Image -->
           <div class="flex-shrink-0 -mt-20 md:-mt-20 z-10">
             <div
-              class="w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-lg bg-gray-100">
+              class="w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-gray-400 shadow-lg bg-gray-100">
               <img v-if="!isLoading" src="https://api.hameemgroup.com:9012/Resources/group-website/sajidAzad.jpeg"
                 alt="Profile Photo" class="object-cover w-full h-full" />
               <div v-else class="animate-pulse bg-gray-300 w-full h-full"></div>
@@ -23,7 +23,7 @@
           </div>
 
           <!-- Profile Info -->
-          <div class="flex-1">
+          <div class="flex-1 mt-10">
             <template v-if="!isLoading">
               <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 {{ profile.name }}
@@ -46,7 +46,7 @@
             <div class="mt-6 sm:mt-8 flex flex-col gap-3">
               <div v-for="(contact, index) in contactItems" :key="index">
                 <div v-if="!isLoading"
-                  class="flex items-center space-x-3 rounded-lg hover:shadow-md transition-all cursor-pointer">
+                  class="flex items-center space-x-3 rounded-lg  transition-all cursor-pointer">
                   <div
                     class="p-2 bg-gray-700 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-white flex-shrink-0">
                     <Icon :name="contact.icon" class="w-5 h-5 sm:w-6 sm:h-6" />
