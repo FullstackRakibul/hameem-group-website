@@ -9,11 +9,11 @@
 
     <!-- Info Section -->
     <div class="w-full px-4 sm:px-6 md:px-8 py-8">
-      <div class="max-w-2xl mx-auto">
+      <div class="max-w-3xl mx-auto">
         <!-- Profile Card Container -->
         <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-start">
           <!-- Profile Image -->
-          <div class="flex-shrink-0 -mt-20 md:-mt-20 z-10">
+          <div class="flex-shrink-0 -mt-20 md:-mt-24 z-10">
             <div
               class="w-28 h-28 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-gray-400 shadow-lg bg-gray-100">
               <img v-if="!isLoading" src="https://api.hameemgroup.com:9012/Resources/group-website/profile_022.png"
