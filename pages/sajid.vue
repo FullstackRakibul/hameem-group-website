@@ -108,14 +108,14 @@ onMounted(() => {
 });
 
 const profile = {
-  name: "Sajid Azad",
-  designation: "Director",
-  company: "Ha-Meem Group",
-  email: "sajid@hameemgroup.com",
-  phone: "+880 1730-716935",
-  website: "https://hameemgroup.net",
-  // website: 'https://www.hameemgroup.net/profile.html',
-};
+  name: 'Sajid Azad',
+  designation: 'Director',
+  company: 'Ha-Meem Group',
+  email: 'sajid@hameemgroup.com',
+  phone: '+880 1730-716935',
+  website: 'https://hameemgroup.net', 
+  profilePage: 'https://www.hameemgroup.net/profile.html', 
+}
 
 const contactItems = [
   {
@@ -130,8 +130,8 @@ const contactItems = [
   },
   {
     icon: "ic:baseline-web",
-    text: profile.website.replace(/^https?:\/\//, ""),
-    href: profile.website,
+    text: profile.website.replace(/^https?:\/\//, ''), 
+    href: profile.profilePage,
   },
 ];
 </script>
