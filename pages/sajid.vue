@@ -33,12 +33,14 @@
                 <div class="mt-4">
                   <button @click="saveContact" :disabled="isSavingContact"
                     class="flex items-center gap-2 bg-[#274257] hover:bg-[#5D2E24] text-white font-semibold py-2 px-2 rounded-full transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <Icon name="fa6-solid:download" class="w-5 h-5" />
-                    <!-- <span v-if="!isSavingContact">Save Contact</span>
+                    <Icon name="fa6-solid:address-card" class="w-5 h-5" />
+                    <span v-if="!isSavingContact" class="text-base">Save Contact</span>
                     <span v-else class="flex items-center gap-2">
-                      <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <div
+                        class="w-4 h-4 border-2 text-base border-white border-t-transparent rounded-full animate-spin">
+                      </div>
                       Saving...
-                    </span> -->
+                    </span>
                   </button>
                   <!-- <p v-if="saveContactMessage" class="mt-2 text-sm"
                     :class="saveContactMessage.type === 'success' ? 'text-green-600' : 'text-red-600'">
