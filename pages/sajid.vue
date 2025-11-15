@@ -23,17 +23,37 @@
           </div>
 
           <!-- Profile Info -->
-          <div class="flex-1">
+          <div class="flex-1 min-w-full">
             <template v-if="!isLoading">
-              <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
-                {{ profile.name }}
-              </h1>
+              <div class="flex items-center justify-between mb-2">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                  {{ profile.name }}
+                </h1>
+                <!-- Save Contact Button -->
+                <div class="mt-4">
+                  <button @click="saveContact" :disabled="isSavingContact"
+                    class="flex items-center gap-2 bg-[#274257] hover:bg-[#5D2E24] text-white font-semibold py-2 px-2 rounded-full transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <Icon name="fa6-solid:download" class="w-5 h-5" />
+                    <!-- <span v-if="!isSavingContact">Save Contact</span>
+                    <span v-else class="flex items-center gap-2">
+                      <div class="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Saving...
+                    </span> -->
+                  </button>
+                  <!-- <p v-if="saveContactMessage" class="mt-2 text-sm"
+                    :class="saveContactMessage.type === 'success' ? 'text-green-600' : 'text-red-600'">
+                    {{ saveContactMessage.text }}
+                  </p> -->
+                </div>
+              </div>
+
               <p class="text-gray-700 text-lg sm:text-xl font-semibold mt-1">
                 {{ profile.designation }}
               </p>
               <p class="text-primary text-lg sm:text-xl md:text-2xl font-semibold mt-1">
                 {{ profile.company }}
               </p>
+
             </template>
 
             <template v-else>
@@ -85,6 +105,8 @@
 import { ref, onMounted } from "vue";
 import { definePageMeta } from "#imports";
 
+const saveContactMessage = ref<{ text: string, type: 'success' | 'error' } | null>(null)
+const isSavingContact = ref(false)
 definePageMeta({
   layout: false,
 });
@@ -134,6 +156,58 @@ const contactItems = [
     href: profile.profilePage,
   },
 ];
+
+// Save contact function
+const saveContact = async () => {
+  if (isSavingContact.value) return;
+
+  isSavingContact.value = true;
+  saveContactMessage.value = null;
+
+  try {
+    // Create vCard content
+    const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:${profile.company}
+ORG:${profile.name}
+TITLE:${profile.designation}
+TEL:${profile.phone}
+EMAIL:${profile.email}
+URL:${profile.profilePage}
+END:VCARD`;
+
+    // Create blob and download
+    const blob = new Blob([vCard], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+
+    link.href = url;
+    link.download = `${profile.name.replace(/\s+/g, '_')}.vcf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+
+    saveContactMessage.value = {
+      text: 'Contact saved successfully! Check your downloads.',
+      type: 'success'
+    };
+
+  } catch (error) {
+    console.error('Error saving contact:', error);
+    saveContactMessage.value = {
+      text: 'Failed to save contact. Please try again.',
+      type: 'error'
+    };
+  } finally {
+    isSavingContact.value = false;
+
+    // Clear message after 5 seconds
+    setTimeout(() => {
+      saveContactMessage.value = null;
+    }, 5000);
+  }
+};
 </script>
 
 <style scoped>
