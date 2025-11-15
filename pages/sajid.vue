@@ -30,10 +30,10 @@
                   {{ profile.name }}
                 </h1>
                 <!-- Save Contact Button -->
-                <div class="shadow-md  rounded-full p-3 px-4 hover:scale-105 transition-transform duration-200 cursor-pointer">
+                <div class=" border  shadow-sm  rounded-full py-1 px-3 hover:scale-105 transition-transform duration-200 cursor-pointer">
 
                   <img class="min-w-full" @click="saveContact" :disabled="isSavingContact"
-                    src="../public/assets/profile/sajid-sir-v-card-icon.png" alt="vCard Icon" width="60" />
+                    src="../public/assets/profile/sajid-sir-v-card-icon.png" alt="vCard Icon" width="120" />
                   <!-- <button @click="saveContact" :disabled="isSavingContact"
                     class="flex items-center gap-2 bg-[#274257] hover:bg-[#5D2E24] text-white font-semibold py-2 px-4 rounded-full transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
 
