@@ -26,14 +26,17 @@
           <div class="flex-1 min-w-full">
             <template v-if="!isLoading">
               <div class="flex items-center justify-between mb-2">
-                <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                <h1 class="text-2xl  sm:text-3xl md:text-4xl font-bold text-gray-900">
                   {{ profile.name }}
                 </h1>
                 <!-- Save Contact Button -->
-                <div class="mt-4">
-                  <button @click="saveContact" :disabled="isSavingContact"
+                <div class="shadow-md  rounded-full p-3 px-4 hover:scale-105 transition-transform duration-200 cursor-pointer">
+
+                  <img class="min-w-full" @click="saveContact" :disabled="isSavingContact"
+                    src="../public/assets/profile/sajid-sir-v-card-icon.png" alt="vCard Icon" width="60" />
+                  <!-- <button @click="saveContact" :disabled="isSavingContact"
                     class="flex items-center gap-2 bg-[#274257] hover:bg-[#5D2E24] text-white font-semibold py-2 px-4 rounded-full transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <Icon name="fa6-solid:address-card" class="w-5 h-5" />
+
                     <span v-if="!isSavingContact" class="text-base">Save Contact</span>
                     <span v-else class="flex items-center gap-2">
                       <div
@@ -41,7 +44,7 @@
                       </div>
                       Saving...
                     </span>
-                  </button>
+                  </button> -->
                   <!-- <p v-if="saveContactMessage" class="mt-2 text-sm"
                     :class="saveContactMessage.type === 'success' ? 'text-green-600' : 'text-red-600'">
                     {{ saveContactMessage.text }}
@@ -200,7 +203,7 @@ END:VCARD`;
     // link.click();
     // document.body.removeChild(link);
     // window.URL.revokeObjectURL(url);
-    const blob = new Blob([vCard], { type: 'text/x-vcard' }); // 👈 Android-friendly
+    const blob = new Blob([vCard], { type: 'text/x-vcard' });
     const url = window.URL.createObjectURL(blob);
 
     const link = document.createElement('a');
