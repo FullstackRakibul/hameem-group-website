@@ -32,7 +32,7 @@
                 <!-- Save Contact Button -->
                 <div class="mt-4">
                   <button @click="saveContact" :disabled="isSavingContact"
-                    class="flex items-center gap-2 bg-[#274257] hover:bg-[#5D2E24] text-white font-semibold py-2 px-2 rounded-full transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                    class="flex items-center gap-2 bg-[#274257] hover:bg-[#5D2E24] text-white font-semibold py-2 px-4 rounded-full transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
                     <Icon name="fa6-solid:address-card" class="w-5 h-5" />
                     <span v-if="!isSavingContact" class="text-base">Save Contact</span>
                     <span v-else class="flex items-center gap-2">
@@ -168,27 +168,48 @@ const saveContact = async () => {
 
   try {
     // Create vCard content
+//     const vCard = `BEGIN:VCARD
+// VERSION:3.0
+// FN:${profile.company}
+// ORG:${profile.name}
+// TITLE:${profile.designation}
+// TEL:${profile.phone}
+// EMAIL:${profile.email}
+// URL:${profile.profilePage}
+// END:VCARD`;
     const vCard = `BEGIN:VCARD
 VERSION:3.0
-FN:${profile.company}
-ORG:${profile.name}
+FN:${profile.name}
+N:${profile.name.split(' ')[1] || ''};${profile.name.split(' ')[0] || ''};;;
+ORG:${profile.company}
 TITLE:${profile.designation}
-TEL:${profile.phone}
-EMAIL:${profile.email}
+TEL;TYPE=CELL:${profile.phone}
+EMAIL;TYPE=WORK:${profile.email}
 URL:${profile.profilePage}
 END:VCARD`;
 
     // Create blob and download
-    const blob = new Blob([vCard], { type: 'text/vcard' });
-    const url = window.URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    // const blob = new Blob([vCard], { type: 'text/vcard' });
+    // const blob = new Blob([vCard], { type: 'text/x-vcard' });
+    // const url = window.URL.createObjectURL(blob);
+    // const link = document.createElement('a');
 
+    // link.href = url;
+    // link.download = `${profile.name.replace(/\s+/g, '_')}.vcf`;
+    // document.body.appendChild(link);
+    // link.click();
+    // document.body.removeChild(link);
+    // window.URL.revokeObjectURL(url);
+    const blob = new Blob([vCard], { type: 'text/x-vcard' }); // 👈 Android-friendly
+    const url = window.URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
     link.href = url;
     link.download = `${profile.name.replace(/\s+/g, '_')}.vcf`;
-    document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
+
     window.URL.revokeObjectURL(url);
+    isSavingContact.value = false;
 
     saveContactMessage.value = {
       text: 'Contact saved successfully! Check your downloads.',
