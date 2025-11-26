@@ -34,21 +34,6 @@
 
                   <img class="min-w-full" @click="saveContact" :disabled="isSavingContact"
                     src="../public/assets/profile/sajid-sir-v-card-icon.png" alt="vCard Icon" width="120" />
-                  <!-- <button @click="saveContact" :disabled="isSavingContact"
-                    class="flex items-center gap-2 bg-[#274257] hover:bg-[#5D2E24] text-white font-semibold py-2 px-4 rounded-full transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
-
-                    <span v-if="!isSavingContact" class="text-base">Save Contact</span>
-                    <span v-else class="flex items-center gap-2">
-                      <div
-                        class="w-4 h-4 border-2 text-base border-white border-t-transparent rounded-full animate-spin">
-                      </div>
-                      Saving...
-                    </span>
-                  </button> -->
-                  <!-- <p v-if="saveContactMessage" class="mt-2 text-sm"
-                    :class="saveContactMessage.type === 'success' ? 'text-green-600' : 'text-red-600'">
-                    {{ saveContactMessage.text }}
-                  </p> -->
                 </div>
               </div>
 
@@ -171,15 +156,6 @@ const saveContact = async () => {
 
   try {
     // Create vCard content
-//     const vCard = `BEGIN:VCARD
-// VERSION:3.0
-// FN:${profile.company}
-// ORG:${profile.name}
-// TITLE:${profile.designation}
-// TEL:${profile.phone}
-// EMAIL:${profile.email}
-// URL:${profile.profilePage}
-// END:VCARD`;
     const vCard = `BEGIN:VCARD
 VERSION:3.0
 FN:${profile.name}
@@ -191,18 +167,6 @@ EMAIL;TYPE=WORK:${profile.email}
 URL:${profile.profilePage}
 END:VCARD`;
 
-    // Create blob and download
-    // const blob = new Blob([vCard], { type: 'text/vcard' });
-    // const blob = new Blob([vCard], { type: 'text/x-vcard' });
-    // const url = window.URL.createObjectURL(blob);
-    // const link = document.createElement('a');
-
-    // link.href = url;
-    // link.download = `${profile.name.replace(/\s+/g, '_')}.vcf`;
-    // document.body.appendChild(link);
-    // link.click();
-    // document.body.removeChild(link);
-    // window.URL.revokeObjectURL(url);
     const blob = new Blob([vCard], { type: 'text/x-vcard' });
     const url = window.URL.createObjectURL(blob);
 
