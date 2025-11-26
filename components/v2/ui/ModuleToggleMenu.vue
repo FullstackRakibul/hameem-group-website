@@ -18,8 +18,8 @@
 
 const menuItems = [
   { label: 'LinkedIn', icon: 'hugeicons:linkedin-01', link: 'https://www.linkedin.com/company/ha-meem-group24' },
-  { label: 'HRM', icon: 'hugeicons:web-design-01' , link:'https://portal.hameemgroup.com'},
-  { label: 'Career', icon: 'hugeicons:job-search', link:'#' },
+  { label: 'Portal', icon: 'hugeicons:web-design-01' , link:'https://portal.hameemgroup.com'},
+  { label: 'Career', icon: 'hugeicons:job-search', link:'https://career.hameemgroup.net' },
   { label: 'Map', icon: 'hugeicons:location-user-04', link: '#' },
   { label: 'Help', icon: 'hugeicons:question', link: 'tel:01700000001' },
   { label: 'CSR', icon: 'hugeicons:corporate', link: '#' },

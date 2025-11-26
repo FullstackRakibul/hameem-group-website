@@ -2,17 +2,17 @@
   <div class="bg-white min-h-screen font-inter">
     <!-- Floating Translation Button -->
     <div class="fixed top-4 right-4 z-50 flex flex-row items-end space-x-1">
-      <NuxtLink to="/360vr" target="_blank" rel="noopener noreferrer"
+      <!-- <NuxtLink to="/360vr" target="_blank" rel="noopener noreferrer"
         class="bg-white text-primary p-3 shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center border border-primary rounded-full"
         title="View 360° Virtual Tour">
         <img src="/assets/profile/360-Degree-Virtual-Tour-1.png" class="h-6 w-6" alt="360 VR Tour" />
-      </NuxtLink>
-      
-      <!-- <a href="https://360vr.hameemgroup.com" target="_blank" rel="noopener noreferrer"
+      </NuxtLink> -->
+
+      <a href="https://hameemgroup.net/360vr.html" target="_blank" rel="noopener noreferrer"
         class="bg-white text-primary p-3 shadow-lg transition-all duration-300 hover:scale-110 group flex items-center justify-center border border-primary rounded-full"
         title="View 360° Virtual Tour">
         <img src="/assets/profile/360-Degree-Virtual-Tour-1.png" class="h-6 w-6" alt="360 VR Tour" />
-      </a> -->
+      </a>
       <button @click="toggleLanguage"
         class="text-white bg-white border border-primary rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center"
         :title="

@@ -38,7 +38,7 @@
     <!-- Module Toggle Menu - now inside the single root -->
     <Teleport to="body">
       <div 
-        v-if="ModuleToggleMenuClick" 
+        v-if="ModuleToggleMenuClick  " 
         ref="menuRef"
         class="fixed top-20 right-5 z-50 w-64 bg-white shadow-lg rounded-lg border border-gray-200"
       >
