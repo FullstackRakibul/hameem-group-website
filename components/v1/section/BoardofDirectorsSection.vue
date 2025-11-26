@@ -26,7 +26,7 @@
 
           <!-- Active Member Display -->
           <div class="transition-all duration-500 ">
-            <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
               <!-- Profile Image -->
               <div class="relative group/avatar w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
                 <div
@@ -157,9 +157,9 @@
 import { ref } from 'vue';
 import UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
 const activeMember = ref({
-  name: "Mr. ______",
-  designation: "Chairman & CEO",
-  image: "https://cdn-icons-png.flaticon.com/512/700/700674.png",
+  name: "A.K. Azad",
+  designation: "Managing Director",
+  image: "/assets/boardofdirectors/chairman.png",
   quote: "Our commitment to excellence and innovation drives every decision we make, ensuring sustainable growth for our stakeholders and communities we serve."
 });
 
@@ -177,17 +177,23 @@ const boardMembers = ref([
     quote: "Building sustainable partnerships and fostering innovation for long-term growth and market leadership."
   },
   {
-    name: "Sajid Azad",
-    designation: "Director",
-    image: "/assets/boardofdirectors/SAJID SIR .jpg",
-    quote: "Innovating processes and implementing cutting-edge solutions to achieve operational excellence."
+    name: "Md. Abdur Razzak Mondal",
+    designation: "Deputy Managing Director",
+    image: "/assets/boardofdirectors/DMD(Mondol)Sir.jpg",
+    quote: "Building sustainable partnerships and fostering innovation for long-term growth and market leadership."
   },
-  {
-    name: "Sakib Azad",
-    designation: "Director",
-    image: "/assets/boardofdirectors/Sakib-Azad Director.jpg",
-    quote: "Fostering talent development and leadership excellence across all organizational levels."
-  }
+  // {
+  //   name: "Sajid Azad",
+  //   designation: "Director",
+  //   image: "/assets/boardofdirectors/SAJID SIR .jpg",
+  //   quote: "Innovating processes and implementing cutting-edge solutions to achieve operational excellence."
+  // },
+  // {
+  //   name: "Sakib Azad",
+  //   designation: "Director",
+  //   image: "/assets/boardofdirectors/Sakib-Azad Director.jpg",
+  //   quote: "Fostering talent development and leadership excellence across all organizational levels."
+  // }
 ]);
 
 const setActiveMember = (member) => {
@@ -198,7 +204,7 @@ const resetActiveMember = () => {
   activeMember.value = {
     name: "Mr. ______",
     designation: "Chairman & CEO",
-    image: "https://cdn-icons-png.flaticon.com/512/700/700674.png",
+    image: "/assets/boardofdirectors/chairman.png",
     quote: "Our commitment to excellence and innovation drives every decision we make, ensuring sustainable growth for our stakeholders and communities we serve."
   };
 };
