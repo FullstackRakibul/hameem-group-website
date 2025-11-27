@@ -31,7 +31,7 @@
                   <div class="tab-icon-container mr-3">
                     <Icon :name="unit.icon || 'mdi:factory'" class="text-xl transition-transform duration-300" />
                   </div>
-                  <span class="block text-xl uppercase tracking-wider">{{ unit.title }}</span>
+                  <span class="block text-md uppercase tracking-wider">{{ unit.title }}</span>
                 </div>
               </button>
             </div>
@@ -44,7 +44,7 @@
             <div>
               <!-- Unit Info -->
               <div class="p-6 border-b border-gray-100">
-                <h3 class="text-4xl font-bold text-gray-800 mb-2 transition-all duration-500">{{
+                <h3 class="text-2xl font-bold text-gray-800 mb-2 transition-all duration-500">{{
                   businessUnits[activeTab].title }}</h3>
                 <p class="text-gray-600 text-2xl mb-4 transition-all duration-500">{{
                   businessUnits[activeTab].description }}</p>
@@ -155,12 +155,26 @@ let tabTransitionTimer: NodeJS.Timeout | null = null
 
 // Business unit descriptions and details
 const businessUnits = {
-  sweater: {
-    title: 'Sweater Manufacturing',
-    description: 'State-of-the-art knitting facilities producing high-quality fabrics with precision and efficiency.',
-    icon: 'unjs:knitwork',
-    capacity: '120,000 pieces/day'
+  garments: {
+    title: 'Garments Manufacturing',
+    description:
+      'A disciplined production floor crafting knit and woven apparel with the precision and rhythm only years of mastery can teach.',
+    icon: 'game-icons:sewing-machine',
+    capacity: '250,000 pieces/day'
   },
+  denim: {
+    title: 'Denim & Jeans Division',
+    description:
+      'Where rugged fabric meets craftsmanship — advanced denim lines shaping jeans, jackets, and workwear with timeless durability.',
+    icon: 'noto:jeans',
+    capacity: '180,000 pieces/day'
+  },
+  // sweater: {
+  //   title: 'Sweater Manufacturing',
+  //   description: 'State-of-the-art knitting facilities producing high-quality fabrics with precision and efficiency.',
+  //   icon: 'unjs:knitwork',
+  //   capacity: '120,000 pieces/day'
+  // },
   woven: {
     title: 'Woven Excellence',
     description: 'Advanced woven production lines creating premium fabrics for global fashion brands.',
@@ -219,13 +233,26 @@ const businessUnits = {
 
 // Sample image data for each tab
 const tabImages = {
-  sweater: [
-    '/assets/v1/section/sweater/sweater-unit-image-00000002.jpg',
-    '/assets/v1/section/sweater/sweater-unit-image-00000001.jpg',
-    '/assets/v1/section/sweater/sweater-unit-image-00000003.jpg',
-    '/assets/v1/section/sweater/sweater-unit-image-00000004.jpg',
-    '/assets/v1/section/sweater/sweater-unit-image-00000005.jpg'
+  garments: [
+    '/assets/v1/section/garments/garments-unit-image-00000002.jpg',
+    '/assets/v1/section/garments/garments-unit-image-00000001.jpg',
+    '/assets/v1/section/garments/garments-unit-image-00000003.jpg',
+    '/assets/v1/section/garments/garments-unit-image-00000004.jpg',
+    '/assets/v1/section/garments/garments-unit-image-00000005.jpg'
   ],
+  denim: [
+    '/assets/v1/section/denim/denim-unit-image-00000002.jpg',
+    '/assets/v1/section/denim/denim-unit-image-00000001.jpg',
+    '/assets/v1/section/denim/denim-unit-image-00000003.jpg',
+    '/assets/v1/section/denim/denim-unit-image-00000004.jpg'
+  ],
+  // sweater: [
+  //   '/assets/v1/section/sweater/sweater-unit-image-00000002.jpg',
+  //   '/assets/v1/section/sweater/sweater-unit-image-00000001.jpg',
+  //   '/assets/v1/section/sweater/sweater-unit-image-00000003.jpg',
+  //   '/assets/v1/section/sweater/sweater-unit-image-00000004.jpg',
+  //   '/assets/v1/section/sweater/sweater-unit-image-00000005.jpg'
+  // ],
   woven: [
     './assets/v1/section/woven/IMG_9649.JPG',
     './assets/v1/section/woven/IMG_9666.JPG',

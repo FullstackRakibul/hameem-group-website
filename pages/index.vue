@@ -12,13 +12,14 @@ import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSect
 import SustainabilityMapSection from '~/components/v2/sectionComponent/SustainabilityMapSection.vue';
 import HameemGroupAboutSection from '~/components/v1/section/HameemGroupAboutSection.vue';
 import UpcommingProjectSection from '~/components/v1/section/UpcommingProjectSection.vue';
+import StrategicLeadershipCouncil from '~/components/v1/section/StrategicLeadershipCouncil.vue';
 </script>
 
 <template>
   <section class="-mt-16 ">
     <!-- <GSAPHeroSlider /> -->
     <MainPageSlider01 />
-        <!-- <CompanyIntroductionSection /> -->
+    <!-- <CompanyIntroductionSection /> -->
     <ShortAboutRunningTextComponent />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
@@ -39,7 +40,8 @@ import UpcommingProjectSection from '~/components/v1/section/UpcommingProjectSec
     <ClientRunningCarouselComponent />
     <AchievementsParallaxSection />
     <!-- <OurAchievementsSlide/> -->
-    <BoardofDirectorsSection />
+    <!-- <BoardofDirectorsSection /> -->
+    <StrategicLeadershipCouncil />
     <!-- <GallerySection /> -->
     <ContactUsMapSectionComponent />
 
