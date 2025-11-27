@@ -157,19 +157,19 @@ interface LeadershipMember {
 const leaders = ref<LeadershipMember[]>([
   {
     name: "A.K. Azad",
-    designation: "Managing Director",
+    designation: "Chairman and Managing Director",
     image: "/assets/boardofdirectors/hameem-group-chairman-image-0005.png",
     quote: "Leading with vision and strategy to drive organizational success and create lasting value for all stakeholders."
   },
   {
-    name: "Delwar Hossain",
-    designation: "Deputy Managing Director",
+    name: "Lt. Col. Delwar Hossain (Ret.)",
+    designation: "Group Deputy Managing Director",
     image: "/assets/boardofdirectors/DMD.png",
     quote: "Building sustainable partnerships and fostering innovation for long-term growth and market leadership."
   },
   {
     name: "Md. Abdur Razzak Mondal",
-    designation: "Deputy Managing Director",
+    designation: "Deputy Managing Director (Stattlegic Planning)",
     image: "/assets/boardofdirectors/DMD(Mondol)Sir.jpg",
     quote: "Building sustainable partnerships and fostering innovation for long-term growth and market leadership."
   },

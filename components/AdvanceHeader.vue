@@ -1,33 +1,21 @@
 <template>
   <!-- Single root element wrapping everything -->
   <div class="header-wrapper">
-    <header 
-      :class="[
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex items-center justify-between w-full lg:px-16 md:px-14 p-3',
-        isScrolled ? 'bg-primary text-white  shadow-lg' : 'bg-transparent '
-      ]"
-    >
+    <header :class="[
+      'fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex items-center justify-between w-full lg:px-16 md:px-14 p-3',
+      isScrolled ? 'bg-primary text-white  shadow-lg' : 'bg-transparent '
+    ]">
       <!-- Left side: Logo -->
       <NuxtLink to="/">
-        <img 
-          src="/assets/group-logo.png" 
-          alt="Logo" 
-          class="h-10 formal-logo" 
-        />
+        <img src="/assets/group-logo.png" alt="Logo" class="h-10 formal-logo" />
       </NuxtLink>
 
       <!-- MegaMenu component: handles all navigation links -->
       <div class="flex items-center space-x-4">
-        <AdvanceMegaMenu 
-          :mobileOpen="isMobileMenuOpen" 
-          @closeMobileMenu="isMobileMenuOpen = false" 
-        />
+        <AdvanceMegaMenu :mobileOpen="isMobileMenuOpen" @closeMobileMenu="isMobileMenuOpen = false" />
         <el-space class="bg-white rounded-full px-1 border shadow-sm">
           <Search />
-          <button 
-            @click="toggleModuleMenu" 
-            class="p-2 flex items-center rounded-full bg-primary text-white"
-          >
+          <button @click="toggleModuleMenu" class="p-2 flex items-center rounded-full bg-primary text-white">
             <Icon name="hugeicons:menu-circle" />
           </button>
         </el-space>
@@ -37,11 +25,8 @@
 
     <!-- Module Toggle Menu - now inside the single root -->
     <Teleport to="body">
-      <div 
-        v-if="ModuleToggleMenuClick  " 
-        ref="menuRef"
-        class="fixed top-20 right-5 z-50 w-64 bg-white shadow-lg rounded-lg border border-gray-200"
-      >
+      <div v-if="ModuleToggleMenuClick" ref="menuRef"
+        class="fixed top-20 right-5 z-50 w-64 bg-white shadow-lg rounded-lg border border-gray-200">
         <ModuleToggleMenu />
       </div>
     </Teleport>
@@ -76,6 +61,7 @@ const isScrolled = ref(false);
 // Toggle menu visibility properly
 const toggleModuleMenu = () => {
   ModuleToggleMenuClick.value = !ModuleToggleMenuClick.value;
+
 };
 
 // Handle scroll event
@@ -134,14 +120,18 @@ const toggleMenu = () => {
 }
 
 @keyframes waveFade {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: rotate(0deg) scale(1);
     opacity: 0.9;
   }
+
   25% {
     transform: rotate(3deg) scale(1.02);
     opacity: 1;
   }
+
   75% {
     transform: rotate(-3deg) scale(1.02);
     opacity: 1;
@@ -155,10 +145,13 @@ const toggleMenu = () => {
 }
 
 @keyframes formalFlip {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: perspective(100px) rotateY(0deg);
     opacity: 1;
   }
+
   50% {
     transform: perspective(100px) rotateY(360deg);
     opacity: 0.8;
