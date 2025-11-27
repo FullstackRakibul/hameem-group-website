@@ -44,8 +44,10 @@
             <div>
               <!-- Unit Info -->
               <div class="p-6 border-b border-gray-100">
-                <h3 class="text-4xl font-bold text-gray-800 mb-2 transition-all duration-500">{{ businessUnits[activeTab].title }}</h3>
-                <p class="text-gray-600 text-2xl mb-4 transition-all duration-500">{{ businessUnits[activeTab].description }}</p>
+                <h3 class="text-4xl font-bold text-gray-800 mb-2 transition-all duration-500">{{
+                  businessUnits[activeTab].title }}</h3>
+                <p class="text-gray-600 text-2xl mb-4 transition-all duration-500">{{
+                  businessUnits[activeTab].description }}</p>
                 <div class="inline-flex items-center px-3 py-1 bg-primary/70 rounded-full transition-all duration-500">
                   <span class="text-xl uppercase tracking-wider text-white mr-2">Capacity:</span>
                   <span class="font-medium text-xl text-white">{{ businessUnits[activeTab].capacity }}</span>
@@ -54,17 +56,9 @@
 
               <!-- Enhanced Carousel with Infinite Auto-Advance -->
               <div class="carousel-container relative">
-                <el-carousel 
-                  ref="carouselRef"
-                  :key="`${activeTab}-${carouselKey}`"
-                  :interval="0"
-                  height="500px" 
-                  arrow="hover" 
-                  indicator-position="outside"
-                  class="custom-carousel"
-                  :autoplay="false"
-                  @change="onCarouselChange"
-                >
+                <el-carousel ref="carouselRef" :key="`${activeTab}-${carouselKey}`" :interval="0" height="500px"
+                  arrow="hover" indicator-position="outside" class="custom-carousel" :autoplay="false"
+                  @change="onCarouselChange">
                   <el-carousel-item v-for="(image, index) in tabImages[activeTab]" :key="index" class="carousel-item">
                     <div class="relative h-full w-full overflow-hidden group">
                       <!-- Image overlay gradient -->
@@ -73,15 +67,10 @@
                       </div>
 
                       <!-- Image -->
-                      <el-image
-                      loading="lazy"
+                      <el-image loading="lazy"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        :src="image" 
-                        fit="cover" 
-                        :alt="`${activeTab} Image ${index + 1}`"
-                        @load="onImageLoad"
-                        @error="onImageError"
-                      >
+                        :src="image" fit="cover" :alt="`${activeTab} Image ${index + 1}`" @load="onImageLoad"
+                        @error="onImageError">
                         <template #placeholder>
                           <div class="flex justify-center items-center h-full w-full bg-gray-100">
                             <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
@@ -96,7 +85,8 @@
                       </el-image>
 
                       <!-- Image counter -->
-                      <div class="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20 transition-all duration-300">
+                      <div
+                        class="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20 transition-all duration-300">
                         {{ currentSlideIndex + 1 }} / {{ tabImages[activeTab].length }}
                       </div>
                     </div>
@@ -106,8 +96,8 @@
                 <!-- Auto-advance controls and indicators -->
                 <div class="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20">
                   <div class="flex items-center space-x-2">
-                    <div :class="['w-2 h-2 rounded-full transition-all duration-300', 
-                                 isRunning ? 'bg-green-400 animate-pulse' : 'bg-red-400']"></div>
+                    <div :class="['w-2 h-2 rounded-full transition-all duration-300',
+                      isRunning ? 'bg-green-400 animate-pulse' : 'bg-red-400']"></div>
                     <span>{{ isRunning ? 'Auto-cycling' : 'Paused' }}</span>
                     <button @click="toggleAutoAdvance" class="ml-2 text-xs hover:text-yellow-300 transition-colors">
                       {{ isRunning ? '⏸️' : '▶️' }}
@@ -117,10 +107,8 @@
 
                 <!-- Progress bar for current slide -->
                 <div class="absolute bottom-0 left-0 w-full h-1 bg-black/20 z-20">
-                  <div 
-                    class="h-full bg-primary transition-all duration-300 ease-linear"
-                    :style="{ width: `${slideProgress}%` }"
-                  ></div>
+                  <div class="h-full bg-primary transition-all duration-300 ease-linear"
+                    :style="{ width: `${slideProgress}%` }"></div>
                 </div>
 
                 <!-- Tab progress indicator -->
@@ -167,8 +155,8 @@ let tabTransitionTimer: NodeJS.Timeout | null = null
 
 // Business unit descriptions and details
 const businessUnits = {
-  knit: {
-    title: 'Knit Manufacturing',
+  sweater: {
+    title: 'Sweater Manufacturing',
     description: 'State-of-the-art knitting facilities producing high-quality fabrics with precision and efficiency.',
     icon: 'unjs:knitwork',
     capacity: '120,000 pieces/day'
@@ -231,12 +219,12 @@ const businessUnits = {
 
 // Sample image data for each tab
 const tabImages = {
-  knit: [
-    '/assets/v1/section/knit/IMG_9619.JPG',
-    '/assets/v1/section/knit/IMG_9632.JPG',
-    '/assets/v1/section/knit/IMG_9636.JPG',
-    '/assets/v1/section/knit/IMG_9639.JPG',
-    '/assets/v1/section/knit/IMG_9644.JPG'
+  sweater: [
+    '/assets/v1/section/sweater/sweater-unit-image-00000002.jpg',
+    '/assets/v1/section/sweater/sweater-unit-image-00000001.jpg',
+    '/assets/v1/section/sweater/sweater-unit-image-00000003.jpg',
+    '/assets/v1/section/sweater/sweater-unit-image-00000004.jpg',
+    '/assets/v1/section/sweater/sweater-unit-image-00000005.jpg'
   ],
   woven: [
     './assets/v1/section/woven/IMG_9649.JPG',
@@ -321,7 +309,7 @@ const onImageError = () => {
 // Check if carousel is ready to start
 const checkCarouselReady = async () => {
   await nextTick()
-  
+
   if (carouselRef.value && imagesLoaded.value > 0) {
     // Wait a bit more for DOM to settle
     setTimeout(() => {
@@ -331,7 +319,7 @@ const checkCarouselReady = async () => {
         carouselRef.value.setActiveItem(0)
         currentSlideIndex.value = 0
       }
-      
+
       // Start the auto-advance cycle
       if (isRunning.value) {
         setTimeout(() => {
@@ -351,7 +339,7 @@ const onCarouselChange = (currentIndex: number) => {
 const startProgressBar = () => {
   slideProgress.value = 0
   const progressStep = 100 / (SLIDE_DURATION / 50) // Update every 50ms
-  
+
   progressTimer = setInterval(() => {
     slideProgress.value += progressStep
     if (slideProgress.value >= 100) {
@@ -377,11 +365,11 @@ const advanceSlide = async () => {
   } else {
     // Move to next slide
     currentSlideIndex.value = nextSlideIndex
-    
+
     if (carouselRef.value) {
       carouselRef.value.setActiveItem(currentSlideIndex.value)
     }
-    
+
     // Start next slide timer
     startSlideTimer()
   }
@@ -390,10 +378,10 @@ const advanceSlide = async () => {
 // Start slide timer with progress bar
 const startSlideTimer = () => {
   if (!isRunning.value || !isCarouselReady.value) return
-  
+
   clearAllTimers()
   startProgressBar()
-  
+
   slideTimer = setTimeout(() => {
     advanceSlide()
   }, SLIDE_DURATION)
@@ -409,9 +397,9 @@ const getNextTab = (): keyof typeof tabImages => {
 // Advance to next tab with smooth transition
 const advanceToNextTab = async () => {
   if (!isRunning.value) return
-  
+
   clearAllTimers()
-  
+
   // Animate out current content
   gsap.to(contentContainer.value, {
     opacity: 0,
@@ -449,12 +437,12 @@ const advanceToNextTab = async () => {
 // Handle manual tab change
 const handleManualTabChange = async (tab: keyof typeof tabImages) => {
   if (tab === activeTab.value) return
-  
+
   // Temporarily pause auto-advance
   const wasRunning = isRunning.value
   isRunning.value = false
   clearAllTimers()
-  
+
   // Animate transition
   gsap.to(contentContainer.value, {
     opacity: 0,
@@ -467,7 +455,7 @@ const handleManualTabChange = async (tab: keyof typeof tabImages) => {
       carouselKey.value += 1
       isCarouselReady.value = false
       imagesLoaded.value = 0
-      
+
       nextTick().then(() => {
         gsap.to(contentContainer.value, {
           opacity: 1,
@@ -490,7 +478,7 @@ const handleManualTabChange = async (tab: keyof typeof tabImages) => {
 // Toggle auto-advance
 const toggleAutoAdvance = () => {
   isRunning.value = !isRunning.value
-  
+
   if (isRunning.value && isCarouselReady.value) {
     startSlideTimer()
   } else {
@@ -561,7 +549,7 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
   opacity: 0;
   transform: translateX(-100%);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -576,7 +564,7 @@ onUnmounted(() => {
 .tab-button.active-tab::before {
   opacity: 1;
   transform: translateX(0);
-  background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
 }
 
 .tab-icon-container {
@@ -666,10 +654,13 @@ onUnmounted(() => {
 
 /* Enhanced animations */
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.7;
     transform: scale(1.1);

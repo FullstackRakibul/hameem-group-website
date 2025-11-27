@@ -73,57 +73,123 @@
             Leadership Team
           </h3>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div v-for="(member, index) in boardMembers" :key="index" @mouseenter="setActiveMember(member)"
-              @mouseleave="resetActiveMember"
-              class="group/card relative bg-primary/5 rounded-2xl p-6 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-gray-100 hover:border-primary/30">
-              <!-- Hover Arrow Indicator -->
-              <div
-                class="absolute -left-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover/card:opacity-100 transition-all duration-300 group-hover/card:-translate-x-2">
-                <div class="bg-primary rounded-full p-2 shadow-lg">
-                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </div>
-              </div>
-
-              <!-- Card Content -->
-              <div class="flex flex-col items-center text-center space-y-4">
-                <!-- Profile Image -->
-                <div class="relative">
-                  <img :src="member.image" :alt="member.name"
-                    class="rounded-2xl w-24 h-24 md:w-28 md:h-28 object-cover border-2 border-gray-200 group-hover/card:border-primary/50 transition-all duration-300 group-hover/card:scale-110" />
-                  <!-- Hover overlay -->
+          <div class="space-y-8">
+            <!-- Managing Director Section -->
+            <div class="space-y-4">
+              <!-- <h4 class="text-xl font-semibold text-gray-800 border-b border-gray-200 pb-2">Managing Director</h4> -->
+              <div class="grid grid-cols-1 gap-6">
+                <div v-for="(member, index) in managingDirectors" :key="'md-' + index"
+                  @mouseenter="setActiveMember(member)" @mouseleave="resetActiveMember"
+                  class="group/card relative bg-primary/5 rounded-2xl p-6 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-gray-100 hover:border-primary/30">
+                  <!-- Hover Arrow Indicator -->
                   <div
-                    class="absolute inset-0 bg-primary/10 rounded-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                    class="absolute -left-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover/card:opacity-100 transition-all duration-300 group-hover/card:-translate-x-2">
+                    <div class="bg-primary rounded-full p-2 shadow-lg">
+                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Card Content -->
+                  <div class="flex flex-col items-center text-center space-y-4">
+                    <!-- Profile Image -->
+                    <div class="relative">
+                      <img :src="member.image" :alt="member.name"
+                        class="rounded-full w-36 h-36 md:w-48 md:h-48 object-cover border-2 border-gray-200 group-hover/card:border-primary/50 transition-all duration-300 group-hover/card:scale-110" />
+                      <!-- Hover overlay -->
+                      <div
+                        class="absolute inset-0 bg-primary/10 rounded-full opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                      </div>
+                    </div>
+
+                    <!-- Member Details -->
+                    <div class="space-y-2">
+                      <h4
+                        class="text-lg font-bold text-gray-900 group-hover/card:text-primary transition-colors duration-300">
+                        {{ member.name }}
+                      </h4>
+                      <p
+                        class="text-sm font-medium text-gray-600 group-hover/card:text-gray-800 transition-colors duration-300">
+                        {{ member.designation }}
+                      </p>
+                    </div>
+
+                    <!-- Interaction Indicator -->
+                    <div
+                      class="flex items-center space-x-2 opacity-0 group-hover/card:opacity-100 transition-all duration-300 transform translate-y-2 group-hover/card:translate-y-0">
+                      <span class="text-xs text-primary font-medium">View Profile</span>
+                      <svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Card glow effect -->
+                  <div
+                    class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
                   </div>
                 </div>
-
-                <!-- Member Details -->
-                <div class="space-y-2">
-                  <h4
-                    class="text-lg font-bold text-gray-900 group-hover/card:text-primary transition-colors duration-300">
-                    {{ member.name }}
-                  </h4>
-                  <p
-                    class="text-sm font-medium text-gray-600 group-hover/card:text-gray-800 transition-colors duration-300">
-                    {{ member.designation }}
-                  </p>
-                </div>
-
-                <!-- Interaction Indicator -->
-                <div
-                  class="flex items-center space-x-2 opacity-0 group-hover/card:opacity-100 transition-all duration-300 transform translate-y-2 group-hover/card:translate-y-0">
-                  <span class="text-xs text-primary font-medium">View Profile</span>
-                  <svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </div>
               </div>
+            </div>
 
-              <!-- Card glow effect -->
-              <div
-                class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
+            <!-- Deputy Managing Directors Section -->
+            <div class="space-y-4">
+              <!-- <h4 class="text-xl font-semibold text-gray-800 border-b border-gray-200 pb-2">Deputy Managing Directors
+              </h4> -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div v-for="(member, index) in deputyManagingDirectors" :key="'dmd-' + index"
+                  @mouseenter="setActiveMember(member)" @mouseleave="resetActiveMember"
+                  class="group/card relative bg-primary/5 rounded-full p-12 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-gray-100 hover:border-primary/30">
+                  <!-- Hover Arrow Indicator -->
+                  <div
+                    class="absolute -left-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover/card:opacity-100 transition-all duration-300 group-hover/card:-translate-x-2">
+                    <div class="bg-primary rounded-full p-2 shadow-lg">
+                      <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Card Content -->
+                  <div class="flex flex-col items-center text-center space-y-4">
+                    <!-- Profile Image -->
+                    <div class="relative">
+                      <img :src="member.image" :alt="member.name"
+                        class="rounded-2xl w-24 h-24 md:w-28 md:h-28 object-cover border-2 border-gray-200 group-hover/card:border-primary/50 transition-all duration-300 group-hover/card:scale-110" />
+                      <!-- Hover overlay -->
+                      <div
+                        class="absolute inset-0 bg-primary/10 rounded-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
+                      </div>
+                    </div>
+
+                    <!-- Member Details -->
+                    <div class="space-y-2">
+                      <h4
+                        class="text-lg font-bold text-gray-900 group-hover/card:text-primary transition-colors duration-300">
+                        {{ member.name }}
+                      </h4>
+                      <p
+                        class="text-sm font-medium text-gray-600 group-hover/card:text-gray-800 transition-colors duration-300">
+                        {{ member.designation }}
+                      </p>
+                    </div>
+
+                    <!-- Interaction Indicator -->
+                    <div
+                      class="flex items-center space-x-2 opacity-0 group-hover/card:opacity-100 transition-all duration-300 transform translate-y-2 group-hover/card:translate-y-0">
+                      <span class="text-xs text-primary font-medium">View Profile</span>
+                      <svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Card glow effect -->
+                  <div
+                    class="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -159,7 +225,7 @@ import UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
 const activeMember = ref({
   name: "A.K. Azad",
   designation: "Managing Director",
-  image: "/assets/boardofdirectors/chairman.png",
+  image: "/assets/boardofdirectors/hameem-group-chairman-image-0005.png",
   quote: "Our commitment to excellence and innovation drives every decision we make, ensuring sustainable growth for our stakeholders and communities we serve."
 });
 
@@ -167,7 +233,7 @@ const boardMembers = ref([
   {
     name: "A.K. Azad",
     designation: "Managing Director",
-    image: "/assets/boardofdirectors/chairman.png",
+    image: "/assets/boardofdirectors/hameem-group-chairman-image-0005.png",
     quote: "Leading with vision and strategy to drive organizational success and create lasting value for all stakeholders."
   },
   {
@@ -204,10 +270,20 @@ const resetActiveMember = () => {
   activeMember.value = {
     name: "Mr. ______",
     designation: "Chairman & CEO",
-    image: "/assets/boardofdirectors/chairman.png",
+    image: "/assets/boardofdirectors/hameem-group-chairman-image-0005.png",
     quote: "Our commitment to excellence and innovation drives every decision we make, ensuring sustainable growth for our stakeholders and communities we serve."
   };
 };
+
+
+// Computed properties to filter board members by designation
+const managingDirectors = computed(() => {
+  return boardMembers.value.filter(member => member.designation === "Managing Director");
+});
+
+const deputyManagingDirectors = computed(() => {
+  return boardMembers.value.filter(member => member.designation === "Deputy Managing Director");
+});
 
 const props = defineProps({
   bgImageBoD: {
@@ -219,6 +295,62 @@ const props = defineProps({
 
 <style scoped>
 /* Custom animations */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Backdrop blur support */
+@supports (backdrop-filter: blur(8px)) {
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+}
+
+
 @keyframes slideInRight {
   from {
     opacity: 0;
