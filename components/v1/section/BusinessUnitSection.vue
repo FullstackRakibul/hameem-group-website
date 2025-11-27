@@ -223,6 +223,12 @@ const businessUnits = {
     icon: 'icon-park:washing-machine-one',
     capacity: '70,000 pieces/day'
   },
+  sweater: {
+    title: 'Sweater Manufacturing',
+    description: 'State-of-the-art knitting facilities producing high-quality fabrics with precision and efficiency.',
+    icon: 'unjs:knitwork',
+    capacity: '120,000 pieces/day'
+  },
   packaging: {
     title: 'Packaging Excellence',
     description: 'Sustainable packaging solutions that protect products while minimizing environmental impact.',
@@ -272,6 +278,13 @@ const tabImages = {
   woven: [
     '/assets/v1/section/woven/IMG_9649.JPG',
     '/assets/v1/section/woven/IMG_9666.JPG',
+  ],
+  sweater: [
+    '/assets/v1/section/sweater/sweater-unit-image-00000002.jpg',
+    '/assets/v1/section/sweater/sweater-unit-image-00000001.jpg',
+    '/assets/v1/section/sweater/sweater-unit-image-00000003.jpg',
+    '/assets/v1/section/sweater/sweater-unit-image-00000004.jpg',
+    '/assets/v1/section/sweater/sweater-unit-image-00000005.jpg'
   ],
   printing: [
     '/assets/v1/section/PRINTING & EMBROIDARY/Accessories Unit 01.png',
@@ -460,7 +473,7 @@ const toggleAutoAdvance = () => {
 const carouselHeight = computed(() => {
   if (isVerySmall.value) return '260px'
   if (isSmall.value) return '360px'
-  return '450px'
+  return '500px'
 })
 
 // initial animations (kept)

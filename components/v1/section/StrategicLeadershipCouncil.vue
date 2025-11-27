@@ -39,7 +39,7 @@
                       </div>
                       <div class="text-center mt-2">
                         <p class="font-semibold text-slate-900 text-sm sm:text-base">{{ member.name }}</p>
-                        <p class="text-xs text-blue-600 font-medium">{{ member.designation }}</p>
+                        <p class=" text-xs text-blue-600 font-medium">{{ member.designation }}</p>
                       </div>
                     </div>
                   </div>
