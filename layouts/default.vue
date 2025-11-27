@@ -43,5 +43,13 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* Layout styles here */
+/* Added smooth scroll CSS for enhanced scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add smooth transition for page navigation */
+main {
+  transition: opacity 0.6s ease-in-out;
+}
 </style>
