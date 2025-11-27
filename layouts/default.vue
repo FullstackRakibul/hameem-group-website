@@ -37,7 +37,7 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  isLoading.value = false; // Clean up if the page is unloaded before timeout
+  isLoading.value = false;
 });
 
 </script>
@@ -50,6 +50,6 @@ html {
 
 /* Optional: Add smooth transition for page navigation */
 main {
-  transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 </style>

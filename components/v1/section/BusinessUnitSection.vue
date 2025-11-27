@@ -165,7 +165,7 @@ const isCarouselReady = ref(false)
 const imagesLoaded = ref(0)
 
 // responsive helpers
-const width = ref(window.innerWidth)
+const width = ref(typeof window !== 'undefined' ? window.innerWidth : 1200)
 const isVerySmall = computed(() => width.value <= 420) // phones
 const isSmall = computed(() => width.value <= 768) // phones/tablets
 

@@ -32,7 +32,7 @@ const carouselHeight = ref('800px');
 
 // Update height based on screen size
 const updateHeight = () => {
-  const width = window.innerWidth;
+  const width = typeof window !== 'undefined' ? window.innerWidth : 1200;
   if (width >= 1024) {
     carouselHeight.value = '800px';
   } else if (width >= 768) {
@@ -54,8 +54,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-
-
 /* Customize el-image hover animation */
 img {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -65,6 +63,4 @@ img:hover {
   transform: scale(1.05);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
-
-
 </style>
