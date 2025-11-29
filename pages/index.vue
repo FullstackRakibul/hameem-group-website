@@ -18,7 +18,7 @@ import UpcommingProjectSection from '~/components/v1/section/UpcommingProjectSec
   <section class="-mt-16 ">
     <!-- <GSAPHeroSlider /> -->
     <MainPageSlider01 />
-        <!-- <CompanyIntroductionSection /> -->
+    <!-- <CompanyIntroductionSection /> -->
     <ShortAboutRunningTextComponent />
     <!-- <WelcomeSection video-src="/assets/v2/video/RFIDDIGITALVIDEO.mp4">
       <template #secondary-content>
