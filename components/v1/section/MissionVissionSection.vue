@@ -1,6 +1,6 @@
 <template>
   <section
-    class="container mx-auto relative w-full min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden px-4 sm:px-6 lg:px-0"
+    class="container mx-auto relative w-full min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden "
     :style="{ backgroundImage: `url('${bgImage}')` }">
     <!-- Background Elements (kept) -->
     <div class="absolute inset-0 pointer-events-none">
