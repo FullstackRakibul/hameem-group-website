@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
-  css: ["animate.css/animate.min.css", "animate.css"],
+  css: ["animate.css/animate.min.css", "animate.css","@/assets/css/global.css"],
   modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@element-plus/nuxt", "nuxt-swiper", "@nuxt/icon", "nuxt-particles", "v-gsap-nuxt"],
   elementPlus: {
     /** Options */
@@ -91,6 +91,11 @@ export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
       exclude: ['#app-manifest']
+    }
+  },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
     }
   }
   
