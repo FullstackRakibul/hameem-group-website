@@ -1,11 +1,11 @@
 <template>
-  <div >
+  <div>
     <!-- Carousel Section -->
-    <el-carousel height="100vh"  autoplay :interval="5000" :loop="true" class="">
+    <el-carousel height="100vh" autoplay :interval="5000" :loop="true" class="">
       <!-- Denim Slide -->
       <el-carousel-item key="denim">
         <div class="overflow-x-hidden">
-          <MainSliderFashion01 />        
+          <MainSliderFashion01 />
         </div>
       </el-carousel-item>
       <el-carousel-item key="products">
@@ -18,12 +18,12 @@
           <HeroImageSectionTwo />
         </div>
       </el-carousel-item>
-       <el-carousel-item key="GlobalPresence">
+      <el-carousel-item key="GlobalPresence">
         <div class="overflow-x-hidden">
           <HeroImageSectionSix />
         </div>
       </el-carousel-item>
-       <el-carousel-item key="DenimExcellence">
+      <el-carousel-item key="DenimExcellence">
         <div class="overflow-x-hidden">
           <HeroImageSectionSeven />
         </div>
@@ -71,8 +71,6 @@ import HeroImageSectionSeven from '../section/HeroImageSectionSeven.vue';
 </script>
 
 <style scoped>
-
-
 /* img {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -106,5 +104,4 @@ img:hover {
   --el-carousel-indicator-out-color: var(--el-border-color-hover);
   position: relative;
 } */
-
 </style>

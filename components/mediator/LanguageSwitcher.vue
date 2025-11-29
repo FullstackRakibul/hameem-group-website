@@ -1,9 +1,7 @@
 <template>
   <div class="fixed bottom-9 right-4 z-50">
     <el-dropdown trigger="hover" placement="bottom-end">
-      <button
-        class="flex items-center px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700"
-      >
+      <button class="flex items-center px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700">
         <span>{{ selectedLanguage }}</span>
         <el-icon class="ml-2">
           <arrow-down />
@@ -11,11 +9,7 @@
       </button>
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item
-            v-for="(lang, code) in languages"
-            :key="code"
-            @click="changeLanguage(code)"
-          >
+          <el-dropdown-item v-for="(lang, code) in languages" :key="code" @click="changeLanguage(code)">
             {{ lang }}
           </el-dropdown-item>
         </el-dropdown-menu>
@@ -86,7 +80,7 @@ const loadGoogleTranslate = () => {
 
 // Initialize Google Translate on mount
 onMounted(() => {
-  loadGoogleTranslate();
+  // loadGoogleTranslate();
 });
 </script>
 

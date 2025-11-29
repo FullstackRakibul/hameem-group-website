@@ -37,11 +37,19 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  isLoading.value = false; // Clean up if the page is unloaded before timeout
+  isLoading.value = false;
 });
 
 </script>
 
 <style scoped>
-/* Layout styles here */
+/* Added smooth scroll CSS for enhanced scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add smooth transition for page navigation */
+main {
+  transition: opacity 0.3s ease-in-out;
+}
 </style>
