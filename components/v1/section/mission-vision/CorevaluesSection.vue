@@ -1,8 +1,8 @@
 <template>
-  <section class="relative w-full bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+  <section class="relative w-full bg-gradient-to-br from-primary-200 via-gray-800 to-black overflow-hidden">
     <!-- Animated background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
-      <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-white-600/10 rounded-full blur-2xl animate-pulse"></div>
       <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl animate-pulse"
         style="animation-delay: 1s;"></div>
       <div class="absolute top-1/2 right-0 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl animate-pulse"
@@ -11,7 +11,7 @@
 
     <div class="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
       <!-- Section header -->
-      <div class="mb-16 md:mb-20" ref="headerRef" :style="headerAnimStyle">
+      <div class="mb-16 md:mb-20" ref="headerRef" >
         <div
           class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 mb-6">
           <span class="w-2 h-2 bg-orange-400 rounded-full"></span>
@@ -77,13 +77,13 @@
               </ul>
 
               <!-- Hover indicator arrow -->
-              <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <!-- <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <svg class="w-6 h-6 text-blue-400 group-hover:translate-x-1 transition-transform" fill="none"
                   stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6">
                   </path>
                 </svg>
-              </div>
+              </div> -->
             </div>
 
             <!-- Border animation -->
