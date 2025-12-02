@@ -13,7 +13,8 @@ import SustainabilityMapSection from '~/components/v2/sectionComponent/Sustainab
 import HameemGroupAboutSection from '~/components/v1/section/HameemGroupAboutSection.vue';
 import UpcommingProjectSection from '~/components/v1/section/UpcommingProjectSection.vue';
 import StrategicLeadershipCouncil from '~/components/v1/section/StrategicLeadershipCouncil.vue';
-import MissionVisionCoreValues from '~/components/v1/section/MissionVisionCoreValues.vue';
+import MissionVisionSection from '~/components/v1/section/mission-vision/MissionVisionSection.vue';
+import CorevaluesSection from '~/components/v1/section/mission-vision/CorevaluesSection.vue';
 </script>
 
 <template>
@@ -33,7 +34,8 @@ import MissionVisionCoreValues from '~/components/v1/section/MissionVisionCoreVa
       </template>
 </WelcomeSection> -->
     <!-- <MissionVissionSection /> -->
-    <MissionVisionCoreValues />
+    <CorevaluesSection />
+    <MissionVisionSection />
     <ExpansionPlanSection />
     <UpcommingProjectSection />
     <BusinessUnitSection />

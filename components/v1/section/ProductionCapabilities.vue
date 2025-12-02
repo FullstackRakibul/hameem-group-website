@@ -47,22 +47,13 @@
               <!-- Product Card -->
               <div class="group relative cursor-pointer transition-all duration-500 hover:scale-105">
                 <div
-                  class="w-48 md:w-56 h-56 md:h-64 rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500">
+                  class="w-48 md:w-48 h-48 md:h-48 rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-500">
                   <!-- Image Container -->
                   <div class="relative w-full h-full overflow-hidden bg-slate-100">
                     <img :src="product.image || fallbackImage" :alt="product.name" loading="lazy"
                       class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
 
-                    <!-- Overlay -->
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-slate-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                      <div class="w-full">
-                        <!-- Badge -->
-                        <div class="inline-block px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full mb-3">
-                          <span class="text-xs font-semibold text-blue-600">View Details</span>
-                        </div>
-                      </div>
-                    </div>
+
                   </div>
 
                   <!-- Product Label -->
@@ -89,28 +80,35 @@
 
 
       <!-- Stats Grid -->
-      <div class="relative w-full py-8 md:py-10 px-2 md:px-4">
+      <div class="relative w-full py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8">
         <!-- Animated Blur Background -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
-          <div class="absolute top-10 left-10 w-72 h-72 bg-blue-400/30 rounded-full blur-3xl animate-pulse"></div>
-          <div class="absolute bottom-10 right-10 w-72 h-72 bg-blue-300/30 rounded-full blur-3xl animate-pulse"
+          <div
+            class="absolute top-5 sm:top-10 left-5 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-400/30 rounded-full blur-3xl animate-pulse">
+          </div>
+          <div
+            class="absolute bottom-5 sm:bottom-10 right-5 sm:right-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-300/30 rounded-full blur-3xl animate-pulse"
             style="animation-delay: 2s"></div>
-          <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl animate-pulse"
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-blue-200/20 rounded-full blur-3xl animate-pulse"
             style="animation-delay: 4s"></div>
         </div>
 
         <!-- Stats Grid Container -->
-        <div class="relative z-10 max-w-12xl mx-auto">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+        <div class="relative z-10 max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
             <!-- Stat Card -->
             <div v-for="(stat, index) in stats" :key="index"
-              class="group relative bg-white/80 backdrop-blur-md rounded-2xl p-2 md:p-4 border border-white/40 hover:border-blue-300/60 transition-all duration-500 hover:shadow-2xl hover:bg-white/90 cursor-pointer overflow-hidden ">
+              class="stat-card group relative bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 border border-white/40 hover:border-blue-300/60 transition-all duration-500 hover:shadow-2xl hover:bg-white/95 cursor-pointer overflow-hidden"
+              :style="{ animationDelay: `${index * 0.1}s` }">
               <!-- Added animated gradient border on hover -->
               <div
-                class="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/20 rounded-2xl transition-all duration-500 pointer-events-none">
+                class="absolute inset-0 bg-gradient-to-br from-blue-400/0 to-blue-600/0 group-hover:from-blue-400/20 group-hover:to-blue-600/20 rounded-xl sm:rounded-2xl transition-all duration-500 pointer-events-none">
               </div>
 
-              <div class="relative z-10 flex flex-row items-center text-center space-y-3 md:space-y-4">
+              <!-- Fixed layout to proper flex column with better centering -->
+              <div
+                class="relative z-10 flex flex-col items-center justify-center text-center space-y-2 sm:space-y-3 md:space-y-4 h-full">
                 <!-- Icon with Blur Background -->
                 <div class="relative">
                   <!-- Icon blur background effect -->
@@ -118,32 +116,31 @@
                     class="absolute inset-0 bg-blue-400/20 blur-xl rounded-full scale-150 group-hover:scale-200 transition-transform duration-500">
                   </div>
                   <div
-                    class="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-500">
+                    class="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg sm:rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center text-2xl sm:text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-500">
                     {{ stat.icon }}
                   </div>
                 </div>
 
                 <!-- Value -->
-                <div class="space-y-1">
-                  <div
-                    class="text-2xl md:text-3xl lg:text-4xl font-bold text-black group-hover:text-blue-600 transition-colors duration-500">
-                    {{ stat.value }}
-                  </div>
+                <!-- Improved responsive text sizing -->
+                <div
+                  class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black group-hover:text-blue-600 transition-colors duration-500">
+                  {{ stat.value }}
                 </div>
 
                 <!-- Label -->
-                <div class="flex flex-col justify-center items-center ">
+                <!-- Better responsive font sizes and line height -->
                 <p
-                  class="text-sm md:text-base font-semibold text-gray-900 group-hover:text-gray-950 transition-colors duration-500 leading-tight">
+                  class="text-xs sm:text-sm md:text-base font-semibold text-gray-900 group-hover:text-gray-950 transition-colors duration-500 leading-tight">
                   {{ stat.label }}
                 </p>
 
-                <!-- Description (hidden on mobile, visible on hover) -->
+                <!-- Description (hidden on mobile, visible on hover and larger screens) -->
+                <!-- Improved visibility on different screen sizes -->
                 <p
-                  class="text-xs md:text-sm text-gray-600 group-hover:text-gray-700 transition-colors duration-500 opacity-0 group-hover:opacity-100 transition-opacity line-clamp-2">
+                  class="hidden sm:block text-xs md:text-sm text-gray-600 group-hover:text-gray-700 transition-all duration-500 opacity-0 sm:opacity-70 group-hover:opacity-100 line-clamp-2">
                   {{ stat.description }}
                 </p>
-                </div>
               </div>
             </div>
           </div>
@@ -239,7 +236,7 @@ onMounted(() => {
 }
 
 .animate-marquee-smooth {
-  animation: marquee-smooth 40s linear infinite;
+  animation: marquee-smooth 20s linear infinite;
   will-change: transform;
 }
 
@@ -295,5 +292,4 @@ onMounted(() => {
     transition-duration: 0.01ms !important;
   }
 }
-
 </style>

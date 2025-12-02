@@ -1,118 +1,113 @@
 <template>
-  <section class="relative w-full bg-[rgba(255,255,255,0.96)] overflow-hidden">
-    <!-- Particle Background (colorful) -->
-    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+  <section class="relative w-full bg-gradient-to-b from-white via-blue-50/30 to-white overflow-hidden">
+    <!-- Particle Background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
       <div class="particles-container">
-        <div v-for="i in particleCount" :key="i" class="particle" :style="particleStyles[i - 1]" aria-hidden="true" />
+        <div v-for="(particle, i) in particleStyles" :key="i" class="particle" :style="particle" aria-hidden="true" />
       </div>
 
-      <!-- subtle blurred bulbs to give depth (very light, almost-white) -->
-      <div class="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse"
-        style="background: radial-gradient(closest-side, rgba(99,102,241,0.06), rgba(99,102,241,0));">
+      <!-- Subtle blur bulbs - simplified for better performance -->
+      <div
+        class="absolute top-1/4 -left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20 bg-gradient-to-br from-blue-400/30 to-indigo-400/10 animate-pulse">
       </div>
-      <div class="absolute bottom-0 right-1/4 w-80 h-80 rounded-full blur-3xl animate-pulse"
-        style="animation-delay: 1s; background: radial-gradient(closest-side, rgba(236,72,153,0.06), rgba(236,72,153,0));">
+      <div
+        class="absolute -bottom-1/4 -right-1/4 w-96 h-96 rounded-full blur-3xl opacity-20 bg-gradient-to-tl from-pink-400/30 to-purple-400/10 animate-pulse"
+        style="animation-delay: 1s;"></div>
+
+      <!-- Background Image Section -->
+      <div v-if="bgImage" class="absolute inset-0 opacity-10 pointer-events-none">
+        <img :src="bgImage" :alt="company.title" class="w-full h-full object-cover" />
       </div>
     </div>
 
-    <div class="z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-28">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <!-- Left: Running text (old design ~60%) -->
-        <div class="lg:col-span-7 relative" ref="leftRef" :style="leftAnimStyle">
-          <div
-            class="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-gray-200 mb-6">
-            <span class="w-2 h-2 bg-primary rounded-full"></span>
-            <span class="text-xs md:text-sm font-semibold text-primary-600 uppercase tracking-wider">About Us</span>
-          </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
+      <!-- Badge -->
+      <div class="flex justify-start mb-8">
+        <div
+          class="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-gray-200 hover:border-primary transition-colors">
+          <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+          <span class="text-xs md:text-sm font-semibold text-primary uppercase tracking-wider">{{ company.badge
+          }}</span>
+        </div>
+      </div>
 
-          <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary-700 leading-tight mb-6">
-            We stitch trust into every seam
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <!-- Left: Running text section -->
+        <div class="lg:col-span-7 relative" :style="leftAnimStyle">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            {{ company.title }}
           </h2>
 
-          <p class="text-primary-600 text-base md:text-lg leading-relaxed max-w-3xl mb-6 running-text"
-            ref="runningTextRef" :style="runningTextStyle">
-            We are a textile group with decades of craft. From yarn to finished garment, our teams ensure
-            consistency, quality, and sustainability. Our factories combine timeless techniques with modern
-            process control to produce reliable apparel for global brands. We invest in people, in communities,
-            and in responsible manufacturing — always moving forward, never compromising the standards that have
-            defined us.
+          <p class="text-gray-700 text-lg md:text-xl leading-relaxed max-w-3xl mb-8 running-text"
+            :style="runningTextStyle">
+            {{ company.description }}
           </p>
 
-          <!-- small meta / tags (old look) -->
-          <div class="flex flex-wrap gap-3 mt-4">
-            <span class="px-3 py-1 bg-white/70 text-primary-700 rounded-full text-sm border border-gray-200">Knit</span>
-            <span
-              class="px-3 py-1 bg-white/70 text-primary-700 rounded-full text-sm border border-gray-200">Woven</span>
-            <span
-              class="px-3 py-1 bg-white/70 text-primary-700 rounded-full text-sm border border-gray-200">Denim</span>
-            <span
-              class="px-3 py-1 bg-white/70 text-primary-700 rounded-full text-sm border border-gray-200">Sustainability</span>
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-3 mt-8">
+            <span v-for="tag in company.tags" :key="tag"
+              class="px-4 py-2 bg-white/80 text-gray-700 rounded-full text-sm font-medium border border-gray-200 hover:bg-white hover:border-blue-300 hover:text-blue-600 transition-all duration-300 cursor-pointer">
+              {{ tag }}
+            </span>
           </div>
         </div>
 
-        <!-- Right: New modern panel (new ~40%) -->
+        <!-- Right: Stats panel -->
         <aside class="lg:col-span-5">
-          <div class="relative" ref="rightRef" :style="rightAnimStyle">
+          <div :style="rightAnimStyle">
             <div
-              class="p-6 md:p-8 bg-white/90 backdrop-blur-xl rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div class="flex items-start justify-between">
+              class="p-6 md:p-8 bg-white/95 backdrop-blur-xl rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <!-- Header -->
+              <div class="flex items-start justify-between mb-6">
                 <div>
-                  <h3 class="text-lg md:text-xl font-semibold text-primary-700 mb-1">Our Commitment</h3>
-                  <p class="text-primary-600 text-sm md:text-base max-w-md">
-                    Delivering consistent quality while reducing environmental impact—measured, audited, and improved.
+                  <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">{{ company.panelTitle }}</h3>
+                  <p class="text-gray-600 text-sm md:text-base max-w-sm">
+                    {{ company.panelDescription }}
                   </p>
                 </div>
-
                 <div class="ml-4 flex-shrink-0">
                   <div
-                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-indigo-500 flex items-center justify-center text-white font-bold">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                        d="M12 8c1.657 0 3-1.567 3-3.5S13.657 1 12 1 9 2.567 9 4.5 10.343 8 12 8zM12 8v13"></path>
-                    </svg>
+                    class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-primary flex items-center justify-center text-white font-bold text-lg">
+                    {{ company.icon }}
                   </div>
                 </div>
               </div>
 
-              <!-- Stats -->
-              <div class="mt-6 grid grid-cols-2 gap-4">
-                <div class="p-3 bg-white/80 rounded-lg border border-gray-100">
-                  <div class="text-sm text-primary-600">Daily Capacity</div>
-                  <div class="text-primary-700 text-lg font-bold">250k pcs</div>
+              <!-- Stats Grid -->
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div v-for="(stat, index) in company.stats" :key="index"
+                  class="p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200 hover:border-blue-300 hover:from-blue-50 hover:to-blue-100 transition-all duration-300 group cursor-pointer">
+                  <div class="text-xs text-gray-600 font-medium group-hover:text-primary mb-1">{{ stat.label }}</div>
+                  <div class="text-gray-900 text-2xl font-bold group-hover:text-primary">{{ stat.value }}</div>
                 </div>
-                <div class="p-3 bg-white/80 rounded-lg border border-gray-100">
-                  <div class="text-sm text-primary-600">Global Clients</div>
-                  <div class="text-primary-700 text-lg font-bold">120+</div>
-                </div>
-                <div class="p-3 bg-white/80 rounded-lg border border-gray-100">
-                  <div class="text-sm text-primary-600">Sustainability Score</div>
-                  <div class="text-primary-700 text-lg font-bold">A+</div>
-                </div>
-                <div class="p-3 bg-white/80 rounded-lg border border-gray-100">
-                  <div class="text-sm text-primary-600">Years</div>
-                  <div class="text-primary-700 text-lg font-bold">34</div>
+              </div>
+
+              <!-- Factory Details -->
+              <div v-if="company.factories" class="mb-6 p-4 bg-blue-50/50 rounded-lg border border-blue-200">
+                <h4 class="text-sm font-semibold text-gray-900 mb-3">Production Facilities</h4>
+                <div class="grid grid-cols-2 gap-3">
+                  <div v-for="factory in company.factories" :key="factory.name" class="text-xs">
+                    <span class="font-semibold text-gray-900">{{ factory.name }}:</span>
+                    <span class="text-gray-600 ml-1">{{ factory.count }}</span>
+                  </div>
                 </div>
               </div>
 
               <!-- CTA -->
-              <div class="mt-6 flex items-center justify-between">
-                <a href="#contact"
-                  class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-primary-500 to-indigo-500 text-white rounded-md text-sm font-medium shadow hover:opacity-95 transition-opacity">
-                  Contact Sales
-                </a>
-
-                <button class="text-sm text-primary-600 underline-offset-2 hover:text-primary-700 transition-colors"
-                  @click="toggleMore" :aria-expanded="moreOpen ? 'true' : 'false'">
-                  {{ moreOpen ? 'Less' : 'More about us' }}
+              <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                <button @click="toggleMore"
+                  class="text-sm font-medium text-blue-600 hover:text-primary transition-colors">
+                  {{ moreOpen ? 'Less' : 'Learn more' }} →
                 </button>
+
               </div>
 
-              <!-- Expanded paragraph -->
-              <div v-show="moreOpen" class="mt-4 text-primary-600 text-sm transition-all">
-                We follow strict audit trails for labor, environment, and quality — every line inspected, every
-                process documented. Our community programs focus on health, education, and livelihoods.
-              </div>
+              <!-- Expanded details -->
+              <transition name="fade">
+                <div v-show="moreOpen" class="mt-4 pt-4 border-t border-gray-200 text-gray-700 text-sm leading-relaxed">
+                  {{ company.expandedDetails }}
+                </div>
+              </transition>
             </div>
           </div>
         </aside>
@@ -123,122 +118,103 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { companyData } from '~/data/company'
+
+const props = defineProps({
+  bgImage: {
+    type: String,
+    default: '/assets/v1/raise-chart.gif'
+  }
+})
 
 // Refs
-const leftRef = ref<Element | null>(null)
-const rightRef = ref<Element | null>(null)
-const runningTextRef = ref<Element | null>(null)
-
-// Animation style objects
 const leftAnimStyle = ref<Record<string, string>>({})
 const rightAnimStyle = ref<Record<string, string>>({})
 const runningTextStyle = ref<Record<string, string>>({})
-
-// Toggle for CTA extra text
 const moreOpen = ref(false)
-const toggleMore = () => {
-  moreOpen.value = !moreOpen.value
-}
 
-// --- Particles ---
-const particleCount = 30
+// Particle system with fixed animation
 const particleStyles = ref<Array<Record<string, string>>>([])
 
-// color palette for particles (vibrant)
 const palette = [
-  'rgba(100,102,241,0.95)', // indigo
-  'rgba(59,130,246,0.95)', // blue
-  'rgba(234,88,12,0.95)', // orange
-  'rgba(236,72,153,0.95)', // pink
-  'rgba(16,185,129,0.95)', // green
-  'rgba(139,92,246,0.95)', // violet
-  'rgba(250,204,21,0.95)' // yellow
+  'rgba(59,130,246,0.7)',   // blue
+  'rgba(99,102,241,0.7)',   // indigo
+  'rgba(139,92,246,0.7)',   // violet
+  'rgba(168,85,247,0.7)',   // purple
+  'rgba(236,72,153,0.7)',   // pink
 ]
 
 const randFromPalette = () => palette[Math.floor(Math.random() * palette.length)]
 
-// Create colorful radial gradient background per particle
-// const generateParticles = () => {
-//   const particles: Array<Record<string, string>> = []
-//   for (let i = 0; i < particleCount; i++) {
-//     const size = Math.random() * 14 + 50
-//     const left = Math.random() * 100
-//     const top = Math.random() * 100
-//     const delay = Math.random() * 8 // seconds
-//     const duration = 6 + Math.random() * 10 // 6..16s
-//     const opacity = (Math.random() * 0.6 + 0.25).toFixed(2)
-
-//     // random two-color radial gradient
-//     const colorA = randFromPalette()
-//     const colorB = randFromPalette()
-//     const bg = `radial-gradient(circle at 30% 30%, ${colorA} 0%, ${colorB} 60%, rgba(255,255,255,0) 100%)`
-
-//     particles.push({
-//       left: `${left}%`,
-//       top: `${top}%`,
-//       width: `${size}px`,
-//       height: `${size}px`,
-//       animationDelay: `${delay}s`,
-//       animationDuration: `${duration}s`,
-//       opacity,
-//       background: bg,
-//       transform: `translateY(0)` // initial transform for smoother transition
-//     })
-//   }
-//   particleStyles.value = particles
-// }
-
 const generateParticles = () => {
   const particles = []
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 40; i++) {
+    const size = Math.random() * 12 + 4
+    const left = Math.random() * 100
+    const top = Math.random() * 100
+    const delay = (Math.random() * 5).toFixed(2)
+    const duration = (8 + Math.random() * 8).toFixed(2)
+    const opacity = (Math.random() * 0.3 + 0.2).toFixed(2)
+
+    const colorA = randFromPalette()
+    let colorB = randFromPalette()
+    if (colorB === colorA) colorB = palette[(palette.indexOf(colorA) + 2) % palette.length]
+
+    const bg = `radial-gradient(circle at 30% 30%, ${colorA} 0%, ${colorB} 60%, rgba(255,255,255,0) 100%)`
+
     particles.push({
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      width: `${Math.random() * 5 + 2}px`,
-      height: `${Math.random() * 4 + 2}px`,
-      animationDelay: `${Math.random() * 20}s`,
-      opacity: `${Math.random() * 0.8 + 0.1}`
+      left: `${left}%`,
+      top: `${top}%`,
+      width: `${size}px`,
+      height: `${size}px`,
+      animationDelay: `${delay}s`,
+      animationDuration: `${duration}s`,
+      opacity,
+      background: bg
     })
   }
   particleStyles.value = particles
 }
 
-// Respect reduced motion
-const prefersReduced = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const company = companyData
+const bgImage = props.bgImage
+
+const toggleMore = () => {
+  moreOpen.value = !moreOpen.value
+}
+
+const prefersReduced = typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 onMounted(() => {
   generateParticles()
 
   if (prefersReduced) {
-    // No motion: set visible states immediately
     leftAnimStyle.value = { opacity: '1', transform: 'translateY(0)' }
     rightAnimStyle.value = { opacity: '1', transform: 'translateY(0)' }
     runningTextStyle.value = { opacity: '1', transform: 'translateY(0)' }
     return
   }
 
-  // initial hidden states (light gentle moves)
-  leftAnimStyle.value = { opacity: '1', transform: 'translateY(12px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }
-  runningTextStyle.value = { opacity: '0', transform: 'translateY(6px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }
-  rightAnimStyle.value = { opacity: '0', transform: 'translateY(12px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }
+  leftAnimStyle.value = { opacity: '0', transform: 'translateY(20px)', transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)' }
+  runningTextStyle.value = { opacity: '0', transform: 'translateY(12px)', transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)' }
+  rightAnimStyle.value = { opacity: '0', transform: 'translateY(20px)', transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)' }
 
-  // stagger reveal
-  setTimeout(() => {
-    leftAnimStyle.value = { opacity: '1', transform: 'translateY(0)', transition: 'opacity 0.6s ease, transform 0.6s ease' }
-  }, 120)
+  // Use requestAnimationFrame for smoother animations
+  requestAnimationFrame(() => {
+    leftAnimStyle.value = { opacity: '1', transform: 'translateY(0)', transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)' }
 
-  setTimeout(() => {
-    runningTextStyle.value = { opacity: '1', transform: 'translateY(0)', transition: 'opacity 0.6s ease, transform 0.6s ease' }
-  }, 260)
+    setTimeout(() => {
+      runningTextStyle.value = { opacity: '1', transform: 'translateY(0)', transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)' }
+    }, 150)
 
-  setTimeout(() => {
-    rightAnimStyle.value = { opacity: '1', transform: 'translateY(0)', transition: 'opacity 0.6s ease, transform 0.6s ease' }
-  }, 420)
+    setTimeout(() => {
+      rightAnimStyle.value = { opacity: '1', transform: 'translateY(0)', transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)' }
+    }, 300)
+  })
 })
 </script>
 
 <style scoped>
-/* Particles layout */
 .particles-container {
   position: absolute;
   inset: 0;
@@ -246,51 +222,74 @@ onMounted(() => {
   overflow: hidden;
 }
 
-/* Each particle is a colorful radial blob that slowly floats */
 .particle {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(6px);
-  transform: translateY(0);
+  filter: blur(12px);
   animation-name: float-slow;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
   animation-iteration-count: infinite;
   will-change: transform, opacity;
   mix-blend-mode: screen;
-  /* colorful glow over light bg */
 }
 
-/* subtle float — moves up and down a little */
+/* Fixed keyframes - simplified for better browser support */
 @keyframes float-slow {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.9;
+
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.5;
+  }
+
+  25% {
+    transform: translateY(-25px) translateX(10px) scale(1.1);
+    opacity: 0.7;
   }
 
   50% {
-    transform: translateY(-24px) scale(1.06);
-    opacity: 0.65;
+    transform: translateY(-50px) translateX(-5px) scale(1.2);
+    opacity: 0.8;
   }
 
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.9;
+  75% {
+    transform: translateY(-25px) translateX(-15px) scale(1.1);
+    opacity: 0.7;
   }
 }
 
-/* make per-particle duration & delay with inline styles set in JS */
-
-/* Mask / running-text tweak */
 .running-text {
-  -webkit-mask-image: linear-gradient(180deg, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, black 85%, transparent);
+  mask-image: linear-gradient(180deg, black 85%, transparent);
 }
 
-/* Accessibility: remove animations for reduced motion */
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .particle {
     animation: none !important;
-    filter: blur(0px);
-    opacity: 0.6;
+    filter: blur(2px);
+    opacity: 0.3 !important;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .particle {
+    filter: blur(8px);
   }
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
-  <section
-    class="container mx-auto relative w-full min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden "
+  <section class="container mx-auto relative w-full min-h-screen overflow-hidden "
     :style="{ backgroundImage: `url('${bgImage}')` }">
     <!-- Background Elements (kept) -->
     <div class="absolute inset-0 pointer-events-none">
@@ -10,8 +9,8 @@
       <div class="absolute bottom-0 left-0 rounded-full blur-3xl"
         :class="['bg-gradient-to-tr', isSmall ? 'w-32 h-32' : 'w-1/4 h-1/4', 'from-secondary/5 to-transparent']"></div>
 
-      <div class="absolute inset-0 opacity-[0.02]"
-        style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 50px 50px;"></div>
+      <!-- <div class="absolute inset-0 opacity-[0.02]"
+        style="background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 50px 50px;"></div> -->
     </div>
 
     <p class="py-2 md:text-3xl font-normal tracking-widest text-secondary text-center font-writtingOne">
@@ -208,7 +207,7 @@ import SectionUnderline from '~/components/ui/UISectionUnderline.vue';
 defineProps({
   bgImage: {
     type: String,
-    default: "/assets/missionvissionsectionbg-abstruct.jpg",
+    default: "https://coolbackgrounds.imgix.net/4BIP4ge9ontCTkNubiY4lb/48121f9d09134fd83670b1d6e182aa66/white-particles-background.png?w=3840&q=60&auto=format,compress",
   },
 });
 

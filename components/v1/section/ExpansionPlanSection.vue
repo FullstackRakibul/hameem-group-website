@@ -1,5 +1,5 @@
 <template>
-  <section id="expansionPlan" class="w-full px-4 sm:px-6 lg:px-24 py-12">
+  <section id="expansionPlan" class="w-full   px-4 sm:px-6 lg:px-24 py-12">
     <!-- Header Section -->
     <div class="text-center mb-8 justify-center flex flex-col items-center">
       <h2 class="text-4xl md:text-6xl font-light text-gray-900 tracking-tight">
@@ -10,7 +10,7 @@
     <UISectionUnderline />
 
     <!-- Modern Strengths Section - Now Slidable -->
-    <div class="mt-16">
+    <div class="mt-12">
       <div class="relative overflow-hidden">
 
         <!-- Navigation Arrows (hidden on small screens) -->
@@ -124,7 +124,7 @@
       </div>
 
       <!-- Modern Products Carousel Section (kept same but responsive) -->
-      <ProductionCapabilities/>
+      <ProductionCapabilities />
     </div>
   </section>
 </template>
@@ -178,7 +178,7 @@ onUnmounted(() => window.removeEventListener('resize', updateSize));
 
 // cards per view responsive
 const cardsPerView = computed(() => {
-  if (width.value >= 1200) return 4;
+  if (width.value >= 1200) return 5;
   if (width.value >= 1024) return 4;
   if (width.value >= 768) return 3;
   if (width.value >= 640) return 2;
@@ -228,7 +228,7 @@ const startAutoSlide = () => {
 const stopAutoSlide = () => { if (autoSlide) { clearInterval(autoSlide); autoSlide = null; } };
 
 onMounted(() => {
-  startAutoSlide();
+  // startAutoSlide();
   // reset slide on resize to avoid out-of-range indexes
   const onR = () => { currentSlide.value = Math.min(currentSlide.value, maxSlideIndex.value); };
   window.addEventListener('resize', onR);
