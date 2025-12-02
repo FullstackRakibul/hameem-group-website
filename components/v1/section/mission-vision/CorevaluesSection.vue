@@ -16,9 +16,9 @@
         style="animation-delay: 2s;"></div>
     </div>
 
-    <div class="z-10 max-w-8xl mx-auto sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
+    <div class="z-10 max-w-7xl mx-auto sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
       <!-- Section header -->
-      <div class="mb-16 md:mb-20" ref="headerRef" :style="headerAnimStyle">
+      <div class="mb-12 px-6 md:mb-20" ref="headerRef" :style="headerAnimStyle">
         <div
           class="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-500 to-purple-600 backdrop-blur-md px-4 py-2 rounded-full border border-blue-200 shadow-lg mb-6">
           <span class="w-2 h-2 bg-primary rounded-full"></span>
@@ -92,7 +92,7 @@
 
       <!-- Additional info section -->
       <div
-        class="mt-20 md:mt-28 p-8 md:p-12 bg-gradient-to-r from-blue-100 to-purple-100 backdrop-blur-xl rounded-2xl border border-blue-200 hover:border-blue-300 transition-all duration-500 shadow-lg"
+        class="mt-20 m-4 md:mt-28 p-8 md:p-12 bg-gradient-to-r from-blue-100 to-purple-100 backdrop-blur-xl rounded-2xl border border-blue-200 hover:border-blue-300 transition-all duration-500 shadow-lg"
         ref="infoRef" :style="infoAnimStyle">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="flex flex-col items-start space-y-3">

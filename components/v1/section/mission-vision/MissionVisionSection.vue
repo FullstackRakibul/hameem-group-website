@@ -4,7 +4,7 @@
 
     <!-- Overlay gradient -->
     <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-black/80 to-black/60"></div>
-    <div class="relative z-10 max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
+    <div class="relative z-10 max-w-7xl mx-auto sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
       <!-- Section header with tabs -->
       <div class="mb-16 md:mb-20 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div ref="headerRef" class="space-y-4" :style="headerAnimStyle">
@@ -14,7 +14,7 @@
             <span class="text-xs md:text-sm font-semibold text-white uppercase tracking-wider">Our Direction</span>
           </div>
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Mission,Vision & <br/> Values
+            Mission,Vision & <br /> Values
           </h2>
         </div>
 
