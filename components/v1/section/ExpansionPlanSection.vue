@@ -178,10 +178,11 @@ onUnmounted(() => window.removeEventListener('resize', updateSize));
 
 // cards per view responsive
 const cardsPerView = computed(() => {
-  if (width.value >= 1200) return 5;
-  if (width.value >= 1024) return 4;
-  if (width.value >= 768) return 3;
-  if (width.value >= 640) return 2;
+  if (width.value >= 1500) return 5;
+  if (width.value >= 1200) return 4;
+  if (width.value >= 1024) return 3;
+  if (width.value >= 768) return 2;
+  if (width.value >= 640) return 1;
   return 1;
 });
 

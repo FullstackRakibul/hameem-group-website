@@ -16,7 +16,7 @@
         style="animation-delay: 2s;"></div>
     </div>
 
-    <div class="z-10 max-w-7xl mx-auto sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
+    <div class="z-10 max-w-7xl mx-4 mx-auto sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
       <!-- Section header -->
       <div class="mb-12 px-6 md:mb-20" ref="headerRef" :style="headerAnimStyle">
         <div

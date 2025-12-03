@@ -1,12 +1,12 @@
 <template>
-  <section class="relative w-full min-h-screen bg-cover bg-center bg-fixed overflow-hidden"
+  <section class="relative  w-full min-h-screen bg-cover bg-center bg-fixed overflow-hidden"
     :style="{ backgroundImage: 'url(https://img.freepik.com/premium-photo/blue-jeans-cloth-with-seam-background-texture_222251-786.jpg?semt=ais_hybrid&w=740&q=80)' }">
 
     <!-- Overlay gradient -->
-    <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-black/80 to-black/60"></div>
-    <div class="relative z-10 max-w-7xl mx-auto sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
+    <div class="absolute   inset-0 bg-gradient-to-b from-white/40 via-black/80 to-black/60"></div>
+    <div class="relative  z-10 max-w-7xl mx-auto sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32">
       <!-- Section header with tabs -->
-      <div class="mb-16 md:mb-20 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+      <div class="mb-16 mx-4  md:mb-20 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div ref="headerRef" class="space-y-4" :style="headerAnimStyle">
           <div
             class="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
@@ -19,7 +19,7 @@
         </div>
 
         <!-- Tab navigation -->
-        <div class="flex flex-wrap gap-2 md:gap-3">
+        <div class="flex  flex-wrap gap-2 md:gap-3">
           <button v-for="tab in tabs" :key="tab" @click="activeTab = tab" :class="[
             'px-6 py-3 rounded-lg font-semibold transition-all duration-300 text-sm md:text-base',
             activeTab === tab
@@ -32,7 +32,7 @@
       </div>
 
       <!-- Main content area: Points + Slider -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
+      <div class="grid mx-4 grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
         <!-- Left: Points cards -->
         <div class="lg:col-span-2 space-y-4 md:space-y-4 flex flex-col">
           <div v-for="(point, index) in activeData.points" :key="index" ref="pointsRef"
@@ -62,7 +62,7 @@
 
         <!-- Right: Image slider -->
         <div class="lg:col-span-1">
-          <div class="relative sticky top-8" ref="sliderRef" :style="sliderAnimStyle">
+          <div class="relative  sticky top-8" ref="sliderRef" :style="sliderAnimStyle">
             <!-- Main carousel container -->
             <div
               class="relative bg-white/5 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-black/50">
@@ -109,7 +109,7 @@
               </div>
 
               <!-- Thumbnail indicators -->
-              <div class="flex gap-2 p-2 bg-black/20 border-t border-white/10 overflow-x-auto">
+              <div class="flex  gap-2 p-2 bg-black/20 border-t border-white/10 overflow-x-auto">
                 <button v-for="(image, index) in activeData.images" :key="`thumb-${index}`" @click="goToSlide(index)"
                   :class="[
                     'relative flex-shrink-0 w-10 h-10 rounded-lg overflow-hidden border-2 transition-all duration-300 group',
@@ -128,7 +128,7 @@
 
       <!-- Description area -->
       <div
-        class="mt-16 md:mt-24 p-8 md:p-12 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 md:col-span-2"
+        class="mt-16 mx-4 md:mt-24 p-8 md:p-12 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 md:col-span-2"
         ref="descRef" :style="descAnimStyle">
         <p class="text-gray-300 text-base md:text-lg leading-relaxed">
           {{ activeData.description }}
