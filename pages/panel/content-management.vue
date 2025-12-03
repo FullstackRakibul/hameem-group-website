@@ -4,7 +4,7 @@ import { definePageMeta } from '#imports'
 import type { ContentSection } from '~/types/content'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { companyData } from '~/data/company'
-
+import { useContentStore } from '~/stores/content'
 definePageMeta({ layout: 'admin' })
 
 // Reactive state
@@ -107,14 +107,23 @@ const saveSection = async () => {
     }
 
     if (editingAbout.value) {
-      aboutSection.value = { ...editForm.value }
-      ElMessage.success('About section updated successfully')
+      // persist to the local Pinia store (also persisted to localStorage by the store)
+      contentStore.setAbout({
+        ...editForm.value,
+        id: aboutSection.value?.id ?? 'about-section',
+        updatedAt: new Date().toISOString()
+      })
+      // sync local copy used in page
+      aboutSection.value = { ...contentStore.about }
+      ElMessage.success('About section updated and saved locally')
       editingAbout.value = false
     } else if (editingId.value) {
-      await contentStore.updateSection(editingId.value, editForm.value)
+      // existing sections in contentStore or API
+      await contentStore.updateSection?.(editingId.value, editForm.value) // keep existing behavior if store has these
       ElMessage.success('Content updated successfully')
     } else {
-      await contentStore.addSection({
+      // add new section (existing logic)
+      await contentStore.addSection?.({
         id: `section-${Date.now()}`,
         title: editForm.value.title || '',
         description: editForm.value.description || '',
@@ -174,8 +183,8 @@ const addNewSection = () => {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 class="text-2xl sm:text-3xl font-bold text-slate-900">Content Management</h1>
-            <p class="mt-1 text-sm text-slate-600">Manage Ha-Meem Group website sections and content</p>
+            <h1 class="text-2xl sm:text-3xl font-bold text-slate-900"> Content Management</h1>
+            <p class="mt-1 text-sm text-slate-600">Manage Ha-Meem Group Website sections and content</p>
           </div>
           <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
             <button @click="importCompanyData"

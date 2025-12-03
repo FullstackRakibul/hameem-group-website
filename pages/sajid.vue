@@ -93,7 +93,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { definePageMeta } from "#imports";
+import { definePageMeta } from "#build/imports";
 
 const saveContactMessage = ref<{ text: string, type: 'success' | 'error' } | null>(null)
 const isSavingContact = ref(false)
