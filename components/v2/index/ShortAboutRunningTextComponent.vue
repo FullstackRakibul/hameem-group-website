@@ -1,7 +1,10 @@
+<!-- ShortAboutRunningTextComponent.vue -->
 <template>
-  <section class="container mx-auto py-8 md:py-16" id="about-us">
+  <section class="container md:px-24 mx-auto py-8 md:py-16" id="about-us">
     <el-row class="text-center mb-8 justify-center flex flex-col items-center">
-      <p class="md:text-5xl font-medium tracking-widest text-secondary py-5 font-writting">Welcome to</p>
+      <p class="md:text-5xl font-medium tracking-widest text-secondary py-5 font-writting">
+        {{ about.title }}
+      </p>
 
       <div v-gsap:whenVisible.to="{
         opacity: 1,
@@ -10,14 +13,14 @@
         duration: 1.2,
         ease: 'power2.out',
         stagger: 0.3
-      }" class="text-primary uppercase font-semibold md:text-6xl mb-5 relative">
-        <span class="font-normal">Ha-Meem </span>
-        <span class="font-bold">Group</span>
+      }" class="text-primary uppercase font-semibold md:text-6xl relative">
+        <span class="font-normal text-2xl px-2">{{ about.companyName }} </span>
+        <span class="font-bold text-2xl px-2">{{ about.companySuffix }}</span>
         <UISectionUnderline />
       </div>
 
-      <p class="md:text-2xl font-sans md:font-normal text-gray-600 mt-12 text-center">
-        {{ aboutData.description }}
+      <p class="md:text-2xl font-sans md:font-normal text-gray-600 text-center">
+        {{ about.description }}
       </p>
     </el-row>
     <el-row :gutter="16">
@@ -26,9 +29,8 @@
           <!-- Circle Icons Section with Hover Tooltips -->
           <div class="py-10 px-2 md:px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-8xl mx-auto">
-              <div v-for="(item, index) in stats" :key="index" @mouseenter="showTooltip(item, index)"
-                @mouseleave="hideTooltip"
-                class="flex flex-col items-center  group cursor-pointer transition-all duration-300 relative">
+              <div v-for="(item, index) in about.stats" :key="index" @mouseleave="hideTooltip"
+                class="flex flex-col items-center group cursor-pointer transition-all duration-300 relative">
                 <!-- Circle Container -->
                 <div
                   class="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-primary/20 hover:bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden ">
@@ -115,7 +117,7 @@
               </div>
               <div v-gsap:whenVisible.from="{ x: 200, opacity: 0, duration: 1.2, delay: 0.6, ease: 'power2.out' }"
                 class="text-secondary text-6xl md:text-8xl lg:text-9xl font-extrabold font-writtingOne  leading-none">
-                1984
+                {{ about.year }}
               </div>
             </div>
           </div>
@@ -129,14 +131,13 @@
 
 <script lang="ts" setup>
 import AboutServiceList from '~/components/ui/AboutServiceList.vue';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
-import { useAboutStore } from '~/stores/about';
+import { useContentStore } from '~/stores/content';
+const store = useCompanyDataStore();
+const about = computed(() => store.aboutSection);
 
-// Use about store
-const aboutStore = useAboutStore()
-const aboutData = computed(() => aboutStore.getAboutSection)
-
+const aboutData = computed(() => useContentStore().about);
 // Modal state
 const showModal = ref(false);
 const modalContent = ref({});
@@ -150,45 +151,41 @@ type StatItem = {
 const hoveredItem = ref<StatItem | null>(null);
 const hoveredIndex = ref(-1);
 
-const stats = [
+// Dynamic stats computed from store data
+const stats = computed(() => [
   {
-    image: '/assets/v1/section/about/garmentys.png',
-    count: '4+',
+    image: aboutData.value.imagePaths?.verticalCapacity || '/assets/v1/section/about/garmentys.png',
+    count: aboutData.value.verticalCapacity || '4+',
     label: 'Vertical Capacity',
   },
   {
-    image: '/assets/v1/section/about/AUTOMATION.png',
-    count: '8+',
+    image: aboutData.value.imagePaths?.automation || '/assets/v1/section/about/AUTOMATION.png',
+    count: aboutData.value.automation || '8+',
     label: 'Automation',
   },
   {
-    image: '/assets/v1/section/about/Digitalization-.png',
-    count: '6+',
+    image: aboutData.value.imagePaths?.digitalization || '/assets/v1/section/about/Digitalization-.png',
+    count: aboutData.value.digitalization || '6+',
     label: 'Digitalization',
   },
   {
-    image: '/assets/v1/section/about/in-house.png',
-    count: '75,000+',
+    image: aboutData.value.imagePaths?.inHouseFacilities || '/assets/v1/section/about/in-house.png',
+    count: aboutData.value.inHouseFacilities || '75,000+',
     label: 'In-House Facilities',
   },
   {
-    image: '/assets/v1/section/about/join.png',
-    count: '1,50 Lakh+',
+    image: aboutData.value.imagePaths?.jointVentures || '/assets/v1/section/about/join.png',
+    count: aboutData.value.jointVentures || '1,50 Lakh+',
     label: 'Joint Ventures',
   },
   {
-    image: '/assets/v1/section/about/RO.png',
-    count: '1,50 Lakh+',
+    image: aboutData.value.imagePaths?.enrichingService || '/assets/v1/section/about/RO.png',
+    count: aboutData.value.enrichingService || '1,50 Lakh+',
     label: 'Enriching Service',
   }
-];
+]);
 
-const props = defineProps({
-  bgImage: {
-    type: String,
-    default: "/assets/v1/raise-chart.gif",
-  },
-});
+const bgImage = computed(() => aboutData.value.bgImage || "/assets/v1/raise-chart.gif");
 
 // Tooltip methods
 const showTooltip = (item: any, index: any) => {
@@ -246,9 +243,7 @@ const getPreviewItems = (label: LabelType) => {
   return contentMap[label] || [];
 };
 
-// Your existing getModalContent function
 const getModalContent = (label: any) => {
-  // Your existing modal content mapping
   return {};
 };
 </script>
@@ -276,40 +271,6 @@ const getModalContent = (label: any) => {
 @media (min-width: 768px) {
   .el-col-md-8 {
     overflow: visible !important;
-  }
-}
-
-
-.decorative-underline {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-
-/* Animation for the decorative line drawing effect */
-.decorative-underline path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: drawLine 2s ease-in-out forwards;
-  animation-delay: 1.5s;
-}
-
-@keyframes drawLine {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .decorative-underline {
-    width: 250px;
-    height: 50px;
-  }
-}
-
-@media (max-width: 480px) {
-  .decorative-underline {
-    width: 200px;
-    height: 40px;
   }
 }
 </style>

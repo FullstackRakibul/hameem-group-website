@@ -1,71 +1,66 @@
-// stores/content.ts
+// ~/stores/content.ts
 import { defineStore } from 'pinia'
-import type { Ref } from 'vue'
-import { ref } from 'vue'
-import { companyData } from '~/data/company'
-
-export type Stat = { label: string; value: string }
-export type Factory = { name: string; count: string }
-
-export type AboutPayload = {
-  id?: string
-  badge?: string
-  title: string
-  description?: string
-  panelTitle?: string
-  panelDescription?: string
-  icon?: string
-  tags?: string[]
-  expandedDetails?: string
-  stats?: Stat[]
-  factories?: Factory[]
-  image?: string
-  type?: string
-  updatedAt?: string | Date
-}
-
-const STORAGE_KEY = 'hm_content_about_v1'
-
-function loadFromStorage(): AboutPayload | null {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY)
-    if (!raw) return null
-    return JSON.parse(raw)
-  } catch (e) {
-    console.warn('Failed to parse about from storage', e)
-    return null
-  }
-}
-
-function persistToStorage(payload: AboutPayload) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(payload))
-  } catch (e) {
-    console.warn('Failed to persist about to storage', e)
-  }
-}
+import { ref, computed } from 'vue'
 
 export const useContentStore = defineStore('content', () => {
+  // Load from localStorage or use defaults
+  const loadFromStorage = () => {
+    if (process.client) {
+      const stored = localStorage.getItem('about-content')
+
+      console.log("Stored about-content:", stored)
+      if (stored) {
+        return JSON.parse(stored)
+      }
+    }
+    return null
+  }
+
+  // Default about data
+  const defaultAboutData = {
+    description: "Starts its journey in 1984 with a single garment factory. Over four decades, it has grown into one of Bangladesh's largest exporters, with a workforce of 75,000 and an annual turnover nearing 925 million USD. Today, Ha-Meem operates 450 production lines with a monthly capacity of 9.5 million garments, and boasts state-of-the-art facilities in denim, spinning, and woven textiles — serving global brands with excellence.",
+    footerDescription: "We're delighted to have you here. Explore our carefully crafted collection of stylish, high-quality garments designed to make you look and feel your best. Whether you're seeking timeless classics or the latest trends, we've got something special for every occasion. Thank you for choosing us — your satisfaction is our priority!",
+    // Stats data
+    verticalCapacity: '4+',
+    automation: '8+',
+    digitalization: '6+',
+    inHouseFacilities: '75,000+',
+    jointVentures: '1,50 Lakh+',
+    enrichingService: '1,50 Lakh+',
+    // Image paths
+    imagePaths: {
+      verticalCapacity: '/assets/v1/section/about/garmentys.png',
+      automation: '/assets/v1/section/about/AUTOMATION.png',
+      digitalization: '/assets/v1/section/about/Digitalization-.png',
+      inHouseFacilities: '/assets/v1/section/about/in-house.png',
+      jointVentures: '/assets/v1/section/about/join.png',
+      enrichingService: '/assets/v1/section/about/RO.png'
+    },
+    bgImage: '/assets/v1/raise-chart.gif'
+  }
+
   // Reactive state
-  const about: Ref<AboutPayload> = ref(loadFromStorage() ?? { ...companyData, updatedAt: new Date().toISOString(), type: 'about' })
+  const about = ref(loadFromStorage() || defaultAboutData)
 
-  // Actions
-  function setAbout(payload: Partial<AboutPayload>) {
-    const merged = { ...(about.value || {}), ...payload, updatedAt: new Date().toISOString(), type: 'about' }
-    about.value = merged
-    persistToStorage(merged)
+  // Save to localStorage
+  const saveAboutData = (data: any) => {
+    about.value = { ...about.value, ...data }
+    if (process.client) {
+      localStorage.setItem('about-content', JSON.stringify(about.value))
+    }
   }
 
-  function resetAboutToCompanyData() {
-    const data = { ...companyData, updatedAt: new Date().toISOString(), type: 'about' }
-    about.value = data
-    persistToStorage(data)
+  // Reset to defaults
+  const resetAboutData = () => {
+    about.value = defaultAboutData
+    if (process.client) {
+      localStorage.removeItem('about-content')
+    }
   }
 
-  function clearAbout() {
-    about.value = { title: '', type: 'about', updatedAt: new Date().toISOString() }
-    localStorage.removeItem(STORAGE_KEY)
+  return {
+    about,
+    saveAboutData,
+    resetAboutData
   }
-
-  return { about, setAbout, resetAboutToCompanyData, clearAbout }
 })

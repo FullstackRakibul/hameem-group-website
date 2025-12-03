@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import gsap from 'gsap'
-
+import { useCompanyDataStore } from "~/stores/companyData";
 const beforeEnter = (el: Element) => {
   gsap.set(el, { opacity: 0, y: 50 })
 }
+const store = useCompanyDataStore();
+store.loadFromLocalStorage();
 
+watch(store.aboutSection, () => {
+  store.saveToLocalStorage();
+})
 const enter = (el: Element, done: () => void) => {
   gsap.to(el, {
     opacity: 1,
@@ -34,15 +39,15 @@ const leave = (el: Element, done: () => void) => {
     </transition> -->
     <!-- <NuxtPage :transition="{ onBeforeEnter: beforeEnter, onEnter: enter, onLeave: leave }" /> -->
     <NuxtPage :transition="{
-        name: 'page',
-        mode: 'out-in',
-        onBeforeEnter: (el) => {
-          // Ensure single root element
-          if (el.children.length > 1) {
-            console.warn('Multiple root nodes detected')
-          }
+      name: 'page',
+      mode: 'out-in',
+      onBeforeEnter: (el) => {
+        // Ensure single root element
+        if (el.children.length > 1) {
+          console.warn('Multiple root nodes detected')
         }
-      }" />
+      }
+    }" />
   </NuxtLayout>
 </template>
 
