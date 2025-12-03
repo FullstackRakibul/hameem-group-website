@@ -45,7 +45,7 @@ const menuItems = [
   { label: 'LinkedIn', icon: 'hugeicons:linkedin-01', link: 'https://www.linkedin.com/company/ha-meem-group24' },
   { label: 'Map', icon: 'hugeicons:location-user-04', link: 'https://maps.app.goo.gl/ypLMqc9Br8XceMrG9' },
   { label: 'Help', icon: 'hugeicons:question', link: 'tel:01700000001' },
-  { label: 'SiteMap', icon: 'hugeicons:navigation-01', link: '#' }
+  { label: 'Edit Content', icon: 'hugeicons:navigation-01', link: '/panel/about' }
 ];
 </script>
 
