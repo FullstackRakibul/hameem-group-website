@@ -1,3 +1,4 @@
+<!-- ShortAboutRunningTextComponent.vue -->
 <template>
   <section class="container mx-auto py-8 md:py-16" id="about-us">
     <el-row class="text-center mb-8 justify-center flex flex-col items-center">
@@ -129,13 +130,13 @@
 
 <script lang="ts" setup>
 import AboutServiceList from '~/components/ui/AboutServiceList.vue';
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
-import { useAboutStore } from '~/stores/about';
+import { useContentStore } from '~/stores/content';
 
-// Use about store
-const aboutStore = useAboutStore()
-const aboutData = computed(() => aboutStore.getAboutSection)
+// Use content store
+const contentStore = useContentStore()
+const aboutData = computed(() => contentStore.about)
 
 // Modal state
 const showModal = ref(false);
@@ -150,45 +151,41 @@ type StatItem = {
 const hoveredItem = ref<StatItem | null>(null);
 const hoveredIndex = ref(-1);
 
-const stats = [
+// Dynamic stats computed from store data
+const stats = computed(() => [
   {
-    image: '/assets/v1/section/about/garmentys.png',
-    count: '4+',
+    image: aboutData.value.imagePaths?.verticalCapacity || '/assets/v1/section/about/garmentys.png',
+    count: aboutData.value.verticalCapacity || '4+',
     label: 'Vertical Capacity',
   },
   {
-    image: '/assets/v1/section/about/AUTOMATION.png',
-    count: '8+',
+    image: aboutData.value.imagePaths?.automation || '/assets/v1/section/about/AUTOMATION.png',
+    count: aboutData.value.automation || '8+',
     label: 'Automation',
   },
   {
-    image: '/assets/v1/section/about/Digitalization-.png',
-    count: '6+',
+    image: aboutData.value.imagePaths?.digitalization || '/assets/v1/section/about/Digitalization-.png',
+    count: aboutData.value.digitalization || '6+',
     label: 'Digitalization',
   },
   {
-    image: '/assets/v1/section/about/in-house.png',
-    count: '75,000+',
+    image: aboutData.value.imagePaths?.inHouseFacilities || '/assets/v1/section/about/in-house.png',
+    count: aboutData.value.inHouseFacilities || '75,000+',
     label: 'In-House Facilities',
   },
   {
-    image: '/assets/v1/section/about/join.png',
-    count: '1,50 Lakh+',
+    image: aboutData.value.imagePaths?.jointVentures || '/assets/v1/section/about/join.png',
+    count: aboutData.value.jointVentures || '1,50 Lakh+',
     label: 'Joint Ventures',
   },
   {
-    image: '/assets/v1/section/about/RO.png',
-    count: '1,50 Lakh+',
+    image: aboutData.value.imagePaths?.enrichingService || '/assets/v1/section/about/RO.png',
+    count: aboutData.value.enrichingService || '1,50 Lakh+',
     label: 'Enriching Service',
   }
-];
+]);
 
-const props = defineProps({
-  bgImage: {
-    type: String,
-    default: "/assets/v1/raise-chart.gif",
-  },
-});
+const bgImage = computed(() => aboutData.value.bgImage || "/assets/v1/raise-chart.gif");
 
 // Tooltip methods
 const showTooltip = (item: any, index: any) => {
@@ -246,9 +243,7 @@ const getPreviewItems = (label: LabelType) => {
   return contentMap[label] || [];
 };
 
-// Your existing getModalContent function
 const getModalContent = (label: any) => {
-  // Your existing modal content mapping
   return {};
 };
 </script>
@@ -276,40 +271,6 @@ const getModalContent = (label: any) => {
 @media (min-width: 768px) {
   .el-col-md-8 {
     overflow: visible !important;
-  }
-}
-
-
-.decorative-underline {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-}
-
-/* Animation for the decorative line drawing effect */
-.decorative-underline path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: drawLine 2s ease-in-out forwards;
-  animation-delay: 1.5s;
-}
-
-@keyframes drawLine {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .decorative-underline {
-    width: 250px;
-    height: 50px;
-  }
-}
-
-@media (max-width: 480px) {
-  .decorative-underline {
-    width: 200px;
-    height: 40px;
   }
 }
 </style>

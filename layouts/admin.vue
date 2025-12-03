@@ -13,7 +13,7 @@
 
       <!-- Navigation -->
       <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
-        <NuxtLink to="/panel/content-management"
+        <NuxtLink to="panel/content-management"
           class="block px-4 py-3 rounded-lg text-slate-800 bg-orange-100 border border-slate-400 hover:bg-slate-700/50 hover:text-slate-50 transition font-medium text-sm">
           📝 Content Management
         </NuxtLink>
