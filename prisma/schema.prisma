@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model ContentSection {
+  id              String   @id @default(cuid())
+  key             String   @unique
+  badge           String?
+  title           String
+  description     String? 
+  panelTitle      String?
+  panelDescription String?
+  icon            String?
+  tags            Json?      // array of strings
+  expandedDetails String?
+  stats           Json?      // array of { label, value }
+  factories       Json?      // array of { name, count }
+  image           String?
+  type            String?    // e.g. about, mission, vision
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+}
