@@ -2,7 +2,7 @@ import { defineStore } from "pinia"
 import type { ContentSection, ContentResponse } from "~/types/content"
 
 
-export const useContentStore = defineStore("content", () => {
+export const useContentStore_old = defineStore("content", () => {
   const sections = ref<ContentSection[]>([])
   const loading = ref(false)
   const error = ref<string | null>(null)

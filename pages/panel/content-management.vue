@@ -19,7 +19,7 @@ const aboutSection = ref<Partial<ContentSection> | null>(null)
 const editingAbout = ref(false)
 
 // Store initialization
-let contentStore: any = null
+let contentStore: any = useContentStore()
 const sections = computed(() => contentStore?.sections || [])
 const loading = computed(() => contentStore?.loading || false)
 
@@ -374,7 +374,15 @@ const addNewSection = () => {
                   ? 'border-blue-600 text-blue-600 bg-blue-50/30'
                   : 'border-transparent text-slate-600 hover:text-slate-900'
               ]">
-              {{ tab === 'basic' ? '📝 Basic' : tab === 'panel' ? '📌 Panel' : tab === 'details' ? '📖 Details' : '🔧 Meta' }}
+              {{ tab === 'basic'
+                ? '📝 Basic'
+                : tab === 'panel'
+                  ? '📌 Panel'
+                  : tab === 'details'
+                    ? '📖 Details'
+                    : '🔧 Meta'
+              }}
+
             </button>
           </div>
 
