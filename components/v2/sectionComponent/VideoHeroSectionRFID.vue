@@ -58,12 +58,12 @@ defineProps({
   videoSrc: {
     type: String,
     required: true,
-    default: '/assets/v2/video/RFIDDIGITALVIDEO.mp4'
+    default: 'https://api.hameemgroup.com:9012/Resources/hameem-group-website/RFIDDIGITALVIDEO.mp4'
   },
   posterSrc: {
     type: String,
     required: false,
-    default: '/assets/v2/video/RFIDDIGITALVIDEO-poster.jpg'
+    default: 'https://api.hameemgroup.com:9012/Resources/hameem-group-website/denim-stickyBanner-hameem-group.jpeg'
   }
 })
 

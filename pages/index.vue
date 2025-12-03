@@ -39,7 +39,8 @@ import CorevaluesSection from '~/components/v1/section/mission-vision/Corevalues
     <ExpansionPlanSection />
     <UpcommingProjectSection />
     <BusinessUnitSection />
-    <VideoHeroSectionRFID videoSrc="/assets/v2/video/RFIDDIGITALVIDEO.mp4" />
+    <VideoHeroSectionRFID
+      videoSrc="https://api.hameemgroup.com:9012/Resources/hameem-group-website/RFIDDIGITALVIDEO.mp4" />
     <SustainabilityMapSection />
     <ClientRunningCarouselComponent />
     <AchievementsParallaxSection />
