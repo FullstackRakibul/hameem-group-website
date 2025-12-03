@@ -177,127 +177,172 @@ const addNewSection = () => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 p-4 md:p-8">
-    <div class="max-w-6xl mx-auto">
-      <!-- Header -->
-      <div class="mb-8">
-        <h1 class="text-3xl font-bold text-gray-900">About Section Content Management</h1>
-        <p class="text-gray-600 mt-2">Edit the content displayed in the About section</p>
+  <div class="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50">
+    <!-- Header -->
+    <div class="sticky top-0 z-40 border-b border-slate-200/50 bg-white/80 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h1 class="text-2xl sm:text-3xl font-bold text-slate-900"> Content Management</h1>
+            <p class="mt-1 text-sm text-slate-600">Manage Ha-Meem Group Website sections and content</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <button @click="importCompanyData"
+              class="px-4 py-2.5 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition font-medium text-sm border border-blue-200">
+              📋 Import Company Data
+            </button>
+            <button @click="addNewSection"
+              class="px-4 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium text-sm shadow-md hover:shadow-lg">
+              + Add Section
+            </button>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <!-- Form -->
-      <div class="bg-white rounded-xl shadow-md p-6">
-        <el-form :model="formData" label-width="200px" label-position="top">
-          <!-- Main Description -->
-          <el-form-item label="Main Description" class="mb-8">
-            <el-input v-model="formData.description" type="textarea" :rows="5"
-              placeholder="Enter the main description text" resize="none" />
-            <div class="text-xs text-gray-500 mt-2">
-              This text appears under "Welcome to Ha-Meem Group"
-            </div>
-          </el-form-item>
-
-          <!-- Footer Description -->
-          <el-form-item label="Footer Description" class="mb-8">
-            <el-input v-model="formData.footerDescription" type="textarea" :rows="4"
-              placeholder="Enter the footer description text" resize="none" />
-            <div class="text-xs text-gray-500 mt-2">
-              This text appears below the circular stats section
-            </div>
-          </el-form-item>
-
-          <!-- Stats Section -->
-          <div class="mb-8">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">Statistics Data</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Vertical Capacity -->
-              <el-form-item label="Vertical Capacity Count">
-                <el-input v-model="formData.verticalCapacity" placeholder="e.g., 4+" />
-              </el-form-item>
-
-              <!-- Automation -->
-              <el-form-item label="Automation Count">
-                <el-input v-model="formData.automation" placeholder="e.g., 8+" />
-              </el-form-item>
-
-              <!-- Digitalization -->
-              <el-form-item label="Digitalization Count">
-                <el-input v-model="formData.digitalization" placeholder="e.g., 6+" />
-              </el-form-item>
-
-              <!-- In-House Facilities -->
-              <el-form-item label="In-House Facilities Count">
-                <el-input v-model="formData.inHouseFacilities" placeholder="e.g., 75,000+" />
-              </el-form-item>
-
-              <!-- Joint Ventures -->
-              <el-form-item label="Joint Ventures Count">
-                <el-input v-model="formData.jointVentures" placeholder="e.g., 1,50 Lakh+" />
-              </el-form-item>
-
-              <!-- Enriching Service -->
-              <el-form-item label="Enriching Service Count">
-                <el-input v-model="formData.enrichingService" placeholder="e.g., 1,50 Lakh+" />
-              </el-form-item>
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- About Section Table -->
+      <div v-if="aboutSection" class="mb-8">
+        <h2 class="text-lg font-bold text-slate-900 mb-4">About Section</h2>
+        <div
+          class="bg-white rounded-lg border border-slate-200/50 hover:border-slate-300/50 hover:shadow-md transition-all overflow-hidden">
+          <!-- Table Header -->
+          <div class="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-slate-200/50 bg-slate-50/50">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 text-xs sm:text-sm font-semibold text-slate-700">
+              <div>Title</div>
+              <div class="hidden sm:block">Type</div>
+              <div class="hidden lg:block">Updated</div>
+              <div class="text-right">Actions</div>
             </div>
           </div>
 
-          <!-- Image Paths Section -->
-          <div class="mb-8">
-            <h3 class="text-lg font-semibold text-gray-900 mb-4">Image Paths</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <el-form-item v-for="(path, key) in formData.imagePaths" :key="key" :label="formatLabel(key)">
-                <el-input v-model="formData.imagePaths[key]" placeholder="/assets/path/to/image.png" />
-              </el-form-item>
-
-              <!-- Background Image -->
-              <el-form-item label="Background Image">
-                <el-input v-model="formData.bgImage" placeholder="/assets/v1/raise-chart.gif" />
-              </el-form-item>
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="flex gap-4 pt-6 border-t">
-            <el-button type="primary" size="large" @click="saveContent" :loading="isSaving">
-              Save
-            </el-button>
-
-            <el-button type="default" size="large" @click="resetToDefaults">
-              Reset
-            </el-button>
-
-            <el-button type="info" size="large" @click="previewChanges">
-              Preview
-            </el-button>
-          </div>
-
-          <!-- Status Message -->
-          <div v-if="message"
-            :class="['mt-4 p-4 rounded-md', messageType === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700']">
-            {{ message }}
-          </div>
-        </el-form>
-      </div>
-
-      <!-- Preview Section -->
-      <div v-if="showPreview" class="mt-8 bg-white rounded-xl shadow-md p-6">
-        <h3 class="text-xl font-bold text-gray-900 mb-4">Preview</h3>
-        <div class="border rounded-lg p-4">
-          <!-- Simulate the about section -->
-          <div class="space-y-4">
-            <h4 class="text-lg font-semibold">Main Description:</h4>
-            <p class="text-gray-700">{{ formData.description }}</p>
-
-            <h4 class="text-lg font-semibold mt-6">Footer Description:</h4>
-            <p class="text-gray-700">{{ formData.footerDescription }}</p>
-
-            <h4 class="text-lg font-semibold mt-6">Stats:</h4>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-              <div v-for="(stat, key) in statLabels" :key="key" class="bg-gray-50 p-3 rounded">
-                <div class="font-medium">{{ stat }}</div>
-                <div class="text-primary font-bold">{{ formData[key] }}</div>
+          <!-- Table Row -->
+          <div class="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 border-b border-slate-200/50">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 items-center">
+              <div class="flex items-center gap-2 sm:gap-3">
+                <span class="text-xl sm:text-2xl flex-shrink-0">{{ aboutSection.icon }}</span>
+                <div class="min-w-0">
+                  <p class="text-xs sm:text-sm font-semibold text-slate-900 truncate">{{ aboutSection.title }}</p>
+                  <p class="text-xs text-slate-600 line-clamp-1">{{ aboutSection.description }}</p>
+                </div>
               </div>
+              <div class="hidden sm:block">
+                <span class="inline-block px-2.5 py-1 bg-blue-100 text-blue-700 rounded text-xs font-semibold">
+                  {{ aboutSection.type }}
+                </span>
+              </div>
+              <div class="hidden lg:block text-sm text-slate-600">
+                {{ aboutSection.updatedAt ? new Date(aboutSection.updatedAt).toLocaleDateString() : 'N/A' }}
+              </div>
+              <div class="flex justify-end">
+                <button @click="editAboutSection"
+                  class="px-2 sm:px-3 py-1.5 sm:py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition font-medium text-xs sm:text-sm border border-blue-200/50 whitespace-nowrap">
+                  ✏️ Edit
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table Details Row -->
+          <div class="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 bg-slate-50/30">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 text-xs">
+              <div>
+                <p class="text-slate-600 text-xs">Badge</p>
+                <p class="font-semibold text-slate-900 text-xs sm:text-sm">{{ aboutSection.badge || '-' }}</p>
+              </div>
+              <div>
+                <p class="text-slate-600 text-xs">Tags</p>
+                <p class="font-semibold text-slate-900 text-xs sm:text-sm">{{ aboutSection.tags?.length || 0 }}</p>
+              </div>
+              <div>
+                <p class="text-slate-600 text-xs">Stats</p>
+                <p class="font-semibold text-slate-900 text-xs sm:text-sm">{{ aboutSection.stats?.length || 0 }}</p>
+              </div>
+              <div>
+                <p class="text-slate-600 text-xs">Factories</p>
+                <p class="font-semibold text-slate-900 text-xs sm:text-sm">{{ aboutSection.factories?.length || 0 }}</p>
+              </div>
+              <div class="col-span-2 sm:col-span-1">
+                <p class="text-slate-600 text-xs">Panel</p>
+                <p class="font-semibold text-slate-900 text-xs sm:text-sm">{{ aboutSection.panelTitle ? '✓' : '-' }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <!-- <div v-if="loading" class="flex items-center justify-center py-16">
+        <div class="text-center">
+          <div class="inline-block animate-spin rounded-full h-10 w-10 border-3 border-blue-200 border-t-blue-600">
+          </div>
+          <p class="mt-4 text-slate-600 font-medium">Loading content...</p>
+        </div>
+      </div> -->
+
+      <!-- Empty State -->
+      <!-- <div v-else-if="sections.length === 0" class="text-center py-16">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-slate-100 rounded-full mb-4">
+          <span class="text-2xl">📝</span>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2">No content yet</h3>
+        <p class="text-slate-600 mb-6">Start by adding your first section or importing company data</p>
+        <button @click="addNewSection"
+          class="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium shadow-md">
+          Create Section
+        </button>
+      </div> -->
+
+      <!-- Content Grid -->
+      <div v-else class="overflow-hidden">
+        <h2 class="text-lg font-bold text-slate-900 mb-4">Other Sections</h2>
+        <div class="grid gap-4 md:gap-6">
+          <div v-for="section in sections" :key="section.id"
+            class="bg-white rounded-lg border border-slate-200/50 hover:border-slate-300/50 hover:shadow-md transition-all overflow-hidden">
+
+            <!-- Card Header -->
+            <div class="p-4 sm:p-6 border-b border-slate-200/50">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                <div class="flex-1 min-w-0">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span v-if="section.badge"
+                      class="inline-block px-2.5 py-1 bg-slate-100 text-slate-700 rounded text-xs font-semibold">
+                      {{ section.badge }}
+                    </span>
+                    <span class="inline-block px-2.5 py-1 bg-blue-100 text-blue-700 rounded text-xs font-semibold">
+                      {{ section.type }}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-bold text-slate-900 truncate">{{ section.title }}</h3>
+                  <p class="mt-1 text-sm text-slate-600 line-clamp-2">{{ section.description }}</p>
+                </div>
+                <span v-if="section.icon" class="text-3xl flex-shrink-0">{{ section.icon }}</span>
+              </div>
+            </div>
+
+            <!-- Card Meta -->
+            <div
+              class="px-3 sm:px-4 lg:px-6 py-2 sm:py-3 bg-slate-50/50 text-xs text-slate-600 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <span>Updated {{ new Date(section.updatedAt).toLocaleDateString() }}</span>
+              <div v-if="section.stats" class="flex items-center gap-2 sm:gap-3 text-xs">
+                <span v-for="(stat, i) in section.stats.slice(0, 2)" :key="i" class="font-semibold text-slate-700">
+                  {{ stat.label }}: {{ stat.value }}
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="px-3 sm:px-4 lg:px-6 py-3 sm:py-4 flex flex-col xs:flex-row gap-2">
+              <button @click="editSection(section)"
+                class="flex-1 px-3 sm:px-4 py-2 bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition font-medium text-xs sm:text-sm border border-blue-200/50">
+                ✏️ Edit
+              </button>
+              <button @click="deleteSection(section.id, section.title)"
+                class="flex-1 px-3 sm:px-4 py-2 bg-red-50 text-red-700 rounded-lg hover:bg-red-100 transition font-medium text-xs sm:text-sm border border-red-200/50">
+                🗑️ Delete
+              </button>
             </div>
           </div>
         </div>
@@ -528,117 +573,3 @@ const addNewSection = () => {
     </teleport>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { ref, reactive, onMounted } from 'vue'
-import { ElMessage } from 'element-plus'
-import { useContentStore } from '~/stores/content'
-
-const contentStore = useContentStore()
-const isSaving = ref(false)
-const message = ref('')
-const messageType = ref<'success' | 'error'>('success')
-const showPreview = ref(false)
-
-// Format label for display
-const formatLabel = (key: string) => {
-  return key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())
-}
-
-// Stat labels mapping
-const statLabels = {
-  verticalCapacity: 'Vertical Capacity',
-  automation: 'Automation',
-  digitalization: 'Digitalization',
-  inHouseFacilities: 'In-House Facilities',
-  jointVentures: 'Joint Ventures',
-  enrichingService: 'Enriching Service'
-}
-
-// Form data structure
-const formData = reactive({
-  description: '',
-  footerDescription: '',
-  verticalCapacity: '',
-  automation: '',
-  digitalization: '',
-  inHouseFacilities: '',
-  jointVentures: '',
-  enrichingService: '',
-  imagePaths: {
-    verticalCapacity: '',
-    automation: '',
-    digitalization: '',
-    inHouseFacilities: '',
-    jointVentures: '',
-    enrichingService: ''
-  },
-  bgImage: ''
-})
-
-// Load current data from store
-const loadCurrentData = () => {
-  const currentData = contentStore.about
-
-  // Update form data
-  Object.keys(formData).forEach(key => {
-    // if (key === 'imagePaths') {
-    //   Object.keys(formData.imagePaths).forEach(imgKey => {
-    //     formData.imagePaths[imgKey] = currentData.imagePaths?.[imgKey] || ''
-    //   })
-    // } else {
-    //   formData[key] = currentData[key] || ''
-    // }
-  })
-}
-
-// Save content
-const saveContent = async () => {
-  try {
-    isSaving.value = true
-    message.value = ''
-
-    // Prepare data for saving
-    const dataToSave = { ...formData }
-
-    // Save to store
-    contentStore.saveAboutData(dataToSave)
-
-    // Show success message
-    message.value = 'Content saved successfully!'
-    messageType.value = 'success'
-    ElMessage.success('About section content updated')
-
-    // Clear message after 3 seconds
-    setTimeout(() => {
-      message.value = ''
-    }, 3000)
-
-  } catch (error) {
-    message.value = 'Error saving content. Please try again.'
-    messageType.value = 'error'
-    ElMessage.error('Failed to save content')
-  } finally {
-    isSaving.value = false
-  }
-}
-
-// Reset to defaults
-const resetToDefaults = () => {
-  if (confirm('Are you sure you want to reset to default content? This cannot be undone.')) {
-    contentStore.resetAboutData()
-    loadCurrentData()
-    ElMessage.info('Reset to default content')
-  }
-}
-
-// Preview changes
-const previewChanges = () => {
-  showPreview.value = !showPreview.value
-}
-
-// Load data on component mount
-onMounted(() => {
-  loadCurrentData()
-})
-</script>

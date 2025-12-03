@@ -14,8 +14,14 @@
         ease: 'power2.out',
         stagger: 0.3
       }" class="text-primary uppercase font-semibold md:text-6xl relative">
-        <span class="font-normal text-2xl px-2">{{ about.companyName }} </span>
-        <span class="font-bold text-2xl px-2">{{ about.companySuffix }}</span>
+        <div class="flex flex-wrap justify-center md:justify-start text-center md:text-left">
+          <span class="font-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-1">
+            {{ about.companyName }}
+          </span>
+          <span class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl px-1">
+            {{ about.companySuffix }}
+          </span>
+        </div>
         <UISectionUnderline />
       </div>
 
@@ -28,12 +34,12 @@
         <div class="text-content pr-0 md:pr-16">
           <!-- Circle Icons Section with Hover Tooltips -->
           <div class="py-10 px-2 md:px-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-8xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-12 max-w-8xl mx-auto">
               <div v-for="(item, index) in about.stats" :key="index" @mouseleave="hideTooltip"
                 class="flex flex-col items-center group cursor-pointer transition-all duration-300 relative">
                 <!-- Circle Container -->
                 <div
-                  class="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-primary/20 hover:bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden ">
+                  class="relative w-32 h-32 md:w-48 md:h-48 rounded-full bg-primary/20 hover:bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden ">
                   <div
                     class="absolute inset-0 border-2 border-dashed border-transparent group-hover:border-primary rounded-full transition-all duration-300">
                   </div>
@@ -50,7 +56,7 @@
 
                 <!-- Label -->
                 <h3
-                  class="text-lg font-medium text-gray-800 mt-4 text-center group-hover:text-primary transition-colors duration-300">
+                  class="text-sm md:text-lg font-medium text-gray-800 mt-4 text-center group-hover:text-primary transition-colors duration-300">
                   {{ item.label }}
                 </h3>
 
@@ -89,13 +95,13 @@
           </div>
 
           <p class="text-base md:text-lg text-gray-600 mt-4 text-justify">
-            {{ aboutData.footerDescription }}
+            {{ about.footerDescription }}
           </p>
         </div>
       </el-col>
       <el-col :xs="24" :md="8" class="md:relative">
         <div
-          class="bg-transparent md:p-2 flex justify-center items-center rounded-sm md:h-full md:absolute md:inset-0 md:w-[calc(100%+32px)] md:left-[-16px] bg-cover bg-center"
+          class="bg-transparent md:p-2 mt-10 md:mt-0 flex justify-center items-center rounded-sm md:h-full md:absolute md:inset-0 md:w-[calc(100%+32px)] md:left-[-16px] bg-cover bg-center"
           :style="{
             backgroundImage: `url(${bgImage})`,
             backgroundSize: 'cover',
@@ -105,7 +111,7 @@
           <div class="flex flex-col items-center justify-center text-center space-y-4">
             <!-- Leading Industry - animates from left -->
             <div v-gsap:whenVisible.from="{ x: -150, opacity: 0, duration: 1.2, ease: 'power2.out' }"
-              class="text-gray-900 font-normal text-7xl  font-writtingOne leading-tight">
+              class="text-gray-900 font-normal text-5xl md:text-8xl  font-writtingOne leading-tight">
               Leading Industry
             </div>
 

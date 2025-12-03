@@ -37,7 +37,11 @@ const saveChanges = () => {
 
       <label class="block">
         <span class="text-sm font-medium">Description</span>
-        <textarea v-model="form.description" class="input" />
+        <textarea :rows="5" v-model="form.description" class="input" />
+      </label>
+      <label class="block">
+        <span class="text-sm font-medium">Footer Description</span>
+        <textarea :rows="5" v-model="form.footerDescription" class="input" />
       </label>
 
       <h2 class="text-lg font-semibold mt-6">Stats</h2>
