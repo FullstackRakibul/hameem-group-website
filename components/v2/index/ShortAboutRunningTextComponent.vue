@@ -1,8 +1,10 @@
 <!-- ShortAboutRunningTextComponent.vue -->
 <template>
-  <section class="container mx-auto py-8 md:py-16" id="about-us">
+  <section class="container md:px-24 mx-auto py-8 md:py-16" id="about-us">
     <el-row class="text-center mb-8 justify-center flex flex-col items-center">
-      <p class="md:text-5xl font-medium tracking-widest text-secondary py-5 font-writting">Welcome to</p>
+      <p class="md:text-5xl font-medium tracking-widest text-secondary py-5 font-writting">
+        {{ about.title }}
+      </p>
 
       <div v-gsap:whenVisible.to="{
         opacity: 1,
@@ -11,14 +13,14 @@
         duration: 1.2,
         ease: 'power2.out',
         stagger: 0.3
-      }" class="text-primary uppercase font-semibold md:text-6xl mb-5 relative">
-        <span class="font-normal">Ha-Meem </span>
-        <span class="font-bold">Group</span>
+      }" class="text-primary uppercase font-semibold md:text-6xl relative">
+        <span class="font-normal text-2xl px-2">{{ about.companyName }} </span>
+        <span class="font-bold text-2xl px-2">{{ about.companySuffix }}</span>
         <UISectionUnderline />
       </div>
 
-      <p class="md:text-2xl font-sans md:font-normal text-gray-600 mt-12 text-center">
-        {{ aboutData.description }}
+      <p class="md:text-2xl font-sans md:font-normal text-gray-600 text-center">
+        {{ about.description }}
       </p>
     </el-row>
     <el-row :gutter="16">
@@ -27,9 +29,8 @@
           <!-- Circle Icons Section with Hover Tooltips -->
           <div class="py-10 px-2 md:px-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-8xl mx-auto">
-              <div v-for="(item, index) in stats" :key="index" @mouseenter="showTooltip(item, index)"
-                @mouseleave="hideTooltip"
-                class="flex flex-col items-center  group cursor-pointer transition-all duration-300 relative">
+              <div v-for="(item, index) in about.stats" :key="index" @mouseleave="hideTooltip"
+                class="flex flex-col items-center group cursor-pointer transition-all duration-300 relative">
                 <!-- Circle Container -->
                 <div
                   class="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-primary/20 hover:bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden ">
@@ -116,7 +117,7 @@
               </div>
               <div v-gsap:whenVisible.from="{ x: 200, opacity: 0, duration: 1.2, delay: 0.6, ease: 'power2.out' }"
                 class="text-secondary text-6xl md:text-8xl lg:text-9xl font-extrabold font-writtingOne  leading-none">
-                1984
+                {{ about.year }}
               </div>
             </div>
           </div>
@@ -133,11 +134,10 @@ import AboutServiceList from '~/components/ui/AboutServiceList.vue';
 import { ref, computed } from 'vue';
 import type UISectionUnderline from '~/components/ui/UISectionUnderline.vue';
 import { useContentStore } from '~/stores/content';
+const store = useCompanyDataStore();
+const about = computed(() => store.aboutSection);
 
-// Use content store
-const contentStore = useContentStore()
-const aboutData = computed(() => contentStore.about)
-
+const aboutData = computed(() => useContentStore().about);
 // Modal state
 const showModal = ref(false);
 const modalContent = ref({});
