@@ -20,10 +20,10 @@
 
     <!-- Image Cards Section -->
     <div class="mt-12 md:mt-16 px-4 pb-16 max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-10 lg:gap-16">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-10 lg:gap-16">
         <!-- Tongi Zone Card -->
-        <div class="flex flex-col items-center">
-          <a href="https://360vr.hameemgroup.com/tongi" target="_blank" rel="noopener noreferrer">
+        <div class="flex flex-col items-center md:col-span-2">
+          <a href="https://360vr.hameemgroup.com/tongi" target="_blank" rel="noopener noreferrer" class="w-full block">
             <div
               class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
               <img src="https://api.hameemgroup.com:9012/Resources/hameem-group-website/tongizone360vr.png"
@@ -61,8 +61,8 @@
         </div>
 
         <!-- Textile Zone Card -->
-        <div class="flex flex-col items-center">
-          <a href="https://360vr.hameemgroup.com/textile" target="_blank" rel="noopener noreferrer">
+        <div class="flex flex-col items-center md:col-span-2">
+          <a href="https://360vr.hameemgroup.com/textile" target="_blank" rel="noopener noreferrer" class="w-full block">
             <div
               class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
               <img src="https://api.hameemgroup.com:9012/Resources/hameem-group-website/textilezone360vr.png"
@@ -96,6 +96,45 @@
             <h3
               class="mt-4 md:mt-6 text-xl md:text-3xl font-extrabold text-gray-800 tracking-wider drop-shadow-[0_1px_1px_rgba(0,0,1,0.4)]">
               TEXTILE ZONE
+            </h3>
+          </a>
+        </div>
+
+        <!-- THAT'S IT KNIT LTD. (SWEATER FACTORY) -->
+        <div class="flex flex-col items-center md:col-span-2 md:col-start-2">
+          <a href="https://360vr.hameemgroup.com/tikl" target="_blank" rel="noopener noreferrer" class="w-full block">
+            <div
+              class="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group cursor-pointer">
+              <img src="https://api.hameemgroup.com:9012/Resources/hameem-group-website/tikl.jpeg"
+                alt="THAT'S IT KNIT LTD. 360 Virtual Tour"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+
+              <!-- 360 Badge -->
+              <div class="absolute inset-0 flex items-center justify-center">
+                <img src="https://api.hameemgroup.com:9012/Resources/hameem-group-website/icon360vr.png"
+                  alt="360 Virtual Tour Icon"
+                  class="w-36 h-36 object-cover group-hover:scale-105 transition-transform duration-300" />
+              </div>
+
+              <!-- Text Overlay -->
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 md:p-6">
+                <p class="text-white
+                                  text-sm
+                                  sm:text-base
+                                  md:text-lg
+                                  lg:text-xl
+                                  font-extrabold tracking-wider
+                                  drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]" style="-webkit-text-stroke: .5px #000;">
+                  [ SWEATER FACTORY ] <br> WINDING, KNITTING, LINKING, WASH
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Zone Title -->
+          <a href="https://360vr.hameemgroup.com/tikl" target="_blank" rel="noopener noreferrer">
+            <h3
+              class="mt-4 md:mt-6 text-xl md:text-3xl font-extrabold text-gray-800 tracking-wider drop-shadow-[0_1px_1px_rgba(0,0,1,0.4)]">
+              THAT'S IT KNIT LTD. 
             </h3>
           </a>
         </div>
