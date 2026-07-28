@@ -166,7 +166,7 @@
                                   lg:text-xl
                                   font-extrabold tracking-wider
                                   drop-shadow-[0_1px_1px_rgba(0,0,0,0.9)]" style="-webkit-text-stroke: .5px #000;">
-                  Jackets & Outerwear
+                  JACKETS & OUTERWEAR
                 </p>
               </div>
             </div>
@@ -175,7 +175,7 @@
           <a href="https://360vr.hameemgroup.com/humana" target="_blank" rel="noopener noreferrer">
             <h3
               class="mt-4 md:mt-6 text-xl md:text-3xl font-extrabold text-gray-800 tracking-wider drop-shadow-[0_1px_1px_rgba(0,0,1,0.4)]">
-              HUMANA APPARELS Pvt. Ltd.
+              HUMANA APPARELS PVT. LTD.
             </h3>
           </a>
         </div>
