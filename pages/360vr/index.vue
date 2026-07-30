@@ -196,6 +196,18 @@
 <script setup>
 definePageMeta({
   layout: false,
+  title: 'Ha-Meem Group 360° Virtual Tour Platform',
+  meta: [
+    { name: 'description', content: 'Explore our Apparel, Textile, Sweater, Jacket & Outerwear manufacturing facilities through immersive 360° virtual tours.' },
+    { property: 'og:title', content: 'Ha-Meem Group 360° Virtual Tour Platform' },
+    { property: 'og:description', content: 'Explore our Apparel, Textile, Sweater, Jacket & Outerwear manufacturing facilities through immersive 360° virtual tours.' },
+    { property: 'og:image', content: 'https://api.hameemgroup.com:9012/Resources/hameem-group-website/360vr_preview.png' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'Ha-Meem Group 360° Virtual Tour Platform' },
+    { name: 'twitter:description', content: 'Explore our Apparel, Textile, Sweater, Jacket & Outerwear manufacturing facilities through immersive 360° virtual tours.' },
+    { name: 'twitter:image', content: 'https://api.hameemgroup.com:9012/Resources/hameem-group-website/360vr_preview.png' }
+  ]
 });
 </script>
 
