@@ -344,8 +344,8 @@ const statisticsTranslations = {
   },
   solarCapacity: {
     en: 'Solar Capacity',
-    zh: '太阳能电池板 – 15兆瓦',
-    jp: '太陽光発電容量は15MW'
+    zh: '太阳能电池板 – 29.1兆瓦',
+    jp: '太陽光発電容量は29.1MW'
   },
   accessories: {
     en: '100% In House Accessories',

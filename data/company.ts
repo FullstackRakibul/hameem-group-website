@@ -23,7 +23,7 @@ export const companyData = {
     { name: "Spinning Mills", count: "4" },
     { name: "Ozone Machines", count: "26" },
     { name: "Laser Machines", count: "120" },
-    { name: "Solar Capacity", count: "15 MW" },
+    { name: "Solar Capacity", count: "29.1 MW" },
     { name: "Fiber Recycling", count: "1,560MT/Day" },
   ],
 }
