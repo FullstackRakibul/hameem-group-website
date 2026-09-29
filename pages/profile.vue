@@ -487,7 +487,7 @@ const statisticsData = ref([
   },
   {
     icon: "/assets/profile/icons/Solar.png",
-    value: "15 MW",
+    value: "29.1 MW",
     label: "solarCapacity",
     labelKey: "solarCapacity",
   },

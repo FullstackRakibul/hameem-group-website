@@ -423,7 +423,7 @@ const statisticsData = ref([
   // { icon: '/assets/profile/icons/Female-employes.png', value: '80%', label: 'femaleEmployees', labelKey: 'femaleEmployees' },
   { icon: '/assets/profile/icons/Recycle-Fiber.png', value: '1,560MT/Day', label: 'recycleFiber', labelKey: 'recycleFiber' },
   { icon: '/assets/profile/icons/Water.png', value: '63%', label: 'waterRecycle', labelKey: 'waterRecycle' },
-  { icon: '/assets/profile/icons/Solar.png', value: '15 MW', label: 'solarCapacity', labelKey: 'solarCapacity' },
+  { icon: '/assets/profile/icons/Solar.png', value: '29.1 MW', label: 'solarCapacity', labelKey: 'solarCapacity' },
   { icon: '/assets/profile/icons/Accessories.png', value: '', label: 'accessories', labelKey: 'accessories' },
   { icon: '/assets/profile/icons/Lasear.png', value: '102', label: 'laserMachine', labelKey: 'laserMachine' },
   { icon: '/assets/profile/icons/co-Genaration.png', value: '75%', label: 'coGeneration', labelKey: 'coGeneration' },
