@@ -1,6 +1,7 @@
 <script setup>
 import PillNav from '~/components/v2/modern/PillNav.vue';
 import HeroSection from '~/components/v2/modern/HeroSection.vue';
+import ScrollManifesto from '~/components/v2/nexus/ScrollManifesto.vue';
 import BentoGlance from '~/components/v2/modern/BentoGlance.vue';
 import CapabilitiesBento from '~/components/v2/modern/CapabilitiesBento.vue';
 import ProcessTracker from '~/components/v2/modern/ProcessTracker.vue';
@@ -40,6 +41,7 @@ useLenis();
     <PillNav />
     <main>
       <HeroSection />
+      <ScrollManifesto />
       <BentoGlance />
       <CapabilitiesBento />
       <ProcessTracker />

@@ -1,84 +1,79 @@
 <template>
-  <section ref="root" class="bg-paper py-24 md:py-36">
-    <div class="container mx-auto px-4">
-      <SectionIntro
-        index="01"
-        eyebrow="At a glance"
-        title="Four decades of scale,"
-        accent="built one line at a time."
-        class="mb-14 md:mb-20"
-      >
-        {{ companyData.description }}
+  <section ref="root" data-shot="glance" class="px-4 py-24 sm:px-6 md:py-36 lg:px-10">
+    <div class="mx-auto max-w-[1440px]">
+      <SectionIntro index="01" eyebrow="At a glance" :lines="['Four', 'decades', 'of scale']" :accent-from="2" class="mb-14 md:mb-20">
+        A vertical group across knit, woven and denim, built for global brands and measured line by line.
       </SectionIntro>
 
-      <div class="grid auto-rows-[minmax(180px,auto)] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
-        <!-- Image feature -->
-        <article class="bento relative overflow-hidden rounded-[28px] border border-ink-950/[0.08] sm:col-span-2 lg:col-span-3 lg:row-span-2">
+      <div class="grid auto-rows-[minmax(190px,auto)] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        <!-- B6 image card (curtain reveal) -->
+        <article class="curtain relative overflow-hidden rounded-[28px] border border-white/5 sm:col-span-2 lg:col-span-3 lg:row-span-2">
           <img
             src="/assets/v2/index/v2Hero-section-banner-hameemgroup-image-000002.JPG"
             alt="Ha-Meem Group design studio"
-            class="bento-img absolute inset-0 h-full w-full object-cover"
+            width="3984"
+            height="2240"
+            loading="lazy"
+            decoding="async"
+            class="curtain-media absolute inset-0 h-full w-full object-cover saturate-[.8]"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/20 to-transparent"></div>
-          <div class="relative flex h-full min-h-[380px] flex-col justify-end p-8">
-            <span class="font-mono text-xs uppercase tracking-widest text-coral-300">{{ companyData.panelTitle }}</span>
-            <p class="mt-3 max-w-md text-2xl font-bold leading-tight tracking-tight text-white md:text-3xl">
+          <div class="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-transparent"></div>
+          <div class="relative flex h-full min-h-[400px] flex-col justify-end p-7">
+            <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-thread-300">{{ companyData.panelTitle }}</span>
+            <p class="mt-3 max-w-md font-display text-2xl font-bold leading-tight tracking-[-0.03em] text-white md:text-3xl">
               {{ companyData.panelDescription }}
             </p>
           </div>
         </article>
 
-        <!-- Headline stats -->
+        <!-- HUD stat panels -->
         <article
-          v-for="(stat, i) in headline"
-          :key="stat.label"
-          class="bento flex flex-col justify-between rounded-[28px] border p-7"
-          :class="[
-            i === 0 ? 'border-coral/40 bg-coral text-ink-950 lg:col-span-2' : 'border-ink-950/[0.08] bg-white text-ink-950',
-            i === 1 ? 'lg:col-span-1' : '',
-            i >= 2 ? 'lg:col-span-3 lg:col-start-4' : '',
-          ]"
+          v-for="(s, i) in headline"
+          :key="s.label"
+          class="hud flex flex-col justify-between gap-6 p-6"
+          :class="[glass, i === 0 ? 'border-thread/30 lg:col-span-2' : i === 1 ? 'lg:col-span-1' : 'lg:col-span-2']"
         >
-          <span class="font-mono text-xs uppercase tracking-widest" :class="i === 0 ? 'text-ink-950/60' : 'text-ink-950/50'">
-            {{ String(i + 1).padStart(2, '0') }} · {{ stat.label }}
-          </span>
-          <span class="count mt-6 text-5xl font-black tracking-[-0.04em] md:text-6xl" :data-value="stat.value">{{ stat.value }}</span>
+          <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">[{{ pad2(i + 1) }}] {{ s.label }}</span>
+          <div>
+            <span class="count block font-mono text-5xl font-semibold tabular-nums tracking-[-0.04em] text-bleach md:text-6xl" :data-value="s.value">{{ s.value }}</span>
+            <HudSparkline :seed="i + 3" class="mt-4" />
+          </div>
         </article>
 
-        <!-- Factories list -->
-        <article class="bento rounded-[28px] border border-ink-950/[0.08] bg-white p-7 sm:col-span-2 lg:col-span-4">
-          <div class="mb-5 flex items-center justify-between">
-            <h3 class="text-lg font-semibold text-ink-950">Vertical footprint</h3>
-            <span class="font-mono text-xs text-ink-950/50">{{ companyData.factories.length }} units</span>
+        <!-- HQ globe -->
+        <article class="hud flex flex-col gap-4 p-6 sm:flex-row sm:items-center lg:col-span-3 lg:row-start-2 lg:col-start-4" :class="glass">
+          <GlobeCard class="mx-auto shrink-0 sm:w-[46%]" />
+          <div>
+            <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">[04] HQ node</span>
+            <p class="mt-2 font-mono text-2xl font-semibold uppercase text-bleach">Dhaka · 23.76°N 90.40°E</p>
+            <p class="mt-2 text-sm text-white/70">Tejgaon Industrial Area, Bangladesh.</p>
+            <p class="mt-3"><TodoTag label="client region list for globe hotspots" /></p>
           </div>
-          <dl class="grid grid-cols-2 gap-x-6 gap-y-4 md:grid-cols-4">
-            <div v-for="f in companyData.factories" :key="f.name" class="border-t border-ink-950/[0.08] pt-3">
-              <dd class="font-mono text-xl font-semibold text-ink-950">{{ f.count }}</dd>
-              <dt class="mt-1 text-xs text-ink-950/60">{{ f.name }}</dt>
+        </article>
+
+        <!-- Factory counts -->
+        <article class="hud p-6 sm:col-span-2 lg:col-span-4" :class="glass">
+          <div class="mb-5 flex items-center justify-between">
+            <h3 class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">[05] Vertical footprint</h3>
+            <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">{{ companyData.factories.length }} units</span>
+          </div>
+          <dl class="grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-4">
+            <div v-for="f in companyData.factories" :key="f.name" class="border-t border-white/5 pt-3">
+              <dd class="font-mono text-xl font-semibold tabular-nums text-white">{{ f.count }}</dd>
+              <dt class="mt-1 text-xs text-white/60">{{ f.name }}</dt>
             </div>
           </dl>
         </article>
 
-        <!-- Origin -->
-        <article class="bento relative flex flex-col justify-between overflow-hidden rounded-[28px] border border-ink-950/[0.08] bg-white/70 p-7 backdrop-blur sm:col-span-2 lg:col-span-2">
-          <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-coral/30 blur-3xl"></div>
-          <span class="relative font-mono text-xs uppercase tracking-widest text-ink-950/50">Est.</span>
-          <div class="relative">
-            <span class="font-mono text-6xl font-semibold tracking-tight text-ink-950">{{ since }}</span>
-            <p class="mt-2 text-sm text-ink-950/60">Started with a single garment factory.</p>
+        <!-- Origin + expertise -->
+        <article class="hud relative flex flex-col justify-between gap-4 overflow-hidden p-6 sm:col-span-2 lg:col-span-6 lg:flex-row lg:items-end" :class="glass">
+          <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">[06] Est.</span>
+          <div class="lg:flex lg:flex-1 lg:items-end lg:justify-between lg:gap-8">
+            <span class="font-mono text-6xl font-semibold tabular-nums tracking-tight text-white">{{ since }}</span>
+            <ul class="mt-4 flex flex-wrap gap-2 lg:mt-0 lg:justify-end">
+              <li v-for="t in companyData.tags" :key="t" class="rounded-full border border-thread/30 px-3 py-1 text-xs text-thread-300">{{ t }}</li>
+            </ul>
           </div>
-        </article>
-
-        <!-- Tags -->
-        <article class="bento flex flex-wrap content-start gap-2 rounded-[28px] border border-ink-950/[0.08] bg-white/70 p-7 sm:col-span-2 lg:col-span-6">
-          <span class="mr-4 self-center font-mono text-xs uppercase tracking-widest text-ink-950/50">Expertise</span>
-          <span
-            v-for="t in companyData.tags"
-            :key="t"
-            class="rounded-full border border-ink-950/15 px-4 py-2 text-sm text-ink-950/80 transition-colors hover:border-coral hover:text-coral-700"
-          >
-            {{ t }}
-          </span>
         </article>
       </div>
     </div>
@@ -88,44 +83,46 @@
 <script setup>
 import { ref } from 'vue'
 import { companyData } from '~/data/company'
+import { glass, pad2 } from '~/composables/nexus/ui.js'
 import SectionIntro from './SectionIntro.vue'
+import HudSparkline from '~/components/v2/nexus/HudSparkline.vue'
+import GlobeCard from '~/components/v2/nexus/GlobeCard.vue'
+import TodoTag from '~/components/v2/nexus/TodoTag.vue'
 
-// "Since" gets its own card; the three measurable stats count up
+// "Since" gets its own panel; the three measurable stats count up.
+// (The description's line/garment figures conflict with these stats and are not shown.)
 const headline = companyData.stats.filter((s) => s.label !== 'Since')
 const since = companyData.stats.find((s) => s.label === 'Since')?.value
 
 const root = ref(null)
 
 useGsapScope(root, (gsap) => {
-  gsap.from('.bento', {
-    y: 60,
-    opacity: 0,
-    duration: 1,
-    ease: 'power3.out',
-    stagger: 0.08,
-    scrollTrigger: { trigger: root.value, start: 'top 70%' },
-  })
+  const q = gsap.utils.selector(root.value)
 
-  gsap.fromTo('.bento-img', { scale: 1.2 }, {
-    scale: 1,
-    ease: 'none',
-    scrollTrigger: { trigger: '.bento-img', start: 'top bottom', end: 'bottom top', scrub: true },
+  // curtain wipe + media settle
+  gsap.fromTo('.curtain', { clipPath: 'inset(100% 0 0 0)' }, {
+    clipPath: 'inset(0% 0 0 0)', duration: 0.9, ease: 'power4.out',
+    scrollTrigger: { trigger: '.curtain', start: 'top 85%', once: true },
   })
+  gsap.fromTo('.curtain-media', { scale: 1.08 }, { scale: 1, duration: 1.4, ease: 'power3.out', scrollTrigger: { trigger: '.curtain', start: 'top 85%', once: true } })
 
-  // count-up: "75K+" → 0…75 with prefix/suffix preserved
-  gsap.utils.selector(root.value)('.count').forEach((el) => {
-    const m = el.dataset.value.match(/^([^\d]*)([\d.,]+)(.*)$/)
+  gsap.from('.hud', { y: 40, opacity: 0, duration: 0.8, ease: 'power3.out', stagger: 0.07, scrollTrigger: { trigger: '.hud', start: 'top 85%', once: true } })
+
+  // count-up: "75K+" → 0…75 with prefix/suffix kept; ends on the exact company.ts string
+  q('.count').forEach((el) => {
+    const final = el.dataset.value
+    const m = final.match(/^([^\d]*)([\d.,]+)(.*)$/)
     if (!m) return
     const [, pre, num, post] = m
-    const target = parseFloat(num.replace(/,/g, ''))
     const decimals = (num.split('.')[1] || '').length
     const obj = { v: 0 }
     gsap.to(obj, {
-      v: target,
+      v: parseFloat(num.replace(/,/g, '')),
       duration: 1.8,
       ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 85%' },
+      scrollTrigger: { trigger: el, start: 'top 90%', once: true },
       onUpdate: () => (el.textContent = pre + obj.v.toFixed(decimals) + post),
+      onComplete: () => (el.textContent = final),
     })
   })
 })
