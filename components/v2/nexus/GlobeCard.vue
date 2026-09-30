@@ -14,7 +14,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { nexusPalette } from '~/composables/nexusTokens.js'
-import { hasWebGL } from '~/composables/nexus/webgl.js'
+import { hasWebGL, whenNear } from '~/composables/nexus/webgl.js'
 
 // HQ: Tejgaon, Dhaka. Client-region hotspots stay [TODO: region list] until supplied.
 const hotspots = [{ lat: 23.76, lon: 90.4 }]
@@ -30,6 +30,8 @@ let dead = false
 
 onMounted(async () => {
   if (!hasWebGL()) return
+  await whenNear(root.value) // no second WebGL context until the card is about to scroll in
+  if (dead) return
   enabled.value = true
   await nextTick()
   const { createGlobe } = await import('~/composables/nexus/globe.js')

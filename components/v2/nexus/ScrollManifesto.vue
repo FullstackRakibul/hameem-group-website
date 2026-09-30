@@ -43,6 +43,8 @@ const words = parts.flatMap((p) => (p.data ? [{ text: p.text, data: true }] : p.
 const root = ref(null)
 
 useGsapScope(root, (gsap) => {
+  // immediateRender:false → words stay at full contrast until the scrub range is reached
+  // (the sticky text is still below the fold at that point, so the jump to 15% is never seen)
   gsap.fromTo(
     '.word',
     { opacity: 0.15, filter: 'blur(4px)' },
@@ -51,7 +53,8 @@ useGsapScope(root, (gsap) => {
       filter: 'blur(0px)',
       ease: 'none',
       stagger: 0.1,
-      scrollTrigger: { trigger: root.value, start: 'top top', end: 'bottom bottom', scrub: true },
+      immediateRender: false,
+      scrollTrigger: { trigger: root.value, start: 'top 85%', end: 'bottom bottom', scrub: true },
     },
   )
 })

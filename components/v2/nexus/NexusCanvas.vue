@@ -16,7 +16,7 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { nexusPalette } from '~/composables/nexusTokens.js'
-import { hasWebGL } from '~/composables/nexus/webgl.js'
+import { hasWebGL, whenIdle } from '~/composables/nexus/webgl.js'
 
 const { frame, ui, onVisibilityChange, reset } = useNexusScene()
 
@@ -46,6 +46,9 @@ onMounted(async () => {
   mode.value = 'webgl'
   await nextTick()
 
+  // three.js is fetched only after load + idle, so it never competes with the LCP text
+  await whenIdle()
+  if (dead) return
   const { createNexusScene } = await import('~/composables/nexus/scene.js')
   if (dead || !canvas.value) return
 

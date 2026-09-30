@@ -19,7 +19,7 @@ definePageMeta({ layout: false });
 
 useHead({
   title: 'Ha-Meem Group — HAMEEM // NEXUS',
-  htmlAttrs: { class: 'bg-void' },
+  htmlAttrs: { class: 'bg-void', lang: 'en' },
   // overrides the global viewport (its maximum-scale=1 blocks zoom and fails WCAG 1.4.4)
   meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   link: [

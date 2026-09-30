@@ -9,10 +9,10 @@
         <!-- B6 image card (curtain reveal) -->
         <article class="curtain relative overflow-hidden rounded-[28px] border border-white/5 sm:col-span-2 lg:col-span-3 lg:row-span-2">
           <img
-            src="/assets/v2/index/v2Hero-section-banner-hameemgroup-image-000002.JPG"
-            alt="Ha-Meem Group design studio"
-            width="3984"
-            height="2240"
+            src="/assets/v2/index/v2Hero-section-banner-hameemgroup-image-000001.jpg"
+            alt="Ha-Meem Group denim design studio"
+            width="1920"
+            height="1080"
             loading="lazy"
             decoding="async"
             class="curtain-media absolute inset-0 h-full w-full object-cover saturate-[.8]"

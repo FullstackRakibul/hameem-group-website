@@ -8,10 +8,12 @@
         :class="scrolled ? 'scale-[0.94] border-thread/30 shadow-glow-thread' : 'border-white/5'"
       >
         <NuxtLink to="/" class="rounded-full" :class="focusRing" aria-label="Ha-Meem Group home">
-          <img src="/assets/group-logo.png" alt="" width="1142" height="640" class="h-10 w-auto rounded-full border border-white/20" />
+          <span class="flex h-10 items-center rounded-full bg-white px-3">
+            <img src="/assets/v2/header/hameem-group-logo-primary.png" alt="" width="348" height="102" class="h-6 w-auto" />
+          </span>
         </NuxtLink>
 
-        <span class="ml-1 hidden items-center gap-2 rounded-full border border-bleach/20 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-bleach sm:inline-flex">
+        <span class="ml-1 inline-flex items-center gap-2 rounded-full border border-bleach/20 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-bleach">
           <span class="relative flex h-1.5 w-1.5">
             <span class="absolute inline-flex h-full w-full rounded-full bg-bleach opacity-70 motion-safe:animate-ping"></span>
             <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-bleach"></span>
@@ -85,7 +87,7 @@ const links = [
   { label: 'Gallery', to: '/our-gallery' },
   { label: '360° Tour', to: '/360vr' },
 ]
-const avatars = ['/assets/boardofdirectors/SAJID SIR .jpg', '/assets/boardofdirectors/DMD(Mondol)Sir.jpg']
+const avatars = ['/assets/boardofdirectors/DMD(Mondol)Sir.jpg'] // 17 KB; the other portraits are 200–570 KB
 
 const open = ref(false)
 const scrolled = ref(false)

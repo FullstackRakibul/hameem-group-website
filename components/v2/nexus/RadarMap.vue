@@ -6,7 +6,6 @@
     rel="noopener"
     class="group relative block overflow-hidden rounded-[28px] border border-white/5 bg-ink-950"
     :class="focusRing"
-    aria-label="Open the Ha-Meem Group head office in Google Maps (opens in a new tab)"
   >
     <svg viewBox="0 0 320 200" class="block h-auto w-full text-bleach" aria-hidden="true" focusable="false">
       <g stroke="currentColor" stroke-opacity="0.08" stroke-width="1">
@@ -29,7 +28,7 @@
     </svg>
     <div class="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl border border-white/10 bg-void/70 px-4 py-2.5 backdrop-blur-xl">
       <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-bleach">● HQ · 23.759°N 90.397°E</span>
-      <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70 group-hover:text-white">Open map ↗</span>
+      <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70 group-hover:text-white">Open map <span aria-hidden="true">↗</span><span class="sr-only"> of the head office (opens in a new tab)</span></span>
     </div>
   </a>
 </template>

@@ -11,17 +11,17 @@
       </p>
 
       <!-- A8 stat row with small icons (all company.ts) -->
-      <dl class="relative grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <div v-for="s in stats" :key="s.name" class="stat flex items-center gap-4 p-5" :class="glass">
+      <ul class="relative grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <li v-for="s in stats" :key="s.name" class="stat flex items-center gap-4 p-5" :class="glass">
           <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-bleach/20 text-bleach" aria-hidden="true">
             <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path :d="s.icon" /></svg>
           </span>
-          <div class="flex min-w-0 flex-col-reverse">
-            <dt class="text-xs text-white/70">{{ s.name }}</dt>
-            <dd class="font-mono text-xl font-semibold tabular-nums text-bleach">{{ s.count }}</dd>
-          </div>
-        </div>
-      </dl>
+          <p class="min-w-0">
+            <span class="block font-mono text-xl font-semibold tabular-nums text-bleach">{{ s.count }}</span>
+            <span class="block text-xs text-white/70">{{ s.name }}</span>
+          </p>
+        </li>
+      </ul>
 
       <div class="relative mt-4 grid gap-4 lg:grid-cols-12">
         <!-- signal data bars -->
