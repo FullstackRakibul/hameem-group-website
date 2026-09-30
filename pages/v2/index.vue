@@ -1,42 +1,43 @@
 <script setup>
-import WelcomeHeroSection from '~/components/v2/index/sliders/WelcomeHeroSection.vue';
-import SustainabilityMapSection from '~/components/v2/sectionComponent/SustainabilityMapSection.vue';
-import ContactUsMapSectionComponent from '~/components/v2/index/ContactUsMapSectionComponent.vue';
-import IndustriesSectionComponent from '~/components/v2/index/IndustriesSectionComponent.vue';
-import TestimonialSectionComponent from '~/components/v2/index/TestimonialSectionComponent.vue';
-import NewsAndBlogComponent from '~/components/v2/index/NewsAndBlogComponent.vue';
-import GallarySectionComponent from '~/components/v2/index/GallarySectionComponent.vue';
-import HomePageMainSlider from '~/components/v2/index/HomePageMainSlider.vue';
-import QualityAndStrengthsSection from '~/components/v2/index/QualityAndStrengthsSection.vue';
-import ClientRunningCarouselComponent from '~/components/v2/sectionComponent/ClientRunningCarouselComponent.vue';
-import DenimStickySection from '~/components/v2/ui/DenimStickySection.vue';
-import HameemAtaGlance from '~/components/denim/HameemAtaGlance.vue';
-import VideoHeroSectionRFID from '~/components/v2/sectionComponent/VideoHeroSectionRFID.vue';
+import PillNav from '~/components/v2/modern/PillNav.vue';
+import HeroSection from '~/components/v2/modern/HeroSection.vue';
+import BentoGlance from '~/components/v2/modern/BentoGlance.vue';
+import CapabilitiesBento from '~/components/v2/modern/CapabilitiesBento.vue';
+import ProcessTracker from '~/components/v2/modern/ProcessTracker.vue';
+import SustainabilityData from '~/components/v2/modern/SustainabilityData.vue';
+import ClientsMarquee from '~/components/v2/modern/ClientsMarquee.vue';
+import ProductsGallery from '~/components/v2/modern/ProductsGallery.vue';
+import NewsBento from '~/components/v2/modern/NewsBento.vue';
+import ContactFooter from '~/components/v2/modern/ContactFooter.vue';
 
+// Own chrome (pill nav + dark footer); also skips Preloader2, which clears GSAP's global timeline
+definePageMeta({ layout: false });
+
+useHead({
+  title: 'Ha-Meem Group — Fibre to finished garment',
+  htmlAttrs: { class: 'bg-ink-950' },
+  link: [
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap',
+    },
+  ],
+});
 </script>
 
 <template>
-  <section class=" mt-16">
-    <VideoHeroSectionRFID/>
-    <!-- <WelcomeHeroSection/> -->
-    <HameemAtaGlance/>
-    <!-- <HomePageMainSlider/> -->
-    <!-- <ShortDescriptionSectionCoponent/> -->
-    <QualityAndStrengthsSection/>
-    <TestimonialSectionComponent/>
-    <DenimStickySection/>
-    <SustainabilityMapSection/>
-    <!-- <OurBuyersSection/> -->
-    <ClientRunningCarouselComponent/>
-    <GallarySectionComponent/>
-    <IndustriesSectionComponent/>               
-    <NewsAndBlogComponent/>
-    <ContactUsMapSectionComponent/>
-  </section>
+  <div class="min-h-screen bg-ink-950 font-sans text-white antialiased selection:bg-coral selection:text-ink-950">
+    <PillNav />
+    <main>
+      <HeroSection />
+      <BentoGlance />
+      <CapabilitiesBento />
+      <ProcessTracker />
+      <SustainabilityData />
+      <ClientsMarquee />
+      <ProductsGallery />
+      <NewsBento />
+    </main>
+    <ContactFooter />
+  </div>
 </template>
-
-
-
-<style scoped>
-/* Home page styles */
-</style>

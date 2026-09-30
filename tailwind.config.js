@@ -14,6 +14,7 @@ export default {
         writting: ["WindSong", "cursive"],
         writtingOne: ["Great Vibes", "cursive"],
         description: ["Permanent Marker", "cursive"],
+        mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
         // titillium: ['"Titillium Web"', "sans-serif"],
         // denim: ["Cardo", "serif"],
         fontWeight: {
@@ -41,6 +42,21 @@ export default {
         primary: "#203f56",
         // primary: "#264156",
         secondary: "#40160C",
+        // v2 modern (dark editorial) palette
+        ink: {
+          950: "#0a0a0a",
+          900: "#111111",
+          800: "#181818",
+          700: "#222222",
+          600: "#2e2e2e",
+        },
+        coral: {
+          DEFAULT: "#ff6b4a",
+          300: "#ffa48f",
+          400: "#ff8566",
+          500: "#ff6b4a",
+          600: "#e8532f",
+        },
       },
       backgroundImage: {
         "home-page-banner-bg-01": "url('/assets/HomePageBannerBG-01.jpg')",
