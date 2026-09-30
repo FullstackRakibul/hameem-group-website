@@ -35,7 +35,12 @@ export function useLenis() {
     dead = true
     if (tick) gsap.ticker.remove(tick)
     tick = null
-    instance?.destroy()
+    if (instance) {
+      // Lenis resets `isScrolling` from a pending timeout; forcing it false first makes that
+      // later assignment a no-op, so no `lenis` class is re-added to <html> after destroy().
+      instance.isScrolling = false
+      instance.destroy()
+    }
     instance = null
     gsap.ticker.lagSmoothing(500, 33) // GSAP default
   })

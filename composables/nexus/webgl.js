@@ -1,5 +1,13 @@
-/** True when a WebGL context can be created (checked before three is downloaded). */
+let supported = null
+
+/** True when a WebGL context can be created (checked once, before three is downloaded). */
 export function hasWebGL() {
+  if (supported !== null) return supported
+  supported = probe()
+  return supported
+}
+
+function probe() {
   try {
     const c = document.createElement('canvas')
     const gl = c.getContext('webgl2') || c.getContext('webgl')

@@ -1,7 +1,7 @@
 <template>
   <section ref="root" data-shot="glance" class="px-4 py-24 sm:px-6 md:py-36 lg:px-10">
     <div class="mx-auto max-w-[1440px]">
-      <SectionIntro index="01" eyebrow="At a glance" :lines="['Four', 'decades', 'of scale']" :accent-from="2" class="mb-14 md:mb-20">
+      <SectionIntro index="01" eyebrow="At a glance" :lines="['Since', since, 'at scale']" :accent-from="2" class="mb-14 md:mb-20">
         A vertical group across knit, woven and denim, built for global brands and measured line by line.
       </SectionIntro>
 

@@ -1,7 +1,7 @@
 <template>
   <section ref="root" data-shot="capabilities" class="px-4 py-24 sm:px-6 md:py-36 lg:px-10">
     <div class="mx-auto max-w-[1440px]">
-      <SectionIntro index="02" eyebrow="Industries" :lines="['One group', 'eight', 'industries']" :accent-from="1" class="mb-14 md:mb-20">
+      <SectionIntro index="02" eyebrow="Industries" :lines="['One group', `${industries.length} industries`]" :accent-from="1" class="mb-14 md:mb-20">
         Manufacturing and media businesses that share one standard of craft, from denim mills and laundries to a national daily.
       </SectionIntro>
 

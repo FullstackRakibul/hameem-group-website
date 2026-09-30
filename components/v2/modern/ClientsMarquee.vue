@@ -4,7 +4,7 @@
       <div>
         <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70"><span class="text-thread-300">[05]</span> Trusted by</p>
         <h2 class="mt-4 font-display text-[clamp(2.25rem,5vw,4.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.05em] text-white">
-          {{ clientLogos.length }} global brands<br /><span class="text-thread-300">wear our work</span>
+          Global brands<br /><span class="text-thread-300">wear our work</span>
         </h2>
       </div>
       <p class="max-w-sm text-sm leading-relaxed text-white/70">
