@@ -1,74 +1,83 @@
 <template>
-  <header ref="root" class="fixed inset-x-0 top-4 z-50 px-4">
-    <nav
-      class="nav-pill mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-full border border-ink-950/[0.08] bg-white/70 py-2 pl-5 pr-2 backdrop-blur-xl transition-shadow duration-300"
-      :class="{ 'shadow-[0_10px_40px_-15px_rgba(10,10,10,0.25)]': scrolled }"
-      aria-label="Main"
-    >
-      <NuxtLink to="/" class="flex items-center gap-2">
-        <img src="/assets/group-logo.png" alt="Ha-Meem Group" class="h-7 w-auto rounded-sm" />
-      </NuxtLink>
-
-      <ul class="hidden items-center gap-1 md:flex">
-        <li v-for="link in links" :key="link.to">
-          <NuxtLink
-            :to="link.to"
-            class="rounded-full px-4 py-2 text-sm text-ink-950/65 transition-colors hover:bg-ink-950/5 hover:text-ink-950"
-          >
-            {{ link.label }}
-          </NuxtLink>
-        </li>
-      </ul>
-
-      <div class="flex items-center gap-2">
-        <NuxtLink
-          to="/contact"
-          class="group hidden items-center gap-2 rounded-full bg-ink-950 py-1.5 pl-1.5 pr-4 text-sm font-semibold text-white transition-colors hover:bg-coral hover:text-ink-950 sm:flex"
-        >
-          <span class="flex -space-x-2">
-            <img
-              v-for="a in avatars"
-              :key="a"
-              :src="a"
-              alt=""
-              class="h-7 w-7 rounded-full border-2 border-ink-950 object-cover object-top transition-colors group-hover:border-coral"
-            />
-          </span>
-          Talk to us
+  <header class="pointer-events-none fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-4">
+    <div class="mx-auto flex max-w-[1440px] items-start justify-between gap-3">
+      <!-- A1: floating pill, top-left -->
+      <nav
+        aria-label="Main"
+        class="stitch pointer-events-auto relative flex origin-top-left items-center gap-1 rounded-full border bg-ink-950/70 py-1.5 pl-1.5 pr-2 backdrop-blur-2xl motion-safe:transition-[transform,box-shadow,border-color] motion-safe:duration-300"
+        :class="scrolled ? 'scale-[0.94] border-thread/30 shadow-glow-thread' : 'border-white/5'"
+      >
+        <NuxtLink to="/" class="rounded-full" :class="focusRing" aria-label="Ha-Meem Group home">
+          <img src="/assets/group-logo.png" alt="" width="1142" height="640" class="h-10 w-auto rounded-full border border-white/20" />
         </NuxtLink>
+
+        <span class="ml-1 hidden items-center gap-2 rounded-full border border-bleach/20 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-bleach sm:inline-flex">
+          <span class="relative flex h-1.5 w-1.5">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-bleach opacity-70 motion-safe:animate-ping"></span>
+            <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-bleach"></span>
+          </span>
+          SYS ONLINE
+        </span>
+
+        <ul class="hidden items-center md:flex">
+          <li v-for="link in links" :key="link.to">
+            <NuxtLink :to="link.to" class="rounded-full px-3.5 py-2 text-sm text-white/75 transition-colors hover:text-white" :class="focusRing">
+              {{ link.label }}
+            </NuxtLink>
+          </li>
+        </ul>
 
         <button
-          class="flex h-10 w-10 items-center justify-center rounded-full border border-ink-950/[0.08] text-ink-950 md:hidden"
+          class="flex h-10 w-10 items-center justify-center rounded-full text-white md:hidden"
+          :class="focusRing"
           :aria-expanded="open"
-          aria-label="Toggle menu"
+          aria-controls="nx-mobile-menu"
+          :aria-label="open ? 'Close menu' : 'Open menu'"
           @click="open = !open"
         >
-          <Icon :name="open ? 'mdi:close' : 'mdi:menu'" class="text-xl" />
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path v-if="open" d="M6 6l12 12M18 6L6 18" />
+            <path v-else d="M4 7h16M4 12h16M4 17h10" />
+          </svg>
         </button>
-      </div>
-    </nav>
+      </nav>
 
-    <Transition name="drop">
-      <div
-        v-if="open"
-        class="mx-auto mt-2 max-w-5xl rounded-3xl border border-ink-950/[0.08] bg-white/95 p-3 backdrop-blur-xl md:hidden"
+      <!-- A1: avatar CTA pill, top-right -->
+      <NuxtLink
+        to="/contact"
+        class="group pointer-events-auto hidden origin-top-right items-center gap-2.5 rounded-full bg-white py-1.5 pl-1.5 pr-5 text-sm font-semibold text-void motion-safe:transition-transform motion-safe:duration-300 sm:flex"
+        :class="[focusRing, scrolled ? 'scale-[0.94] shadow-glow-thread' : '']"
       >
-        <NuxtLink
-          v-for="link in [...links, { label: 'Contact', to: '/contact' }]"
-          :key="link.to"
-          :to="link.to"
-          class="block rounded-2xl px-4 py-3 text-ink-950/80 hover:bg-ink-950/5 hover:text-ink-950"
-          @click="open = false"
-        >
-          {{ link.label }}
-        </NuxtLink>
-      </div>
-    </Transition>
+        <span class="flex -space-x-2">
+          <img v-for="a in avatars" :key="a" :src="a" alt="" width="32" height="32" class="h-8 w-8 rounded-full border-2 border-white object-cover object-top" />
+        </span>
+        Talk to our team
+        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-void text-white transition-colors group-hover:bg-thread group-hover:text-void" aria-hidden="true">→</span>
+      </NuxtLink>
+    </div>
+
+    <div
+      v-show="open"
+      id="nx-mobile-menu"
+      class="pointer-events-auto mx-auto mt-2 max-w-md rounded-[28px] border border-white/5 bg-ink-950/95 p-2 backdrop-blur-2xl md:hidden"
+    >
+      <NuxtLink
+        v-for="link in [...links, { label: 'Talk to our team', to: '/contact' }]"
+        :key="link.to + link.label"
+        :to="link.to"
+        class="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
+        :class="focusRing"
+        @click="open = false"
+      >
+        {{ link.label }}
+      </NuxtLink>
+    </div>
   </header>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { focusRing } from '~/composables/nexus/ui.js'
 
 const links = [
   { label: 'About us', to: '/about' },
@@ -76,34 +85,33 @@ const links = [
   { label: 'Gallery', to: '/our-gallery' },
   { label: '360° Tour', to: '/360vr' },
 ]
+const avatars = ['/assets/boardofdirectors/SAJID SIR .jpg', '/assets/boardofdirectors/DMD(Mondol)Sir.jpg']
 
-const avatars = [
-  '/assets/boardofdirectors/SAJID SIR .jpg',
-  '/assets/boardofdirectors/Sakib-Azad Director.jpg',
-  '/assets/boardofdirectors/DMD(Mondol)Sir.jpg',
-]
-
-const root = ref(null)
 const open = ref(false)
 const scrolled = ref(false)
-const onScroll = () => (scrolled.value = window.scrollY > 40)
+// Lenis scrolls the window, so a passive native listener sees every position
+const onScroll = () => (scrolled.value = window.scrollY > 80)
+const onKey = (e) => e.key === 'Escape' && (open.value = false)
 
-onMounted(() => window.addEventListener('scroll', onScroll, { passive: true }))
-onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
-
-useGsapScope(root, (gsap) => {
-  gsap.from('.nav-pill', { y: -40, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.2 })
+onMounted(() => {
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('keydown', onKey)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('keydown', onKey)
 })
 </script>
 
 <style scoped>
-.drop-enter-active,
-.drop-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-.drop-enter-from,
-.drop-leave-to {
-  opacity: 0;
-  transform: translateY(-8px);
+/* denim contrast-stitch inside the pill */
+.stitch::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 9999px;
+  border: 1px dashed theme('colors.thread.DEFAULT / 0.28');
+  pointer-events: none;
 }
 </style>

@@ -95,6 +95,6 @@ uniform vec3 uColor;
 uniform float uAlpha;
 varying float vShade;
 void main() {
-  gl_FragColor = vec4(uColor * vShade, 0.55 * uAlpha);
+  gl_FragColor = vec4(uColor * vShade, 0.32 * uAlpha);
 }
 `

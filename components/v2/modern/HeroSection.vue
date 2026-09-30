@@ -1,92 +1,69 @@
 <template>
-  <section ref="root" class="relative flex min-h-[100svh] items-end overflow-hidden bg-paper pb-16 pt-32 md:pb-24">
-    <!-- Backdrop: pass `image` for a still photo (e.g. a botanical close-up), otherwise the video plays -->
-    <div class="hero-media absolute inset-0">
-      <img v-if="image" :src="image" alt="" class="h-full w-full object-cover" />
-      <video
-        v-else
-        autoplay
-        muted
-        loop
-        playsinline
-        :poster="poster"
-        class="h-full w-full object-cover"
-      >
-        <source :src="video" type="video/mp4" />
-      </video>
-    </div>
+  <section ref="root" data-shot="hero" class="relative flex min-h-[100svh] flex-col justify-end overflow-hidden px-4 pb-8 pt-24 sm:px-6 lg:px-10">
+    <!-- HUD overlays: 64px grid (4%) + scanlines (3%), faded at the edges -->
+    <div class="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-0 bg-scanlines" aria-hidden="true"></div>
 
-    <!-- Coral gradient wash + organic petal shapes -->
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute inset-0 bg-gradient-to-t from-paper via-paper/85 to-paper/30"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(255,107,74,0.35),transparent_55%)] mix-blend-multiply"></div>
-      <div class="petal petal-a"></div>
-      <div class="petal petal-b"></div>
-      <div class="grain absolute inset-0 opacity-[0.05] mix-blend-multiply"></div>
-    </div>
+    <div class="relative mx-auto w-full max-w-[1440px]">
+      <p class="hero-fade mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1 pl-1 pr-4 font-mono text-[11px] uppercase tracking-[0.12em] text-white/80 backdrop-blur-xl">
+        <span class="flex h-6 w-6 items-center justify-center rounded-full bg-ink-800 text-thread-300" aria-hidden="true">◎</span>
+        Comprehensive global garment manufacturer
+      </p>
 
-    <div class="container relative z-10 mx-auto grid gap-10 px-4 lg:grid-cols-12 lg:items-end">
-      <div class="lg:col-span-8">
-        <span class="hero-fade inline-flex items-center gap-2 rounded-full border border-ink-950/15 bg-white/60 px-3 py-1 font-mono text-xs uppercase tracking-widest text-ink-950/75 backdrop-blur">
-          <span class="h-1.5 w-1.5 rounded-full bg-coral"></span>
-          Since {{ companyData.stats[3].value }} · Dhaka, Bangladesh
-        </span>
-
-        <h1 class="mt-6 text-[clamp(2.75rem,8vw,7.5rem)] font-black leading-[0.9] tracking-[-0.045em] text-ink-950">
-          <span class="block overflow-hidden"><span class="hero-line block">We stitch trust</span></span>
-          <span class="block overflow-hidden"><span class="hero-line block">into every <em class="not-italic text-coral-700">seam.</em></span></span>
+      <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+        <!-- B1: giant display type over the WebGL core -->
+        <h1
+          aria-label="Manufacture the future"
+          class="hero-title font-display font-bold uppercase leading-[0.85] tracking-[-0.05em] text-white mix-blend-difference lg:col-span-8"
+        >
+          <span v-for="(line, i) in lines" :key="line" class="hero-mask block overflow-hidden pb-[0.04em]" aria-hidden="true">
+            <span class="hero-line block" :style="{ '--i': i }">{{ line }}</span>
+          </span>
         </h1>
 
-        <p class="hero-fade mt-6 max-w-xl text-lg font-light leading-relaxed text-ink-950/65">
-          One of Bangladesh's largest apparel exporters — vertically integrated from fibre to finished
-          garment, with real-time RFID traceability on every sewing line.
-        </p>
-
-        <div class="hero-fade mt-10 flex flex-wrap items-center gap-4">
-          <NuxtLink
-            to="/contact"
-            class="group inline-flex items-center gap-3 rounded-full bg-coral py-2 pl-2 pr-6 font-semibold text-ink-950 transition-transform hover:-translate-y-0.5"
-          >
-            <span class="flex -space-x-2">
-              <img
-                v-for="a in avatars"
-                :key="a"
-                :src="a"
-                alt=""
-                class="h-9 w-9 rounded-full border-2 border-coral object-cover object-top"
-              />
-            </span>
-            Talk to our team
-            <Icon name="mdi:arrow-top-right" class="transition-transform group-hover:rotate-45" />
-          </NuxtLink>
-          <NuxtLink
-            to="/about"
-            class="rounded-full border border-ink-950/15 bg-white/60 px-6 py-3 text-ink-950/80 backdrop-blur transition-colors hover:border-ink-950/30 hover:text-ink-950"
-          >
-            Our story
-          </NuxtLink>
-        </div>
-      </div>
-
-      <!-- Floating glass cards -->
-      <div class="relative hidden lg:col-span-4 lg:block lg:h-[380px]">
-        <div class="glass-card float-a absolute right-0 top-0 w-72 rounded-3xl border border-ink-950/[0.08] bg-white/70 p-5 shadow-[0_20px_50px_-20px_rgba(10,10,10,0.25)] backdrop-blur-xl">
-          <p class="font-mono text-[11px] uppercase tracking-widest text-coral-700">Case · Eliot RFID</p>
-          <p class="mt-3 text-lg font-semibold leading-snug text-ink-950">Every sewing operation captured in real time.</p>
-          <div class="mt-4 flex h-10 items-end gap-1">
-            <span v-for="(h, i) in bars" :key="i" class="spark flex-1 rounded-sm bg-coral/80" :style="{ height: h + '%' }"></span>
+        <div class="hero-fade max-w-md lg:col-span-4 lg:pb-4">
+          <p class="text-lg leading-relaxed text-white/75">
+            An AI-integrated garment manufacturing OS. Traceable, intelligent, vertical.
+          </p>
+          <p class="mt-2"><TodoTag label="client approval of hero sub-line" /></p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <NuxtLink to="/contact" class="group inline-flex items-center gap-2 rounded-full bg-thread px-6 py-3 font-semibold text-void transition-shadow hover:shadow-glow-thread" :class="focusRing">
+              Talk to our team <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+            </NuxtLink>
+            <a href="#manifesto" class="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-white/90 transition-colors hover:border-white/40" :class="focusRing">
+              Enter the system <span aria-hidden="true">↓</span>
+            </a>
           </div>
         </div>
-        <div class="glass-card float-b absolute bottom-0 left-0 w-64 rounded-3xl border border-ink-950/[0.08] bg-white/70 p-5 shadow-[0_20px_50px_-20px_rgba(10,10,10,0.25)] backdrop-blur-xl">
-          <p class="font-mono text-[11px] uppercase tracking-widest text-ink-950/60">Renewable</p>
-          <p class="mt-2 text-4xl font-black tracking-tight text-ink-950">{{ solar }}</p>
-          <p class="text-sm text-ink-950/60">rooftop solar capacity</p>
+      </div>
+
+      <!-- A2: trusted-by row + floating proof card -->
+      <div class="mt-12 flex flex-col gap-6 border-t border-white/5 pt-6 md:flex-row md:items-end md:justify-between">
+        <div class="hero-fade min-w-0">
+          <p class="mb-3 font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">Supplier to world-leading brands</p>
+          <ul class="flex flex-wrap items-center gap-x-6 gap-y-3" aria-label="Selected clients">
+            <li v-for="logo in logos" :key="logo.file">
+              <img
+                :src="`/assets/v2/clients/${logo.file}`"
+                :alt="logo.name"
+                width="432"
+                height="247"
+                decoding="async"
+                fetchpriority="low"
+                class="h-9 w-auto rounded-md opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0 sm:h-11"
+              />
+            </li>
+          </ul>
+        </div>
+
+        <div class="proof-card relative shrink-0 self-start rounded-[28px] border border-thread/30 bg-ink-950/60 p-5 backdrop-blur-xl md:self-end">
+          <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-bleach">● Live system record</p>
+          <p class="mt-2 font-mono text-2xl font-semibold tabular-nums tracking-tight text-white sm:text-3xl">
+            SINCE {{ since }} · {{ employees }} PEOPLE
+          </p>
+          <p class="mt-1 text-sm text-white/70">One vertical group, fibre to finished garment.</p>
         </div>
       </div>
-    </div>
-
-    <div class="hero-fade absolute bottom-6 left-1/2 hidden -translate-x-1/2 font-mono text-[11px] uppercase tracking-[0.3em] text-ink-950/50 md:block">
-      Scroll
     </div>
   </section>
 </template>
@@ -94,74 +71,77 @@
 <script setup>
 import { ref } from 'vue'
 import { companyData } from '~/data/company'
+import { focusRing } from '~/composables/nexus/ui.js'
+import { glitchOnce } from '~/composables/nexus/glitch.js'
+import { clientLogos } from '~/composables/nexus/content.js'
+import TodoTag from '~/components/v2/nexus/TodoTag.vue'
 
-defineProps({
-  image: { type: String, default: '' },
-  video: {
-    type: String,
-    default: 'https://api.hameemgroup.com:9012/Resources/hameem-group-website/RFIDDIGITALVIDEO.mp4',
-  },
-  poster: {
-    type: String,
-    default: '/assets/v2/index/v2Hero-section-banner-hameemgroup-image-000001.jpg',
-  },
-})
-
-const avatars = [
-  '/assets/boardofdirectors/SAJID SIR .jpg',
-  '/assets/boardofdirectors/Sakib-Azad Director.jpg',
-]
-const solar = companyData.factories.find((f) => f.name === 'Solar Capacity')?.count
-const bars = [30, 55, 42, 70, 50, 85, 64, 92, 78, 100]
+const lines = ['Manu', 'facture', 'the', 'future']
+const stat = (label) => companyData.stats.find((s) => s.label === label)?.value
+const since = stat('Since')
+const employees = stat('Employees')
+const logos = clientLogos.slice(0, 6)
 
 const root = ref(null)
+const { frame, setVisible } = useNexusScene()
 
-useGsapScope(root, (gsap) => {
-  const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
-  tl.from('.hero-media', { scale: 1.15, duration: 2.2, ease: 'power2.out' }, 0)
-    .from('.hero-line', { yPercent: 110, duration: 1.1, stagger: 0.12 }, 0.2)
-    .from('.hero-fade', { y: 24, opacity: 0, duration: 0.9, stagger: 0.1 }, 0.6)
-    .from('.glass-card', { y: 60, opacity: 0, duration: 1, stagger: 0.15 }, 0.8)
-    .from('.spark', { scaleY: 0, transformOrigin: 'bottom', duration: 0.6, stagger: 0.04 }, 1.2)
+useGsapScope(root, (gsap, ScrollTrigger) => {
+  const title = root.value.querySelector('.hero-title')
+  // entry glitch once, after the CSS line rise has landed
+  gsap.delayedCall(1.05, () => glitchOnce(gsap, title))
+  gsap.from('.hero-fade', { y: 24, opacity: 0, duration: 0.9, ease: 'power3.out', stagger: 0.08, delay: 0.35 })
+  gsap.to('.proof-card', { y: -10, duration: 3.4, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 1.5 })
 
-  // idle float
-  gsap.to('.float-a', { y: -14, duration: 3.2, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 2 })
-  gsap.to('.float-b', { y: 12, duration: 3.8, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: 2 })
-  gsap.to('.petal-a', { rotate: 25, x: 30, duration: 9, ease: 'sine.inOut', yoyo: true, repeat: -1 })
-  gsap.to('.petal-b', { rotate: -20, y: -30, duration: 11, ease: 'sine.inOut', yoyo: true, repeat: -1 })
-
-  // parallax out on scroll
-  gsap.to('.hero-media', {
-    yPercent: 18,
-    ease: 'none',
-    scrollTrigger: { trigger: root.value, start: 'top top', end: 'bottom top', scrub: true },
+  // canvas visibility (any part of the hero on screen)
+  ScrollTrigger.create({
+    trigger: root.value,
+    start: 'top bottom',
+    end: 'bottom top',
+    onToggle: (self) => setVisible('heroVisible', self.isActive),
   })
+
+  // scroll scrub: camera dive + vortex speed-up + scatter live in the scene;
+  // here we feed progress and slide the headline lines out (outer masks: the
+  // inner lines are owned by the CSS entry animation)
+  let glitched = false
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: root.value,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        onUpdate: (self) => {
+          frame.heroProgress = self.progress
+          if (!glitched && self.progress > 0.35 && self.direction > 0) {
+            glitched = true
+            glitchOnce(gsap, title)
+          }
+        },
+      },
+    })
+    .to('.hero-mask', { yPercent: -35, opacity: 0.15, ease: 'none', stagger: 0.06 }, 0)
 })
 </script>
 
 <style scoped>
-.petal {
-  position: absolute;
-  border-radius: 62% 38% 55% 45% / 55% 60% 40% 45%;
-  filter: blur(60px);
-  opacity: 0.55;
+.hero-title {
+  font-size: clamp(4rem, min(12vw, 17svh), 14rem);
 }
-.petal-a {
-  width: 38vw;
-  height: 30vw;
-  right: -8vw;
-  top: -6vw;
-  background: radial-gradient(circle at 30% 30%, #ffa48f, #ff6b4a 45%, transparent 70%);
+
+/* Entry rise is CSS (starts at first paint → LCP is the h1 text, not a JS-delayed frame) */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-line {
+    animation: nx-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--i) * 90ms);
+  }
 }
-.petal-b {
-  width: 24vw;
-  height: 22vw;
-  left: -6vw;
-  bottom: 10%;
-  background: radial-gradient(circle at 60% 40%, #ff8566, transparent 70%);
-  opacity: 0.25;
-}
-.grain {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+@keyframes nx-rise {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 </style>

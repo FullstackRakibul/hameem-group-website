@@ -58,7 +58,7 @@ export function createNexusScene(canvas, { frame, palette, mobile }) {
       uScatter: { value: 0 },
       uMix: { value: 0 },
       uProgress: { value: 0 },
-      uSize: { value: mobile ? 5.5 : 4.5 },
+      uSize: { value: mobile ? 8 : 7 },
       uPixelRatio: { value: pixelRatio },
       uAlpha: { value: 1 },
       uThread: { value: new Color(palette.thread.DEFAULT) },
@@ -116,7 +116,9 @@ export function createNexusScene(canvas, { frame, palette, mobile }) {
     // camera dives z 5 → 2 through the hero, back to 5 for the process state
     camera.position.z = (5 - 3 * hp) * (1 - pm) + 5 * pm
     points.rotation.x = 0.38 * (1 - pm)
-    points.position.x = pm * (mobile ? 0 : 1.5)
+    const heroX = mobile ? 0 : 1.4 // core sits right of the headline on desktop
+    points.position.x = heroX * (1 - pm) + pm * (mobile ? 0 : 1.5)
+    core.position.x = heroX
     points.rotation.y = pm * Math.sin(time * 0.25) * 0.25
 
     const coreAlpha = heroAlpha * (1 - pm)
