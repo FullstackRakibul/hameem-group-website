@@ -4,7 +4,8 @@ import { ref } from "vue";
 defineProps({
   bgImage: {
     type: String,
-    default: "/images/denim-bg.jpg",
+    // was "/images/denim-bg.jpg", which does not exist (404 on /denim); the parent supplies the backdrop
+    default: "",
   },
   timelineData: {
     type: Array,
@@ -49,7 +50,7 @@ const timelineRef = ref(null);
 <template>
   <section
     class="relative flex flex-col items-center justify-center text-white text-center bg-cover"
-    :style="{ backgroundImage: `url(${bgImage})` }"
+    :style="bgImage ? { backgroundImage: `url(${bgImage})` } : undefined"
   >
     <!-- Dark Overlay -->
     <div class="absolute inset-0 "></div>

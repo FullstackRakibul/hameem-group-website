@@ -7,8 +7,8 @@
     <div class="w-64 bg-gradient-to-b from-slate-900 to-slate-800 text-slate-50 flex flex-col shadow-lg hidden sm:flex">
       <!-- Logo -->
       <div class="px-6 py-6 border-b border-slate-700/50">
-        <h1 class="text-xl font-bold text-primary tracking-tight">Panel</h1>
-        <p class="text-xs text-slate-700 mt-1">Management System</p>
+        <h1 class="text-xl font-bold text-white tracking-tight">Panel</h1>
+        <p class="text-xs text-slate-400 mt-1">Management System</p>
       </div>
 
       <!-- Navigation -->
@@ -18,14 +18,15 @@
           📝 Content Management
         </NuxtLink>
         <NuxtLink to="/"
-          class="block px-4 py-3 rounded-lg text-slate-800 hover:bg-slate-700/50 border border-slate-400 hover:text-slate-50 transition font-medium text-sm">
+          class="block px-4 py-3 rounded-lg text-slate-100 hover:bg-slate-700/50 border border-slate-400 hover:text-slate-50 transition font-medium text-sm">
           🏠 Back to Site
         </NuxtLink>
       </nav>
 
       <!-- Footer -->
       <div class="px-6 py-4 border-t border-slate-700/50 text-xs text-slate-400">
-        <p>Last updated: {{ new Date().toLocaleDateString() }}</p>
+        <!-- client-only: server and browser locales/time zones differ (hydration mismatch) -->
+        <p>Last updated: <ClientOnly>{{ new Date().toLocaleDateString() }}</ClientOnly></p>
       </div>
     </div>
 

@@ -20,11 +20,8 @@ definePageMeta({ layout: false });
 useHead({
   title: 'Ha-Meem Group — HAMEEM // NEXUS',
   htmlAttrs: { class: 'bg-void', lang: 'en' },
-  // overrides the global viewport (its maximum-scale=1 blocks zoom and fails WCAG 1.4.4)
-  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   link: [
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    // preconnects to Google Fonts come from nuxt.config.ts
     {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;600&display=swap',
