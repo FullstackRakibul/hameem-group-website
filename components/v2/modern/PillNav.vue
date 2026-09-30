@@ -1,8 +1,8 @@
 <template>
   <header ref="root" class="fixed inset-x-0 top-4 z-50 px-4">
     <nav
-      class="nav-pill mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-full border border-white/10 bg-ink-900/60 py-2 pl-5 pr-2 backdrop-blur-xl transition-shadow duration-300"
-      :class="{ 'shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)]': scrolled }"
+      class="nav-pill mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-full border border-ink-950/[0.08] bg-white/70 py-2 pl-5 pr-2 backdrop-blur-xl transition-shadow duration-300"
+      :class="{ 'shadow-[0_10px_40px_-15px_rgba(10,10,10,0.25)]': scrolled }"
       aria-label="Main"
     >
       <NuxtLink to="/" class="flex items-center gap-2">
@@ -13,7 +13,7 @@
         <li v-for="link in links" :key="link.to">
           <NuxtLink
             :to="link.to"
-            class="rounded-full px-4 py-2 text-sm text-white/60 transition-colors hover:bg-white/5 hover:text-white"
+            class="rounded-full px-4 py-2 text-sm text-ink-950/65 transition-colors hover:bg-ink-950/5 hover:text-ink-950"
           >
             {{ link.label }}
           </NuxtLink>
@@ -23,7 +23,7 @@
       <div class="flex items-center gap-2">
         <NuxtLink
           to="/contact"
-          class="group hidden items-center gap-2 rounded-full bg-white py-1.5 pl-1.5 pr-4 text-sm font-semibold text-ink-950 transition-colors hover:bg-coral sm:flex"
+          class="group hidden items-center gap-2 rounded-full bg-ink-950 py-1.5 pl-1.5 pr-4 text-sm font-semibold text-white transition-colors hover:bg-coral hover:text-ink-950 sm:flex"
         >
           <span class="flex -space-x-2">
             <img
@@ -31,14 +31,14 @@
               :key="a"
               :src="a"
               alt=""
-              class="h-7 w-7 rounded-full border-2 border-white object-cover object-top transition-colors group-hover:border-coral"
+              class="h-7 w-7 rounded-full border-2 border-ink-950 object-cover object-top transition-colors group-hover:border-coral"
             />
           </span>
           Talk to us
         </NuxtLink>
 
         <button
-          class="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white md:hidden"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-ink-950/[0.08] text-ink-950 md:hidden"
           :aria-expanded="open"
           aria-label="Toggle menu"
           @click="open = !open"
@@ -51,13 +51,13 @@
     <Transition name="drop">
       <div
         v-if="open"
-        class="mx-auto mt-2 max-w-5xl rounded-3xl border border-white/10 bg-ink-900/90 p-3 backdrop-blur-xl md:hidden"
+        class="mx-auto mt-2 max-w-5xl rounded-3xl border border-ink-950/[0.08] bg-white/95 p-3 backdrop-blur-xl md:hidden"
       >
         <NuxtLink
           v-for="link in [...links, { label: 'Contact', to: '/contact' }]"
           :key="link.to"
           :to="link.to"
-          class="block rounded-2xl px-4 py-3 text-white/80 hover:bg-white/5 hover:text-white"
+          class="block rounded-2xl px-4 py-3 text-ink-950/80 hover:bg-ink-950/5 hover:text-ink-950"
           @click="open = false"
         >
           {{ link.label }}

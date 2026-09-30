@@ -1,5 +1,5 @@
 <template>
-  <section ref="root" class="relative overflow-hidden border-y border-white/5 bg-ink-900">
+  <section ref="root" class="relative overflow-hidden border-y border-ink-950/[0.08] bg-white">
     <div class="pin-wrap flex min-h-screen flex-col justify-center py-24">
       <div class="container mx-auto px-4">
         <SectionIntro
@@ -14,7 +14,7 @@
         </SectionIntro>
 
         <!-- progress rail -->
-        <div class="relative mb-10 hidden h-px bg-white/10 lg:block">
+        <div class="relative mb-10 hidden h-px bg-ink-950/10 lg:block">
           <div class="rail-fill absolute inset-y-0 left-0 w-full origin-left bg-coral"></div>
         </div>
 
@@ -22,15 +22,15 @@
           <li
             v-for="(step, i) in steps"
             :key="step.title"
-            class="step relative rounded-[24px] border border-white/10 bg-ink-950/60 p-6 backdrop-blur"
+            class="step relative rounded-[24px] border border-ink-950/[0.08] bg-paper p-6"
           >
             <div class="flex items-center justify-between">
-              <span class="step-num font-mono text-sm text-coral">{{ String(i + 1).padStart(2, '0') }}</span>
-              <Icon :name="step.icon" class="text-xl text-white/40" />
+              <span class="step-num font-mono text-sm text-coral-700">{{ String(i + 1).padStart(2, '0') }}</span>
+              <Icon :name="step.icon" class="text-xl text-ink-950/50" />
             </div>
-            <h3 class="mt-8 text-2xl font-bold tracking-tight text-white">{{ step.title }}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-white/50">{{ step.text }}</p>
-            <p v-if="step.metric" class="mt-6 border-t border-white/10 pt-4 font-mono text-xs text-white/70">
+            <h3 class="mt-8 text-2xl font-bold tracking-tight text-ink-950">{{ step.title }}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-950/60">{{ step.text }}</p>
+            <p v-if="step.metric" class="mt-6 border-t border-ink-950/[0.08] pt-4 font-mono text-xs text-ink-950/75">
               {{ step.metric }}
             </p>
           </li>
@@ -77,7 +77,7 @@ useGsapScope(root, (gsap) => {
     tl.fromTo('.rail-fill', { scaleX: 0 }, { scaleX: 1, ease: 'none', duration: steps.length }, 0)
     q('.step').forEach((el, i) => {
       tl.to(el, { opacity: 1, y: 0, borderColor: 'rgba(255,107,74,0.5)', duration: 0.5 }, i + 0.1)
-      if (i < steps.length - 1) tl.to(el, { borderColor: 'rgba(255,255,255,0.1)', duration: 0.4 }, i + 1)
+      if (i < steps.length - 1) tl.to(el, { borderColor: 'rgba(10,10,10,0.08)', duration: 0.4 }, i + 1)
     })
   })
 

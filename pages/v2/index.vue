@@ -10,12 +10,12 @@ import ProductsGallery from '~/components/v2/modern/ProductsGallery.vue';
 import NewsBento from '~/components/v2/modern/NewsBento.vue';
 import ContactFooter from '~/components/v2/modern/ContactFooter.vue';
 
-// Own chrome (pill nav + dark footer); also skips Preloader2, which clears GSAP's global timeline
+// Own chrome (pill nav + footer); also skips Preloader2, which clears GSAP's global timeline
 definePageMeta({ layout: false });
 
 useHead({
   title: 'Ha-Meem Group — Fibre to finished garment',
-  htmlAttrs: { class: 'bg-ink-950' },
+  htmlAttrs: { class: 'bg-paper' },
   link: [
     {
       rel: 'stylesheet',
@@ -26,7 +26,7 @@ useHead({
 </script>
 
 <template>
-  <div class="min-h-screen bg-ink-950 font-sans text-white antialiased selection:bg-coral selection:text-ink-950">
+  <div class="min-h-screen bg-paper font-sans text-ink-950 antialiased selection:bg-coral selection:text-ink-950">
     <PillNav />
     <main>
       <HeroSection />

@@ -50,12 +50,14 @@ export default {
           700: "#222222",
           600: "#2e2e2e",
         },
+        paper: "#f7f5f1",
         coral: {
           DEFAULT: "#ff6b4a",
           300: "#ffa48f",
           400: "#ff8566",
           500: "#ff6b4a",
           600: "#e8532f",
+          700: "#c2401f",
         },
       },
       backgroundImage: {

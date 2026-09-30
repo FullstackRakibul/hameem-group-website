@@ -1,0 +1,1 @@
+<template>this is v3 template</template>

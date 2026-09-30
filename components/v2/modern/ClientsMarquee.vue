@@ -1,14 +1,14 @@
 <template>
-  <section ref="root" class="overflow-hidden border-y border-white/5 bg-ink-900 py-20 md:py-28">
+  <section ref="root" class="overflow-hidden border-y border-ink-950/[0.08] bg-white py-20 md:py-28">
     <div class="container mx-auto mb-12 flex flex-col gap-4 px-4 md:flex-row md:items-end md:justify-between">
       <div>
-        <p class="font-mono text-xs uppercase tracking-[0.25em] text-white/40"><span class="text-coral">05</span> · Trusted by</p>
-        <h2 class="mt-4 text-3xl font-black tracking-[-0.04em] text-white md:text-5xl">
+        <p class="font-mono text-xs uppercase tracking-[0.25em] text-ink-950/50"><span class="text-coral-700">05</span> · Trusted by</p>
+        <h2 class="mt-4 text-3xl font-black tracking-[-0.04em] text-ink-950 md:text-5xl">
           {{ clients.length }}+ global brands
-          <span class="text-white/35">wear our work.</span>
+          <span class="text-ink-950/45">wear our work.</span>
         </h2>
       </div>
-      <p class="max-w-sm text-sm font-light text-white/50">
+      <p class="max-w-sm text-sm font-light text-ink-950/60">
         Partnering with the world's most renowned fashion houses through premium craftsmanship and
         sustainable innovation.
       </p>
@@ -27,7 +27,7 @@
         <div
           v-for="c in row"
           :key="c + copy"
-          class="flex h-24 w-44 shrink-0 items-center justify-center rounded-2xl bg-white/90 px-5 grayscale transition duration-300 hover:bg-white hover:grayscale-0 md:h-28 md:w-52"
+          class="flex h-24 w-44 shrink-0 items-center justify-center rounded-2xl border border-ink-950/[0.06] bg-paper px-5 grayscale transition duration-300 hover:bg-white hover:grayscale-0 md:h-28 md:w-52"
         >
           <img :src="`/assets/v2/clients/${c}`" :alt="c.replace(/\.jpg$/, '')" class="max-h-16 w-auto object-contain mix-blend-multiply" loading="lazy" />
         </div>

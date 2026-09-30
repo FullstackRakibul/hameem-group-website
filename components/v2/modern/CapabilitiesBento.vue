@@ -1,5 +1,5 @@
 <template>
-  <section ref="root" class="bg-ink-950 py-24 md:py-36">
+  <section ref="root" class="bg-paper py-24 md:py-36">
     <div class="container mx-auto px-4">
       <SectionIntro
         index="02"
@@ -17,26 +17,26 @@
           v-for="(item, i) in industries"
           :key="item.title"
           :to="item.link"
-          class="cap-card group relative overflow-hidden rounded-[28px] border border-white/10 bg-ink-900"
+          class="cap-card group relative overflow-hidden rounded-[28px] border border-ink-950/[0.08] bg-ink-800"
           :class="item.span"
         >
           <img
             :src="item.image"
             :alt="item.title"
-            class="absolute inset-0 h-full w-full object-cover opacity-60 transition duration-700 group-hover:scale-105 group-hover:opacity-80"
+            class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/50 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/25 to-transparent"></div>
 
           <div class="relative flex h-full flex-col justify-between p-6">
             <div class="flex items-start justify-between">
-              <span class="font-mono text-xs text-white/50">{{ String(i + 1).padStart(2, '0') }}</span>
-              <span class="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white backdrop-blur transition-colors group-hover:border-coral group-hover:bg-coral group-hover:text-ink-950">
+              <span class="font-mono text-xs text-white/80">{{ String(i + 1).padStart(2, '0') }}</span>
+              <span class="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-white/15 text-white backdrop-blur transition-colors group-hover:border-coral group-hover:bg-coral group-hover:text-ink-950">
                 <Icon name="mdi:arrow-top-right" />
               </span>
             </div>
             <div>
               <h3 class="text-2xl font-bold tracking-tight text-white md:text-3xl">{{ item.title }}</h3>
-              <p class="mt-1 text-sm text-white/55">{{ item.description }}</p>
+              <p class="mt-1 text-sm text-white/75">{{ item.description }}</p>
             </div>
           </div>
         </NuxtLink>

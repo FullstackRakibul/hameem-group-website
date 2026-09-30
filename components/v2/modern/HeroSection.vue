@@ -1,5 +1,5 @@
 <template>
-  <section ref="root" class="relative flex min-h-[100svh] items-end overflow-hidden bg-ink-950 pb-16 pt-32 md:pb-24">
+  <section ref="root" class="relative flex min-h-[100svh] items-end overflow-hidden bg-paper pb-16 pt-32 md:pb-24">
     <!-- Backdrop: pass `image` for a still photo (e.g. a botanical close-up), otherwise the video plays -->
     <div class="hero-media absolute inset-0">
       <img v-if="image" :src="image" alt="" class="h-full w-full object-cover" />
@@ -18,26 +18,26 @@
 
     <!-- Coral gradient wash + organic petal shapes -->
     <div class="pointer-events-none absolute inset-0">
-      <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/70 to-ink-950/30"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(255,107,74,0.45),transparent_55%)] mix-blend-screen"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-paper via-paper/85 to-paper/30"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_20%,rgba(255,107,74,0.35),transparent_55%)] mix-blend-multiply"></div>
       <div class="petal petal-a"></div>
       <div class="petal petal-b"></div>
-      <div class="grain absolute inset-0 opacity-[0.07]"></div>
+      <div class="grain absolute inset-0 opacity-[0.05] mix-blend-multiply"></div>
     </div>
 
     <div class="container relative z-10 mx-auto grid gap-10 px-4 lg:grid-cols-12 lg:items-end">
       <div class="lg:col-span-8">
-        <span class="hero-fade inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-xs uppercase tracking-widest text-white/70 backdrop-blur">
+        <span class="hero-fade inline-flex items-center gap-2 rounded-full border border-ink-950/15 bg-white/60 px-3 py-1 font-mono text-xs uppercase tracking-widest text-ink-950/75 backdrop-blur">
           <span class="h-1.5 w-1.5 rounded-full bg-coral"></span>
           Since {{ companyData.stats[3].value }} · Dhaka, Bangladesh
         </span>
 
-        <h1 class="mt-6 text-[clamp(2.75rem,8vw,7.5rem)] font-black leading-[0.9] tracking-[-0.045em] text-white">
+        <h1 class="mt-6 text-[clamp(2.75rem,8vw,7.5rem)] font-black leading-[0.9] tracking-[-0.045em] text-ink-950">
           <span class="block overflow-hidden"><span class="hero-line block">We stitch trust</span></span>
-          <span class="block overflow-hidden"><span class="hero-line block">into every <em class="not-italic text-coral">seam.</em></span></span>
+          <span class="block overflow-hidden"><span class="hero-line block">into every <em class="not-italic text-coral-700">seam.</em></span></span>
         </h1>
 
-        <p class="hero-fade mt-6 max-w-xl text-lg font-light leading-relaxed text-white/60">
+        <p class="hero-fade mt-6 max-w-xl text-lg font-light leading-relaxed text-ink-950/65">
           One of Bangladesh's largest apparel exporters — vertically integrated from fibre to finished
           garment, with real-time RFID traceability on every sewing line.
         </p>
@@ -61,7 +61,7 @@
           </NuxtLink>
           <NuxtLink
             to="/about"
-            class="rounded-full border border-white/15 px-6 py-3 text-white/80 backdrop-blur transition-colors hover:border-white/40 hover:text-white"
+            class="rounded-full border border-ink-950/15 bg-white/60 px-6 py-3 text-ink-950/80 backdrop-blur transition-colors hover:border-ink-950/30 hover:text-ink-950"
           >
             Our story
           </NuxtLink>
@@ -70,22 +70,22 @@
 
       <!-- Floating glass cards -->
       <div class="relative hidden lg:col-span-4 lg:block lg:h-[380px]">
-        <div class="glass-card float-a absolute right-0 top-0 w-72 rounded-3xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-xl">
-          <p class="font-mono text-[11px] uppercase tracking-widest text-coral">Case · Eliot RFID</p>
-          <p class="mt-3 text-lg font-semibold leading-snug text-white">Every sewing operation captured in real time.</p>
+        <div class="glass-card float-a absolute right-0 top-0 w-72 rounded-3xl border border-ink-950/[0.08] bg-white/70 p-5 shadow-[0_20px_50px_-20px_rgba(10,10,10,0.25)] backdrop-blur-xl">
+          <p class="font-mono text-[11px] uppercase tracking-widest text-coral-700">Case · Eliot RFID</p>
+          <p class="mt-3 text-lg font-semibold leading-snug text-ink-950">Every sewing operation captured in real time.</p>
           <div class="mt-4 flex h-10 items-end gap-1">
             <span v-for="(h, i) in bars" :key="i" class="spark flex-1 rounded-sm bg-coral/80" :style="{ height: h + '%' }"></span>
           </div>
         </div>
-        <div class="glass-card float-b absolute bottom-0 left-0 w-64 rounded-3xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-xl">
-          <p class="font-mono text-[11px] uppercase tracking-widest text-white/50">Renewable</p>
-          <p class="mt-2 text-4xl font-black tracking-tight text-white">{{ solar }}</p>
-          <p class="text-sm text-white/50">rooftop solar capacity</p>
+        <div class="glass-card float-b absolute bottom-0 left-0 w-64 rounded-3xl border border-ink-950/[0.08] bg-white/70 p-5 shadow-[0_20px_50px_-20px_rgba(10,10,10,0.25)] backdrop-blur-xl">
+          <p class="font-mono text-[11px] uppercase tracking-widest text-ink-950/60">Renewable</p>
+          <p class="mt-2 text-4xl font-black tracking-tight text-ink-950">{{ solar }}</p>
+          <p class="text-sm text-ink-950/60">rooftop solar capacity</p>
         </div>
       </div>
     </div>
 
-    <div class="hero-fade absolute bottom-6 left-1/2 hidden -translate-x-1/2 font-mono text-[11px] uppercase tracking-[0.3em] text-white/40 md:block">
+    <div class="hero-fade absolute bottom-6 left-1/2 hidden -translate-x-1/2 font-mono text-[11px] uppercase tracking-[0.3em] text-ink-950/50 md:block">
       Scroll
     </div>
   </section>

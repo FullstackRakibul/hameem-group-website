@@ -1,11 +1,11 @@
 <template>
-  <section ref="root" class="bg-ink-950 py-24 md:py-36">
+  <section ref="root" class="bg-paper py-24 md:py-36">
     <div class="container mx-auto px-4">
       <SectionIntro index="06" eyebrow="Major products" title="Made for the rails" accent="of the world's high streets." class="mb-14 md:mb-20">
         <template #action>
           <NuxtLink
             to="/our-gallery"
-            class="intro-el mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm text-white/80 transition-colors hover:border-coral hover:text-coral md:float-right"
+            class="intro-el mt-6 inline-flex items-center gap-2 rounded-full border border-ink-950/15 px-5 py-2.5 text-sm text-ink-950/80 transition-colors hover:border-coral hover:text-coral-700 md:float-right"
           >
             View full gallery <Icon name="mdi:arrow-right" />
           </NuxtLink>
@@ -16,14 +16,14 @@
         <figure
           v-for="(p, i) in products"
           :key="p.title"
-          class="product group relative overflow-hidden rounded-[28px] border border-white/10"
+          class="product group relative overflow-hidden rounded-[28px] border border-ink-950/[0.08]"
           :class="p.span"
         >
           <img :src="p.image" :alt="p.title" class="product-img absolute inset-0 h-[115%] w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-transparent to-transparent"></div>
-          <figcaption class="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl border border-white/10 bg-ink-950/40 px-4 py-3 backdrop-blur-xl">
-            <span class="font-semibold tracking-tight text-white">{{ p.title }}</span>
-            <span class="font-mono text-xs text-white/50">{{ String(i + 1).padStart(2, '0') }}</span>
+          <div class="absolute inset-0 bg-gradient-to-t from-ink-950/40 via-transparent to-transparent"></div>
+          <figcaption class="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl border border-white/60 bg-white/75 px-4 py-3 backdrop-blur-xl">
+            <span class="font-semibold tracking-tight text-ink-950">{{ p.title }}</span>
+            <span class="font-mono text-xs text-ink-950/60">{{ String(i + 1).padStart(2, '0') }}</span>
           </figcaption>
         </figure>
       </div>

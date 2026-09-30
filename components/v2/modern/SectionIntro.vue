@@ -1,18 +1,18 @@
 <template>
   <div ref="root" class="grid gap-6 md:grid-cols-12 md:items-end">
     <div class="md:col-span-7">
-      <p class="intro-el flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-white/40">
-        <span class="text-coral">{{ index }}</span>
-        <span class="h-px w-8 bg-white/20"></span>
+      <p class="intro-el flex items-center gap-3 font-mono text-xs uppercase tracking-[0.25em] text-ink-950/50">
+        <span class="text-coral-700">{{ index }}</span>
+        <span class="h-px w-8 bg-ink-950/20"></span>
         {{ eyebrow }}
       </p>
-      <h2 class="intro-el mt-5 text-4xl font-black leading-[0.95] tracking-[-0.04em] text-white md:text-6xl">
+      <h2 class="intro-el mt-5 text-4xl font-black leading-[0.95] tracking-[-0.04em] text-ink-950 md:text-6xl">
         {{ title }}
-        <span v-if="accent" class="block text-white/35">{{ accent }}</span>
+        <span v-if="accent" class="block text-ink-950/45">{{ accent }}</span>
       </h2>
     </div>
     <div class="md:col-span-5">
-      <p v-if="$slots.default" class="intro-el max-w-md text-base font-light leading-relaxed text-white/55 md:ml-auto">
+      <p v-if="$slots.default" class="intro-el max-w-md text-base font-light leading-relaxed text-ink-950/60 md:ml-auto">
         <slot />
       </p>
       <slot name="action" />

@@ -2,6 +2,8 @@
   <footer class="bg-gray-100 text-gray-800 pt-8">
     <div class=" mx-auto w-full lg:px-16 md:px-14 px-4 overflow-hidden">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+
         <!-- Contact Information -->
         <div>
           <img src="/public/assets/group-logo.png" alt="Hameem Group Logo" class="h-16 mb-4" />
@@ -10,6 +12,7 @@
             dyeing, and more.
           </p>
         </div>
+
 
         <!-- Quick Links -->
         <div>
@@ -21,6 +24,7 @@
             <li><NuxtLink to="/" class="hover:text-blue-600">Plans & Programs</NuxtLink></li>
           </ul>
         </div>
+
 
         <!-- Newsletter & Social Media -->
         <div class="bg-primary shadow-lg rounded-xl p-6">

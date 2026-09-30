@@ -1,5 +1,5 @@
 <template>
-  <section ref="root" class="bg-ink-950 pb-24 md:pb-36">
+  <section ref="root" class="bg-paper pb-24 md:pb-36">
     <div class="container mx-auto px-4">
       <SectionIntro index="07" eyebrow="Insights" title="News from" accent="the factory floor." class="mb-14 md:mb-20" />
 
@@ -8,7 +8,7 @@
           v-for="(post, i) in posts"
           :key="post.slug"
           :to="`/blogs/${post.slug}`"
-          class="post group relative flex flex-col overflow-hidden rounded-[28px] border border-white/10 bg-ink-900 transition-colors hover:border-coral/40"
+          class="post group relative flex flex-col overflow-hidden rounded-[28px] border border-ink-950/[0.08] bg-white transition-colors hover:border-coral/40"
           :class="i === 0 ? 'lg:row-span-2' : 'lg:col-span-2 lg:flex-row'"
         >
           <div class="relative overflow-hidden" :class="i === 0 ? 'aspect-[4/5] lg:aspect-auto lg:flex-1' : 'aspect-video lg:aspect-auto lg:w-2/5'">
@@ -16,11 +16,11 @@
           </div>
           <div class="flex flex-1 flex-col justify-between gap-6 p-7">
             <div>
-              <p class="font-mono text-xs uppercase tracking-widest text-white/40">{{ post.date }}</p>
-              <h3 class="mt-3 text-2xl font-bold leading-tight tracking-tight text-white">{{ post.title }}</h3>
-              <p class="mt-3 text-sm leading-relaxed text-white/50">{{ post.description }}</p>
+              <p class="font-mono text-xs uppercase tracking-widest text-ink-950/50">{{ post.date }}</p>
+              <h3 class="mt-3 text-2xl font-bold leading-tight tracking-tight text-ink-950">{{ post.title }}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-ink-950/60">{{ post.description }}</p>
             </div>
-            <span class="inline-flex items-center gap-2 text-sm font-medium text-coral">
+            <span class="inline-flex items-center gap-2 text-sm font-medium text-coral-700">
               Read article <Icon name="mdi:arrow-right" class="transition-transform group-hover:translate-x-1" />
             </span>
           </div>
