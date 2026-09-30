@@ -1,7 +1,7 @@
 <template>
   <!-- Decorative only: no axes, no values, so it never implies a real time series. -->
   <svg ref="root" viewBox="0 0 120 32" preserveAspectRatio="none" class="h-8 w-full text-bleach" aria-hidden="true" focusable="false">
-    <path :d="d" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round" />
+    <path :d="d" pathLength="1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
   </svg>
 </template>
 
@@ -21,11 +21,11 @@ const d = computed(() => {
 const root = ref(null)
 
 useGsapScope(root, (gsap) => {
+  // pathLength="1" normalises dash maths regardless of the stretched viewBox
   const path = root.value.querySelector('path')
-  const len = path.getTotalLength()
   gsap.fromTo(
     path,
-    { strokeDasharray: len, strokeDashoffset: len },
+    { strokeDasharray: 1, strokeDashoffset: 1 },
     { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut', scrollTrigger: { trigger: root.value, start: 'top 90%', once: true } },
   )
 })

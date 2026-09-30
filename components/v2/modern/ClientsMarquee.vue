@@ -1,74 +1,70 @@
 <template>
-  <section ref="root" class="overflow-hidden border-y border-ink-950/[0.08] bg-white py-20 md:py-28">
-    <div class="container mx-auto mb-12 flex flex-col gap-4 px-4 md:flex-row md:items-end md:justify-between">
+  <section ref="root" data-shot="clients" class="overflow-hidden py-24 md:py-32">
+    <div class="mx-auto mb-12 flex max-w-[1440px] flex-col gap-4 px-4 sm:px-6 md:flex-row md:items-end md:justify-between lg:px-10">
       <div>
-        <p class="font-mono text-xs uppercase tracking-[0.25em] text-ink-950/50"><span class="text-coral-700">05</span> · Trusted by</p>
-        <h2 class="mt-4 text-3xl font-black tracking-[-0.04em] text-ink-950 md:text-5xl">
-          {{ clients.length }}+ global brands
-          <span class="text-ink-950/45">wear our work.</span>
+        <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70"><span class="text-thread-300">[05]</span> Trusted by</p>
+        <h2 class="mt-4 font-display text-[clamp(2.25rem,5vw,4.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.05em] text-white">
+          {{ clientLogos.length }} global brands<br /><span class="text-thread-300">wear our work</span>
         </h2>
       </div>
-      <p class="max-w-sm text-sm font-light text-ink-950/60">
-        Partnering with the world's most renowned fashion houses through premium craftsmanship and
-        sustainable innovation.
+      <p class="max-w-sm text-sm leading-relaxed text-white/70">
+        Partnering with the world's most renowned fashion houses through premium craftsmanship and sustainable innovation.
       </p>
     </div>
 
-    <div
-      v-for="(row, r) in rows"
-      :key="r"
-      class="marquee-mask relative flex"
-      :class="r ? 'mt-4' : ''"
-      @mouseenter="pause(r)"
-      @mouseleave="play(r)"
-    >
-      <!-- two identical tracks → seamless loop at xPercent -100 -->
-      <div v-for="copy in 2" :key="copy" class="track flex shrink-0 gap-4 pr-4" :data-row="r">
-        <div
-          v-for="c in row"
-          :key="c + copy"
-          class="flex h-24 w-44 shrink-0 items-center justify-center rounded-2xl border border-ink-950/[0.06] bg-paper px-5 grayscale transition duration-300 hover:bg-white hover:grayscale-0 md:h-28 md:w-52"
-        >
-          <img :src="`/assets/v2/clients/${c}`" :alt="c.replace(/\.jpg$/, '')" class="max-h-16 w-auto object-contain mix-blend-multiply" loading="lazy" />
-        </div>
+    <!-- ≥768px + motion: 3D cylinder -->
+    <LogoCylinder v-if="mode === 'cylinder'" :logos="clientLogos" />
+
+    <!-- <768px + motion: flat two-row marquee -->
+    <div v-else-if="mode === 'marquee'">
+      <div v-for="(row, r) in rows" :key="r" class="marquee-mask flex" :class="r ? 'mt-3' : ''">
+        <ul v-for="copy in 2" :key="copy" class="track flex shrink-0 gap-3 pr-3" :data-row="r" :aria-hidden="copy === 2 ? 'true' : undefined">
+          <li v-for="c in row" :key="c.file" class="h-20 w-36 shrink-0 overflow-hidden rounded-xl border border-white/10 bg-white">
+            <img :src="`/assets/v2/clients/${c.file}`" :alt="copy === 1 ? c.name : ''" width="432" height="247" loading="lazy" decoding="async" class="h-full w-full object-cover" />
+          </li>
+        </ul>
       </div>
     </div>
+
+    <!-- reduced motion (and SSR default): static grid, every logo visible -->
+    <ul v-else class="mx-auto grid max-w-[1440px] grid-cols-2 gap-3 px-4 sm:grid-cols-4 sm:px-6 lg:grid-cols-6 lg:px-10" aria-label="Clients">
+      <li v-for="c in clientLogos" :key="c.file" class="overflow-hidden rounded-xl border border-white/10 bg-white">
+        <img :src="`/assets/v2/clients/${c.file}`" :alt="c.name" width="432" height="247" loading="lazy" decoding="async" class="h-auto w-full" />
+      </li>
+    </ul>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { clientLogos } from '~/composables/nexus/content.js'
+import LogoCylinder from '~/components/v2/nexus/LogoCylinder.vue'
 
-const clients = [
-  'abercrombie.jpg', 'aeropostale.jpg', 'American Eagle.jpg', 'Banana republic.jpg', 'calvin klein.jpg',
-  'celio.jpg', 'Dickies.jpg', 'H&M.jpg', 'HOLLISTER.jpg', 'JCPENNEY.jpg', 'Justice.jpg', "KOHL'S.jpg",
-  'Levis.jpg', 'NEXT.jpg', 'OLD NAVY.jpg', 'Oshkosh.jpg', 'PVH.jpg', 'Reitmans.jpg', 'The north face.jpg',
-  'TOMMY HILFIGER.jpg', 'United legwear.jpg', 'VF LOGO .jpg', 'ZARA.jpg',
-]
-const half = Math.ceil(clients.length / 2)
-const rows = [clients.slice(0, half), clients.slice(half)]
+const { reduced, tablet } = useMotionPrefs()
+const mode = computed(() => (reduced.value ? 'static' : tablet.value ? 'cylinder' : 'marquee'))
+
+const half = Math.ceil(clientLogos.length / 2)
+const rows = [clientLogos.slice(0, half), clientLogos.slice(half)]
 
 const root = ref(null)
-const tweens = []
-const pause = (r) => tweens[r]?.timeScale(0.15)
-const play = (r) => tweens[r]?.timeScale(1)
 
-useGsapScope(root, (gsap) => {
-  const q = gsap.utils.selector(root.value)
-  rows.forEach((_, r) => {
-    const tracks = q(`.track[data-row="${r}"]`)
-    const dir = r % 2 ? 1 : -1
-    tweens[r] = gsap.fromTo(
-      tracks,
-      { xPercent: dir === -1 ? 0 : -100 },
-      { xPercent: dir === -1 ? -100 : 0, duration: 45 + r * 10, ease: 'none', repeat: -1 },
-    )
-  })
-})
+// flat marquee (mobile) — the watcher-free approach: this scope only matches below 768px
+useGsapScope(
+  root,
+  (gsap) => {
+    const q = gsap.utils.selector(root.value)
+    const tweens = rows.map((_, r) => {
+      const dir = r % 2 ? 1 : -1
+      return gsap.fromTo(q(`.track[data-row="${r}"]`), { xPercent: dir === -1 ? 0 : -100 }, { xPercent: dir === -1 ? -100 : 0, duration: 40 + r * 8, ease: 'none', repeat: -1 })
+    })
+    return () => tweens.forEach((t) => t.kill())
+  },
+  { media: '(max-width: 767px)' },
+)
 </script>
 
 <style scoped>
 .marquee-mask {
-  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 </style>

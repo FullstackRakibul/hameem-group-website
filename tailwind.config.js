@@ -9,6 +9,7 @@ export default {
     './components/**/*.{vue,js,ts,jsx,tsx}',
     './layouts/**/*.{vue,js,ts}',
     './pages/**/*.{vue,js,ts}',
+    './composables/**/*.{js,ts}',
     './app.vue',
   ],
   theme: {

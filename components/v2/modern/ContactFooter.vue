@@ -1,113 +1,125 @@
 <template>
-  <footer ref="root" class="relative overflow-hidden bg-paper pt-8">
-    <div class="container mx-auto px-4">
+  <footer ref="root" data-shot="footer" class="relative overflow-hidden px-4 pt-16 sm:px-6 lg:px-10">
+    <div class="mx-auto max-w-[1440px]">
       <!-- CTA -->
-      <div class="cta relative overflow-hidden rounded-[36px] border border-ink-950/[0.08] bg-white p-8 md:p-14">
-        <div class="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full bg-coral/25 blur-[110px]"></div>
-
-        <div class="relative grid gap-10 lg:grid-cols-12">
-          <div class="lg:col-span-7">
-            <p class="font-mono text-xs uppercase tracking-[0.25em] text-ink-950/50"><span class="text-coral-700">08</span> · Contact</p>
-            <h2 class="mt-5 text-4xl font-black leading-[0.95] tracking-[-0.045em] text-ink-950 md:text-7xl">
-              Let's build your<br />next collection.
+      <div class="cta relative overflow-hidden rounded-[36px] border border-thread/30 bg-ink-950/80 p-8 backdrop-blur-xl md:p-14">
+        <div class="pointer-events-none absolute inset-0 bg-grid [mask-image:linear-gradient(to_bottom,black,transparent)]" aria-hidden="true"></div>
+        <div class="relative grid gap-10 lg:grid-cols-12 lg:items-end">
+          <div class="lg:col-span-8">
+            <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70"><span class="text-thread-300">[08]</span> Contact</p>
+            <h2 class="cta-title mt-5 font-display font-bold uppercase leading-[0.85] tracking-[-0.05em] text-white">
+              Let's build<br />your next<br /><span class="text-thread-300">collection</span>
             </h2>
-            <NuxtLink
-              to="/contact"
-              class="group mt-10 inline-flex items-center gap-3 rounded-full bg-ink-950 py-2 pl-2 pr-6 font-semibold text-white transition-colors hover:bg-coral hover:text-ink-950"
-            >
-              <span class="flex -space-x-2">
-                <img
-                  v-for="a in avatars"
-                  :key="a"
-                  :src="a"
-                  alt=""
-                  class="h-10 w-10 rounded-full border-2 border-ink-950 object-cover object-top transition-colors group-hover:border-coral"
-                />
-              </span>
-              Book a call with our team
-              <Icon name="mdi:arrow-top-right" class="transition-transform group-hover:rotate-45" />
-            </NuxtLink>
           </div>
-
-          <!-- Glass contact card -->
-          <div class="rounded-[28px] border border-ink-950/[0.08] bg-paper p-6 lg:col-span-5">
-            <dl class="space-y-5 text-sm">
-              <div>
-                <dt class="font-mono text-[11px] uppercase tracking-widest text-ink-950/50">Head office</dt>
-                <dd class="mt-1 text-ink-950/80">387 (South), Tejgaon Industrial Area, Dhaka-1208, Bangladesh</dd>
-              </div>
-              <div class="grid grid-cols-2 gap-4">
-                <div>
-                  <dt class="font-mono text-[11px] uppercase tracking-widest text-ink-950/50">Phone</dt>
-                  <dd class="mt-1"><a href="tel:+88028878703" class="text-ink-950/80 hover:text-coral-700">+880-2-8878703-8</a></dd>
-                </div>
-                <div>
-                  <dt class="font-mono text-[11px] uppercase tracking-widest text-ink-950/50">Email</dt>
-                  <dd class="mt-1"><a href="mailto:info@hameemgroup.net" class="text-ink-950/80 hover:text-coral-700">info@hameemgroup.net</a></dd>
-                </div>
-              </div>
-            </dl>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1825.836073151204!2d90.397174!3d23.759068!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7f36ebcbcdb%3A0x6363e2a5709dee2d!2sTML%20Building%20(Ha-Meem%20Group)!5e0!3m2!1sen!2sus!4v1738689429885!5m2!1sen!2sus"
-              class="map mt-6 h-48 w-full rounded-2xl border-0"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Ha-Meem Group head office map"
-            ></iframe>
+          <div class="lg:col-span-4">
+            <NuxtLink to="/contact" class="group inline-flex items-center gap-3 rounded-full bg-white py-2 pl-2 pr-6 font-semibold text-void transition-shadow hover:shadow-glow-thread" :class="focusRing">
+              <span class="flex -space-x-2">
+                <img v-for="a in avatars" :key="a" :src="a" alt="" width="40" height="40" loading="lazy" class="h-10 w-10 rounded-full border-2 border-white object-cover object-top" />
+              </span>
+              Book a call with our team <span aria-hidden="true">→</span>
+            </NuxtLink>
+            <p class="mt-5 font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">
+              Dhaka · GMT+6 ·
+              <ClientOnly><LiveClock class="text-bleach" /><template #fallback><span class="text-bleach">--:--:--</span></template></ClientOnly>
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Bottom bar -->
-      <div class="flex flex-col items-start justify-between gap-6 py-10 text-sm text-ink-950/50 md:flex-row md:items-center">
-        <div class="flex items-center gap-3">
-          <img src="/assets/group-logo.png" alt="Ha-Meem Group" class="h-7 w-auto rounded-sm" />
-          <span>© {{ year }} Ha-Meem Group. All rights reserved.</span>
-        </div>
-        <nav class="flex flex-wrap gap-x-6 gap-y-2">
-          <NuxtLink v-for="l in links" :key="l.to" :to="l.to" class="hover:text-ink-950">{{ l.label }}</NuxtLink>
+      <!-- B8: info, link columns, newsletter + socials, radar map -->
+      <div class="grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-12">
+        <address class="not-italic lg:col-span-3">
+          <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">Head office</p>
+          <p class="mt-3 text-sm leading-relaxed text-white/80">Ha-Meem Group<br />387 (South), Tejgaon Industrial Area<br />Dhaka-1208, Bangladesh</p>
+          <p class="mt-4 text-sm"><a href="tel:+88028878703" class="text-white/80 hover:text-thread-300" :class="focusRing">+880-2-8878703-8</a></p>
+          <p class="mt-1 text-sm"><a href="mailto:info@hameemgroup.net" class="text-white/80 hover:text-thread-300" :class="focusRing">info@hameemgroup.net</a></p>
+        </address>
+
+        <nav aria-label="Footer" class="lg:col-span-2">
+          <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">Company</p>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li v-for="l in links" :key="l.to"><NuxtLink :to="l.to" class="text-white/80 hover:text-thread-300" :class="focusRing">{{ l.label }}</NuxtLink></li>
+          </ul>
         </nav>
+
+        <div class="lg:col-span-3">
+          <NewsletterForm />
+          <p class="mt-4 font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">Social</p>
+          <ul class="mt-2 divide-y divide-white/5 border-y border-white/5">
+            <li v-for="s in socials" :key="s" class="flex items-center justify-between py-3 text-sm text-white/80">
+              {{ s }} <span class="text-thread-300" aria-hidden="true">›</span>
+            </li>
+          </ul>
+          <p class="mt-2"><TodoTag label="social profile URLs" /></p>
+        </div>
+
+        <div class="md:col-span-2 lg:col-span-4">
+          <RadarMap />
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2 border-t border-white/5 py-6 font-mono text-[11px] uppercase tracking-[0.12em] text-white/70 sm:flex-row sm:justify-between">
+        <span>© {{ year }} Ha-Meem Group</span>
+        <span>HAMEEM // NEXUS · <span class="text-bleach">SYS ONLINE</span></span>
       </div>
     </div>
 
-    <!-- Oversized wordmark -->
-    <p class="wordmark pointer-events-none select-none whitespace-nowrap text-center text-[19vw] font-black leading-[0.75] tracking-[-0.06em] text-ink-950/[0.05]">
-      HA-MEEM
-    </p>
+    <!-- A12 / B1: giant wordmark bleeding off the bottom edge (SVG: truly transparent fill, 1px gradient stroke) -->
+    <div class="relative -mx-4 h-[15vw] overflow-hidden sm:-mx-6 lg:-mx-10" aria-hidden="true">
+      <svg class="wordmark absolute inset-x-0 top-0 block w-full" viewBox="0 0 1000 215" focusable="false">
+        <defs>
+          <linearGradient id="nx-wordmark" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" class="[stop-color:theme(colors.thread.DEFAULT)]" />
+            <stop offset="1" class="[stop-color:theme(colors.bleach.DEFAULT)]" />
+          </linearGradient>
+        </defs>
+        <text x="500" y="200" text-anchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs" class="wordmark-glow font-display font-bold" font-size="230" fill="url(#nx-wordmark)">HA-MEEM</text>
+        <text x="500" y="200" text-anchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs" class="font-display font-bold" font-size="230" fill="none" stroke="url(#nx-wordmark)" stroke-width="1" vector-effect="non-scaling-stroke">HA-MEEM</text>
+      </svg>
+    </div>
   </footer>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { focusRing } from '~/composables/nexus/ui.js'
+import LiveClock from '~/components/v2/nexus/LiveClock.vue'
+import RadarMap from '~/components/v2/nexus/RadarMap.vue'
+import NewsletterForm from '~/components/v2/nexus/NewsletterForm.vue'
+import TodoTag from '~/components/v2/nexus/TodoTag.vue'
 
-const avatars = [
-  '/assets/boardofdirectors/SAJID SIR .jpg',
-  '/assets/boardofdirectors/Sakib-Azad Director.jpg',
-  '/assets/boardofdirectors/DMD(Mondol)Sir.jpg',
-]
+const avatars = ['/assets/boardofdirectors/SAJID SIR .jpg', '/assets/boardofdirectors/Sakib-Azad Director.jpg', '/assets/boardofdirectors/DMD(Mondol)Sir.jpg']
 const links = [
-  { label: 'About', to: '/about' },
+  { label: 'About us', to: '/about' },
   { label: 'Denim', to: '/denim' },
   { label: 'Gallery', to: '/our-gallery' },
   { label: '360° Tour', to: '/360vr' },
   { label: 'Contact', to: '/contact' },
 ]
+const socials = ['LinkedIn', 'Facebook', 'YouTube']
 const year = new Date().getFullYear()
 
 const root = ref(null)
 
 useGsapScope(root, (gsap) => {
-  gsap.from('.cta', {
-    y: 80,
-    opacity: 0,
-    duration: 1.1,
-    ease: 'power3.out',
-    scrollTrigger: { trigger: '.cta', start: 'top 85%' },
+  gsap.fromTo('.cta', { clipPath: 'inset(100% 0 0 0 round 36px)' }, {
+    clipPath: 'inset(0% 0 0 0 round 36px)', duration: 0.9, ease: 'power4.out', clearProps: 'clipPath',
+    scrollTrigger: { trigger: '.cta', start: 'top 85%', once: true },
   })
   gsap.from('.wordmark', {
-    yPercent: 60,
+    yPercent: 40,
     ease: 'none',
     scrollTrigger: { trigger: '.wordmark', start: 'top bottom', end: 'bottom bottom', scrub: true },
   })
 })
 </script>
+
+<style scoped>
+.cta-title {
+  font-size: clamp(2.75rem, 7vw, 7.5rem);
+}
+.wordmark-glow {
+  opacity: 0.22;
+  filter: blur(14px);
+}
+</style>

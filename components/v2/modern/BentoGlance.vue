@@ -58,9 +58,9 @@
             <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">{{ companyData.factories.length }} units</span>
           </div>
           <dl class="grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-4">
-            <div v-for="f in companyData.factories" :key="f.name" class="border-t border-white/5 pt-3">
-              <dd class="font-mono text-xl font-semibold tabular-nums text-white">{{ f.count }}</dd>
+            <div v-for="f in companyData.factories" :key="f.name" class="flex flex-col-reverse border-t border-white/5 pt-3">
               <dt class="mt-1 text-xs text-white/60">{{ f.name }}</dt>
+              <dd class="font-mono text-xl font-semibold tabular-nums text-white">{{ f.count }}</dd>
             </div>
           </dl>
         </article>

@@ -108,6 +108,9 @@ export function buildTargets(count) {
   const BZ = 0.95
   const ry = 0.65
   const rx = 0.42
+  const faceAreas = [BY * BZ, BY * BZ, BX * BZ, BX * BZ, BX * BY, BX * BY] // ±x, ±y, ±z
+  const FACE_CDF = faceAreas.map((_, i) => faceAreas.slice(0, i + 1).reduce((a, b) => a + b, 0))
+  const FACE_TOTAL = FACE_CDF[5]
 
   for (let i = 0; i < count; i++) {
     const i3 = i * 3
@@ -160,7 +163,9 @@ export function buildTargets(count) {
     }
 
     // --- finish: points on the surface of a folded stack, biased to edges
-    const face = Math.floor(rand() * 6)
+    // pick a face weighted by its area so the large top/bottom faces read as solid
+    const fr = rand() * FACE_TOTAL
+    const face = FACE_CDF.findIndex((c) => fr <= c)
     let u = rand() * 2 - 1
     let v = rand() * 2 - 1
     if (rand() < 0.5) u = Math.sign(u) * (0.85 + rand() * 0.15)

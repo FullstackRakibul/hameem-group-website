@@ -1,71 +1,58 @@
 <template>
-  <section ref="root" class="relative overflow-hidden bg-paper py-24 md:py-36">
-    <div class="pointer-events-none absolute -left-40 top-1/3 h-[480px] w-[480px] rounded-full bg-coral/15 blur-[120px]"></div>
-
-    <div class="container relative mx-auto px-4">
-      <SectionIntro
-        index="04"
-        eyebrow="Roadmap 2030"
-        title="Sustainability,"
-        accent="measured — not promised."
-        class="mb-14 md:mb-20"
-      >
-        A framework built on two milestones: the happiness of our employees and a pollution-free
-        nature. These are the targets we report against.
+  <section ref="root" data-shot="impact" class="relative px-4 py-24 sm:px-6 md:py-36 lg:px-10">
+    <div class="mx-auto max-w-[1440px]">
+      <SectionIntro index="04" eyebrow="Roadmap 2030" :lines="['Measured', 'not promised']" :accent-from="1">
+        A framework built on two milestones: the happiness of our employees and a pollution-free nature.
       </SectionIntro>
 
-      <div class="grid gap-4 lg:grid-cols-12">
-        <!-- Target chart -->
-        <article class="rounded-[28px] border border-ink-950/[0.08] bg-white p-7 md:p-10 lg:col-span-7">
-          <div class="flex items-center justify-between">
-            <h3 class="text-lg font-semibold text-ink-950">2030 targets</h3>
-            <span class="font-mono text-xs text-ink-950/50">% of goal</span>
-          </div>
+      <!-- A8: oversized word overlapping the panels -->
+      <p class="impact-word pointer-events-none relative -mb-[0.32em] mt-10 select-none whitespace-nowrap font-display font-bold uppercase leading-none tracking-[-0.06em] text-white/[0.07]" aria-hidden="true">
+        Impact
+      </p>
 
-          <ul class="mt-8 space-y-7">
-            <li v-for="t in targets" :key="t.label">
+      <!-- A8 stat row with small icons (all company.ts) -->
+      <dl class="relative grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div v-for="s in stats" :key="s.name" class="stat flex items-center gap-4 p-5" :class="glass">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-bleach/20 text-bleach" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path :d="s.icon" /></svg>
+          </span>
+          <div class="flex min-w-0 flex-col-reverse">
+            <dt class="text-xs text-white/70">{{ s.name }}</dt>
+            <dd class="font-mono text-xl font-semibold tabular-nums text-bleach">{{ s.count }}</dd>
+          </div>
+        </div>
+      </dl>
+
+      <div class="relative mt-4 grid gap-4 lg:grid-cols-12">
+        <!-- signal data bars -->
+        <article class="p-7 md:p-9 lg:col-span-7" :class="glass">
+          <div class="flex items-center justify-between">
+            <h3 class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70">2030 targets</h3>
+            <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/60">% of goal</span>
+          </div>
+          <ul class="mt-8 space-y-6">
+            <li v-for="t in roadmapTargets" :key="t.label">
               <div class="flex items-baseline justify-between gap-4">
-                <span class="text-sm text-ink-950/75">{{ t.label }}</span>
-                <span class="font-mono text-sm font-semibold text-ink-950">{{ t.display }}</span>
+                <span class="text-sm text-white/75">{{ t.label }}</span>
+                <span class="font-mono text-sm font-semibold tabular-nums text-bleach">{{ t.display }}</span>
               </div>
-              <div class="mt-3 h-2 overflow-hidden rounded-full bg-ink-950/5">
-                <div class="bar h-full origin-left rounded-full bg-gradient-to-r from-coral-600 to-coral-300" :style="{ width: t.value + '%' }"></div>
+              <div class="mt-2.5 h-1.5 overflow-hidden rounded-full bg-white/5">
+                <div class="bar h-full origin-left rounded-full bg-bleach shadow-glow-bleach" :style="{ width: t.value + '%' }"></div>
               </div>
             </li>
           </ul>
+          <p class="mt-6"><TodoTag label="add 2030 targets to data/company.ts (copied from the current site)" /></p>
         </article>
 
-        <!-- Pillars -->
-        <div class="grid gap-4 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
-          <article
-            v-for="(p, i) in pillars"
-            :key="p.title"
-            class="pillar flex items-start gap-5 rounded-[28px] border border-ink-950/[0.08] bg-white/70 p-6 backdrop-blur-xl"
-          >
-            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-coral/15 text-coral-700">
-              <Icon :name="p.icon" class="text-2xl" />
+        <!-- B5 index rows -->
+        <ol class="lg:col-span-5" :class="glass">
+          <li v-for="(p, i) in pillars" :key="p.title" class="pillar flex flex-col gap-2 border-b border-white/5 px-7 py-6 last:border-b-0 sm:flex-row sm:items-baseline sm:justify-between">
+            <span class="font-display text-xl font-bold uppercase tracking-[-0.02em] text-white">
+              <span class="mr-2 font-mono text-sm font-normal text-thread-300">({{ pad2(i + 1) }})</span>{{ p.title }} —
             </span>
-            <div>
-              <p class="font-mono text-[11px] text-ink-950/50">{{ String(i + 1).padStart(2, '0') }}</p>
-              <h4 class="mt-1 font-semibold text-ink-950">{{ p.title }}</h4>
-              <p class="mt-1 text-sm text-ink-950/60">{{ p.text }}</p>
-            </div>
-          </article>
-        </div>
-
-        <!-- Initiatives -->
-        <article class="rounded-[28px] border border-ink-950/[0.08] bg-white p-7 lg:col-span-12">
-          <p class="mb-5 font-mono text-xs uppercase tracking-widest text-ink-950/50">Initiatives in practice</p>
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="g in initiatives"
-              :key="g"
-              class="chip rounded-full border border-ink-950/[0.08] bg-white/70 px-4 py-2 text-sm text-ink-950/75"
-            >
-              {{ g }}
-            </span>
-          </div>
-        </article>
+            <span class="font-mono text-[11px] uppercase tracking-[0.12em] text-white/70 sm:text-right">{{ p.metric }}</span>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
@@ -73,62 +60,45 @@
 
 <script setup>
 import { ref } from 'vue'
+import { companyData } from '~/data/company'
+import { roadmapTargets } from '~/composables/nexus/content.js'
+import { glass, pad2 } from '~/composables/nexus/ui.js'
 import SectionIntro from './SectionIntro.vue'
+import TodoTag from '~/components/v2/nexus/TodoTag.vue'
 
-const targets = [
-  { label: 'Ground water use reduction', value: 70, display: '−70%' },
-  { label: 'Renewable energy share', value: 50, display: '50%+' },
-  { label: 'Material utilisation (waste < 2%)', value: 98, display: '98%+' },
-  { label: 'Sustainable apparel', value: 100, display: '100%' },
-  { label: 'Traceable, transparent supply chain', value: 100, display: '100%' },
-]
+const unit = (name) => companyData.factories.find((f) => f.name === name)?.count
+
+const icons = {
+  sun: 'M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4M12 8a4 4 0 100 8 4 4 0 000-8z',
+  loop: 'M4 12a8 8 0 0114-5.3L20 9M20 4v5h-5M20 12a8 8 0 01-14 5.3L4 15M4 20v-5h5',
+  wave: 'M3 10c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0',
+  beam: 'M4 20L20 4M14 4h6v6M6 12l-2 2M12 18l-2 2',
+}
+const stats = [
+  { name: 'Solar Capacity', icon: icons.sun },
+  { name: 'Fiber Recycling', icon: icons.loop },
+  { name: 'Ozone Machines', icon: icons.wave },
+  { name: 'Laser Machines', icon: icons.beam },
+].map((s) => ({ ...s, count: unit(s.name) }))
 
 const pillars = [
-  { title: 'Fabric sustainability', text: 'Eco-friendly materials, natural fibres and green dyes.', icon: 'hugeicons:turtle-neck' },
-  { title: 'Wash sustainability', text: 'Water-efficient laundry, ozone and laser technology.', icon: 'hugeicons:chart-line-data-01' },
-  { title: 'Environment sustainability', text: 'Clean energy, net-zero GHG and zero liquid discharge.', icon: 'hugeicons:eco-energy' },
-]
-
-const initiatives = [
-  'Net zero GHG emissions',
-  'Zero liquid discharge',
-  'Smart Factory 4.0',
-  'Living wages',
-  'Gender equality',
-  'Environment friendly wash chemicals',
-  'Power saving machinery',
-  'Water saving & recycling',
-  'Green dyes',
-  'Natural fibres',
-  'Sustainable laundry machines',
-  'Laser technology',
+  { title: 'Fabric', metric: 'Natural fibres · green dyes' },
+  { title: 'Wash', metric: `${unit('Ozone Machines')} ozone · ${unit('Laser Machines')} laser machines` },
+  { title: 'Energy', metric: `${unit('Solar Capacity')} solar · net-zero GHG target` },
 ]
 
 const root = ref(null)
 
 useGsapScope(root, (gsap) => {
-  gsap.from('.bar', {
-    scaleX: 0,
-    duration: 1.4,
-    ease: 'power3.out',
-    stagger: 0.12,
-    scrollTrigger: { trigger: '.bar', start: 'top 85%' },
-  })
-  gsap.from('.pillar', {
-    x: 40,
-    opacity: 0,
-    duration: 0.9,
-    ease: 'power3.out',
-    stagger: 0.12,
-    scrollTrigger: { trigger: '.pillar', start: 'top 85%' },
-  })
-  gsap.from('.chip', {
-    y: 20,
-    opacity: 0,
-    duration: 0.5,
-    ease: 'power2.out',
-    stagger: 0.03,
-    scrollTrigger: { trigger: '.chip', start: 'top 90%' },
-  })
+  gsap.from('.impact-word', { xPercent: -8, opacity: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.impact-word', start: 'top 85%', once: true } })
+  gsap.from('.stat', { y: 30, opacity: 0, duration: 0.7, ease: 'power3.out', stagger: 0.08, scrollTrigger: { trigger: '.stat', start: 'top 88%', once: true } })
+  gsap.from('.bar', { scaleX: 0, duration: 1.4, ease: 'power3.out', stagger: 0.1, scrollTrigger: { trigger: '.bar', start: 'top 88%', once: true } })
+  gsap.from('.pillar', { x: 30, opacity: 0, duration: 0.8, ease: 'power3.out', stagger: 0.1, scrollTrigger: { trigger: '.pillar', start: 'top 88%', once: true } })
 })
 </script>
+
+<style scoped>
+.impact-word {
+  font-size: clamp(5rem, 22vw, 22rem);
+}
+</style>

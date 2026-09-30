@@ -11,6 +11,7 @@ import ClientsMarquee from '~/components/v2/modern/ClientsMarquee.vue';
 import NewsBento from '~/components/v2/modern/NewsBento.vue';
 import ContactFooter from '~/components/v2/modern/ContactFooter.vue';
 import NexusCanvas from '~/components/v2/nexus/NexusCanvas.vue';
+import NexusCursor from '~/components/v2/nexus/NexusCursor.vue';
 import DenimBackdrop from '~/components/v2/nexus/DenimBackdrop.vue';
 
 // Own chrome (pill nav + footer); also skips Preloader2, which clears GSAP's global timeline
@@ -38,6 +39,7 @@ useLenis();
   <div class="nexus relative isolate min-h-screen overflow-x-clip bg-void font-sans text-white antialiased selection:bg-bleach selection:text-void">
     <DenimBackdrop />
     <ClientOnly><NexusCanvas /></ClientOnly>
+    <ClientOnly><NexusCursor /></ClientOnly>
     <PillNav />
     <main>
       <HeroSection />

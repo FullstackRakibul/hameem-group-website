@@ -27,7 +27,7 @@
           >
             <div class="flex items-start justify-between gap-3">
               <span class="step-num font-mono text-sm tabular-nums text-thread-300">{{ pad2(i + 1) }}</span>
-              <StepGlyph :step="i" class="w-16 shrink-0 opacity-80" />
+              <span class="block w-16 shrink-0 opacity-80"><StepGlyph :step="i" /></span>
             </div>
             <div>
               <h3 class="step-title font-display text-2xl font-bold uppercase tracking-[-0.03em] text-white">{{ step.title }}</h3>
