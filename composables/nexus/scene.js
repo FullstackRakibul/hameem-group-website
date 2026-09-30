@@ -119,6 +119,7 @@ export function createNexusScene(canvas, { frame, palette, mobile }) {
     const heroX = mobile ? 0 : 1.4 // core sits right of the headline on desktop
     points.position.x = heroX * (1 - pm) + pm * (mobile ? 0 : 1.5)
     core.position.x = heroX
+    points.position.y = pm * (mobile ? 0 : 0.5) // clear of the phase-card row
     points.rotation.y = pm * Math.sin(time * 0.25) * 0.25
 
     const coreAlpha = heroAlpha * (1 - pm)
