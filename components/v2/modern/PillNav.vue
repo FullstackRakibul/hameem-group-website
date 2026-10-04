@@ -13,13 +13,13 @@
           </span>
         </NuxtLink>
 
-        <span class="ml-1 inline-flex items-center gap-2 rounded-full border border-bleach/20 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-bleach">
+        <!-- <span class="ml-1 inline-flex items-center gap-2 rounded-full border border-bleach/20 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-bleach">
           <span class="relative flex h-1.5 w-1.5">
             <span class="absolute inline-flex h-full w-full rounded-full bg-bleach opacity-70 motion-safe:animate-ping"></span>
             <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-bleach"></span>
           </span>
           SYS ONLINE
-        </span>
+        </span> -->
 
         <ul class="hidden items-center md:flex">
           <li v-for="link in links" :key="link.to">
@@ -53,7 +53,7 @@
         <span class="flex -space-x-2">
           <img v-for="a in avatars" :key="a" :src="a" alt="" width="32" height="32" class="h-8 w-8 rounded-full border-2 border-white object-cover object-top" />
         </span>
-        Talk to our team
+        Talk to us...
         <span class="flex h-6 w-6 items-center justify-center rounded-full bg-void text-white transition-colors group-hover:bg-thread group-hover:text-void" aria-hidden="true">→</span>
       </NuxtLink>
     </div>
